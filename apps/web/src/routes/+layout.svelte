@@ -1,11 +1,18 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { auth, initAuth, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
-  import { collections, favoritesCount } from '$lib/stores/app-state';
+  import { collections } from '$lib/stores/app-state';
+  import Toast from '$lib/components/Toast.svelte';
+  import Icon from '$lib/components/Icon.svelte';
 
   onMount(() => {
     initAuth();
   });
+
+  $: collectionCount = $collections.length;
+  $: userInitial = $auth.user?.name?.[0]?.toUpperCase()
+    ?? $auth.user?.email?.[0]?.toUpperCase()
+    ?? '?';
 </script>
 
 <svelte:head>
@@ -26,33 +33,38 @@
     </a>
 
     <nav>
-      {#if $roleFlags.isGuest}
-        <a href="/collections">Collections ({$collections.length})</a>
-      {/if}
-      {#if $roleFlags.isGuest}
-        <a href="/?favorites=1">Starred ({$favoritesCount})</a>
-      {/if}
+      <a href="/" class="nav-link">Explore</a>
+      <a href="/collections" class="nav-link">
+        Collections
+        {#if collectionCount > 0}
+          <span class="badge">{collectionCount}</span>
+        {/if}
+      </a>
       {#if $roleFlags.isCurator}
-        <a href="/curation">Curation</a>
+        <a href="/curation" class="nav-link">Curation</a>
       {/if}
       {#if $roleFlags.isAdmin}
-        <a href="/admin">Admin</a>
+        <a href="/admin" class="nav-link">Admin</a>
       {/if}
     </nav>
 
     <div class="auth-actions">
       {#if !$isAuthReady}
-        <span class="pill">auth...</span>
+        <span class="avatar-skeleton" aria-label="Loading authentication"></span>
       {:else if $auth.isAuthenticated}
-        <span class="pill">{$auth.user?.roles.join(', ')}</span>
+        <span class="avatar" title="{$auth.user?.email ?? 'User'} ({$auth.user?.roles.join(', ')})">{userInitial}</span>
         <button class="ghost" on:click={signOut}>Sign out</button>
       {:else}
-        <button on:click={signIn}>Sign in</button>
+        <button class="btn-signin" on:click={signIn}>
+          Sign in
+        </button>
       {/if}
     </div>
   </header>
 
   <slot />
+
+  <Toast />
 </div>
 
 <style>
@@ -74,6 +86,14 @@
     --radius-sm: 10px;
     --radius-md: 16px;
     --radius-lg: 24px;
+
+    /* Type scale */
+    --text-display: clamp(1.6rem, 3vw, 2.2rem);
+    --text-heading: 1.15rem;
+    --text-subhead: 1.02rem;
+    --text-body: 0.9rem;
+    --text-small: 0.82rem;
+    --text-xs: 0.74rem;
   }
 
   :global(*) {
@@ -116,6 +136,12 @@
     left: -120px;
     background: #f5dfc2;
     animation-delay: -7s;
+  }
+
+  /* Global focus ring */
+  :global(*:focus-visible) {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 2px;
   }
 
   .app-shell {
@@ -174,7 +200,7 @@
     gap: 0.45rem;
   }
 
-  nav a {
+  .nav-link {
     text-decoration: none;
     color: #284f69;
     background: #ffffffd6;
@@ -183,13 +209,27 @@
     padding: 0.35rem 0.74rem;
     font-size: 0.84rem;
     font-weight: 670;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     transition: transform 150ms ease, border-color 180ms ease, background 180ms ease;
   }
 
-  nav a:hover {
+  .nav-link:hover {
     transform: translateY(-1px);
     border-color: #9eb6c8;
     background: #fff;
+  }
+
+  .badge {
+    background: var(--brand-100);
+    color: var(--brand-700);
+    font-size: 0.7rem;
+    font-weight: 720;
+    border-radius: 999px;
+    padding: 0.08rem 0.38rem;
+    min-width: 1.2rem;
+    text-align: center;
   }
 
   .auth-actions {
@@ -198,17 +238,29 @@
     gap: 0.45rem;
   }
 
-  .pill {
-    border: 1px solid #c4d6e3;
-    background: #edf6fb;
-    color: #29536b;
+  .avatar {
+    width: 2rem;
+    height: 2rem;
     border-radius: 999px;
-    padding: 0.26rem 0.58rem;
-    font-size: 0.8rem;
-    font-weight: 680;
+    background: linear-gradient(155deg, #0e5f79, #2a819d);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
   }
 
-  button {
+  .avatar-skeleton {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: #dce5ec;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+
+  .btn-signin {
     border: none;
     border-radius: 999px;
     padding: 0.38rem 0.74rem;
@@ -217,13 +269,28 @@
     font-weight: 680;
     cursor: pointer;
     box-shadow: 0 8px 16px rgba(20, 94, 121, 0.26);
+    font-size: var(--text-small);
+  }
+
+  .btn-signin:hover {
+    box-shadow: 0 10px 20px rgba(20, 94, 121, 0.35);
   }
 
   .ghost {
     background: #f3f7fa;
     color: #2c4b60;
     border: 1px solid #c3d1de;
+    border-radius: 999px;
+    padding: 0.38rem 0.74rem;
+    font-weight: 680;
+    cursor: pointer;
     box-shadow: none;
+    font-size: var(--text-small);
+  }
+
+  .ghost:hover {
+    background: #edf2f7;
+    border-color: #a8b9c9;
   }
 
   @keyframes drift {
@@ -234,6 +301,11 @@
     50% {
       transform: translate3d(0, -14px, 0);
     }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.2; }
   }
 
   @media (max-width: 980px) {
@@ -257,7 +329,7 @@
       padding-bottom: 0.2rem;
     }
 
-    nav a {
+    .nav-link {
       white-space: nowrap;
     }
   }

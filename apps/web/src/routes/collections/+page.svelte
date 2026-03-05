@@ -1,15 +1,15 @@
 <script lang="ts">
   import { roleFlags } from '$lib/auth/store';
   import {
-    addVoiceToCollection,
     collections,
     createCollection,
-    deleteCollection,
-    removeVoiceFromCollection,
-    updateCollectionVoiceNote
+    deleteCollection
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { customVoices, metadataOverrides } from '$lib/stores/app-state';
+  import { getProviderColor } from '$lib/provider-colors';
+  import { addToast } from '$lib/components/toast-store';
+  import Icon from '$lib/components/Icon.svelte';
   import type { Voice } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -18,26 +18,27 @@
   let newCollectionName = '';
 
   function create() {
-    createCollection(newCollectionName);
+    const name = newCollectionName.trim();
+    if (!name) return;
+    createCollection(name);
     newCollectionName = '';
+    addToast(`Created "${name}".`);
+  }
+
+  function handleDelete(collectionId: string, collectionName: string) {
+    deleteCollection(collectionId);
+    addToast(`Deleted "${collectionName}".`);
   }
 
   function voiceById(id: string) {
-    return effectiveVoices.find((voice) => voice.id === id);
+    return effectiveVoices.find((v) => v.id === id);
   }
 
-  function onAddVoice(collectionId: string, event: Event) {
-    const select = event.currentTarget as HTMLSelectElement;
-    const voiceId = select.value;
-    if (!voiceId) return;
-
-    addVoiceToCollection(collectionId, voiceId);
-    select.value = '';
-  }
-
-  function onNoteInput(collectionId: string, voiceId: string, event: Event) {
-    const target = event.currentTarget as HTMLTextAreaElement;
-    updateCollectionVoiceNote(collectionId, voiceId, target.value);
+  function collectionPreviewVoices(voiceIds: string[]): Voice[] {
+    return voiceIds
+      .slice(0, 4)
+      .map((id) => voiceById(id))
+      .filter((v): v is Voice => Boolean(v));
   }
 </script>
 
@@ -48,66 +49,69 @@
 <main>
   <section class="header">
     <h1>Collections</h1>
-    <p>Build reusable voice sets for projects, scenes, and publishing workflows.</p>
+    <p>Build voice sets for projects, scenes, and publishing workflows.</p>
   </section>
 
   {#if !$roleFlags.isGuest}
-    <p class="empty">Sign in as a registered guest or higher to save and manage collections.</p>
+    <div class="auth-prompt">
+      <p>Sign in to start building voice collections.</p>
+      <p class="hint">Browse the <a href="/">catalog</a> to discover voices first.</p>
+    </div>
   {:else}
     <section class="new-collection">
-      <input bind:value={newCollectionName} placeholder="Collection name (e.g. Documentary Narrators)" />
-      <button on:click={create}>Create Collection</button>
+      <input
+        bind:value={newCollectionName}
+        placeholder="New collection name (e.g. Documentary Narrators)"
+        on:keydown={(e) => { if (e.key === 'Enter') create(); }}
+      />
+      <button class="btn-primary" on:click={create}>
+        <Icon name="plus" size={16} />
+        Create
+      </button>
     </section>
 
     {#if $collections.length === 0}
-      <p class="empty">No collections yet. Create one and start curating.</p>
+      <div class="empty-state">
+        <p>Your collections will appear here.</p>
+        <p class="hint">Pin voices from the <a href="/">catalog</a> to get started.</p>
+      </div>
     {:else}
       <section class="grid">
         {#each $collections as collection}
+          {@const previewVoices = collectionPreviewVoices(collection.voiceIds)}
+          {@const extraCount = collection.voiceIds.length - previewVoices.length}
           <article>
-            <header>
+            <div class="card-header">
               <div>
                 <h2>{collection.name}</h2>
-                <p>{collection.voiceIds.length} voices</p>
+                <p class="count">{collection.voiceIds.length} voice{collection.voiceIds.length !== 1 ? 's' : ''}</p>
               </div>
-              <button class="ghost" on:click={() => deleteCollection(collection.id)}>Delete</button>
-            </header>
+            </div>
 
-            <label>
-              Add voice
-              <select on:change={(event) => onAddVoice(collection.id, event)}>
-                <option value="">Select a voice</option>
-                {#each effectiveVoices as voice}
-                  <option value={voice.id}>{voice.provider} · {voice.name}</option>
+            {#if previewVoices.length > 0}
+              <div class="voice-previews">
+                {#each previewVoices as voice}
+                  {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
+                  <span
+                    class="mini-avatar"
+                    style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
+                    title={voice.name}
+                  >
+                    {voice.name.slice(0, 2)}
+                  </span>
                 {/each}
-              </select>
-            </label>
-
-            {#if collection.voiceIds.length === 0}
-              <p class="empty-inline">No voices in this collection yet.</p>
-            {:else}
-              <ul>
-                {#each collection.voiceIds as voiceId}
-                  {@const voice = voiceById(voiceId)}
-                  {#if voice}
-                    <li>
-                      <div class="entry">
-                        <strong>{voice.name}</strong>
-                        <small>{voice.provider}</small>
-                        <textarea
-                          placeholder="Curator notes"
-                          value={collection.notesByVoiceId[voice.id] ?? ''}
-                          on:input={(event) => onNoteInput(collection.id, voice.id, event)}
-                        />
-                      </div>
-                      <button class="ghost" on:click={() => removeVoiceFromCollection(collection.id, voice.id)}>
-                        Remove
-                      </button>
-                    </li>
-                  {/if}
-                {/each}
-              </ul>
+                {#if extraCount > 0}
+                  <span class="mini-avatar extra">+{extraCount}</span>
+                {/if}
+              </div>
             {/if}
+
+            <div class="card-actions">
+              <a href="/collections/{collection.id}" class="btn-primary btn-sm">Open</a>
+              <button class="btn-ghost btn-sm btn-danger" on:click={() => handleDelete(collection.id, collection.name)}>
+                <Icon name="trash" size={14} />
+              </button>
+            </div>
           </article>
         {/each}
       </section>
@@ -124,32 +128,41 @@
   }
 
   .header {
-    padding: 1rem 1.05rem;
+    padding: 1.2rem;
     border: 1px solid var(--stroke-soft);
     border-radius: 20px;
     background: linear-gradient(148deg, #f8fbfd 0%, #eef4f8 100%);
     box-shadow: var(--elev-1);
   }
 
-  .header h1 {
-    margin: 0;
-  }
-
-  .header p {
-    margin: 0.35rem 0 0;
-    color: #3f5972;
-  }
+  .header h1 { margin: 0; font-size: var(--text-display); }
+  .header p { margin: 0.35rem 0 0; color: #3f5972; font-size: var(--text-body); }
 
   .new-collection {
     margin: 1rem 0 1.2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     gap: 0.6rem;
+  }
+
+  .new-collection input {
+    flex: 1;
+    border: 1px solid #c0d1df;
+    border-radius: 14px;
+    padding: 0.6rem 0.82rem;
+    background: #fff;
+    font-size: var(--text-body);
+    color: #173046;
+  }
+
+  .new-collection input:focus {
+    border-color: var(--brand-600);
+    box-shadow: 0 0 0 3px rgba(23, 112, 137, 0.12);
+    outline: none;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 0.9rem;
   }
 
@@ -157,128 +170,142 @@
     border: 1px solid #cad9e5;
     border-radius: 18px;
     background: linear-gradient(180deg, #fff 0%, #fafcfd 100%);
-    padding: 0.95rem;
+    padding: 1rem;
     display: grid;
-    gap: 0.8rem;
+    gap: 0.65rem;
     box-shadow: 0 10px 24px rgba(16, 40, 59, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease;
   }
 
-  header {
+  article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(15, 39, 58, 0.12);
+  }
+
+  .card-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  h2 { margin: 0; font-size: var(--text-subhead); }
+  .count { margin: 0.15rem 0 0; font-size: var(--text-small); color: #516981; }
+
+  /* Mini voice avatars */
+  .voice-previews {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .mini-avatar {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 720;
+    border: 1px solid;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
-  h2 {
-    margin: 0;
-    font-size: 1.05rem;
+  .mini-avatar.extra {
+    background: #f0f3f6;
+    border-color: #d0dce6;
+    color: #547087;
   }
 
-  header p {
-    margin: 0.2rem 0 0;
-    font-size: 0.84rem;
-    color: #516981;
-  }
-
-  label {
-    display: grid;
-    gap: 0.35rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #3f5871;
-  }
-
-  input,
-  select,
-  textarea {
-    border: 1px solid #c0d1df;
-    border-radius: 12px;
-    padding: 0.55rem 0.72rem;
-    background: #fff;
-    font-size: 0.94rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  textarea {
-    margin-top: 0.42rem;
-    min-height: 84px;
-    resize: vertical;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 0.6rem;
-  }
-
-  li {
-    border: 1px solid #d4e1eb;
-    border-radius: 12px;
-    background: #f5f9fc;
-    padding: 0.68rem;
+  .card-actions {
     display: flex;
+    gap: 0.4rem;
+    align-items: center;
     justify-content: space-between;
-    gap: 0.6rem;
   }
 
-  .entry {
-    min-width: 0;
-    flex: 1;
-  }
-
-  strong,
-  small {
-    display: block;
-  }
-
-  small {
-    color: #4f677f;
-    margin-top: 0.2rem;
-  }
-
-  .empty,
-  .empty-inline {
-    color: #4f667d;
-    border: 1px dashed #bccad8;
-    border-radius: 12px;
-    padding: 0.75rem;
-    background: #ffffff9b;
-  }
-
-  button {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     border: none;
     border-radius: 11px;
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 0.85rem;
     background: linear-gradient(152deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
+    font-weight: 680;
+    font-size: var(--text-small);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(20, 94, 121, 0.2);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(20, 94, 121, 0.3);
+  }
+
+  .btn-sm {
+    padding: 0.38rem 0.68rem;
+    font-size: var(--text-small);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid #c5d5e2;
+    background: #f4f8fb;
+    color: #325067;
+    border-radius: 10px;
+    padding: 0.38rem 0.55rem;
     font-weight: 650;
+    font-size: var(--text-small);
     cursor: pointer;
   }
 
-  .ghost {
-    background: #eff4f8;
-    color: #2f4760;
-    border: 1px solid #bdccda;
+  .btn-ghost:hover {
+    background: #edf2f7;
+    border-color: #a8bccf;
+  }
+
+  .btn-danger { color: #7a2d1b; }
+  .btn-danger:hover {
+    background: #fef0ee;
+    border-color: #e5b4ab;
+  }
+
+  .auth-prompt, .empty-state {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed #bccad8;
+    border-radius: 16px;
+    background: #ffffff9b;
+    color: #4f667d;
+  }
+
+  .auth-prompt p, .empty-state p { margin: 0; }
+
+  .hint {
+    margin-top: 0.5rem !important;
+    font-size: var(--text-small);
+    color: #6b8298;
+  }
+
+  .hint a {
+    color: var(--brand-600);
+    font-weight: 650;
   }
 
   @keyframes appear {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 640px) {
     .new-collection {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
   }
 </style>

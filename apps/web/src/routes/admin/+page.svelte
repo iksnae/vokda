@@ -234,7 +234,7 @@
   <h1>Admin</h1>
 
   {#if !$roleFlags.isAdmin}
-    <p class="blocked">Access restricted. Admin tier is required.</p>
+    <p class="blocked">This area is restricted to administrators.</p>
   {:else}
     <section class="panel">
       <h2>User Roles</h2>

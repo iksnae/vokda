@@ -109,7 +109,7 @@
   <h1>Curation Workspace</h1>
 
   {#if !$roleFlags.isCurator}
-    <p class="blocked">Access restricted. Curator tier or higher is required.</p>
+    <p class="blocked">This workspace is for curators. Sign in with a curator account to continue.</p>
   {:else}
     <section class="panel">
       <h2>Metadata Editor</h2>

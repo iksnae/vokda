@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
+  import { slide } from 'svelte/transition';
   import {
     addVoiceToCollection,
     collections,
@@ -13,6 +14,9 @@
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { roleFlags } from '$lib/auth/store';
+  import { getProviderColor } from '$lib/provider-colors';
+  import { addToast } from '$lib/components/toast-store';
+  import Icon from '$lib/components/Icon.svelte';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -24,73 +28,114 @@
   let runnableOnly = false;
   let ssmlOnly = false;
   let onlyFavorites = false;
-  let selectedCardId = '';
+
+  /** Collapsible filter panel — collapsed by default */
+  let filtersOpen = false;
+
+  /** Pin popover: tracks which card's popover is open */
+  let pinOpenForId = '';
   let newCollectionName = '';
-  let collectionMessage = '';
 
   onMount(() => {
     if (!browser) return;
     onlyFavorites = new URLSearchParams(window.location.search).get('favorites') === '1';
   });
 
-  const sourceLabels: Record<VoiceVariant['sourceType'], string> = {
-    cloud_provider: 'Cloud',
-    hf_model: 'HF Model',
+  const typeLabels: Record<VoiceVariant['sourceType'], string> = {
+    cloud_provider: 'Cloud provider',
+    hf_model: 'Open model',
     hf_space: 'HF Space',
     hf_endpoint: 'HF Endpoint',
     self_hosted: 'Self-hosted'
   };
 
-  function sourceLabel(source: string) {
-    return sourceLabels[source as VoiceVariant['sourceType']] ?? source;
+  function typeLabel(source: string) {
+    return typeLabels[source as VoiceVariant['sourceType']] ?? source;
   }
 
-  function selectCard(voiceId: string) {
-    selectedCardId = selectedCardId === voiceId ? '' : voiceId;
+  function togglePinPopover(voiceId: string) {
+    pinOpenForId = pinOpenForId === voiceId ? '' : voiceId;
+    newCollectionName = '';
   }
 
-  function quickAdd(voice: Voice) {
-    if (!$collections.length) return;
-    addVoiceToCollection($collections[0].id, voice.id);
-    collectionMessage = `Saved to ${$collections[0].name}.`;
+  function closePinPopover() {
+    pinOpenForId = '';
   }
 
-  function inCollection(collectionId: string, voiceId: string) {
-    const collection = $collections.find((entry) => entry.id === collectionId);
+  function handleFavorite(voiceId: string) {
+    if (!$roleFlags.isGuest) {
+      addToast('Sign in to save voices.', 'info');
+      return;
+    }
+    const wasFav = $favorites.includes(voiceId);
+    toggleFavorite(voiceId);
+    addToast(wasFav ? 'Removed from favorites.' : 'Added to favorites.');
+  }
+
+  function handlePin(voiceId: string) {
+    if (!$roleFlags.isGuest) {
+      addToast('Sign in to save voices.', 'info');
+      return;
+    }
+
+    if ($collections.length === 0) {
+      createCollection('Saved');
+      const created = $collections.find((c) => c.name === 'Saved');
+      if (created) {
+        addVoiceToCollection(created.id, voiceId);
+        addToast('Created "Saved" and pinned voice.');
+      }
+      return;
+    }
+
+    togglePinPopover(voiceId);
+  }
+
+  function inCollection(collectionId: string, voiceId: string): boolean {
+    const collection = $collections.find((c) => c.id === collectionId);
     return collection?.voiceIds.includes(voiceId) ?? false;
   }
 
   function toggleCollection(voiceId: string, collectionId: string) {
     if (inCollection(collectionId, voiceId)) {
       removeVoiceFromCollection(collectionId, voiceId);
-      collectionMessage = 'Removed from collection.';
+      addToast('Removed from collection.');
       return;
     }
-
     addVoiceToCollection(collectionId, voiceId);
-    const collection = $collections.find((entry) => entry.id === collectionId);
-    collectionMessage = collection ? `Saved to ${collection.name}.` : 'Saved to collection.';
+    const collection = $collections.find((c) => c.id === collectionId);
+    addToast(collection ? `Pinned to ${collection.name}.` : 'Pinned to collection.');
   }
 
-  function createAndAttach(voiceId: string) {
+  function createAndPin(voiceId: string) {
     const name = newCollectionName.trim();
     if (!name) return;
-
     createCollection(name);
-    const created = $collections.find((collection) => collection.name.toLowerCase() === name.toLowerCase());
+    const created = $collections.find((c) => c.name.toLowerCase() === name.toLowerCase());
     if (!created) return;
     addVoiceToCollection(created.id, voiceId);
     newCollectionName = '';
-    collectionMessage = `Created ${created.name}.`;
+    addToast(`Created "${created.name}" and pinned voice.`);
+    closePinPopover();
   }
+
+  /** Count active filters for badge */
+  $: activeFilterCount = [
+    selectedProvider !== 'all',
+    selectedLanguage !== 'all',
+    selectedSource !== 'all',
+    runnableOnly,
+    ssmlOnly,
+    onlyFavorites
+  ].filter(Boolean).length;
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
-  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((voice) => voice.languages))).sort();
+  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages))).sort();
   $: availableSources = Array.from(
-    new Set(effectiveVoices.flatMap((voice) => voice.variants.map((variant) => variant.sourceType)))
+    new Set(effectiveVoices.flatMap((v) => v.variants.map((vr) => vr.sourceType)))
   ).sort();
-  $: availableProviders = Array.from(new Set(effectiveVoices.map((voice) => voice.provider))).sort();
+  $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
 
   $: filtered = effectiveVoices.filter((voice) => {
     const q = query.trim().toLowerCase();
@@ -101,20 +146,19 @@
       voice.metadata.shortLabel.toLowerCase().includes(q) ||
       voice.provider.toLowerCase().includes(q) ||
       voice.description.toLowerCase().includes(q) ||
-      voice.metadata.searchDescription.toLowerCase().includes(q) ||
-      voice.metadata.machineTags.some((tag) => tag.toLowerCase().includes(q)) ||
-      voice.metadata.useCases.some((useCase) => useCase.toLowerCase().includes(q)) ||
-      voice.metadata.audienceTags.some((audience) => audience.toLowerCase().includes(q)) ||
-      voice.metadata.toneTags.some((tone) => tone.toLowerCase().includes(q)) ||
-      voice.tags.some((tag) => tag.toLowerCase().includes(q));
+      voice.metadata.machineTags.some((t) => t.toLowerCase().includes(q)) ||
+      voice.metadata.useCases.some((u) => u.toLowerCase().includes(q)) ||
+      voice.metadata.audienceTags.some((a) => a.toLowerCase().includes(q)) ||
+      voice.metadata.toneTags.some((t) => t.toLowerCase().includes(q)) ||
+      voice.tags.some((t) => t.toLowerCase().includes(q));
 
     const matchesLanguage = selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
     const matchesSource =
       selectedSource === 'all' ||
-      voice.variants.some((variant) => variant.sourceType === selectedSource);
+      voice.variants.some((vr) => vr.sourceType === selectedSource);
     const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
-    const matchesRunnable = !runnableOnly || voice.variants.some((variant) => variant.runnable);
-    const matchesSsml = !ssmlOnly || voice.variants.some((variant) => variant.supportsSsml);
+    const matchesRunnable = !runnableOnly || voice.variants.some((vr) => vr.runnable);
+    const matchesSsml = !ssmlOnly || voice.variants.some((vr) => vr.supportsSsml);
     const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
 
     return (
@@ -127,161 +171,192 @@
       matchesFavorite
     );
   });
-
 </script>
 
 <svelte:head>
-  <title>Find TTS Voices | Vokda</title>
+  <title>Discover Voices | Vokda</title>
 </svelte:head>
 
 <main>
   <section class="hero">
     <div>
-      <h1>Find TTS voices fast</h1>
-      <p class="summary">Search by voice name, tone, language, or use case.</p>
+      <h1>Discover voices for every project</h1>
+      <p class="summary">Browse TTS voices across providers, listen instantly, and build your perfect voice set.</p>
       <div class="search-shell">
-        <input bind:value={query} placeholder="Search voices..." />
+        <Icon name="search" size={18} />
+        <input bind:value={query} placeholder="Search by name, style, or use case..." />
       </div>
     </div>
   </section>
 
-  <section class="filters">
-    <label>
-      Provider
-      <select bind:value={selectedProvider}>
-        <option value="all">All providers</option>
-        {#each availableProviders as provider}
-          <option value={provider}>{provider}</option>
-        {/each}
-      </select>
-    </label>
+  <div class="filter-bar">
+    <button
+      class="filter-toggle"
+      class:active={filtersOpen || activeFilterCount > 0}
+      on:click={() => (filtersOpen = !filtersOpen)}
+      aria-expanded={filtersOpen}
+    >
+      <Icon name="sliders" size={16} />
+      Filters
+      {#if activeFilterCount > 0}
+        <span class="filter-count">{activeFilterCount}</span>
+      {/if}
+      <Icon name={filtersOpen ? 'chevron-down' : 'chevron-right'} size={14} />
+    </button>
 
-    <label>
-      Language
-      <select bind:value={selectedLanguage}>
-        <option value="all">All languages</option>
-        {#each availableLanguages as language}
-          <option value={language}>{language}</option>
-        {/each}
-      </select>
+    <label class="toggle-inline">
+      <input type="checkbox" bind:checked={onlyFavorites} />
+      <Icon name="heart" size={14} />
+      Favorites
     </label>
+  </div>
 
-    <label>
-      Source
-      <select bind:value={selectedSource}>
-        <option value="all">All sources</option>
-        {#each availableSources as source}
-          <option value={source}>{sourceLabel(source)}</option>
-        {/each}
-      </select>
-    </label>
+  {#if filtersOpen}
+    <section class="filters" transition:slide|local>
+      <label>
+        Provider
+        <select bind:value={selectedProvider}>
+          <option value="all">All providers</option>
+          {#each availableProviders as provider}
+            <option value={provider}>{provider}</option>
+          {/each}
+        </select>
+      </label>
 
-    <label class="toggle">
-      <input type="checkbox" bind:checked={runnableOnly} /> Runnable
-    </label>
+      <label>
+        Language
+        <select bind:value={selectedLanguage}>
+          <option value="all">All languages</option>
+          {#each availableLanguages as language}
+            <option value={language}>{language}</option>
+          {/each}
+        </select>
+      </label>
 
-    <label class="toggle">
-      <input type="checkbox" bind:checked={ssmlOnly} /> SSML
-    </label>
+      <label>
+        Type
+        <select bind:value={selectedSource}>
+          <option value="all">All types</option>
+          {#each availableSources as source}
+            <option value={source}>{typeLabel(source)}</option>
+          {/each}
+        </select>
+      </label>
 
-    <label class="toggle">
-      <input type="checkbox" bind:checked={onlyFavorites} /> Starred
-    </label>
-  </section>
+      <label class="toggle">
+        <input type="checkbox" bind:checked={runnableOnly} /> Live preview
+      </label>
 
-  <p class="results">{filtered.length} results</p>
+      <label class="toggle">
+        <input type="checkbox" bind:checked={ssmlOnly} /> SSML
+      </label>
+    </section>
+  {/if}
+
+  <p class="results">{filtered.length} voice{filtered.length !== 1 ? 's' : ''}</p>
 
   <section class="grid">
-    {#each filtered as voice}
-      <article class:selected={selectedCardId === voice.id}>
-        <div class="top-line">
-          <p class="provider">{voice.provider}</p>
-          <div class="right">
-            <p class="tier">{voice.qualityTier}</p>
-            <button
-              class="star"
-              aria-label={$favorites.includes(voice.id) ? 'Unstar voice' : 'Star voice'}
-              title={$roleFlags.isGuest ? 'Toggle favorite' : 'Sign in to save favorites'}
-              disabled={!$roleFlags.isGuest}
-              on:click|stopPropagation={() => toggleFavorite(voice.id)}
-            >
-              {$favorites.includes(voice.id) ? '★' : '☆'}
-            </button>
-          </div>
-        </div>
-        <button
-          class="select-surface"
-          aria-pressed={selectedCardId === voice.id}
-          on:click={() => selectCard(voice.id)}
-        >
-          <h2>{voice.name}</h2>
-          <p class="label">{voice.metadata.shortLabel}</p>
-          <p class="description">{voice.description}</p>
-          <p class="search-desc">{voice.metadata.searchDescription}</p>
-
-          <div class="chips">
-            {#each voice.languages as language}
-              <span>{language}</span>
-            {/each}
-            {#each voice.tags.slice(0, 3) as tag}
-              <span class="tag">{tag}</span>
-            {/each}
-            {#each voice.metadata.toneTags.slice(0, 2) as tone}
-              <span class="tone">{tone}</span>
-            {/each}
-          </div>
-
-          <p class="meta">
-            {voice.variants.length} variants · {voice.samples.length} samples ·
-            {voice.variants.some((variant) => variant.runnable) ? ' runnable' : ' preview-only'}
-          </p>
-        </button>
-
-        <div class="card-actions">
-          <button class="ghost" on:click={() => quickAdd(voice)} disabled={!$roleFlags.isGuest || !$collections.length}>
-            Save
+    {#each filtered as voice (voice.id)}
+      {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
+      {@const isFav = $favorites.includes(voice.id)}
+      <article>
+        <!-- Play button hero area -->
+        <div class="play-area">
+          <button
+            class="play-btn"
+            aria-label="Play sample for {voice.name}"
+            title={voice.samples.length > 0 ? 'Play sample' : 'No samples available'}
+            disabled={voice.samples.length === 0}
+          >
+            <Icon name="play" size={22} weight="fill" />
           </button>
-          <a class="details-link" href={`/voices/${voice.id}`}>View</a>
         </div>
 
-        {#if selectedCardId === voice.id}
-          <div class="collection-panel">
-            {#if !$roleFlags.isGuest}
-              <p class="inline-note">Sign in to save voices to collections.</p>
-            {:else}
-              <p class="inline-note">Save to one or more collections</p>
-              <div class="collection-chips">
-                <button
-                  class:active={$favorites.includes(voice.id)}
-                  on:click={() => toggleFavorite(voice.id)}
-                >
-                  {$favorites.includes(voice.id) ? 'Starred' : 'Star'}
-                </button>
-                {#each $collections as collection}
-                  <button
-                    class:active={inCollection(collection.id, voice.id)}
-                    on:click={() => toggleCollection(voice.id, collection.id)}
-                  >
-                    {collection.name}
-                  </button>
-                {/each}
-              </div>
-              <div class="new-collection-row">
-                <input bind:value={newCollectionName} placeholder="New collection" />
-                <button class="ghost" on:click={() => createAndAttach(voice.id)}>Create + Add</button>
-              </div>
-              {#if collectionMessage}
-                <p class="inline-note">{collectionMessage}</p>
-              {/if}
+        <!-- Card body — clicks navigate to detail -->
+        <a class="card-body" href="/voices/{voice.id}">
+          <h2>{voice.name}</h2>
+          <p class="short-label">{voice.metadata.shortLabel}</p>
+          <p class="compact-meta">
+            <span
+              class="provider-badge"
+              style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
+            >{voice.provider}</span>
+            <span class="sep">·</span>
+            <span>{voice.languages[0] ?? ''}</span>
+            <span class="sep">·</span>
+            <span>{voice.qualityTier}</span>
+          </p>
+          <div class="chips">
+            {#each voice.tags.slice(0, 3) as tag}
+              <span class="chip">{tag}</span>
+            {/each}
+            {#if voice.metadata.toneTags.length > 0}
+              <span class="chip tone-chip">{voice.metadata.toneTags[0]}</span>
             {/if}
           </div>
-        {/if}
+        </a>
+
+        <!-- Save actions -->
+        <div class="card-actions">
+          <button
+            class="icon-btn"
+            class:active={isFav}
+            on:click={() => handleFavorite(voice.id)}
+            aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+            title={$roleFlags.isGuest ? (isFav ? 'Remove from favorites' : 'Add to favorites') : 'Sign in to save voices'}
+          >
+            <Icon name={isFav ? 'heart-filled' : 'heart'} size={18} />
+          </button>
+
+          <div class="pin-wrapper">
+            <button
+              class="icon-btn"
+              on:click={() => handlePin(voice.id)}
+              aria-label="Pin to collection"
+              title={$roleFlags.isGuest ? 'Pin to collection' : 'Sign in to save voices'}
+            >
+              <Icon name="pin" size={18} />
+            </button>
+
+            {#if pinOpenForId === voice.id}
+              <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+              <div class="pin-popover" on:click|stopPropagation>
+                <p class="popover-label">Pin to collection</p>
+                <div class="popover-list">
+                  {#each $collections as collection}
+                    <label class="popover-item">
+                      <input
+                        type="checkbox"
+                        checked={inCollection(collection.id, voice.id)}
+                        on:change={() => toggleCollection(voice.id, collection.id)}
+                      />
+                      {collection.name}
+                    </label>
+                  {/each}
+                </div>
+                <div class="popover-create">
+                  <input
+                    bind:value={newCollectionName}
+                    placeholder="New collection"
+                    on:keydown={(e) => { if (e.key === 'Enter') createAndPin(voice.id); }}
+                  />
+                  <button class="popover-create-btn" on:click={() => createAndPin(voice.id)}>
+                    <Icon name="plus" size={14} />
+                  </button>
+                </div>
+              </div>
+            {/if}
+          </div>
+        </div>
       </article>
     {:else}
-      <p class="empty">No voices matched the active filters.</p>
+      <p class="empty">No voices found. Try different filters or search terms.</p>
     {/each}
   </section>
 </main>
+
+<!-- Close pin popover when clicking outside -->
+<svelte:window on:click={closePinPopover} />
 
 <style>
   main {
@@ -307,54 +382,123 @@
 
   h1 {
     margin: 0;
-    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    font-size: var(--text-display);
     line-height: 1.2;
-    max-width: 13ch;
+    max-width: 18ch;
   }
 
   .summary {
     margin: 0.55rem 0 0;
     color: #395367;
-    max-width: 38ch;
+    max-width: 44ch;
     line-height: 1.45;
+    font-size: var(--text-body);
   }
 
   .search-shell {
     margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #b4c9d8;
+    border-radius: 14px;
+    padding: 0 0.82rem;
+    background: #fff;
+    color: #7a96aa;
+  }
+
+  .search-shell:focus-within {
+    border-color: var(--brand-600);
+    box-shadow: 0 0 0 3px rgba(23, 112, 137, 0.12);
   }
 
   .search-shell input {
-    width: 100%;
-    border: 1px solid #b4c9d8;
-    border-radius: 14px;
-    padding: 0.7rem 0.82rem;
-    background: #fff;
+    flex: 1;
+    border: none;
+    padding: 0.7rem 0;
+    background: transparent;
     font-size: 1rem;
     color: #173046;
+    outline: none;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--stroke-soft);
+    background: #ffffffd6;
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    font-size: var(--text-small);
+    font-weight: 670;
+    color: #284f69;
+    cursor: pointer;
+    transition: border-color 180ms ease, background 180ms ease;
+  }
+
+  .filter-toggle:hover,
+  .filter-toggle.active {
+    border-color: #9eb6c8;
+    background: #fff;
+  }
+
+  .filter-count {
+    background: var(--brand-100);
+    color: var(--brand-700);
+    font-size: 0.7rem;
+    font-weight: 720;
+    border-radius: 999px;
+    padding: 0.05rem 0.35rem;
+    min-width: 1.1rem;
+    text-align: center;
+  }
+
+  .toggle-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: var(--text-small);
+    font-weight: 620;
+    color: #446078;
+    cursor: pointer;
+  }
+
+  .toggle-inline input {
+    accent-color: var(--brand-600);
   }
 
   .filters {
-    margin-top: 1.1rem;
+    margin-top: 0.6rem;
     padding: 0.82rem;
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.6rem;
     border: 1px solid var(--stroke-soft);
     border-radius: 18px;
     background: rgba(248, 252, 254, 0.86);
+    animation: slideDown 200ms ease;
   }
 
   .results {
     margin: 0.7rem 0 0;
     color: #47657d;
-    font-size: 0.86rem;
+    font-size: var(--text-small);
     font-weight: 620;
   }
 
   label {
     display: grid;
     gap: 0.32rem;
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     font-weight: 650;
     color: #446078;
   }
@@ -365,7 +509,7 @@
     border-radius: 12px;
     padding: 0.55rem 0.7rem;
     background: #fff;
-    font-size: 0.9rem;
+    font-size: var(--text-body);
     color: #173046;
   }
 
@@ -381,7 +525,7 @@
   .grid {
     margin-top: 1.2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 0.86rem;
   }
 
@@ -389,12 +533,13 @@
     border: 1px solid #c9d7e3;
     border-radius: 18px;
     background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
-    padding: 1rem;
+    padding: 0;
     display: grid;
-    gap: 0.55rem;
+    grid-template-rows: auto 1fr auto;
     box-shadow: 0 10px 24px rgba(17, 38, 56, 0.08);
     transition: transform 180ms ease, box-shadow 180ms ease;
     animation: cardIn 420ms ease both;
+    overflow: hidden;
   }
 
   article:hover {
@@ -402,250 +547,256 @@
     box-shadow: 0 16px 30px rgba(15, 39, 58, 0.12);
   }
 
-  article:nth-child(2) {
-    animation-delay: 60ms;
-  }
+  article:nth-child(2) { animation-delay: 60ms; }
+  article:nth-child(3) { animation-delay: 120ms; }
+  article:nth-child(4) { animation-delay: 180ms; }
 
-  article:nth-child(3) {
-    animation-delay: 120ms;
-  }
-
-  article:nth-child(4) {
-    animation-delay: 180ms;
-  }
-
-  .top-line {
+  /* Play area */
+  .play-area {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 0.45rem;
+    justify-content: center;
+    padding: 1.2rem 1rem 0.6rem;
   }
 
-  .right {
+  .play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    border: 2px solid #d0dce6;
+    background: linear-gradient(180deg, #f8fbfd 0%, #eef5f9 100%);
+    color: var(--brand-700);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+    box-shadow: 0 4px 12px rgba(17, 38, 56, 0.08);
+    padding: 0;
+  }
+
+  .play-btn:hover:not(:disabled) {
+    transform: scale(1.08);
+    border-color: var(--brand-600);
+    box-shadow: 0 6px 18px rgba(23, 112, 137, 0.18);
+  }
+
+  .play-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* Card body — clickable link */
+  .card-body {
+    text-decoration: none;
+    color: inherit;
+    padding: 0 1rem;
+    display: grid;
     gap: 0.35rem;
   }
 
-  .provider,
-  .tier,
-  .meta,
-  .description,
-  .label,
-  .search-desc {
-    margin: 0;
-  }
-
-  .provider {
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #4d6c82;
-    font-weight: 760;
-  }
-
-  .tier {
-    font-size: 0.72rem;
-    border-radius: 999px;
-    padding: 0.19rem 0.52rem;
-    background: #e4f2f8;
-    color: #234c63;
-    font-weight: 760;
+  .card-body:hover h2 {
+    color: var(--brand-600);
   }
 
   h2 {
     margin: 0;
-    font-size: 1.08rem;
+    font-size: var(--text-subhead);
+    transition: color 150ms;
   }
 
-  .select-surface {
+  .short-label {
     margin: 0;
-    border: 0;
-    padding: 0;
-    background: transparent;
-    text-align: left;
-    display: grid;
-    gap: 0.55rem;
-    cursor: pointer;
-    color: inherit;
-    font: inherit;
-  }
-
-  .select-surface:focus-visible {
-    outline: 2px solid #7ca3bf;
-    outline-offset: 4px;
-    border-radius: 10px;
-  }
-
-  .description {
-    color: #3a5469;
-    line-height: 1.48;
-  }
-
-  .label {
-    font-size: 0.83rem;
+    font-size: var(--text-small);
     color: #2f4e66;
-    font-weight: 760;
+    font-weight: 620;
   }
 
-  .search-desc {
-    font-size: 0.84rem;
-    color: #526a80;
-    line-height: 1.48;
+  .compact-meta {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.32rem;
+    flex-wrap: wrap;
+    font-size: var(--text-xs);
+    color: #547087;
+  }
+
+  .provider-badge {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 720;
+    border-radius: 999px;
+    padding: 0.12rem 0.45rem;
+    border: 1px solid;
+  }
+
+  .sep {
+    color: #b6c8d6;
   }
 
   .chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.3rem;
+    margin-top: 0.15rem;
   }
 
-  .chips span {
-    background: #e9f1f6;
-    border: 1px solid #d2dee8;
-    border-radius: 999px;
-    padding: 0.16rem 0.5rem;
-    font-size: 0.72rem;
-    font-weight: 620;
-    color: #334f66;
-  }
-
-  .chips .tag {
+  .chip {
     background: #edf5ee;
-    border-color: #d4e4d8;
+    border: 1px solid #d4e4d8;
+    border-radius: 999px;
+    padding: 0.12rem 0.42rem;
+    font-size: 0.7rem;
+    font-weight: 620;
     color: #41633e;
   }
 
-  .chips .tone {
+  .tone-chip {
     background: #fff2e3;
     border-color: #f0dcbf;
     color: #8d5c16;
   }
 
-  .meta {
-    font-size: 0.8rem;
-    color: #547087;
-  }
-
-  .details-link {
-    margin-top: 0.2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 11px;
-    padding: 0.45rem 0.72rem;
-    background: linear-gradient(152deg, var(--brand-600) 0%, var(--brand-700) 100%);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.86rem;
-  }
-
+  /* Card actions */
   .card-actions {
     display: flex;
-    gap: 0.45rem;
     align-items: center;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    padding: 0.55rem 1rem 0.75rem;
   }
 
-  .collection-panel {
-    border-top: 1px solid #d8e3ec;
-    padding-top: 0.55rem;
-    display: grid;
-    gap: 0.45rem;
-  }
-
-  .collection-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.38rem;
-  }
-
-  .collection-chips button {
-    border: 1px solid #c2d2df;
-    background: #f2f7fb;
-    color: #2e4b61;
-    border-radius: 999px;
-    padding: 0.22rem 0.55rem;
-    font-size: 0.77rem;
-    font-weight: 650;
-    cursor: pointer;
-  }
-
-  .collection-chips button.active {
-    background: #dcedf8;
-    border-color: #93b2c9;
-    color: #123b57;
-  }
-
-  .new-collection-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.4rem;
-  }
-
-  .new-collection-row input {
-    border: 1px solid #bfd0dd;
-    border-radius: 10px;
-    padding: 0.45rem 0.62rem;
-    font-size: 0.84rem;
-  }
-
-  .inline-note {
-    margin: 0;
-    font-size: 0.8rem;
-    color: #40627c;
-  }
-
-  .star {
-    border: 1px solid #cfdae4;
+  .icon-btn {
+    border: 1px solid #d0dce6;
     background: #fff;
-    color: #385468;
+    color: #547087;
     border-radius: 999px;
-    height: 1.8rem;
-    width: 1.8rem;
+    width: 2.1rem;
+    height: 2.1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    line-height: 1;
     cursor: pointer;
+    padding: 0;
+    transition: transform 150ms, border-color 150ms, color 150ms, background 150ms;
+  }
+
+  .icon-btn:hover {
+    transform: translateY(-1px);
+    border-color: #9eb6c8;
+    color: var(--brand-700);
+  }
+
+  .icon-btn.active {
+    color: #c0392b;
+    border-color: #e5b4ab;
+    background: #fef0ee;
+  }
+
+  /* Pin popover */
+  .pin-wrapper {
+    position: relative;
+  }
+
+  .pin-popover {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    right: 0;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid #c9d7e3;
+    border-radius: 14px;
+    padding: 0.65rem;
+    box-shadow: 0 12px 32px rgba(15, 35, 54, 0.16);
+    z-index: 30;
+    animation: popIn 180ms ease;
+  }
+
+  .popover-label {
+    margin: 0 0 0.4rem;
+    font-size: var(--text-small);
+    font-weight: 680;
+    color: #284f69;
+  }
+
+  .popover-list {
+    display: grid;
+    gap: 0.25rem;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+
+  .popover-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--text-small);
+    font-weight: 500;
+    color: #2e4b61;
+    cursor: pointer;
+    padding: 0.25rem 0.3rem;
+    border-radius: 8px;
+  }
+
+  .popover-item:hover {
+    background: #f2f6f9;
+  }
+
+  .popover-item input[type="checkbox"] {
+    accent-color: var(--brand-600);
+    width: auto;
     padding: 0;
   }
 
-  .star:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  .popover-create {
+    margin-top: 0.45rem;
+    display: flex;
+    gap: 0.3rem;
+    border-top: 1px solid #e8eff4;
+    padding-top: 0.45rem;
   }
 
-  .ghost {
-    border: 1px solid #c5d5e2;
+  .popover-create input {
+    flex: 1;
+    border: 1px solid #c0d1df;
+    border-radius: 10px;
+    padding: 0.35rem 0.5rem;
+    font-size: var(--text-small);
+    min-width: 0;
+  }
+
+  .popover-create-btn {
+    border: 1px solid #c0d1df;
     background: #f4f8fb;
-    color: #325067;
-    border-radius: 11px;
-    padding: 0.45rem 0.72rem;
-    font-weight: 680;
-    font-size: 0.84rem;
+    border-radius: 10px;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    color: #325067;
+    padding: 0;
   }
 
-  .ghost:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  article.selected {
-    border-color: #8fb0c9;
-    box-shadow: 0 0 0 2px rgba(84, 128, 162, 0.2), 0 16px 30px rgba(15, 39, 58, 0.12);
-    transform: translateY(-2px);
+  .popover-create-btn:hover {
+    background: #e8f0f6;
+    border-color: var(--brand-600);
+    color: var(--brand-600);
   }
 
   .empty {
+    grid-column: 1 / -1;
     margin: 0;
     border: 1px dashed #b8cad7;
     border-radius: 14px;
     background: #ffffff88;
-    padding: 0.9rem;
+    padding: 1.5rem;
     color: #4a6279;
+    text-align: center;
+    font-size: var(--text-body);
   }
 
   @media (max-width: 980px) {
@@ -658,31 +809,25 @@
     .filters {
       grid-template-columns: 1fr;
     }
-
-    .new-collection-row {
-      grid-template-columns: 1fr;
-    }
   }
 
   @keyframes rise {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes cardIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(4px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 </style>
