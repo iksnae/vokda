@@ -76,8 +76,12 @@ Authorization highlights:
 - Group-based elevated access for curation/admin data
 - Optional API key read access for published `CurationShelf`
 
-## 6. Next Integration Step
+## 6. Current Integration Status
 
-Current web app still uses local user-scoped storage for favorites/collections/cart.
+Favorites, collections, collection voices, and cart items now sync to Amplify Data for authenticated users.
 
-Next task: replace local persistence with Amplify Data client operations against the models above.
+Current behavior:
+- `visitor`: local-only browsing state
+- `guest` and higher: optimistic UI with Amplify Data persistence + cloud rehydration on sign-in
+
+Next task: migrate curation drafts and metadata overrides from local storage to Amplify Data-backed curator workflows.
