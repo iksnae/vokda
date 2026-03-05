@@ -576,6 +576,128 @@
       "providerVoiceId": "en-GB-RyanNeural"
     },
     {
+      "id": "01KK00XJY86YSY7K4GVZACPS1Y",
+      "name": "Chatterbox Turbo",
+      "provider": "Chatterbox",
+      "providerId": "chatterbox",
+      "providerVoiceId": "default",
+      "description": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "male",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (368M params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 368M · male",
+        "searchDescription": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control.",
+        "machineTags": [
+          "male",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00XJY8VJ2Y7WJBE76R3GRN",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00XJY8W23CK36APTVG5G9W",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:chatterbox:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KK00XMW22QSJDFXS66X6EY9H",
+      "name": "Dia",
+      "provider": "Dia",
+      "providerId": "dia",
+      "providerVoiceId": "default",
+      "description": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "female",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (1.6B params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 1.6B · female",
+        "searchDescription": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00XMW22052KS8CCGDXDD2B",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00XMW226AMKZRFF0X08H95",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:dia:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
       "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
       "name": "Mark",
       "provider": "ElevenLabs",
@@ -728,7 +850,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -742,7 +865,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -790,7 +914,8 @@
         "female",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -804,7 +929,8 @@
           "female",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -852,7 +978,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -866,7 +993,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -914,7 +1042,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -928,7 +1057,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -976,7 +1106,8 @@
         "male",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -990,7 +1121,8 @@
           "male",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1038,7 +1170,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1052,7 +1185,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1100,7 +1234,8 @@
         "female",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1114,7 +1249,8 @@
           "female",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1162,7 +1298,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1176,7 +1313,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1224,7 +1362,8 @@
         "male",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1238,7 +1377,8 @@
           "male",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1286,7 +1426,8 @@
         "male",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1300,7 +1441,8 @@
           "male",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1348,7 +1490,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1362,7 +1505,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1410,7 +1554,8 @@
         "female",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1424,7 +1569,8 @@
           "female",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1472,7 +1618,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1486,7 +1633,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1534,7 +1682,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1548,7 +1697,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1596,7 +1746,8 @@
         "male",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1610,7 +1761,8 @@
           "male",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1658,7 +1810,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1672,7 +1825,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1720,7 +1874,8 @@
         "female",
         "british",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-GB"
@@ -1734,7 +1889,8 @@
           "female",
           "british",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1782,7 +1938,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1796,7 +1953,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1844,7 +2002,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1858,7 +2017,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1906,7 +2066,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1920,7 +2081,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -1968,7 +2130,8 @@
         "male",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -1982,7 +2145,8 @@
           "male",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2030,7 +2194,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2044,7 +2209,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2092,7 +2258,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2106,7 +2273,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2154,7 +2322,8 @@
         "female",
         "american",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2168,7 +2337,8 @@
           "female",
           "american",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2206,6 +2376,128 @@
       ]
     },
     {
+      "id": "01KK00Y0G4PNGS13DQWVDQQAZ4",
+      "name": "OuteTTS 1.0",
+      "provider": "OuteTTS",
+      "providerId": "outetts",
+      "providerVoiceId": "default",
+      "description": "Llama-based text-to-speech. 1B parameter model with clear, articulate output. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "neutral",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (1B params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 1B · neutral",
+        "searchDescription": "Llama-based text-to-speech. 1B parameter model with clear, articulate output.",
+        "machineTags": [
+          "neutral",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00Y0G42DTMRJHKBRPTDTV8",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00Y0G4PNGS13DQWVDQQAZ4.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00Y0G4PYPPKS7Z9281YMMY",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:outetts:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KK00Y63ESEW8T9B9RSNQPQKN",
+      "name": "Pocket TTS",
+      "provider": "Pocket TTS",
+      "providerId": "pocket-tts",
+      "providerVoiceId": "default",
+      "description": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "female",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (~50M params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · ~50M · female",
+        "searchDescription": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00Y63E5R4JZBBBZ6A53AHR",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00Y63ESEW8T9B9RSNQPQKN.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00Y63EM3W55SNDMG2FBMHK",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:pocket-tts:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
       "id": "01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
       "name": "Aiden (Qwen3-TTS-1.7B)",
       "provider": "Qwen3 TTS",
@@ -2215,7 +2507,8 @@
       "tags": [
         "male",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2228,7 +2521,8 @@
         "machineTags": [
           "male",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2275,7 +2569,8 @@
       "tags": [
         "male",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2288,7 +2583,8 @@
         "machineTags": [
           "male",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2335,7 +2631,8 @@
       "tags": [
         "male",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2348,7 +2645,8 @@
         "machineTags": [
           "male",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2386,6 +2684,67 @@
       ]
     },
     {
+      "id": "01KK00Y948644NCCVZQNJMTAGA",
+      "name": "Qwen3 TTS 0.6B",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "default",
+      "description": "Compact 0.6B Qwen3 TTS base model. Multilingual with natural prosody. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "neutral",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (0.6B params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 0.6B · neutral",
+        "searchDescription": "Compact 0.6B Qwen3 TTS base model. Multilingual with natural prosody.",
+        "machineTags": [
+          "neutral",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00Y948GYDWNWRR6H02WK3Q",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00Y948644NCCVZQNJMTAGA.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00Y948YBHA2NK02KVMEY9H",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:qwen3-tts:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
       "id": "01KJZZ7WTF8ARDXF44ZBNJ69CS",
       "name": "Ryan (Qwen3-TTS-1.7B)",
       "provider": "Qwen3 TTS",
@@ -2395,7 +2754,8 @@
       "tags": [
         "male",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2408,7 +2768,8 @@
         "machineTags": [
           "male",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2455,7 +2816,8 @@
       "tags": [
         "female",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2468,7 +2830,8 @@
         "machineTags": [
           "female",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2515,7 +2878,8 @@
       "tags": [
         "female",
         "open-model",
-        "local"
+        "local",
+        "mlx"
       ],
       "languages": [
         "en-US"
@@ -2528,7 +2892,8 @@
         "machineTags": [
           "female",
           "open-model",
-          "local"
+          "local",
+          "mlx"
         ],
         "useCases": [],
         "toneTags": [
@@ -2566,12 +2931,195 @@
       ]
     },
     {
+      "id": "01KK00XHDBK8CFFY3MFNWSGQR9",
+      "name": "Soprano",
+      "provider": "Soprano",
+      "providerId": "soprano",
+      "providerVoiceId": "default",
+      "description": "Ultra-light 80M parameter TTS. Fast, natural female voice with clean articulation. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "female",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (80M params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 80M · female",
+        "searchDescription": "Ultra-light 80M parameter TTS. Fast, natural female voice with clean articulation.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00XHDB43B1881D1Q8ZNZ44",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00XHDBNZY39PPRM82V6Y7Z",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:soprano:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KK00Y7AN1W3DS5EBESXQV7XZ",
+      "name": "Spark TTS",
+      "provider": "Spark TTS",
+      "providerId": "spark-tts",
+      "providerVoiceId": "default",
+      "description": "SparkAudio voice-clone-capable TTS. Supports zero-shot speaker adaptation. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "female",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (500M params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · 500M · female",
+        "searchDescription": "SparkAudio voice-clone-capable TTS. Supports zero-shot speaker adaptation.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00Y7ANRDAR7CG9EMM8JZ4G",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00Y7AN27T92R8ST1WAPXNV",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:spark-tts:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KK00YB9ZA3BS7SRXRYGQ51J8",
+      "name": "VoxCPM 1.5",
+      "provider": "VoxCPM",
+      "providerId": "voxcpm",
+      "providerVoiceId": "default",
+      "description": "Chinese-first bilingual TTS with natural English output. Strong prosody and rhythm. Runs locally on Apple Silicon via MLX.",
+      "tags": [
+        "female",
+        "open-model",
+        "local",
+        "mlx"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (~900M params). Check model card for license terms.",
+      "metadata": {
+        "shortLabel": "MLX · ~900M · female",
+        "searchDescription": "Chinese-first bilingual TTS with natural English output. Strong prosody and rhythm.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local",
+          "mlx"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KK00YBA07EJFS6J7R787DBHT",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KK00YBA0B8M3FSZF3GWJCJJ4",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:voxcpm:default",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
       "id": "01KJZXZNF9GMQCNCRCPCQMDKN5",
       "name": "Amy",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "amy",
-      "description": "British English Female voice (Amy) \u2014 neural engine.",
+      "description": "British English Female voice (Amy) — neural engine.",
       "tags": [
         "female",
         "gb"
@@ -2583,7 +3131,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "British English Female voice (Amy) \u2014 neural engine.",
+        "searchDescription": "British English Female voice (Amy) — neural engine.",
         "machineTags": [
           "female",
           "gb"
@@ -2629,7 +3177,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "aria",
-      "description": "New Zealand English Female voice (Aria) \u2014 neural engine.",
+      "description": "New Zealand English Female voice (Aria) — neural engine.",
       "tags": [
         "female",
         "nz"
@@ -2641,7 +3189,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-NZ female voice",
-        "searchDescription": "New Zealand English Female voice (Aria) \u2014 neural engine.",
+        "searchDescription": "New Zealand English Female voice (Aria) — neural engine.",
         "machineTags": [
           "female",
           "nz"
@@ -2687,7 +3235,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "brian",
-      "description": "British English Male voice (Brian) \u2014 neural engine.",
+      "description": "British English Male voice (Brian) — neural engine.",
       "tags": [
         "male",
         "gb"
@@ -2699,7 +3247,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "British English Male voice (Brian) \u2014 neural engine.",
+        "searchDescription": "British English Male voice (Brian) — neural engine.",
         "machineTags": [
           "male",
           "gb"
@@ -2745,7 +3293,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "daniel",
-      "description": "German Male voice (Daniel) \u2014 neural engine.",
+      "description": "German Male voice (Daniel) — neural engine.",
       "tags": [
         "male",
         "de"
@@ -2757,7 +3305,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "de-DE male voice",
-        "searchDescription": "German Male voice (Daniel) \u2014 neural engine.",
+        "searchDescription": "German Male voice (Daniel) — neural engine.",
         "machineTags": [
           "male",
           "de"
@@ -2803,7 +3351,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "danielle",
-      "description": "US English Female voice (Danielle) \u2014 neural engine.",
+      "description": "US English Female voice (Danielle) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -2815,7 +3363,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Danielle) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Danielle) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -2861,7 +3409,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "gregory",
-      "description": "US English Male voice (Gregory) \u2014 neural engine.",
+      "description": "US English Male voice (Gregory) — neural engine.",
       "tags": [
         "male",
         "us"
@@ -2873,7 +3421,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Gregory) \u2014 neural engine.",
+        "searchDescription": "US English Male voice (Gregory) — neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -2919,7 +3467,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "ivy",
-      "description": "US English Female voice (Ivy) \u2014 neural engine.",
+      "description": "US English Female voice (Ivy) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -2931,7 +3479,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Ivy) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Ivy) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -2977,7 +3525,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "joey",
-      "description": "US English Male voice (Joey) \u2014 neural engine.",
+      "description": "US English Male voice (Joey) — neural engine.",
       "tags": [
         "male",
         "us"
@@ -2989,7 +3537,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Joey) \u2014 neural engine.",
+        "searchDescription": "US English Male voice (Joey) — neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -3035,7 +3583,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kajal",
-      "description": "Indian English Female voice (Kajal) \u2014 neural engine.",
+      "description": "Indian English Female voice (Kajal) — neural engine.",
       "tags": [
         "female",
         "in"
@@ -3047,7 +3595,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-IN female voice",
-        "searchDescription": "Indian English Female voice (Kajal) \u2014 neural engine.",
+        "searchDescription": "Indian English Female voice (Kajal) — neural engine.",
         "machineTags": [
           "female",
           "in"
@@ -3093,7 +3641,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kendra",
-      "description": "US English Female voice (Kendra) \u2014 neural engine.",
+      "description": "US English Female voice (Kendra) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -3105,7 +3653,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Kendra) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Kendra) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -3151,7 +3699,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kimberly",
-      "description": "US English Female voice (Kimberly) \u2014 neural engine.",
+      "description": "US English Female voice (Kimberly) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -3163,7 +3711,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Kimberly) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Kimberly) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -3209,7 +3757,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "liam",
-      "description": "Canadian French Male voice (Liam) \u2014 neural engine.",
+      "description": "Canadian French Male voice (Liam) — neural engine.",
       "tags": [
         "male",
         "ca"
@@ -3221,7 +3769,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "fr-CA male voice",
-        "searchDescription": "Canadian French Male voice (Liam) \u2014 neural engine.",
+        "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
         "machineTags": [
           "male",
           "ca"
@@ -3267,7 +3815,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "olivia",
-      "description": "Australian English Female voice (Olivia) \u2014 neural engine.",
+      "description": "Australian English Female voice (Olivia) — neural engine.",
       "tags": [
         "female",
         "au"
@@ -3279,7 +3827,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Australian English Female voice (Olivia) \u2014 neural engine.",
+        "searchDescription": "Australian English Female voice (Olivia) — neural engine.",
         "machineTags": [
           "female",
           "au"
@@ -3325,7 +3873,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "ruth",
-      "description": "US English Female voice (Ruth) \u2014 neural engine.",
+      "description": "US English Female voice (Ruth) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -3337,7 +3885,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Ruth) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Ruth) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -3383,7 +3931,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "salli",
-      "description": "US English Female voice (Salli) \u2014 neural engine.",
+      "description": "US English Female voice (Salli) — neural engine.",
       "tags": [
         "female",
         "us"
@@ -3395,7 +3943,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Salli) \u2014 neural engine.",
+        "searchDescription": "US English Female voice (Salli) — neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -3441,7 +3989,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "stephen",
-      "description": "US English Male voice (Stephen) \u2014 neural engine.",
+      "description": "US English Male voice (Stephen) — neural engine.",
       "tags": [
         "male",
         "us"
@@ -3453,7 +4001,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Stephen) \u2014 neural engine.",
+        "searchDescription": "US English Male voice (Stephen) — neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -6039,7 +6587,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-A",
-      "description": "Google en-AU-Neural2-A \u2014 Female en-AU voice.",
+      "description": "Google en-AU-Neural2-A — Female en-AU voice.",
       "tags": [
         "female",
         "au"
@@ -6051,7 +6599,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Google en-AU-Neural2-A \u2014 Female en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-A — Female en-AU voice.",
         "machineTags": [
           "female",
           "au"
@@ -6096,7 +6644,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-B",
-      "description": "Google en-AU-Neural2-B \u2014 Male en-AU voice.",
+      "description": "Google en-AU-Neural2-B — Male en-AU voice.",
       "tags": [
         "male",
         "au"
@@ -6108,7 +6656,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU male voice",
-        "searchDescription": "Google en-AU-Neural2-B \u2014 Male en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-B — Male en-AU voice.",
         "machineTags": [
           "male",
           "au"
@@ -6153,7 +6701,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-C",
-      "description": "Google en-AU-Neural2-C \u2014 Female en-AU voice.",
+      "description": "Google en-AU-Neural2-C — Female en-AU voice.",
       "tags": [
         "female",
         "au"
@@ -6165,7 +6713,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Google en-AU-Neural2-C \u2014 Female en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-C — Female en-AU voice.",
         "machineTags": [
           "female",
           "au"
@@ -6210,7 +6758,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-D",
-      "description": "Google en-AU-Neural2-D \u2014 Male en-AU voice.",
+      "description": "Google en-AU-Neural2-D — Male en-AU voice.",
       "tags": [
         "male",
         "au"
@@ -6222,7 +6770,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU male voice",
-        "searchDescription": "Google en-AU-Neural2-D \u2014 Male en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-D — Male en-AU voice.",
         "machineTags": [
           "male",
           "au"
@@ -6267,7 +6815,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-A",
-      "description": "Google en-GB-Neural2-A \u2014 Female en-GB voice.",
+      "description": "Google en-GB-Neural2-A — Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -6279,7 +6827,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-A \u2014 Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-A — Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -6324,7 +6872,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-B",
-      "description": "Google en-GB-Neural2-B \u2014 Male en-GB voice.",
+      "description": "Google en-GB-Neural2-B — Male en-GB voice.",
       "tags": [
         "male",
         "gb"
@@ -6336,7 +6884,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "Google en-GB-Neural2-B \u2014 Male en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-B — Male en-GB voice.",
         "machineTags": [
           "male",
           "gb"
@@ -6381,7 +6929,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-C",
-      "description": "Google en-GB-Neural2-C \u2014 Female en-GB voice.",
+      "description": "Google en-GB-Neural2-C — Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -6393,7 +6941,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-C \u2014 Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-C — Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -6438,7 +6986,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-D",
-      "description": "Google en-GB-Neural2-D \u2014 Male en-GB voice.",
+      "description": "Google en-GB-Neural2-D — Male en-GB voice.",
       "tags": [
         "male",
         "gb"
@@ -6450,7 +6998,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "Google en-GB-Neural2-D \u2014 Male en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-D — Male en-GB voice.",
         "machineTags": [
           "male",
           "gb"
@@ -6495,7 +7043,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-F",
-      "description": "Google en-GB-Neural2-F \u2014 Female en-GB voice.",
+      "description": "Google en-GB-Neural2-F — Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -6507,7 +7055,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-F \u2014 Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-F — Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -6552,7 +7100,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-D",
-      "description": "Google en-US-Journey-D \u2014 Male en-US voice.",
+      "description": "Google en-US-Journey-D — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -6564,7 +7112,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Journey-D \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Journey-D — Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -6609,7 +7157,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-F",
-      "description": "Google en-US-Journey-F \u2014 Female en-US voice.",
+      "description": "Google en-US-Journey-F — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -6621,7 +7169,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Journey-F \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Journey-F — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -6666,7 +7214,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-O",
-      "description": "Google en-US-Journey-O \u2014 Female en-US voice.",
+      "description": "Google en-US-Journey-O — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -6678,7 +7226,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Journey-O \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Journey-O — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -6723,7 +7271,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-A",
-      "description": "Google en-US-Neural2-A \u2014 Male en-US voice.",
+      "description": "Google en-US-Neural2-A — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -6735,7 +7283,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-A \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-A — Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -6780,7 +7328,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-C",
-      "description": "Google en-US-Neural2-C \u2014 Female en-US voice.",
+      "description": "Google en-US-Neural2-C — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -6792,7 +7340,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-C \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-C — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -6837,7 +7385,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-D",
-      "description": "Google en-US-Neural2-D \u2014 Male en-US voice.",
+      "description": "Google en-US-Neural2-D — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -6849,7 +7397,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-D \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-D — Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -6894,7 +7442,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-E",
-      "description": "Google en-US-Neural2-E \u2014 Female en-US voice.",
+      "description": "Google en-US-Neural2-E — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -6906,7 +7454,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-E \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-E — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -6951,7 +7499,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-F",
-      "description": "Google en-US-Neural2-F \u2014 Female en-US voice.",
+      "description": "Google en-US-Neural2-F — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -6963,7 +7511,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-F \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-F — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7008,7 +7556,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-G",
-      "description": "Google en-US-Neural2-G \u2014 Female en-US voice.",
+      "description": "Google en-US-Neural2-G — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -7020,7 +7568,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-G \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-G — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7065,7 +7613,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-H",
-      "description": "Google en-US-Neural2-H \u2014 Female en-US voice.",
+      "description": "Google en-US-Neural2-H — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -7077,7 +7625,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-H \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-H — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7122,7 +7670,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-I",
-      "description": "Google en-US-Neural2-I \u2014 Male en-US voice.",
+      "description": "Google en-US-Neural2-I — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -7134,7 +7682,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-I \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-I — Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -7179,7 +7727,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-News-K",
-      "description": "Google en-US-News-K \u2014 Female en-US voice.",
+      "description": "Google en-US-News-K — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -7191,7 +7739,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-News-K \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-News-K — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7236,7 +7784,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-News-L",
-      "description": "Google en-US-News-L \u2014 Female en-US voice.",
+      "description": "Google en-US-News-L — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -7248,7 +7796,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-News-L \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-News-L — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7293,7 +7841,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-M",
-      "description": "Google en-US-Studio-M \u2014 Male en-US voice.",
+      "description": "Google en-US-Studio-M — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -7305,7 +7853,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Studio-M \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Studio-M — Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -7350,7 +7898,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-O",
-      "description": "Google en-US-Studio-O \u2014 Female en-US voice.",
+      "description": "Google en-US-Studio-O — Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -7362,7 +7910,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Studio-O \u2014 Female en-US voice.",
+        "searchDescription": "Google en-US-Studio-O — Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -7407,7 +7955,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-Q",
-      "description": "Google en-US-Studio-Q \u2014 Male en-US voice.",
+      "description": "Google en-US-Studio-Q — Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -7419,7 +7967,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Studio-Q \u2014 Male en-US voice.",
+        "searchDescription": "Google en-US-Studio-Q — Male en-US voice.",
         "machineTags": [
           "male",
           "us"

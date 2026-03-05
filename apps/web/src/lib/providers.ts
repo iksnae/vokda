@@ -48,6 +48,48 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'Qwen3 TTS',
     type: 'open_model',
     websiteUrl: 'https://huggingface.co/Qwen/Qwen3-TTS'
+  },
+  {
+    id: 'soprano',
+    name: 'Soprano',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/SWivid/Soprano-80M'
+  },
+  {
+    id: 'chatterbox',
+    name: 'Chatterbox',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/resemble-ai/chatterbox'
+  },
+  {
+    id: 'dia',
+    name: 'Dia',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/nari-labs/Dia-1.6B'
+  },
+  {
+    id: 'outetts',
+    name: 'OuteTTS',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B'
+  },
+  {
+    id: 'pocket-tts',
+    name: 'Pocket TTS',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/ShoukanLabs/pocket-tts'
+  },
+  {
+    id: 'spark-tts',
+    name: 'Spark TTS',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/SparkAudio/Spark-TTS-0.5B'
+  },
+  {
+    id: 'voxcpm',
+    name: 'VoxCPM',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/openbmb/VoxCPM1.5'
   }
 ];
 

@@ -46,6 +46,41 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#e0f7fa',
     border: '#80deea',
     text: '#006064'
+  },
+  soprano: {
+    bg: '#f3e5f5',
+    border: '#ce93d8',
+    text: '#6a1b9a'
+  },
+  chatterbox: {
+    bg: '#e8eaf6',
+    border: '#9fa8da',
+    text: '#283593'
+  },
+  dia: {
+    bg: '#fff3e0',
+    border: '#ffcc80',
+    text: '#e65100'
+  },
+  outetts: {
+    bg: '#e0f2f1',
+    border: '#80cbc4',
+    text: '#004d40'
+  },
+  'pocket-tts': {
+    bg: '#fce4ec',
+    border: '#f48fb1',
+    text: '#880e4f'
+  },
+  'spark-tts': {
+    bg: '#fff8e1',
+    border: '#ffe082',
+    text: '#f57f17'
+  },
+  voxcpm: {
+    bg: '#e8f5e9',
+    border: '#a5d6a7',
+    text: '#2e7d32'
   }
 };
 
