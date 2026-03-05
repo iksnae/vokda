@@ -184,15 +184,17 @@
   main {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0.6rem 1rem 3rem;
+    padding: 0.85rem 1rem 3rem;
+    animation: slideIn 320ms ease;
   }
 
   .panel {
     margin-top: 0.9rem;
-    border: 1px solid #c3d1de;
-    border-radius: 14px;
-    background: #fff;
+    border: 1px solid var(--stroke-soft);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff 0%, #fbfdfe 100%);
     padding: 0.85rem;
+    box-shadow: 0 10px 22px rgba(17, 39, 57, 0.08);
   }
 
   h1,
@@ -228,8 +230,8 @@
   }
 
   input {
-    border: 1px solid #bdcbd9;
-    border-radius: 10px;
+    border: 1px solid #c1d2df;
+    border-radius: 12px;
     padding: 0.48rem 0.6rem;
     font-size: 0.95rem;
   }
@@ -242,9 +244,9 @@
 
   button {
     border: none;
-    border-radius: 10px;
+    border-radius: 11px;
     padding: 0.48rem 0.78rem;
-    background: #1f5f7f;
+    background: linear-gradient(154deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
     font-weight: 650;
     cursor: pointer;
@@ -262,9 +264,20 @@
   }
 
   .status {
-    border: 1px solid #d2ddeb;
-    border-radius: 10px;
-    background: #f6f9fc;
+    border: 1px solid #ceddeb;
+    border-radius: 11px;
+    background: #edf5fb;
     padding: 0.45rem 0.55rem;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

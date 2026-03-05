@@ -187,16 +187,18 @@
   main {
     max-width: 980px;
     margin: 0 auto;
-    padding: 0.6rem 1rem 3rem;
+    padding: 0.85rem 1rem 3rem;
+    animation: reveal 320ms ease;
   }
 
   .panel,
   .blocked {
     margin-top: 0.8rem;
-    border: 1px solid #c3d1de;
-    border-radius: 14px;
-    background: #fff;
+    border: 1px solid var(--stroke-soft);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff 0%, #fbfdfe 100%);
     padding: 0.85rem;
+    box-shadow: 0 10px 22px rgba(17, 39, 57, 0.08);
   }
 
   .blocked {
@@ -222,8 +224,8 @@
   select,
   textarea,
   input {
-    border: 1px solid #b5c4d3;
-    border-radius: 10px;
+    border: 1px solid #bfd0de;
+    border-radius: 12px;
     padding: 0.55rem 0.7rem;
     background: #fff;
     font-size: 0.95rem;
@@ -239,9 +241,9 @@
   button {
     margin-top: 0.7rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 11px;
     padding: 0.52rem 0.82rem;
-    background: #1f5f7f;
+    background: linear-gradient(154deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
     font-weight: 650;
     cursor: pointer;
@@ -251,5 +253,16 @@
     margin-top: 0.8rem;
     color: #1d5a39;
     font-weight: 650;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

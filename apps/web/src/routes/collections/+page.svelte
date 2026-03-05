@@ -119,7 +119,16 @@
   main {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0.7rem 1rem 3rem;
+    padding: 0.85rem 1rem 3rem;
+    animation: appear 320ms ease;
+  }
+
+  .header {
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--stroke-soft);
+    border-radius: 20px;
+    background: linear-gradient(148deg, #f8fbfd 0%, #eef4f8 100%);
+    box-shadow: var(--elev-1);
   }
 
   .header h1 {
@@ -145,12 +154,13 @@
   }
 
   article {
-    border: 1px solid #c2d1de;
-    border-radius: 16px;
-    background: #fff;
+    border: 1px solid #cad9e5;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fff 0%, #fafcfd 100%);
     padding: 0.95rem;
     display: grid;
     gap: 0.8rem;
+    box-shadow: 0 10px 24px rgba(16, 40, 59, 0.08);
   }
 
   header {
@@ -182,8 +192,8 @@
   input,
   select,
   textarea {
-    border: 1px solid #b7c7d6;
-    border-radius: 10px;
+    border: 1px solid #c0d1df;
+    border-radius: 12px;
     padding: 0.55rem 0.72rem;
     background: #fff;
     font-size: 0.94rem;
@@ -206,9 +216,9 @@
   }
 
   li {
-    border: 1px solid #d6e1ec;
+    border: 1px solid #d4e1eb;
     border-radius: 12px;
-    background: #f9fbff;
+    background: #f5f9fc;
     padding: 0.68rem;
     display: flex;
     justify-content: space-between;
@@ -241,9 +251,9 @@
 
   button {
     border: none;
-    border-radius: 10px;
+    border-radius: 11px;
     padding: 0.5rem 0.8rem;
-    background: #1e5b7b;
+    background: linear-gradient(152deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
     font-weight: 650;
     cursor: pointer;
@@ -253,6 +263,17 @@
     background: #eff4f8;
     color: #2f4760;
     border: 1px solid #bdccda;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (max-width: 760px) {

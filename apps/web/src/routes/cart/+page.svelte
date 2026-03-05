@@ -94,14 +94,18 @@
   main {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 0.6rem 1rem 3rem;
+    padding: 0.85rem 1rem 3rem;
+    animation: reveal 320ms ease;
   }
 
   .hero {
-    border: 1px solid #c6d4e1;
-    border-radius: 16px;
-    padding: 1rem;
-    background: linear-gradient(145deg, #f7fbff 0%, #edf4fa 100%);
+    border: 1px solid var(--stroke-soft);
+    border-radius: 20px;
+    padding: 1.05rem;
+    background:
+      radial-gradient(circle at 100% 0%, #dbeef5 0%, transparent 34%),
+      linear-gradient(148deg, #f8fbfd 0%, #eef4f8 100%);
+    box-shadow: var(--elev-1);
   }
 
   h1 {
@@ -121,8 +125,8 @@
   }
 
   .stats article {
-    background: #ffffffc6;
-    border: 1px solid #cedce8;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid #cfdce8;
     border-radius: 12px;
     padding: 0.6rem;
   }
@@ -146,13 +150,14 @@
   }
 
   li {
-    border: 1px solid #c5d3df;
-    border-radius: 14px;
-    background: #fff;
+    border: 1px solid #cad8e3;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff 0%, #fbfdfe 100%);
     padding: 0.9rem;
     display: flex;
     justify-content: space-between;
     gap: 0.8rem;
+    box-shadow: 0 10px 22px rgba(16, 39, 57, 0.08);
   }
 
   .provider {
@@ -201,9 +206,9 @@
 
   button {
     border: none;
-    border-radius: 10px;
+    border-radius: 11px;
     padding: 0.52rem 0.82rem;
-    background: #1f5f7f;
+    background: linear-gradient(154deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
     font-weight: 650;
     cursor: pointer;
@@ -213,5 +218,16 @@
     background: #eff4f8;
     color: #2e4860;
     border: 1px solid #bdcbd9;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
