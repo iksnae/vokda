@@ -28,7 +28,7 @@
     <nav>
       <a href="/">Find</a>
       {#if $roleFlags.isGuest}
-        <a href="/collections">Collections ({$collections.length + 1})</a>
+        <a href="/collections">Collections ({$collections.length})</a>
       {/if}
       {#if $roleFlags.isGuest}
         <a href="/?favorites=1">Starred ({$favoritesCount})</a>
