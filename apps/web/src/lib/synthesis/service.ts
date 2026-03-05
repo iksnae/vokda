@@ -2,6 +2,7 @@ import { browser } from '$app/environment';
 import { normalizePreviewInput } from './constraints';
 import { resolveAdapter } from './registry';
 import type { SynthesisPreview, SynthesisRequest } from './types';
+import { getAuthSnapshot } from '$lib/auth/store';
 
 const SYNTH_MODE = (import.meta.env.PUBLIC_SYNTH_MODE as string | undefined) ?? 'mock';
 const SYNTH_GATEWAY_URL = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string | undefined) ?? '';
@@ -11,9 +12,15 @@ async function runGatewayPreview(request: SynthesisRequest): Promise<SynthesisPr
     throw new Error('Gateway mode requires PUBLIC_SYNTH_GATEWAY_URL.');
   }
 
+  const authSnapshot = getAuthSnapshot();
+  const token = authSnapshot.accessToken || authSnapshot.idToken || 'mock-guest-token';
+
   const response = await fetch(SYNTH_GATEWAY_URL, {
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: {
+      'content-type': 'application/json',
+      authorization: `Bearer ${token}`
+    },
     body: JSON.stringify({
       sourceKey: request.variant.sourceKey,
       variantId: request.variant.id,

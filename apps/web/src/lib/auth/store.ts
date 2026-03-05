@@ -107,6 +107,20 @@ export const auth = {
   subscribe: authState.subscribe
 };
 
+export function getAuthSnapshot(): AuthState {
+  let snapshot: AuthState = {
+    isAuthenticated: false,
+    isReady: true,
+    user: null
+  };
+
+  authState.subscribe((value) => {
+    snapshot = value;
+  })();
+
+  return snapshot;
+}
+
 export const currentUser = derived(authState, ($auth) => $auth.user);
 export const isAuthenticated = derived(authState, ($auth) => $auth.isAuthenticated);
 export const isAuthReady = derived(authState, ($auth) => $auth.isReady);

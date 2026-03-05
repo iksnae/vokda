@@ -35,6 +35,16 @@ SvelteKit frontend for catalog browsing and early curation UX.
   - Required when `PUBLIC_SYNTH_MODE=gateway`
   - Expected endpoint: `POST` JSON payload for audition synthesis
 
+### Local Gateway Mode
+
+1. Start API:
+   - `npm run dev:api`
+2. Configure web env:
+   - `PUBLIC_SYNTH_MODE=gateway`
+   - `PUBLIC_SYNTH_GATEWAY_URL=http://127.0.0.1:8787/v1/synthesize/preview`
+3. Start web:
+   - `npm run dev:web`
+
 ## Catalog Contract (Current)
 
 Catalog is currently managed in JSON at:
