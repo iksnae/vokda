@@ -30,7 +30,7 @@
   let duration = 0;
   let audioReady = false;
 
-  $: sampleAudioUrl = voice?.samples[0]?.audioUrl ?? null;
+  $: sampleAudioUrl = voice?.samples[0]?.audioUrl ?? voice?.audioUrl ?? null;
   $: sampleTranscript = voice?.samples[0]?.transcript ?? '';
 
   function togglePlay() {

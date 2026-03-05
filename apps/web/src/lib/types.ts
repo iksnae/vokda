@@ -102,6 +102,7 @@ export type Voice = {
   metadata: VoiceMetadata;
   modelCard?: VoiceModelCard;
   imageUrl?: string;
+  audioUrl?: string;
   samples: VoiceSample[];
   variants: VoiceVariant[];
 };

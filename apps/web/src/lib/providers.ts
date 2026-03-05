@@ -114,6 +114,12 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'Bark',
     type: 'open_model',
     websiteUrl: 'https://github.com/suno-ai/bark'
+  },
+  {
+    id: 'gemini-tts',
+    name: 'Gemini TTS',
+    type: 'cloud_provider',
+    websiteUrl: 'https://ai.google.dev/gemini-api/docs/speech-generation'
   }
 ];
 

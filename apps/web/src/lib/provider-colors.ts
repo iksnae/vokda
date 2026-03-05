@@ -101,6 +101,11 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#fff3e0',
     border: '#ffb74d',
     text: '#e65100'
+  },
+  'gemini-tts': {
+    bg: '#e8f0fe',
+    border: '#669df6',
+    text: '#1967d2'
   }
 };
 

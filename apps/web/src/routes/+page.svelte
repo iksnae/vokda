@@ -316,7 +316,7 @@
     {#each filtered as voice (voice.id)}
       {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
       {@const isFav = $favorites.includes(voice.id)}
-      {@const sampleUrl = voice.samples[0]?.audioUrl}
+      {@const sampleUrl = voice.samples[0]?.audioUrl ?? voice.audioUrl}
       {@const isPlaying = playingVoiceId === voice.id}
       <article>
         <!-- Play button hero area -->
