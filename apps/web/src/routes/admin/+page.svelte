@@ -1,9 +1,14 @@
 <script lang="ts">
   import { roleFlags, getAuthSnapshot, refreshAuthRoles } from '$lib/auth/store';
-  import { addProvider, providerCatalog } from '$lib/stores/app-state';
+  import { addProvider, providerCatalog, removeProvider, updateProvider } from '$lib/stores/app-state';
   import type { ProviderDefinition } from '$lib/types';
 
   type ManagedRole = 'guest' | 'curator' | 'admin';
+  type ProviderDraft = {
+    name: string;
+    type: ProviderDefinition['type'];
+    websiteUrl: string;
+  };
 
   const API_BASE_URL =
     (import.meta.env.PUBLIC_API_BASE_URL as string | undefined) ??
@@ -12,7 +17,8 @@
       : 'http://127.0.0.1:8787');
 
   let email = '';
-  let status = '';
+  let roleStatus = '';
+  let providerStatus = '';
   let loading = false;
   let current: {
     username: string;
@@ -28,6 +34,46 @@
   let providerId = '';
   let providerType: ProviderDefinition['type'] = 'cloud_provider';
   let providerWebsite = '';
+  let providerDrafts: Record<string, ProviderDraft> = {};
+
+  function getProviderDraft(provider: ProviderDefinition): ProviderDraft {
+    return (
+      providerDrafts[provider.id] ?? {
+        name: provider.name,
+        type: provider.type,
+        websiteUrl: provider.websiteUrl ?? ''
+      }
+    );
+  }
+
+  function setProviderDraft(
+    provider: ProviderDefinition,
+    patch: Partial<ProviderDraft>
+  ) {
+    const currentDraft = getProviderDraft(provider);
+    providerDrafts = {
+      ...providerDrafts,
+      [provider.id]: {
+        ...currentDraft,
+        ...patch
+      }
+    };
+  }
+
+  function onProviderNameInput(provider: ProviderDefinition, event: Event) {
+    const target = event.currentTarget as HTMLInputElement;
+    setProviderDraft(provider, { name: target.value });
+  }
+
+  function onProviderTypeChange(provider: ProviderDefinition, event: Event) {
+    const target = event.currentTarget as HTMLSelectElement;
+    setProviderDraft(provider, { type: target.value as ProviderDefinition['type'] });
+  }
+
+  function onProviderWebsiteInput(provider: ProviderDefinition, event: Event) {
+    const target = event.currentTarget as HTMLInputElement;
+    setProviderDraft(provider, { websiteUrl: target.value });
+  }
 
   async function apiRequest(path: string, init: RequestInit) {
     const token = getAuthSnapshot().accessToken || getAuthSnapshot().idToken;
@@ -57,7 +103,7 @@
     if (!email.trim()) return;
 
     loading = true;
-    status = '';
+    roleStatus = '';
 
     try {
       const payload = (await apiRequest(`/v1/admin/users?email=${encodeURIComponent(email.trim())}`, {
@@ -79,10 +125,10 @@
         : payload.user.roles.includes('curator')
           ? 'curator'
           : 'guest';
-      status = 'User loaded.';
+      roleStatus = 'User loaded.';
     } catch (error) {
       current = null;
-      status = error instanceof Error ? error.message : 'Lookup failed.';
+      roleStatus = error instanceof Error ? error.message : 'Lookup failed.';
     } finally {
       loading = false;
     }
@@ -92,7 +138,7 @@
     if (!current) return;
 
     loading = true;
-    status = '';
+    roleStatus = '';
 
     try {
       const rolePayload: Record<ManagedRole, ManagedRole[]> = {
@@ -119,10 +165,10 @@
       };
 
       current = payload.user;
-      status = `Role updated to ${selectedRole}.`;
+      roleStatus = `Role updated to ${selectedRole}.`;
       await refreshAuthRoles();
     } catch (error) {
-      status = error instanceof Error ? error.message : 'Role update failed.';
+      roleStatus = error instanceof Error ? error.message : 'Role update failed.';
     } finally {
       loading = false;
     }
@@ -130,7 +176,7 @@
 
   function createProvider() {
     if (!providerName.trim()) {
-      status = 'Provider name is required.';
+      providerStatus = 'Provider name is required.';
       return;
     }
 
@@ -141,15 +187,41 @@
       websiteUrl: providerWebsite.trim() || undefined
     });
 
-    status = created
-      ? `Provider "${providerName.trim()}" added to curation catalog.`
-      : 'Provider could not be added. Check admin role or duplicate provider ID.';
+    providerStatus = created
+      ? `Provider "${providerName.trim()}" added.`
+      : 'Provider add failed. Check duplicate ID or admin role.';
 
     if (created) {
       providerName = '';
       providerId = '';
       providerWebsite = '';
       providerType = 'cloud_provider';
+    }
+  }
+
+  function saveProvider(provider: ProviderDefinition) {
+    const draft = getProviderDraft(provider);
+    const updated = updateProvider(provider.id, {
+      name: draft.name,
+      type: draft.type,
+      websiteUrl: draft.websiteUrl.trim() || undefined
+    });
+
+    providerStatus = updated
+      ? `Provider "${draft.name.trim()}" saved.`
+      : 'Provider update failed. Check admin role and required fields.';
+  }
+
+  function deleteProvider(provider: ProviderDefinition) {
+    const removed = removeProvider(provider.id);
+    providerStatus = removed
+      ? `Provider "${provider.name}" deleted.`
+      : 'Provider delete failed. Keep at least one provider in catalog.';
+
+    if (removed) {
+      const nextDrafts = { ...providerDrafts };
+      delete nextDrafts[provider.id];
+      providerDrafts = nextDrafts;
     }
   }
 </script>
@@ -159,18 +231,17 @@
 </svelte:head>
 
 <main>
-  <h1>Admin Control</h1>
+  <h1>Admin</h1>
 
   {#if !$roleFlags.isAdmin}
     <p class="blocked">Access restricted. Admin tier is required.</p>
   {:else}
     <section class="panel">
-      <h2>User Role Management</h2>
-      <p>Find a user by email and apply role tier mapping to Cognito groups.</p>
+      <h2>User Roles</h2>
 
       <div class="controls">
         <label>
-          User email
+          Email
           <input bind:value={email} type="email" placeholder="user@domain.com" />
         </label>
         <button class="ghost" on:click={lookupUser} disabled={loading || !email.trim()}>Lookup</button>
@@ -181,43 +252,42 @@
           <p><strong>Username:</strong> {current.username}</p>
           <p><strong>Email:</strong> {current.email}</p>
           <p><strong>Status:</strong> {current.status ?? 'UNKNOWN'} | enabled={current.enabled ? 'yes' : 'no'}</p>
-          <p><strong>Current groups:</strong> {current.groups.join(', ') || '(none)'}</p>
-          <p><strong>Current roles:</strong> {current.roles.join(', ')}</p>
+          <p><strong>Groups:</strong> {current.groups.join(', ') || '(none)'}</p>
+          <p><strong>Roles:</strong> {current.roles.join(', ')}</p>
         </div>
 
         <div class="controls">
           <label>
-            Assign role tier
+            Role tier
             <select bind:value={selectedRole}>
               <option value="guest">Guest</option>
               <option value="curator">Curator</option>
               <option value="admin">Admin</option>
             </select>
           </label>
-          <button on:click={applyRole} disabled={loading}>Apply Role</button>
+          <button on:click={applyRole} disabled={loading}>Apply</button>
         </div>
       {/if}
 
-      {#if status}
-        <p class="status">{status}</p>
+      {#if roleStatus}
+        <p class="status">{roleStatus}</p>
       {/if}
     </section>
 
     <section class="panel">
-      <h2>Provider Catalog</h2>
-      <p>Manage predefined providers used by the curation picker.</p>
+      <h2>Providers</h2>
 
-      <div class="controls">
+      <div class="controls create-row">
         <label>
-          Provider name
+          Name
           <input bind:value={providerName} placeholder="Acme Voices" />
         </label>
         <label>
-          Provider ID (optional)
+          ID
           <input bind:value={providerId} placeholder="acme-voices" />
         </label>
         <label>
-          Provider type
+          Type
           <select bind:value={providerType}>
             <option value="cloud_provider">cloud_provider</option>
             <option value="open_model">open_model</option>
@@ -226,30 +296,68 @@
           </select>
         </label>
         <label>
-          Website URL (optional)
+          Website
           <input bind:value={providerWebsite} placeholder="https://example.com" />
         </label>
-        <button on:click={createProvider}>Add Provider</button>
+        <button on:click={createProvider}>Create</button>
       </div>
 
-      <div class="summary">
-        <p><strong>Available providers:</strong> {$providerCatalog.length}</p>
+      <div class="provider-grid">
         {#each $providerCatalog as provider}
-          <p>
-            <strong>{provider.name}</strong> ({provider.id}) · {provider.type}
-            {#if provider.websiteUrl}
-              · <a href={provider.websiteUrl} target="_blank" rel="noreferrer">{provider.websiteUrl}</a>
-            {/if}
-          </p>
+          {@const draft = getProviderDraft(provider)}
+          <article class="provider-card">
+            <label>
+              Name
+              <input
+                value={draft.name}
+                on:input={(event) => onProviderNameInput(provider, event)}
+              />
+            </label>
+
+            <label>
+              ID
+              <input value={provider.id} disabled />
+            </label>
+
+            <label>
+              Type
+              <select
+                value={draft.type}
+                on:change={(event) => onProviderTypeChange(provider, event)}
+              >
+                <option value="cloud_provider">cloud_provider</option>
+                <option value="open_model">open_model</option>
+                <option value="self_hosted">self_hosted</option>
+                <option value="other">other</option>
+              </select>
+            </label>
+
+            <label>
+              Website
+              <input
+                value={draft.websiteUrl}
+                on:input={(event) => onProviderWebsiteInput(provider, event)}
+              />
+            </label>
+
+            <div class="card-actions">
+              <button on:click={() => saveProvider(provider)}>Save</button>
+              <button class="ghost" on:click={() => deleteProvider(provider)}>Delete</button>
+            </div>
+          </article>
         {/each}
       </div>
+
+      {#if providerStatus}
+        <p class="status">{providerStatus}</p>
+      {/if}
     </section>
   {/if}
 </main>
 
 <style>
   main {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 0.85rem 1rem 3rem;
     animation: reveal 320ms ease;
@@ -279,8 +387,9 @@
 
   p,
   .controls,
-  .summary {
-    margin-top: 0.45rem;
+  .summary,
+  .provider-grid {
+    margin-top: 0.5rem;
   }
 
   .controls {
@@ -290,10 +399,36 @@
     flex-wrap: wrap;
   }
 
+  .create-row {
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid #d7e2ec;
+  }
+
+  .provider-grid {
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .provider-card {
+    border: 1px solid #cfdae4;
+    border-radius: 12px;
+    padding: 0.6rem;
+    background: #f8fbfd;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .card-actions {
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
   label {
     display: grid;
     gap: 0.3rem;
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     font-weight: 600;
   }
 
@@ -304,6 +439,11 @@
     padding: 0.5rem 0.65rem;
     background: #fff;
     font-size: 0.95rem;
+  }
+
+  input:disabled {
+    background: #f0f3f6;
+    color: #51657b;
   }
 
   button {

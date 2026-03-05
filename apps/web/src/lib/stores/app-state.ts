@@ -337,6 +337,71 @@ export function addProvider(definition: Omit<ProviderDefinition, 'id'> & { id?: 
   return added;
 }
 
+export function updateProvider(
+  providerId: string,
+  patch: {
+    name: string;
+    type: ProviderDefinition['type'];
+    websiteUrl?: string;
+  }
+): boolean {
+  const roles = getAuthSnapshot().user?.roles ?? [];
+  if (!roles.includes('admin')) return false;
+
+  const targetId = normalizeProviderId(providerId);
+  if (!targetId || !patch.name.trim()) return false;
+
+  let updated = false;
+
+  appState.update((state) => {
+    const nextProviders = state.providerCatalog.map((provider) => {
+      if (provider.id !== targetId) return provider;
+      updated = true;
+      return {
+        ...provider,
+        name: patch.name.trim(),
+        type: patch.type,
+        websiteUrl: patch.websiteUrl?.trim() || undefined
+      };
+    });
+
+    if (!updated) return state;
+    return { ...state, providerCatalog: nextProviders };
+  });
+
+  if (updated) {
+    queueCurationSync();
+  }
+
+  return updated;
+}
+
+export function removeProvider(providerId: string): boolean {
+  const roles = getAuthSnapshot().user?.roles ?? [];
+  if (!roles.includes('admin')) return false;
+
+  const targetId = normalizeProviderId(providerId);
+  if (!targetId) return false;
+
+  let removed = false;
+
+  appState.update((state) => {
+    if (state.providerCatalog.length <= 1) return state;
+
+    const nextProviders = state.providerCatalog.filter((provider) => provider.id !== targetId);
+    if (nextProviders.length === state.providerCatalog.length) return state;
+
+    removed = true;
+    return { ...state, providerCatalog: nextProviders };
+  });
+
+  if (removed) {
+    queueCurationSync();
+  }
+
+  return removed;
+}
+
 export function createCollection(name: string) {
   const trimmed = name.trim();
   if (!trimmed) return;

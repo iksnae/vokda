@@ -2,6 +2,7 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import {
+    addToCart,
     customVoices,
     favorites,
     metadataOverrides,
@@ -20,6 +21,7 @@
   let runnableOnly = false;
   let ssmlOnly = false;
   let onlyFavorites = false;
+  let selectedCardId = '';
 
   onMount(() => {
     if (!browser) return;
@@ -36,6 +38,16 @@
 
   function sourceLabel(source: string) {
     return sourceLabels[source as VoiceVariant['sourceType']] ?? source;
+  }
+
+  function selectCard(voiceId: string) {
+    selectedCardId = selectedCardId === voiceId ? '' : voiceId;
+  }
+
+  function quickAdd(voice: Voice) {
+    const variant = voice.variants.find((entry) => entry.runnable) ?? voice.variants[0];
+    if (!variant) return;
+    addToCart(voice.id, variant.id);
   }
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
@@ -166,42 +178,55 @@
 
   <section class="grid">
     {#each filtered as voice}
-      <article>
+      <article class:selected={selectedCardId === voice.id}>
         <div class="top-line">
           <p class="provider">{voice.provider}</p>
-          <p class="tier">{voice.qualityTier}</p>
+          <div class="right">
+            <p class="tier">{voice.qualityTier}</p>
+            <button
+              class="star"
+              aria-label={$favorites.includes(voice.id) ? 'Unstar voice' : 'Star voice'}
+              title={$roleFlags.isGuest ? 'Toggle favorite' : 'Sign in to save favorites'}
+              disabled={!$roleFlags.isGuest}
+              on:click|stopPropagation={() => toggleFavorite(voice.id)}
+            >
+              {$favorites.includes(voice.id) ? '★' : '☆'}
+            </button>
+          </div>
         </div>
-        <h2>{voice.name}</h2>
-        <p class="label">{voice.metadata.shortLabel}</p>
-        <p class="description">{voice.description}</p>
-        <p class="search-desc">{voice.metadata.searchDescription}</p>
+        <button
+          class="select-surface"
+          aria-pressed={selectedCardId === voice.id}
+          on:click={() => selectCard(voice.id)}
+        >
+          <h2>{voice.name}</h2>
+          <p class="label">{voice.metadata.shortLabel}</p>
+          <p class="description">{voice.description}</p>
+          <p class="search-desc">{voice.metadata.searchDescription}</p>
 
-        <div class="chips">
-          {#each voice.languages as language}
-            <span>{language}</span>
-          {/each}
-          {#each voice.tags.slice(0, 3) as tag}
-            <span class="tag">{tag}</span>
-          {/each}
-          {#each voice.metadata.toneTags.slice(0, 2) as tone}
-            <span class="tone">{tone}</span>
-          {/each}
-        </div>
+          <div class="chips">
+            {#each voice.languages as language}
+              <span>{language}</span>
+            {/each}
+            {#each voice.tags.slice(0, 3) as tag}
+              <span class="tag">{tag}</span>
+            {/each}
+            {#each voice.metadata.toneTags.slice(0, 2) as tone}
+              <span class="tone">{tone}</span>
+            {/each}
+          </div>
 
-        <p class="meta">
-          {voice.variants.length} variants · {voice.samples.length} samples ·
-          {voice.variants.some((variant) => variant.runnable) ? ' runnable' : ' preview-only'}
-        </p>
+          <p class="meta">
+            {voice.variants.length} variants · {voice.samples.length} samples ·
+            {voice.variants.some((variant) => variant.runnable) ? ' runnable' : ' preview-only'}
+          </p>
+        </button>
 
         <div class="card-actions">
-          <button class="ghost" on:click={() => toggleFavorite(voice.id)} disabled={!$roleFlags.isGuest}>
-            {#if $roleFlags.isGuest}
-              {$favorites.includes(voice.id) ? 'Unfavorite' : 'Favorite'}
-            {:else}
-              Sign in for favorites
-            {/if}
+          <button class="ghost" on:click={() => quickAdd(voice)}>
+            Add
           </button>
-          <a class="details-link" href={`/voices/${voice.id}`}>Open Voice Profile</a>
+          <a class="details-link" href={`/voices/${voice.id}`}>View</a>
         </div>
       </article>
     {:else}
@@ -361,6 +386,12 @@
     gap: 0.45rem;
   }
 
+  .right {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
   .provider,
   .tier,
   .meta,
@@ -390,6 +421,25 @@
   h2 {
     margin: 0;
     font-size: 1.08rem;
+  }
+
+  .select-surface {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+    display: grid;
+    gap: 0.55rem;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+  }
+
+  .select-surface:focus-visible {
+    outline: 2px solid #7ca3bf;
+    outline-offset: 4px;
+    border-radius: 10px;
   }
 
   .description {
@@ -462,6 +512,27 @@
     align-items: center;
   }
 
+  .star {
+    border: 1px solid #cfdae4;
+    background: #fff;
+    color: #385468;
+    border-radius: 999px;
+    height: 1.8rem;
+    width: 1.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .star:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   .ghost {
     border: 1px solid #c5d5e2;
     background: #f4f8fb;
@@ -476,6 +547,12 @@
   .ghost:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  article.selected {
+    border-color: #8fb0c9;
+    box-shadow: 0 0 0 2px rgba(84, 128, 162, 0.2), 0 16px 30px rgba(15, 39, 58, 0.12);
+    transform: translateY(-2px);
   }
 
   .empty {
