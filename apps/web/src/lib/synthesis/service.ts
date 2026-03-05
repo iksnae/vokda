@@ -3,6 +3,7 @@ import { normalizePreviewInput } from './constraints';
 import { resolveAdapter } from './registry';
 import type { SynthesisPreview, SynthesisRequest } from './types';
 import { getAuthSnapshot } from '$lib/auth/store';
+import { AUTH_MODE } from '$lib/auth/config';
 
 const SYNTH_MODE = (import.meta.env.PUBLIC_SYNTH_MODE as string | undefined) ?? 'mock';
 const SYNTH_GATEWAY_URL = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string | undefined) ?? '';
@@ -13,13 +14,17 @@ async function runGatewayPreview(request: SynthesisRequest): Promise<SynthesisPr
   }
 
   const authSnapshot = getAuthSnapshot();
-  const token = authSnapshot.accessToken || authSnapshot.idToken || 'mock-guest-token';
+  const token = authSnapshot.accessToken || authSnapshot.idToken;
+
+  if (AUTH_MODE === 'amplify' && !token) {
+    throw new Error('Sign in is required before calling synthesis gateway.');
+  }
 
   const response = await fetch(SYNTH_GATEWAY_URL, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      authorization: `Bearer ${token}`
+      ...(token ? { authorization: `Bearer ${token}` } : {})
     },
     body: JSON.stringify({
       sourceKey: request.variant.sourceKey,

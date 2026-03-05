@@ -22,16 +22,15 @@ For `main` branch in Amplify:
 
 - `PUBLIC_APP_ENV=production`
 - `PUBLIC_AUTH_MODE=amplify`
-- `PUBLIC_COGNITO_DOMAIN=https://<your-domain>.auth.<region>.amazoncognito.com`
-- `PUBLIC_COGNITO_CLIENT_ID=<cognito-app-client-id>`
-- `PUBLIC_COGNITO_REDIRECT_SIGN_IN=https://<your-amplify-domain>/account`
-- `PUBLIC_COGNITO_REDIRECT_SIGN_OUT=https://<your-amplify-domain>/`
-- `PUBLIC_COGNITO_SCOPES=openid email profile`
 
 For preview branches:
 
 - `PUBLIC_APP_ENV=preview`
 - `PUBLIC_AUTH_MODE=amplify`
+
+Notes:
+- Web auth now uses Amplify JS + Cognito User Pool directly from `amplify_outputs.json`.
+- Keep `amplify_outputs.json` updated after backend changes (`npm run amplify:outputs`).
 
 ## 4. Verify deployment
 

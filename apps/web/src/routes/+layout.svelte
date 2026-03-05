@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { auth, initAuth, roleFlags, signIn, signOut } from '$lib/auth/store';
+  import { auth, initAuth, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
   import { cartCount, collections, favoritesCount } from '$lib/stores/app-state';
 
   onMount(() => {
@@ -34,7 +34,9 @@
     </nav>
 
     <div class="auth-actions">
-      {#if $auth.isAuthenticated}
+      {#if !$isAuthReady}
+        <span class="pill">auth...</span>
+      {:else if $auth.isAuthenticated}
         <span class="pill">{$auth.user?.roles.join(', ')}</span>
         <button class="ghost" on:click={signOut}>Sign out</button>
       {:else}

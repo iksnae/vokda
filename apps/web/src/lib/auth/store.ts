@@ -1,21 +1,23 @@
 import { browser } from '$app/environment';
 import { derived, writable } from 'svelte/store';
+import { AUTH_MODE } from './config';
+import type { AppRole, AuthState, AuthUser } from './types';
+import { ensureAmplifyConfigured } from './amplify-client';
 import {
-  AUTH_MODE,
-  COGNITO_CLIENT_ID,
-  COGNITO_DOMAIN,
-  COGNITO_REDIRECT_SIGN_IN,
-  COGNITO_REDIRECT_SIGN_OUT
-} from './config';
-import {
-  buildSignInUrl,
-  buildSignOutUrl,
-  clearPersistedSession,
-  handleHostedUiCallback,
-  readPersistedSession,
-  stateFromSession
-} from './cognito-hosted-ui';
-import type { AppRole, AuthState } from './types';
+  confirmSignUp,
+  fetchAuthSession,
+  getCurrentUser,
+  resendSignUpCode,
+  signIn as amplifySignIn,
+  signOut as amplifySignOut,
+  signUp as amplifySignUp
+} from 'aws-amplify/auth';
+
+type AuthResult = {
+  success: boolean;
+  message: string;
+  needsConfirmation?: boolean;
+};
 
 const initialMockState: AuthState = {
   isAuthenticated: false,
@@ -23,13 +25,69 @@ const initialMockState: AuthState = {
   user: null
 };
 
-const authState = writable<AuthState>(initialMockState);
+const initialAmplifyState: AuthState = {
+  isAuthenticated: false,
+  isReady: false,
+  user: null
+};
 
-function hasHostedUiConfig() {
-  return Boolean(COGNITO_DOMAIN && COGNITO_CLIENT_ID && COGNITO_REDIRECT_SIGN_IN);
+const authState = writable<AuthState>(AUTH_MODE === 'amplify' ? initialAmplifyState : initialMockState);
+
+function extractRoles(rawGroups: unknown): AppRole[] {
+  const groups = Array.isArray(rawGroups) ? rawGroups.map(String) : [];
+  const roles: AppRole[] = ['guest'];
+
+  if (groups.includes('curator')) roles.push('curator');
+  if (groups.includes('admin')) roles.push('admin');
+
+  return Array.from(new Set(roles));
 }
 
-export function initAuth() {
+function authenticatedState(user: AuthUser, idToken?: string, accessToken?: string): AuthState {
+  return {
+    isAuthenticated: true,
+    isReady: true,
+    user,
+    idToken,
+    accessToken
+  };
+}
+
+function unauthenticatedState(): AuthState {
+  return {
+    isAuthenticated: false,
+    isReady: true,
+    user: null
+  };
+}
+
+async function refreshAmplifySession() {
+  ensureAmplifyConfigured();
+
+  try {
+    const [currentUser, session] = await Promise.all([getCurrentUser(), fetchAuthSession()]);
+    const idPayload = session.tokens?.idToken?.payload;
+
+    const user: AuthUser = {
+      id: currentUser.userId,
+      email: typeof idPayload?.email === 'string' ? idPayload.email : undefined,
+      name: typeof idPayload?.name === 'string' ? idPayload.name : undefined,
+      roles: extractRoles(idPayload?.['cognito:groups'])
+    };
+
+    authState.set(
+      authenticatedState(
+        user,
+        session.tokens?.idToken?.toString(),
+        session.tokens?.accessToken?.toString()
+      )
+    );
+  } catch {
+    authState.set(unauthenticatedState());
+  }
+}
+
+export async function initAuth() {
   if (!browser) return;
 
   if (AUTH_MODE !== 'amplify') {
@@ -37,52 +95,157 @@ export function initAuth() {
     return;
   }
 
-  if (!hasHostedUiConfig()) {
-    authState.set(initialMockState);
-    return;
-  }
-
-  const callbackSession = handleHostedUiCallback();
-  if (callbackSession) {
-    authState.set(stateFromSession(callbackSession));
-    return;
-  }
-
-  authState.set(stateFromSession(readPersistedSession()));
+  authState.set(initialAmplifyState);
+  await refreshAmplifySession();
 }
 
 export function signIn() {
   if (!browser) return;
 
-  if (AUTH_MODE !== 'amplify' || !hasHostedUiConfig()) {
-    authState.set({
-      isAuthenticated: true,
-      isReady: true,
-      user: {
+  if (AUTH_MODE !== 'amplify') {
+    authState.set(
+      authenticatedState({
         id: 'mock-user',
         email: 'mock@local.dev',
         name: 'Mock User',
         roles: ['guest']
-      }
-    });
+      })
+    );
     return;
   }
 
-  window.location.assign(buildSignInUrl());
+  window.location.assign('/account?intent=signin');
 }
 
-export function signOut() {
-  if (!browser) return;
-
-  clearPersistedSession();
-
-  if (AUTH_MODE === 'amplify' && hasHostedUiConfig()) {
-    authState.set(initialMockState);
-    window.location.assign(buildSignOutUrl());
-    return;
+export async function signInWithPassword(email: string, password: string): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Sign-in is only available in browser context.' };
   }
 
-  authState.set(initialMockState);
+  if (AUTH_MODE !== 'amplify') {
+    signIn();
+    return { success: true, message: 'Signed in with mock account.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    const result = await amplifySignIn({ username: email, password });
+
+    if (result.nextStep.signInStep === 'CONFIRM_SIGN_UP') {
+      return {
+        success: false,
+        needsConfirmation: true,
+        message: 'Account requires email confirmation before sign-in.'
+      };
+    }
+
+    if (result.isSignedIn) {
+      await refreshAmplifySession();
+      return { success: true, message: 'Signed in successfully.' };
+    }
+
+    return {
+      success: false,
+      message: `Additional sign-in step required: ${result.nextStep.signInStep}`
+    };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Sign-in failed.';
+    return { success: false, message };
+  }
+}
+
+export async function signUpWithPassword(email: string, password: string): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Sign-up is only available in browser context.' };
+  }
+
+  if (AUTH_MODE !== 'amplify') {
+    return { success: false, message: 'Sign-up is disabled in mock auth mode.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    const result = await amplifySignUp({
+      username: email,
+      password,
+      options: {
+        userAttributes: {
+          email
+        }
+      }
+    });
+
+    if (result.nextStep.signUpStep === 'CONFIRM_SIGN_UP') {
+      return {
+        success: true,
+        needsConfirmation: true,
+        message: 'Verification code sent. Confirm your email to finish setup.'
+      };
+    }
+
+    return { success: true, message: 'Account created. You can sign in now.' };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Sign-up failed.';
+    return { success: false, message };
+  }
+}
+
+export async function confirmSignUpWithCode(email: string, code: string): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Confirmation is only available in browser context.' };
+  }
+
+  if (AUTH_MODE !== 'amplify') {
+    return { success: false, message: 'Confirmation is disabled in mock auth mode.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    await confirmSignUp({ username: email, confirmationCode: code });
+    return { success: true, message: 'Email confirmed. You can now sign in.' };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Confirmation failed.';
+    return { success: false, message };
+  }
+}
+
+export async function resendSignUpConfirmation(email: string): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Resend is only available in browser context.' };
+  }
+
+  if (AUTH_MODE !== 'amplify') {
+    return { success: false, message: 'Resend is disabled in mock auth mode.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    await resendSignUpCode({ username: email });
+    return { success: true, message: 'New confirmation code sent.' };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to resend code.';
+    return { success: false, message };
+  }
+}
+
+export async function signOut() {
+  if (!browser) return;
+
+  if (AUTH_MODE === 'amplify') {
+    ensureAmplifyConfigured();
+
+    try {
+      await amplifySignOut();
+    } catch {
+      // fall through and clear local state
+    }
+  }
+
+  authState.set(unauthenticatedState());
 }
 
 export function setMockRole(role: AppRole) {
@@ -108,11 +271,7 @@ export const auth = {
 };
 
 export function getAuthSnapshot(): AuthState {
-  let snapshot: AuthState = {
-    isAuthenticated: false,
-    isReady: true,
-    user: null
-  };
+  let snapshot: AuthState = unauthenticatedState();
 
   authState.subscribe((value) => {
     snapshot = value;
@@ -145,9 +304,6 @@ export function canAccess(role: AppRole, roles: AppRole[]): boolean {
 export function authDebugConfig() {
   return {
     mode: AUTH_MODE,
-    configured: hasHostedUiConfig(),
-    domain: COGNITO_DOMAIN,
-    redirectSignIn: COGNITO_REDIRECT_SIGN_IN,
-    redirectSignOut: COGNITO_REDIRECT_SIGN_OUT
+    provider: AUTH_MODE === 'amplify' ? 'amazon-cognito-user-pools' : 'mock'
   };
 }

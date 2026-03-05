@@ -19,5 +19,8 @@
     "svelte-check": "^3.7.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.8"
+  },
+  "dependencies": {
+    "aws-amplify": "^6.16.2"
   }
 }
