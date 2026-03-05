@@ -133,22 +133,22 @@
 </script>
 
 <svelte:head>
-  <title>Vokda Catalog</title>
+  <title>Find TTS Voices | Vokda</title>
 </svelte:head>
 
 <main>
   <section class="hero">
     <div>
-      <p class="eyebrow">Voice Discovery Platform</p>
-      <h1>Find the right voice with human and machine friendly metadata</h1>
-      <p class="summary">
-        Search by labels, audience, tone, and use-case semantics, then refine entries through curator metadata.
-      </p>
+      <h1>Find TTS voices fast</h1>
+      <p class="summary">Search by voice name, tone, language, or use case.</p>
+      <div class="search-shell">
+        <input bind:value={query} placeholder="Search voices..." />
+      </div>
     </div>
     <div class="stats">
       <article>
         <strong>{filtered.length}</strong>
-        <span>Curated Voices</span>
+        <span>Voices</span>
       </article>
       <article>
         <strong>{providerCount}</strong>
@@ -156,17 +156,12 @@
       </article>
       <article>
         <strong>{runnableCount}</strong>
-        <span>Runnable Entries</span>
+        <span>Runnable</span>
       </article>
     </div>
   </section>
 
   <section class="filters">
-    <label>
-      Search
-      <input bind:value={query} placeholder="label, audience, tone, use case, provider..." />
-    </label>
-
     <label>
       Provider
       <select bind:value={selectedProvider}>
@@ -198,15 +193,15 @@
     </label>
 
     <label class="toggle">
-      <input type="checkbox" bind:checked={runnableOnly} /> Runnable only
+      <input type="checkbox" bind:checked={runnableOnly} /> Runnable
     </label>
 
     <label class="toggle">
-      <input type="checkbox" bind:checked={ssmlOnly} /> SSML support
+      <input type="checkbox" bind:checked={ssmlOnly} /> SSML
     </label>
 
     <label class="toggle">
-      <input type="checkbox" bind:checked={onlyFavorites} /> Favorites only
+      <input type="checkbox" bind:checked={onlyFavorites} /> Starred
     </label>
   </section>
 
@@ -326,27 +321,32 @@
     gap: 1.15rem;
   }
 
-  .eyebrow {
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.11em;
-    font-size: 0.72rem;
-    color: #4d6b80;
-    font-weight: 750;
-  }
-
   h1 {
-    margin: 0.35rem 0 0;
-    font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+    margin: 0;
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
     line-height: 1.2;
-    max-width: 17ch;
+    max-width: 13ch;
   }
 
   .summary {
-    margin: 0.78rem 0 0;
+    margin: 0.55rem 0 0;
     color: #395367;
-    max-width: 62ch;
-    line-height: 1.56;
+    max-width: 38ch;
+    line-height: 1.45;
+  }
+
+  .search-shell {
+    margin-top: 0.8rem;
+  }
+
+  .search-shell input {
+    width: 100%;
+    border: 1px solid #b4c9d8;
+    border-radius: 14px;
+    padding: 0.7rem 0.82rem;
+    background: #fff;
+    font-size: 1rem;
+    color: #173046;
   }
 
   .stats {

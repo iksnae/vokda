@@ -26,7 +26,7 @@
     </a>
 
     <nav>
-      <a href="/">Catalog</a>
+      <a href="/">Find</a>
       {#if $roleFlags.isGuest}
         <a href="/collections">Collections ({$collections.length + 1})</a>
       {/if}
