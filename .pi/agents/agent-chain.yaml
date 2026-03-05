@@ -1,0 +1,17 @@
+plan-build-review:
+  description: "Plan, implement, and review Vokda changes"
+  steps:
+    - agent: planner
+      prompt: "Plan the implementation for: $INPUT"
+    - agent: builder
+      prompt: "Implement the following plan:\n\n$INPUT"
+    - agent: reviewer
+      prompt: "Review this implementation against the TS constitution and project conventions:\n\n$INPUT"
+
+health-check:
+  description: "Full project health assessment — types, build, code quality, security"
+  steps:
+    - agent: scout
+      prompt: "Run a full recon of the Vokda codebase: typecheck, build, deps, catalog, constitution compliance"
+    - agent: red-team
+      prompt: "Security review of findings:\n\n$INPUT"

@@ -1,0 +1,20 @@
+full:
+  - scout
+  - planner
+  - builder
+  - reviewer
+  - documenter
+  - red-team
+
+health-check:
+  - scout
+  - reviewer
+
+plan-build:
+  - planner
+  - builder
+  - reviewer
+
+security:
+  - scout
+  - red-team

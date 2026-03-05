@@ -1,0 +1,8 @@
+{
+  "theme": "synthwave",
+  "prompts": [
+    "../.claude/commands"
+  ],
+  "project": "vokda",
+  "description": "Voice discovery and curation app for TTS voices — SvelteKit + Amplify"
+}
