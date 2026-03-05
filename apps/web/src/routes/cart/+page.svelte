@@ -1,5 +1,6 @@
 <script lang="ts">
   import { buildVoicePack, cartItems, clearCart, removeFromCart } from '$lib/stores/app-state';
+  import { getVariantWarnings } from '$lib/voice-utils';
   import type { Voice } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -12,7 +13,7 @@
       const variant = voice.variants.find((entry) => entry.id === item.variantId);
       if (!variant) return null;
 
-      return { item, voice, variant };
+      return { item, voice, variant, warnings: getVariantWarnings(voice, variant) };
     })
     .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 
@@ -57,7 +58,7 @@
     <p class="empty">Your cart is empty. Open a voice profile and add one or more variants.</p>
   {:else}
     <ul>
-      {#each lineItems as { item, voice, variant }}
+      {#each lineItems as { item, voice, variant, warnings }}
         <li>
           <div>
             <p class="provider">{voice.provider}</p>
@@ -65,6 +66,13 @@
             <p>{variant.sourceType} · {variant.sourceKey}</p>
             <p>Formats: {variant.outputFormats.join(', ')} · Max chars: {variant.maxInputChars}</p>
             <p class="license">{voice.licenseNotes}</p>
+            {#if warnings.length > 0}
+              <ul class="warnings">
+                {#each warnings as warning}
+                  <li>{warning}</li>
+                {/each}
+              </ul>
+            {/if}
           </div>
           <button class="ghost" on:click={() => removeFromCart(item.voiceId, item.variantId)}>Remove</button>
         </li>
@@ -164,6 +172,13 @@
 
   .license {
     color: #6f4d1b;
+  }
+
+  .warnings {
+    margin: 0.45rem 0 0;
+    padding-left: 1.05rem;
+    color: #744b18;
+    font-size: 0.86rem;
   }
 
   .actions {

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import {
     addToCart,
     addVoiceToCollection,
@@ -6,6 +7,7 @@
     createCollection,
     updateCollectionVoiceNote
   } from '$lib/stores/app-state';
+  import { getVariantWarnings, stripSsml, truncateToVariantLimit } from '$lib/voice-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voice: Voice };
@@ -15,6 +17,14 @@
   let noteDraft = '';
   let cartMessage = '';
   let collectionMessage = '';
+  let previewVariantId = data.voice.variants[0]?.id ?? '';
+  let previewInputMode: 'text' | 'ssml' = 'text';
+  let previewInput =
+    'This is a live audition preview from Vokda. Use this to validate tone, pacing, and clarity.';
+  let previewStatus = '';
+
+  $: previewVariant = data.voice.variants.find((variant) => variant.id === previewVariantId);
+  $: previewWarnings = previewVariant ? getVariantWarnings(data.voice, previewVariant) : [];
 
   function sourceLabel(sourceType: VoiceVariant['sourceType']) {
     switch (sourceType) {
@@ -69,6 +79,49 @@
     collectionMessage = `Created "${created.name}" and saved voice.`;
     quickCollectionName = '';
   }
+
+  function playPreview() {
+    if (!browser || !previewVariant) return;
+    if (!('speechSynthesis' in window)) {
+      previewStatus = 'Browser speech preview is unavailable in this environment.';
+      return;
+    }
+
+    const baseInput = previewInputMode === 'ssml' ? stripSsml(previewInput) : previewInput;
+    const constrainedInput = truncateToVariantLimit(baseInput, previewVariant);
+    if (!constrainedInput.trim()) {
+      previewStatus = 'Preview text is empty after processing.';
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(constrainedInput);
+    utterance.lang = data.voice.languages[0] ?? 'en-US';
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    const voiceMatch = speechSynthesis
+      .getVoices()
+      .find((entry) => entry.lang.toLowerCase() === utterance.lang.toLowerCase());
+    if (voiceMatch) {
+      utterance.voice = voiceMatch;
+    }
+
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utterance);
+
+    if (baseInput.length > constrainedInput.length) {
+      previewStatus = `Preview started. Input truncated to ${previewVariant.maxInputChars} chars.`;
+      return;
+    }
+
+    previewStatus = 'Preview started.';
+  }
+
+  function stopPreview() {
+    if (!browser || !('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    previewStatus = 'Preview stopped.';
+  }
 </script>
 
 <svelte:head>
@@ -92,6 +145,55 @@
     </ul>
 
     <p class="license">License: {data.voice.licenseNotes}</p>
+  </section>
+
+  <section>
+    <h2>Audition Studio</h2>
+    <div class="audition-panel">
+      <label>
+        Variant for preview
+        <select bind:value={previewVariantId}>
+          {#each data.voice.variants as variant}
+            <option value={variant.id}>
+              {sourceLabel(variant.sourceType)} · {variant.sourceKey}
+            </option>
+          {/each}
+        </select>
+      </label>
+
+      <div class="mode-row">
+        <label class="mode-option">
+          <input type="radio" bind:group={previewInputMode} value="text" />
+          Plain text
+        </label>
+        <label class="mode-option">
+          <input type="radio" bind:group={previewInputMode} value="ssml" />
+          SSML input
+        </label>
+      </div>
+
+      <label>
+        Preview input
+        <textarea bind:value={previewInput} placeholder="Enter text or SSML for quick audition"></textarea>
+      </label>
+
+      {#if previewWarnings.length > 0}
+        <ul class="warnings">
+          {#each previewWarnings as warning}
+            <li>{warning}</li>
+          {/each}
+        </ul>
+      {/if}
+
+      <div class="actions">
+        <button on:click={playPreview} disabled={!previewVariant}>Play Preview</button>
+        <button class="ghost" on:click={stopPreview}>Stop</button>
+      </div>
+
+      {#if previewStatus}
+        <p class="flash">{previewStatus}</p>
+      {/if}
+    </div>
   </section>
 
   <section>
@@ -269,6 +371,33 @@
     border-radius: 14px;
     background: #fff;
     padding: 0.86rem;
+  }
+
+  .audition-panel {
+    border: 1px solid #c4d2df;
+    border-radius: 14px;
+    background: #fff;
+    padding: 0.86rem;
+  }
+
+  .mode-row {
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .mode-option {
+    margin-top: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.86rem;
+  }
+
+  .warnings {
+    margin: 0.65rem 0 0;
+    padding-left: 1.05rem;
+    color: #714816;
   }
 
   .samples p,
