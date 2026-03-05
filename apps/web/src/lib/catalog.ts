@@ -14,3 +14,8 @@ export async function loadCatalog(fetchFn: typeof fetch): Promise<Voice[]> {
   const payload = (await res.json()) as { voices: Voice[] };
   return payload.voices;
 }
+
+export async function loadVoiceById(fetchFn: typeof fetch, voiceId: string): Promise<Voice | null> {
+  const voices = await loadCatalog(fetchFn);
+  return voices.find((voice) => voice.id === voiceId) ?? null;
+}

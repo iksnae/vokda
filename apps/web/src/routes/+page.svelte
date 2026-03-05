@@ -36,6 +36,8 @@
         <h2>{voice.name}</h2>
         <p>{voice.description}</p>
         <p>{voice.languages.join(', ')} | {voice.qualityTier}</p>
+        <p>{voice.variants.length} variant{voice.variants.length === 1 ? '' : 's'}</p>
+        <a class="details-link" href={`/voices/${voice.id}`}>View details</a>
       </li>
     {:else}
       <li>No voices matched the current search.</li>
@@ -97,5 +99,16 @@
 
   p {
     margin: 0.2rem 0;
+  }
+
+  .details-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    border-radius: 8px;
+    padding: 0.45rem 0.7rem;
+    background: #1e5d7a;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
   }
 </style>

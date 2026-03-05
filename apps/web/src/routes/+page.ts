@@ -1,6 +1,7 @@
 import { loadCatalog } from '$lib/catalog';
+import type { PageLoad } from './$types';
 
-export async function load({ fetch }) {
+export const load: PageLoad = async ({ fetch }) => {
   const voices = await loadCatalog(fetch);
   return { voices };
-}
+};
