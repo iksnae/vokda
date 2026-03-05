@@ -4,6 +4,7 @@
     auth,
     authDebugConfig,
     confirmSignUpWithCode,
+    refreshAuthRoles,
     roleFlags,
     setMockRole,
     signIn,
@@ -63,6 +64,15 @@
     status = result.message;
     pending = false;
   }
+
+  async function handleRefreshAccess() {
+    pending = true;
+    status = '';
+
+    await refreshAuthRoles();
+    status = 'Access claims refreshed from Cognito.';
+    pending = false;
+  }
 </script>
 
 <svelte:head>
@@ -80,7 +90,10 @@
     {:else if $auth.isAuthenticated}
       <p><strong>Signed in as:</strong> {$auth.user?.email ?? $auth.user?.id}</p>
       <p><strong>Roles:</strong> {$auth.user?.roles.join(', ')}</p>
-      <button on:click={signOut}>Sign out</button>
+      <div class="actions">
+        <button class="ghost" on:click={handleRefreshAccess} disabled={pending}>Refresh access</button>
+        <button on:click={signOut} disabled={pending}>Sign out</button>
+      </div>
     {:else if AUTH_MODE === 'amplify'}
       <p>Register or sign in with your email to unlock favorites, collections, and role-based access.</p>
       <div class="form-grid">

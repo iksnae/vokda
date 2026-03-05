@@ -61,18 +61,27 @@ function unauthenticatedState(): AuthState {
   };
 }
 
-async function refreshAmplifySession() {
+async function refreshAmplifySession(forceRefresh = false) {
   ensureAmplifyConfigured();
 
   try {
-    const [currentUser, session] = await Promise.all([getCurrentUser(), fetchAuthSession()]);
+    const [currentUser, session] = await Promise.all([
+      getCurrentUser(),
+      fetchAuthSession({ forceRefresh })
+    ]);
     const idPayload = session.tokens?.idToken?.payload;
+    const accessPayload = session.tokens?.accessToken?.payload;
+
+    const groupClaims = [
+      ...(Array.isArray(idPayload?.['cognito:groups']) ? idPayload?.['cognito:groups'] : []),
+      ...(Array.isArray(accessPayload?.['cognito:groups']) ? accessPayload?.['cognito:groups'] : [])
+    ];
 
     const user: AuthUser = {
       id: currentUser.userId,
       email: typeof idPayload?.email === 'string' ? idPayload.email : undefined,
       name: typeof idPayload?.name === 'string' ? idPayload.name : undefined,
-      roles: extractRoles(idPayload?.['cognito:groups'])
+      roles: extractRoles(groupClaims)
     };
 
     authState.set(
@@ -96,7 +105,12 @@ export async function initAuth() {
   }
 
   authState.set(initialAmplifyState);
-  await refreshAmplifySession();
+  await refreshAmplifySession(true);
+}
+
+export async function refreshAuthRoles() {
+  if (!browser || AUTH_MODE !== 'amplify') return;
+  await refreshAmplifySession(true);
 }
 
 export function signIn() {
@@ -141,7 +155,7 @@ export async function signInWithPassword(email: string, password: string): Promi
     }
 
     if (result.isSignedIn) {
-      await refreshAmplifySession();
+      await refreshAmplifySession(true);
       return { success: true, message: 'Signed in successfully.' };
     }
 
