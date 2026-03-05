@@ -87,29 +87,42 @@ Vokda has two parallel tracks that evolve together:
 
 **Goal:** Make Vokda the place you go to stay current on TTS.
 
-### 3a. News Feed
-- [ ] Curated TTS news feed (blog posts, releases, research papers, product updates)
-- [ ] RSS ingestion pipeline for major provider blogs and HuggingFace model releases
-- [ ] Editorial tagging (provider, topic, significance)
-- [ ] Weekly digest email/notification for signed-in users
+> Architecture detail: see [docs/specs/hub-architecture.md](./specs/hub-architecture.md)
 
-### 3b. Model Tracking
-- [ ] Provider and model registry with release dates, changelog, and status
-- [ ] New model detection (automated scan of HuggingFace, provider APIs)
-- [ ] Model comparison history (track quality changes across versions)
-- [ ] Benchmark tracking (MOS scores, latency, cost-per-character)
+**Hub is a two-piece system:**
+- `iksnae/vokda-hub` — separate Jekyll repo for editorial content (news, guides, provider & model profiles)
+- `iksnae/vokda` — SvelteKit consumes Jekyll JSON feeds; adds in-app `/hub` route and auth-gated reviews
 
-### 3c. Reviews & Ratings
-- [ ] Curator and editorial voice reviews (not crowdsourced — opinionated)
-- [ ] Quality scores: naturalness, expressiveness, consistency, latency
-- [ ] Use-case fit ratings (narration, assistant, character, news, etc.)
-- [ ] Community upvotes on voices (simple signal, not full reviews)
+### 3a. `vokda-hub` Jekyll Repo (new repo)
+- [ ] Bootstrap `iksnae/vokda-hub` with Jekyll + GitHub Pages deploy
+- [ ] Set up `_posts`, `_providers`, `_models`, `_guides`, `_data` structure
+- [ ] Configure `api/news.json` and `api/models.json` Liquid templates (consumed by SvelteKit)
+- [ ] Seed: 3-5 news posts, provider profiles for all 7 current providers, 2 guides
+- [ ] Deploy to `hub.vokda.iknsae.com` via GitHub Pages CNAME
 
-### 3d. Guidance
-- [ ] "Voice Finder" — answer a few questions, get a shortlist
-- [ ] Use-case guides ("Best voices for podcast intros", "Choosing a voice for your AI agent")
-- [ ] Provider comparison pages (AWS Polly vs Azure Speech, ElevenLabs vs OpenAI)
-- [ ] Pricing context (cost-per-character for each provider)
+### 3b. SvelteKit Hub Integration
+- [ ] Add `/hub` route — fetches Jekyll JSON feed, renders news + featured guide
+- [ ] Rename "Explore" → "Voices" in nav; add "Hub" nav link
+- [ ] Provider profile deep-links on voice detail pages ("About ElevenLabs →")
+- [ ] Model profile deep-links from open-model voice cards
+
+### 3c. Model & Provider Registry
+- [ ] `_providers/` profiles: feature matrix, pricing tiers, SSML support, latency
+- [ ] `_models/` profiles: HuggingFace link, license, benchmarks, known limitations
+- [ ] `_data/benchmarks.yml` — MOS scores, cost/char, latency (manually curated)
+- [ ] Model registry page on hub site
+
+### 3d. Reviews & Ratings (Amplify)
+- [ ] `VoiceReview` model in Amplify Data schema
+- [ ] Review UI on voice detail page (curator+ can post)
+- [ ] Aggregate quality scores: naturalness, expressiveness, consistency, use-case fit
+- [ ] `SavedArticle` model — users can bookmark hub articles
+
+### 3e. Guidance Content
+- [ ] "Voice Finder" — answer a few questions, get a shortlist (SvelteKit interactive)
+- [ ] Use-case guide pages in Jekyll `_guides/`
+- [ ] Provider comparison guides (ElevenLabs vs OpenAI, cloud vs open-source)
+- [ ] Pricing context page
 
 ---
 
