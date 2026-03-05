@@ -46,6 +46,11 @@ Required frontend env vars:
 - No secrets committed to git
 - Frontend only uses public-safe env vars (`PUBLIC_*`)
 - Future backend secrets stored in AWS Secrets Manager or SSM Parameter Store
+- Access tiers:
+  - `visitor`: unauthenticated browsing
+  - `guest`: registered baseline user (favorites, collections, cart/export)
+  - `curator`: guest + curation workspace
+  - `admin`: full admin workspace
 
 ## 6. Next Expansion (Phase 2)
 

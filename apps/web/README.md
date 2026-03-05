@@ -15,6 +15,19 @@ SvelteKit frontend for catalog browsing and early curation UX.
 
 - `PUBLIC_APP_ENV`
   - Environment label shown/used by frontend logic (`local`, `preview`, `production`)
+- `PUBLIC_AUTH_MODE`
+  - `mock` for local testing
+  - `amplify` for Cognito Hosted UI authentication
+- `PUBLIC_COGNITO_DOMAIN`
+  - Cognito Hosted UI domain URL (for example `https://your-domain.auth.us-east-1.amazoncognito.com`)
+- `PUBLIC_COGNITO_CLIENT_ID`
+  - App client id for your Amplify/Cognito user pool
+- `PUBLIC_COGNITO_REDIRECT_SIGN_IN`
+  - Redirect URI back to the web app after sign-in
+- `PUBLIC_COGNITO_REDIRECT_SIGN_OUT`
+  - Redirect URI after sign-out
+- `PUBLIC_COGNITO_SCOPES`
+  - OAuth scopes (default `openid email profile`)
 - `PUBLIC_SYNTH_MODE`
   - `mock` (default) uses local adapter stubs with browser playback fallback
   - `gateway` posts preview requests to `PUBLIC_SYNTH_GATEWAY_URL`
@@ -67,3 +80,5 @@ Output directory is `apps/web/build` (static adapter), aligned with `amplify.yml
 - Build spec is kept in repo root `amplify.yml`
 - Configure branch env vars in Amplify Console:
   - `PUBLIC_APP_ENV`
+  - `PUBLIC_AUTH_MODE=amplify`
+  - Cognito Hosted UI vars above

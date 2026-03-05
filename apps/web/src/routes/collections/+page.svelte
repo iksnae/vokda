@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { roleFlags } from '$lib/auth/store';
   import {
     addVoiceToCollection,
     collections,
@@ -47,63 +48,67 @@
     <p>Build reusable voice sets for projects, scenes, and publishing workflows.</p>
   </section>
 
-  <section class="new-collection">
-    <input bind:value={newCollectionName} placeholder="Collection name (e.g. Documentary Narrators)" />
-    <button on:click={create}>Create Collection</button>
-  </section>
-
-  {#if $collections.length === 0}
-    <p class="empty">No collections yet. Create one and start curating.</p>
+  {#if !$roleFlags.isGuest}
+    <p class="empty">Sign in as a registered guest or higher to save and manage collections.</p>
   {:else}
-    <section class="grid">
-      {#each $collections as collection}
-        <article>
-          <header>
-            <div>
-              <h2>{collection.name}</h2>
-              <p>{collection.voiceIds.length} voices</p>
-            </div>
-            <button class="ghost" on:click={() => deleteCollection(collection.id)}>Delete</button>
-          </header>
-
-          <label>
-            Add voice
-            <select on:change={(event) => onAddVoice(collection.id, event)}>
-              <option value="">Select a voice</option>
-              {#each data.voices as voice}
-                <option value={voice.id}>{voice.provider} · {voice.name}</option>
-              {/each}
-            </select>
-          </label>
-
-          {#if collection.voiceIds.length === 0}
-            <p class="empty-inline">No voices in this collection yet.</p>
-          {:else}
-            <ul>
-              {#each collection.voiceIds as voiceId}
-                {@const voice = voiceById(voiceId)}
-                {#if voice}
-                  <li>
-                    <div class="entry">
-                      <strong>{voice.name}</strong>
-                      <small>{voice.provider}</small>
-                      <textarea
-                        placeholder="Curator notes"
-                        value={collection.notesByVoiceId[voice.id] ?? ''}
-                        on:input={(event) => onNoteInput(collection.id, voice.id, event)}
-                      />
-                    </div>
-                    <button class="ghost" on:click={() => removeVoiceFromCollection(collection.id, voice.id)}>
-                      Remove
-                    </button>
-                  </li>
-                {/if}
-              {/each}
-            </ul>
-          {/if}
-        </article>
-      {/each}
+    <section class="new-collection">
+      <input bind:value={newCollectionName} placeholder="Collection name (e.g. Documentary Narrators)" />
+      <button on:click={create}>Create Collection</button>
     </section>
+
+    {#if $collections.length === 0}
+      <p class="empty">No collections yet. Create one and start curating.</p>
+    {:else}
+      <section class="grid">
+        {#each $collections as collection}
+          <article>
+            <header>
+              <div>
+                <h2>{collection.name}</h2>
+                <p>{collection.voiceIds.length} voices</p>
+              </div>
+              <button class="ghost" on:click={() => deleteCollection(collection.id)}>Delete</button>
+            </header>
+
+            <label>
+              Add voice
+              <select on:change={(event) => onAddVoice(collection.id, event)}>
+                <option value="">Select a voice</option>
+                {#each data.voices as voice}
+                  <option value={voice.id}>{voice.provider} · {voice.name}</option>
+                {/each}
+              </select>
+            </label>
+
+            {#if collection.voiceIds.length === 0}
+              <p class="empty-inline">No voices in this collection yet.</p>
+            {:else}
+              <ul>
+                {#each collection.voiceIds as voiceId}
+                  {@const voice = voiceById(voiceId)}
+                  {#if voice}
+                    <li>
+                      <div class="entry">
+                        <strong>{voice.name}</strong>
+                        <small>{voice.provider}</small>
+                        <textarea
+                          placeholder="Curator notes"
+                          value={collection.notesByVoiceId[voice.id] ?? ''}
+                          on:input={(event) => onNoteInput(collection.id, voice.id, event)}
+                        />
+                      </div>
+                      <button class="ghost" on:click={() => removeVoiceFromCollection(collection.id, voice.id)}>
+                        Remove
+                      </button>
+                    </li>
+                  {/if}
+                {/each}
+              </ul>
+            {/if}
+          </article>
+        {/each}
+      </section>
+    {/if}
   {/if}
 </main>
 

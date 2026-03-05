@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { cartCount, collections } from '$lib/stores/app-state';
+  import { onMount } from 'svelte';
+  import { auth, initAuth, roleFlags, signIn, signOut } from '$lib/auth/store';
+  import { cartCount, collections, favoritesCount } from '$lib/stores/app-state';
+
+  onMount(() => {
+    initAuth();
+  });
 </script>
 
 <svelte:head>
@@ -15,9 +21,26 @@
 
     <nav>
       <a href="/">Catalog</a>
+      <a href="/account">Account</a>
       <a href="/collections">Collections ({$collections.length})</a>
       <a href="/cart">Cart ({$cartCount})</a>
+      <a href="/?favorites=1">Favorites ({$favoritesCount})</a>
+      {#if $roleFlags.isCurator}
+        <a href="/curation">Curation</a>
+      {/if}
+      {#if $roleFlags.isAdmin}
+        <a href="/admin">Admin</a>
+      {/if}
     </nav>
+
+    <div class="auth-actions">
+      {#if $auth.isAuthenticated}
+        <span class="pill">{$auth.user?.roles.join(', ')}</span>
+        <button class="ghost" on:click={signOut}>Sign out</button>
+      {:else}
+        <button on:click={signIn}>Sign in</button>
+      {/if}
+    </div>
   </header>
 
   <slot />
@@ -85,5 +108,37 @@
     padding: 0.33rem 0.72rem;
     font-size: 0.9rem;
     font-weight: 650;
+  }
+
+  .auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .pill {
+    border: 1px solid #c0cfdd;
+    background: #f4f8fc;
+    color: #35526c;
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+    font-size: 0.8rem;
+    font-weight: 650;
+  }
+
+  button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.34rem 0.68rem;
+    background: #1f5f7f;
+    color: #fff;
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .ghost {
+    background: #eff4f8;
+    color: #2e4860;
+    border: 1px solid #bdcbd9;
   }
 </style>

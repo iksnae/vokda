@@ -6,8 +6,11 @@
     addVoiceToCollection,
     collections,
     createCollection,
+    favorites,
+    toggleFavorite,
     updateCollectionVoiceNote
   } from '$lib/stores/app-state';
+  import { roleFlags } from '$lib/auth/store';
   import { getVariantWarnings } from '$lib/voice-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -52,6 +55,7 @@
   }
 
   function saveToCollection() {
+    if (!$roleFlags.isGuest) return;
     if (!selectedCollectionId) return;
 
     addVoiceToCollection(selectedCollectionId, data.voice.id);
@@ -64,6 +68,7 @@
   }
 
   function createAndSave() {
+    if (!$roleFlags.isGuest) return;
     const name = quickCollectionName.trim();
     if (!name) return;
 
@@ -254,30 +259,37 @@
 
   <section class="collection-panel">
     <h2>Save To Collection</h2>
+    <button class="ghost" on:click={() => toggleFavorite(data.voice.id)} disabled={!$roleFlags.isGuest}>
+      {$favorites.includes(data.voice.id) ? 'Unfavorite' : 'Add to favorites'}
+    </button>
 
-    <label>
-      Existing collections
-      <select bind:value={selectedCollectionId}>
-        <option value="">Select a collection</option>
-        {#each $collections as collection}
-          <option value={collection.id}>{collection.name}</option>
-        {/each}
-      </select>
-    </label>
+    {#if $roleFlags.isGuest}
+      <label>
+        Existing collections
+        <select bind:value={selectedCollectionId}>
+          <option value="">Select a collection</option>
+          {#each $collections as collection}
+            <option value={collection.id}>{collection.name}</option>
+          {/each}
+        </select>
+      </label>
 
-    <label>
-      Curator note
-      <textarea bind:value={noteDraft} placeholder="Why this voice belongs in your set"></textarea>
-    </label>
+      <label>
+        Curator note
+        <textarea bind:value={noteDraft} placeholder="Why this voice belongs in your set"></textarea>
+      </label>
 
-    <div class="actions">
-      <button on:click={saveToCollection} disabled={!selectedCollectionId}>Save to Selected</button>
-    </div>
+      <div class="actions">
+        <button on:click={saveToCollection} disabled={!selectedCollectionId}>Save to Selected</button>
+      </div>
 
-    <div class="create-row">
-      <input bind:value={quickCollectionName} placeholder="New collection name" />
-      <button class="ghost" on:click={createAndSave}>Create + Save</button>
-    </div>
+      <div class="create-row">
+        <input bind:value={quickCollectionName} placeholder="New collection name" />
+        <button class="ghost" on:click={createAndSave}>Create + Save</button>
+      </div>
+    {:else}
+      <p class="muted">Sign in as a registered guest or higher to save favorites and collections.</p>
+    {/if}
 
     {#if collectionMessage}
       <p class="flash">{collectionMessage}</p>

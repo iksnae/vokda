@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
+  import { favorites, toggleFavorite } from '$lib/stores/app-state';
+  import { roleFlags } from '$lib/auth/store';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -9,6 +13,12 @@
   let selectedProvider = 'all';
   let runnableOnly = false;
   let ssmlOnly = false;
+  let onlyFavorites = false;
+
+  onMount(() => {
+    if (!browser) return;
+    onlyFavorites = new URLSearchParams(window.location.search).get('favorites') === '1';
+  });
 
   const sourceLabels: Record<VoiceVariant['sourceType'], string> = {
     cloud_provider: 'Cloud',
@@ -45,6 +55,7 @@
     const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
     const matchesRunnable = !runnableOnly || voice.variants.some((variant) => variant.runnable);
     const matchesSsml = !ssmlOnly || voice.variants.some((variant) => variant.supportsSsml);
+    const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
 
     return (
       matchesQuery &&
@@ -52,7 +63,8 @@
       matchesSource &&
       matchesProvider &&
       matchesRunnable &&
-      matchesSsml
+      matchesSsml &&
+      matchesFavorite
     );
   });
 
@@ -76,7 +88,7 @@
     </div>
     <div class="stats">
       <article>
-        <strong>{data.voices.length}</strong>
+        <strong>{filtered.length}</strong>
         <span>Curated Voices</span>
       </article>
       <article>
@@ -133,6 +145,10 @@
     <label class="toggle">
       <input type="checkbox" bind:checked={ssmlOnly} /> SSML support
     </label>
+
+    <label class="toggle">
+      <input type="checkbox" bind:checked={onlyFavorites} /> Favorites only
+    </label>
   </section>
 
   <section class="grid">
@@ -159,7 +175,16 @@
           {voice.variants.some((variant) => variant.runnable) ? ' runnable' : ' preview-only'}
         </p>
 
-        <a class="details-link" href={`/voices/${voice.id}`}>Open Voice Profile</a>
+        <div class="card-actions">
+          <button class="ghost" on:click={() => toggleFavorite(voice.id)} disabled={!$roleFlags.isGuest}>
+            {#if $roleFlags.isGuest}
+              {$favorites.includes(voice.id) ? 'Unfavorite' : 'Favorite'}
+            {:else}
+              Sign in for favorites
+            {/if}
+          </button>
+          <a class="details-link" href={`/voices/${voice.id}`}>Open Voice Profile</a>
+        </div>
       </article>
     {:else}
       <p class="empty">No voices matched the active filters.</p>
@@ -353,6 +378,28 @@
     text-decoration: none;
     font-weight: 650;
     font-size: 0.9rem;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+  }
+
+  .ghost {
+    border: 1px solid #c4d3df;
+    background: #f2f7fb;
+    color: #304a62;
+    border-radius: 10px;
+    padding: 0.45rem 0.72rem;
+    font-weight: 650;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .ghost:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   .empty {
