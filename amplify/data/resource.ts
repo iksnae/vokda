@@ -29,14 +29,6 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.owner(), allow.groups(['curator', 'admin'])]),
 
-  CartItem: a
-    .model({
-      voiceId: a.string().required(),
-      variantId: a.string().required(),
-      createdAtIso: a.string().required()
-    })
-    .authorization((allow) => [allow.owner()]),
-
   CurationShelf: a
     .model({
       key: a.string().required(),

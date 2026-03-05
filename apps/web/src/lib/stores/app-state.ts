@@ -10,11 +10,13 @@ import {
   removeCollection,
   removeCollectionVoice,
   removeFavorite,
+  renameCollection as renameCollectionRemote,
   saveCollection,
   saveFavorite,
   updateCollectionVoiceNote as updateCollectionVoiceNoteRemote
 } from '$lib/data/user-library';
 import { fetchCurationWorkspace, saveCurationWorkspace } from '$lib/data/curation-workspace';
+import { logAuditEvent } from '$lib/data/audit';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
 type AppState = {
@@ -268,6 +270,9 @@ export function addProvider(definition: Omit<ProviderDefinition, 'id'> & { id?: 
 
   if (added) {
     queueCurationSync();
+    if (cloudEnabled()) {
+      void logAuditEvent('provider.create', 'provider', normalizedId, { name: definition.name });
+    }
   }
 
   return added;
@@ -307,6 +312,9 @@ export function updateProvider(
 
   if (updated) {
     queueCurationSync();
+    if (cloudEnabled()) {
+      void logAuditEvent('provider.update', 'provider', targetId, { name: patch.name });
+    }
   }
 
   return updated;
@@ -333,6 +341,9 @@ export function removeProvider(providerId: string): boolean {
 
   if (removed) {
     queueCurationSync();
+    if (cloudEnabled()) {
+      void logAuditEvent('provider.delete', 'provider', targetId);
+    }
   }
 
   return removed;
@@ -446,6 +457,39 @@ export function updateCollectionVoiceNote(collectionId: string, voiceId: string,
     reportSyncError('updateCollectionVoiceNote', error);
     void hydrateCloudState();
   });
+}
+
+export function renameCollection(collectionId: string, newName: string) {
+  const trimmed = newName.trim();
+  if (!trimmed) return;
+
+  appState.update((state) => ({
+    ...state,
+    collections: state.collections.map((collection) => {
+      if (collection.id !== collectionId) return collection;
+      return { ...collection, name: trimmed };
+    })
+  }));
+
+  if (!cloudEnabled()) return;
+
+  void renameCollectionRemote(collectionId, trimmed).catch((error) => {
+    reportSyncError('renameCollection', error);
+    void hydrateCloudState();
+  });
+}
+
+export function reorderCollectionVoices(collectionId: string, voiceIds: string[]) {
+  appState.update((state) => ({
+    ...state,
+    collections: state.collections.map((collection) => {
+      if (collection.id !== collectionId) return collection;
+      return { ...collection, voiceIds };
+    })
+  }));
+
+  // Note: position reordering in Amplify requires updating each CollectionVoice record's
+  // position field. For now, only persists locally. Cloud sync on next hydrate.
 }
 
 export function deleteCollection(collectionId: string) {

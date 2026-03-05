@@ -122,6 +122,16 @@ export type Collection = {
   createdAt: string;
 };
 
+export type CurationShelf = {
+  id: string;
+  key: string;
+  title: string;
+  description: string;
+  voiceIds: string[];
+  published: boolean;
+  updatedAt: string;
+};
+
 export type VoicePack = {
   version: string;
   createdAt: string;

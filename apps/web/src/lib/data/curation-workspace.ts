@@ -1,5 +1,5 @@
 import { DEFAULT_PROVIDERS } from '$lib/providers';
-import type { ProviderDefinition, Voice } from '$lib/types';
+import type { CurationShelf, ProviderDefinition, Voice } from '$lib/types';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 import { dataClient } from '$lib/data/client';
 
@@ -94,6 +94,92 @@ export async function fetchCurationWorkspace(): Promise<{
     providerCatalog: safeProviders(record.providerCatalog)
   };
 }
+
+// ─── CurationShelf CRUD ───
+
+type ShelfRecord = {
+  id: string;
+  key: string;
+  title: string;
+  description?: string | null;
+  voiceIds: string[];
+  published?: boolean | null;
+  updatedAtIso: string;
+};
+
+type ShelfListResponse = {
+  data: ShelfRecord[];
+  nextToken?: string | null;
+  errors?: unknown;
+};
+
+export async function fetchShelves(): Promise<CurationShelf[]> {
+  const client = dataClient();
+
+  const loadPage = async (authMode?: 'apiKey' | 'userPool') => {
+    const response = (await client.models.CurationShelf.list(
+      { limit: 100, ...(authMode ? { authMode } : {}) }
+    )) as ShelfListResponse;
+    assertNoErrors(response.errors);
+    return response.data;
+  };
+
+  let records: ShelfRecord[];
+  try {
+    records = await loadPage();
+  } catch {
+    records = await loadPage('apiKey');
+  }
+
+  return records.map((r) => ({
+    id: r.id,
+    key: r.key,
+    title: r.title,
+    description: r.description ?? '',
+    voiceIds: r.voiceIds ?? [],
+    published: r.published ?? false,
+    updatedAt: r.updatedAtIso
+  }));
+}
+
+export async function saveShelf(shelf: CurationShelf) {
+  const client = dataClient();
+
+  // Try update first
+  try {
+    const updated = await client.models.CurationShelf.update({
+      id: shelf.id,
+      key: shelf.key,
+      title: shelf.title,
+      description: shelf.description,
+      voiceIds: shelf.voiceIds,
+      published: shelf.published,
+      updatedAtIso: new Date().toISOString()
+    });
+    assertNoErrors(updated.errors);
+    return;
+  } catch {
+    // Fall through to create
+  }
+
+  const created = await client.models.CurationShelf.create({
+    key: shelf.key,
+    title: shelf.title,
+    description: shelf.description,
+    voiceIds: shelf.voiceIds,
+    published: shelf.published,
+    updatedAtIso: new Date().toISOString()
+  });
+  assertNoErrors(created.errors);
+}
+
+export async function deleteShelf(shelfId: string) {
+  const client = dataClient();
+  const deleted = await client.models.CurationShelf.delete({ id: shelfId });
+  assertNoErrors(deleted.errors);
+}
+
+// ─── CurationWorkspace ───
 
 export async function saveCurationWorkspace(payload: {
   metadataOverrides: Record<string, VoiceMetadataPatch>;

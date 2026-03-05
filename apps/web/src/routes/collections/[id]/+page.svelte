@@ -3,6 +3,8 @@
   import {
     collections,
     removeVoiceFromCollection,
+    reorderCollectionVoices,
+    renameCollection,
     updateCollectionVoiceNote,
     deleteCollection,
     buildVoicePack
@@ -12,7 +14,10 @@
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
+  import { AUTH_MODE } from '$lib/auth/config';
   import type { Voice } from '$lib/types';
+
+  const authMode = AUTH_MODE;
 
   export let data: { voices: Voice[]; collectionId: string };
 
@@ -32,12 +37,38 @@
     if (!collection) return;
     nameInput = collection.name;
     editingName = true;
+    // Focus the input after render
+    requestAnimationFrame(() => {
+      const el = document.querySelector<HTMLInputElement>('.name-input');
+      el?.focus();
+      el?.select();
+    });
+  }
+
+  function saveNameEdit() {
+    if (!collection) return;
+    const trimmed = nameInput.trim();
+    editingName = false;
+    if (!trimmed || trimmed === collection.name) return;
+    renameCollection(collection.id, trimmed);
+    addToast(`Renamed to "${trimmed}".`);
   }
 
   function onNoteInput(voiceId: string, event: Event) {
     if (!collection) return;
     const target = event.currentTarget as HTMLTextAreaElement;
     updateCollectionVoiceNote(collection.id, voiceId, target.value);
+  }
+
+  function moveVoice(voiceId: string, direction: 'up' | 'down') {
+    if (!collection) return;
+    const ids = [...collection.voiceIds];
+    const idx = ids.indexOf(voiceId);
+    if (idx < 0) return;
+    const swapIdx = direction === 'up' ? idx - 1 : idx + 1;
+    if (swapIdx < 0 || swapIdx >= ids.length) return;
+    [ids[idx], ids[swapIdx]] = [ids[swapIdx], ids[idx]];
+    reorderCollectionVoices(collection.id, ids);
   }
 
   function removeVoice(voiceId: string) {
@@ -84,7 +115,7 @@
       <p>Collection not found. It may have been deleted.</p>
       <a href="/collections" class="btn-primary">Back to Collections</a>
     </div>
-  {:else if !$roleFlags.isGuest}
+  {:else if !$roleFlags.isGuest && authMode === 'amplify'}
     <div class="empty-state">
       <p>Sign in to view and manage your collections.</p>
     </div>
@@ -96,13 +127,14 @@
             <input
               class="name-input"
               bind:value={nameInput}
-              on:blur={() => { editingName = false; }}
-              on:keydown={(e) => { if (e.key === 'Enter') editingName = false; }}
+              on:blur={saveNameEdit}
+              on:keydown={(e) => { if (e.key === 'Enter') saveNameEdit(); if (e.key === 'Escape') { editingName = false; } }}
             />
           {:else}
             <h1>
               <button class="name-edit-btn" on:click={startEditName} aria-label="Edit collection name">
                 {collection.name}
+                <Icon name="pencil" size={16} />
               </button>
             </h1>
           {/if}
@@ -128,17 +160,32 @@
       </div>
     {:else}
       <section class="voice-grid">
-        {#each collectionVoices as voice}
+        {#each collectionVoices as voice, i}
           {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
           <article class="voice-card">
             <div class="card-top">
-              <span
-                class="provider-badge"
-                style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
-              >
-                {voice.provider}
-              </span>
-              <span class="tier">{voice.qualityTier}</span>
+              <div class="card-top-left">
+                {#if voice.imageUrl}
+                  <img class="voice-thumb" src={voice.imageUrl} alt="" width="44" height="44" loading="lazy" />
+                {/if}
+                <span
+                  class="provider-badge"
+                  style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
+                >
+                  {voice.provider}
+                </span>
+              </div>
+              <div class="card-top-right">
+                <span class="tier">{voice.qualityTier}</span>
+                <div class="reorder-btns">
+                  <button class="reorder-btn" disabled={i === 0} on:click={() => moveVoice(voice.id, 'up')} aria-label="Move up" title="Move up">
+                    <Icon name="chevron-up" size={14} />
+                  </button>
+                  <button class="reorder-btn" disabled={i === collectionVoices.length - 1} on:click={() => moveVoice(voice.id, 'down')} aria-label="Move down" title="Move down">
+                    <Icon name="chevron-down" size={14} />
+                  </button>
+                </div>
+              </div>
             </div>
 
             <a class="voice-link" href="/voices/{voice.id}">
@@ -280,6 +327,56 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.4rem;
+  }
+
+  .card-top-left {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .card-top-right {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .voice-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+
+  .reorder-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .reorder-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 18px;
+    border: 1px solid #d0dce6;
+    background: #f4f8fb;
+    color: #4a6580;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .reorder-btn:hover:not(:disabled) {
+    background: #e4edf4;
+    border-color: #a8bccf;
+  }
+
+  .reorder-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
   }
 
   .provider-badge {

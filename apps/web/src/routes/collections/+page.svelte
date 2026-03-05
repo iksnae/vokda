@@ -10,7 +10,10 @@
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
+  import { AUTH_MODE } from '$lib/auth/config';
   import type { Voice } from '$lib/types';
+
+  const authMode = AUTH_MODE;
 
   export let data: { voices: Voice[] };
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
@@ -60,7 +63,7 @@
     <p>Build voice sets for projects, scenes, and publishing workflows.</p>
   </section>
 
-  {#if !$roleFlags.isGuest}
+  {#if !$roleFlags.isGuest && authMode === 'amplify'}
     <div class="auth-prompt">
       <p>Sign in to start building voice collections.</p>
       <p class="hint">Browse the <a href="/">catalog</a> to discover voices first.</p>
@@ -99,14 +102,26 @@
             {#if previewVoices.length > 0}
               <div class="voice-previews">
                 {#each previewVoices as voice}
-                  {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
-                  <span
-                    class="mini-avatar"
-                    style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
-                    title={voice.name}
-                  >
-                    {voice.name.slice(0, 2)}
-                  </span>
+                  {#if voice.imageUrl}
+                    <img
+                      class="mini-avatar-img"
+                      src={voice.imageUrl}
+                      alt={voice.name}
+                      title={voice.name}
+                      width="36"
+                      height="36"
+                      loading="lazy"
+                    />
+                  {:else}
+                    {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
+                    <span
+                      class="mini-avatar"
+                      style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
+                      title={voice.name}
+                    >
+                      {voice.name.slice(0, 2)}
+                    </span>
+                  {/if}
                 {/each}
                 {#if extraCount > 0}
                   <span class="mini-avatar extra">+{extraCount}</span>
@@ -204,6 +219,14 @@
     display: flex;
     gap: 0.3rem;
     flex-wrap: wrap;
+  }
+
+  .mini-avatar-img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 
   .mini-avatar {

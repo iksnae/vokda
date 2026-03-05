@@ -157,6 +157,16 @@ export async function saveCollection(collection: Collection) {
   assertNoErrors(created.errors);
 }
 
+export async function renameCollection(collectionId: string, newName: string) {
+  const client = dataClient();
+  const updated = await client.models.Collection.update({
+    id: collectionId,
+    name: newName,
+    updatedAtIso: new Date().toISOString()
+  });
+  assertNoErrors(updated.errors);
+}
+
 export async function removeCollection(collectionId: string) {
   const client = dataClient();
 
