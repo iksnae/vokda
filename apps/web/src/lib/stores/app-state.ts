@@ -418,8 +418,44 @@ export function deleteCollection(collectionId: string) {
   });
 }
 
+const CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+
+function encodeTimeCrockford(time: number): string {
+  let value = time;
+  let output = '';
+
+  for (let i = 0; i < 10; i += 1) {
+    output = CROCKFORD[value % 32] + output;
+    value = Math.floor(value / 32);
+  }
+
+  return output;
+}
+
+function randomCrockford(length: number): string {
+  const bytes = new Uint8Array(length);
+  crypto.getRandomValues(bytes);
+
+  return Array.from(bytes)
+    .map((byte) => CROCKFORD[byte % 32])
+    .join('');
+}
+
+function generateVoiceProfileId(): string {
+  return `vp_${encodeTimeCrockford(Date.now())}${randomCrockford(16)}`;
+}
+
+function deriveProviderVoiceId(sourceKey: string): string {
+  const parts = sourceKey.split(':').map((part) => part.trim()).filter(Boolean);
+  return parts[parts.length - 1] ?? sourceKey;
+}
+
+function normalizeProvider(provider: string): string {
+  return provider.trim().toLowerCase();
+}
+
 export function buildVoicePack(voices: Voice[], items: CartItem[]): VoicePack {
-  const entries = items
+  const selected = items
     .map((item) => {
       const voice = voices.find((entry) => entry.id === item.voiceId);
       if (!voice) return null;
@@ -427,23 +463,100 @@ export function buildVoicePack(voices: Voice[], items: CartItem[]): VoicePack {
       const variant = voice.variants.find((entry) => entry.id === item.variantId);
       if (!variant) return null;
 
-      return {
-        voiceId: voice.id,
-        voiceName: voice.name,
-        variantId: variant.id,
-        sourceType: variant.sourceType,
-        sourceKey: variant.sourceKey,
-        runnable: variant.runnable,
-        supportsSsml: variant.supportsSsml,
-        outputFormats: variant.outputFormats,
-        licenseNotes: voice.licenseNotes
-      };
+      return { item, voice, variant };
     })
     .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 
+  const profileByKey = new Map<
+    string,
+    {
+      id: string;
+      name: string;
+      description?: string;
+      language: string;
+      gender?: string;
+      ageRange?: string;
+      tone?: string;
+      accent?: string;
+      personalityTags?: string[];
+      emotionalRange?: string[];
+      voiceQuality?: string;
+      previewUrl?: string;
+      recommendedFor?: string[];
+      sampleCount: number;
+      provider?: string;
+      providerVoiceId?: string;
+      seed?: boolean;
+      createdAt: string;
+      updatedAt: string;
+    }
+  >();
+
+  const entries = selected.map(({ voice, variant }) => {
+    const provider = normalizeProvider(voice.provider);
+    const providerVoiceId = deriveProviderVoiceId(variant.sourceKey);
+    const language = voice.languages[0] ?? 'en-US';
+    const profileKey = `${provider}::${providerVoiceId}::${language}`;
+
+    if (!profileByKey.has(profileKey)) {
+      const now = new Date().toISOString();
+
+      profileByKey.set(profileKey, {
+        id: generateVoiceProfileId(),
+        name: voice.name,
+        description: voice.description,
+        language,
+        gender: voice.metadata.genderPresentation,
+        ageRange: voice.metadata.agePresentation,
+        tone: voice.metadata.speakingStyle,
+        accent: voice.metadata.accent,
+        personalityTags: voice.metadata.machineTags,
+        emotionalRange: voice.metadata.toneTags,
+        voiceQuality: voice.qualityTier,
+        previewUrl: voice.samples.find((sample) => Boolean(sample.audioUrl))?.audioUrl,
+        recommendedFor: voice.metadata.useCases,
+        sampleCount: voice.samples.length,
+        provider,
+        providerVoiceId,
+        seed: !voice.id.startsWith('custom-'),
+        createdAt: now,
+        updatedAt: now
+      });
+    }
+
+    const profile = profileByKey.get(profileKey);
+    if (!profile) {
+      throw new Error('Failed to build voice profile map.');
+    }
+
+    return {
+      voiceId: voice.id,
+      voiceName: voice.name,
+      variantId: variant.id,
+      sourceType: variant.sourceType,
+      sourceKey: variant.sourceKey,
+      runnable: variant.runnable,
+      supportsSsml: variant.supportsSsml,
+      outputFormats: variant.outputFormats,
+      licenseNotes: voice.licenseNotes,
+      voiceProfileId: profile.id
+    };
+  });
+
+  const voiceProfiles = Array.from(profileByKey.values());
+
   return {
-    version: '1.0.0',
+    version: '1.1.0',
     createdAt: new Date().toISOString(),
-    items: entries
+    format: 'vokda.voice-catalog.v1',
+    voiceProfiles,
+    catalogHints: {
+      castingHints: entries.map((entry) => ({
+        voiceProfileId: entry.voiceProfileId,
+        voiceProfileName: entry.voiceName,
+        manualOverride: true
+      }))
+    },
+    items: entries.map(({ voiceProfileId, ...entry }) => entry)
   };
 }

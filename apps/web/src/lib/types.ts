@@ -62,6 +62,11 @@ export type Collection = {
 export type VoicePack = {
   version: string;
   createdAt: string;
+  format: 'vokda.voice-catalog.v1';
+  voiceProfiles: VoiceProfile[];
+  catalogHints?: {
+    castingHints?: CharacterCastingHint[];
+  };
   items: Array<{
     voiceId: string;
     voiceName: string;
@@ -73,4 +78,35 @@ export type VoicePack = {
     outputFormats: VoiceVariant['outputFormats'];
     licenseNotes: string;
   }>;
+};
+
+export type VoiceProfile = {
+  id: string;
+  name: string;
+  description?: string;
+  language: string;
+  gender?: string;
+  ageRange?: string;
+  tone?: string;
+  accent?: string;
+  personalityTags?: string[];
+  emotionalRange?: string[];
+  voiceQuality?: string;
+  previewUrl?: string;
+  recommendedFor?: string[];
+  sampleCount: number;
+  provider?: string;
+  providerVoiceId?: string;
+  seed?: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CharacterCastingHint = {
+  voiceProfileId: string;
+  voiceProfileName: string;
+  confidence?: number;
+  justification?: string;
+  matchedAttributes?: string[];
+  manualOverride?: boolean;
 };

@@ -30,7 +30,7 @@
 
     const anchor = document.createElement('a');
     anchor.href = url;
-    anchor.download = `voice-pack-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.download = `voice-catalog-import-${new Date().toISOString().slice(0, 10)}.json`;
     anchor.click();
 
     URL.revokeObjectURL(url);
@@ -44,7 +44,7 @@
 <main>
   <section class="hero">
     <h1>Cart</h1>
-    <p>Finalize selected variants and export a portable Voice Pack JSON.</p>
+    <p>Finalize selected variants and export an import-ready voice catalog bundle.</p>
 
     <div class="stats">
       <article>
@@ -84,7 +84,7 @@
     </ul>
 
     <div class="actions">
-      <button on:click={downloadVoicePack}>Export Voice Pack</button>
+      <button on:click={downloadVoicePack}>Export Voice Catalog Bundle</button>
       <button class="ghost" on:click={clearCart}>Clear Cart</button>
     </div>
   {/if}
