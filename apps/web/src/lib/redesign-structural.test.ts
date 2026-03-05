@@ -211,9 +211,9 @@ describe('Phase C: Discovery & delight', () => {
       expect(detail).toContain('Voice profile');
     });
 
-    it('detail page has collapsible technical section', () => {
+    it('detail page has model card section', () => {
       const detail = readComponent('routes/voices/[id]/+page.svelte');
-      expect(detail).toContain('techOpen');
+      expect(detail).toContain('Model card');
     });
   });
 });

@@ -9,6 +9,71 @@ export type VoiceVariant = {
   previewOnly: boolean;
 };
 
+export type VoiceModelCard = {
+  /** Model / voice identity */
+  modelName?: string;
+  modelVersion?: string;
+  modelFamily?: string;
+  modelSize?: string;
+  architecture?: string;
+
+  /** Provider info */
+  providerName: string;
+  providerType: 'cloud_api' | 'local_mlx' | 'open_model' | 'self_hosted';
+  providerUrl?: string;
+  modelUrl?: string;
+  apiEndpoint?: string;
+
+  /** Training & capabilities */
+  trainingData?: string;
+  baseModel?: string;
+  sampleRate?: number;
+  bitDepth?: number;
+  channels?: number;
+  streamingSupport?: boolean;
+  voiceCloning?: boolean;
+  emotionControl?: boolean;
+  ssmlSupport?: boolean;
+  wordTimestamps?: boolean;
+  multilingual?: boolean;
+
+  /** Supported features */
+  supportedLanguages?: string[];
+  supportedStyles?: string[];
+  supportedEmotions?: string[];
+
+  /** Performance */
+  realtimeFactor?: string;
+  latencyMs?: string;
+  maxInputLength?: number;
+  concurrencyLimit?: number;
+
+  /** Licensing & compliance */
+  license?: string;
+  licenseUrl?: string;
+  commercialUse?: boolean;
+  attributionRequired?: boolean;
+  dataRetention?: string;
+  gdprCompliant?: boolean;
+
+  /** Runtime requirements (local models) */
+  runtime?: string;
+  quantization?: string;
+  diskSize?: string;
+  memoryRequired?: string;
+  hardwareRequirements?: string;
+
+  /** Dates */
+  releaseDate?: string;
+  lastUpdated?: string;
+
+  /** Additional context */
+  paperUrl?: string;
+  citationBibtex?: string;
+  knownLimitations?: string[];
+  ethicsNotes?: string[];
+};
+
 export type VoiceMetadata = {
   shortLabel: string;
   searchDescription: string;
@@ -35,6 +100,7 @@ export type Voice = {
   qualityTier: 'basic' | 'standard' | 'premium';
   licenseNotes: string;
   metadata: VoiceMetadata;
+  modelCard?: VoiceModelCard;
   samples: VoiceSample[];
   variants: VoiceVariant[];
 };

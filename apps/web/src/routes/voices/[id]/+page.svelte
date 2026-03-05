@@ -76,21 +76,6 @@
 
   $: isFav = voice ? $favorites.includes(voice.id) : false;
 
-  /** Collapsible sections */
-  let techOpen = false;
-
-  function sourceLabel(sourceType: VoiceVariant['sourceType']) {
-    switch (sourceType) {
-      case 'cloud_provider': return 'Cloud Provider';
-      case 'local_model': return 'Local Model';
-      case 'hf_model': return 'Open Model';
-      case 'hf_space': return 'HF Space';
-      case 'hf_endpoint': return 'HF Endpoint';
-      case 'self_hosted': return 'Self Hosted';
-      default: return sourceType;
-    }
-  }
-
   function handleFavorite() {
     if (!voice) return;
     if (!$roleFlags.isGuest) {
@@ -376,61 +361,186 @@
       {/if}
     </section>
 
-    <!-- ─── License ─── -->
-    <section class="license-section">
-      <div class="license-card">
-        <Icon name="info" size={16} />
-        <div>
-          <p class="license-heading">License & usage</p>
-          <p class="license-text">{voice.licenseNotes}</p>
+    <!-- ─── Model Card ─── -->
+    {#if voice.modelCard}
+      {@const mc = voice.modelCard}
+      <section class="model-card-section">
+        <h2 class="section-title">
+          <Icon name="info" size={20} />
+          Model card
+        </h2>
+
+        <div class="mc-grid">
+          <!-- Provider & Model -->
+          <div class="mc-block">
+            <h3 class="mc-block-title">Provider</h3>
+            <table class="mc-table">
+              <tr><td>Provider</td><td>
+                {#if mc.providerUrl}
+                  <a href={mc.providerUrl} target="_blank" rel="noopener">{mc.providerName}</a>
+                {:else}
+                  {mc.providerName}
+                {/if}
+              </td></tr>
+              <tr><td>Type</td><td>
+                <span class="mc-type-badge" class:mc-cloud={mc.providerType === 'cloud_api'} class:mc-local={mc.providerType === 'local_mlx'}>
+                  {mc.providerType === 'cloud_api' ? 'Cloud API' : mc.providerType === 'local_mlx' ? 'Local · MLX' : mc.providerType}
+                </span>
+              </td></tr>
+              {#if mc.modelFamily}<tr><td>Family</td><td>{mc.modelFamily}</td></tr>{/if}
+              {#if mc.modelName}<tr><td>Model</td><td>{mc.modelName}</td></tr>{/if}
+              {#if mc.modelSize}<tr><td>Parameters</td><td>{mc.modelSize}</td></tr>{/if}
+              {#if mc.architecture}<tr><td>Architecture</td><td>{mc.architecture}</td></tr>{/if}
+              {#if mc.baseModel}<tr><td>Base model</td><td>{mc.baseModel}</td></tr>{/if}
+              {#if mc.modelUrl}
+                <tr><td>Model page</td><td><a href={mc.modelUrl} target="_blank" rel="noopener">{mc.modelUrl.replace('https://huggingface.co/', '🤗 ')}</a></td></tr>
+              {/if}
+              {#if mc.apiEndpoint}<tr><td>API endpoint</td><td><code>{mc.apiEndpoint}</code></td></tr>{/if}
+            </table>
+          </div>
+
+          <!-- Capabilities -->
+          <div class="mc-block">
+            <h3 class="mc-block-title">Capabilities</h3>
+            <div class="mc-caps">
+              <span class="mc-cap" class:mc-cap-yes={mc.multilingual} class:mc-cap-no={!mc.multilingual}>
+                {mc.multilingual ? '✓' : '✗'} Multilingual
+              </span>
+              <span class="mc-cap" class:mc-cap-yes={mc.ssmlSupport} class:mc-cap-no={!mc.ssmlSupport}>
+                {mc.ssmlSupport ? '✓' : '✗'} SSML
+              </span>
+              <span class="mc-cap" class:mc-cap-yes={mc.streamingSupport} class:mc-cap-no={!mc.streamingSupport}>
+                {mc.streamingSupport ? '✓' : '✗'} Streaming
+              </span>
+              <span class="mc-cap" class:mc-cap-yes={mc.voiceCloning} class:mc-cap-no={!mc.voiceCloning}>
+                {mc.voiceCloning ? '✓' : '✗'} Voice cloning
+              </span>
+              <span class="mc-cap" class:mc-cap-yes={mc.emotionControl} class:mc-cap-no={!mc.emotionControl}>
+                {mc.emotionControl ? '✓' : '✗'} Emotion control
+              </span>
+              <span class="mc-cap" class:mc-cap-yes={mc.wordTimestamps} class:mc-cap-no={!mc.wordTimestamps}>
+                {mc.wordTimestamps ? '✓' : '✗'} Word timestamps
+              </span>
+            </div>
+            {#if mc.supportedStyles && mc.supportedStyles.length > 0}
+              <div class="mc-sub">
+                <span class="mc-sub-label">Styles</span>
+                <div class="mc-chip-list">
+                  {#each mc.supportedStyles as style}
+                    <span class="mc-chip">{style}</span>
+                  {/each}
+                </div>
+              </div>
+            {/if}
+            {#if mc.supportedLanguages && mc.supportedLanguages.length > 0}
+              <div class="mc-sub">
+                <span class="mc-sub-label">Languages</span>
+                <div class="mc-chip-list">
+                  {#each mc.supportedLanguages as lang}
+                    <span class="mc-chip">{lang}</span>
+                  {/each}
+                </div>
+              </div>
+            {/if}
+          </div>
+
+          <!-- Audio / Performance -->
+          <div class="mc-block">
+            <h3 class="mc-block-title">Audio & performance</h3>
+            <table class="mc-table">
+              {#if mc.sampleRate}<tr><td>Sample rate</td><td>{(mc.sampleRate / 1000).toFixed(0)} kHz</td></tr>{/if}
+              {#if mc.channels}<tr><td>Channels</td><td>{mc.channels === 1 ? 'Mono' : 'Stereo'}</td></tr>{/if}
+              {#if mc.maxInputLength}<tr><td>Max input</td><td>{mc.maxInputLength.toLocaleString()} characters</td></tr>{/if}
+              {#if mc.latencyMs}<tr><td>Latency</td><td>{mc.latencyMs}</td></tr>{/if}
+              {#if mc.realtimeFactor}<tr><td>Speed</td><td>{mc.realtimeFactor}</td></tr>{/if}
+            </table>
+          </div>
+
+          <!-- Runtime (local models) -->
+          {#if mc.providerType === 'local_mlx'}
+            <div class="mc-block">
+              <h3 class="mc-block-title">Runtime</h3>
+              <table class="mc-table">
+                {#if mc.runtime}<tr><td>Engine</td><td>{mc.runtime}</td></tr>{/if}
+                {#if mc.quantization}<tr><td>Quantization</td><td>{mc.quantization}</td></tr>{/if}
+                {#if mc.diskSize}<tr><td>Disk size</td><td>{mc.diskSize}</td></tr>{/if}
+                {#if mc.memoryRequired}<tr><td>Memory</td><td>{mc.memoryRequired}</td></tr>{/if}
+                {#if mc.hardwareRequirements}<tr><td>Hardware</td><td>{mc.hardwareRequirements}</td></tr>{/if}
+              </table>
+            </div>
+          {/if}
+
+          <!-- License -->
+          <div class="mc-block mc-license-block">
+            <h3 class="mc-block-title">License & compliance</h3>
+            <table class="mc-table">
+              <tr><td>License</td><td>
+                {#if mc.licenseUrl}
+                  <a href={mc.licenseUrl} target="_blank" rel="noopener">{mc.license || 'View license'}</a>
+                {:else}
+                  {mc.license || voice.licenseNotes}
+                {/if}
+              </td></tr>
+              <tr><td>Commercial use</td><td>
+                <span class="mc-cap" class:mc-cap-yes={mc.commercialUse} class:mc-cap-no={mc.commercialUse === false}>
+                  {mc.commercialUse ? '✓ Allowed' : '✗ Not allowed'}
+                </span>
+              </td></tr>
+              {#if mc.attributionRequired !== undefined}
+                <tr><td>Attribution</td><td>{mc.attributionRequired ? 'Required' : 'Not required'}</td></tr>
+              {/if}
+              {#if mc.dataRetention}<tr><td>Data retention</td><td>{mc.dataRetention}</td></tr>{/if}
+              {#if mc.gdprCompliant !== undefined}
+                <tr><td>GDPR</td><td>{mc.gdprCompliant ? 'Compliant' : 'Check with provider'}</td></tr>
+              {/if}
+            </table>
+          </div>
+
+          <!-- Known Limitations -->
+          {#if mc.knownLimitations && mc.knownLimitations.length > 0}
+            <div class="mc-block mc-full-width">
+              <h3 class="mc-block-title">Known limitations</h3>
+              <ul class="mc-limitations">
+                {#each mc.knownLimitations as lim}
+                  <li>{lim}</li>
+                {/each}
+              </ul>
+            </div>
+          {/if}
+
+          <!-- References -->
+          {#if mc.paperUrl || mc.releaseDate}
+            <div class="mc-block mc-full-width">
+              <h3 class="mc-block-title">References</h3>
+              <table class="mc-table">
+                {#if mc.releaseDate}<tr><td>Released</td><td>{mc.releaseDate}</td></tr>{/if}
+                {#if mc.paperUrl}<tr><td>Paper</td><td><a href={mc.paperUrl} target="_blank" rel="noopener">{mc.paperUrl}</a></td></tr>{/if}
+              </table>
+            </div>
+          {/if}
         </div>
-      </div>
-    </section>
 
-    <!-- ─── Technical Details — collapsible ─── -->
-    <section class="collapsible-section">
-      <button class="section-toggle" on:click={() => (techOpen = !techOpen)} aria-expanded={techOpen}>
-        <Icon name={techOpen ? 'chevron-down' : 'chevron-right'} size={16} />
-        Technical details
-      </button>
-      {#if techOpen}
-        <div class="section-content" transition:slide|local>
-          <ul class="variants-list">
-            {#each voice.variants as v}
-              <li class="variant-item">
-                <div class="variant-header">
-                  <h3>{sourceLabel(v.sourceType)}</h3>
-                  <code class="source-key">{v.sourceKey}</code>
-                </div>
-                <div class="variant-badges">
-                  <span class={v.runnable ? 'badge-ok' : 'badge-warn'}>
-                    {v.runnable ? 'Live preview' : 'Preview-only'}
-                  </span>
-                  <span class={v.supportsSsml ? 'badge-ok' : 'badge-muted'}>
-                    {v.supportsSsml ? 'SSML supported' : 'Plain text only'}
-                  </span>
-                  <span class="badge-neutral">
-                    {v.outputFormats.join(', ')}
-                  </span>
-                  <span class="badge-neutral">
-                    Max {v.maxInputChars.toLocaleString()} chars
-                  </span>
-                </div>
-              </li>
-            {/each}
-          </ul>
-
+        <!-- IDs -->
+        <div class="mc-ids">
           <div class="meta-id">
             <span>Voice ID</span>
             <code>{voice.id}</code>
           </div>
-          <div class="meta-id">
-            <span>Provider Voice ID</span>
-            <code>{voice.providerVoiceId}</code>
-          </div>
+          {#if voice.providerVoiceId}
+            <div class="meta-id">
+              <span>Provider Voice ID</span>
+              <code>{voice.providerVoiceId}</code>
+            </div>
+          {/if}
+          {#if variant}
+            <div class="meta-id">
+              <span>Source key</span>
+              <code>{variant.sourceKey}</code>
+            </div>
+          {/if}
         </div>
-      {/if}
-    </section>
+      </section>
+    {/if}
   {/if}
 </main>
 
@@ -911,117 +1021,7 @@
     color: #41633e;
   }
 
-  /* ─── License ─── */
-  .license-section {
-    margin-top: 1rem;
-  }
-
-  .license-card {
-    display: flex;
-    gap: 0.65rem;
-    padding: 0.85rem 1rem;
-    background: #fffbf0;
-    border: 1px solid #eedcb0;
-    border-radius: 14px;
-    color: #6f4d1b;
-    align-items: flex-start;
-  }
-
-  .license-heading {
-    font-size: var(--text-small);
-    font-weight: 720;
-    margin-bottom: 0.15rem;
-  }
-
-  .license-text {
-    font-size: var(--text-small);
-    line-height: 1.45;
-  }
-
-  /* ─── Collapsible Technical ─── */
-  .collapsible-section {
-    margin-top: 0.8rem;
-    border: 1px solid #c4d2df;
-    border-radius: 16px;
-    background: #fff;
-    overflow: hidden;
-  }
-
-  .section-toggle {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.85rem 1rem;
-    background: none;
-    border: none;
-    font-size: var(--text-body);
-    font-weight: 680;
-    color: #284f69;
-    cursor: pointer;
-    text-align: left;
-  }
-
-  .section-toggle:hover { background: #f6f9fc; }
-
-  .section-content {
-    padding: 0 1rem 1rem;
-    display: grid;
-    gap: 0.65rem;
-    animation: slideDown 200ms ease;
-  }
-
-  .variants-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.55rem;
-  }
-
-  .variant-item {
-    border: 1px solid #dce5ec;
-    border-radius: 12px;
-    padding: 0.75rem 0.85rem;
-    background: #fafcfe;
-  }
-
-  .variant-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
-
   h3 { font-size: var(--text-body); color: #1a3347; }
-
-  .source-key {
-    font-size: var(--text-xs);
-    font-family: 'SF Mono', Menlo, Monaco, monospace;
-    color: #5a7a90;
-    background: #eef4f8;
-    padding: 0.15rem 0.45rem;
-    border-radius: 6px;
-  }
-
-  .variant-badges {
-    margin-top: 0.45rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-  }
-
-  .variant-badges span {
-    border-radius: 999px;
-    padding: 0.14rem 0.48rem;
-    font-size: var(--text-xs);
-    font-weight: 620;
-  }
-
-  .badge-ok { color: #1f5a30; background: #d8f2dd; border: 1px solid #bfe3c7; }
-  .badge-warn { color: #744c17; background: #f7e8d2; border: 1px solid #eed7b7; }
-  .badge-muted { color: #5a7a90; background: #eef4f8; border: 1px solid #d6e2ec; }
-  .badge-neutral { color: #2d4861; background: #eaf1f8; border: 1px solid #d3e0eb; }
 
   .meta-id {
     display: flex;
@@ -1088,6 +1088,208 @@
     .play-btn-large {
       width: 48px;
       height: 48px;
+    }
+
+  }
+
+  /* ─── Model Card ─── */
+  .model-card-section {
+    margin-top: 1.5rem;
+  }
+
+  .model-card-section .section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .mc-block {
+    background: #fff;
+    border: 1px solid #d6e2ec;
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+  }
+
+  .mc-full-width {
+    grid-column: 1 / -1;
+  }
+
+  .mc-block-title {
+    font-size: var(--text-small);
+    font-weight: 750;
+    color: #1a3347;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.55rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #eaf0f5;
+  }
+
+  .mc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-small);
+  }
+
+  .mc-table tr + tr td { padding-top: 0.3rem; }
+
+  .mc-table td:first-child {
+    color: #6a8ea6;
+    font-weight: 620;
+    white-space: nowrap;
+    padding-right: 0.75rem;
+    width: 1%;
+    vertical-align: top;
+  }
+
+  .mc-table td:last-child {
+    color: #1a3347;
+    word-break: break-word;
+  }
+
+  .mc-table a {
+    color: var(--brand-600);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .mc-table a:hover { text-decoration: underline; }
+
+  .mc-table code {
+    font-family: 'SF Mono', Menlo, Monaco, monospace;
+    font-size: var(--text-xs);
+    color: #5a7a90;
+    background: #eef4f8;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+  }
+
+  /* Capability badges */
+  .mc-caps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mc-cap {
+    font-size: var(--text-xs);
+    font-weight: 650;
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+
+  .mc-cap-yes {
+    color: #1f5a30;
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+  }
+
+  .mc-cap-no {
+    color: #78909c;
+    background: #f5f5f5;
+    border-color: #e0e0e0;
+  }
+
+  .mc-sub {
+    margin-top: 0.45rem;
+  }
+
+  .mc-sub-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: #6a8ea6;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .mc-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .mc-chip {
+    font-size: var(--text-xs);
+    background: #eef4f8;
+    border: 1px solid #d6e2ec;
+    border-radius: 999px;
+    padding: 0.1rem 0.4rem;
+    color: #37546d;
+    font-weight: 600;
+  }
+
+  .mc-type-badge {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .mc-cloud {
+    color: #1565c0;
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+  }
+
+  .mc-local {
+    color: #2e7d32;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+  }
+
+  .mc-license-block {
+    background: #fffdf5;
+    border-color: #eedcb0;
+  }
+
+  .mc-limitations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .mc-limitations li {
+    font-size: var(--text-small);
+    color: #5a4a20;
+    padding: 0.3rem 0.55rem;
+    background: #fefbe8;
+    border-radius: 8px;
+    border-left: 3px solid #f0c36e;
+    line-height: 1.4;
+  }
+
+  .mc-ids {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    padding: 0.65rem 0.85rem;
+    background: #f7fafc;
+    border-radius: 10px;
+    border: 1px solid #e4edf3;
+  }
+
+  @media (max-width: 640px) {
+    .mc-grid {
+      grid-template-columns: 1fr;
+    }
+    .mc-ids {
+      flex-direction: column;
+      gap: 0.3rem;
     }
   }
 </style>
