@@ -15,6 +15,12 @@ SvelteKit frontend for catalog browsing and early curation UX.
 
 - `PUBLIC_APP_ENV`
   - Environment label shown/used by frontend logic (`local`, `preview`, `production`)
+- `PUBLIC_SYNTH_MODE`
+  - `mock` (default) uses local adapter stubs with browser playback fallback
+  - `gateway` posts preview requests to `PUBLIC_SYNTH_GATEWAY_URL`
+- `PUBLIC_SYNTH_GATEWAY_URL`
+  - Required when `PUBLIC_SYNTH_MODE=gateway`
+  - Expected endpoint: `POST` JSON payload for audition synthesis
 
 ## Catalog Contract (Current)
 

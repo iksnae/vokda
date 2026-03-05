@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
+  import { synthesizePreview, stopPreviewPlayback } from '$lib/synthesis/service';
+  import type { SynthesisPreview } from '$lib/synthesis/types';
   import {
     addToCart,
     addVoiceToCollection,
@@ -7,7 +8,7 @@
     createCollection,
     updateCollectionVoiceNote
   } from '$lib/stores/app-state';
-  import { getVariantWarnings, stripSsml, truncateToVariantLimit } from '$lib/voice-utils';
+  import { getVariantWarnings } from '$lib/voice-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voice: Voice };
@@ -22,6 +23,8 @@
   let previewInput =
     'This is a live audition preview from Vokda. Use this to validate tone, pacing, and clarity.';
   let previewStatus = '';
+  let previewBusy = false;
+  let previewResult: SynthesisPreview | null = null;
 
   $: previewVariant = data.voice.variants.find((variant) => variant.id === previewVariantId);
   $: previewWarnings = previewVariant ? getVariantWarnings(data.voice, previewVariant) : [];
@@ -80,46 +83,33 @@
     quickCollectionName = '';
   }
 
-  function playPreview() {
-    if (!browser || !previewVariant) return;
-    if (!('speechSynthesis' in window)) {
-      previewStatus = 'Browser speech preview is unavailable in this environment.';
-      return;
+  async function playPreview() {
+    if (!previewVariant) return;
+
+    previewBusy = true;
+    previewStatus = 'Generating preview...';
+    previewResult = null;
+
+    try {
+      const preview = await synthesizePreview({
+        voice: data.voice,
+        variant: previewVariant,
+        input: previewInput,
+        mode: previewInputMode
+      });
+
+      previewResult = preview;
+      previewStatus = `Preview generated via ${preview.adapter} in ${preview.latencyMs}ms.`;
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown preview error.';
+      previewStatus = `Preview failed: ${message}`;
+    } finally {
+      previewBusy = false;
     }
-
-    const baseInput = previewInputMode === 'ssml' ? stripSsml(previewInput) : previewInput;
-    const constrainedInput = truncateToVariantLimit(baseInput, previewVariant);
-    if (!constrainedInput.trim()) {
-      previewStatus = 'Preview text is empty after processing.';
-      return;
-    }
-
-    const utterance = new SpeechSynthesisUtterance(constrainedInput);
-    utterance.lang = data.voice.languages[0] ?? 'en-US';
-    utterance.rate = 1;
-    utterance.pitch = 1;
-
-    const voiceMatch = speechSynthesis
-      .getVoices()
-      .find((entry) => entry.lang.toLowerCase() === utterance.lang.toLowerCase());
-    if (voiceMatch) {
-      utterance.voice = voiceMatch;
-    }
-
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
-
-    if (baseInput.length > constrainedInput.length) {
-      previewStatus = `Preview started. Input truncated to ${previewVariant.maxInputChars} chars.`;
-      return;
-    }
-
-    previewStatus = 'Preview started.';
   }
 
   function stopPreview() {
-    if (!browser || !('speechSynthesis' in window)) return;
-    speechSynthesis.cancel();
+    stopPreviewPlayback();
     previewStatus = 'Preview stopped.';
   }
 </script>
@@ -186,12 +176,29 @@
       {/if}
 
       <div class="actions">
-        <button on:click={playPreview} disabled={!previewVariant}>Play Preview</button>
+        <button on:click={playPreview} disabled={!previewVariant || previewBusy}>
+          {previewBusy ? 'Generating...' : 'Play Preview'}
+        </button>
         <button class="ghost" on:click={stopPreview}>Stop</button>
       </div>
 
       {#if previewStatus}
         <p class="flash">{previewStatus}</p>
+      {/if}
+
+      {#if previewResult}
+        <div class="preview-result">
+          <p><strong>Adapter:</strong> {previewResult.adapter}</p>
+          <p><strong>Source:</strong> {previewResult.sourceKey}</p>
+          <p><strong>Input used:</strong> {previewResult.inputUsed}</p>
+          {#if previewResult.warnings.length > 0}
+            <ul class="warnings">
+              {#each previewResult.warnings as warning}
+                <li>{warning}</li>
+              {/each}
+            </ul>
+          {/if}
+        </div>
       {/if}
     </div>
   </section>
@@ -398,6 +405,16 @@
     margin: 0.65rem 0 0;
     padding-left: 1.05rem;
     color: #714816;
+  }
+
+  .preview-result {
+    margin-top: 0.8rem;
+    border: 1px solid #d3e0eb;
+    border-radius: 10px;
+    background: #f8fbff;
+    padding: 0.65rem;
+    display: grid;
+    gap: 0.2rem;
   }
 
   .samples p,
