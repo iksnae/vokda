@@ -14,8 +14,8 @@ Vokda MVP is static-first:
 ### Frontend (`apps/web`)
 
 - SvelteKit app
-- Catalog source currently lives at `apps/web/src/lib/data/catalog.ts`
-- Supports browse, search, and filter over typed catalog data
+- Catalog source currently lives at `apps/web/static/data/voices.json`
+- Supports browse, search, filter, curation, and export over typed catalog data
 
 ## 3. Deployment
 

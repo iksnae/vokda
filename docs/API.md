@@ -21,4 +21,4 @@
 
 ## Notes
 
-During Phase 1, frontend reads catalog data from an app-owned data module. API routes are introduced when dynamic behavior is required.
+Current frontend reads catalog data from `apps/web/static/data/voices.json`. API routes are introduced when dynamic behavior is required.

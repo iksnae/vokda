@@ -1,43 +1,63 @@
 <script lang="ts">
-  import type { Voice } from '$lib/types';
+  import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voices: Voice[] };
 
   let query = '';
   let selectedLanguage = 'all';
   let selectedSource = 'all';
+  let selectedProvider = 'all';
   let runnableOnly = false;
   let ssmlOnly = false;
 
-  $: availableLanguages = Array.from(
-    new Set(data.voices.flatMap((voice) => voice.languages))
-  ).sort();
+  const sourceLabels: Record<VoiceVariant['sourceType'], string> = {
+    cloud_provider: 'Cloud',
+    hf_model: 'HF Model',
+    hf_space: 'HF Space',
+    hf_endpoint: 'HF Endpoint',
+    self_hosted: 'Self-hosted'
+  };
 
+  function sourceLabel(source: string) {
+    return sourceLabels[source as VoiceVariant['sourceType']] ?? source;
+  }
+
+  $: availableLanguages = Array.from(new Set(data.voices.flatMap((voice) => voice.languages))).sort();
   $: availableSources = Array.from(
     new Set(data.voices.flatMap((voice) => voice.variants.map((variant) => variant.sourceType)))
   ).sort();
+  $: availableProviders = Array.from(new Set(data.voices.map((voice) => voice.provider))).sort();
 
   $: filtered = data.voices.filter((voice) => {
     const q = query.trim().toLowerCase();
+
     const matchesQuery =
       !q ||
       voice.name.toLowerCase().includes(q) ||
+      voice.provider.toLowerCase().includes(q) ||
       voice.description.toLowerCase().includes(q) ||
       voice.tags.some((tag) => tag.toLowerCase().includes(q));
 
-    const matchesLanguage =
-      selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
-
+    const matchesLanguage = selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
     const matchesSource =
       selectedSource === 'all' ||
       voice.variants.some((variant) => variant.sourceType === selectedSource);
-
+    const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
     const matchesRunnable = !runnableOnly || voice.variants.some((variant) => variant.runnable);
-
     const matchesSsml = !ssmlOnly || voice.variants.some((variant) => variant.supportsSsml);
 
-    return matchesQuery && matchesLanguage && matchesSource && matchesRunnable && matchesSsml;
+    return (
+      matchesQuery &&
+      matchesLanguage &&
+      matchesSource &&
+      matchesProvider &&
+      matchesRunnable &&
+      matchesSsml
+    );
   });
+
+  $: runnableCount = data.voices.filter((voice) => voice.variants.some((variant) => variant.runnable)).length;
+  $: providerCount = availableProviders.length;
 </script>
 
 <svelte:head>
@@ -45,15 +65,47 @@
 </svelte:head>
 
 <main>
-  <h1>Vokda</h1>
-  <p>Voice catalog MVP (app-owned data module)</p>
-
-  <label>
-    Search voices
-    <input bind:value={query} placeholder="narrator, warm, multilingual..." />
-  </label>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Voice Discovery Platform</p>
+      <h1>Curate production-ready voices across providers and open models</h1>
+      <p class="summary">
+        Compare capabilities, inspect variant constraints, and build reusable sets for narration, character work,
+        and product experiences.
+      </p>
+    </div>
+    <div class="stats">
+      <article>
+        <strong>{data.voices.length}</strong>
+        <span>Curated Voices</span>
+      </article>
+      <article>
+        <strong>{providerCount}</strong>
+        <span>Providers</span>
+      </article>
+      <article>
+        <strong>{runnableCount}</strong>
+        <span>Runnable Entries</span>
+      </article>
+    </div>
+  </section>
 
   <section class="filters">
+    <label>
+      Search
+      <input bind:value={query} placeholder="provider, voice, tag, use case..." />
+    </label>
+
+    <label>
+      Provider
+      <select bind:value={selectedProvider}>
+        <option value="all">All providers</option>
+        {#each availableProviders as provider}
+          <option value={provider}>{provider}</option>
+        {/each}
+      </select>
+    </label>
+
     <label>
       Language
       <select bind:value={selectedLanguage}>
@@ -65,128 +117,260 @@
     </label>
 
     <label>
-      Source type
+      Source
       <select bind:value={selectedSource}>
         <option value="all">All sources</option>
         {#each availableSources as source}
-          <option value={source}>{source}</option>
+          <option value={source}>{sourceLabel(source)}</option>
         {/each}
       </select>
     </label>
 
     <label class="toggle">
-      <input type="checkbox" bind:checked={runnableOnly} />
-      Runnable only
+      <input type="checkbox" bind:checked={runnableOnly} /> Runnable only
     </label>
 
     <label class="toggle">
-      <input type="checkbox" bind:checked={ssmlOnly} />
-      SSML supported
+      <input type="checkbox" bind:checked={ssmlOnly} /> SSML support
     </label>
   </section>
 
-  <ul>
+  <section class="grid">
     {#each filtered as voice}
-      <li>
+      <article>
+        <div class="top-line">
+          <p class="provider">{voice.provider}</p>
+          <p class="tier">{voice.qualityTier}</p>
+        </div>
         <h2>{voice.name}</h2>
-        <p>{voice.description}</p>
-        <p>{voice.languages.join(', ')} | {voice.qualityTier}</p>
-        <p>{voice.variants.length} variant{voice.variants.length === 1 ? '' : 's'}</p>
-        <a class="details-link" href={`/voices/${voice.id}`}>View details</a>
-      </li>
+        <p class="description">{voice.description}</p>
+
+        <div class="chips">
+          {#each voice.languages as language}
+            <span>{language}</span>
+          {/each}
+          {#each voice.tags.slice(0, 3) as tag}
+            <span class="tag">{tag}</span>
+          {/each}
+        </div>
+
+        <p class="meta">
+          {voice.variants.length} variants · {voice.samples.length} samples ·
+          {voice.variants.some((variant) => variant.runnable) ? ' runnable' : ' preview-only'}
+        </p>
+
+        <a class="details-link" href={`/voices/${voice.id}`}>Open Voice Profile</a>
+      </article>
     {:else}
-      <li>No voices matched the current search.</li>
+      <p class="empty">No voices matched the active filters.</p>
     {/each}
-  </ul>
+  </section>
 </main>
 
 <style>
-  :global(body) {
-    margin: 0;
-    font-family: "Avenir Next", "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #f2f7f9 0%, #e9eef6 100%);
-    color: #16202a;
+  main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0.6rem 1rem 3.2rem;
   }
 
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem 3rem;
+  .hero {
+    padding: 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #c4d0db;
+    background: linear-gradient(145deg, #f7fbff 0%, #edf4fb 50%, #e8f0f8 100%);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  .eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    color: #44617a;
+    font-weight: 700;
   }
 
   h1 {
-    margin: 0 0 0.5rem;
-    font-size: 2rem;
+    margin: 0.35rem 0 0;
+    font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  .summary {
+    margin: 0.6rem 0 0;
+    color: #35516a;
+    max-width: 62ch;
+  }
+
+  .stats {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .stats article {
+    border: 1px solid #cadae8;
+    border-radius: 14px;
+    background: #ffffffbb;
+    padding: 0.75rem;
+  }
+
+  .stats strong {
+    font-size: 1.3rem;
+    display: block;
+  }
+
+  .stats span {
+    color: #49657f;
+    font-size: 0.9rem;
+  }
+
+  .filters {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   label {
     display: grid;
-    gap: 0.4rem;
-    margin: 1rem 0 1.5rem;
+    gap: 0.33rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #3a546d;
   }
 
-  input {
-    border: 1px solid #9aa8b8;
-    border-radius: 10px;
-    padding: 0.6rem 0.75rem;
-    font-size: 1rem;
-  }
-
-  .filters {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.75rem;
-    margin: 0 0 1.25rem;
-  }
-
+  input,
   select {
-    border: 1px solid #9aa8b8;
+    border: 1px solid #b5c4d3;
     border-radius: 10px;
     padding: 0.55rem 0.7rem;
-    font-size: 1rem;
     background: #fff;
+    font-size: 0.95rem;
   }
 
   .toggle {
     align-self: end;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
+    gap: 0.45rem;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .grid {
+    margin-top: 1.1rem;
     display: grid;
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: 0.75rem;
   }
 
-  li {
-    border: 1px solid #c5d0dd;
-    border-radius: 12px;
-    padding: 1rem;
+  article {
+    border: 1px solid #c3d0dd;
+    border-radius: 16px;
     background: #fff;
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .provider,
+  .tier,
+  .meta,
+  .description {
+    margin: 0;
+  }
+
+  .provider {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #48657f;
+    font-weight: 700;
+  }
+
+  .tier {
+    font-size: 0.8rem;
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+    background: #ecf3fb;
+    color: #2a4965;
+    font-weight: 700;
   }
 
   h2 {
-    margin: 0 0 0.4rem;
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 1.15rem;
   }
 
-  p {
-    margin: 0.2rem 0;
+  .description {
+    color: #36536e;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .chips span {
+    background: #e8f1f8;
+    border: 1px solid #d1dfeb;
+    border-radius: 999px;
+    padding: 0.16rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #304d67;
+  }
+
+  .chips .tag {
+    background: #f1f5ed;
+    border-color: #dce6d3;
+    color: #47653a;
+  }
+
+  .meta {
+    font-size: 0.84rem;
+    color: #49657f;
   }
 
   .details-link {
-    display: inline-block;
-    margin-top: 0.6rem;
-    border-radius: 8px;
-    padding: 0.45rem 0.7rem;
-    background: #1e5d7a;
+    margin-top: 0.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.45rem 0.72rem;
+    background: #1e5979;
     color: #fff;
-    font-weight: 600;
     text-decoration: none;
+    font-weight: 650;
+    font-size: 0.9rem;
+  }
+
+  .empty {
+    margin: 0;
+    border: 1px dashed #afc0d0;
+    border-radius: 12px;
+    background: #ffffff88;
+    padding: 0.9rem;
+    color: #405970;
+  }
+
+  @media (max-width: 980px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .filters {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 </style>

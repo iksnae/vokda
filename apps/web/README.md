@@ -18,9 +18,9 @@ SvelteKit frontend for catalog browsing and early curation UX.
 
 ## Catalog Contract (Current)
 
-Catalog is currently managed in-code at:
+Catalog is currently managed in JSON at:
 
-- `apps/web/src/lib/data/catalog.ts`
+- `apps/web/static/data/voices.json`
 
 Frontend expects each entry to follow:
 

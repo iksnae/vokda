@@ -1,0 +1,274 @@
+{
+  "voices": [
+    {
+      "id": "01JCVK5F2Q2W5P4TQ8KT4NR1A1",
+      "name": "Joanna",
+      "provider": "AWS Polly",
+      "description": "US English voice widely used for assistants, explainers, and narration.",
+      "tags": ["narration", "assistant", "us-english"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "samples": [
+        {
+          "id": "01JCVK6A3GTNAQ0EJ4BT9HZ3A1",
+          "scriptKey": "briefing",
+          "label": "Product Brief",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVK78QFQ6D6S2XH2V1HZRA1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:joanna",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav", "pcm"],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVK8Q2WQEC05YF88Q3AJ1B2",
+      "name": "Matthew",
+      "provider": "AWS Polly",
+      "description": "US English male voice suited for long-form informational narration.",
+      "tags": ["long-form", "neutral", "us-english"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "samples": [
+        {
+          "id": "01JCVK9PZ4Q1TRW7SKYH1ZNKB0",
+          "scriptKey": "documentary",
+          "label": "Documentary",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKAJ5HE8K7T1M2SVR8E3C4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:matthew",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav", "pcm"],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKBX2W7R5P4SQA0WV8X7D8",
+      "name": "en-US-JennyNeural",
+      "provider": "Azure Speech",
+      "description": "High-quality US English neural voice commonly used in enterprise assistants.",
+      "tags": ["enterprise", "conversational", "us-english"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "samples": [
+        {
+          "id": "01JCVKD6EPX0S90S2NY0G0CHY2",
+          "scriptKey": "support",
+          "label": "Support Agent",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKE9MBBH6Y2WKY0M2J6XP4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-JennyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav", "pcm"],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
+      "name": "en-GB-RyanNeural",
+      "provider": "Azure Speech",
+      "description": "British English neural voice with strong clarity for product education and training.",
+      "tags": ["uk-english", "training", "clear"],
+      "languages": ["en-GB"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "samples": [
+        {
+          "id": "01JCVKGCH0Z4D9VNHENND6MD95",
+          "scriptKey": "onboarding",
+          "label": "Onboarding",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKH4X8Y9FHF5CJM9B5XH5T",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-GB-RyanNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav", "pcm"],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
+      "name": "en-US-Neural2-J",
+      "provider": "Google Cloud TTS",
+      "description": "Google Neural2 US English voice for general-purpose synthesis.",
+      "tags": ["google", "neural2", "general-purpose"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "samples": [
+        {
+          "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
+          "scriptKey": "status",
+          "label": "Status Update",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKM1WB3QYE8WQXQ6T5M58X",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-J",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav"],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKN3XGS1D8VCVBQJ6D7Y8M",
+      "name": "en-US-News-N",
+      "provider": "Google Cloud TTS",
+      "description": "News-oriented US English voice optimized for broadcast-style reads.",
+      "tags": ["news", "broadcast", "us-english"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "samples": [
+        {
+          "id": "01JCVKPA3F3YXXN34TQ0K8FTQ2",
+          "scriptKey": "headline",
+          "label": "Headline",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKQ18P9N54Q9WB5WQ6RCP0",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-News-N",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": ["mp3", "wav"],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
+      "name": "Mark",
+      "provider": "ElevenLabs",
+      "description": "Expressive English voice featured in ElevenLabs text-to-speech demos.",
+      "tags": ["expressive", "narration", "elevenlabs"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "samples": [
+        {
+          "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
+          "scriptKey": "story",
+          "label": "Story",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKTFE3E9WRAY1E7W4CWPY4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:mark",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": ["mp3", "pcm"],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKV2YSMBG9V43CMWDM3QFA",
+      "name": "Kokoro 82M",
+      "provider": "Hugging Face",
+      "description": "Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.",
+      "tags": ["open-model", "self-hosted", "apache-2.0"],
+      "languages": ["en-US"],
+      "qualityTier": "standard",
+      "licenseNotes": "Apache-2.0 model license; verify deployment and voice-pack licensing in your stack.",
+      "samples": [
+        {
+          "id": "01JCVKW8A84XABY4EMKQ0RN2NR",
+          "scriptKey": "tech",
+          "label": "Technical",
+          "transcript": "This pipeline generates speech from text in real time and can be hosted inside your own infrastructure."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKX8ZKQ7Q0PX2W2FK5DNJ6",
+          "sourceType": "hf_model",
+          "sourceKey": "hf:hexgrad/Kokoro-82M",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": ["wav", "pcm"],
+          "maxInputChars": 2000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKYGHM7N2NQ9S18N9RF89C",
+      "name": "Qwen3-TTS-12Hz-1.7B-Base",
+      "provider": "Hugging Face",
+      "description": "Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.",
+      "tags": ["open-model", "multilingual", "qwen3"],
+      "languages": ["en-US", "zh-CN", "ja-JP", "de-DE", "fr-FR", "es-ES", "it-IT", "pt-BR", "ru-RU", "ko-KR"],
+      "qualityTier": "premium",
+      "licenseNotes": "Check the current Hugging Face model card and upstream license terms before production export.",
+      "samples": [
+        {
+          "id": "01JCVKZQ6QG3WRD9V79VRV5QH4",
+          "scriptKey": "multilingual",
+          "label": "Multilingual",
+          "transcript": "This base model is typically adapted for product-specific voices and deployment constraints."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVM070Q1PT6V8G6P2HT3MA5",
+          "sourceType": "hf_model",
+          "sourceKey": "hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": ["wav", "pcm"],
+          "maxInputChars": 2500,
+          "previewOnly": false
+        }
+      ]
+    }
+  ]
+}

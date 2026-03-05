@@ -11,7 +11,7 @@
 
 - Build catalog list and detail routes
 - Implement search/filter in UI
-- Maintain catalog in app-owned data module
+- Maintain curated catalog in `apps/web/static/data/voices.json`
 
 ## Phase 2: Curation and Cart
 
