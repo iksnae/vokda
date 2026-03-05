@@ -1,12 +1,16 @@
 # Vokda — Agent Instructions
 
-Voice discovery and curation app for TTS voices across cloud providers and open model ecosystems.
+**Vokda is the central destination for everything TTS** — voice discovery and curation (Pinterest for voices) plus an industry hub tracking new models, news, reviews, and guidance.
+
+See [docs/VISION.md](./docs/VISION.md) for the full product vision.
+See [docs/ROADMAP.md](./docs/ROADMAP.md) for what's planned and what's active.
 
 ## Project Overview
 
 - **Stack**: SvelteKit 4 (TypeScript) + AWS Amplify Gen2 (Cognito auth, AppSync/DynamoDB data) + Node.js admin API
 - **Repo**: Monorepo with `apps/web`, `apps/api`, `packages/shared`, `amplify/`, `infra/`
 - **Org**: `iksnae` on GitHub (private)
+- **Live**: https://vokda.iknsae.com
 - **Hosting**: AWS Amplify (frontend), preview envs from PR branches, production from `main`
 
 ## Key Commands
@@ -24,7 +28,7 @@ npm run test                 # (not yet configured)
 ## Architecture
 
 - **Frontend** (`apps/web`): SvelteKit with static adapter, prerendered pages
-- **Catalog data**: `apps/web/static/data/voices.json` (12 seed voices across 6 providers)
+- **Catalog data**: `apps/web/static/data/voices.json` (130 voices across 7 providers — AWS Polly, Azure Speech, Google Cloud TTS, OpenAI, ElevenLabs, Kokoro 82M, Qwen3 TTS)
 - **Auth**: Cognito user pools via `aws-amplify`, role hierarchy: visitor → guest → curator → admin
 - **Data layer**: Amplify Data (AppSync + DynamoDB) for favorites, collections, cart, curation workspace
 - **API** (`apps/api`): Vanilla Node.js HTTP server for admin user role management and synthesis preview gateway
@@ -73,11 +77,21 @@ apps/api/src/server.mjs       # Admin API (Cognito JWT verify, user lookup, role
 
 ## Current State (as of March 2026)
 
-- **Phase 1–2 of 4**: Catalog UX + Curation/Cart implemented
-- **Working**: Browse, search, filter, voice detail, audition studio (mock), cart, voice pack export, collections, favorites, curation workspace, admin role management, auth (sign up/in/confirm)
-- **Scaffolded but mock**: All 6 synthesis adapters (aws-polly, azure-speech, gcp-tts, elevenlabs, huggingface, self-hosted)
-- **Missing**: OpenAI adapter in registry, real synthesis implementations, ingestion pipelines, tests, linting
-- **Known issues**: Every page loads full catalog; `collectionMessage` shared across cards; no Cart link in nav header
+**Shipped:**
+- 130 voices across 7 providers, 128 with real generated audio samples
+- Pinterest-style browse grid with play, favorite, pin, collapsible filters
+- Voice detail page with custom audio player, collapsible sections
+- Collections system — pin, organize, export as Voice Pack JSON
+- Curation workspace for metadata enrichment
+- Auth live (Cognito sign up/in/confirm), role hierarchy: visitor → guest → curator → admin
+
+**Key gaps:**
+- Amplify Data (DynamoDB) scaffolded but saves live in localStorage — not persisted cross-session
+- All synthesis adapters are mock — audition plays pre-generated samples, no live synthesis
+- No industry hub (news feed, model tracking, reviews, guidance) — that's Phase 3
+- Metadata quality varies: 12 original seed voices have rich editorial labels; 118 bulk-added voices have sparse/generic labels
+- Google Cloud TTS samples are OpenAI fallback audio (GCP API key was invalid)
+- OpenAI `ballad` and `verse` have no audio samples
 
 ## Constitutions
 

@@ -19,3 +19,6 @@ coverage/
 .DS_Store
 .vscode/
 .idea/
+
+# playwright-cli browser snapshots
+.playwright-cli/
