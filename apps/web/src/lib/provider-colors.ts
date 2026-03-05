@@ -81,6 +81,11 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#e8f5e9',
     border: '#a5d6a7',
     text: '#2e7d32'
+  },
+  kittentts: {
+    bg: '#fff0f5',
+    border: '#f8a4c8',
+    text: '#9b1b5a'
   }
 };
 

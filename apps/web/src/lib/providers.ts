@@ -90,6 +90,12 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'VoxCPM',
     type: 'open_model',
     websiteUrl: 'https://huggingface.co/openbmb/VoxCPM1.5'
+  },
+  {
+    id: 'kittentts',
+    name: 'KittenTTS',
+    type: 'open_model',
+    websiteUrl: 'https://github.com/KittenML/KittenTTS'
   }
 ];
 
