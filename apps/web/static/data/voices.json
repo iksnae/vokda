@@ -217,149 +217,6 @@
       "providerVoiceId": "en-US-JennyNeural"
     },
     {
-      "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
-      "name": "en-GB-RyanNeural",
-      "provider": "Azure Speech",
-      "description": "British English neural voice with strong clarity for product education and training.",
-      "tags": [
-        "uk-english",
-        "training",
-        "clear"
-      ],
-      "languages": [
-        "en-GB"
-      ],
-      "qualityTier": "premium",
-      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
-      "metadata": {
-        "shortLabel": "UK training narrator",
-        "searchDescription": "British English voice with instructional cadence for onboarding and policy education.",
-        "machineTags": [
-          "uk",
-          "training",
-          "instructional",
-          "clarity"
-        ],
-        "useCases": [
-          "Employee onboarding",
-          "Training modules",
-          "Compliance narration"
-        ],
-        "toneTags": [
-          "clear",
-          "measured",
-          "professional"
-        ],
-        "audienceTags": [
-          "enterprise",
-          "education"
-        ],
-        "accent": "British",
-        "genderPresentation": "male",
-        "agePresentation": "adult",
-        "speakingStyle": "formal and crisp",
-        "metadataQuality": "curated"
-      },
-      "samples": [
-        {
-          "id": "01JCVKGCH0Z4D9VNHENND6MD95",
-          "scriptKey": "onboarding",
-          "label": "Onboarding",
-          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
-          "audioUrl": "/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3"
-        }
-      ],
-      "variants": [
-        {
-          "id": "01JCVKH4X8Y9FHF5CJM9B5XH5T",
-          "sourceType": "cloud_provider",
-          "sourceKey": "azure:speech:en-GB-RyanNeural",
-          "runnable": true,
-          "supportsSsml": true,
-          "outputFormats": [
-            "mp3",
-            "wav",
-            "pcm"
-          ],
-          "maxInputChars": 10000,
-          "previewOnly": false
-        }
-      ],
-      "providerId": "azure-speech",
-      "providerVoiceId": "en-GB-RyanNeural"
-    },
-    {
-      "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
-      "name": "en-US-Neural2-J",
-      "provider": "Google Cloud TTS",
-      "description": "Google Neural2 US English voice for general-purpose synthesis.",
-      "tags": [
-        "google",
-        "neural2",
-        "general-purpose"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "qualityTier": "premium",
-      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
-      "metadata": {
-        "shortLabel": "General US all-purpose",
-        "searchDescription": "Versatile US voice with stable cadence for product UIs and system narration.",
-        "machineTags": [
-          "general",
-          "ui-voice",
-          "stable",
-          "neutral"
-        ],
-        "useCases": [
-          "App narration",
-          "Product demos",
-          "Status announcements"
-        ],
-        "toneTags": [
-          "neutral",
-          "steady",
-          "clear"
-        ],
-        "audienceTags": [
-          "general-consumer",
-          "technical-users"
-        ],
-        "accent": "General American",
-        "genderPresentation": "female",
-        "agePresentation": "adult",
-        "speakingStyle": "balanced",
-        "metadataQuality": "curated"
-      },
-      "samples": [
-        {
-          "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
-          "scriptKey": "status",
-          "label": "Status Update",
-          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
-          "audioUrl": "/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3"
-        }
-      ],
-      "variants": [
-        {
-          "id": "01JCVKM1WB3QYE8WQXQ6T5M58X",
-          "sourceType": "cloud_provider",
-          "sourceKey": "gcp:tts:en-US-Neural2-J",
-          "runnable": true,
-          "supportsSsml": true,
-          "outputFormats": [
-            "mp3",
-            "wav"
-          ],
-          "maxInputChars": 5000,
-          "previewOnly": false
-        }
-      ],
-      "providerId": "gcp-tts",
-      "providerVoiceId": "en-US-Neural2-J"
-    },
-    {
       "id": "01JCVKN3XGS1D8VCVBQJ6D7Y8M",
       "name": "en-US-News-N",
       "provider": "Google Cloud TTS",
@@ -429,221 +286,6 @@
       ],
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-News-N"
-    },
-    {
-      "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
-      "name": "Mark",
-      "provider": "ElevenLabs",
-      "description": "Expressive English voice featured in ElevenLabs text-to-speech demos.",
-      "tags": [
-        "expressive",
-        "narration",
-        "elevenlabs"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "qualityTier": "premium",
-      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
-      "metadata": {
-        "shortLabel": "Expressive story narrator",
-        "searchDescription": "Characterful English narration voice with stronger emotional contour.",
-        "machineTags": [
-          "expressive",
-          "storytelling",
-          "character",
-          "high-variation"
-        ],
-        "useCases": [
-          "Short fiction",
-          "Trailer narration",
-          "Character intros"
-        ],
-        "toneTags": [
-          "dramatic",
-          "vivid",
-          "expressive"
-        ],
-        "audienceTags": [
-          "creator",
-          "entertainment"
-        ],
-        "accent": "General American",
-        "genderPresentation": "male",
-        "agePresentation": "adult",
-        "speakingStyle": "animated",
-        "metadataQuality": "curated"
-      },
-      "samples": [
-        {
-          "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
-          "scriptKey": "story",
-          "label": "Story",
-          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
-          "audioUrl": "/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3"
-        }
-      ],
-      "variants": [
-        {
-          "id": "01JCVKTFE3E9WRAY1E7W4CWPY4",
-          "sourceType": "cloud_provider",
-          "sourceKey": "elevenlabs:tts:mark",
-          "runnable": true,
-          "supportsSsml": false,
-          "outputFormats": [
-            "mp3",
-            "pcm"
-          ],
-          "maxInputChars": 5000,
-          "previewOnly": false
-        }
-      ],
-      "providerId": "elevenlabs",
-      "providerVoiceId": "mark"
-    },
-    {
-      "id": "01JCVKV2YSMBG9V43CMWDM3QFA",
-      "name": "Kokoro 82M",
-      "provider": "Hugging Face",
-      "description": "Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.",
-      "tags": [
-        "open-model",
-        "self-hosted",
-        "apache-2.0"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "qualityTier": "standard",
-      "licenseNotes": "Apache-2.0 model license; verify deployment and voice-pack licensing in your stack.",
-      "metadata": {
-        "shortLabel": "Open self-host TTS",
-        "searchDescription": "Open-weight model option for teams prioritizing self-hosting and infrastructure control.",
-        "machineTags": [
-          "open-model",
-          "self-hosted",
-          "developer-oriented"
-        ],
-        "useCases": [
-          "Internal tooling",
-          "Prototype pipelines",
-          "Private deployment"
-        ],
-        "toneTags": [
-          "neutral"
-        ],
-        "audienceTags": [
-          "developers",
-          "ml-platform"
-        ],
-        "accent": "varies by prompt",
-        "genderPresentation": "configurable",
-        "agePresentation": "configurable",
-        "speakingStyle": "model-dependent",
-        "metadataQuality": "curated"
-      },
-      "samples": [
-        {
-          "id": "01JCVKW8A84XABY4EMKQ0RN2NR",
-          "scriptKey": "tech",
-          "label": "Technical",
-          "transcript": "This pipeline generates speech from text in real time and can be hosted inside your own infrastructure."
-        }
-      ],
-      "variants": [
-        {
-          "id": "01JCVKX8ZKQ7Q0PX2W2FK5DNJ6",
-          "sourceType": "hf_model",
-          "sourceKey": "hf:hexgrad/Kokoro-82M",
-          "runnable": true,
-          "supportsSsml": false,
-          "outputFormats": [
-            "wav",
-            "pcm"
-          ],
-          "maxInputChars": 2000,
-          "previewOnly": false
-        }
-      ],
-      "providerId": "huggingface",
-      "providerVoiceId": "hexgrad/Kokoro-82M"
-    },
-    {
-      "id": "01JCVKYGHM7N2NQ9S18N9RF89C",
-      "name": "Qwen3-TTS-12Hz-1.7B-Base",
-      "provider": "Hugging Face",
-      "description": "Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.",
-      "tags": [
-        "open-model",
-        "multilingual",
-        "qwen3"
-      ],
-      "languages": [
-        "en-US",
-        "zh-CN",
-        "ja-JP",
-        "de-DE",
-        "fr-FR",
-        "es-ES",
-        "it-IT",
-        "pt-BR",
-        "ru-RU",
-        "ko-KR"
-      ],
-      "qualityTier": "premium",
-      "licenseNotes": "Check the current Hugging Face model card and upstream license terms before production export.",
-      "metadata": {
-        "shortLabel": "Multilingual open model",
-        "searchDescription": "Large open multilingual base suitable for custom voice products and localization pipelines.",
-        "machineTags": [
-          "multilingual",
-          "open-model",
-          "custom-fine-tune",
-          "localization"
-        ],
-        "useCases": [
-          "Localization",
-          "Multi-region assistants",
-          "Model customization"
-        ],
-        "toneTags": [
-          "model-dependent"
-        ],
-        "audienceTags": [
-          "ml-platform",
-          "international-products"
-        ],
-        "accent": "multi-locale",
-        "genderPresentation": "configurable",
-        "agePresentation": "configurable",
-        "speakingStyle": "model-dependent",
-        "metadataQuality": "curated"
-      },
-      "samples": [
-        {
-          "id": "01JCVKZQ6QG3WRD9V79VRV5QH4",
-          "scriptKey": "multilingual",
-          "label": "Multilingual",
-          "transcript": "This base model is typically adapted for product-specific voices and deployment constraints."
-        }
-      ],
-      "variants": [
-        {
-          "id": "01JCVM070Q1PT6V8G6P2HT3MA5",
-          "sourceType": "hf_model",
-          "sourceKey": "hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-          "runnable": true,
-          "supportsSsml": false,
-          "outputFormats": [
-            "wav",
-            "pcm"
-          ],
-          "maxInputChars": 2500,
-          "previewOnly": false
-        }
-      ],
-      "providerId": "huggingface",
-      "providerVoiceId": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
     },
     {
       "id": "01JCW012A9N9Y3W08F0Q0A1O1",
@@ -849,6 +491,5719 @@
           "id": "01JCW018P8BMX7D34R7XJ9403",
           "sourceType": "cloud_provider",
           "sourceKey": "openai:tts:onyx",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
+      "name": "en-GB-RyanNeural",
+      "provider": "Azure Speech",
+      "description": "British English neural voice with strong clarity for product education and training.",
+      "tags": [
+        "uk-english",
+        "training",
+        "clear"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "UK training narrator",
+        "searchDescription": "British English voice with instructional cadence for onboarding and policy education.",
+        "machineTags": [
+          "uk",
+          "training",
+          "instructional",
+          "clarity"
+        ],
+        "useCases": [
+          "Employee onboarding",
+          "Training modules",
+          "Compliance narration"
+        ],
+        "toneTags": [
+          "clear",
+          "measured",
+          "professional"
+        ],
+        "audienceTags": [
+          "enterprise",
+          "education"
+        ],
+        "accent": "British",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "formal and crisp",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01JCVKGCH0Z4D9VNHENND6MD95",
+          "scriptKey": "onboarding",
+          "label": "Onboarding",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKH4X8Y9FHF5CJM9B5XH5T",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-GB-RyanNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-GB-RyanNeural"
+    },
+    {
+      "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
+      "name": "Mark",
+      "provider": "ElevenLabs",
+      "description": "Expressive English voice featured in ElevenLabs text-to-speech demos.",
+      "tags": [
+        "expressive",
+        "narration",
+        "elevenlabs"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "Expressive story narrator",
+        "searchDescription": "Characterful English narration voice with stronger emotional contour.",
+        "machineTags": [
+          "expressive",
+          "storytelling",
+          "character",
+          "high-variation"
+        ],
+        "useCases": [
+          "Short fiction",
+          "Trailer narration",
+          "Character intros"
+        ],
+        "toneTags": [
+          "dramatic",
+          "vivid",
+          "expressive"
+        ],
+        "audienceTags": [
+          "creator",
+          "entertainment"
+        ],
+        "accent": "General American",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "animated",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
+          "scriptKey": "story",
+          "label": "Story",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKTFE3E9WRAY1E7W4CWPY4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:mark",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "elevenlabs",
+      "providerVoiceId": "mark"
+    },
+    {
+      "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
+      "name": "en-US-Neural2-J",
+      "provider": "Google Cloud TTS",
+      "description": "Google Neural2 US English voice for general-purpose synthesis.",
+      "tags": [
+        "google",
+        "neural2",
+        "general-purpose"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "General US all-purpose",
+        "searchDescription": "Versatile US voice with stable cadence for product UIs and system narration.",
+        "machineTags": [
+          "general",
+          "ui-voice",
+          "stable",
+          "neutral"
+        ],
+        "useCases": [
+          "App narration",
+          "Product demos",
+          "Status announcements"
+        ],
+        "toneTags": [
+          "neutral",
+          "steady",
+          "clear"
+        ],
+        "audienceTags": [
+          "general-consumer",
+          "technical-users"
+        ],
+        "accent": "General American",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "balanced",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
+          "scriptKey": "status",
+          "label": "Status Update",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKM1WB3QYE8WQXQ6T5M58X",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-J",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-J"
+    },
+    {
+      "id": "01JCVKV2YSMBG9V43CMWDM3QFA",
+      "name": "Kokoro 82M",
+      "provider": "Hugging Face",
+      "description": "Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.",
+      "tags": [
+        "open-model",
+        "self-hosted",
+        "apache-2.0"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "licenseNotes": "Apache-2.0 model license; verify deployment and voice-pack licensing in your stack.",
+      "metadata": {
+        "shortLabel": "Open self-host TTS",
+        "searchDescription": "Open-weight model option for teams prioritizing self-hosting and infrastructure control.",
+        "machineTags": [
+          "open-model",
+          "self-hosted",
+          "developer-oriented"
+        ],
+        "useCases": [
+          "Internal tooling",
+          "Prototype pipelines",
+          "Private deployment"
+        ],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [
+          "developers",
+          "ml-platform"
+        ],
+        "accent": "varies by prompt",
+        "genderPresentation": "configurable",
+        "agePresentation": "configurable",
+        "speakingStyle": "model-dependent",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01JCVKW8A84XABY4EMKQ0RN2NR",
+          "scriptKey": "tech",
+          "label": "Technical",
+          "transcript": "This pipeline generates speech from text in real time and can be hosted inside your own infrastructure."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVKX8ZKQ7Q0PX2W2FK5DNJ6",
+          "sourceType": "hf_model",
+          "sourceKey": "hf:hexgrad/Kokoro-82M",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 2000,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "huggingface",
+      "providerVoiceId": "hexgrad/Kokoro-82M"
+    },
+    {
+      "id": "01JCVKYGHM7N2NQ9S18N9RF89C",
+      "name": "Qwen3-TTS-12Hz-1.7B-Base",
+      "provider": "Hugging Face",
+      "description": "Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.",
+      "tags": [
+        "open-model",
+        "multilingual",
+        "qwen3"
+      ],
+      "languages": [
+        "en-US",
+        "zh-CN",
+        "ja-JP",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "pt-BR",
+        "ru-RU",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Check the current Hugging Face model card and upstream license terms before production export.",
+      "metadata": {
+        "shortLabel": "Multilingual open model",
+        "searchDescription": "Large open multilingual base suitable for custom voice products and localization pipelines.",
+        "machineTags": [
+          "multilingual",
+          "open-model",
+          "custom-fine-tune",
+          "localization"
+        ],
+        "useCases": [
+          "Localization",
+          "Multi-region assistants",
+          "Model customization"
+        ],
+        "toneTags": [
+          "model-dependent"
+        ],
+        "audienceTags": [
+          "ml-platform",
+          "international-products"
+        ],
+        "accent": "multi-locale",
+        "genderPresentation": "configurable",
+        "agePresentation": "configurable",
+        "speakingStyle": "model-dependent",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01JCVKZQ6QG3WRD9V79VRV5QH4",
+          "scriptKey": "multilingual",
+          "label": "Multilingual",
+          "transcript": "This base model is typically adapted for product-specific voices and deployment constraints."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCVM070Q1PT6V8G6P2HT3MA5",
+          "sourceType": "hf_model",
+          "sourceKey": "hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 2500,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "huggingface",
+      "providerVoiceId": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "01KJZXZNF9GMQCNCRCPCQMDKN5",
+      "name": "Amy",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "amy",
+      "description": "British English Female voice (Amy) — neural engine.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "British English Female voice (Amy) — neural engine.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9PV1JBVTEADB6Z2F4",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNF9GMQCNCRCPCQMDKN5.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9S3ZWK4WS2CHQ59B5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:amy",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8YDF94X1ZD259GAH9",
+      "name": "Aria",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "aria",
+      "description": "New Zealand English Female voice (Aria) — neural engine.",
+      "tags": [
+        "female",
+        "nz"
+      ],
+      "languages": [
+        "en-NZ"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-NZ female voice",
+        "searchDescription": "New Zealand English Female voice (Aria) — neural engine.",
+        "machineTags": [
+          "female",
+          "nz"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF807RJB5THGTR49B2B",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNF8YDF94X1ZD259GAH9.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF879SGEKB2TNVCYSMV",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:aria",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8A597MZ2DB19PZYF0",
+      "name": "Brian",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "brian",
+      "description": "British English Male voice (Brian) — neural engine.",
+      "tags": [
+        "male",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-GB male voice",
+        "searchDescription": "British English Male voice (Brian) — neural engine.",
+        "machineTags": [
+          "male",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF81XT9NE3QE62ZMH97",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNF8A597MZ2DB19PZYF0.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF8WT32C8Y7Z8PNEWN3",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:brian",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9M3CARW4PV123544M",
+      "name": "Daniel",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "daniel",
+      "description": "German Male voice (Daniel) — neural engine.",
+      "tags": [
+        "male",
+        "de"
+      ],
+      "languages": [
+        "de-DE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "de-DE male voice",
+        "searchDescription": "German Male voice (Daniel) — neural engine.",
+        "machineTags": [
+          "male",
+          "de"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9WFXJGWCCBAP1174A",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNF9M3CARW4PV123544M.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF94TYPW48Y0GA71JB5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:daniel",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8G64PM7FT6X435GS2",
+      "name": "Danielle",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "danielle",
+      "description": "US English Female voice (Danielle) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Danielle) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF8HJ8FJHZS8Z11BGHB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNF8G64PM7FT6X435GS2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF80G6VGF9S18N8XTXA",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:danielle",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8H2R6N84JG6QH2DGQ",
+      "name": "Gregory",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "gregory",
+      "description": "US English Male voice (Gregory) — neural engine.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "US English Male voice (Gregory) — neural engine.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF891DEPKPJSAV4HHYW",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNF8H2R6N84JG6QH2DGQ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF8VP5ASBWE045AHCKN",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:gregory",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8GC5R5F85AH79BN6E",
+      "name": "Ivy",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "ivy",
+      "description": "US English Female voice (Ivy) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Ivy) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF83233KWH1CNMN6MTB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNF8GC5R5F85AH79BN6E.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF83KWTJG5B1DBBWEMD",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:ivy",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8A8TVPQ1FMA1DEWTA",
+      "name": "Joey",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "joey",
+      "description": "US English Male voice (Joey) — neural engine.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "US English Male voice (Joey) — neural engine.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF85AYT8KYP87C47ZA7",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNF8A8TVPQ1FMA1DEWTA.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF89MM2AMPR46STN8W5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:joey",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9GSJ6N0FDZ2A5TF79",
+      "name": "Kajal",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "kajal",
+      "description": "Indian English Female voice (Kajal) — neural engine.",
+      "tags": [
+        "female",
+        "in"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-IN female voice",
+        "searchDescription": "Indian English Female voice (Kajal) — neural engine.",
+        "machineTags": [
+          "female",
+          "in"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9ECHJT92SCSJXQABF",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNF9GSJ6N0FDZ2A5TF79.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9ZKDAWW1Z1PW5QQ97",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:kajal",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8FEW0ZDB7XJMR1DW2",
+      "name": "Kendra",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "kendra",
+      "description": "US English Female voice (Kendra) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Kendra) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF8X38WCAH0Q5581NJT",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNF8FEW0ZDB7XJMR1DW2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF8Q10DA6XX68WKCJQX",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:kendra",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF80DN2NNTNCBVV7E29",
+      "name": "Kimberly",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "kimberly",
+      "description": "US English Female voice (Kimberly) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Kimberly) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF89Y4KHW8TT2NHC4JS",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNF80DN2NNTNCBVV7E29.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF81MZ57EDG5CJPW9KG",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:kimberly",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF93TEMNVP6WRH0YXTF",
+      "name": "Liam",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "liam",
+      "description": "Canadian French Male voice (Liam) — neural engine.",
+      "tags": [
+        "male",
+        "ca"
+      ],
+      "languages": [
+        "fr-CA"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "fr-CA male voice",
+        "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
+        "machineTags": [
+          "male",
+          "ca"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF99BFQDW0RRX3TDQZJ",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF93HM0CTGSHVRN8FDK",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:liam",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF95RPDQPH7Z4HYAEY4",
+      "name": "Olivia",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "olivia",
+      "description": "Australian English Female voice (Olivia) — neural engine.",
+      "tags": [
+        "female",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-AU female voice",
+        "searchDescription": "Australian English Female voice (Olivia) — neural engine.",
+        "machineTags": [
+          "female",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9Y6E2WMYD8JN2EH4R",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNF95RPDQPH7Z4HYAEY4.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9NJSWXMSS38PMMVBK",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:olivia",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8QEPPF280SQ8HKH2F",
+      "name": "Ruth",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "ruth",
+      "description": "US English Female voice (Ruth) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Ruth) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF86NR7SZVMYMMKFZPB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNF8QEPPF280SQ8HKH2F.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF81M3H5KZZDJQDH7D3",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:ruth",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF8D3T3FZ0SGSNGHWZR",
+      "name": "Salli",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "salli",
+      "description": "US English Female voice (Salli) — neural engine.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "US English Female voice (Salli) — neural engine.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF8MZR5MHKGGRGVM0KN",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNF8D3T3FZ0SGSNGHWZR.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF8YSCJTRYYJZKAP492",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:salli",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF91FPRR7WV3SCZ2N87",
+      "name": "Stephen",
+      "provider": "AWS Polly",
+      "providerId": "aws-polly",
+      "providerVoiceId": "stephen",
+      "description": "US English Male voice (Stephen) — neural engine.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "US English Male voice (Stephen) — neural engine.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF93064WMD4KTQJV3R9",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNF91FPRR7WV3SCZ2N87.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9959B4PXMZEVRV3K1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "aws:polly:stephen",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 3000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9ECDXYTKA2ET2BXZ8",
+      "name": "en-AU-NatashaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-AU-NatashaNeural",
+      "description": "English (Australia) Female neural voice.",
+      "tags": [
+        "female",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-AU female voice",
+        "searchDescription": "English (Australia) Female neural voice.",
+        "machineTags": [
+          "female",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9VCHH5W7MASKKZKYT",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNF9ECDXYTKA2ET2BXZ8.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9ARHEQGESDDNHDZ59",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-AU-NatashaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF97Q0SQW2C3V0KBB32",
+      "name": "en-AU-WilliamNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-AU-WilliamNeural",
+      "description": "English (Australia) Male neural voice.",
+      "tags": [
+        "male",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-AU male voice",
+        "searchDescription": "English (Australia) Male neural voice.",
+        "machineTags": [
+          "male",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9Y6WQGAAGMFNQ2YY2",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9PHSXYABB9XDSNM1G",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-AU-WilliamNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9R0PRPGK145K1TJYD",
+      "name": "en-GB-LibbyNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-GB-LibbyNeural",
+      "description": "English (United Kingdom) Female neural voice.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "English (United Kingdom) Female neural voice.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9MQ4YRB404Z8P21QN",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNF9R0PRPGK145K1TJYD.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9J9NPGR16ZB3XFG1W",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-GB-LibbyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9RKZRK35M1MS5K5V7",
+      "name": "en-GB-SoniaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-GB-SoniaNeural",
+      "description": "English (United Kingdom) Female neural voice. Styles: cheerful, sad.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "English (United Kingdom) Female neural voice. Styles: cheerful, sad.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "cheerful",
+          "sad"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "cheerful",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9PD7DQSAW24EZQEMG",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNF9RKZRK35M1MS5K5V7.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9YDKEK0KCESQRV2QQ",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-GB-SoniaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF942C62SAR07KM4HBJ",
+      "name": "en-IE-ConnorNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-IE-ConnorNeural",
+      "description": "English (Ireland) Male neural voice.",
+      "tags": [
+        "male",
+        "ie"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-IE male voice",
+        "searchDescription": "English (Ireland) Male neural voice.",
+        "machineTags": [
+          "male",
+          "ie"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9WP5R4ES2RM6074GB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF92GWKBAY7NFNJDXTH",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-IE-ConnorNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9A5PAVAYS7JHCSEPE",
+      "name": "en-IE-EmilyNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-IE-EmilyNeural",
+      "description": "English (Ireland) Female neural voice.",
+      "tags": [
+        "female",
+        "ie"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-IE female voice",
+        "searchDescription": "English (Ireland) Female neural voice.",
+        "machineTags": [
+          "female",
+          "ie"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9JYBGKMWQ0VW3W2TC",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF99BQM5KB0WTMR7EN2",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-IE-EmilyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF9S4B0CP2R2XNT784G",
+      "name": "en-IN-NeerjaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-IN-NeerjaNeural",
+      "description": "English (India) Female neural voice. Styles: newscast, cheerful, empathetic.",
+      "tags": [
+        "female",
+        "in"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-IN female voice",
+        "searchDescription": "English (India) Female neural voice. Styles: newscast, cheerful, empathetic.",
+        "machineTags": [
+          "female",
+          "in"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "newscast",
+          "cheerful",
+          "empathetic"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "newscast",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9F778BM4N6XFT7VBB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9FSGM5GYED2Y4TV18",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-IN-NeerjaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNF90JA6E710DW5PM66C",
+      "name": "en-IN-PrabhatNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-IN-PrabhatNeural",
+      "description": "English (India) Male neural voice.",
+      "tags": [
+        "male",
+        "in"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-IN male voice",
+        "searchDescription": "English (India) Male neural voice.",
+        "machineTags": [
+          "male",
+          "in"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNF9ZVHCX5JQ91FE9XND",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNF90JA6E710DW5PM66C.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNF9DFMMS6GG32BFMHG8",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-IN-PrabhatNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFAV2Y7XZ3JG7G982Z1",
+      "name": "en-US-AndrewMultilingualNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-AndrewMultilingualNeural",
+      "description": "English (United States) Male neural voice. Styles: empathetic, relieved.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "English (United States) Male neural voice. Styles: empathetic, relieved.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "empathetic",
+          "relieved"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "empathetic",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFASMGGNRA377Z6VZC8",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFAV2Y7XZ3JG7G982Z1.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFAF8TWPG0K8B73DV2G",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-AndrewMultilingualNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFA7B3J992MRVJ0047M",
+      "name": "en-US-AriaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-AriaNeural",
+      "description": "English (United States) Female neural voice. Styles: chat, customerservice, narration-professional, newscast-casual, newscast-formal, cheerful, empathetic, angry, sad, excited, friendly, terrified, shouting, unfriendly, whispering, hopeful.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: chat, customerservice, narration-professional, newscast-casual, newscast-formal, cheerful, empathetic, angry, sad, excited, friendly, terrified, shouting, unfriendly, whispering, hopeful.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "chat",
+          "customerservice",
+          "narration-professional"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "chat",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFASCF26D20HV2VVSJK",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFA7B3J992MRVJ0047M.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFANJ2S1Y5SXTC5Z8M8",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-AriaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFAJCPVEVX09YXAPZG1",
+      "name": "en-US-AvaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-AvaNeural",
+      "description": "English (United States) Female neural voice. Styles: angry, fearful, sad.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: angry, fearful, sad.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "angry",
+          "fearful",
+          "sad"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "angry",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFA0QGRV3F0KNGW6BF7",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNFAJCPVEVX09YXAPZG1.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFA67JPF296X3VR15EY",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-AvaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFAC16W91Z7RTZN0HAC",
+      "name": "en-US-DavisNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-DavisNeural",
+      "description": "English (United States) Male neural voice. Styles: chat, angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "English (United States) Male neural voice. Styles: chat, angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "chat",
+          "angry",
+          "cheerful"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "chat",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBAV5BM2HQJ9WGD0VZ",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFAC16W91Z7RTZN0HAC.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBM2F0ZF41FC1AAW8G",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-DavisNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFA4GVJRMZDC9NR1CFZ",
+      "name": "en-US-GuyNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-GuyNeural",
+      "description": "English (United States) Male neural voice. Styles: newscast, angry, cheerful, sad, excited, friendly, terrified, shouting, unfriendly, whispering, hopeful.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "English (United States) Male neural voice. Styles: newscast, angry, cheerful, sad, excited, friendly, terrified, shouting, unfriendly, whispering, hopeful.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "newscast",
+          "angry",
+          "cheerful"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "newscast",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFAQ970FHWD2F6KGGZ1",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFA4GVJRMZDC9NR1CFZ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFAK1X9Z8DVZQGM0SGS",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-GuyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBHJ2VVTWXYFTA1A1H",
+      "name": "en-US-JaneNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-JaneNeural",
+      "description": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "angry",
+          "cheerful",
+          "excited"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "angry",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBFK462GFHHDSA0RQT",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBPMP14KD523KBFX26",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-JaneNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB84AHZJCZH2Z81KGX",
+      "name": "en-US-KaiNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-KaiNeural",
+      "description": "English (United States) Male neural voice. Styles: conversation.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "English (United States) Male neural voice. Styles: conversation.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "conversation"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "conversation",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB241CPEKSE2R6BXH4",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNFB84AHZJCZH2Z81KGX.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBCRGKFV970DVT1542",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-KaiNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBTVKC1B27CDNKSXTC",
+      "name": "en-US-LunaNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-LunaNeural",
+      "description": "English (United States) Female neural voice. Styles: conversation.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: conversation.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "conversation"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "conversation",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBAR7BSPQY6VX68GTD",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB7FMSC74BX6P1RS9B",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-LunaNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBAS28DT522DBEVS2B",
+      "name": "en-US-NancyNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-NancyNeural",
+      "description": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "angry",
+          "cheerful",
+          "excited"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "angry",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB5HXDQT6PKM9EN46V",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNFBAS28DT522DBEVS2B.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB0J5MVK72FDNF43Y2",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-NancyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFAPYRE2PN05TQ2ZTRN",
+      "name": "en-US-PhoebeMultilingualNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-PhoebeMultilingualNeural",
+      "description": "English (United States) Female neural voice. Styles: empathetic, sad, serious.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: empathetic, sad, serious.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "empathetic",
+          "sad",
+          "serious"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "empathetic",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFA9053F1M11EY8JYBS",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNFAPYRE2PN05TQ2ZTRN.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFAZ7AHEH23CZH1TCC0",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-PhoebeMultilingualNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBSSS2QKG6ZJRN5ZJ1",
+      "name": "en-US-SaraNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-SaraNeural",
+      "description": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "English (United States) Female neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "angry",
+          "cheerful",
+          "excited"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "angry",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBNW34GP04PZVGVQJE",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFBSSS2QKG6ZJRN5ZJ1.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBXH38Y87ZM7V8XJF3",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-SaraNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBDSC0T42KC1E0A4H2",
+      "name": "en-US-TonyNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-TonyNeural",
+      "description": "English (United States) Male neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "English (United States) Male neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "angry",
+          "cheerful",
+          "excited"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "angry",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB66PFTAZA031R8BCM",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZXZNFBDSC0T42KC1E0A4H2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBZ8XWCC838DNM4JF9",
+          "sourceType": "cloud_provider",
+          "sourceKey": "azure:speech:en-US-TonyNeural",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 10000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBEFG9HT43MNFFFQJS",
+      "name": "Adam - Dominant, Firm",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "pNInz6obpgDQGcFmaJgB",
+      "description": "A bright tenor pitch that immediately cuts through. The delivery is brash and openly confident, speaking with unwavering certainty and a slightly aggressive self-assurance.",
+      "tags": [
+        "male",
+        "us",
+        "social_media",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A bright tenor pitch that immediately cuts through. The delivery is brash and openly confident, speaking with unwavering certainty and a slightly aggressive self-assurance.",
+        "machineTags": [
+          "male",
+          "us",
+          "social_media",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB15V8XQ3S5F500RK9",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBXC5ZVC219ZDV8CY1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:pNInz6obpgDQGcFmaJgB",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB4QPGJ1C72VAPSYCQ",
+      "name": "Alice - Clear, Engaging Educator",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "description": "Clear and engaging, friendly woman with a British accent suitable for e-learning.",
+      "tags": [
+        "female",
+        "us",
+        "informative_educational",
+        "british",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Clear and engaging, friendly woman with a British accent suitable for e-learning.",
+        "machineTags": [
+          "female",
+          "us",
+          "informative_educational",
+          "british",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBPYS3ZY8SZGH5YZ55",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFB4QPGJ1C72VAPSYCQ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB0ZR6DVEYWHT7V954",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:Xb7hH8MSUJpSbSDYk0k2",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBV8MZS77X7XT6ZR22",
+      "name": "Bella - Professional, Bright, Warm",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "hpp4J3VqNfWAUOO0d1Us",
+      "description": "This voice is warm, bright, and professional, characterized by a Standard American accent and a polished, narrative quality. It features a medium-high pitch with crisp diction and a deliberate, rhythm",
+      "tags": [
+        "female",
+        "us",
+        "informative_educational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "This voice is warm, bright, and professional, characterized by a Standard American accent and a polished, narrative quality. It features a medium-high pitch with crisp diction and a deliberate, rhythm",
+        "machineTags": [
+          "female",
+          "us",
+          "informative_educational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBDFXTXQ4N4WJCNX0B",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFBV8MZS77X7XT6ZR22.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB8CG8DNW81GDA46SN",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:hpp4J3VqNfWAUOO0d1Us",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBSRT4BRCQPHEM2H7Y",
+      "name": "Bill - Wise, Mature, Balanced",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "pqHfZKP75CvOlQylNhV4",
+      "description": "Friendly and comforting voice ready to narrate your stories.",
+      "tags": [
+        "male",
+        "us",
+        "advertisement",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Friendly and comforting voice ready to narrate your stories.",
+        "machineTags": [
+          "male",
+          "us",
+          "advertisement",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "old",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB3XG9HC2Q0YD4D33Y",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFBSRT4BRCQPHEM2H7Y.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBPFS12MM09NF0YE7D",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:pqHfZKP75CvOlQylNhV4",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBJ3A4W1EZP08JTWWV",
+      "name": "Brian - Deep, Resonant and Comforting",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "nPczCjzI2devNBz1zQrb",
+      "description": "Middle-aged man with a resonant and comforting tone. Great for narrations and advertisements.",
+      "tags": [
+        "male",
+        "us",
+        "social_media",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Middle-aged man with a resonant and comforting tone. Great for narrations and advertisements.",
+        "machineTags": [
+          "male",
+          "us",
+          "social_media",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBTX94G4TYNT0G2K86",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNFBJ3A4W1EZP08JTWWV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBJEHFKZ87KGKN1R4B",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:nPczCjzI2devNBz1zQrb",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB0JWWNE5JMC1PRZCZ",
+      "name": "Callum - Husky Trickster",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "N2lVS1w4EtoT3dr4eOWO",
+      "description": "Deceptively gravelly, yet unsettling edge.",
+      "tags": [
+        "male",
+        "us",
+        "characters_animation",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Deceptively gravelly, yet unsettling edge.",
+        "machineTags": [
+          "male",
+          "us",
+          "characters_animation",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB72DT9Q27ET2DB786",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFB0JWWNE5JMC1PRZCZ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBB9M282W6ZVTZWSXQ",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:N2lVS1w4EtoT3dr4eOWO",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBAGSHKAVPHHTFVHFV",
+      "name": "Charlie - Deep, Confident, Energetic",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "IKne3meq5aSn9XLyUdCD",
+      "description": "A young Australian male with a confident and energetic voice.",
+      "tags": [
+        "male",
+        "us",
+        "conversational",
+        "australian",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A young Australian male with a confident and energetic voice.",
+        "machineTags": [
+          "male",
+          "us",
+          "conversational",
+          "australian",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "australian",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBHJG21C7TS36CYX7Q",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNFBAGSHKAVPHHTFVHFV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBH8WN5GVB4WH03RYC",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:IKne3meq5aSn9XLyUdCD",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB1059EQEGH1GNQ405",
+      "name": "Chris - Charming, Down-to-Earth",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "iP95p4xoKVk53GoZ742B",
+      "description": "Natural and real, this down-to-earth voice is great across many use-cases.",
+      "tags": [
+        "male",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Natural and real, this down-to-earth voice is great across many use-cases.",
+        "machineTags": [
+          "male",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB6X7AK8J15EF4Z6ZS",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFB1059EQEGH1GNQ405.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB979Z2NSYZ0EQQJ6H",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:iP95p4xoKVk53GoZ742B",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB0G8QFE9XW7Q5V6GV",
+      "name": "Daniel - Steady Broadcaster",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "onwK4e9ZLuTAKqWW03F9",
+      "description": "A strong voice perfect for delivering a professional broadcast or news story.",
+      "tags": [
+        "male",
+        "us",
+        "informative_educational",
+        "british",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A strong voice perfect for delivering a professional broadcast or news story.",
+        "machineTags": [
+          "male",
+          "us",
+          "informative_educational",
+          "british",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB0GDRNFE83DAHCP0B",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFB0G8QFE9XW7Q5V6GV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBQYP0EFG6VAXGPGGW",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:onwK4e9ZLuTAKqWW03F9",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB8PQD14M05ANYJQ8X",
+      "name": "Eric - Smooth, Trustworthy",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "cjVigY5qzO86Huf0OWal",
+      "description": "A smooth tenor pitch from a man in his 40s - perfect for agentic use cases.",
+      "tags": [
+        "male",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A smooth tenor pitch from a man in his 40s - perfect for agentic use cases.",
+        "machineTags": [
+          "male",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB26KVPYDCEFNPNM3P",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZXZNFB8PQD14M05ANYJQ8X.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBH0GRBYDWHK7S8WC1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:cjVigY5qzO86Huf0OWal",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBXRF291002CKM1GVH",
+      "name": "George - Warm, Captivating Storyteller",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "description": "Warm resonance that instantly captivates listeners.",
+      "tags": [
+        "male",
+        "us",
+        "narrative_story",
+        "british",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Warm resonance that instantly captivates listeners.",
+        "machineTags": [
+          "male",
+          "us",
+          "narrative_story",
+          "british",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBSYN2FJYYZPWR35G3",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNFBXRF291002CKM1GVH.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBH2TSE3F824HXMH6V",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:JBFqnCBsd6RMkjVDRZzb",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBD0XMW9VV92RF3FCQ",
+      "name": "Harry - Fierce Warrior",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "SOYHLrjzK2X1ezoPC6cr",
+      "description": "An animated warrior ready to charge forward.",
+      "tags": [
+        "male",
+        "us",
+        "characters_animation",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "An animated warrior ready to charge forward.",
+        "machineTags": [
+          "male",
+          "us",
+          "characters_animation",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB8TWXWSGY9E654QXS",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNFBD0XMW9VV92RF3FCQ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBMTNSY1SYAHJ5CX8C",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:SOYHLrjzK2X1ezoPC6cr",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB4GC6PKE1XBTHDHV2",
+      "name": "Jessica - Playful, Bright, Warm",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "cgSgspJ2msm6clMCkdW9",
+      "description": "Young and popular, this playful American female voice is perfect for trendy content.",
+      "tags": [
+        "female",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Young and popular, this playful American female voice is perfect for trendy content.",
+        "machineTags": [
+          "female",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBK7V03D3J4A553RWG",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFB4GC6PKE1XBTHDHV2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBEAQKX2BZ28Q65P0F",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:cgSgspJ2msm6clMCkdW9",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBNVNYE7EPTWQ91234",
+      "name": "Laura - Enthusiast, Quirky Attitude",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "description": "This young adult female voice delivers sunny enthusiasm with a quirky attitude.",
+      "tags": [
+        "female",
+        "us",
+        "social_media",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "This young adult female voice delivers sunny enthusiasm with a quirky attitude.",
+        "machineTags": [
+          "female",
+          "us",
+          "social_media",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBEXSXFS7XFXNK8VCJ",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFBNVNYE7EPTWQ91234.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBRQPWG3SA0WGMMGMS",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:FGY2WhTYpPnrIDTdsKH5",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBFVKZXVAESYST9MN8",
+      "name": "Liam - Energetic, Social Media Creator",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "description": "A young adult with energy and warmth - suitable for reels and shorts.",
+      "tags": [
+        "male",
+        "us",
+        "social_media",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A young adult with energy and warmth - suitable for reels and shorts.",
+        "machineTags": [
+          "male",
+          "us",
+          "social_media",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBHDSX9NBXQA6AVD1A",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFBFVKZXVAESYST9MN8.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB49NFEMB3M8MMWDW8",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:TX3LPaxmHKxFdv7VOQHJ",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBE2TSPHZMX9HJWNJ8",
+      "name": "Lily - Velvety Actress",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "description": "Velvety British female voice delivers news and narrations with warmth and clarity.",
+      "tags": [
+        "female",
+        "us",
+        "informative_educational",
+        "british",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Velvety British female voice delivers news and narrations with warmth and clarity.",
+        "machineTags": [
+          "female",
+          "us",
+          "informative_educational",
+          "british",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBQNV43MWKQGATKXM2",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFBE2TSPHZMX9HJWNJ8.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB1ZJZTHBKCYPA0QRW",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:pFZP5JQG7iQjIQuC4Bku",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBWGP2JRDG96A0PRPR",
+      "name": "Matilda - Knowledgable, Professional",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "XrExE9yKIg1WjnnlVkGX",
+      "description": "A professional woman with a pleasing alto pitch. Suitable for many use cases.",
+      "tags": [
+        "female",
+        "us",
+        "informative_educational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A professional woman with a pleasing alto pitch. Suitable for many use cases.",
+        "machineTags": [
+          "female",
+          "us",
+          "informative_educational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBP4EENSXAAXJ62VQ1",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01KJZXZNFBWGP2JRDG96A0PRPR.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBZXD1R3B9M91RZTMA",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:XrExE9yKIg1WjnnlVkGX",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB2A0K2H42TN16QYYN",
+      "name": "River - Relaxed, Neutral, Informative",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "SAz9YHcvj6GT2YYXdXww",
+      "description": "A relaxed, neutral voice ready for narrations or conversational projects.",
+      "tags": [
+        "neutral",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "A relaxed, neutral voice ready for narrations or conversational projects.",
+        "machineTags": [
+          "neutral",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBFFFKJMGYYB05FGHK",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFB2A0K2H42TN16QYYN.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBCBH1JDRRSENWWR6Z",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:SAz9YHcvj6GT2YYXdXww",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB5KMFRQD8H7QGJYPM",
+      "name": "Roger - Laid-Back, Casual, Resonant",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "CwhRBWXzGAHq8TQ4Fs17",
+      "description": "Easy going and perfect for casual conversations.",
+      "tags": [
+        "male",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Easy going and perfect for casual conversations.",
+        "machineTags": [
+          "male",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "middle_aged",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBKS7569SETDFY2HAW",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFB5KMFRQD8H7QGJYPM.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBTX0ZVYG814ZA67VA",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:CwhRBWXzGAHq8TQ4Fs17",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBP9HJ33H9G4A0DXJD",
+      "name": "Sarah - Mature, Reassuring, Confident",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "EXAVITQu4vr4xnSDxMaL",
+      "description": "Young adult woman with a confident and warm, mature quality and a reassuring, professional tone.",
+      "tags": [
+        "female",
+        "us",
+        "entertainment_tv",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Young adult woman with a confident and warm, mature quality and a reassuring, professional tone.",
+        "machineTags": [
+          "female",
+          "us",
+          "entertainment_tv",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBXJ8FNJGQPEAZM74J",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFBP9HJ33H9G4A0DXJD.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBCJ1265YZMWVT77HV",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:EXAVITQu4vr4xnSDxMaL",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBYE7S23S1AVV8NWTV",
+      "name": "Will - Relaxed Optimist",
+      "provider": "ElevenLabs",
+      "providerId": "elevenlabs",
+      "providerVoiceId": "bIHbv24MWmeRgasZH58o",
+      "description": "Conversational and laid back.",
+      "tags": [
+        "male",
+        "us",
+        "conversational",
+        "american",
+        "premade"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
+      "metadata": {
+        "shortLabel": "en-US  voice",
+        "searchDescription": "Conversational and laid back.",
+        "machineTags": [
+          "male",
+          "us",
+          "conversational",
+          "american",
+          "premade"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "unknown",
+        "agePresentation": "young",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBYZVKHA7B659CKHCP",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFBYE7S23S1AVV8NWTV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBTZ3J6CW8NECRR9YM",
+          "sourceType": "cloud_provider",
+          "sourceKey": "elevenlabs:tts:bIHbv24MWmeRgasZH58o",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCHEK2DM62KSZ49N98",
+      "name": "en-AU-Neural2-A",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-AU-Neural2-A",
+      "description": "Google en-AU-Neural2-A — Female en-AU voice.",
+      "tags": [
+        "female",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-AU female voice",
+        "searchDescription": "Google en-AU-Neural2-A — Female en-AU voice.",
+        "machineTags": [
+          "female",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCWS6FQGW7WMYWJTTM",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZXZNFCHEK2DM62KSZ49N98.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCRXSMP7QH1DNV0VEQ",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-AU-Neural2-A",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCD5VK95AYA7AHMMQ7",
+      "name": "en-AU-Neural2-B",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-AU-Neural2-B",
+      "description": "Google en-AU-Neural2-B — Male en-AU voice.",
+      "tags": [
+        "male",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-AU male voice",
+        "searchDescription": "Google en-AU-Neural2-B — Male en-AU voice.",
+        "machineTags": [
+          "male",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC6DV21ZGKDZ3MGVR8",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFCD5VK95AYA7AHMMQ7.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC1XTKD2XG45M659K4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-AU-Neural2-B",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCHEKZZ856PXXEAGD0",
+      "name": "en-AU-Neural2-C",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-AU-Neural2-C",
+      "description": "Google en-AU-Neural2-C — Female en-AU voice.",
+      "tags": [
+        "female",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-AU female voice",
+        "searchDescription": "Google en-AU-Neural2-C — Female en-AU voice.",
+        "machineTags": [
+          "female",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC9FGK3GKWR13CAWW4",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZXZNFCHEKZZ856PXXEAGD0.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC9BFRTW9VYAG9G0WR",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-AU-Neural2-C",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCZSH1481YXC3JVGJM",
+      "name": "en-AU-Neural2-D",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-AU-Neural2-D",
+      "description": "Google en-AU-Neural2-D — Male en-AU voice.",
+      "tags": [
+        "male",
+        "au"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-AU male voice",
+        "searchDescription": "Google en-AU-Neural2-D — Male en-AU voice.",
+        "machineTags": [
+          "male",
+          "au"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC01GN8GFNRAG4Y3RF",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFCZSH1481YXC3JVGJM.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCRHCSTG6DZWF6MXSM",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-AU-Neural2-D",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC8BZ05DNRHYPQ00XY",
+      "name": "en-GB-Neural2-A",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-GB-Neural2-A",
+      "description": "Google en-GB-Neural2-A — Female en-GB voice.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "Google en-GB-Neural2-A — Female en-GB voice.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCV6EXD2NZY156NHXC",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFC8BZ05DNRHYPQ00XY.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC1JFJ8JDVG1VAKXPQ",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-GB-Neural2-A",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC5SMR4AQZ23DYWKPR",
+      "name": "en-GB-Neural2-B",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-GB-Neural2-B",
+      "description": "Google en-GB-Neural2-B — Male en-GB voice.",
+      "tags": [
+        "male",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-GB male voice",
+        "searchDescription": "Google en-GB-Neural2-B — Male en-GB voice.",
+        "machineTags": [
+          "male",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCRQ625XMZ0NAD6VWQ",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFC5SMR4AQZ23DYWKPR.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCP2TB92SBC78X00J3",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-GB-Neural2-B",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCV9FV48QGXS3GRVKA",
+      "name": "en-GB-Neural2-C",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-GB-Neural2-C",
+      "description": "Google en-GB-Neural2-C — Female en-GB voice.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "Google en-GB-Neural2-C — Female en-GB voice.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCH1WNYAEJHC2EWCCR",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFCV9FV48QGXS3GRVKA.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCF3GPJVEQZTZ7H8FT",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-GB-Neural2-C",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC2HSWZ2EM0YJ0JNM0",
+      "name": "en-GB-Neural2-D",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-GB-Neural2-D",
+      "description": "Google en-GB-Neural2-D — Male en-GB voice.",
+      "tags": [
+        "male",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-GB male voice",
+        "searchDescription": "Google en-GB-Neural2-D — Male en-GB voice.",
+        "machineTags": [
+          "male",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC998DJK5B8EFWZ27F",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNFC2HSWZ2EM0YJ0JNM0.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCPDQSV4X3XSP8T3RE",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-GB-Neural2-D",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCPS1FC9NAVW3H1G01",
+      "name": "en-GB-Neural2-F",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-GB-Neural2-F",
+      "description": "Google en-GB-Neural2-F — Female en-GB voice.",
+      "tags": [
+        "female",
+        "gb"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-GB female voice",
+        "searchDescription": "Google en-GB-Neural2-F — Female en-GB voice.",
+        "machineTags": [
+          "female",
+          "gb"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCPEMDEZ779JN83ART",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFCPS1FC9NAVW3H1G01.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC5ZBT624MK9RMHM6A",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-GB-Neural2-F",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCJA2T3RT1M7QWVNR3",
+      "name": "en-US-Journey-D",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Journey-D",
+      "description": "Google en-US-Journey-D — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Journey-D — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC18T8SCNRGXF8PXBH",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFCJA2T3RT1M7QWVNR3.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCGBZT3N49HW11ZJXY",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Journey-D",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCXR4D5GSH5AQ5YV3A",
+      "name": "en-US-Journey-F",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Journey-F",
+      "description": "Google en-US-Journey-F — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Journey-F — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC2E8MWRCCKRV46F9K",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFCXR4D5GSH5AQ5YV3A.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCHPM4EM6NPR4GPCJD",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Journey-F",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCC55SAFJW5AGTN0FP",
+      "name": "en-US-Journey-O",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Journey-O",
+      "description": "Google en-US-Journey-O — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Journey-O — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC588J2MPC5Q68GZCM",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFCC55SAFJW5AGTN0FP.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCZP51GXR74MPKARR5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Journey-O",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCEZVMEFX79W0S6HP2",
+      "name": "en-US-Neural2-A",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-A",
+      "description": "Google en-US-Neural2-A — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Neural2-A — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCH28FJQHQ7Z1C6F84",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFCEZVMEFX79W0S6HP2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCHJVCEKBYY9DDXPF5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-A",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC0480G12GE3Y7HR1J",
+      "name": "en-US-Neural2-C",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-C",
+      "description": "Google en-US-Neural2-C — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Neural2-C — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC7T668QETZATRGDE1",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNFC0480G12GE3Y7HR1J.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCSYFG7XK3BCZSFB66",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-C",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCJAQ4JTGW9YT9M5T4",
+      "name": "en-US-Neural2-D",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-D",
+      "description": "Google en-US-Neural2-D — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Neural2-D — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCMPDRAPGBZ9TK7P28",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFCJAQ4JTGW9YT9M5T4.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC119ZJ99EWBX1QN2P",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-D",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC2JM7PVNM7DC0NJ5E",
+      "name": "en-US-Neural2-E",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-E",
+      "description": "Google en-US-Neural2-E — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Neural2-E — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC2EWH31VBQ26XRCZY",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFC2JM7PVNM7DC0NJ5E.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCSG4C8519FANPCNRE",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-E",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCACR3BRQVZNDC0WT3",
+      "name": "en-US-Neural2-F",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-F",
+      "description": "Google en-US-Neural2-F — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Neural2-F — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCFC9AK71KXS70XMBM",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFCACR3BRQVZNDC0WT3.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCVDJW3QSA5H3Q4DBK",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-F",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC6052ZH0C9Q9R9X3M",
+      "name": "en-US-Neural2-G",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-G",
+      "description": "Google en-US-Neural2-G — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Neural2-G — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFC10YACFXNJRNX2Y8R",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCDJZG733TE0X0PKVM",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-G",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCPSW9T6W65GFYDZQJ",
+      "name": "en-US-Neural2-H",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-H",
+      "description": "Google en-US-Neural2-H — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Neural2-H — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCAAXAAQY7HTTKYCG3",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCP05AT07VH84G6M7A",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-H",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCVGYVQZ8NQT1Y9K17",
+      "name": "en-US-Neural2-I",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-I",
+      "description": "Google en-US-Neural2-I — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Neural2-I — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCC2J4Z9T8HSDSG9QE",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFCVGYVQZ8NQT1Y9K17.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCKZCQ26JF17XWAJ1C",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Neural2-I",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCZEHX3AXMG8JGQ31B",
+      "name": "en-US-News-K",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-News-K",
+      "description": "Google en-US-News-K — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-News-K — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCZR4WD4GW419XRQ7N",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZXZNFCZEHX3AXMG8JGQ31B.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCA5G81C78H1JC349S",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-News-K",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCTR8HR2XDPYKCZD82",
+      "name": "en-US-News-L",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-News-L",
+      "description": "Google en-US-News-L — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-News-L — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCFMECE0V3HN16RRMY",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFCTR8HR2XDPYKCZD82.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFC101ADJBTG9PB8TB5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-News-L",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCWGX8RDR6KP96H759",
+      "name": "en-US-Studio-M",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Studio-M",
+      "description": "Google en-US-Studio-M — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Studio-M — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCMGTA2TTHHW9Z8J3X",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFCWGX8RDR6KP96H759.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCCHTRXPE7YKHK8BA7",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Studio-M",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFC2VHXRJ04WKK32M7G",
+      "name": "en-US-Studio-O",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Studio-O",
+      "description": "Google en-US-Studio-O — Female en-US voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Google en-US-Studio-O — Female en-US voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCTPA8D5E0243JWWHT",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFC2VHXRJ04WKK32M7G.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCGK3FZJMH5TECKJH4",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Studio-O",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFCMC5APRH3MPXJW4N2",
+      "name": "en-US-Studio-Q",
+      "provider": "Google Cloud TTS",
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Studio-Q",
+      "description": "Google en-US-Studio-Q — Male en-US voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Google en-US-Studio-Q — Male en-US voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFCFT8FRPS77RZXAR4F",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZXZNFCMC5APRH3MPXJW4N2.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFCZFRAE8VTZQHTZVC7",
+          "sourceType": "cloud_provider",
+          "sourceKey": "gcp:tts:en-US-Studio-Q",
+          "runnable": true,
+          "supportsSsml": true,
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBE49RT8TB3R1ZGQCV",
+      "name": "ash",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "ash",
+      "description": "Warm, conversational, approachable. OpenAI TTS voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Warm, conversational, approachable. OpenAI TTS voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB41K3E98A45XZXP20",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBA4041009RJY4RZ11",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:ash",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBFJ8Q5N7JGZ4RDJCV",
+      "name": "ballad",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "ballad",
+      "description": "Soft, gentle, soothing. OpenAI TTS voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Soft, gentle, soothing. OpenAI TTS voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB0TNA3CA72FX9HBN2",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB2ADMP8WQVEKR1WZY",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:ballad",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB1V76ABZJAM47W53Z",
+      "name": "coral",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "coral",
+      "description": "Clear, friendly, warm. OpenAI TTS voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Clear, friendly, warm. OpenAI TTS voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB1FRY749WRDT6EQ7W",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZXZNFB1V76ABZJAM47W53Z.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBGSAY0AR3HRFM956H",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:coral",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB4810HWZB27HNMGSV",
+      "name": "echo",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "echo",
+      "description": "Smooth, deep, resonant. OpenAI TTS voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Smooth, deep, resonant. OpenAI TTS voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBWWMYSA90H0WS5S07",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZXZNFB4810HWZB27HNMGSV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB8GP36ECKW68KB8A1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:echo",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB1EW4TQ1MMKF9KMTJ",
+      "name": "fable",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "fable",
+      "description": "Expressive, animated, storytelling. OpenAI TTS voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Expressive, animated, storytelling. OpenAI TTS voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBVR5MRXBYTVBCTED2",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBG748X6NF0A160Z3Q",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:fable",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBERFNHYE9EF0K5BVN",
+      "name": "sage",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "sage",
+      "description": "Calm, wise, measured. OpenAI TTS voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Calm, wise, measured. OpenAI TTS voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBN3KBDGH2W7JHS9V1",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZXZNFBERFNHYE9EF0K5BVN.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBGJQEHZGAWGAJZ5H0",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:sage",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFB0C9HXSRQX3TB32QZ",
+      "name": "shimmer",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "shimmer",
+      "description": "Light, clear, gentle. OpenAI TTS voice.",
+      "tags": [
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US female voice",
+        "searchDescription": "Light, clear, gentle. OpenAI TTS voice.",
+        "machineTags": [
+          "female",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "clear"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFBWSD0Q3VY8D30Z5SK",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZXZNFB0C9HXSRQX3TB32QZ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFB42DGKX473JZZYFT5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:shimmer",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZXZNFBQRWDJ3N3NY6Y3J9R",
+      "name": "verse",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "verse",
+      "description": "Versatile, adaptive, dynamic. OpenAI TTS voice.",
+      "tags": [
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "en-US male voice",
+        "searchDescription": "Versatile, adaptive, dynamic. OpenAI TTS voice.",
+        "machineTags": [
+          "male",
+          "us"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "steady"
+        ],
+        "audienceTags": [],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "sparse"
+      },
+      "samples": [
+        {
+          "id": "01KJZXZNFB9SRVSNNHDECQHP34",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZXZNFBMH2Q9ECAR06EZQM5",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:verse",
           "runnable": true,
           "supportsSsml": false,
           "outputFormats": [

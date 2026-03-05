@@ -1,0 +1,60 @@
+{
+  "voices": [
+    {
+      "id": "alloy",
+      "desc": "Neutral, balanced, versatile",
+      "gender": "Neutral"
+    },
+    {
+      "id": "ash",
+      "desc": "Warm, conversational, approachable",
+      "gender": "Male"
+    },
+    {
+      "id": "ballad",
+      "desc": "Soft, gentle, soothing",
+      "gender": "Male"
+    },
+    {
+      "id": "coral",
+      "desc": "Clear, friendly, warm",
+      "gender": "Female"
+    },
+    {
+      "id": "echo",
+      "desc": "Smooth, deep, resonant",
+      "gender": "Male"
+    },
+    {
+      "id": "fable",
+      "desc": "Expressive, animated, storytelling",
+      "gender": "Male"
+    },
+    {
+      "id": "nova",
+      "desc": "Energetic, bright, dynamic",
+      "gender": "Female"
+    },
+    {
+      "id": "onyx",
+      "desc": "Deep, authoritative, grounded",
+      "gender": "Male"
+    },
+    {
+      "id": "sage",
+      "desc": "Calm, wise, measured",
+      "gender": "Female"
+    },
+    {
+      "id": "shimmer",
+      "desc": "Light, clear, gentle",
+      "gender": "Female"
+    },
+    {
+      "id": "verse",
+      "desc": "Versatile, adaptive, dynamic",
+      "gender": "Male"
+    }
+  ],
+  "note": "Hardcoded — OpenAI has no list endpoint"
+}
