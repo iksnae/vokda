@@ -156,6 +156,12 @@
 
 <svelte:head>
   <title>{voice ? `${voice.name} | Vokda` : 'Voice | Vokda'}</title>
+  {#if voice}
+    <meta property="og:title" content="{voice.name} — {voice.provider} | Vokda" />
+    <meta property="og:description" content="{voice.description}" />
+    <meta name="twitter:title" content="{voice.name} — {voice.provider} | Vokda" />
+    <meta name="twitter:description" content="{voice.description}" />
+  {/if}
 </svelte:head>
 
 <main>

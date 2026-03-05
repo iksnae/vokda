@@ -44,6 +44,10 @@
 
 <svelte:head>
   <title>Collections | Vokda</title>
+  <meta property="og:title" content="Voice Collections | Vokda" />
+  <meta property="og:description" content="Curate and organize your favorite TTS voices into collections." />
+  <meta name="twitter:title" content="Voice Collections | Vokda" />
+  <meta name="twitter:description" content="Curate and organize your favorite TTS voices into collections." />
 </svelte:head>
 
 <main>

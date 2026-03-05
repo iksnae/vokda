@@ -224,6 +224,10 @@
 
 <svelte:head>
   <title>Discover Voices | Vokda</title>
+  <meta property="og:title" content="Discover Voices | Vokda" />
+  <meta property="og:description" content="Browse {effectiveVoices.length} TTS voices across 15 providers. Audition samples, compare model cards, and curate collections." />
+  <meta name="twitter:title" content="Discover Voices | Vokda" />
+  <meta name="twitter:description" content="Browse {effectiveVoices.length} TTS voices across 15 providers. Audition samples, compare model cards, and curate collections." />
 </svelte:head>
 
 <main>

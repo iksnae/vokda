@@ -28,7 +28,7 @@
 <div class="app-shell">
   <header>
     <a class="brand" href="/">
-      <span class="mark">V</span>
+      <img class="mark-img" src="/favicon.svg" alt="" width="28" height="28" />
       <span class="wordmark">Vokda</span>
     </a>
 
@@ -177,17 +177,11 @@
     letter-spacing: 0.01em;
   }
 
-  .mark {
+  .mark-img {
     width: 1.72rem;
     height: 1.72rem;
-    border-radius: 0.58rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background: linear-gradient(155deg, #0e5f79 0%, #2a819d 58%, #56a8bf 100%);
-    font-size: 0.9rem;
-    box-shadow: 0 8px 18px rgba(28, 92, 118, 0.3);
+    border-radius: 0.48rem;
+    box-shadow: 0 4px 12px rgba(28, 92, 118, 0.25);
   }
 
   .wordmark {
