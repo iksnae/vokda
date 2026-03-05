@@ -1,8 +1,7 @@
-import { generateClient } from 'aws-amplify/api';
-import { ensureAmplifyConfigured } from '$lib/auth/amplify-client';
 import { DEFAULT_PROVIDERS } from '$lib/providers';
 import type { ProviderDefinition, Voice } from '$lib/types';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
+import { dataClient } from '$lib/data/client';
 
 const WORKSPACE_KEY = 'global';
 
@@ -12,45 +11,18 @@ type CurationWorkspaceRecord = {
   metadataOverrides: unknown;
   customVoices: unknown;
   providerCatalog: unknown;
-  updatedAtIso: string;
   published?: boolean | null;
 };
 
-const listWorkspaceQuery = /* GraphQL */ `
-  query ListCurationWorkspaces($filter: ModelCurationWorkspaceFilterInput, $limit: Int) {
-    listCurationWorkspaces(filter: $filter, limit: $limit) {
-      items {
-        id
-        key
-        metadataOverrides
-        customVoices
-        providerCatalog
-        updatedAtIso
-        published
-      }
-    }
-  }
-`;
+type WorkspaceListResponse = {
+  data: CurationWorkspaceRecord[];
+  errors?: unknown;
+};
 
-const createWorkspaceMutation = /* GraphQL */ `
-  mutation CreateCurationWorkspace($input: CreateCurationWorkspaceInput!) {
-    createCurationWorkspace(input: $input) {
-      id
-    }
+function assertNoErrors(errors: unknown) {
+  if (Array.isArray(errors) && errors.length > 0) {
+    throw new Error('Amplify data request failed.');
   }
-`;
-
-const updateWorkspaceMutation = /* GraphQL */ `
-  mutation UpdateCurationWorkspace($input: UpdateCurationWorkspaceInput!) {
-    updateCurationWorkspace(input: $input) {
-      id
-    }
-  }
-`;
-
-function client() {
-  ensureAmplifyConfigured();
-  return generateClient();
 }
 
 function safeObject(input: unknown): Record<string, VoiceMetadataPatch> {
@@ -79,22 +51,26 @@ function safeProviders(input: unknown): ProviderDefinition[] {
 }
 
 async function fetchWorkspaceRecord(): Promise<CurationWorkspaceRecord | null> {
-  const gqlClient = client();
+  const client = dataClient();
 
-  const response = (await gqlClient.graphql({
-    query: listWorkspaceQuery,
-    variables: {
-      limit: 1,
-      filter: {
-        key: { eq: WORKSPACE_KEY }
+  const load = async (authMode?: 'apiKey' | 'userPool') => {
+    const response = (await client.models.CurationWorkspace.list(
+      {
+        limit: 1,
+        filter: { key: { eq: WORKSPACE_KEY } },
+        ...(authMode ? { authMode } : {})
       }
-    }
-  })) as {
-    data?: { listCurationWorkspaces?: { items?: Array<CurationWorkspaceRecord | null> | null } };
+    )) as WorkspaceListResponse;
+
+    assertNoErrors(response.errors);
+    return response.data.find(Boolean) ?? null;
   };
 
-  const item = response.data?.listCurationWorkspaces?.items?.find(Boolean);
-  return item ?? null;
+  try {
+    return await load();
+  } catch {
+    return load('apiKey');
+  }
 }
 
 export async function fetchCurationWorkspace(): Promise<{
@@ -124,38 +100,29 @@ export async function saveCurationWorkspace(payload: {
   customVoices: Voice[];
   providerCatalog: ProviderDefinition[];
 }) {
-  const gqlClient = client();
+  const client = dataClient();
   const existing = await fetchWorkspaceRecord();
 
   if (!existing) {
-    await gqlClient.graphql({
-      query: createWorkspaceMutation,
-      variables: {
-        input: {
-          key: WORKSPACE_KEY,
-          metadataOverrides: payload.metadataOverrides,
-          customVoices: payload.customVoices,
-          providerCatalog: payload.providerCatalog,
-          updatedAtIso: new Date().toISOString(),
-          published: true
-        }
-      }
+    const created = await client.models.CurationWorkspace.create({
+      key: WORKSPACE_KEY,
+      metadataOverrides: payload.metadataOverrides,
+      customVoices: payload.customVoices,
+      providerCatalog: payload.providerCatalog,
+      updatedAtIso: new Date().toISOString(),
+      published: true
     });
-
+    assertNoErrors(created.errors);
     return;
   }
 
-  await gqlClient.graphql({
-    query: updateWorkspaceMutation,
-    variables: {
-      input: {
-        id: existing.id,
-        metadataOverrides: payload.metadataOverrides,
-        customVoices: payload.customVoices,
-        providerCatalog: payload.providerCatalog,
-        updatedAtIso: new Date().toISOString(),
-        published: existing.published ?? true
-      }
-    }
+  const updated = await client.models.CurationWorkspace.update({
+    id: existing.id,
+    metadataOverrides: payload.metadataOverrides,
+    customVoices: payload.customVoices,
+    providerCatalog: payload.providerCatalog,
+    updatedAtIso: new Date().toISOString(),
+    published: existing.published ?? true
   });
+  assertNoErrors(updated.errors);
 }

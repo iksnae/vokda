@@ -1,21 +1,16 @@
-import { generateClient } from 'aws-amplify/api';
-import { ensureAmplifyConfigured } from '$lib/auth/amplify-client';
 import type { CartItem, Collection } from '$lib/types';
+import { dataClient } from '$lib/data/client';
 
 type FavoriteRecord = {
   id: string;
   voiceId: string;
-  provider?: string | null;
   createdAtIso: string;
 };
 
 type CollectionRecord = {
   id: string;
   name: string;
-  description?: string | null;
-  visibility?: 'private' | 'team' | null;
   createdAtIso: string;
-  updatedAtIso: string;
 };
 
 type CollectionVoiceRecord = {
@@ -34,208 +29,29 @@ type CartItemRecord = {
   createdAtIso: string;
 };
 
-const listFavoritesQuery = /* GraphQL */ `
-  query ListFavorites($limit: Int, $nextToken: String) {
-    listFavorites(limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        voiceId
-        provider
-        createdAtIso
-      }
-      nextToken
-    }
-  }
-`;
-
-const listCollectionsQuery = /* GraphQL */ `
-  query ListCollections($limit: Int, $nextToken: String) {
-    listCollections(limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        description
-        visibility
-        createdAtIso
-        updatedAtIso
-      }
-      nextToken
-    }
-  }
-`;
-
-const listCollectionVoicesQuery = /* GraphQL */ `
-  query ListCollectionVoices($limit: Int, $nextToken: String) {
-    listCollectionVoices(limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        collectionId
-        voiceId
-        note
-        position
-        addedAtIso
-      }
-      nextToken
-    }
-  }
-`;
-
-const listCartItemsQuery = /* GraphQL */ `
-  query ListCartItems($limit: Int, $nextToken: String) {
-    listCartItems(limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        voiceId
-        variantId
-        createdAtIso
-      }
-      nextToken
-    }
-  }
-`;
-
-const listFavoritesByVoiceQuery = /* GraphQL */ `
-  query ListFavorites($filter: ModelFavoriteFilterInput, $limit: Int) {
-    listFavorites(filter: $filter, limit: $limit) {
-      items {
-        id
-        voiceId
-      }
-    }
-  }
-`;
-
-const listCartItemsByVariantQuery = /* GraphQL */ `
-  query ListCartItems($filter: ModelCartItemFilterInput, $limit: Int) {
-    listCartItems(filter: $filter, limit: $limit) {
-      items {
-        id
-      }
-    }
-  }
-`;
-
-const listCollectionVoicesByKeyQuery = /* GraphQL */ `
-  query ListCollectionVoices($filter: ModelCollectionVoiceFilterInput, $limit: Int) {
-    listCollectionVoices(filter: $filter, limit: $limit) {
-      items {
-        id
-        note
-      }
-    }
-  }
-`;
-
-const createFavoriteMutation = /* GraphQL */ `
-  mutation CreateFavorite($input: CreateFavoriteInput!) {
-    createFavorite(input: $input) {
-      id
-    }
-  }
-`;
-
-const deleteFavoriteMutation = /* GraphQL */ `
-  mutation DeleteFavorite($input: DeleteFavoriteInput!) {
-    deleteFavorite(input: $input) {
-      id
-    }
-  }
-`;
-
-const createCollectionMutation = /* GraphQL */ `
-  mutation CreateCollection($input: CreateCollectionInput!) {
-    createCollection(input: $input) {
-      id
-    }
-  }
-`;
-
-const updateCollectionMutation = /* GraphQL */ `
-  mutation UpdateCollection($input: UpdateCollectionInput!) {
-    updateCollection(input: $input) {
-      id
-    }
-  }
-`;
-
-const deleteCollectionMutation = /* GraphQL */ `
-  mutation DeleteCollection($input: DeleteCollectionInput!) {
-    deleteCollection(input: $input) {
-      id
-    }
-  }
-`;
-
-const createCollectionVoiceMutation = /* GraphQL */ `
-  mutation CreateCollectionVoice($input: CreateCollectionVoiceInput!) {
-    createCollectionVoice(input: $input) {
-      id
-    }
-  }
-`;
-
-const updateCollectionVoiceMutation = /* GraphQL */ `
-  mutation UpdateCollectionVoice($input: UpdateCollectionVoiceInput!) {
-    updateCollectionVoice(input: $input) {
-      id
-    }
-  }
-`;
-
-const deleteCollectionVoiceMutation = /* GraphQL */ `
-  mutation DeleteCollectionVoice($input: DeleteCollectionVoiceInput!) {
-    deleteCollectionVoice(input: $input) {
-      id
-    }
-  }
-`;
-
-const createCartItemMutation = /* GraphQL */ `
-  mutation CreateCartItem($input: CreateCartItemInput!) {
-    createCartItem(input: $input) {
-      id
-    }
-  }
-`;
-
-const deleteCartItemMutation = /* GraphQL */ `
-  mutation DeleteCartItem($input: DeleteCartItemInput!) {
-    deleteCartItem(input: $input) {
-      id
-    }
-  }
-`;
-
-function client() {
-  ensureAmplifyConfigured();
-  return generateClient();
-}
-
-type PagedResponse<T> = {
-  items?: Array<T | null> | null;
+type ListPage<T> = {
+  data: T[];
   nextToken?: string | null;
+  errors?: unknown;
 };
 
+function assertNoErrors(errors: unknown) {
+  if (Array.isArray(errors) && errors.length > 0) {
+    throw new Error('Amplify data request failed.');
+  }
+}
+
 async function listAll<T>(
-  query: string,
-  dataKey: string
+  fetchPage: (nextToken?: string) => Promise<ListPage<T>>
 ): Promise<T[]> {
-  const gqlClient = client();
   const output: T[] = [];
-  let nextToken: string | null | undefined = undefined;
+  let nextToken: string | undefined;
 
   do {
-    const response = (await gqlClient.graphql({
-      query,
-      variables: { limit: 200, nextToken }
-    })) as {
-      data?: Record<string, PagedResponse<T>>;
-    };
-
-    const page = response.data?.[dataKey];
-    const items = (page?.items ?? []).filter((item): item is T => Boolean(item));
-    output.push(...items);
-    nextToken = page?.nextToken;
+    const page = await fetchPage(nextToken);
+    assertNoErrors(page.errors);
+    output.push(...page.data);
+    nextToken = page.nextToken ?? undefined;
   } while (nextToken);
 
   return output;
@@ -246,11 +62,25 @@ export async function fetchLibraryState(): Promise<{
   collections: Collection[];
   cart: CartItem[];
 }> {
+  const client = dataClient();
+
   const [favoritesRaw, collectionsRaw, collectionVoicesRaw, cartRaw] = await Promise.all([
-    listAll<FavoriteRecord>(listFavoritesQuery, 'listFavorites'),
-    listAll<CollectionRecord>(listCollectionsQuery, 'listCollections'),
-    listAll<CollectionVoiceRecord>(listCollectionVoicesQuery, 'listCollectionVoices'),
-    listAll<CartItemRecord>(listCartItemsQuery, 'listCartItems')
+    listAll<FavoriteRecord>(async (nextToken) => {
+      const response = await client.models.Favorite.list({ limit: 200, nextToken });
+      return response as ListPage<FavoriteRecord>;
+    }),
+    listAll<CollectionRecord>(async (nextToken) => {
+      const response = await client.models.Collection.list({ limit: 200, nextToken });
+      return response as ListPage<CollectionRecord>;
+    }),
+    listAll<CollectionVoiceRecord>(async (nextToken) => {
+      const response = await client.models.CollectionVoice.list({ limit: 200, nextToken });
+      return response as ListPage<CollectionVoiceRecord>;
+    }),
+    listAll<CartItemRecord>(async (nextToken) => {
+      const response = await client.models.CartItem.list({ limit: 200, nextToken });
+      return response as ListPage<CartItemRecord>;
+    })
   ]);
 
   const collectionVoiceMap = new Map<string, CollectionVoiceRecord[]>();
@@ -294,316 +124,230 @@ export async function fetchLibraryState(): Promise<{
     .sort((a, b) => a.createdAtIso.localeCompare(b.createdAtIso))
     .map((entry) => entry.voiceId);
 
-  return {
-    favorites,
-    collections,
-    cart
-  };
+  return { favorites, collections, cart };
 }
 
 export async function saveFavorite(voiceId: string) {
-  const gqlClient = client();
-  const existing = (await gqlClient.graphql({
-    query: listFavoritesByVoiceQuery,
-    variables: {
-      limit: 1,
-      filter: { voiceId: { eq: voiceId } }
-    }
-  })) as {
-    data?: { listFavorites?: { items?: Array<{ id: string } | null> | null } };
-  };
+  const client = dataClient();
+  const existing = (await client.models.Favorite.list({
+    limit: 1,
+    filter: { voiceId: { eq: voiceId } }
+  })) as ListPage<FavoriteRecord>;
 
-  const already = existing.data?.listFavorites?.items?.some(Boolean);
-  if (already) return;
+  assertNoErrors(existing.errors);
+  if (existing.data.length > 0) return;
 
-  await gqlClient.graphql({
-    query: createFavoriteMutation,
-    variables: {
-      input: {
-        voiceId,
-        createdAtIso: new Date().toISOString()
-      }
-    }
+  const created = await client.models.Favorite.create({
+    voiceId,
+    createdAtIso: new Date().toISOString()
   });
+  assertNoErrors(created.errors);
 }
 
 export async function removeFavorite(voiceId: string) {
-  const gqlClient = client();
-  const existing = (await gqlClient.graphql({
-    query: listFavoritesByVoiceQuery,
-    variables: {
-      limit: 50,
+  const client = dataClient();
+  const entries = await listAll<FavoriteRecord>(async (nextToken) => {
+    const response = await client.models.Favorite.list({
+      limit: 200,
+      nextToken,
       filter: { voiceId: { eq: voiceId } }
-    }
-  })) as {
-    data?: { listFavorites?: { items?: Array<{ id: string } | null> | null } };
-  };
-
-  const items = (existing.data?.listFavorites?.items ?? []).filter(
-    (item): item is { id: string } => Boolean(item)
-  );
+    });
+    return response as ListPage<FavoriteRecord>;
+  });
 
   await Promise.all(
-    items.map((item) =>
-      gqlClient.graphql({
-        query: deleteFavoriteMutation,
-        variables: {
-          input: { id: item.id }
-        }
+    entries
+      .filter((entry) => Boolean(entry.id))
+      .map(async (entry) => {
+        const deleted = await client.models.Favorite.delete({ id: entry.id });
+        assertNoErrors(deleted.errors);
       })
-    )
   );
 }
 
 export async function saveCartItem(voiceId: string, variantId: string) {
-  const gqlClient = client();
-  const existing = (await gqlClient.graphql({
-    query: listCartItemsByVariantQuery,
-    variables: {
-      limit: 1,
-      filter: {
-        and: [{ voiceId: { eq: voiceId } }, { variantId: { eq: variantId } }]
-      }
+  const client = dataClient();
+  const existing = (await client.models.CartItem.list({
+    limit: 1,
+    filter: {
+      and: [{ voiceId: { eq: voiceId } }, { variantId: { eq: variantId } }]
     }
-  })) as {
-    data?: { listCartItems?: { items?: Array<{ id: string } | null> | null } };
-  };
+  })) as ListPage<CartItemRecord>;
 
-  const already = existing.data?.listCartItems?.items?.some(Boolean);
-  if (already) return;
+  assertNoErrors(existing.errors);
+  if (existing.data.length > 0) return;
 
-  await gqlClient.graphql({
-    query: createCartItemMutation,
-    variables: {
-      input: {
-        voiceId,
-        variantId,
-        createdAtIso: new Date().toISOString()
-      }
-    }
+  const created = await client.models.CartItem.create({
+    voiceId,
+    variantId,
+    createdAtIso: new Date().toISOString()
   });
+  assertNoErrors(created.errors);
 }
 
 export async function removeCartItem(voiceId: string, variantId: string) {
-  const gqlClient = client();
-  const existing = (await gqlClient.graphql({
-    query: listCartItemsByVariantQuery,
-    variables: {
-      limit: 50,
+  const client = dataClient();
+  const entries = await listAll<CartItemRecord>(async (nextToken) => {
+    const response = await client.models.CartItem.list({
+      limit: 200,
+      nextToken,
       filter: {
         and: [{ voiceId: { eq: voiceId } }, { variantId: { eq: variantId } }]
       }
-    }
-  })) as {
-    data?: { listCartItems?: { items?: Array<{ id: string } | null> | null } };
-  };
-
-  const items = (existing.data?.listCartItems?.items ?? []).filter(
-    (item): item is { id: string } => Boolean(item)
-  );
+    });
+    return response as ListPage<CartItemRecord>;
+  });
 
   await Promise.all(
-    items.map((item) =>
-      gqlClient.graphql({
-        query: deleteCartItemMutation,
-        variables: {
-          input: { id: item.id }
-        }
+    entries
+      .filter((entry) => Boolean(entry.id))
+      .map(async (entry) => {
+        const deleted = await client.models.CartItem.delete({ id: entry.id });
+        assertNoErrors(deleted.errors);
       })
-    )
   );
 }
 
 export async function clearRemoteCart() {
-  const gqlClient = client();
-  const all = await listAll<CartItemRecord>(listCartItemsQuery, 'listCartItems');
+  const client = dataClient();
+  const entries = await listAll<CartItemRecord>(async (nextToken) => {
+    const response = await client.models.CartItem.list({ limit: 200, nextToken });
+    return response as ListPage<CartItemRecord>;
+  });
 
   await Promise.all(
-    all.map((item) =>
-      gqlClient.graphql({
-        query: deleteCartItemMutation,
-        variables: {
-          input: { id: item.id }
-        }
+    entries
+      .filter((entry) => Boolean(entry.id))
+      .map(async (entry) => {
+        const deleted = await client.models.CartItem.delete({ id: entry.id });
+        assertNoErrors(deleted.errors);
       })
-    )
   );
 }
 
 export async function saveCollection(collection: Collection) {
-  const gqlClient = client();
-
-  await gqlClient.graphql({
-    query: createCollectionMutation,
-    variables: {
-      input: {
-        id: collection.id,
-        name: collection.name,
-        visibility: 'private',
-        createdAtIso: collection.createdAt,
-        updatedAtIso: new Date().toISOString()
-      }
-    }
+  const client = dataClient();
+  const created = await client.models.Collection.create({
+    id: collection.id,
+    name: collection.name,
+    visibility: 'private',
+    createdAtIso: collection.createdAt,
+    updatedAtIso: new Date().toISOString()
   });
+  assertNoErrors(created.errors);
 }
 
 export async function removeCollection(collectionId: string) {
-  const gqlClient = client();
+  const client = dataClient();
 
-  const links = (await gqlClient.graphql({
-    query: listCollectionVoicesByKeyQuery,
-    variables: {
+  const links = await listAll<CollectionVoiceRecord>(async (nextToken) => {
+    const response = await client.models.CollectionVoice.list({
       limit: 200,
+      nextToken,
       filter: { collectionId: { eq: collectionId } }
-    }
-  })) as {
-    data?: { listCollectionVoices?: { items?: Array<{ id: string } | null> | null } };
-  };
-
-  const linkedItems = (links.data?.listCollectionVoices?.items ?? []).filter(
-    (item): item is { id: string } => Boolean(item)
-  );
+    });
+    return response as ListPage<CollectionVoiceRecord>;
+  });
 
   await Promise.all(
-    linkedItems.map((item) =>
-      gqlClient.graphql({
-        query: deleteCollectionVoiceMutation,
-        variables: {
-          input: { id: item.id }
-        }
+    links
+      .filter((entry) => Boolean(entry.id))
+      .map(async (entry) => {
+        const deleted = await client.models.CollectionVoice.delete({ id: entry.id });
+        assertNoErrors(deleted.errors);
       })
-    )
   );
 
-  await gqlClient.graphql({
-    query: deleteCollectionMutation,
-    variables: {
-      input: { id: collectionId }
-    }
-  });
+  const deleted = await client.models.Collection.delete({ id: collectionId });
+  assertNoErrors(deleted.errors);
 }
 
 async function touchCollection(collectionId: string) {
-  const gqlClient = client();
-  await gqlClient.graphql({
-    query: updateCollectionMutation,
-    variables: {
-      input: {
-        id: collectionId,
-        updatedAtIso: new Date().toISOString()
-      }
-    }
+  const client = dataClient();
+  const updated = await client.models.Collection.update({
+    id: collectionId,
+    updatedAtIso: new Date().toISOString()
   });
+  assertNoErrors(updated.errors);
 }
 
 export async function addCollectionVoice(collectionId: string, voiceId: string) {
-  const gqlClient = client();
+  const client = dataClient();
 
-  const existing = (await gqlClient.graphql({
-    query: listCollectionVoicesByKeyQuery,
-    variables: {
-      limit: 1,
-      filter: {
-        and: [{ collectionId: { eq: collectionId } }, { voiceId: { eq: voiceId } }]
-      }
+  const existing = (await client.models.CollectionVoice.list({
+    limit: 1,
+    filter: {
+      and: [{ collectionId: { eq: collectionId } }, { voiceId: { eq: voiceId } }]
     }
-  })) as {
-    data?: { listCollectionVoices?: { items?: Array<{ id: string } | null> | null } };
-  };
+  })) as ListPage<CollectionVoiceRecord>;
+  assertNoErrors(existing.errors);
 
-  const already = existing.data?.listCollectionVoices?.items?.some(Boolean);
-  if (already) return;
+  if (existing.data.length > 0) return;
 
-  const existingEntries = (await gqlClient.graphql({
-    query: listCollectionVoicesByKeyQuery,
-    variables: {
+  const existingEntries = await listAll<CollectionVoiceRecord>(async (nextToken) => {
+    const response = await client.models.CollectionVoice.list({
       limit: 200,
+      nextToken,
       filter: { collectionId: { eq: collectionId } }
-    }
-  })) as {
-    data?: { listCollectionVoices?: { items?: Array<{ id: string } | null> | null } };
-  };
-
-  const position = (existingEntries.data?.listCollectionVoices?.items ?? []).filter(Boolean).length;
-
-  await gqlClient.graphql({
-    query: createCollectionVoiceMutation,
-    variables: {
-      input: {
-        collectionId,
-        voiceId,
-        position,
-        addedAtIso: new Date().toISOString()
-      }
-    }
+    });
+    return response as ListPage<CollectionVoiceRecord>;
   });
+
+  const created = await client.models.CollectionVoice.create({
+    collectionId,
+    voiceId,
+    position: existingEntries.length,
+    addedAtIso: new Date().toISOString()
+  });
+  assertNoErrors(created.errors);
 
   await touchCollection(collectionId);
 }
 
 export async function removeCollectionVoice(collectionId: string, voiceId: string) {
-  const gqlClient = client();
+  const client = dataClient();
 
-  const existing = (await gqlClient.graphql({
-    query: listCollectionVoicesByKeyQuery,
-    variables: {
-      limit: 50,
+  const entries = await listAll<CollectionVoiceRecord>(async (nextToken) => {
+    const response = await client.models.CollectionVoice.list({
+      limit: 200,
+      nextToken,
       filter: {
         and: [{ collectionId: { eq: collectionId } }, { voiceId: { eq: voiceId } }]
       }
-    }
-  })) as {
-    data?: { listCollectionVoices?: { items?: Array<{ id: string } | null> | null } };
-  };
-
-  const entries = (existing.data?.listCollectionVoices?.items ?? []).filter(
-    (item): item is { id: string } => Boolean(item)
-  );
+    });
+    return response as ListPage<CollectionVoiceRecord>;
+  });
 
   await Promise.all(
-    entries.map((item) =>
-      gqlClient.graphql({
-        query: deleteCollectionVoiceMutation,
-        variables: {
-          input: { id: item.id }
-        }
+    entries
+      .filter((entry) => Boolean(entry.id))
+      .map(async (entry) => {
+        const deleted = await client.models.CollectionVoice.delete({ id: entry.id });
+        assertNoErrors(deleted.errors);
       })
-    )
   );
 
   await touchCollection(collectionId);
 }
 
 export async function updateCollectionVoiceNote(collectionId: string, voiceId: string, note: string) {
-  const gqlClient = client();
-
-  const existing = (await gqlClient.graphql({
-    query: listCollectionVoicesByKeyQuery,
-    variables: {
-      limit: 1,
-      filter: {
-        and: [{ collectionId: { eq: collectionId } }, { voiceId: { eq: voiceId } }]
-      }
+  const client = dataClient();
+  const existing = (await client.models.CollectionVoice.list({
+    limit: 1,
+    filter: {
+      and: [{ collectionId: { eq: collectionId } }, { voiceId: { eq: voiceId } }]
     }
-  })) as {
-    data?: { listCollectionVoices?: { items?: Array<{ id: string; note?: string | null } | null> | null } };
-  };
+  })) as ListPage<CollectionVoiceRecord>;
+  assertNoErrors(existing.errors);
 
-  const entry = (existing.data?.listCollectionVoices?.items ?? []).find(Boolean) as
-    | { id: string; note?: string | null }
-    | undefined;
+  const entry = existing.data.find(Boolean);
+  if (!entry?.id) return;
 
-  if (!entry) return;
-
-  await gqlClient.graphql({
-    query: updateCollectionVoiceMutation,
-    variables: {
-      input: {
-        id: entry.id,
-        note
-      }
-    }
+  const updated = await client.models.CollectionVoice.update({
+    id: entry.id,
+    note
   });
+  assertNoErrors(updated.errors);
 
   await touchCollection(collectionId);
 }
