@@ -36,6 +36,18 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'Hugging Face',
     type: 'open_model',
     websiteUrl: 'https://huggingface.co'
+  },
+  {
+    id: 'kokoro',
+    name: 'Kokoro',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/hexgrad/Kokoro-82M'
+  },
+  {
+    id: 'qwen3-tts',
+    name: 'Qwen3 TTS',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/Qwen/Qwen3-TTS'
   }
 ];
 

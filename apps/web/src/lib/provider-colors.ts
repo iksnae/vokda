@@ -36,6 +36,16 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#f0f0f0',
     border: '#b0b0b0',
     text: '#333333'
+  },
+  kokoro: {
+    bg: '#fce4ec',
+    border: '#f48fb1',
+    text: '#880e4f'
+  },
+  'qwen3-tts': {
+    bg: '#e0f7fa',
+    border: '#80deea',
+    text: '#006064'
   }
 };
 

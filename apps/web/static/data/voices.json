@@ -718,148 +718,1852 @@
       "providerVoiceId": "en-US-Neural2-J"
     },
     {
-      "id": "01JCVKV2YSMBG9V43CMWDM3QFA",
-      "name": "Kokoro 82M",
-      "provider": "Hugging Face",
-      "description": "Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.",
+      "id": "01KJZZ79Y31KEE8NFRRWQ9FT46",
+      "name": "Adam (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_adam",
+      "description": "Strong, confident American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
       "tags": [
+        "male",
+        "american",
         "open-model",
-        "self-hosted",
-        "apache-2.0"
+        "local"
       ],
       "languages": [
         "en-US"
       ],
-      "qualityTier": "standard",
-      "licenseNotes": "Apache-2.0 model license; verify deployment and voice-pack licensing in your stack.",
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
       "metadata": {
-        "shortLabel": "Open self-host TTS",
-        "searchDescription": "Open-weight model option for teams prioritizing self-hosting and infrastructure control.",
+        "shortLabel": "American male voice",
+        "searchDescription": "Strong, confident American male voice.",
         "machineTags": [
+          "male",
+          "american",
           "open-model",
-          "self-hosted",
-          "developer-oriented"
+          "local"
         ],
-        "useCases": [
-          "Internal tooling",
-          "Prototype pipelines",
-          "Private deployment"
-        ],
+        "useCases": [],
         "toneTags": [
-          "neutral"
+          "natural"
         ],
-        "audienceTags": [
-          "developers",
-          "ml-platform"
-        ],
-        "accent": "varies by prompt",
-        "genderPresentation": "configurable",
-        "agePresentation": "configurable",
-        "speakingStyle": "model-dependent",
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
         "metadataQuality": "curated"
       },
       "samples": [
         {
-          "id": "01JCVKW8A84XABY4EMKQ0RN2NR",
-          "scriptKey": "tech",
-          "label": "Technical",
-          "transcript": "This pipeline generates speech from text in real time and can be hosted inside your own infrastructure."
+          "id": "01KJZZ79Y3PRAYXQRA4YMHCR2P",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZZ79Y31KEE8NFRRWQ9FT46.mp3"
         }
       ],
       "variants": [
         {
-          "id": "01JCVKX8ZKQ7Q0PX2W2FK5DNJ6",
-          "sourceType": "hf_model",
-          "sourceKey": "hf:hexgrad/Kokoro-82M",
+          "id": "01KJZZ79Y36Z4M308G2D3RTYN7",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_adam",
           "runnable": true,
           "supportsSsml": false,
           "outputFormats": [
             "wav",
-            "pcm"
+            "mp3"
           ],
-          "maxInputChars": 2000,
+          "maxInputChars": 5000,
           "previewOnly": false
         }
-      ],
-      "providerId": "huggingface",
-      "providerVoiceId": "hexgrad/Kokoro-82M"
+      ]
     },
     {
-      "id": "01JCVKYGHM7N2NQ9S18N9RF89C",
-      "name": "Qwen3-TTS-12Hz-1.7B-Base",
-      "provider": "Hugging Face",
-      "description": "Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.",
+      "id": "01KJZZ7EWGNMXEMFQD5M1ETZHR",
+      "name": "Alice (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bf_alice",
+      "description": "Clear, articulate British female voice. Runs locally via Kokoro-82M on Apple Silicon.",
       "tags": [
+        "female",
+        "british",
         "open-model",
-        "multilingual",
-        "qwen3"
+        "local"
       ],
       "languages": [
-        "en-US",
-        "zh-CN",
-        "ja-JP",
-        "de-DE",
-        "fr-FR",
-        "es-ES",
-        "it-IT",
-        "pt-BR",
-        "ru-RU",
-        "ko-KR"
+        "en-GB"
       ],
       "qualityTier": "premium",
-      "licenseNotes": "Check the current Hugging Face model card and upstream license terms before production export.",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
       "metadata": {
-        "shortLabel": "Multilingual open model",
-        "searchDescription": "Large open multilingual base suitable for custom voice products and localization pipelines.",
+        "shortLabel": "British female voice",
+        "searchDescription": "Clear, articulate British female voice.",
         "machineTags": [
-          "multilingual",
+          "female",
+          "british",
           "open-model",
-          "custom-fine-tune",
-          "localization"
+          "local"
         ],
-        "useCases": [
-          "Localization",
-          "Multi-region assistants",
-          "Model customization"
-        ],
+        "useCases": [],
         "toneTags": [
-          "model-dependent"
+          "natural"
         ],
-        "audienceTags": [
-          "ml-platform",
-          "international-products"
-        ],
-        "accent": "multi-locale",
-        "genderPresentation": "configurable",
-        "agePresentation": "configurable",
-        "speakingStyle": "model-dependent",
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
         "metadataQuality": "curated"
       },
       "samples": [
         {
-          "id": "01JCVKZQ6QG3WRD9V79VRV5QH4",
-          "scriptKey": "multilingual",
-          "label": "Multilingual",
-          "transcript": "This base model is typically adapted for product-specific voices and deployment constraints."
+          "id": "01KJZZ7EWGX6FQ9VV9ENP66YP3",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3"
         }
       ],
       "variants": [
         {
-          "id": "01JCVM070Q1PT6V8G6P2HT3MA5",
-          "sourceType": "hf_model",
-          "sourceKey": "hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+          "id": "01KJZZ7EWGHPMRV5WGV28QZSAV",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bf_alice",
           "runnable": true,
           "supportsSsml": false,
           "outputFormats": [
             "wav",
-            "pcm"
+            "mp3"
           ],
-          "maxInputChars": 2500,
+          "maxInputChars": 5000,
           "previewOnly": false
         }
+      ]
+    },
+    {
+      "id": "01KJZZ6Z66TBKSC0RB743BVM9Z",
+      "name": "Alloy (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_alloy",
+      "description": "Neutral, balanced American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
       ],
-      "providerId": "huggingface",
-      "providerVoiceId": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Neutral, balanced American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ6Z66DR033P319XN6M789",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZZ6Z66TBKSC0RB743BVM9Z.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ6Z66XJ5RMJW9F3HDZ57X",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_alloy",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ71X5Y9RJR09BKKPP68QD",
+      "name": "Bella (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_bella",
+      "description": "Warm, expressive American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Warm, expressive American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ71X5M9KBVWX9GTPDTKGV",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ71X5Y9RJR09BKKPP68QD.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ71X5KCNX7KFP4251AG4A",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_bella",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7K63TGFRM5KAW9FJZA2K",
+      "name": "Daniel (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bm_daniel",
+      "description": "Authoritative, steady British male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British male voice",
+        "searchDescription": "Authoritative, steady British male voice.",
+        "machineTags": [
+          "male",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7K63S3H7KY6SXNQHC9HA",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ7K63TGFRM5KAW9FJZA2K.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7K63020F7WHQ0KZB3KVT",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bm_daniel",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7ASD6QTGW6DG2P3ZE4G0",
+      "name": "Echo (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_echo",
+      "description": "Smooth, resonant American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American male voice",
+        "searchDescription": "Smooth, resonant American male voice.",
+        "machineTags": [
+          "male",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7ASDAS28FZMBM1SVWWB1",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZZ7ASD6QTGW6DG2P3ZE4G0.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7ASD7ADGPJ6628JNZ0TB",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_echo",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7GJQD69PP75NYEZMK36S",
+      "name": "Emma (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bf_emma",
+      "description": "Elegant, polished British female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British female voice",
+        "searchDescription": "Elegant, polished British female voice.",
+        "machineTags": [
+          "female",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7GJQ6R4YBVZRDFK4WRS6",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZZ7GJQD69PP75NYEZMK36S.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7GJQ23XP5VG69NJE3SN2",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bf_emma",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7BHW7YDE1PYYZA11MZGV",
+      "name": "Eric (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_eric",
+      "description": "Steady, reliable American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American male voice",
+        "searchDescription": "Steady, reliable American male voice.",
+        "machineTags": [
+          "male",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7BHWQEBEPDBRK45DZ98J",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZZ7BHW7YDE1PYYZA11MZGV.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7BHWAJCFSHEECJW256HM",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_eric",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7M6AGX70CRKC1V3EV4AK",
+      "name": "Fable (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bm_fable",
+      "description": "Expressive, storytelling British male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British male voice",
+        "searchDescription": "Expressive, storytelling British male voice.",
+        "machineTags": [
+          "male",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7M6AJ8N3TZS77XJA21M3",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7M6ATJBJHN9MASKH3WKT",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bm_fable",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7N6QKQKHGGTX4QATT0AD",
+      "name": "George (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bm_george",
+      "description": "Warm, captivating British male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British male voice",
+        "searchDescription": "Warm, captivating British male voice.",
+        "machineTags": [
+          "male",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7N6QXX4VWH8SRFK8DPM2",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZZ7N6QKQKHGGTX4QATT0AD.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7N6QCC9QA4NQ22EA9MAW",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bm_george",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ72VP70TH9JZ4FJZQ64C5",
+      "name": "Heart (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_heart",
+      "description": "Heartfelt, emotional American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Heartfelt, emotional American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ72VPGE5RX3CQ22F70WAB",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZZ72VP70TH9JZ4FJZQ64C5.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ72VPMNAWX3NQBVFXDEVG",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_heart",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7HEKBPP8MB02K2G4ANZ7",
+      "name": "Isabella (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bf_isabella",
+      "description": "Refined, sophisticated British female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British female voice",
+        "searchDescription": "Refined, sophisticated British female voice.",
+        "machineTags": [
+          "female",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7HEK3R7CPXRFBR17JPEK",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ7HEKBPP8MB02K2G4ANZ7.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7HEK4HHD3KP1EYV7NM8X",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bf_isabella",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7318GP7HB1CBQRQJX1H8",
+      "name": "Jessica (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_jessica",
+      "description": "Clear, professional American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Clear, professional American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7318PCAT1NWXD4NNQP1V",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ7318GP7HB1CBQRQJX1H8.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ73183Q0GKSE5YK762KYT",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_jessica",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ73SGB3XRJ723J14M3E9D",
+      "name": "Kore (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_kore",
+      "description": "Modern, dynamic American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Modern, dynamic American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ73SG30HJ5DJKKYA4ZH3X",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZZ73SGB3XRJ723J14M3E9D.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ73SGRD2C6ZE06C3CZPC0",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_kore",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7P7DVFAQDJ9XE9V4SWH3",
+      "name": "Lewis (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bm_lewis",
+      "description": "Clear, professional British male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British male voice",
+        "searchDescription": "Clear, professional British male voice.",
+        "machineTags": [
+          "male",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7P7DKHHTJD21QWPVYHNP",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01KJZZ7P7DVFAQDJ9XE9V4SWH3.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7P7DQVBEQ3SYPFGEVXZ3",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bm_lewis",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7CC4XGF2FPBJ0B65DQD4",
+      "name": "Liam (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_liam",
+      "description": "Young, energetic American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American male voice",
+        "searchDescription": "Young, energetic American male voice.",
+        "machineTags": [
+          "male",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7CC4SBJG6TG331V3ZE9H",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ7CC4XGF2FPBJ0B65DQD4.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7CC412HKSV27ATRB80WN",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_liam",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7J6EC11PJWASEED2A1HZ",
+      "name": "Lily (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "bf_lily",
+      "description": "Soft, gentle British female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "british",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "British female voice",
+        "searchDescription": "Soft, gentle British female voice.",
+        "machineTags": [
+          "female",
+          "british",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "british",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7J6E5XS461EWNX2JF7TM",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ7J6EC11PJWASEED2A1HZ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7J6EXN5JZ90N8EZFANG1",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:bf_lily",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7D3Q9X5BN8K5JACZNRSG",
+      "name": "Michael (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_michael",
+      "description": "Warm, authoritative American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American male voice",
+        "searchDescription": "Warm, authoritative American male voice.",
+        "machineTags": [
+          "male",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7D3QSSPF1R2SNF36WHE3",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZZ7D3Q9X5BN8K5JACZNRSG.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7D3QKM0PNEFJ86Y0XHT9",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_michael",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ757427ZR1Z2ERJ2CACX0",
+      "name": "Nicole (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_nicole",
+      "description": "Friendly, approachable American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Friendly, approachable American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ75741VBEB206EZYSD428",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ757427ZR1Z2ERJ2CACX0.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ75749ZS04R7BYDKWC6DY",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_nicole",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7600RTT1JRN5FB4CB7RS",
+      "name": "Nova (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_nova",
+      "description": "Bright, energetic American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Bright, energetic American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7600R0JBPDY7FK8DZ3WD",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01KJZZ7600RTT1JRN5FB4CB7RS.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7600G4C2A6HXTMQ5ZMQW",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_nova",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7DY67H1QJXFM3KXFXH64",
+      "name": "Onyx (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "am_onyx",
+      "description": "Deep, grounded American male voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "male",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American male voice",
+        "searchDescription": "Deep, grounded American male voice.",
+        "machineTags": [
+          "male",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7DY60V6909X7P4GP590P",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01KJZZ7DY67H1QJXFM3KXFXH64.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7DY696VRZ1G3ZD2EWAJ2",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:am_onyx",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ76XP6W0X8C1F6N4PPXQS",
+      "name": "River (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_river",
+      "description": "Calm, flowing American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Calm, flowing American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ76XPF7QDTZR4EB89TA3Q",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ76XP6W0X8C1F6N4PPXQS.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ76XPQWZBFKGRDR5FFW2G",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_river",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ77W8VWCB4ZPJED43AJFQ",
+      "name": "Sarah (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_sarah",
+      "description": "Mature, reassuring American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Mature, reassuring American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ77W85DV2YFBJMH00DD0F",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZZ77W8VWCB4ZPJED43AJFQ.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ77W8RAVBRH2NCFZ8BQPY",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_sarah",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ78XR84GJ4TQF7XJX5MA9",
+      "name": "Sky (Kokoro-82M)",
+      "provider": "Kokoro",
+      "providerId": "kokoro",
+      "providerVoiceId": "af_sky",
+      "description": "Light, airy American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+      "tags": [
+        "female",
+        "american",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "American female voice",
+        "searchDescription": "Light, airy American female voice.",
+        "machineTags": [
+          "female",
+          "american",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": "american",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ78XRJ66KB0QSNETGBBXH",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZZ78XR84GJ4TQF7XJX5MA9.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ78XRXPB9CTXW3Q2KTXNZ",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Kokoro-82M:af_sky",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
+      "name": "Aiden (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "aiden",
+      "description": "Young, dynamic male voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "male",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En male voice",
+        "searchDescription": "Young, dynamic male voice.",
+        "machineTags": [
+          "male",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7Z1VGACRCY1TQAH400H4",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7Z1VMWB8HAYMWJHS1Q5Q",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:aiden",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ83BZ0GSX5CWQ5XYHFQ34",
+      "name": "Dylan (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "dylan",
+      "description": "Casual, friendly male voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "male",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En male voice",
+        "searchDescription": "Casual, friendly male voice.",
+        "machineTags": [
+          "male",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ83BZ84BPAKHGR5RSR47J",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01KJZZ83BZ0GSX5CWQ5XYHFQ34.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ83BZ6P0GAPJP3Y2M9H9Q",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:dylan",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ81B38XZ77ZVVGSFHFW2T",
+      "name": "Eric (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "eric",
+      "description": "Smooth, trustworthy male voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "male",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En male voice",
+        "searchDescription": "Smooth, trustworthy male voice.",
+        "machineTags": [
+          "male",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ81B3MYKG3E9SF9VG56KP",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZZ81B38XZ77ZVVGSFHFW2T.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ81B3PK509XZTKCH1X6RB",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:eric",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7WTF8ARDXF44ZBNJ69CS",
+      "name": "Ryan (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "ryan",
+      "description": "Steady, professional male voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "male",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En male voice",
+        "searchDescription": "Steady, professional male voice.",
+        "machineTags": [
+          "male",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7WTFT1MKX53THMKW1188",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01KJZZ7WTF8ARDXF44ZBNJ69CS.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7WTF64X32H96X3N3EF35",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:ryan",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7RNCYE5KD8ME0PJH5C6S",
+      "name": "Serena (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "serena",
+      "description": "Natural, expressive female voice with warm tone. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "female",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En female voice",
+        "searchDescription": "Natural, expressive female voice with warm tone.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7RNCSBR49EFTGK2GJXP8",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01KJZZ7RNCYE5KD8ME0PJH5C6S.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7RNC3NG6XPJYJ51QJ0KW",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:serena",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01KJZZ7TP08N5E57EX3C7D008E",
+      "name": "Vivian (Qwen3-TTS-1.7B)",
+      "provider": "Qwen3 TTS",
+      "providerId": "qwen3-tts",
+      "providerVoiceId": "vivian",
+      "description": "Clear, confident female voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+      "tags": [
+        "female",
+        "open-model",
+        "local"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+      "metadata": {
+        "shortLabel": "En female voice",
+        "searchDescription": "Clear, confident female voice.",
+        "machineTags": [
+          "female",
+          "open-model",
+          "local"
+        ],
+        "useCases": [],
+        "toneTags": [
+          "natural"
+        ],
+        "audienceTags": [],
+        "accent": null,
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "samples": [
+        {
+          "id": "01KJZZ7TP04V6XK25BRHE0RMMV",
+          "scriptKey": "default",
+          "label": "Default",
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01KJZZ7TP08N5E57EX3C7D008E.mp3"
+        }
+      ],
+      "variants": [
+        {
+          "id": "01KJZZ7TP0NR02EGYN0PXJ3WBC",
+          "sourceType": "local_model",
+          "sourceKey": "mlx:Qwen3-TTS-1.7B:vivian",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "wav",
+            "mp3"
+          ],
+          "maxInputChars": 5000,
+          "previewOnly": false
+        }
+      ]
     },
     {
       "id": "01KJZXZNF9GMQCNCRCPCQMDKN5",
@@ -867,7 +2571,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "amy",
-      "description": "British English Female voice (Amy) — neural engine.",
+      "description": "British English Female voice (Amy) \u2014 neural engine.",
       "tags": [
         "female",
         "gb"
@@ -879,7 +2583,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "British English Female voice (Amy) — neural engine.",
+        "searchDescription": "British English Female voice (Amy) \u2014 neural engine.",
         "machineTags": [
           "female",
           "gb"
@@ -925,7 +2629,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "aria",
-      "description": "New Zealand English Female voice (Aria) — neural engine.",
+      "description": "New Zealand English Female voice (Aria) \u2014 neural engine.",
       "tags": [
         "female",
         "nz"
@@ -937,7 +2641,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-NZ female voice",
-        "searchDescription": "New Zealand English Female voice (Aria) — neural engine.",
+        "searchDescription": "New Zealand English Female voice (Aria) \u2014 neural engine.",
         "machineTags": [
           "female",
           "nz"
@@ -983,7 +2687,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "brian",
-      "description": "British English Male voice (Brian) — neural engine.",
+      "description": "British English Male voice (Brian) \u2014 neural engine.",
       "tags": [
         "male",
         "gb"
@@ -995,7 +2699,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "British English Male voice (Brian) — neural engine.",
+        "searchDescription": "British English Male voice (Brian) \u2014 neural engine.",
         "machineTags": [
           "male",
           "gb"
@@ -1041,7 +2745,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "daniel",
-      "description": "German Male voice (Daniel) — neural engine.",
+      "description": "German Male voice (Daniel) \u2014 neural engine.",
       "tags": [
         "male",
         "de"
@@ -1053,7 +2757,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "de-DE male voice",
-        "searchDescription": "German Male voice (Daniel) — neural engine.",
+        "searchDescription": "German Male voice (Daniel) \u2014 neural engine.",
         "machineTags": [
           "male",
           "de"
@@ -1099,7 +2803,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "danielle",
-      "description": "US English Female voice (Danielle) — neural engine.",
+      "description": "US English Female voice (Danielle) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1111,7 +2815,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Danielle) — neural engine.",
+        "searchDescription": "US English Female voice (Danielle) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1157,7 +2861,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "gregory",
-      "description": "US English Male voice (Gregory) — neural engine.",
+      "description": "US English Male voice (Gregory) \u2014 neural engine.",
       "tags": [
         "male",
         "us"
@@ -1169,7 +2873,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Gregory) — neural engine.",
+        "searchDescription": "US English Male voice (Gregory) \u2014 neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -1215,7 +2919,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "ivy",
-      "description": "US English Female voice (Ivy) — neural engine.",
+      "description": "US English Female voice (Ivy) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1227,7 +2931,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Ivy) — neural engine.",
+        "searchDescription": "US English Female voice (Ivy) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1273,7 +2977,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "joey",
-      "description": "US English Male voice (Joey) — neural engine.",
+      "description": "US English Male voice (Joey) \u2014 neural engine.",
       "tags": [
         "male",
         "us"
@@ -1285,7 +2989,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Joey) — neural engine.",
+        "searchDescription": "US English Male voice (Joey) \u2014 neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -1331,7 +3035,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kajal",
-      "description": "Indian English Female voice (Kajal) — neural engine.",
+      "description": "Indian English Female voice (Kajal) \u2014 neural engine.",
       "tags": [
         "female",
         "in"
@@ -1343,7 +3047,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-IN female voice",
-        "searchDescription": "Indian English Female voice (Kajal) — neural engine.",
+        "searchDescription": "Indian English Female voice (Kajal) \u2014 neural engine.",
         "machineTags": [
           "female",
           "in"
@@ -1389,7 +3093,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kendra",
-      "description": "US English Female voice (Kendra) — neural engine.",
+      "description": "US English Female voice (Kendra) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1401,7 +3105,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Kendra) — neural engine.",
+        "searchDescription": "US English Female voice (Kendra) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1447,7 +3151,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "kimberly",
-      "description": "US English Female voice (Kimberly) — neural engine.",
+      "description": "US English Female voice (Kimberly) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1459,7 +3163,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Kimberly) — neural engine.",
+        "searchDescription": "US English Female voice (Kimberly) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1505,7 +3209,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "liam",
-      "description": "Canadian French Male voice (Liam) — neural engine.",
+      "description": "Canadian French Male voice (Liam) \u2014 neural engine.",
       "tags": [
         "male",
         "ca"
@@ -1517,7 +3221,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "fr-CA male voice",
-        "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
+        "searchDescription": "Canadian French Male voice (Liam) \u2014 neural engine.",
         "machineTags": [
           "male",
           "ca"
@@ -1563,7 +3267,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "olivia",
-      "description": "Australian English Female voice (Olivia) — neural engine.",
+      "description": "Australian English Female voice (Olivia) \u2014 neural engine.",
       "tags": [
         "female",
         "au"
@@ -1575,7 +3279,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Australian English Female voice (Olivia) — neural engine.",
+        "searchDescription": "Australian English Female voice (Olivia) \u2014 neural engine.",
         "machineTags": [
           "female",
           "au"
@@ -1621,7 +3325,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "ruth",
-      "description": "US English Female voice (Ruth) — neural engine.",
+      "description": "US English Female voice (Ruth) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1633,7 +3337,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Ruth) — neural engine.",
+        "searchDescription": "US English Female voice (Ruth) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1679,7 +3383,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "salli",
-      "description": "US English Female voice (Salli) — neural engine.",
+      "description": "US English Female voice (Salli) \u2014 neural engine.",
       "tags": [
         "female",
         "us"
@@ -1691,7 +3395,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "US English Female voice (Salli) — neural engine.",
+        "searchDescription": "US English Female voice (Salli) \u2014 neural engine.",
         "machineTags": [
           "female",
           "us"
@@ -1737,7 +3441,7 @@
       "provider": "AWS Polly",
       "providerId": "aws-polly",
       "providerVoiceId": "stephen",
-      "description": "US English Male voice (Stephen) — neural engine.",
+      "description": "US English Male voice (Stephen) \u2014 neural engine.",
       "tags": [
         "male",
         "us"
@@ -1749,7 +3453,7 @@
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "US English Male voice (Stephen) — neural engine.",
+        "searchDescription": "US English Male voice (Stephen) \u2014 neural engine.",
         "machineTags": [
           "male",
           "us"
@@ -4335,7 +6039,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-A",
-      "description": "Google en-AU-Neural2-A — Female en-AU voice.",
+      "description": "Google en-AU-Neural2-A \u2014 Female en-AU voice.",
       "tags": [
         "female",
         "au"
@@ -4347,7 +6051,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Google en-AU-Neural2-A — Female en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-A \u2014 Female en-AU voice.",
         "machineTags": [
           "female",
           "au"
@@ -4392,7 +6096,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-B",
-      "description": "Google en-AU-Neural2-B — Male en-AU voice.",
+      "description": "Google en-AU-Neural2-B \u2014 Male en-AU voice.",
       "tags": [
         "male",
         "au"
@@ -4404,7 +6108,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU male voice",
-        "searchDescription": "Google en-AU-Neural2-B — Male en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-B \u2014 Male en-AU voice.",
         "machineTags": [
           "male",
           "au"
@@ -4449,7 +6153,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-C",
-      "description": "Google en-AU-Neural2-C — Female en-AU voice.",
+      "description": "Google en-AU-Neural2-C \u2014 Female en-AU voice.",
       "tags": [
         "female",
         "au"
@@ -4461,7 +6165,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU female voice",
-        "searchDescription": "Google en-AU-Neural2-C — Female en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-C \u2014 Female en-AU voice.",
         "machineTags": [
           "female",
           "au"
@@ -4506,7 +6210,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-AU-Neural2-D",
-      "description": "Google en-AU-Neural2-D — Male en-AU voice.",
+      "description": "Google en-AU-Neural2-D \u2014 Male en-AU voice.",
       "tags": [
         "male",
         "au"
@@ -4518,7 +6222,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-AU male voice",
-        "searchDescription": "Google en-AU-Neural2-D — Male en-AU voice.",
+        "searchDescription": "Google en-AU-Neural2-D \u2014 Male en-AU voice.",
         "machineTags": [
           "male",
           "au"
@@ -4563,7 +6267,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-A",
-      "description": "Google en-GB-Neural2-A — Female en-GB voice.",
+      "description": "Google en-GB-Neural2-A \u2014 Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -4575,7 +6279,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-A — Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-A \u2014 Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -4620,7 +6324,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-B",
-      "description": "Google en-GB-Neural2-B — Male en-GB voice.",
+      "description": "Google en-GB-Neural2-B \u2014 Male en-GB voice.",
       "tags": [
         "male",
         "gb"
@@ -4632,7 +6336,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "Google en-GB-Neural2-B — Male en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-B \u2014 Male en-GB voice.",
         "machineTags": [
           "male",
           "gb"
@@ -4677,7 +6381,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-C",
-      "description": "Google en-GB-Neural2-C — Female en-GB voice.",
+      "description": "Google en-GB-Neural2-C \u2014 Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -4689,7 +6393,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-C — Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-C \u2014 Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -4734,7 +6438,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-D",
-      "description": "Google en-GB-Neural2-D — Male en-GB voice.",
+      "description": "Google en-GB-Neural2-D \u2014 Male en-GB voice.",
       "tags": [
         "male",
         "gb"
@@ -4746,7 +6450,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB male voice",
-        "searchDescription": "Google en-GB-Neural2-D — Male en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-D \u2014 Male en-GB voice.",
         "machineTags": [
           "male",
           "gb"
@@ -4791,7 +6495,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-GB-Neural2-F",
-      "description": "Google en-GB-Neural2-F — Female en-GB voice.",
+      "description": "Google en-GB-Neural2-F \u2014 Female en-GB voice.",
       "tags": [
         "female",
         "gb"
@@ -4803,7 +6507,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-GB female voice",
-        "searchDescription": "Google en-GB-Neural2-F — Female en-GB voice.",
+        "searchDescription": "Google en-GB-Neural2-F \u2014 Female en-GB voice.",
         "machineTags": [
           "female",
           "gb"
@@ -4848,7 +6552,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-D",
-      "description": "Google en-US-Journey-D — Male en-US voice.",
+      "description": "Google en-US-Journey-D \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -4860,7 +6564,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Journey-D — Male en-US voice.",
+        "searchDescription": "Google en-US-Journey-D \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -4905,7 +6609,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-F",
-      "description": "Google en-US-Journey-F — Female en-US voice.",
+      "description": "Google en-US-Journey-F \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -4917,7 +6621,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Journey-F — Female en-US voice.",
+        "searchDescription": "Google en-US-Journey-F \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -4962,7 +6666,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Journey-O",
-      "description": "Google en-US-Journey-O — Female en-US voice.",
+      "description": "Google en-US-Journey-O \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -4974,7 +6678,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Journey-O — Female en-US voice.",
+        "searchDescription": "Google en-US-Journey-O \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5019,7 +6723,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-A",
-      "description": "Google en-US-Neural2-A — Male en-US voice.",
+      "description": "Google en-US-Neural2-A \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -5031,7 +6735,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-A — Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-A \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -5076,7 +6780,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-C",
-      "description": "Google en-US-Neural2-C — Female en-US voice.",
+      "description": "Google en-US-Neural2-C \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5088,7 +6792,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-C — Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-C \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5133,7 +6837,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-D",
-      "description": "Google en-US-Neural2-D — Male en-US voice.",
+      "description": "Google en-US-Neural2-D \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -5145,7 +6849,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-D — Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-D \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -5190,7 +6894,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-E",
-      "description": "Google en-US-Neural2-E — Female en-US voice.",
+      "description": "Google en-US-Neural2-E \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5202,7 +6906,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-E — Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-E \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5247,7 +6951,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-F",
-      "description": "Google en-US-Neural2-F — Female en-US voice.",
+      "description": "Google en-US-Neural2-F \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5259,7 +6963,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-F — Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-F \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5304,7 +7008,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-G",
-      "description": "Google en-US-Neural2-G — Female en-US voice.",
+      "description": "Google en-US-Neural2-G \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5316,7 +7020,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-G — Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-G \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5361,7 +7065,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-H",
-      "description": "Google en-US-Neural2-H — Female en-US voice.",
+      "description": "Google en-US-Neural2-H \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5373,7 +7077,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Neural2-H — Female en-US voice.",
+        "searchDescription": "Google en-US-Neural2-H \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5418,7 +7122,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Neural2-I",
-      "description": "Google en-US-Neural2-I — Male en-US voice.",
+      "description": "Google en-US-Neural2-I \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -5430,7 +7134,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Neural2-I — Male en-US voice.",
+        "searchDescription": "Google en-US-Neural2-I \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -5475,7 +7179,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-News-K",
-      "description": "Google en-US-News-K — Female en-US voice.",
+      "description": "Google en-US-News-K \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5487,7 +7191,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-News-K — Female en-US voice.",
+        "searchDescription": "Google en-US-News-K \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5532,7 +7236,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-News-L",
-      "description": "Google en-US-News-L — Female en-US voice.",
+      "description": "Google en-US-News-L \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5544,7 +7248,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-News-L — Female en-US voice.",
+        "searchDescription": "Google en-US-News-L \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5589,7 +7293,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-M",
-      "description": "Google en-US-Studio-M — Male en-US voice.",
+      "description": "Google en-US-Studio-M \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -5601,7 +7305,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Studio-M — Male en-US voice.",
+        "searchDescription": "Google en-US-Studio-M \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
@@ -5646,7 +7350,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-O",
-      "description": "Google en-US-Studio-O — Female en-US voice.",
+      "description": "Google en-US-Studio-O \u2014 Female en-US voice.",
       "tags": [
         "female",
         "us"
@@ -5658,7 +7362,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US female voice",
-        "searchDescription": "Google en-US-Studio-O — Female en-US voice.",
+        "searchDescription": "Google en-US-Studio-O \u2014 Female en-US voice.",
         "machineTags": [
           "female",
           "us"
@@ -5703,7 +7407,7 @@
       "provider": "Google Cloud TTS",
       "providerId": "gcp-tts",
       "providerVoiceId": "en-US-Studio-Q",
-      "description": "Google en-US-Studio-Q — Male en-US voice.",
+      "description": "Google en-US-Studio-Q \u2014 Male en-US voice.",
       "tags": [
         "male",
         "us"
@@ -5715,7 +7419,7 @@
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "en-US male voice",
-        "searchDescription": "Google en-US-Studio-Q — Male en-US voice.",
+        "searchDescription": "Google en-US-Studio-Q \u2014 Male en-US voice.",
         "machineTags": [
           "male",
           "us"
