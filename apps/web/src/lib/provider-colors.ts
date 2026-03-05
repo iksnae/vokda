@@ -86,6 +86,21 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#fff0f5',
     border: '#f8a4c8',
     text: '#9b1b5a'
+  },
+  marvis: {
+    bg: '#e8eaf6',
+    border: '#7986cb',
+    text: '#1a237e'
+  },
+  vibevoice: {
+    bg: '#e1f5fe',
+    border: '#4fc3f7',
+    text: '#01579b'
+  },
+  bark: {
+    bg: '#fff3e0',
+    border: '#ffb74d',
+    text: '#e65100'
   }
 };
 

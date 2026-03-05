@@ -96,6 +96,24 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'KittenTTS',
     type: 'open_model',
     websiteUrl: 'https://github.com/KittenML/KittenTTS'
+  },
+  {
+    id: 'marvis',
+    name: 'Marvis',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/Marvis-AI'
+  },
+  {
+    id: 'vibevoice',
+    name: 'VibeVoice',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16'
+  },
+  {
+    id: 'bark',
+    name: 'Bark',
+    type: 'open_model',
+    websiteUrl: 'https://github.com/suno-ai/bark'
   }
 ];
 
