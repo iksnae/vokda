@@ -42,7 +42,7 @@ Follow `docs/AMPLIFY_SETUP.md` after push:
 - connect `iksnae/vokda`
 - app root `apps/web`
 - use `amplify.yml`
-- set branch env vars (`PUBLIC_APP_ENV`, `PUBLIC_CATALOG_INDEX_URL`)
+- set branch env var (`PUBLIC_APP_ENV`)
 
 ## 6. Optional labels and milestones
 

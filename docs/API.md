@@ -21,4 +21,4 @@
 
 ## Notes
 
-During Phase 1, frontend reads catalog JSON directly from S3. API routes are introduced when dynamic behavior is required.
+During Phase 1, frontend reads catalog data from an app-owned data module. API routes are introduced when dynamic behavior is required.

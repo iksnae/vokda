@@ -11,7 +11,7 @@
 
 - Build catalog list and detail routes
 - Implement search/filter in UI
-- Load catalog from S3 JSON index
+- Maintain catalog in app-owned data module
 
 ## Phase 2: Curation and Cart
 

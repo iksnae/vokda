@@ -6,7 +6,7 @@ Vokda is a voice discovery and curation app for exploring TTS voices across clou
 
 - UI: SvelteKit (TypeScript)
 - Frontend hosting: AWS Amplify
-- Catalog + media metadata: Amazon S3
+- Catalog data: app-owned module (phase 1), API-backed later
 - SCM + CI/CD: GitHub (private repo under `iksnae`)
 
 ## Repo Layout

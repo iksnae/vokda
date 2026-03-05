@@ -5,8 +5,8 @@
 Vokda MVP is static-first:
 
 - SvelteKit frontend served by AWS Amplify
-- Catalog and sample metadata stored in S3 as JSON
-- Audio samples served from S3/CloudFront URLs
+- Catalog data managed in the app codebase
+- Audio samples can be introduced later via object storage/CDN
 - Backend API deferred to phase 2 for synthesis/export/admin operations
 
 ## 2. Components
@@ -14,17 +14,8 @@ Vokda MVP is static-first:
 ### Frontend (`apps/web`)
 
 - SvelteKit app
-- Reads catalog index from `PUBLIC_CATALOG_INDEX_URL`
-- Supports browse, search, and filter over fetched catalog JSON
-
-### Catalog Storage (S3)
-
-Recommended key structure:
-
-- `catalog/voices.json`
-- `catalog/voices/{voiceId}.json`
-- `samples/{voiceId}/{variantId}/{sampleId}.mp3`
-- `exports/{exportId}/voice-pack.json`
+- Catalog source currently lives at `apps/web/src/lib/data/catalog.ts`
+- Supports browse, search, and filter over typed catalog data
 
 ## 3. Deployment
 
@@ -42,13 +33,12 @@ Recommended key structure:
 ## 4. Environments
 
 - `preview`:
-  - points to preview S3 catalog (or shared dev catalog)
+  - preview deployment from PR branch
 - `production`:
-  - points to production S3 catalog
+  - production deployment from `main`
 
 Required frontend env vars:
 
-- `PUBLIC_CATALOG_INDEX_URL`
 - `PUBLIC_APP_ENV`
 
 ## 5. Security Baseline

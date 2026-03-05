@@ -46,7 +46,7 @@
 
 <main>
   <h1>Vokda</h1>
-  <p>Voice catalog MVP (S3-backed index)</p>
+  <p>Voice catalog MVP (app-owned data module)</p>
 
   <label>
     Search voices

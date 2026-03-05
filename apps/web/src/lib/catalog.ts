@@ -1,21 +1,11 @@
 import type { Voice } from './types';
+import { catalogVoices } from './data/catalog';
 
-const FALLBACK_URL = '/catalog/voices.json';
-
-export async function loadCatalog(fetchFn: typeof fetch): Promise<Voice[]> {
-  const remoteUrl = import.meta.env.PUBLIC_CATALOG_INDEX_URL as string | undefined;
-  const url = remoteUrl && remoteUrl.trim().length > 0 ? remoteUrl : FALLBACK_URL;
-
-  const res = await fetchFn(url);
-  if (!res.ok) {
-    throw new Error(`Failed to load catalog index from ${url}`);
-  }
-
-  const payload = (await res.json()) as { voices: Voice[] };
-  return payload.voices;
+export async function loadCatalog(): Promise<Voice[]> {
+  return catalogVoices;
 }
 
-export async function loadVoiceById(fetchFn: typeof fetch, voiceId: string): Promise<Voice | null> {
-  const voices = await loadCatalog(fetchFn);
+export async function loadVoiceById(voiceId: string): Promise<Voice | null> {
+  const voices = await loadCatalog();
   return voices.find((voice) => voice.id === voiceId) ?? null;
 }

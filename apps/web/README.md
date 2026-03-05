@@ -15,13 +15,14 @@ SvelteKit frontend for catalog browsing and early curation UX.
 
 - `PUBLIC_APP_ENV`
   - Environment label shown/used by frontend logic (`local`, `preview`, `production`)
-- `PUBLIC_CATALOG_INDEX_URL`
-  - Absolute URL to remote catalog JSON in S3/CloudFront
-  - If empty, app falls back to local file: `/catalog/voices.json`
 
 ## Catalog Contract (Current)
 
-Frontend expects:
+Catalog is currently managed in-code at:
+
+- `apps/web/src/lib/data/catalog.ts`
+
+Frontend expects each entry to follow:
 
 ```json
 {
@@ -60,4 +61,3 @@ Output directory is `apps/web/build` (static adapter), aligned with `amplify.yml
 - Build spec is kept in repo root `amplify.yml`
 - Configure branch env vars in Amplify Console:
   - `PUBLIC_APP_ENV`
-  - `PUBLIC_CATALOG_INDEX_URL`

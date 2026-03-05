@@ -21,27 +21,18 @@
 For `main` branch in Amplify:
 
 - `PUBLIC_APP_ENV=production`
-- `PUBLIC_CATALOG_INDEX_URL=https://<your-cdn-or-s3-url>/catalog/voices.json`
 
 For preview branches:
 
 - `PUBLIC_APP_ENV=preview`
-- `PUBLIC_CATALOG_INDEX_URL` set to preview/dev catalog URL
 
-## 4. S3 and CORS baseline
-
-1. Create S3 bucket for catalog/sample artifacts.
-2. Upload `catalog/voices.json`.
-3. Add CORS policy allowing your Amplify domain(s) to GET JSON/audio assets.
-
-## 5. Verify deployment
+## 4. Verify deployment
 
 1. Trigger first Amplify build from `main`.
 2. Open deployed URL and confirm catalog page loads.
-3. Validate browser network request to `PUBLIC_CATALOG_INDEX_URL` returns HTTP 200.
+3. Confirm catalog and voice detail routes render with app-owned data.
 
-## 6. Optional hardening
+## 5. Optional hardening
 
 - Add custom domain in Amplify.
-- Put CloudFront in front of S3 for assets.
-- Restrict S3 access pattern by prefix and bucket policy.
+- Add backend environment separation when `apps/api` is introduced.
