@@ -41,7 +41,7 @@ let generated = 0;
 let skipped = 0;
 
 for (const voice of catalog.voices) {
-  const outPath = join(OUT_DIR, `${voice.id}.png`);
+  const outPath = join(OUT_DIR, `${voice.id}.jpg`);
   if (existsSync(outPath)) { skipped++; continue; }
 
   const pid = voice.providerId || '';
@@ -69,47 +69,73 @@ for (const voice of catalog.voices) {
       '/tmp/og-step1.png'
     ]);
 
-    // Step 3: Draw provider initial circle
-    execFileSync('magick', [
-      '/tmp/og-step1.png',
-      '(', '-size', '88x88', `xc:${accent}`,
-        '-fill', 'white', '-font', 'Helvetica-Bold', '-pointsize', '40',
-        '-gravity', 'Center', '-annotate', '+0+0', provider.charAt(0),
-      ')',
-      '-gravity', 'NorthWest', '-geometry', '+60+60', '-composite',
-      '/tmp/og-step2.png'
-    ]);
+    // Step 3: Composite voice profile image with rounded corners
+    const voiceImgPath = join(import.meta.dirname, '..', 'apps/web/static/images/voices', `${voice.id}.jpg`);
+    if (existsSync(voiceImgPath)) {
+      // Create rounded-corner mask
+      execFileSync('magick', [
+        '-size', '120x120', 'xc:none',
+        '-fill', 'white', '-draw', 'roundrectangle 0,0 119,119 14,14',
+        '/tmp/og-mask.png'
+      ]);
+      // Apply mask to voice image
+      execFileSync('magick', [
+        voiceImgPath, '-resize', '120x120',
+        '/tmp/og-mask.png',
+        '-alpha', 'off',
+        '-compose', 'CopyOpacity', '-composite',
+        '/tmp/og-avatar.png'
+      ]);
+      // Composite onto background
+      execFileSync('magick', [
+        '/tmp/og-step1.png',
+        '/tmp/og-avatar.png',
+        '-gravity', 'NorthWest', '-geometry', '+50+50', '-composite',
+        '/tmp/og-step2.png'
+      ]);
+    } else {
+      execFileSync('magick', [
+        '/tmp/og-step1.png',
+        '(', '-size', '88x88', `xc:${accent}`,
+          '-fill', 'white', '-font', 'Helvetica-Bold', '-pointsize', '40',
+          '-gravity', 'Center', '-annotate', '+0+0', provider.charAt(0),
+        ')',
+        '-gravity', 'NorthWest', '-geometry', '+60+60', '-composite',
+        '/tmp/og-step2.png'
+      ]);
+    }
 
     // Step 4: Add all text
     execFileSync('magick', [
       '/tmp/og-step2.png',
       // Voice name
       '-fill', 'white', '-font', 'Helvetica-Bold', '-pointsize', '52',
-      '-gravity', 'NorthWest', '-annotate', '+170+55', name,
+      '-gravity', 'NorthWest', '-annotate', '+195+55', name,
       // Provider line
       '-fill', '#ffffffbb', '-font', 'Helvetica', '-pointsize', '24',
-      '-annotate', '+170+120', providerLine,
+      '-annotate', '+195+120', providerLine,
       // Short label
       '-fill', '#ffffffdd', '-font', 'Helvetica', '-pointsize', '22',
-      '-annotate', '+170+158', shortLabel,
+      '-annotate', '+195+158', shortLabel,
       // Separator line
       '-stroke', '#ffffff44', '-strokewidth', '1',
-      '-draw', 'line 170,200 1100,200',
+      '-draw', 'line 195,200 1100,200',
       '-stroke', 'none',
       // Description
       '-fill', '#ffffffaa', '-font', 'Helvetica', '-pointsize', '20',
-      '-annotate', '+170+220', desc,
+      '-annotate', '+195+220', desc,
       // Tone tags
       ...(tags ? [
         '-fill', '#ffffff77', '-font', 'Helvetica', '-pointsize', '18',
-        '-annotate', '+170+260', tags,
+        '-annotate', '+195+260', tags,
       ] : []),
       // Vokda branding
       '-fill', '#ffffff55', '-font', 'Helvetica-Bold', '-pointsize', '20',
       '-gravity', 'SouthEast', '-annotate', '+40+30', 'vokda.iksnae.com',
       // Audio icon hint (bottom left)
       '-fill', '#ffffff44', '-font', 'Helvetica', '-pointsize', '16',
-      '-gravity', 'SouthWest', '-annotate', '+170+30', '♪  Listen to audio sample',
+      '-gravity', 'SouthWest', '-annotate', '+195+30', '♪  Listen to audio sample',
+      '-quality', '85',
       outPath
     ]);
 

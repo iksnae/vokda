@@ -320,7 +320,7 @@
       {@const isPlaying = playingVoiceId === voice.id}
       <article>
         <!-- Play button hero area -->
-        <div class="play-area">
+        <div class="play-area" style={voice.imageUrl ? `background-image:url(${voice.imageUrl})` : ''}>
           <button
             class="play-btn"
             class:playing={isPlaying}
@@ -618,6 +618,11 @@
     align-items: center;
     justify-content: center;
     padding: 1.2rem 1rem 0.6rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 18px 18px 0 0;
+    min-height: 120px;
   }
 
   .play-btn {

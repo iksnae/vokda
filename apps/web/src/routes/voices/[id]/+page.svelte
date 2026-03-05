@@ -159,7 +159,7 @@
   {#if voice}
     {@const baseUrl = 'https://vokda.iksnae.com'}
     {@const voiceUrl = `${baseUrl}/voices/${voice.id}`}
-    {@const ogImage = `${baseUrl}/og/voices/${voice.id}.png`}
+    {@const ogImage = `${baseUrl}/og/voices/${voice.id}.jpg`}
     {@const ogDesc = `${voice.metadata.shortLabel ? voice.metadata.shortLabel + ' · ' : ''}${voice.description}`}
 
     <!-- Canonical & description -->
@@ -221,22 +221,37 @@
     <!-- ─── Hero ─── -->
     <section class="hero">
       <div class="hero-left">
-        <!-- Provider badge row -->
-        <div class="badge-row">
-          <span
-            class="provider-badge"
-            style="background:{colors?.bg};border-color:{colors?.border};color:{colors?.text}"
-          >{voice.provider}</span>
-          <span class="tier-badge">{voice.qualityTier}</span>
-          {#if variant?.sourceType === 'local_model'}
-            <span class="tier-badge local-badge">
-              <Icon name="desktop" size={12} />
-              local
-            </span>
+        <div class="hero-top-row">
+          <!-- Voice profile image -->
+          {#if voice.imageUrl}
+            <img
+              class="voice-avatar"
+              src={voice.imageUrl}
+              alt="{voice.name} voice profile"
+              width="88"
+              height="88"
+              loading="eager"
+            />
           {/if}
-        </div>
 
-        <h1>{voice.name}</h1>
+          <div class="hero-title-block">
+            <!-- Provider badge row -->
+            <div class="badge-row">
+              <span
+                class="provider-badge"
+                style="background:{colors?.bg};border-color:{colors?.border};color:{colors?.text}"
+              >{voice.provider}</span>
+              <span class="tier-badge">{voice.qualityTier}</span>
+              {#if variant?.sourceType === 'local_model'}
+                <span class="tier-badge local-badge">
+                  <Icon name="desktop" size={12} />
+                  local
+                </span>
+              {/if}
+            </div>
+            <h1>{voice.name}</h1>
+          </div>
+        </div>
         <p class="subtitle">{voice.metadata.shortLabel}</p>
         <p class="description">{voice.description}</p>
 
@@ -632,6 +647,29 @@
     background: linear-gradient(145deg, #f7fbff 0%, #edf4fa 100%);
     border: 1px solid #c6d4e1;
     box-shadow: 0 2px 12px rgba(15, 35, 54, 0.06);
+  }
+
+  .hero-top-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .voice-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ffffff20;
+  }
+
+  .hero-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
   }
 
   .hero-left {

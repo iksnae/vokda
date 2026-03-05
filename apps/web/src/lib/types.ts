@@ -101,6 +101,7 @@ export type Voice = {
   licenseNotes: string;
   metadata: VoiceMetadata;
   modelCard?: VoiceModelCard;
+  imageUrl?: string;
   samples: VoiceSample[];
   variants: VoiceVariant[];
 };

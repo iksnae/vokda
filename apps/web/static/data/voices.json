@@ -102,7 +102,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg"
     },
     {
       "id": "01JCVK8Q2WQEC05YF88Q3AJ1B2",
@@ -206,7 +207,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01JCVK8Q2WQEC05YF88Q3AJ1B2.jpg"
     },
     {
       "id": "01JCVKBX2W7R5P4SQA0WV8X7D8",
@@ -309,7 +311,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg"
     },
     {
       "id": "01JCVKN3XGS1D8VCVBQJ6D7Y8M",
@@ -411,7 +414,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01JCVKN3XGS1D8VCVBQJ6D7Y8M.jpg"
     },
     {
       "id": "01JCW012A9N9Y3W08F0Q0A1O1",
@@ -516,7 +520,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg"
     },
     {
       "id": "01JCW015M2Q4MFX8K2CZ9R2D2",
@@ -621,7 +626,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01JCW015M2Q4MFX8K2CZ9R2D2.jpg"
     },
     {
       "id": "01JCW018P8BMX7D34R7XJ93T3",
@@ -726,7 +732,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01JCW018P8BMX7D34R7XJ93T3.jpg"
     },
     {
       "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
@@ -829,7 +836,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01JCVKFCM1B6K24RH7BGN2M1A7.jpg"
     },
     {
       "id": "01KK00XJY86YSY7K4GVZACPS1Y",
@@ -925,7 +933,8 @@
           "Default voice only without reference",
           "Emotion control via text prompt engineering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg"
     },
     {
       "id": "01KK00XMW22QSJDFXS66X6EY9H",
@@ -1022,7 +1031,8 @@
           "Multi-speaker via [S1] [S2] tags in text",
           "Slower than single-speaker models"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg"
     },
     {
       "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
@@ -1124,7 +1134,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.jpg"
     },
     {
       "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
@@ -1226,7 +1237,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.jpg"
     },
     {
       "id": "01KJZZ79Y31KEE8NFRRWQ9FT46",
@@ -1331,7 +1343,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ79Y31KEE8NFRRWQ9FT46.jpg"
     },
     {
       "id": "01KJZZ7EWGNMXEMFQD5M1ETZHR",
@@ -1436,7 +1449,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg"
     },
     {
       "id": "01KJZZ6Z66TBKSC0RB743BVM9Z",
@@ -1541,7 +1555,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ6Z66TBKSC0RB743BVM9Z.jpg"
     },
     {
       "id": "01KJZZ71X5Y9RJR09BKKPP68QD",
@@ -1646,7 +1661,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ71X5Y9RJR09BKKPP68QD.jpg"
     },
     {
       "id": "01KJZZ7K63TGFRM5KAW9FJZA2K",
@@ -1751,7 +1767,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7K63TGFRM5KAW9FJZA2K.jpg"
     },
     {
       "id": "01KJZZ7ASD6QTGW6DG2P3ZE4G0",
@@ -1856,7 +1873,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7ASD6QTGW6DG2P3ZE4G0.jpg"
     },
     {
       "id": "01KJZZ7GJQD69PP75NYEZMK36S",
@@ -1961,7 +1979,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7GJQD69PP75NYEZMK36S.jpg"
     },
     {
       "id": "01KJZZ7BHW7YDE1PYYZA11MZGV",
@@ -2066,7 +2085,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7BHW7YDE1PYYZA11MZGV.jpg"
     },
     {
       "id": "01KJZZ7M6AGX70CRKC1V3EV4AK",
@@ -2171,7 +2191,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg"
     },
     {
       "id": "01KJZZ7N6QKQKHGGTX4QATT0AD",
@@ -2276,7 +2297,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7N6QKQKHGGTX4QATT0AD.jpg"
     },
     {
       "id": "01KJZZ72VP70TH9JZ4FJZQ64C5",
@@ -2381,7 +2403,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ72VP70TH9JZ4FJZQ64C5.jpg"
     },
     {
       "id": "01KJZZ7HEKBPP8MB02K2G4ANZ7",
@@ -2486,7 +2509,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7HEKBPP8MB02K2G4ANZ7.jpg"
     },
     {
       "id": "01KJZZ7318GP7HB1CBQRQJX1H8",
@@ -2591,7 +2615,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7318GP7HB1CBQRQJX1H8.jpg"
     },
     {
       "id": "01KJZZ73SGB3XRJ723J14M3E9D",
@@ -2696,7 +2721,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ73SGB3XRJ723J14M3E9D.jpg"
     },
     {
       "id": "01KJZZ7P7DVFAQDJ9XE9V4SWH3",
@@ -2801,7 +2827,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7P7DVFAQDJ9XE9V4SWH3.jpg"
     },
     {
       "id": "01KJZZ7CC4XGF2FPBJ0B65DQD4",
@@ -2906,7 +2933,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7CC4XGF2FPBJ0B65DQD4.jpg"
     },
     {
       "id": "01KJZZ7J6EC11PJWASEED2A1HZ",
@@ -3011,7 +3039,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7J6EC11PJWASEED2A1HZ.jpg"
     },
     {
       "id": "01KJZZ7D3Q9X5BN8K5JACZNRSG",
@@ -3116,7 +3145,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7D3Q9X5BN8K5JACZNRSG.jpg"
     },
     {
       "id": "01KJZZ757427ZR1Z2ERJ2CACX0",
@@ -3221,7 +3251,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ757427ZR1Z2ERJ2CACX0.jpg"
     },
     {
       "id": "01KJZZ7600RTT1JRN5FB4CB7RS",
@@ -3326,7 +3357,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7600RTT1JRN5FB4CB7RS.jpg"
     },
     {
       "id": "01KJZZ7DY67H1QJXFM3KXFXH64",
@@ -3431,7 +3463,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7DY67H1QJXFM3KXFXH64.jpg"
     },
     {
       "id": "01KJZZ76XP6W0X8C1F6N4PPXQS",
@@ -3536,7 +3569,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ76XP6W0X8C1F6N4PPXQS.jpg"
     },
     {
       "id": "01KJZZ77W8VWCB4ZPJED43AJFQ",
@@ -3641,7 +3675,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ77W8VWCB4ZPJED43AJFQ.jpg"
     },
     {
       "id": "01KJZZ78XR84GJ4TQF7XJX5MA9",
@@ -3746,7 +3781,8 @@
           "Some voice styles may sound similar",
           "Long texts may have prosody drift"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ78XR84GJ4TQF7XJX5MA9.jpg"
     },
     {
       "id": "01KK00Y0G4PNGS13DQWVDQQAZ4",
@@ -3849,7 +3885,8 @@
           "Voice cloning requires reference audio input",
           "Attribution required under CC-BY-4.0"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg"
     },
     {
       "id": "01KK00Y63ESEW8T9B9RSNQPQKN",
@@ -3944,7 +3981,8 @@
           "English only",
           "Optimized for short utterances"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg"
     },
     {
       "id": "01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
@@ -4053,7 +4091,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.jpg"
     },
     {
       "id": "01KJZZ83BZ0GSX5CWQ5XYHFQ34",
@@ -4162,7 +4201,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ83BZ0GSX5CWQ5XYHFQ34.jpg"
     },
     {
       "id": "01KJZZ81B38XZ77ZVVGSFHFW2T",
@@ -4271,7 +4311,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.jpg"
     },
     {
       "id": "01KK00Y948644NCCVZQNJMTAGA",
@@ -4379,7 +4420,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00Y948644NCCVZQNJMTAGA.jpg"
     },
     {
       "id": "01KJZZ7WTF8ARDXF44ZBNJ69CS",
@@ -4488,7 +4530,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7WTF8ARDXF44ZBNJ69CS.jpg"
     },
     {
       "id": "01KJZZ7RNCYE5KD8ME0PJH5C6S",
@@ -4597,7 +4640,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7RNCYE5KD8ME0PJH5C6S.jpg"
     },
     {
       "id": "01KJZZ7TP08N5E57EX3C7D008E",
@@ -4706,7 +4750,8 @@
           "Base variant has no built-in speaker presets",
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZZ7TP08N5E57EX3C7D008E.jpg"
     },
     {
       "id": "01KK00XHDBK8CFFY3MFNWSGQR9",
@@ -4801,7 +4846,8 @@
           "English only",
           "Ultra-light model trades some naturalness for speed"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg"
     },
     {
       "id": "01KK00Y7AN1W3DS5EBESXQV7XZ",
@@ -4903,7 +4949,8 @@
           "Default voice without reference",
           "Chinese and English only"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg"
     },
     {
       "id": "01KK00YB9ZA3BS7SRXRYGQ51J8",
@@ -5002,7 +5049,8 @@
           "Single voice only",
           "May have Chinese-accented English prosody"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg"
     },
     {
       "id": "01KJZXZNF9GMQCNCRCPCQMDKN5",
@@ -5092,7 +5140,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9GMQCNCRCPCQMDKN5.jpg"
     },
     {
       "id": "01KJZXZNF8YDF94X1ZD259GAH9",
@@ -5182,7 +5231,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8YDF94X1ZD259GAH9.jpg"
     },
     {
       "id": "01KJZXZNF8A597MZ2DB19PZYF0",
@@ -5272,7 +5322,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8A597MZ2DB19PZYF0.jpg"
     },
     {
       "id": "01KJZXZNF9M3CARW4PV123544M",
@@ -5362,7 +5413,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9M3CARW4PV123544M.jpg"
     },
     {
       "id": "01KJZXZNF8G64PM7FT6X435GS2",
@@ -5452,7 +5504,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8G64PM7FT6X435GS2.jpg"
     },
     {
       "id": "01KJZXZNF8H2R6N84JG6QH2DGQ",
@@ -5542,7 +5595,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8H2R6N84JG6QH2DGQ.jpg"
     },
     {
       "id": "01KJZXZNF8GC5R5F85AH79BN6E",
@@ -5632,7 +5686,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8GC5R5F85AH79BN6E.jpg"
     },
     {
       "id": "01KJZXZNF8A8TVPQ1FMA1DEWTA",
@@ -5722,7 +5777,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8A8TVPQ1FMA1DEWTA.jpg"
     },
     {
       "id": "01KJZXZNF9GSJ6N0FDZ2A5TF79",
@@ -5812,7 +5868,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9GSJ6N0FDZ2A5TF79.jpg"
     },
     {
       "id": "01KJZXZNF8FEW0ZDB7XJMR1DW2",
@@ -5902,7 +5959,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.jpg"
     },
     {
       "id": "01KJZXZNF80DN2NNTNCBVV7E29",
@@ -5992,7 +6050,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF80DN2NNTNCBVV7E29.jpg"
     },
     {
       "id": "01KJZXZNF93TEMNVP6WRH0YXTF",
@@ -6082,7 +6141,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg"
     },
     {
       "id": "01KJZXZNF95RPDQPH7Z4HYAEY4",
@@ -6172,7 +6232,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF95RPDQPH7Z4HYAEY4.jpg"
     },
     {
       "id": "01KJZXZNF8QEPPF280SQ8HKH2F",
@@ -6262,7 +6323,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8QEPPF280SQ8HKH2F.jpg"
     },
     {
       "id": "01KJZXZNF8D3T3FZ0SGSNGHWZR",
@@ -6352,7 +6414,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF8D3T3FZ0SGSNGHWZR.jpg"
     },
     {
       "id": "01KJZXZNF91FPRR7WV3SCZ2N87",
@@ -6442,7 +6505,8 @@
           "SSML tag support varies by engine type"
         ],
         "modelVersion": "Neural engine"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF91FPRR7WV3SCZ2N87.jpg"
     },
     {
       "id": "01KJZXZNF9ECDXYTKA2ET2BXZ8",
@@ -6531,7 +6595,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9ECDXYTKA2ET2BXZ8.jpg"
     },
     {
       "id": "01KJZXZNF97Q0SQW2C3V0KBB32",
@@ -6620,7 +6685,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg"
     },
     {
       "id": "01KJZXZNF9R0PRPGK145K1TJYD",
@@ -6709,7 +6775,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9R0PRPGK145K1TJYD.jpg"
     },
     {
       "id": "01KJZXZNF9RKZRK35M1MS5K5V7",
@@ -6804,7 +6871,8 @@
           "cheerful",
           "sad"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9RKZRK35M1MS5K5V7.jpg"
     },
     {
       "id": "01KJZXZNF942C62SAR07KM4HBJ",
@@ -6893,7 +6961,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF942C62SAR07KM4HBJ.jpg"
     },
     {
       "id": "01KJZXZNF9A5PAVAYS7JHCSEPE",
@@ -6982,7 +7051,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg"
     },
     {
       "id": "01KJZXZNF9S4B0CP2R2XNT784G",
@@ -7079,7 +7149,8 @@
           "cheerful",
           "empathetic"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg"
     },
     {
       "id": "01KJZXZNF90JA6E710DW5PM66C",
@@ -7168,7 +7239,8 @@
           "Some voices are preview-only and may change",
           "Multilingual voices may have accent blending artifacts"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNF90JA6E710DW5PM66C.jpg"
     },
     {
       "id": "01KJZXZNFAV2Y7XZ3JG7G982Z1",
@@ -7263,7 +7335,8 @@
           "empathetic",
           "relieved"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFAV2Y7XZ3JG7G982Z1.jpg"
     },
     {
       "id": "01KJZXZNFA7B3J992MRVJ0047M",
@@ -7373,7 +7446,8 @@
           "whispering",
           "hopeful"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFA7B3J992MRVJ0047M.jpg"
     },
     {
       "id": "01KJZXZNFAJCPVEVX09YXAPZG1",
@@ -7470,7 +7544,8 @@
           "fearful",
           "sad"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFAJCPVEVX09YXAPZG1.jpg"
     },
     {
       "id": "01KJZXZNFAC16W91Z7RTZN0HAC",
@@ -7575,7 +7650,8 @@
           "unfriendly",
           "whispering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFAC16W91Z7RTZN0HAC.jpg"
     },
     {
       "id": "01KJZXZNFA4GVJRMZDC9NR1CFZ",
@@ -7680,7 +7756,8 @@
           "whispering",
           "hopeful"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFA4GVJRMZDC9NR1CFZ.jpg"
     },
     {
       "id": "01KJZXZNFBHJ2VVTWXYFTA1A1H",
@@ -7784,7 +7861,8 @@
           "unfriendly",
           "whispering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg"
     },
     {
       "id": "01KJZXZNFB84AHZJCZH2Z81KGX",
@@ -7877,7 +7955,8 @@
         "supportedStyles": [
           "conversation"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB84AHZJCZH2Z81KGX.jpg"
     },
     {
       "id": "01KJZXZNFBTVKC1B27CDNKSXTC",
@@ -7970,7 +8049,8 @@
         "supportedStyles": [
           "conversation"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg"
     },
     {
       "id": "01KJZXZNFBAS28DT522DBEVS2B",
@@ -8074,7 +8154,8 @@
           "unfriendly",
           "whispering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBAS28DT522DBEVS2B.jpg"
     },
     {
       "id": "01KJZXZNFAPYRE2PN05TQ2ZTRN",
@@ -8171,7 +8252,8 @@
           "sad",
           "serious"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFAPYRE2PN05TQ2ZTRN.jpg"
     },
     {
       "id": "01KJZXZNFBSSS2QKG6ZJRN5ZJ1",
@@ -8275,7 +8357,8 @@
           "unfriendly",
           "whispering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBSSS2QKG6ZJRN5ZJ1.jpg"
     },
     {
       "id": "01KJZXZNFBDSC0T42KC1E0A4H2",
@@ -8379,7 +8462,8 @@
           "unfriendly",
           "whispering"
         ]
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBDSC0T42KC1E0A4H2.jpg"
     },
     {
       "id": "01KJZXZNFBEFG9HT43MNFFFQJS",
@@ -8474,7 +8558,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg"
     },
     {
       "id": "01KJZXZNFB4QPGJ1C72VAPSYCQ",
@@ -8569,7 +8654,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB4QPGJ1C72VAPSYCQ.jpg"
     },
     {
       "id": "01KJZXZNFBV8MZS77X7XT6ZR22",
@@ -8664,7 +8750,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBV8MZS77X7XT6ZR22.jpg"
     },
     {
       "id": "01KJZXZNFBSRT4BRCQPHEM2H7Y",
@@ -8759,7 +8846,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBSRT4BRCQPHEM2H7Y.jpg"
     },
     {
       "id": "01KJZXZNFBJ3A4W1EZP08JTWWV",
@@ -8854,7 +8942,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBJ3A4W1EZP08JTWWV.jpg"
     },
     {
       "id": "01KJZXZNFB0JWWNE5JMC1PRZCZ",
@@ -8949,7 +9038,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB0JWWNE5JMC1PRZCZ.jpg"
     },
     {
       "id": "01KJZXZNFBAGSHKAVPHHTFVHFV",
@@ -9044,7 +9134,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBAGSHKAVPHHTFVHFV.jpg"
     },
     {
       "id": "01KJZXZNFB1059EQEGH1GNQ405",
@@ -9139,7 +9230,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB1059EQEGH1GNQ405.jpg"
     },
     {
       "id": "01KJZXZNFB0G8QFE9XW7Q5V6GV",
@@ -9234,7 +9326,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB0G8QFE9XW7Q5V6GV.jpg"
     },
     {
       "id": "01KJZXZNFB8PQD14M05ANYJQ8X",
@@ -9329,7 +9422,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB8PQD14M05ANYJQ8X.jpg"
     },
     {
       "id": "01KJZXZNFBXRF291002CKM1GVH",
@@ -9424,7 +9518,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBXRF291002CKM1GVH.jpg"
     },
     {
       "id": "01KJZXZNFBD0XMW9VV92RF3FCQ",
@@ -9519,7 +9614,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBD0XMW9VV92RF3FCQ.jpg"
     },
     {
       "id": "01KJZXZNFB4GC6PKE1XBTHDHV2",
@@ -9614,7 +9710,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB4GC6PKE1XBTHDHV2.jpg"
     },
     {
       "id": "01KJZXZNFBNVNYE7EPTWQ91234",
@@ -9709,7 +9806,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBNVNYE7EPTWQ91234.jpg"
     },
     {
       "id": "01KJZXZNFBFVKZXVAESYST9MN8",
@@ -9804,7 +9902,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBFVKZXVAESYST9MN8.jpg"
     },
     {
       "id": "01KJZXZNFBE2TSPHZMX9HJWNJ8",
@@ -9899,7 +9998,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.jpg"
     },
     {
       "id": "01KJZXZNFBWGP2JRDG96A0PRPR",
@@ -9994,7 +10094,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBWGP2JRDG96A0PRPR.jpg"
     },
     {
       "id": "01KJZXZNFB2A0K2H42TN16QYYN",
@@ -10089,7 +10190,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB2A0K2H42TN16QYYN.jpg"
     },
     {
       "id": "01KJZXZNFB5KMFRQD8H7QGJYPM",
@@ -10184,7 +10286,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB5KMFRQD8H7QGJYPM.jpg"
     },
     {
       "id": "01KJZXZNFBP9HJ33H9G4A0DXJD",
@@ -10279,7 +10382,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBP9HJ33H9G4A0DXJD.jpg"
     },
     {
       "id": "01KJZXZNFBYE7S23S1AVV8NWTV",
@@ -10374,7 +10478,8 @@
           "Character quota depends on subscription plan"
         ],
         "modelName": "eleven_multilingual_v2"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBYE7S23S1AVV8NWTV.jpg"
     },
     {
       "id": "01KJZXZNFCHEK2DM62KSZ49N98",
@@ -10462,7 +10567,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCHEK2DM62KSZ49N98.jpg"
     },
     {
       "id": "01KJZXZNFCD5VK95AYA7AHMMQ7",
@@ -10550,7 +10656,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCD5VK95AYA7AHMMQ7.jpg"
     },
     {
       "id": "01KJZXZNFCHEKZZ856PXXEAGD0",
@@ -10638,7 +10745,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCHEKZZ856PXXEAGD0.jpg"
     },
     {
       "id": "01KJZXZNFCZSH1481YXC3JVGJM",
@@ -10726,7 +10834,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCZSH1481YXC3JVGJM.jpg"
     },
     {
       "id": "01KJZXZNFC8BZ05DNRHYPQ00XY",
@@ -10814,7 +10923,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC8BZ05DNRHYPQ00XY.jpg"
     },
     {
       "id": "01KJZXZNFC5SMR4AQZ23DYWKPR",
@@ -10902,7 +11012,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC5SMR4AQZ23DYWKPR.jpg"
     },
     {
       "id": "01KJZXZNFCV9FV48QGXS3GRVKA",
@@ -10990,7 +11101,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCV9FV48QGXS3GRVKA.jpg"
     },
     {
       "id": "01KJZXZNFC2HSWZ2EM0YJ0JNM0",
@@ -11078,7 +11190,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC2HSWZ2EM0YJ0JNM0.jpg"
     },
     {
       "id": "01KJZXZNFCPS1FC9NAVW3H1G01",
@@ -11166,7 +11279,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCPS1FC9NAVW3H1G01.jpg"
     },
     {
       "id": "01KJZXZNFCJA2T3RT1M7QWVNR3",
@@ -11254,7 +11368,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Journey (conversational, long-form)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCJA2T3RT1M7QWVNR3.jpg"
     },
     {
       "id": "01KJZXZNFCXR4D5GSH5AQ5YV3A",
@@ -11342,7 +11457,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Journey (conversational, long-form)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCXR4D5GSH5AQ5YV3A.jpg"
     },
     {
       "id": "01KJZXZNFCC55SAFJW5AGTN0FP",
@@ -11430,7 +11546,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Journey (conversational, long-form)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCC55SAFJW5AGTN0FP.jpg"
     },
     {
       "id": "01KJZXZNFCEZVMEFX79W0S6HP2",
@@ -11518,7 +11635,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCEZVMEFX79W0S6HP2.jpg"
     },
     {
       "id": "01KJZXZNFC0480G12GE3Y7HR1J",
@@ -11606,7 +11724,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC0480G12GE3Y7HR1J.jpg"
     },
     {
       "id": "01KJZXZNFCJAQ4JTGW9YT9M5T4",
@@ -11694,7 +11813,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCJAQ4JTGW9YT9M5T4.jpg"
     },
     {
       "id": "01KJZXZNFC2JM7PVNM7DC0NJ5E",
@@ -11782,7 +11902,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC2JM7PVNM7DC0NJ5E.jpg"
     },
     {
       "id": "01KJZXZNFCACR3BRQVZNDC0WT3",
@@ -11870,7 +11991,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCACR3BRQVZNDC0WT3.jpg"
     },
     {
       "id": "01KJZXZNFC6052ZH0C9Q9R9X3M",
@@ -11958,7 +12080,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg"
     },
     {
       "id": "01KJZXZNFCPSW9T6W65GFYDZQJ",
@@ -12046,7 +12169,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg"
     },
     {
       "id": "01KJZXZNFCVGYVQZ8NQT1Y9K17",
@@ -12134,7 +12258,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCVGYVQZ8NQT1Y9K17.jpg"
     },
     {
       "id": "01KJZXZNFCZEHX3AXMG8JGQ31B",
@@ -12222,7 +12347,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.jpg"
     },
     {
       "id": "01KJZXZNFCTR8HR2XDPYKCZD82",
@@ -12310,7 +12436,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCTR8HR2XDPYKCZD82.jpg"
     },
     {
       "id": "01KJZXZNFCWGX8RDR6KP96H759",
@@ -12398,7 +12525,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Studio (highest quality, limited voices)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCWGX8RDR6KP96H759.jpg"
     },
     {
       "id": "01KJZXZNFC2VHXRJ04WKK32M7G",
@@ -12486,7 +12614,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Studio (highest quality, limited voices)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFC2VHXRJ04WKK32M7G.jpg"
     },
     {
       "id": "01KJZXZNFCMC5APRH3MPXJW4N2",
@@ -12574,7 +12703,8 @@
           "Studio voices have higher per-character cost"
         ],
         "architecture": "Studio (highest quality, limited voices)"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFCMC5APRH3MPXJW4N2.jpg"
     },
     {
       "id": "01KJZXZNFBE49RT8TB3R1ZGQCV",
@@ -12665,7 +12795,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg"
     },
     {
       "id": "01KJZXZNFBFJ8Q5N7JGZ4RDJCV",
@@ -12755,7 +12886,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg"
     },
     {
       "id": "01KJZXZNFB1V76ABZJAM47W53Z",
@@ -12846,7 +12978,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB1V76ABZJAM47W53Z.jpg"
     },
     {
       "id": "01KJZXZNFB4810HWZB27HNMGSV",
@@ -12937,7 +13070,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB4810HWZB27HNMGSV.jpg"
     },
     {
       "id": "01KJZXZNFB1EW4TQ1MMKF9KMTJ",
@@ -13028,7 +13162,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg"
     },
     {
       "id": "01KJZXZNFBERFNHYE9EF0K5BVN",
@@ -13119,7 +13254,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBERFNHYE9EF0K5BVN.jpg"
     },
     {
       "id": "01KJZXZNFB0C9HXSRQX3TB32QZ",
@@ -13210,7 +13346,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFB0C9HXSRQX3TB32QZ.jpg"
     },
     {
       "id": "01KJZXZNFBQRWDJ3N3NY6Y3J9R",
@@ -13300,7 +13437,8 @@
         ],
         "modelName": "tts-1",
         "modelVersion": "tts-1"
-      }
+      },
+      "imageUrl": "/images/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg"
     }
   ]
 }
