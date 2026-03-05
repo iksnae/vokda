@@ -1,5 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
   import {
@@ -28,6 +30,9 @@
   let runnableOnly = false;
   let ssmlOnly = false;
   let onlyFavorites = false;
+
+  /** Whether we've finished reading initial URL params (prevents sync-back on first load) */
+  let urlInitialized = false;
 
   /** Collapsible filter panel — collapsed by default */
   let filtersOpen = false;
@@ -76,9 +81,26 @@
     });
   }
 
+  /** Read filter state from URL search params on mount */
   onMount(() => {
     if (!browser) return;
-    onlyFavorites = new URLSearchParams(window.location.search).get('favorites') === '1';
+
+    const params = new URLSearchParams(window.location.search);
+    query = params.get('q') ?? '';
+    selectedProvider = params.get('provider') ?? 'all';
+    selectedLanguage = params.get('lang') ?? 'all';
+    selectedSource = params.get('type') ?? 'all';
+    runnableOnly = params.get('runnable') === '1';
+    ssmlOnly = params.get('ssml') === '1';
+    onlyFavorites = params.get('favorites') === '1';
+
+    // Auto-open filters panel if any filter is active from URL
+    if (selectedProvider !== 'all' || selectedLanguage !== 'all' || selectedSource !== 'all' || runnableOnly || ssmlOnly) {
+      filtersOpen = true;
+    }
+
+    // Mark initialized after a tick so the reactive block below doesn't fire on initial hydration
+    requestAnimationFrame(() => { urlInitialized = true; });
 
     // Cleanup on unmount
     return () => {
@@ -88,6 +110,26 @@
       }
     };
   });
+
+  /** Sync filter state back to URL (shallow, no navigation) */
+  $: if (browser && urlInitialized) {
+    const params = new URLSearchParams();
+    if (query.trim()) params.set('q', query.trim());
+    if (selectedProvider !== 'all') params.set('provider', selectedProvider);
+    if (selectedLanguage !== 'all') params.set('lang', selectedLanguage);
+    if (selectedSource !== 'all') params.set('type', selectedSource);
+    if (runnableOnly) params.set('runnable', '1');
+    if (ssmlOnly) params.set('ssml', '1');
+    if (onlyFavorites) params.set('favorites', '1');
+
+    const qs = params.toString();
+    const newUrl = qs ? `?${qs}` : window.location.pathname;
+
+    // Only update if changed — avoids infinite loop
+    if (newUrl !== `${window.location.pathname}${window.location.search}`) {
+      goto(newUrl, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  }
 
   const typeLabels: Record<VoiceVariant['sourceType'], string> = {
     cloud_provider: 'Cloud provider',

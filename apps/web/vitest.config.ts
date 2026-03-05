@@ -9,7 +9,8 @@ export default defineConfig({
     globals: true,
     alias: {
       '$app/environment': './src/test-mocks/app-environment.ts',
-      '$app/navigation': './src/test-mocks/app-navigation.ts'
+      '$app/navigation': './src/test-mocks/app-navigation.ts',
+      '$app/stores': './src/test-mocks/app-stores.ts'
     }
   }
 });
