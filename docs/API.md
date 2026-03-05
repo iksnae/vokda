@@ -18,6 +18,8 @@
 
 - `POST /admin/ingest/run`
 - `POST /admin/samples/regenerate`
+- `GET /v1/admin/users?email=<email>` (admin only; Cognito lookup)
+- `POST /v1/admin/users/roles` (admin only; set managed roles/groups)
 
 ## Notes
 

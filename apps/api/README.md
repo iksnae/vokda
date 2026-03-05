@@ -21,13 +21,19 @@ Copy `.env.example` values into your runtime environment:
 - `VOKDA_AUTH_MODE`
   - `mock`: bearer token pattern maps to role
   - `none`: open (for local-only testing)
-  - any other value reserved for real JWT verification
+  - `cognito`: verify access token against Cognito JWKs
+- `VOKDA_AWS_REGION` Cognito region for admin APIs/JWT verifier
+- `VOKDA_COGNITO_USER_POOL_ID` user pool id for JWT verification
+- `VOKDA_COGNITO_CLIENT_ID` app client id for JWT verification
+- `VOKDA_COGNITO_TARGET_USER_POOL_ID` target pool for admin user/group operations
 
 ## Endpoints
 
 - `GET /health`
 - `GET /v1/auth/session` (requires bearer token unless `none`)
 - `POST /v1/synthesize/preview` (requires bearer token unless `none`)
+- `GET /v1/admin/users?email=<email>` (admin only)
+- `POST /v1/admin/users/roles` (admin only)
 
 ## Gateway Contract
 
