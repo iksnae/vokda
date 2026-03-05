@@ -1,0 +1,23 @@
+{
+  "name": "@vokda/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "lint": "echo 'No lint configured yet'",
+    "test": "echo 'No tests configured yet'"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.2",
+    "@sveltejs/kit": "^2.5.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.7.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
+  }
+}

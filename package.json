@@ -1,0 +1,19 @@
+{
+  "name": "vokda",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "build:web": "npm --workspace apps/web run build",
+    "check:web": "npm --workspace apps/web run check",
+    "lint": "npm --workspace apps/web run lint",
+    "test": "npm --workspace apps/web run test"
+  }
+}

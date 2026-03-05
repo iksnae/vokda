@@ -1,0 +1,19 @@
+# Node
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+build/
+dist/
+.svelte-kit/
+coverage/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

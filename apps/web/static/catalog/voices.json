@@ -1,0 +1,36 @@
+{
+  "voices": [
+    {
+      "id": "01HP5JSG8HZKMWRZ01T8AA1M8R",
+      "name": "Aster Narrator",
+      "description": "Warm long-form narrator suited for documentary-style delivery.",
+      "tags": ["warm", "narration", "calm"],
+      "languages": ["en-US"],
+      "qualityTier": "premium",
+      "variants": [
+        {
+          "id": "01HP5JV80AWM5E7VGJ5MHT5WCM",
+          "sourceType": "cloud_provider",
+          "runnable": true,
+          "supportsSsml": true
+        }
+      ]
+    },
+    {
+      "id": "01HP5K0EEXPPABHXRCY7BVJ3WQ",
+      "name": "Lumen Character",
+      "description": "Energetic character voice for short-form storytelling.",
+      "tags": ["character", "energetic", "bright"],
+      "languages": ["en-US", "es-ES"],
+      "qualityTier": "standard",
+      "variants": [
+        {
+          "id": "01HP5K2GB9GV5E8VSM7WQF1Z5A",
+          "sourceType": "hf_space",
+          "runnable": false,
+          "supportsSsml": false
+        }
+      ]
+    }
+  ]
+}
