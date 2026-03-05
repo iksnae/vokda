@@ -16,6 +16,10 @@ Vokda MVP is static-first:
 - SvelteKit app
 - Catalog source currently lives at `apps/web/static/data/voices.json`
 - Supports browse, search, filter, curation, and export over typed catalog data
+- Curator metadata enrichment layer:
+  - structured human labels
+  - machine tags and use-case taxonomy
+  - local override drafts and custom voice additions (to be moved to Amplify Data)
 
 ## 3. Deployment
 

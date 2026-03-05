@@ -1,7 +1,13 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
-  import { favorites, toggleFavorite } from '$lib/stores/app-state';
+  import {
+    customVoices,
+    favorites,
+    metadataOverrides,
+    toggleFavorite
+  } from '$lib/stores/app-state';
+  import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { roleFlags } from '$lib/auth/store';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -32,20 +38,28 @@
     return sourceLabels[source as VoiceVariant['sourceType']] ?? source;
   }
 
-  $: availableLanguages = Array.from(new Set(data.voices.flatMap((voice) => voice.languages))).sort();
-  $: availableSources = Array.from(
-    new Set(data.voices.flatMap((voice) => voice.variants.map((variant) => variant.sourceType)))
-  ).sort();
-  $: availableProviders = Array.from(new Set(data.voices.map((voice) => voice.provider))).sort();
+  $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
-  $: filtered = data.voices.filter((voice) => {
+  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((voice) => voice.languages))).sort();
+  $: availableSources = Array.from(
+    new Set(effectiveVoices.flatMap((voice) => voice.variants.map((variant) => variant.sourceType)))
+  ).sort();
+  $: availableProviders = Array.from(new Set(effectiveVoices.map((voice) => voice.provider))).sort();
+
+  $: filtered = effectiveVoices.filter((voice) => {
     const q = query.trim().toLowerCase();
 
     const matchesQuery =
       !q ||
       voice.name.toLowerCase().includes(q) ||
+      voice.metadata.shortLabel.toLowerCase().includes(q) ||
       voice.provider.toLowerCase().includes(q) ||
       voice.description.toLowerCase().includes(q) ||
+      voice.metadata.searchDescription.toLowerCase().includes(q) ||
+      voice.metadata.machineTags.some((tag) => tag.toLowerCase().includes(q)) ||
+      voice.metadata.useCases.some((useCase) => useCase.toLowerCase().includes(q)) ||
+      voice.metadata.audienceTags.some((audience) => audience.toLowerCase().includes(q)) ||
+      voice.metadata.toneTags.some((tone) => tone.toLowerCase().includes(q)) ||
       voice.tags.some((tag) => tag.toLowerCase().includes(q));
 
     const matchesLanguage = selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
@@ -68,7 +82,7 @@
     );
   });
 
-  $: runnableCount = data.voices.filter((voice) => voice.variants.some((variant) => variant.runnable)).length;
+  $: runnableCount = effectiveVoices.filter((voice) => voice.variants.some((variant) => variant.runnable)).length;
   $: providerCount = availableProviders.length;
 </script>
 
@@ -80,10 +94,9 @@
   <section class="hero">
     <div>
       <p class="eyebrow">Voice Discovery Platform</p>
-      <h1>Curate production-ready voices across providers and open models</h1>
+      <h1>Find the right voice with human and machine friendly metadata</h1>
       <p class="summary">
-        Compare capabilities, inspect variant constraints, and build reusable sets for narration, character work,
-        and product experiences.
+        Search by labels, audience, tone, and use-case semantics, then refine entries through curator metadata.
       </p>
     </div>
     <div class="stats">
@@ -105,7 +118,7 @@
   <section class="filters">
     <label>
       Search
-      <input bind:value={query} placeholder="provider, voice, tag, use case..." />
+      <input bind:value={query} placeholder="label, audience, tone, use case, provider..." />
     </label>
 
     <label>
@@ -159,7 +172,9 @@
           <p class="tier">{voice.qualityTier}</p>
         </div>
         <h2>{voice.name}</h2>
+        <p class="label">{voice.metadata.shortLabel}</p>
         <p class="description">{voice.description}</p>
+        <p class="search-desc">{voice.metadata.searchDescription}</p>
 
         <div class="chips">
           {#each voice.languages as language}
@@ -167,6 +182,9 @@
           {/each}
           {#each voice.tags.slice(0, 3) as tag}
             <span class="tag">{tag}</span>
+          {/each}
+          {#each voice.metadata.toneTags.slice(0, 2) as tone}
+            <span class="tone">{tone}</span>
           {/each}
         </div>
 
@@ -309,7 +327,9 @@
   .provider,
   .tier,
   .meta,
-  .description {
+  .description,
+  .label,
+  .search-desc {
     margin: 0;
   }
 
@@ -339,6 +359,17 @@
     color: #36536e;
   }
 
+  .label {
+    font-size: 0.9rem;
+    color: #2e4960;
+    font-weight: 700;
+  }
+
+  .search-desc {
+    font-size: 0.9rem;
+    color: #4a6278;
+  }
+
   .chips {
     display: flex;
     flex-wrap: wrap;
@@ -359,6 +390,12 @@
     background: #f1f5ed;
     border-color: #dce6d3;
     color: #47653a;
+  }
+
+  .chips .tone {
+    background: #f5f0ff;
+    border-color: #ddd2f6;
+    color: #51368a;
   }
 
   .meta {

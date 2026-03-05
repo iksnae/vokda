@@ -2,11 +2,14 @@ import { browser } from '$app/environment';
 import { derived, writable } from 'svelte/store';
 import type { CartItem, Collection, Voice, VoicePack } from '$lib/types';
 import { auth } from '$lib/auth/store';
+import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
 type AppState = {
   cart: CartItem[];
   collections: Collection[];
   favorites: string[];
+  customVoices: Voice[];
+  metadataOverrides: Record<string, VoiceMetadataPatch>;
 };
 
 const STORAGE_PREFIX = 'vokda.app.state.v2';
@@ -14,7 +17,9 @@ const STORAGE_PREFIX = 'vokda.app.state.v2';
 const defaultState: AppState = {
   cart: [],
   collections: [],
-  favorites: []
+  favorites: [],
+  customVoices: [],
+  metadataOverrides: {}
 };
 
 function makeStorageKey(actorKey: string): string {
@@ -32,7 +37,9 @@ function loadState(actorKey: string): AppState {
     return {
       cart: parsed.cart ?? [],
       collections: parsed.collections ?? [],
-      favorites: parsed.favorites ?? []
+      favorites: parsed.favorites ?? [],
+      customVoices: parsed.customVoices ?? [],
+      metadataOverrides: parsed.metadataOverrides ?? {}
     };
   } catch {
     return defaultState;
@@ -59,6 +66,8 @@ if (browser) {
 export const cartItems = derived(appState, ($state) => $state.cart);
 export const collections = derived(appState, ($state) => $state.collections);
 export const favorites = derived(appState, ($state) => $state.favorites);
+export const customVoices = derived(appState, ($state) => $state.customVoices);
+export const metadataOverrides = derived(appState, ($state) => $state.metadataOverrides);
 export const cartCount = derived(cartItems, ($cart) => $cart.length);
 export const favoritesCount = derived(favorites, ($favorites) => $favorites.length);
 
@@ -110,6 +119,29 @@ export function toggleFavorite(voiceId: string) {
 
 export function isFavoriteVoice(voiceId: string, favoriteIds: string[]): boolean {
   return favoriteIds.includes(voiceId);
+}
+
+export function upsertMetadataOverride(voiceId: string, patch: VoiceMetadataPatch) {
+  appState.update((state) => ({
+    ...state,
+    metadataOverrides: {
+      ...state.metadataOverrides,
+      [voiceId]: {
+        ...(state.metadataOverrides[voiceId] ?? {}),
+        ...patch
+      }
+    }
+  }));
+}
+
+export function addCustomVoice(voice: Voice) {
+  appState.update((state) => {
+    if (state.customVoices.some((entry) => entry.id === voice.id)) return state;
+    return {
+      ...state,
+      customVoices: [...state.customVoices, voice]
+    };
+  });
 }
 
 export function createCollection(name: string) {

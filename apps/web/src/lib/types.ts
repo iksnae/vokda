@@ -9,6 +9,20 @@ export type VoiceVariant = {
   previewOnly: boolean;
 };
 
+export type VoiceMetadata = {
+  shortLabel: string;
+  searchDescription: string;
+  machineTags: string[];
+  useCases: string[];
+  toneTags: string[];
+  audienceTags: string[];
+  accent?: string;
+  genderPresentation?: string;
+  agePresentation?: string;
+  speakingStyle?: string;
+  metadataQuality: 'sparse' | 'curated' | 'editorial';
+};
+
 export type Voice = {
   id: string;
   name: string;
@@ -18,6 +32,7 @@ export type Voice = {
   languages: string[];
   qualityTier: 'basic' | 'standard' | 'premium';
   licenseNotes: string;
+  metadata: VoiceMetadata;
   samples: VoiceSample[];
   variants: VoiceVariant[];
 };

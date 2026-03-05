@@ -2,26 +2,32 @@
   import { synthesizePreview, stopPreviewPlayback } from '$lib/synthesis/service';
   import type { SynthesisPreview } from '$lib/synthesis/types';
   import {
+    customVoices,
     addToCart,
     addVoiceToCollection,
     collections,
     createCollection,
     favorites,
+    metadataOverrides,
     toggleFavorite,
     updateCollectionVoiceNote
   } from '$lib/stores/app-state';
+  import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { roleFlags } from '$lib/auth/store';
   import { getVariantWarnings } from '$lib/voice-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
-  export let data: { voice: Voice };
+  export let data: { voices: Voice[]; voiceId: string };
+
+  $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
+  $: voice = effectiveVoices.find((entry) => entry.id === data.voiceId) ?? null;
 
   let selectedCollectionId = '';
   let quickCollectionName = '';
   let noteDraft = '';
   let cartMessage = '';
   let collectionMessage = '';
-  let previewVariantId = data.voice.variants[0]?.id ?? '';
+  let previewVariantId = '';
   let previewInputMode: 'text' | 'ssml' = 'text';
   let previewInput =
     'This is a live audition preview from Vokda. Use this to validate tone, pacing, and clarity.';
@@ -29,8 +35,12 @@
   let previewBusy = false;
   let previewResult: SynthesisPreview | null = null;
 
-  $: previewVariant = data.voice.variants.find((variant) => variant.id === previewVariantId);
-  $: previewWarnings = previewVariant ? getVariantWarnings(data.voice, previewVariant) : [];
+  $: if (voice && !previewVariantId) {
+    previewVariantId = voice.variants[0]?.id ?? '';
+  }
+
+  $: previewVariant = voice?.variants.find((variant) => variant.id === previewVariantId) ?? null;
+  $: previewWarnings = voice && previewVariant ? getVariantWarnings(voice, previewVariant) : [];
 
   function sourceLabel(sourceType: VoiceVariant['sourceType']) {
     switch (sourceType) {
@@ -50,7 +60,8 @@
   }
 
   function addVariantToCart(variantId: string) {
-    addToCart(data.voice.id, variantId);
+    if (!voice) return;
+    addToCart(voice.id, variantId);
     cartMessage = 'Variant added to cart.';
   }
 
@@ -58,10 +69,11 @@
     if (!$roleFlags.isGuest) return;
     if (!selectedCollectionId) return;
 
-    addVoiceToCollection(selectedCollectionId, data.voice.id);
+    if (!voice) return;
+    addVoiceToCollection(selectedCollectionId, voice.id);
 
     if (noteDraft.trim()) {
-      updateCollectionVoiceNote(selectedCollectionId, data.voice.id, noteDraft.trim());
+      updateCollectionVoiceNote(selectedCollectionId, voice.id, noteDraft.trim());
     }
 
     collectionMessage = 'Voice saved to collection.';
@@ -69,6 +81,7 @@
 
   function createAndSave() {
     if (!$roleFlags.isGuest) return;
+    if (!voice) return;
     const name = quickCollectionName.trim();
     if (!name) return;
 
@@ -78,10 +91,10 @@
     if (!created) return;
 
     selectedCollectionId = created.id;
-    addVoiceToCollection(created.id, data.voice.id);
+    addVoiceToCollection(created.id, voice.id);
 
     if (noteDraft.trim()) {
-      updateCollectionVoiceNote(created.id, data.voice.id, noteDraft.trim());
+      updateCollectionVoiceNote(created.id, voice.id, noteDraft.trim());
     }
 
     collectionMessage = `Created "${created.name}" and saved voice.`;
@@ -96,8 +109,9 @@
     previewResult = null;
 
     try {
+      if (!voice) throw new Error('Voice not found');
       const preview = await synthesizePreview({
-        voice: data.voice,
+        voice,
         variant: previewVariant,
         input: previewInput,
         mode: previewInputMode
@@ -120,35 +134,38 @@
 </script>
 
 <svelte:head>
-  <title>{data.voice.name} | Vokda</title>
+  <title>{voice ? `${voice.name} | Vokda` : 'Voice | Vokda'}</title>
 </svelte:head>
 
 <main>
-  <a class="back-link" href="/">Back to catalog</a>
+  {#if !voice}
+    <p class="muted">Voice not found in current curated catalog.</p>
+  {:else}
+    <a class="back-link" href="/">Back to catalog</a>
 
-  <section class="profile-header">
-    <p class="provider">{data.voice.provider}</p>
-    <h1>{data.voice.name}</h1>
-    <p class="description">{data.voice.description}</p>
+    <section class="profile-header">
+      <p class="provider">{voice.provider}</p>
+      <h1>{voice.name}</h1>
+      <p class="description">{voice.description}</p>
+      <p class="meta">{voice.metadata.shortLabel} · {voice.languages.join(', ')} · {voice.qualityTier} tier</p>
 
-    <p class="meta">{data.voice.languages.join(', ')} · {data.voice.qualityTier} tier</p>
+      <ul class="tags">
+        {#each voice.tags as tag}
+          <li>{tag}</li>
+        {/each}
+      </ul>
 
-    <ul class="tags">
-      {#each data.voice.tags as tag}
-        <li>{tag}</li>
-      {/each}
-    </ul>
+      <p class="license">License: {voice.licenseNotes}</p>
+      <p class="meta">{voice.metadata.searchDescription}</p>
+    </section>
 
-    <p class="license">License: {data.voice.licenseNotes}</p>
-  </section>
-
-  <section>
+    <section>
     <h2>Audition Studio</h2>
     <div class="audition-panel">
       <label>
         Variant for preview
         <select bind:value={previewVariantId}>
-          {#each data.voice.variants as variant}
+          {#each voice.variants as variant}
             <option value={variant.id}>
               {sourceLabel(variant.sourceType)} · {variant.sourceKey}
             </option>
@@ -208,10 +225,10 @@
     </div>
   </section>
 
-  <section>
+    <section>
     <h2>Samples</h2>
     <ul class="samples">
-      {#each data.voice.samples as sample}
+      {#each voice.samples as sample}
         <li>
           <h3>{sample.label}</h3>
           <p>{sample.transcript}</p>
@@ -228,7 +245,7 @@
   <section>
     <h2>Variants</h2>
     <ul class="variants">
-      {#each data.voice.variants as variant}
+          {#each voice.variants as variant}
         <li>
           <div class="row">
             <div>
@@ -259,8 +276,8 @@
 
   <section class="collection-panel">
     <h2>Save To Collection</h2>
-    <button class="ghost" on:click={() => toggleFavorite(data.voice.id)} disabled={!$roleFlags.isGuest}>
-      {$favorites.includes(data.voice.id) ? 'Unfavorite' : 'Add to favorites'}
+        <button class="ghost" on:click={() => toggleFavorite(voice.id)} disabled={!$roleFlags.isGuest}>
+          {$favorites.includes(voice.id) ? 'Unfavorite' : 'Add to favorites'}
     </button>
 
     {#if $roleFlags.isGuest}
@@ -295,6 +312,7 @@
       <p class="flash">{collectionMessage}</p>
     {/if}
   </section>
+  {/if}
 </main>
 
 <style>

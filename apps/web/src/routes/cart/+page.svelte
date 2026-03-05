@@ -1,13 +1,17 @@
 <script lang="ts">
   import { buildVoicePack, cartItems, clearCart, removeFromCart } from '$lib/stores/app-state';
+  import { buildEffectiveCatalog } from '$lib/voice-catalog';
+  import { customVoices, metadataOverrides } from '$lib/stores/app-state';
   import { getVariantWarnings } from '$lib/voice-utils';
   import type { Voice } from '$lib/types';
 
   export let data: { voices: Voice[] };
 
+  $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
+
   $: lineItems = $cartItems
     .map((item) => {
-      const voice = data.voices.find((entry) => entry.id === item.voiceId);
+      const voice = effectiveVoices.find((entry) => entry.id === item.voiceId);
       if (!voice) return null;
 
       const variant = voice.variants.find((entry) => entry.id === item.variantId);
@@ -20,7 +24,7 @@
   $: runnableCount = lineItems.filter((entry) => entry.variant.runnable).length;
 
   function downloadVoicePack() {
-    const pack = buildVoicePack(data.voices, $cartItems);
+    const pack = buildVoicePack(effectiveVoices, $cartItems);
     const blob = new Blob([JSON.stringify(pack, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
 

@@ -8,9 +8,12 @@
     removeVoiceFromCollection,
     updateCollectionVoiceNote
   } from '$lib/stores/app-state';
+  import { buildEffectiveCatalog } from '$lib/voice-catalog';
+  import { customVoices, metadataOverrides } from '$lib/stores/app-state';
   import type { Voice } from '$lib/types';
 
   export let data: { voices: Voice[] };
+  $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
   let newCollectionName = '';
 
@@ -20,7 +23,7 @@
   }
 
   function voiceById(id: string) {
-    return data.voices.find((voice) => voice.id === id);
+    return effectiveVoices.find((voice) => voice.id === id);
   }
 
   function onAddVoice(collectionId: string, event: Event) {
@@ -74,7 +77,7 @@
               Add voice
               <select on:change={(event) => onAddVoice(collection.id, event)}>
                 <option value="">Select a voice</option>
-                {#each data.voices as voice}
+                {#each effectiveVoices as voice}
                   <option value={voice.id}>{voice.provider} · {voice.name}</option>
                 {/each}
               </select>
