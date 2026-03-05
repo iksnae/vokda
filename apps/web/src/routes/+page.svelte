@@ -128,8 +128,6 @@
     );
   });
 
-  $: runnableCount = effectiveVoices.filter((voice) => voice.variants.some((variant) => variant.runnable)).length;
-  $: providerCount = availableProviders.length;
 </script>
 
 <svelte:head>
@@ -144,20 +142,6 @@
       <div class="search-shell">
         <input bind:value={query} placeholder="Search voices..." />
       </div>
-    </div>
-    <div class="stats">
-      <article>
-        <strong>{filtered.length}</strong>
-        <span>Voices</span>
-      </article>
-      <article>
-        <strong>{providerCount}</strong>
-        <span>Providers</span>
-      </article>
-      <article>
-        <strong>{runnableCount}</strong>
-        <span>Runnable</span>
-      </article>
     </div>
   </section>
 
@@ -204,6 +188,8 @@
       <input type="checkbox" bind:checked={onlyFavorites} /> Starred
     </label>
   </section>
+
+  <p class="results">{filtered.length} results</p>
 
   <section class="grid">
     {#each filtered as voice}
@@ -316,9 +302,7 @@
       radial-gradient(circle at 12% 100%, #f5e8d1 0%, transparent 34%),
       linear-gradient(152deg, #f8fbfd 0%, #eef5f9 50%, #e8eff4 100%);
     box-shadow: var(--elev-1);
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.15rem;
+    display: block;
   }
 
   h1 {
@@ -349,29 +333,6 @@
     color: #173046;
   }
 
-  .stats {
-    display: grid;
-    gap: 0.6rem;
-  }
-
-  .stats article {
-    border: 1px solid #ccdae6;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.84);
-    padding: 0.78rem;
-    box-shadow: 0 8px 18px rgba(17, 42, 60, 0.07);
-  }
-
-  .stats strong {
-    font-size: 1.35rem;
-    display: block;
-  }
-
-  .stats span {
-    color: #4e677d;
-    font-size: 0.86rem;
-  }
-
   .filters {
     margin-top: 1.1rem;
     padding: 0.82rem;
@@ -381,6 +342,13 @@
     border: 1px solid var(--stroke-soft);
     border-radius: 18px;
     background: rgba(248, 252, 254, 0.86);
+  }
+
+  .results {
+    margin: 0.7rem 0 0;
+    color: #47657d;
+    font-size: 0.86rem;
+    font-weight: 620;
   }
 
   label {
@@ -681,10 +649,6 @@
   }
 
   @media (max-width: 980px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-
     .filters {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }

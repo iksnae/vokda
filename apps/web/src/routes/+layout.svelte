@@ -26,7 +26,6 @@
     </a>
 
     <nav>
-      <a href="/">Find</a>
       {#if $roleFlags.isGuest}
         <a href="/collections">Collections ({$collections.length})</a>
       {/if}
