@@ -49,7 +49,8 @@
           "id": "01JCVK6A3GTNAQ0EJ4BT9HZ3A1",
           "scriptKey": "briefing",
           "label": "Product Brief",
-          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters."
+          "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+          "audioUrl": "/audio/samples/01JCVK5F2Q2W5P4TQ8KT4NR1A1.mp3"
         }
       ],
       "variants": [
@@ -120,7 +121,8 @@
           "id": "01JCVK9PZ4Q1TRW7SKYH1ZNKB0",
           "scriptKey": "documentary",
           "label": "Documentary",
-          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing."
+          "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+          "audioUrl": "/audio/samples/01JCVK8Q2WQEC05YF88Q3AJ1B2.mp3"
         }
       ],
       "variants": [
@@ -191,7 +193,8 @@
           "id": "01JCVKD6EPX0S90S2NY0G0CHY2",
           "scriptKey": "support",
           "label": "Support Agent",
-          "transcript": "I can guide you through setup now, then send a summary to your team workspace."
+          "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+          "audioUrl": "/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3"
         }
       ],
       "variants": [
@@ -262,7 +265,8 @@
           "id": "01JCVKGCH0Z4D9VNHENND6MD95",
           "scriptKey": "onboarding",
           "label": "Onboarding",
-          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors."
+          "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+          "audioUrl": "/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3"
         }
       ],
       "variants": [
@@ -333,7 +337,8 @@
           "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
           "scriptKey": "status",
           "label": "Status Update",
-          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds."
+          "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+          "audioUrl": "/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3"
         }
       ],
       "variants": [
@@ -403,7 +408,8 @@
           "id": "01JCVKPA3F3YXXN34TQ0K8FTQ2",
           "scriptKey": "headline",
           "label": "Headline",
-          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments."
+          "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+          "audioUrl": "/audio/samples/01JCVKN3XGS1D8VCVBQJ6D7Y8M.mp3"
         }
       ],
       "variants": [
@@ -473,7 +479,8 @@
           "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
           "scriptKey": "story",
           "label": "Story",
-          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker."
+          "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+          "audioUrl": "/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3"
         }
       ],
       "variants": [
@@ -689,7 +696,8 @@
           "id": "01JCW012A9N9Y3W08F0Q0A1S1",
           "scriptKey": "assistant",
           "label": "Assistant Prompt",
-          "transcript": "I found three voice options that match your preferred tone and language targets."
+          "transcript": "I found three voice options that match your preferred tone and language targets.",
+          "audioUrl": "/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3"
         }
       ],
       "variants": [
@@ -760,7 +768,8 @@
           "id": "01JCW015M2Q4MFX8K2CZ9R2H2",
           "scriptKey": "launch",
           "label": "Launch Spot",
-          "transcript": "Introducing a faster way to produce multilingual voice content from a single script."
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+          "audioUrl": "/audio/samples/01JCW015M2Q4MFX8K2CZ9R2D2.mp3"
         }
       ],
       "variants": [
@@ -831,7 +840,8 @@
           "id": "01JCW018P8BMX7D34R7XJ93Y3",
           "scriptKey": "policy",
           "label": "Policy Read",
-          "transcript": "This guidance applies to all production workloads starting with the next release cycle."
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+          "audioUrl": "/audio/samples/01JCW018P8BMX7D34R7XJ93T3.mp3"
         }
       ],
       "variants": [

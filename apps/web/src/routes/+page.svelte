@@ -36,9 +36,57 @@
   let pinOpenForId = '';
   let newCollectionName = '';
 
+  /** Audio playback state */
+  let playingVoiceId = '';
+  let audioElement: HTMLAudioElement | null = null;
+
+  function togglePlay(voiceId: string, audioUrl: string | undefined) {
+    if (!audioUrl) return;
+
+    // If same voice is playing, pause it
+    if (playingVoiceId === voiceId && audioElement) {
+      audioElement.pause();
+      playingVoiceId = '';
+      return;
+    }
+
+    // Stop any current playback
+    if (audioElement) {
+      audioElement.pause();
+      audioElement = null;
+    }
+
+    audioElement = new Audio(audioUrl);
+    playingVoiceId = voiceId;
+
+    audioElement.addEventListener('ended', () => {
+      playingVoiceId = '';
+      audioElement = null;
+    });
+
+    audioElement.addEventListener('error', () => {
+      addToast('Could not play sample audio.', 'error');
+      playingVoiceId = '';
+      audioElement = null;
+    });
+
+    audioElement.play().catch(() => {
+      playingVoiceId = '';
+      audioElement = null;
+    });
+  }
+
   onMount(() => {
     if (!browser) return;
     onlyFavorites = new URLSearchParams(window.location.search).get('favorites') === '1';
+
+    // Cleanup on unmount
+    return () => {
+      if (audioElement) {
+        audioElement.pause();
+        audioElement = null;
+      }
+    };
   });
 
   const typeLabels: Record<VoiceVariant['sourceType'], string> = {
@@ -259,16 +307,20 @@
     {#each filtered as voice (voice.id)}
       {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
       {@const isFav = $favorites.includes(voice.id)}
+      {@const sampleUrl = voice.samples[0]?.audioUrl}
+      {@const isPlaying = playingVoiceId === voice.id}
       <article>
         <!-- Play button hero area -->
         <div class="play-area">
           <button
             class="play-btn"
-            aria-label="Play sample for {voice.name}"
-            title={voice.samples.length > 0 ? 'Play sample' : 'No samples available'}
-            disabled={voice.samples.length === 0}
+            class:playing={isPlaying}
+            aria-label={isPlaying ? `Pause ${voice.name}` : `Play sample for ${voice.name}`}
+            title={sampleUrl ? (isPlaying ? 'Pause' : 'Play sample') : 'No sample available'}
+            disabled={!sampleUrl}
+            on:click|stopPropagation={() => togglePlay(voice.id, sampleUrl)}
           >
-            <Icon name="play" size={22} weight="fill" />
+            <Icon name={isPlaying ? 'pause' : 'play'} size={22} weight="fill" />
           </button>
         </div>
 
@@ -581,6 +633,13 @@
     box-shadow: 0 6px 18px rgba(23, 112, 137, 0.18);
   }
 
+  .play-btn.playing {
+    border-color: var(--brand-600);
+    background: linear-gradient(180deg, #e0f2f7 0%, #d0eaf2 100%);
+    color: var(--brand-600);
+    animation: pulseRing 1.5s ease-in-out infinite;
+  }
+
   .play-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -829,5 +888,10 @@
   @keyframes popIn {
     from { opacity: 0; transform: translateY(4px) scale(0.96); }
     to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes pulseRing {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(23, 112, 137, 0.25); }
+    50% { box-shadow: 0 0 0 6px rgba(23, 112, 137, 0); }
   }
 </style>
