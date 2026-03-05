@@ -103,7 +103,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg"
+      "imageUrl": "/images/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg",
+      "audioUrl": "/audio/samples/01JCVK5F2Q2W5P4TQ8KT4NR1A1.mp3"
     },
     {
       "id": "01JCVK8Q2WQEC05YF88Q3AJ1B2",
@@ -208,7 +209,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01JCVK8Q2WQEC05YF88Q3AJ1B2.jpg"
+      "imageUrl": "/images/voices/01JCVK8Q2WQEC05YF88Q3AJ1B2.jpg",
+      "audioUrl": "/audio/samples/01JCVK8Q2WQEC05YF88Q3AJ1B2.mp3"
     },
     {
       "id": "01JCVKBX2W7R5P4SQA0WV8X7D8",
@@ -312,7 +314,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg"
+      "imageUrl": "/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
+      "audioUrl": "/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3"
     },
     {
       "id": "01JCVKN3XGS1D8VCVBQJ6D7Y8M",
@@ -415,7 +418,8 @@
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
       },
-      "imageUrl": "/images/voices/01JCVKN3XGS1D8VCVBQJ6D7Y8M.jpg"
+      "imageUrl": "/images/voices/01JCVKN3XGS1D8VCVBQJ6D7Y8M.jpg",
+      "audioUrl": "/audio/samples/01JCVKN3XGS1D8VCVBQJ6D7Y8M.mp3"
     },
     {
       "id": "01JCW012A9N9Y3W08F0Q0A1O1",
@@ -515,13 +519,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg"
+      "imageUrl": "/images/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg",
+      "audioUrl": "/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3"
     },
     {
       "id": "01JCW015M2Q4MFX8K2CZ9R2D2",
@@ -621,13 +627,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01JCW015M2Q4MFX8K2CZ9R2D2.jpg"
+      "imageUrl": "/images/voices/01JCW015M2Q4MFX8K2CZ9R2D2.jpg",
+      "audioUrl": "/audio/samples/01JCW015M2Q4MFX8K2CZ9R2D2.mp3"
     },
     {
       "id": "01JCW018P8BMX7D34R7XJ93T3",
@@ -727,13 +735,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01JCW018P8BMX7D34R7XJ93T3.jpg"
+      "imageUrl": "/images/voices/01JCW018P8BMX7D34R7XJ93T3.jpg",
+      "audioUrl": "/audio/samples/01JCW018P8BMX7D34R7XJ93T3.mp3"
     },
     {
       "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
@@ -837,7 +847,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01JCVKFCM1B6K24RH7BGN2M1A7.jpg"
+      "imageUrl": "/images/voices/01JCVKFCM1B6K24RH7BGN2M1A7.jpg",
+      "audioUrl": "/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3"
     },
     {
       "id": "01KK00XJY86YSY7K4GVZACPS1Y",
@@ -934,7 +945,8 @@
           "Emotion control via text prompt engineering"
         ]
       },
-      "imageUrl": "/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg"
+      "imageUrl": "/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
+      "audioUrl": "/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3"
     },
     {
       "id": "01KK00XMW22QSJDFXS66X6EY9H",
@@ -1032,7 +1044,8 @@
           "Slower than single-speaker models"
         ]
       },
-      "imageUrl": "/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg"
+      "imageUrl": "/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
+      "audioUrl": "/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3"
     },
     {
       "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
@@ -1135,7 +1148,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.jpg"
+      "imageUrl": "/images/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.jpg",
+      "audioUrl": "/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3"
     },
     {
       "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
@@ -1238,7 +1252,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.jpg"
+      "imageUrl": "/images/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.jpg",
+      "audioUrl": "/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3"
     },
     {
       "id": "01KJZZ79Y31KEE8NFRRWQ9FT46",
@@ -1344,7 +1359,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ79Y31KEE8NFRRWQ9FT46.jpg"
+      "imageUrl": "/images/voices/01KJZZ79Y31KEE8NFRRWQ9FT46.jpg",
+      "audioUrl": "/audio/samples/01KJZZ79Y31KEE8NFRRWQ9FT46.mp3"
     },
     {
       "id": "01KJZZ7EWGNMXEMFQD5M1ETZHR",
@@ -1450,7 +1466,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg"
+      "imageUrl": "/images/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3"
     },
     {
       "id": "01KJZZ6Z66TBKSC0RB743BVM9Z",
@@ -1556,7 +1573,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ6Z66TBKSC0RB743BVM9Z.jpg"
+      "imageUrl": "/images/voices/01KJZZ6Z66TBKSC0RB743BVM9Z.jpg",
+      "audioUrl": "/audio/samples/01KJZZ6Z66TBKSC0RB743BVM9Z.mp3"
     },
     {
       "id": "01KJZZ71X5Y9RJR09BKKPP68QD",
@@ -1662,7 +1680,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ71X5Y9RJR09BKKPP68QD.jpg"
+      "imageUrl": "/images/voices/01KJZZ71X5Y9RJR09BKKPP68QD.jpg",
+      "audioUrl": "/audio/samples/01KJZZ71X5Y9RJR09BKKPP68QD.mp3"
     },
     {
       "id": "01KJZZ7K63TGFRM5KAW9FJZA2K",
@@ -1768,7 +1787,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7K63TGFRM5KAW9FJZA2K.jpg"
+      "imageUrl": "/images/voices/01KJZZ7K63TGFRM5KAW9FJZA2K.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7K63TGFRM5KAW9FJZA2K.mp3"
     },
     {
       "id": "01KJZZ7ASD6QTGW6DG2P3ZE4G0",
@@ -1874,7 +1894,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7ASD6QTGW6DG2P3ZE4G0.jpg"
+      "imageUrl": "/images/voices/01KJZZ7ASD6QTGW6DG2P3ZE4G0.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7ASD6QTGW6DG2P3ZE4G0.mp3"
     },
     {
       "id": "01KJZZ7GJQD69PP75NYEZMK36S",
@@ -1980,7 +2001,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7GJQD69PP75NYEZMK36S.jpg"
+      "imageUrl": "/images/voices/01KJZZ7GJQD69PP75NYEZMK36S.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7GJQD69PP75NYEZMK36S.mp3"
     },
     {
       "id": "01KJZZ7BHW7YDE1PYYZA11MZGV",
@@ -2086,7 +2108,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7BHW7YDE1PYYZA11MZGV.jpg"
+      "imageUrl": "/images/voices/01KJZZ7BHW7YDE1PYYZA11MZGV.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7BHW7YDE1PYYZA11MZGV.mp3"
     },
     {
       "id": "01KJZZ7M6AGX70CRKC1V3EV4AK",
@@ -2192,7 +2215,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg"
+      "imageUrl": "/images/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3"
     },
     {
       "id": "01KJZZ7N6QKQKHGGTX4QATT0AD",
@@ -2298,7 +2322,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7N6QKQKHGGTX4QATT0AD.jpg"
+      "imageUrl": "/images/voices/01KJZZ7N6QKQKHGGTX4QATT0AD.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7N6QKQKHGGTX4QATT0AD.mp3"
     },
     {
       "id": "01KJZZ72VP70TH9JZ4FJZQ64C5",
@@ -2404,7 +2429,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ72VP70TH9JZ4FJZQ64C5.jpg"
+      "imageUrl": "/images/voices/01KJZZ72VP70TH9JZ4FJZQ64C5.jpg",
+      "audioUrl": "/audio/samples/01KJZZ72VP70TH9JZ4FJZQ64C5.mp3"
     },
     {
       "id": "01KJZZ7HEKBPP8MB02K2G4ANZ7",
@@ -2510,7 +2536,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7HEKBPP8MB02K2G4ANZ7.jpg"
+      "imageUrl": "/images/voices/01KJZZ7HEKBPP8MB02K2G4ANZ7.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7HEKBPP8MB02K2G4ANZ7.mp3"
     },
     {
       "id": "01KJZZ7318GP7HB1CBQRQJX1H8",
@@ -2616,7 +2643,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7318GP7HB1CBQRQJX1H8.jpg"
+      "imageUrl": "/images/voices/01KJZZ7318GP7HB1CBQRQJX1H8.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7318GP7HB1CBQRQJX1H8.mp3"
     },
     {
       "id": "01KJZZ73SGB3XRJ723J14M3E9D",
@@ -2722,7 +2750,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ73SGB3XRJ723J14M3E9D.jpg"
+      "imageUrl": "/images/voices/01KJZZ73SGB3XRJ723J14M3E9D.jpg",
+      "audioUrl": "/audio/samples/01KJZZ73SGB3XRJ723J14M3E9D.mp3"
     },
     {
       "id": "01KJZZ7P7DVFAQDJ9XE9V4SWH3",
@@ -2828,7 +2857,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7P7DVFAQDJ9XE9V4SWH3.jpg"
+      "imageUrl": "/images/voices/01KJZZ7P7DVFAQDJ9XE9V4SWH3.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7P7DVFAQDJ9XE9V4SWH3.mp3"
     },
     {
       "id": "01KJZZ7CC4XGF2FPBJ0B65DQD4",
@@ -2934,7 +2964,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7CC4XGF2FPBJ0B65DQD4.jpg"
+      "imageUrl": "/images/voices/01KJZZ7CC4XGF2FPBJ0B65DQD4.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7CC4XGF2FPBJ0B65DQD4.mp3"
     },
     {
       "id": "01KJZZ7J6EC11PJWASEED2A1HZ",
@@ -3040,7 +3071,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7J6EC11PJWASEED2A1HZ.jpg"
+      "imageUrl": "/images/voices/01KJZZ7J6EC11PJWASEED2A1HZ.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7J6EC11PJWASEED2A1HZ.mp3"
     },
     {
       "id": "01KJZZ7D3Q9X5BN8K5JACZNRSG",
@@ -3146,7 +3178,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7D3Q9X5BN8K5JACZNRSG.jpg"
+      "imageUrl": "/images/voices/01KJZZ7D3Q9X5BN8K5JACZNRSG.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7D3Q9X5BN8K5JACZNRSG.mp3"
     },
     {
       "id": "01KJZZ757427ZR1Z2ERJ2CACX0",
@@ -3252,7 +3285,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ757427ZR1Z2ERJ2CACX0.jpg"
+      "imageUrl": "/images/voices/01KJZZ757427ZR1Z2ERJ2CACX0.jpg",
+      "audioUrl": "/audio/samples/01KJZZ757427ZR1Z2ERJ2CACX0.mp3"
     },
     {
       "id": "01KJZZ7600RTT1JRN5FB4CB7RS",
@@ -3358,7 +3392,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7600RTT1JRN5FB4CB7RS.jpg"
+      "imageUrl": "/images/voices/01KJZZ7600RTT1JRN5FB4CB7RS.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7600RTT1JRN5FB4CB7RS.mp3"
     },
     {
       "id": "01KJZZ7DY67H1QJXFM3KXFXH64",
@@ -3464,7 +3499,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7DY67H1QJXFM3KXFXH64.jpg"
+      "imageUrl": "/images/voices/01KJZZ7DY67H1QJXFM3KXFXH64.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7DY67H1QJXFM3KXFXH64.mp3"
     },
     {
       "id": "01KJZZ76XP6W0X8C1F6N4PPXQS",
@@ -3570,7 +3606,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ76XP6W0X8C1F6N4PPXQS.jpg"
+      "imageUrl": "/images/voices/01KJZZ76XP6W0X8C1F6N4PPXQS.jpg",
+      "audioUrl": "/audio/samples/01KJZZ76XP6W0X8C1F6N4PPXQS.mp3"
     },
     {
       "id": "01KJZZ77W8VWCB4ZPJED43AJFQ",
@@ -3676,7 +3713,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ77W8VWCB4ZPJED43AJFQ.jpg"
+      "imageUrl": "/images/voices/01KJZZ77W8VWCB4ZPJED43AJFQ.jpg",
+      "audioUrl": "/audio/samples/01KJZZ77W8VWCB4ZPJED43AJFQ.mp3"
     },
     {
       "id": "01KJZZ78XR84GJ4TQF7XJX5MA9",
@@ -3782,7 +3820,8 @@
           "Long texts may have prosody drift"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ78XR84GJ4TQF7XJX5MA9.jpg"
+      "imageUrl": "/images/voices/01KJZZ78XR84GJ4TQF7XJX5MA9.jpg",
+      "audioUrl": "/audio/samples/01KJZZ78XR84GJ4TQF7XJX5MA9.mp3"
     },
     {
       "id": "01KK00Y0G4PNGS13DQWVDQQAZ4",
@@ -3886,7 +3925,8 @@
           "Attribution required under CC-BY-4.0"
         ]
       },
-      "imageUrl": "/images/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg"
+      "imageUrl": "/images/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg",
+      "audioUrl": "/audio/samples/01KK00Y0G4PNGS13DQWVDQQAZ4.mp3"
     },
     {
       "id": "01KK00Y63ESEW8T9B9RSNQPQKN",
@@ -3982,7 +4022,8 @@
           "Optimized for short utterances"
         ]
       },
-      "imageUrl": "/images/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg"
+      "imageUrl": "/images/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg",
+      "audioUrl": "/audio/samples/01KK00Y63ESEW8T9B9RSNQPQKN.mp3"
     },
     {
       "id": "01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
@@ -4092,7 +4133,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.jpg"
+      "imageUrl": "/images/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.mp3"
     },
     {
       "id": "01KJZZ83BZ0GSX5CWQ5XYHFQ34",
@@ -4202,7 +4244,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ83BZ0GSX5CWQ5XYHFQ34.jpg"
+      "imageUrl": "/images/voices/01KJZZ83BZ0GSX5CWQ5XYHFQ34.jpg",
+      "audioUrl": "/audio/samples/01KJZZ83BZ0GSX5CWQ5XYHFQ34.mp3"
     },
     {
       "id": "01KJZZ81B38XZ77ZVVGSFHFW2T",
@@ -4312,7 +4355,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.jpg"
+      "imageUrl": "/images/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.jpg",
+      "audioUrl": "/audio/samples/01KJZZ81B38XZ77ZVVGSFHFW2T.mp3"
     },
     {
       "id": "01KK00Y948644NCCVZQNJMTAGA",
@@ -4421,7 +4465,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KK00Y948644NCCVZQNJMTAGA.jpg"
+      "imageUrl": "/images/voices/01KK00Y948644NCCVZQNJMTAGA.jpg",
+      "audioUrl": "/audio/samples/01KK00Y948644NCCVZQNJMTAGA.mp3"
     },
     {
       "id": "01KJZZ7WTF8ARDXF44ZBNJ69CS",
@@ -4531,7 +4576,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7WTF8ARDXF44ZBNJ69CS.jpg"
+      "imageUrl": "/images/voices/01KJZZ7WTF8ARDXF44ZBNJ69CS.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7WTF8ARDXF44ZBNJ69CS.mp3"
     },
     {
       "id": "01KJZZ7RNCYE5KD8ME0PJH5C6S",
@@ -4641,7 +4687,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7RNCYE5KD8ME0PJH5C6S.jpg"
+      "imageUrl": "/images/voices/01KJZZ7RNCYE5KD8ME0PJH5C6S.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7RNCYE5KD8ME0PJH5C6S.mp3"
     },
     {
       "id": "01KJZZ7TP08N5E57EX3C7D008E",
@@ -4751,7 +4798,8 @@
           "Tokenizer regex warning (cosmetic, does not affect output)"
         ]
       },
-      "imageUrl": "/images/voices/01KJZZ7TP08N5E57EX3C7D008E.jpg"
+      "imageUrl": "/images/voices/01KJZZ7TP08N5E57EX3C7D008E.jpg",
+      "audioUrl": "/audio/samples/01KJZZ7TP08N5E57EX3C7D008E.mp3"
     },
     {
       "id": "01KK00XHDBK8CFFY3MFNWSGQR9",
@@ -4847,7 +4895,8 @@
           "Ultra-light model trades some naturalness for speed"
         ]
       },
-      "imageUrl": "/images/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg"
+      "imageUrl": "/images/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg",
+      "audioUrl": "/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3"
     },
     {
       "id": "01KK00Y7AN1W3DS5EBESXQV7XZ",
@@ -4950,7 +4999,8 @@
           "Chinese and English only"
         ]
       },
-      "imageUrl": "/images/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg"
+      "imageUrl": "/images/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg",
+      "audioUrl": "/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3"
     },
     {
       "id": "01KK00YB9ZA3BS7SRXRYGQ51J8",
@@ -5050,7 +5100,8 @@
           "May have Chinese-accented English prosody"
         ]
       },
-      "imageUrl": "/images/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg"
+      "imageUrl": "/images/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg",
+      "audioUrl": "/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3"
     },
     {
       "id": "01KJZXZNF9GMQCNCRCPCQMDKN5",
@@ -5141,7 +5192,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF9GMQCNCRCPCQMDKN5.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9GMQCNCRCPCQMDKN5.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9GMQCNCRCPCQMDKN5.mp3"
     },
     {
       "id": "01KJZXZNF8YDF94X1ZD259GAH9",
@@ -5232,7 +5284,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8YDF94X1ZD259GAH9.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8YDF94X1ZD259GAH9.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8YDF94X1ZD259GAH9.mp3"
     },
     {
       "id": "01KJZXZNF8A597MZ2DB19PZYF0",
@@ -5323,7 +5376,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8A597MZ2DB19PZYF0.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8A597MZ2DB19PZYF0.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8A597MZ2DB19PZYF0.mp3"
     },
     {
       "id": "01KJZXZNF9M3CARW4PV123544M",
@@ -5414,7 +5468,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF9M3CARW4PV123544M.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9M3CARW4PV123544M.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9M3CARW4PV123544M.mp3"
     },
     {
       "id": "01KJZXZNF8G64PM7FT6X435GS2",
@@ -5505,7 +5560,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8G64PM7FT6X435GS2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8G64PM7FT6X435GS2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8G64PM7FT6X435GS2.mp3"
     },
     {
       "id": "01KJZXZNF8H2R6N84JG6QH2DGQ",
@@ -5596,7 +5652,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8H2R6N84JG6QH2DGQ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8H2R6N84JG6QH2DGQ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8H2R6N84JG6QH2DGQ.mp3"
     },
     {
       "id": "01KJZXZNF8GC5R5F85AH79BN6E",
@@ -5687,7 +5744,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8GC5R5F85AH79BN6E.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8GC5R5F85AH79BN6E.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8GC5R5F85AH79BN6E.mp3"
     },
     {
       "id": "01KJZXZNF8A8TVPQ1FMA1DEWTA",
@@ -5778,7 +5836,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8A8TVPQ1FMA1DEWTA.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8A8TVPQ1FMA1DEWTA.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8A8TVPQ1FMA1DEWTA.mp3"
     },
     {
       "id": "01KJZXZNF9GSJ6N0FDZ2A5TF79",
@@ -5869,7 +5928,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF9GSJ6N0FDZ2A5TF79.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9GSJ6N0FDZ2A5TF79.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9GSJ6N0FDZ2A5TF79.mp3"
     },
     {
       "id": "01KJZXZNF8FEW0ZDB7XJMR1DW2",
@@ -5960,7 +6020,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8FEW0ZDB7XJMR1DW2.mp3"
     },
     {
       "id": "01KJZXZNF80DN2NNTNCBVV7E29",
@@ -6051,7 +6112,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF80DN2NNTNCBVV7E29.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF80DN2NNTNCBVV7E29.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF80DN2NNTNCBVV7E29.mp3"
     },
     {
       "id": "01KJZXZNF93TEMNVP6WRH0YXTF",
@@ -6142,7 +6204,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3"
     },
     {
       "id": "01KJZXZNF95RPDQPH7Z4HYAEY4",
@@ -6233,7 +6296,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF95RPDQPH7Z4HYAEY4.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF95RPDQPH7Z4HYAEY4.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF95RPDQPH7Z4HYAEY4.mp3"
     },
     {
       "id": "01KJZXZNF8QEPPF280SQ8HKH2F",
@@ -6324,7 +6388,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8QEPPF280SQ8HKH2F.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8QEPPF280SQ8HKH2F.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8QEPPF280SQ8HKH2F.mp3"
     },
     {
       "id": "01KJZXZNF8D3T3FZ0SGSNGHWZR",
@@ -6415,7 +6480,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF8D3T3FZ0SGSNGHWZR.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF8D3T3FZ0SGSNGHWZR.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF8D3T3FZ0SGSNGHWZR.mp3"
     },
     {
       "id": "01KJZXZNF91FPRR7WV3SCZ2N87",
@@ -6506,7 +6572,8 @@
         ],
         "modelVersion": "Neural engine"
       },
-      "imageUrl": "/images/voices/01KJZXZNF91FPRR7WV3SCZ2N87.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF91FPRR7WV3SCZ2N87.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF91FPRR7WV3SCZ2N87.mp3"
     },
     {
       "id": "01KJZXZNF9ECDXYTKA2ET2BXZ8",
@@ -6596,7 +6663,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF9ECDXYTKA2ET2BXZ8.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9ECDXYTKA2ET2BXZ8.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9ECDXYTKA2ET2BXZ8.mp3"
     },
     {
       "id": "01KJZXZNF97Q0SQW2C3V0KBB32",
@@ -6686,7 +6754,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3"
     },
     {
       "id": "01KJZXZNF9R0PRPGK145K1TJYD",
@@ -6776,7 +6845,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF9R0PRPGK145K1TJYD.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9R0PRPGK145K1TJYD.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9R0PRPGK145K1TJYD.mp3"
     },
     {
       "id": "01KJZXZNF9RKZRK35M1MS5K5V7",
@@ -6872,7 +6942,8 @@
           "sad"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF9RKZRK35M1MS5K5V7.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9RKZRK35M1MS5K5V7.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9RKZRK35M1MS5K5V7.mp3"
     },
     {
       "id": "01KJZXZNF942C62SAR07KM4HBJ",
@@ -6962,7 +7033,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF942C62SAR07KM4HBJ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF942C62SAR07KM4HBJ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3"
     },
     {
       "id": "01KJZXZNF9A5PAVAYS7JHCSEPE",
@@ -7052,7 +7124,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3"
     },
     {
       "id": "01KJZXZNF9S4B0CP2R2XNT784G",
@@ -7150,7 +7223,8 @@
           "empathetic"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3"
     },
     {
       "id": "01KJZXZNF90JA6E710DW5PM66C",
@@ -7240,7 +7314,8 @@
           "Multilingual voices may have accent blending artifacts"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNF90JA6E710DW5PM66C.jpg"
+      "imageUrl": "/images/voices/01KJZXZNF90JA6E710DW5PM66C.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNF90JA6E710DW5PM66C.mp3"
     },
     {
       "id": "01KJZXZNFAV2Y7XZ3JG7G982Z1",
@@ -7336,7 +7411,8 @@
           "relieved"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFAV2Y7XZ3JG7G982Z1.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFAV2Y7XZ3JG7G982Z1.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFAV2Y7XZ3JG7G982Z1.mp3"
     },
     {
       "id": "01KJZXZNFA7B3J992MRVJ0047M",
@@ -7447,7 +7523,8 @@
           "hopeful"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFA7B3J992MRVJ0047M.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFA7B3J992MRVJ0047M.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFA7B3J992MRVJ0047M.mp3"
     },
     {
       "id": "01KJZXZNFAJCPVEVX09YXAPZG1",
@@ -7545,7 +7622,8 @@
           "sad"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFAJCPVEVX09YXAPZG1.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFAJCPVEVX09YXAPZG1.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFAJCPVEVX09YXAPZG1.mp3"
     },
     {
       "id": "01KJZXZNFAC16W91Z7RTZN0HAC",
@@ -7651,7 +7729,8 @@
           "whispering"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFAC16W91Z7RTZN0HAC.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFAC16W91Z7RTZN0HAC.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFAC16W91Z7RTZN0HAC.mp3"
     },
     {
       "id": "01KJZXZNFA4GVJRMZDC9NR1CFZ",
@@ -7757,7 +7836,8 @@
           "hopeful"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFA4GVJRMZDC9NR1CFZ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFA4GVJRMZDC9NR1CFZ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFA4GVJRMZDC9NR1CFZ.mp3"
     },
     {
       "id": "01KJZXZNFBHJ2VVTWXYFTA1A1H",
@@ -7862,7 +7942,8 @@
           "whispering"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3"
     },
     {
       "id": "01KJZXZNFB84AHZJCZH2Z81KGX",
@@ -7956,7 +8037,8 @@
           "conversation"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFB84AHZJCZH2Z81KGX.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB84AHZJCZH2Z81KGX.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB84AHZJCZH2Z81KGX.mp3"
     },
     {
       "id": "01KJZXZNFBTVKC1B27CDNKSXTC",
@@ -8050,7 +8132,8 @@
           "conversation"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3"
     },
     {
       "id": "01KJZXZNFBAS28DT522DBEVS2B",
@@ -8155,7 +8238,8 @@
           "whispering"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFBAS28DT522DBEVS2B.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBAS28DT522DBEVS2B.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBAS28DT522DBEVS2B.mp3"
     },
     {
       "id": "01KJZXZNFAPYRE2PN05TQ2ZTRN",
@@ -8253,7 +8337,8 @@
           "serious"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFAPYRE2PN05TQ2ZTRN.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFAPYRE2PN05TQ2ZTRN.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFAPYRE2PN05TQ2ZTRN.mp3"
     },
     {
       "id": "01KJZXZNFBSSS2QKG6ZJRN5ZJ1",
@@ -8358,7 +8443,8 @@
           "whispering"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFBSSS2QKG6ZJRN5ZJ1.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBSSS2QKG6ZJRN5ZJ1.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBSSS2QKG6ZJRN5ZJ1.mp3"
     },
     {
       "id": "01KJZXZNFBDSC0T42KC1E0A4H2",
@@ -8463,7 +8549,8 @@
           "whispering"
         ]
       },
-      "imageUrl": "/images/voices/01KJZXZNFBDSC0T42KC1E0A4H2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBDSC0T42KC1E0A4H2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBDSC0T42KC1E0A4H2.mp3"
     },
     {
       "id": "01KJZXZNFBEFG9HT43MNFFFQJS",
@@ -8559,7 +8646,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3"
     },
     {
       "id": "01KJZXZNFB4QPGJ1C72VAPSYCQ",
@@ -8655,7 +8743,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB4QPGJ1C72VAPSYCQ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB4QPGJ1C72VAPSYCQ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB4QPGJ1C72VAPSYCQ.mp3"
     },
     {
       "id": "01KJZXZNFBV8MZS77X7XT6ZR22",
@@ -8751,7 +8840,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBV8MZS77X7XT6ZR22.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBV8MZS77X7XT6ZR22.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBV8MZS77X7XT6ZR22.mp3"
     },
     {
       "id": "01KJZXZNFBSRT4BRCQPHEM2H7Y",
@@ -8847,7 +8937,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBSRT4BRCQPHEM2H7Y.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBSRT4BRCQPHEM2H7Y.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBSRT4BRCQPHEM2H7Y.mp3"
     },
     {
       "id": "01KJZXZNFBJ3A4W1EZP08JTWWV",
@@ -8943,7 +9034,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBJ3A4W1EZP08JTWWV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBJ3A4W1EZP08JTWWV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBJ3A4W1EZP08JTWWV.mp3"
     },
     {
       "id": "01KJZXZNFB0JWWNE5JMC1PRZCZ",
@@ -9039,7 +9131,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB0JWWNE5JMC1PRZCZ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB0JWWNE5JMC1PRZCZ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB0JWWNE5JMC1PRZCZ.mp3"
     },
     {
       "id": "01KJZXZNFBAGSHKAVPHHTFVHFV",
@@ -9135,7 +9228,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBAGSHKAVPHHTFVHFV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBAGSHKAVPHHTFVHFV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBAGSHKAVPHHTFVHFV.mp3"
     },
     {
       "id": "01KJZXZNFB1059EQEGH1GNQ405",
@@ -9231,7 +9325,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB1059EQEGH1GNQ405.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB1059EQEGH1GNQ405.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB1059EQEGH1GNQ405.mp3"
     },
     {
       "id": "01KJZXZNFB0G8QFE9XW7Q5V6GV",
@@ -9327,7 +9422,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB0G8QFE9XW7Q5V6GV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB0G8QFE9XW7Q5V6GV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB0G8QFE9XW7Q5V6GV.mp3"
     },
     {
       "id": "01KJZXZNFB8PQD14M05ANYJQ8X",
@@ -9423,7 +9519,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB8PQD14M05ANYJQ8X.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB8PQD14M05ANYJQ8X.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB8PQD14M05ANYJQ8X.mp3"
     },
     {
       "id": "01KJZXZNFBXRF291002CKM1GVH",
@@ -9519,7 +9616,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBXRF291002CKM1GVH.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBXRF291002CKM1GVH.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBXRF291002CKM1GVH.mp3"
     },
     {
       "id": "01KJZXZNFBD0XMW9VV92RF3FCQ",
@@ -9615,7 +9713,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBD0XMW9VV92RF3FCQ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBD0XMW9VV92RF3FCQ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBD0XMW9VV92RF3FCQ.mp3"
     },
     {
       "id": "01KJZXZNFB4GC6PKE1XBTHDHV2",
@@ -9711,7 +9810,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB4GC6PKE1XBTHDHV2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB4GC6PKE1XBTHDHV2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB4GC6PKE1XBTHDHV2.mp3"
     },
     {
       "id": "01KJZXZNFBNVNYE7EPTWQ91234",
@@ -9807,7 +9907,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBNVNYE7EPTWQ91234.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBNVNYE7EPTWQ91234.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBNVNYE7EPTWQ91234.mp3"
     },
     {
       "id": "01KJZXZNFBFVKZXVAESYST9MN8",
@@ -9903,7 +10004,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBFVKZXVAESYST9MN8.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBFVKZXVAESYST9MN8.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBFVKZXVAESYST9MN8.mp3"
     },
     {
       "id": "01KJZXZNFBE2TSPHZMX9HJWNJ8",
@@ -9999,7 +10101,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBE2TSPHZMX9HJWNJ8.mp3"
     },
     {
       "id": "01KJZXZNFBWGP2JRDG96A0PRPR",
@@ -10095,7 +10198,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBWGP2JRDG96A0PRPR.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBWGP2JRDG96A0PRPR.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBWGP2JRDG96A0PRPR.mp3"
     },
     {
       "id": "01KJZXZNFB2A0K2H42TN16QYYN",
@@ -10191,7 +10295,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB2A0K2H42TN16QYYN.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB2A0K2H42TN16QYYN.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB2A0K2H42TN16QYYN.mp3"
     },
     {
       "id": "01KJZXZNFB5KMFRQD8H7QGJYPM",
@@ -10287,7 +10392,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFB5KMFRQD8H7QGJYPM.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB5KMFRQD8H7QGJYPM.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB5KMFRQD8H7QGJYPM.mp3"
     },
     {
       "id": "01KJZXZNFBP9HJ33H9G4A0DXJD",
@@ -10383,7 +10489,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBP9HJ33H9G4A0DXJD.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBP9HJ33H9G4A0DXJD.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBP9HJ33H9G4A0DXJD.mp3"
     },
     {
       "id": "01KJZXZNFBYE7S23S1AVV8NWTV",
@@ -10479,7 +10586,8 @@
         ],
         "modelName": "eleven_multilingual_v2"
       },
-      "imageUrl": "/images/voices/01KJZXZNFBYE7S23S1AVV8NWTV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBYE7S23S1AVV8NWTV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBYE7S23S1AVV8NWTV.mp3"
     },
     {
       "id": "01KJZXZNFCHEK2DM62KSZ49N98",
@@ -10568,7 +10676,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCHEK2DM62KSZ49N98.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCHEK2DM62KSZ49N98.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCHEK2DM62KSZ49N98.mp3"
     },
     {
       "id": "01KJZXZNFCD5VK95AYA7AHMMQ7",
@@ -10657,7 +10766,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCD5VK95AYA7AHMMQ7.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCD5VK95AYA7AHMMQ7.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCD5VK95AYA7AHMMQ7.mp3"
     },
     {
       "id": "01KJZXZNFCHEKZZ856PXXEAGD0",
@@ -10746,7 +10856,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCHEKZZ856PXXEAGD0.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCHEKZZ856PXXEAGD0.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCHEKZZ856PXXEAGD0.mp3"
     },
     {
       "id": "01KJZXZNFCZSH1481YXC3JVGJM",
@@ -10835,7 +10946,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCZSH1481YXC3JVGJM.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCZSH1481YXC3JVGJM.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCZSH1481YXC3JVGJM.mp3"
     },
     {
       "id": "01KJZXZNFC8BZ05DNRHYPQ00XY",
@@ -10924,7 +11036,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC8BZ05DNRHYPQ00XY.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC8BZ05DNRHYPQ00XY.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC8BZ05DNRHYPQ00XY.mp3"
     },
     {
       "id": "01KJZXZNFC5SMR4AQZ23DYWKPR",
@@ -11013,7 +11126,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC5SMR4AQZ23DYWKPR.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC5SMR4AQZ23DYWKPR.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC5SMR4AQZ23DYWKPR.mp3"
     },
     {
       "id": "01KJZXZNFCV9FV48QGXS3GRVKA",
@@ -11102,7 +11216,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCV9FV48QGXS3GRVKA.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCV9FV48QGXS3GRVKA.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCV9FV48QGXS3GRVKA.mp3"
     },
     {
       "id": "01KJZXZNFC2HSWZ2EM0YJ0JNM0",
@@ -11191,7 +11306,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC2HSWZ2EM0YJ0JNM0.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC2HSWZ2EM0YJ0JNM0.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC2HSWZ2EM0YJ0JNM0.mp3"
     },
     {
       "id": "01KJZXZNFCPS1FC9NAVW3H1G01",
@@ -11280,7 +11396,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCPS1FC9NAVW3H1G01.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCPS1FC9NAVW3H1G01.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCPS1FC9NAVW3H1G01.mp3"
     },
     {
       "id": "01KJZXZNFCJA2T3RT1M7QWVNR3",
@@ -11369,7 +11486,8 @@
         ],
         "architecture": "Journey (conversational, long-form)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCJA2T3RT1M7QWVNR3.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCJA2T3RT1M7QWVNR3.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCJA2T3RT1M7QWVNR3.mp3"
     },
     {
       "id": "01KJZXZNFCXR4D5GSH5AQ5YV3A",
@@ -11458,7 +11576,8 @@
         ],
         "architecture": "Journey (conversational, long-form)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCXR4D5GSH5AQ5YV3A.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCXR4D5GSH5AQ5YV3A.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCXR4D5GSH5AQ5YV3A.mp3"
     },
     {
       "id": "01KJZXZNFCC55SAFJW5AGTN0FP",
@@ -11547,7 +11666,8 @@
         ],
         "architecture": "Journey (conversational, long-form)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCC55SAFJW5AGTN0FP.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCC55SAFJW5AGTN0FP.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCC55SAFJW5AGTN0FP.mp3"
     },
     {
       "id": "01KJZXZNFCEZVMEFX79W0S6HP2",
@@ -11636,7 +11756,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCEZVMEFX79W0S6HP2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCEZVMEFX79W0S6HP2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCEZVMEFX79W0S6HP2.mp3"
     },
     {
       "id": "01KJZXZNFC0480G12GE3Y7HR1J",
@@ -11725,7 +11846,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC0480G12GE3Y7HR1J.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC0480G12GE3Y7HR1J.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC0480G12GE3Y7HR1J.mp3"
     },
     {
       "id": "01KJZXZNFCJAQ4JTGW9YT9M5T4",
@@ -11814,7 +11936,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCJAQ4JTGW9YT9M5T4.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCJAQ4JTGW9YT9M5T4.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCJAQ4JTGW9YT9M5T4.mp3"
     },
     {
       "id": "01KJZXZNFC2JM7PVNM7DC0NJ5E",
@@ -11903,7 +12026,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC2JM7PVNM7DC0NJ5E.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC2JM7PVNM7DC0NJ5E.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC2JM7PVNM7DC0NJ5E.mp3"
     },
     {
       "id": "01KJZXZNFCACR3BRQVZNDC0WT3",
@@ -11992,7 +12116,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCACR3BRQVZNDC0WT3.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCACR3BRQVZNDC0WT3.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCACR3BRQVZNDC0WT3.mp3"
     },
     {
       "id": "01KJZXZNFC6052ZH0C9Q9R9X3M",
@@ -12081,7 +12206,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3"
     },
     {
       "id": "01KJZXZNFCPSW9T6W65GFYDZQJ",
@@ -12170,7 +12296,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3"
     },
     {
       "id": "01KJZXZNFCVGYVQZ8NQT1Y9K17",
@@ -12259,7 +12386,8 @@
         ],
         "architecture": "Neural2 (2nd generation neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCVGYVQZ8NQT1Y9K17.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCVGYVQZ8NQT1Y9K17.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCVGYVQZ8NQT1Y9K17.mp3"
     },
     {
       "id": "01KJZXZNFCZEHX3AXMG8JGQ31B",
@@ -12348,7 +12476,8 @@
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCZEHX3AXMG8JGQ31B.mp3"
     },
     {
       "id": "01KJZXZNFCTR8HR2XDPYKCZD82",
@@ -12437,7 +12566,8 @@
         ],
         "architecture": "News (broadcast-optimized neural TTS)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCTR8HR2XDPYKCZD82.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCTR8HR2XDPYKCZD82.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCTR8HR2XDPYKCZD82.mp3"
     },
     {
       "id": "01KJZXZNFCWGX8RDR6KP96H759",
@@ -12526,7 +12656,8 @@
         ],
         "architecture": "Studio (highest quality, limited voices)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCWGX8RDR6KP96H759.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCWGX8RDR6KP96H759.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCWGX8RDR6KP96H759.mp3"
     },
     {
       "id": "01KJZXZNFC2VHXRJ04WKK32M7G",
@@ -12615,7 +12746,8 @@
         ],
         "architecture": "Studio (highest quality, limited voices)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFC2VHXRJ04WKK32M7G.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFC2VHXRJ04WKK32M7G.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFC2VHXRJ04WKK32M7G.mp3"
     },
     {
       "id": "01KJZXZNFCMC5APRH3MPXJW4N2",
@@ -12704,7 +12836,8 @@
         ],
         "architecture": "Studio (highest quality, limited voices)"
       },
-      "imageUrl": "/images/voices/01KJZXZNFCMC5APRH3MPXJW4N2.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFCMC5APRH3MPXJW4N2.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFCMC5APRH3MPXJW4N2.mp3"
     },
     {
       "id": "01KJZXZNFBE49RT8TB3R1ZGQCV",
@@ -12790,13 +12923,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3"
     },
     {
       "id": "01KJZXZNFBFJ8Q5N7JGZ4RDJCV",
@@ -12804,10 +12939,11 @@
       "provider": "OpenAI",
       "providerId": "openai",
       "providerVoiceId": "ballad",
-      "description": "Soft, gentle, soothing. OpenAI TTS voice.",
+      "description": "Soft, gentle, soothing. Requires gpt-4o-mini-tts model (not available on tts-1 or tts-1-hd).",
       "tags": [
         "male",
-        "us"
+        "us",
+        "gpt-4o-mini-tts"
       ],
       "languages": [
         "en-US"
@@ -12815,8 +12951,8 @@
       "qualityTier": "premium",
       "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
       "metadata": {
-        "shortLabel": "en-US male voice",
-        "searchDescription": "Soft, gentle, soothing. OpenAI TTS voice.",
+        "shortLabel": "en-US male · gpt-4o-mini-tts only",
+        "searchDescription": "Soft gentle soothing OpenAI ballad voice gpt-4o-mini-tts only",
         "machineTags": [
           "male",
           "us"
@@ -12842,7 +12978,7 @@
         {
           "id": "01KJZXZNFB2ADMP8WQVEKR1WZY",
           "sourceType": "cloud_provider",
-          "sourceKey": "openai:tts:ballad",
+          "sourceKey": "openai:gpt-4o-mini-tts:ballad",
           "runnable": true,
           "supportsSsml": false,
           "outputFormats": [
@@ -12860,7 +12996,7 @@
         "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
         "apiEndpoint": "api.openai.com/v1/audio/speech",
         "modelFamily": "OpenAI TTS",
-        "architecture": "Proprietary neural TTS",
+        "architecture": "GPT-4o Mini TTS (proprietary neural)",
         "sampleRate": 24000,
         "bitDepth": 16,
         "channels": 1,
@@ -12877,17 +13013,21 @@
         "attributionRequired": false,
         "dataRetention": "Subject to OpenAI data usage policy",
         "latencyMs": "~300-800",
-        "releaseDate": "2023-11-06",
+        "releaseDate": "2025-03-20",
         "knownLimitations": [
+          "Not available on tts-1 or tts-1-hd models",
+          "Requires gpt-4o-mini-tts model",
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
-        "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelName": "gpt-4o-mini-tts",
+        "modelVersion": "gpt-4o-mini-tts",
+        "modelId": "gpt-4o-mini-tts",
+        "notes": "This voice is only available via the gpt-4o-mini-tts model. It is NOT supported by tts-1 or tts-1-hd. Use model=\"gpt-4o-mini-tts\" in API calls."
       },
-      "imageUrl": "/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3"
     },
     {
       "id": "01KJZXZNFB1V76ABZJAM47W53Z",
@@ -12973,13 +13113,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFB1V76ABZJAM47W53Z.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB1V76ABZJAM47W53Z.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB1V76ABZJAM47W53Z.mp3"
     },
     {
       "id": "01KJZXZNFB4810HWZB27HNMGSV",
@@ -13065,13 +13207,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFB4810HWZB27HNMGSV.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB4810HWZB27HNMGSV.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB4810HWZB27HNMGSV.mp3"
     },
     {
       "id": "01KJZXZNFB1EW4TQ1MMKF9KMTJ",
@@ -13157,13 +13301,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3"
     },
     {
       "id": "01KJZXZNFBERFNHYE9EF0K5BVN",
@@ -13249,13 +13395,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFBERFNHYE9EF0K5BVN.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBERFNHYE9EF0K5BVN.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBERFNHYE9EF0K5BVN.mp3"
     },
     {
       "id": "01KJZXZNFB0C9HXSRQX3TB32QZ",
@@ -13341,13 +13489,15 @@
         "knownLimitations": [
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
         "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelVersion": "tts-1",
+        "modelId": "tts-1",
+        "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
       },
-      "imageUrl": "/images/voices/01KJZXZNFB0C9HXSRQX3TB32QZ.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFB0C9HXSRQX3TB32QZ.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFB0C9HXSRQX3TB32QZ.mp3"
     },
     {
       "id": "01KJZXZNFBQRWDJ3N3NY6Y3J9R",
@@ -13355,10 +13505,11 @@
       "provider": "OpenAI",
       "providerId": "openai",
       "providerVoiceId": "verse",
-      "description": "Versatile, adaptive, dynamic. OpenAI TTS voice.",
+      "description": "Versatile, adaptive, dynamic. Requires gpt-4o-mini-tts model (not available on tts-1 or tts-1-hd).",
       "tags": [
         "male",
-        "us"
+        "us",
+        "gpt-4o-mini-tts"
       ],
       "languages": [
         "en-US"
@@ -13366,8 +13517,8 @@
       "qualityTier": "premium",
       "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
       "metadata": {
-        "shortLabel": "en-US male voice",
-        "searchDescription": "Versatile, adaptive, dynamic. OpenAI TTS voice.",
+        "shortLabel": "en-US male · gpt-4o-mini-tts only",
+        "searchDescription": "Versatile adaptive dynamic OpenAI verse voice gpt-4o-mini-tts only",
         "machineTags": [
           "male",
           "us"
@@ -13393,7 +13544,7 @@
         {
           "id": "01KJZXZNFBMH2Q9ECAR06EZQM5",
           "sourceType": "cloud_provider",
-          "sourceKey": "openai:tts:verse",
+          "sourceKey": "openai:gpt-4o-mini-tts:verse",
           "runnable": true,
           "supportsSsml": false,
           "outputFormats": [
@@ -13411,7 +13562,7 @@
         "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
         "apiEndpoint": "api.openai.com/v1/audio/speech",
         "modelFamily": "OpenAI TTS",
-        "architecture": "Proprietary neural TTS",
+        "architecture": "GPT-4o Mini TTS (proprietary neural)",
         "sampleRate": 24000,
         "bitDepth": 16,
         "channels": 1,
@@ -13428,17 +13579,21 @@
         "attributionRequired": false,
         "dataRetention": "Subject to OpenAI data usage policy",
         "latencyMs": "~300-800",
-        "releaseDate": "2023-11-06",
+        "releaseDate": "2025-03-20",
         "knownLimitations": [
+          "Not available on tts-1 or tts-1-hd models",
+          "Requires gpt-4o-mini-tts model",
           "No SSML support",
           "No word-level timestamps",
-          "Voice selection is limited to preset voices",
-          "ballad and verse voices not available on tts-1 model"
+          "Voice selection is limited to preset voices"
         ],
-        "modelName": "tts-1",
-        "modelVersion": "tts-1"
+        "modelName": "gpt-4o-mini-tts",
+        "modelVersion": "gpt-4o-mini-tts",
+        "modelId": "gpt-4o-mini-tts",
+        "notes": "This voice is only available via the gpt-4o-mini-tts model. It is NOT supported by tts-1 or tts-1-hd. Use model=\"gpt-4o-mini-tts\" in API calls."
       },
-      "imageUrl": "/images/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg"
+      "imageUrl": "/images/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg",
+      "audioUrl": "/audio/samples/01KJZXZNFBQRWDJ3N3NY6Y3J9R.mp3"
     }
   ]
 }
