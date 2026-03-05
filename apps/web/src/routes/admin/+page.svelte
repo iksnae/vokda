@@ -1,5 +1,7 @@
 <script lang="ts">
   import { roleFlags, getAuthSnapshot, refreshAuthRoles } from '$lib/auth/store';
+  import { addProvider, providerCatalog } from '$lib/stores/app-state';
+  import type { ProviderDefinition } from '$lib/types';
 
   type ManagedRole = 'guest' | 'curator' | 'admin';
 
@@ -22,6 +24,10 @@
   } | null = null;
 
   let selectedRole: ManagedRole = 'guest';
+  let providerName = '';
+  let providerId = '';
+  let providerType: ProviderDefinition['type'] = 'cloud_provider';
+  let providerWebsite = '';
 
   async function apiRequest(path: string, init: RequestInit) {
     const token = getAuthSnapshot().accessToken || getAuthSnapshot().idToken;
@@ -121,6 +127,31 @@
       loading = false;
     }
   }
+
+  function createProvider() {
+    if (!providerName.trim()) {
+      status = 'Provider name is required.';
+      return;
+    }
+
+    const created = addProvider({
+      id: providerId.trim() || undefined,
+      name: providerName.trim(),
+      type: providerType,
+      websiteUrl: providerWebsite.trim() || undefined
+    });
+
+    status = created
+      ? `Provider "${providerName.trim()}" added to curation catalog.`
+      : 'Provider could not be added. Check admin role or duplicate provider ID.';
+
+    if (created) {
+      providerName = '';
+      providerId = '';
+      providerWebsite = '';
+      providerType = 'cloud_provider';
+    }
+  }
 </script>
 
 <svelte:head>
@@ -170,6 +201,48 @@
       {#if status}
         <p class="status">{status}</p>
       {/if}
+    </section>
+
+    <section class="panel">
+      <h2>Provider Catalog</h2>
+      <p>Manage predefined providers used by the curation picker.</p>
+
+      <div class="controls">
+        <label>
+          Provider name
+          <input bind:value={providerName} placeholder="Acme Voices" />
+        </label>
+        <label>
+          Provider ID (optional)
+          <input bind:value={providerId} placeholder="acme-voices" />
+        </label>
+        <label>
+          Provider type
+          <select bind:value={providerType}>
+            <option value="cloud_provider">cloud_provider</option>
+            <option value="open_model">open_model</option>
+            <option value="self_hosted">self_hosted</option>
+            <option value="other">other</option>
+          </select>
+        </label>
+        <label>
+          Website URL (optional)
+          <input bind:value={providerWebsite} placeholder="https://example.com" />
+        </label>
+        <button on:click={createProvider}>Add Provider</button>
+      </div>
+
+      <div class="summary">
+        <p><strong>Available providers:</strong> {$providerCatalog.length}</p>
+        {#each $providerCatalog as provider}
+          <p>
+            <strong>{provider.name}</strong> ({provider.id}) · {provider.type}
+            {#if provider.websiteUrl}
+              · <a href={provider.websiteUrl} target="_blank" rel="noreferrer">{provider.websiteUrl}</a>
+            {/if}
+          </p>
+        {/each}
+      </div>
     </section>
   {/if}
 </main>

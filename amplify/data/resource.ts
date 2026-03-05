@@ -56,6 +56,7 @@ const schema = a.schema({
       key: a.string().required(),
       metadataOverrides: a.json().required(),
       customVoices: a.json().required(),
+      providerCatalog: a.json().required(),
       updatedAtIso: a.string().required(),
       published: a.boolean().default(false)
     })

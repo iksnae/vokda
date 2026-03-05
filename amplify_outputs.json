@@ -581,6 +581,13 @@
               "isRequired": true,
               "attributes": []
             },
+            "providerCatalog": {
+              "name": "providerCatalog",
+              "isArray": false,
+              "type": "AWSJSON",
+              "isRequired": true,
+              "attributes": []
+            },
             "updatedAtIso": {
               "name": "updatedAtIso",
               "isArray": false,

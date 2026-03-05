@@ -1,6 +1,13 @@
 <script lang="ts">
   import { roleFlags } from '$lib/auth/store';
-  import { addCustomVoice, customVoices, metadataOverrides, upsertMetadataOverride } from '$lib/stores/app-state';
+  import {
+    addCustomVoice,
+    customVoices,
+    metadataOverrides,
+    providerCatalog,
+    upsertMetadataOverride
+  } from '$lib/stores/app-state';
+  import { normalizeProviderId } from '$lib/providers';
   import { buildEffectiveCatalog, createVoiceFromDraft, csvToList, listToCsv } from '$lib/voice-catalog';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -19,11 +26,19 @@
   let audienceTagsCsv = '';
 
   let newName = '';
-  let newProvider = '';
+  let selectedProviderId = '';
+  let newProviderVoiceId = '';
   let newDescription = '';
   let newLanguagesCsv = 'en-US';
   let newSourceType: VoiceVariant['sourceType'] = 'cloud_provider';
   let newSourceKey = '';
+  let selectedProvider: { id: string; name: string; websiteUrl?: string } | null = null;
+
+  $: if (!selectedProviderId && $providerCatalog.length) {
+    selectedProviderId = $providerCatalog[0].id;
+  }
+
+  $: selectedProvider = $providerCatalog.find((provider) => provider.id === selectedProviderId) ?? null;
 
   $: selectedVoice = effectiveVoices.find((voice) => voice.id === selectedVoiceId) ?? null;
 
@@ -53,15 +68,20 @@
   }
 
   function addVoiceDraft() {
-    if (!newName.trim() || !newProvider.trim() || !newDescription.trim() || !newSourceKey.trim()) return;
+    if (!newName.trim() || !selectedProvider || !newDescription.trim() || !newProviderVoiceId.trim()) return;
+
+    const resolvedSourceKey =
+      newSourceKey.trim() || `${normalizeProviderId(selectedProvider.id)}:voice:${newProviderVoiceId.trim()}`;
 
     const voice = createVoiceFromDraft({
       name: newName.trim(),
-      provider: newProvider.trim(),
+      provider: selectedProvider.name,
+      providerId: selectedProvider.id,
+      providerVoiceId: newProviderVoiceId.trim(),
       description: newDescription.trim(),
       languages: csvToList(newLanguagesCsv),
       sourceType: newSourceType,
-      sourceKey: newSourceKey.trim(),
+      sourceKey: resolvedSourceKey,
       shortLabel: shortLabel.trim() || newName.trim(),
       searchDescription: searchDescription.trim() || newDescription.trim(),
       machineTags: csvToList(machineTagsCsv),
@@ -75,7 +95,7 @@
     saveMessage = 'New curated voice draft added.';
 
     newName = '';
-    newProvider = '';
+    newProviderVoiceId = '';
     newDescription = '';
     newSourceKey = '';
   }
@@ -148,7 +168,15 @@
         </label>
         <label>
           Provider
-          <input bind:value={newProvider} placeholder="Provider name" />
+          <select bind:value={selectedProviderId}>
+            {#each $providerCatalog as provider}
+              <option value={provider.id}>{provider.name}</option>
+            {/each}
+          </select>
+        </label>
+        <label>
+          Provider voice ID
+          <input bind:value={newProviderVoiceId} placeholder="Amy, alloy, p364, EXAVIT..." />
         </label>
         <label>
           Description
@@ -170,9 +198,15 @@
         </label>
         <label>
           Source key
-          <input bind:value={newSourceKey} placeholder="provider:key:voice" />
+          <input bind:value={newSourceKey} placeholder="provider:voice:id (optional auto-generated)" />
         </label>
       </div>
+
+      {#if selectedProvider?.websiteUrl}
+        <p class="provider-meta">
+          Provider reference: <a href={selectedProvider.websiteUrl} target="_blank" rel="noreferrer">{selectedProvider.websiteUrl}</a>
+        </p>
+      {/if}
 
       <button on:click={addVoiceDraft}>Add Voice Draft</button>
     </section>
@@ -253,6 +287,16 @@
     margin-top: 0.8rem;
     color: #1d5a39;
     font-weight: 650;
+  }
+
+  .provider-meta {
+    margin-top: 0.45rem;
+    color: #35576f;
+    font-size: 0.84rem;
+  }
+
+  .provider-meta a {
+    color: var(--brand-700);
   }
 
   @keyframes reveal {

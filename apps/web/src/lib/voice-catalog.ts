@@ -33,6 +33,8 @@ export function buildEffectiveCatalog(
 export function createVoiceFromDraft(input: {
   name: string;
   provider: string;
+  providerId: string;
+  providerVoiceId: string;
   description: string;
   languages: string[];
   sourceType: VoiceVariant['sourceType'];
@@ -51,6 +53,8 @@ export function createVoiceFromDraft(input: {
     id,
     name: input.name,
     provider: input.provider,
+    providerId: input.providerId,
+    providerVoiceId: input.providerVoiceId,
     description: input.description,
     tags: Array.from(new Set([...input.machineTags, ...input.toneTags])).slice(0, 12),
     languages: input.languages,

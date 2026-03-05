@@ -27,6 +27,8 @@ export type Voice = {
   id: string;
   name: string;
   provider: string;
+  providerId?: string;
+  providerVoiceId?: string;
   description: string;
   tags: string[];
   languages: string[];
@@ -78,6 +80,15 @@ export type VoicePack = {
     outputFormats: VoiceVariant['outputFormats'];
     licenseNotes: string;
   }>;
+};
+
+export type ProviderDefinition = {
+  id: string;
+  name: string;
+  type: 'cloud_provider' | 'open_model' | 'self_hosted' | 'other';
+  websiteUrl?: string;
+  createdBy?: 'system' | 'admin';
+  createdAt?: string;
 };
 
 export type VoiceProfile = {

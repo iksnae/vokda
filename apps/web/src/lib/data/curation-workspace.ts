@@ -1,6 +1,7 @@
 import { generateClient } from 'aws-amplify/api';
 import { ensureAmplifyConfigured } from '$lib/auth/amplify-client';
-import type { Voice } from '$lib/types';
+import { DEFAULT_PROVIDERS } from '$lib/providers';
+import type { ProviderDefinition, Voice } from '$lib/types';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
 const WORKSPACE_KEY = 'global';
@@ -10,6 +11,7 @@ type CurationWorkspaceRecord = {
   key: string;
   metadataOverrides: unknown;
   customVoices: unknown;
+  providerCatalog: unknown;
   updatedAtIso: string;
   published?: boolean | null;
 };
@@ -22,6 +24,7 @@ const listWorkspaceQuery = /* GraphQL */ `
         key
         metadataOverrides
         customVoices
+        providerCatalog
         updatedAtIso
         published
       }
@@ -60,6 +63,21 @@ function safeVoices(input: unknown): Voice[] {
   return input.filter((entry): entry is Voice => Boolean(entry) && typeof entry === 'object');
 }
 
+function safeProviders(input: unknown): ProviderDefinition[] {
+  if (!Array.isArray(input)) return DEFAULT_PROVIDERS;
+
+  const providers = input.filter(
+    (entry): entry is ProviderDefinition =>
+      Boolean(entry) &&
+      typeof entry === 'object' &&
+      typeof (entry as ProviderDefinition).id === 'string' &&
+      typeof (entry as ProviderDefinition).name === 'string'
+  );
+
+  if (!providers.length) return DEFAULT_PROVIDERS;
+  return providers;
+}
+
 async function fetchWorkspaceRecord(): Promise<CurationWorkspaceRecord | null> {
   const gqlClient = client();
 
@@ -82,25 +100,29 @@ async function fetchWorkspaceRecord(): Promise<CurationWorkspaceRecord | null> {
 export async function fetchCurationWorkspace(): Promise<{
   metadataOverrides: Record<string, VoiceMetadataPatch>;
   customVoices: Voice[];
+  providerCatalog: ProviderDefinition[];
 }> {
   const record = await fetchWorkspaceRecord();
 
   if (!record) {
     return {
       metadataOverrides: {},
-      customVoices: []
+      customVoices: [],
+      providerCatalog: DEFAULT_PROVIDERS
     };
   }
 
   return {
     metadataOverrides: safeObject(record.metadataOverrides),
-    customVoices: safeVoices(record.customVoices)
+    customVoices: safeVoices(record.customVoices),
+    providerCatalog: safeProviders(record.providerCatalog)
   };
 }
 
 export async function saveCurationWorkspace(payload: {
   metadataOverrides: Record<string, VoiceMetadataPatch>;
   customVoices: Voice[];
+  providerCatalog: ProviderDefinition[];
 }) {
   const gqlClient = client();
   const existing = await fetchWorkspaceRecord();
@@ -113,6 +135,7 @@ export async function saveCurationWorkspace(payload: {
           key: WORKSPACE_KEY,
           metadataOverrides: payload.metadataOverrides,
           customVoices: payload.customVoices,
+          providerCatalog: payload.providerCatalog,
           updatedAtIso: new Date().toISOString(),
           published: true
         }
@@ -129,6 +152,7 @@ export async function saveCurationWorkspace(payload: {
         id: existing.id,
         metadataOverrides: payload.metadataOverrides,
         customVoices: payload.customVoices,
+        providerCatalog: payload.providerCatalog,
         updatedAtIso: new Date().toISOString(),
         published: existing.published ?? true
       }

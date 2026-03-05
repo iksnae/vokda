@@ -5,17 +5,39 @@
       "name": "Joanna",
       "provider": "AWS Polly",
       "description": "US English voice widely used for assistants, explainers, and narration.",
-      "tags": ["narration", "assistant", "us-english"],
-      "languages": ["en-US"],
+      "tags": [
+        "narration",
+        "assistant",
+        "us-english"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "Warm US narrator",
         "searchDescription": "Balanced American English female voice for guides, onboarding flows, and general narration.",
-        "machineTags": ["neutral", "clean-diction", "onboarding", "assistant"],
-        "useCases": ["Product onboarding", "Help center narration", "UI assistant prompts"],
-        "toneTags": ["warm", "confident", "clear"],
-        "audienceTags": ["general-consumer", "saas-users"],
+        "machineTags": [
+          "neutral",
+          "clean-diction",
+          "onboarding",
+          "assistant"
+        ],
+        "useCases": [
+          "Product onboarding",
+          "Help center narration",
+          "UI assistant prompts"
+        ],
+        "toneTags": [
+          "warm",
+          "confident",
+          "clear"
+        ],
+        "audienceTags": [
+          "general-consumer",
+          "saas-users"
+        ],
         "accent": "General American",
         "genderPresentation": "female",
         "agePresentation": "adult",
@@ -37,28 +59,56 @@
           "sourceKey": "aws:polly:joanna",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav", "pcm"],
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 3000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "aws-polly",
+      "providerVoiceId": "joanna"
     },
     {
       "id": "01JCVK8Q2WQEC05YF88Q3AJ1B2",
       "name": "Matthew",
       "provider": "AWS Polly",
       "description": "US English male voice suited for long-form informational narration.",
-      "tags": ["long-form", "neutral", "us-english"],
-      "languages": ["en-US"],
+      "tags": [
+        "long-form",
+        "neutral",
+        "us-english"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
       "metadata": {
         "shortLabel": "Documentary male narrator",
         "searchDescription": "Low-variance US male delivery for explainers, educational long-form reads, and policy narration.",
-        "machineTags": ["documentary", "educational", "long-form", "low-expressiveness"],
-        "useCases": ["Documentary VO", "Compliance training", "Explainer videos"],
-        "toneTags": ["neutral", "calm", "authoritative"],
-        "audienceTags": ["enterprise", "education"],
+        "machineTags": [
+          "documentary",
+          "educational",
+          "long-form",
+          "low-expressiveness"
+        ],
+        "useCases": [
+          "Documentary VO",
+          "Compliance training",
+          "Explainer videos"
+        ],
+        "toneTags": [
+          "neutral",
+          "calm",
+          "authoritative"
+        ],
+        "audienceTags": [
+          "enterprise",
+          "education"
+        ],
         "accent": "General American",
         "genderPresentation": "male",
         "agePresentation": "adult",
@@ -80,28 +130,56 @@
           "sourceKey": "aws:polly:matthew",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav", "pcm"],
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 3000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "aws-polly",
+      "providerVoiceId": "matthew"
     },
     {
       "id": "01JCVKBX2W7R5P4SQA0WV8X7D8",
       "name": "en-US-JennyNeural",
       "provider": "Azure Speech",
       "description": "High-quality US English neural voice commonly used in enterprise assistants.",
-      "tags": ["enterprise", "conversational", "us-english"],
-      "languages": ["en-US"],
+      "tags": [
+        "enterprise",
+        "conversational",
+        "us-english"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
       "metadata": {
         "shortLabel": "Enterprise support assistant",
         "searchDescription": "Clean, conversational US voice tuned for support and product guidance interactions.",
-        "machineTags": ["support", "enterprise", "assistant", "conversational"],
-        "useCases": ["Support bot", "IVR guidance", "Product walkthrough"],
-        "toneTags": ["friendly", "professional", "clear"],
-        "audienceTags": ["enterprise-users", "customer-support"],
+        "machineTags": [
+          "support",
+          "enterprise",
+          "assistant",
+          "conversational"
+        ],
+        "useCases": [
+          "Support bot",
+          "IVR guidance",
+          "Product walkthrough"
+        ],
+        "toneTags": [
+          "friendly",
+          "professional",
+          "clear"
+        ],
+        "audienceTags": [
+          "enterprise-users",
+          "customer-support"
+        ],
         "accent": "General American",
         "genderPresentation": "female",
         "agePresentation": "adult",
@@ -123,28 +201,56 @@
           "sourceKey": "azure:speech:en-US-JennyNeural",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav", "pcm"],
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 10000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-US-JennyNeural"
     },
     {
       "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
       "name": "en-GB-RyanNeural",
       "provider": "Azure Speech",
       "description": "British English neural voice with strong clarity for product education and training.",
-      "tags": ["uk-english", "training", "clear"],
-      "languages": ["en-GB"],
+      "tags": [
+        "uk-english",
+        "training",
+        "clear"
+      ],
+      "languages": [
+        "en-GB"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
       "metadata": {
         "shortLabel": "UK training narrator",
         "searchDescription": "British English voice with instructional cadence for onboarding and policy education.",
-        "machineTags": ["uk", "training", "instructional", "clarity"],
-        "useCases": ["Employee onboarding", "Training modules", "Compliance narration"],
-        "toneTags": ["clear", "measured", "professional"],
-        "audienceTags": ["enterprise", "education"],
+        "machineTags": [
+          "uk",
+          "training",
+          "instructional",
+          "clarity"
+        ],
+        "useCases": [
+          "Employee onboarding",
+          "Training modules",
+          "Compliance narration"
+        ],
+        "toneTags": [
+          "clear",
+          "measured",
+          "professional"
+        ],
+        "audienceTags": [
+          "enterprise",
+          "education"
+        ],
         "accent": "British",
         "genderPresentation": "male",
         "agePresentation": "adult",
@@ -166,28 +272,56 @@
           "sourceKey": "azure:speech:en-GB-RyanNeural",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav", "pcm"],
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 10000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-GB-RyanNeural"
     },
     {
       "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
       "name": "en-US-Neural2-J",
       "provider": "Google Cloud TTS",
       "description": "Google Neural2 US English voice for general-purpose synthesis.",
-      "tags": ["google", "neural2", "general-purpose"],
-      "languages": ["en-US"],
+      "tags": [
+        "google",
+        "neural2",
+        "general-purpose"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "General US all-purpose",
         "searchDescription": "Versatile US voice with stable cadence for product UIs and system narration.",
-        "machineTags": ["general", "ui-voice", "stable", "neutral"],
-        "useCases": ["App narration", "Product demos", "Status announcements"],
-        "toneTags": ["neutral", "steady", "clear"],
-        "audienceTags": ["general-consumer", "technical-users"],
+        "machineTags": [
+          "general",
+          "ui-voice",
+          "stable",
+          "neutral"
+        ],
+        "useCases": [
+          "App narration",
+          "Product demos",
+          "Status announcements"
+        ],
+        "toneTags": [
+          "neutral",
+          "steady",
+          "clear"
+        ],
+        "audienceTags": [
+          "general-consumer",
+          "technical-users"
+        ],
         "accent": "General American",
         "genderPresentation": "female",
         "agePresentation": "adult",
@@ -209,28 +343,55 @@
           "sourceKey": "gcp:tts:en-US-Neural2-J",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav"],
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
           "maxInputChars": 5000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-Neural2-J"
     },
     {
       "id": "01JCVKN3XGS1D8VCVBQJ6D7Y8M",
       "name": "en-US-News-N",
       "provider": "Google Cloud TTS",
       "description": "News-oriented US English voice optimized for broadcast-style reads.",
-      "tags": ["news", "broadcast", "us-english"],
-      "languages": ["en-US"],
+      "tags": [
+        "news",
+        "broadcast",
+        "us-english"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
       "metadata": {
         "shortLabel": "Broadcast headline voice",
         "searchDescription": "Crisp US newscast profile with high clarity and energetic information delivery.",
-        "machineTags": ["broadcast", "headline", "high-clarity", "newsroom"],
-        "useCases": ["News reads", "Daily briefings", "Market updates"],
-        "toneTags": ["energetic", "assertive", "clear"],
-        "audienceTags": ["news-audience", "business-audience"],
+        "machineTags": [
+          "broadcast",
+          "headline",
+          "high-clarity",
+          "newsroom"
+        ],
+        "useCases": [
+          "News reads",
+          "Daily briefings",
+          "Market updates"
+        ],
+        "toneTags": [
+          "energetic",
+          "assertive",
+          "clear"
+        ],
+        "audienceTags": [
+          "news-audience",
+          "business-audience"
+        ],
         "accent": "General American",
         "genderPresentation": "female",
         "agePresentation": "adult",
@@ -252,28 +413,55 @@
           "sourceKey": "gcp:tts:en-US-News-N",
           "runnable": true,
           "supportsSsml": true,
-          "outputFormats": ["mp3", "wav"],
+          "outputFormats": [
+            "mp3",
+            "wav"
+          ],
           "maxInputChars": 5000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "gcp-tts",
+      "providerVoiceId": "en-US-News-N"
     },
     {
       "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
       "name": "Mark",
       "provider": "ElevenLabs",
       "description": "Expressive English voice featured in ElevenLabs text-to-speech demos.",
-      "tags": ["expressive", "narration", "elevenlabs"],
-      "languages": ["en-US"],
+      "tags": [
+        "expressive",
+        "narration",
+        "elevenlabs"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
       "metadata": {
         "shortLabel": "Expressive story narrator",
         "searchDescription": "Characterful English narration voice with stronger emotional contour.",
-        "machineTags": ["expressive", "storytelling", "character", "high-variation"],
-        "useCases": ["Short fiction", "Trailer narration", "Character intros"],
-        "toneTags": ["dramatic", "vivid", "expressive"],
-        "audienceTags": ["creator", "entertainment"],
+        "machineTags": [
+          "expressive",
+          "storytelling",
+          "character",
+          "high-variation"
+        ],
+        "useCases": [
+          "Short fiction",
+          "Trailer narration",
+          "Character intros"
+        ],
+        "toneTags": [
+          "dramatic",
+          "vivid",
+          "expressive"
+        ],
+        "audienceTags": [
+          "creator",
+          "entertainment"
+        ],
         "accent": "General American",
         "genderPresentation": "male",
         "agePresentation": "adult",
@@ -295,28 +483,52 @@
           "sourceKey": "elevenlabs:tts:mark",
           "runnable": true,
           "supportsSsml": false,
-          "outputFormats": ["mp3", "pcm"],
+          "outputFormats": [
+            "mp3",
+            "pcm"
+          ],
           "maxInputChars": 5000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "elevenlabs",
+      "providerVoiceId": "mark"
     },
     {
       "id": "01JCVKV2YSMBG9V43CMWDM3QFA",
       "name": "Kokoro 82M",
       "provider": "Hugging Face",
       "description": "Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.",
-      "tags": ["open-model", "self-hosted", "apache-2.0"],
-      "languages": ["en-US"],
+      "tags": [
+        "open-model",
+        "self-hosted",
+        "apache-2.0"
+      ],
+      "languages": [
+        "en-US"
+      ],
       "qualityTier": "standard",
       "licenseNotes": "Apache-2.0 model license; verify deployment and voice-pack licensing in your stack.",
       "metadata": {
         "shortLabel": "Open self-host TTS",
         "searchDescription": "Open-weight model option for teams prioritizing self-hosting and infrastructure control.",
-        "machineTags": ["open-model", "self-hosted", "developer-oriented"],
-        "useCases": ["Internal tooling", "Prototype pipelines", "Private deployment"],
-        "toneTags": ["neutral"],
-        "audienceTags": ["developers", "ml-platform"],
+        "machineTags": [
+          "open-model",
+          "self-hosted",
+          "developer-oriented"
+        ],
+        "useCases": [
+          "Internal tooling",
+          "Prototype pipelines",
+          "Private deployment"
+        ],
+        "toneTags": [
+          "neutral"
+        ],
+        "audienceTags": [
+          "developers",
+          "ml-platform"
+        ],
         "accent": "varies by prompt",
         "genderPresentation": "configurable",
         "agePresentation": "configurable",
@@ -338,28 +550,62 @@
           "sourceKey": "hf:hexgrad/Kokoro-82M",
           "runnable": true,
           "supportsSsml": false,
-          "outputFormats": ["wav", "pcm"],
+          "outputFormats": [
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 2000,
           "previewOnly": false
         }
-      ]
+      ],
+      "providerId": "huggingface",
+      "providerVoiceId": "hexgrad/Kokoro-82M"
     },
     {
       "id": "01JCVKYGHM7N2NQ9S18N9RF89C",
       "name": "Qwen3-TTS-12Hz-1.7B-Base",
       "provider": "Hugging Face",
       "description": "Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.",
-      "tags": ["open-model", "multilingual", "qwen3"],
-      "languages": ["en-US", "zh-CN", "ja-JP", "de-DE", "fr-FR", "es-ES", "it-IT", "pt-BR", "ru-RU", "ko-KR"],
+      "tags": [
+        "open-model",
+        "multilingual",
+        "qwen3"
+      ],
+      "languages": [
+        "en-US",
+        "zh-CN",
+        "ja-JP",
+        "de-DE",
+        "fr-FR",
+        "es-ES",
+        "it-IT",
+        "pt-BR",
+        "ru-RU",
+        "ko-KR"
+      ],
       "qualityTier": "premium",
       "licenseNotes": "Check the current Hugging Face model card and upstream license terms before production export.",
       "metadata": {
         "shortLabel": "Multilingual open model",
         "searchDescription": "Large open multilingual base suitable for custom voice products and localization pipelines.",
-        "machineTags": ["multilingual", "open-model", "custom-fine-tune", "localization"],
-        "useCases": ["Localization", "Multi-region assistants", "Model customization"],
-        "toneTags": ["model-dependent"],
-        "audienceTags": ["ml-platform", "international-products"],
+        "machineTags": [
+          "multilingual",
+          "open-model",
+          "custom-fine-tune",
+          "localization"
+        ],
+        "useCases": [
+          "Localization",
+          "Multi-region assistants",
+          "Model customization"
+        ],
+        "toneTags": [
+          "model-dependent"
+        ],
+        "audienceTags": [
+          "ml-platform",
+          "international-products"
+        ],
         "accent": "multi-locale",
         "genderPresentation": "configurable",
         "agePresentation": "configurable",
@@ -381,8 +627,226 @@
           "sourceKey": "hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base",
           "runnable": true,
           "supportsSsml": false,
-          "outputFormats": ["wav", "pcm"],
+          "outputFormats": [
+            "wav",
+            "pcm"
+          ],
           "maxInputChars": 2500,
+          "previewOnly": false
+        }
+      ],
+      "providerId": "huggingface",
+      "providerVoiceId": "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+      "id": "01JCW012A9N9Y3W08F0Q0A1O1",
+      "name": "alloy",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "alloy",
+      "description": "General-purpose OpenAI TTS voice with balanced delivery for UI and assistant prompts.",
+      "tags": [
+        "assistant",
+        "general-purpose",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "Balanced assistant voice",
+        "searchDescription": "Reliable neutral voice for product narration, prompts, and lightweight explainers.",
+        "machineTags": [
+          "balanced",
+          "assistant",
+          "product-ui",
+          "neutral"
+        ],
+        "useCases": [
+          "UI prompts",
+          "Product explainers",
+          "Assistant responses"
+        ],
+        "toneTags": [
+          "neutral",
+          "clear",
+          "steady"
+        ],
+        "audienceTags": [
+          "general-consumer",
+          "saas-users"
+        ],
+        "accent": "General American",
+        "genderPresentation": "neutral",
+        "agePresentation": "adult",
+        "speakingStyle": "clean and modern",
+        "metadataQuality": "editorial"
+      },
+      "samples": [
+        {
+          "id": "01JCW012A9N9Y3W08F0Q0A1S1",
+          "scriptKey": "assistant",
+          "label": "Assistant Prompt",
+          "transcript": "I found three voice options that match your preferred tone and language targets."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCW012A9N9Y3W08F0Q0A1V1",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:alloy",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCW015M2Q4MFX8K2CZ9R2D2",
+      "name": "nova",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "nova",
+      "description": "Expressive OpenAI voice for storytelling and energetic marketing reads.",
+      "tags": [
+        "expressive",
+        "storytelling",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "Energetic creative narrator",
+        "searchDescription": "Higher-energy voice suitable for launch videos, social clips, and dynamic narration.",
+        "machineTags": [
+          "expressive",
+          "creative",
+          "launch-content",
+          "high-variation"
+        ],
+        "useCases": [
+          "Launch videos",
+          "Promo reads",
+          "Creative narration"
+        ],
+        "toneTags": [
+          "energetic",
+          "vivid",
+          "uplifting"
+        ],
+        "audienceTags": [
+          "creators",
+          "marketing"
+        ],
+        "accent": "General American",
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "speakingStyle": "dynamic and vivid",
+        "metadataQuality": "editorial"
+      },
+      "samples": [
+        {
+          "id": "01JCW015M2Q4MFX8K2CZ9R2H2",
+          "scriptKey": "launch",
+          "label": "Launch Spot",
+          "transcript": "Introducing a faster way to produce multilingual voice content from a single script."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCW015M2Q4MFX8K2CZ9R2K2",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:nova",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false
+        }
+      ]
+    },
+    {
+      "id": "01JCW018P8BMX7D34R7XJ93T3",
+      "name": "onyx",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "onyx",
+      "description": "Low-register OpenAI voice suited for documentary, policy, and long-form informational audio.",
+      "tags": [
+        "documentary",
+        "long-form",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "shortLabel": "Low-register documentary",
+        "searchDescription": "Grounded low-register voice for educational narration and formal explainers.",
+        "machineTags": [
+          "documentary",
+          "grounded",
+          "education",
+          "long-form"
+        ],
+        "useCases": [
+          "Educational narration",
+          "Policy explainers",
+          "Documentary VO"
+        ],
+        "toneTags": [
+          "calm",
+          "authoritative",
+          "measured"
+        ],
+        "audienceTags": [
+          "enterprise",
+          "education"
+        ],
+        "accent": "General American",
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "speakingStyle": "measured and grounded",
+        "metadataQuality": "editorial"
+      },
+      "samples": [
+        {
+          "id": "01JCW018P8BMX7D34R7XJ93Y3",
+          "scriptKey": "policy",
+          "label": "Policy Read",
+          "transcript": "This guidance applies to all production workloads starting with the next release cycle."
+        }
+      ],
+      "variants": [
+        {
+          "id": "01JCW018P8BMX7D34R7XJ9403",
+          "sourceType": "cloud_provider",
+          "sourceKey": "openai:tts:onyx",
+          "runnable": true,
+          "supportsSsml": false,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
           "previewOnly": false
         }
       ]

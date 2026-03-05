@@ -1,8 +1,9 @@
 import { browser } from '$app/environment';
 import { derived, writable } from 'svelte/store';
-import type { CartItem, Collection, Voice, VoicePack } from '$lib/types';
+import type { CartItem, Collection, ProviderDefinition, Voice, VoicePack } from '$lib/types';
 import { AUTH_MODE } from '$lib/auth/config';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
+import { DEFAULT_PROVIDERS, normalizeProviderId } from '$lib/providers';
 import {
   addCollectionVoice,
   clearRemoteCart,
@@ -25,6 +26,7 @@ type AppState = {
   favorites: string[];
   customVoices: Voice[];
   metadataOverrides: Record<string, VoiceMetadataPatch>;
+  providerCatalog: ProviderDefinition[];
 };
 
 const STORAGE_PREFIX = 'vokda.app.state.v2';
@@ -34,7 +36,8 @@ const defaultState: AppState = {
   collections: [],
   favorites: [],
   customVoices: [],
-  metadataOverrides: {}
+  metadataOverrides: {},
+  providerCatalog: DEFAULT_PROVIDERS
 };
 
 function makeStorageKey(actorKey: string): string {
@@ -54,7 +57,8 @@ function loadState(actorKey: string): AppState {
       collections: parsed.collections ?? [],
       favorites: parsed.favorites ?? [],
       customVoices: parsed.customVoices ?? [],
-      metadataOverrides: parsed.metadataOverrides ?? {}
+      metadataOverrides: parsed.metadataOverrides ?? {},
+      providerCatalog: parsed.providerCatalog ?? DEFAULT_PROVIDERS
     };
   } catch {
     return defaultState;
@@ -106,7 +110,8 @@ async function hydrateCurationState() {
     appState.update((state) => ({
       ...state,
       metadataOverrides: curation.metadataOverrides,
-      customVoices: curation.customVoices
+      customVoices: curation.customVoices,
+      providerCatalog: curation.providerCatalog
     }));
   } catch (error) {
     reportSyncError('hydrateCuration', error);
@@ -136,7 +141,8 @@ function queueCurationSync() {
     const snapshot = getAppStateSnapshot();
     void saveCurationWorkspace({
       metadataOverrides: snapshot.metadataOverrides,
-      customVoices: snapshot.customVoices
+      customVoices: snapshot.customVoices,
+      providerCatalog: snapshot.providerCatalog
     }).catch((error) => {
       reportSyncError('saveCurationWorkspace', error);
       void hydrateCurationState();
@@ -178,6 +184,7 @@ export const collections = derived(appState, ($state) => $state.collections);
 export const favorites = derived(appState, ($state) => $state.favorites);
 export const customVoices = derived(appState, ($state) => $state.customVoices);
 export const metadataOverrides = derived(appState, ($state) => $state.metadataOverrides);
+export const providerCatalog = derived(appState, ($state) => $state.providerCatalog);
 export const cartCount = derived(cartItems, ($cart) => $cart.length);
 export const favoritesCount = derived(favorites, ($favorites) => $favorites.length);
 
@@ -292,6 +299,42 @@ export function addCustomVoice(voice: Voice) {
   });
 
   queueCurationSync();
+}
+
+export function addProvider(definition: Omit<ProviderDefinition, 'id'> & { id?: string }): boolean {
+  const roles = getAuthSnapshot().user?.roles ?? [];
+  if (!roles.includes('admin')) return false;
+
+  const normalizedId = normalizeProviderId(definition.id ?? definition.name);
+  if (!normalizedId) return false;
+
+  let added = false;
+
+  appState.update((state) => {
+    if (state.providerCatalog.some((provider) => provider.id === normalizedId)) return state;
+    added = true;
+
+    return {
+      ...state,
+      providerCatalog: [
+        ...state.providerCatalog,
+        {
+          id: normalizedId,
+          name: definition.name.trim(),
+          type: definition.type,
+          websiteUrl: definition.websiteUrl?.trim() || undefined,
+          createdBy: 'admin',
+          createdAt: new Date().toISOString()
+        }
+      ]
+    };
+  });
+
+  if (added) {
+    queueCurationSync();
+  }
+
+  return added;
 }
 
 export function createCollection(name: string) {
@@ -451,7 +494,7 @@ function deriveProviderVoiceId(sourceKey: string): string {
 }
 
 function normalizeProvider(provider: string): string {
-  return provider.trim().toLowerCase();
+  return normalizeProviderId(provider);
 }
 
 export function buildVoicePack(voices: Voice[], items: CartItem[]): VoicePack {
@@ -493,8 +536,8 @@ export function buildVoicePack(voices: Voice[], items: CartItem[]): VoicePack {
   >();
 
   const entries = selected.map(({ voice, variant }) => {
-    const provider = normalizeProvider(voice.provider);
-    const providerVoiceId = deriveProviderVoiceId(variant.sourceKey);
+    const provider = normalizeProvider(voice.providerId ?? voice.provider);
+    const providerVoiceId = voice.providerVoiceId ?? deriveProviderVoiceId(variant.sourceKey);
     const language = voice.languages[0] ?? 'en-US';
     const profileKey = `${provider}::${providerVoiceId}::${language}`;
 
