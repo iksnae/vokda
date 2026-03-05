@@ -7,11 +7,13 @@ build/
 dist/
 .svelte-kit/
 coverage/
+.amplify/
 
 # Env
 .env
 .env.*
 !.env.example
+.aws-accounts
 
 # OS/editor
 .DS_Store

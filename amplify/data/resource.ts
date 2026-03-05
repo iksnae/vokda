@@ -13,7 +13,7 @@ const schema = a.schema({
     .model({
       name: a.string().required(),
       description: a.string(),
-      visibility: a.enum(['private', 'team']).default('private'),
+      visibility: a.enum(['private', 'team']),
       createdAtIso: a.string().required(),
       updatedAtIso: a.string().required()
     })

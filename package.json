@@ -12,12 +12,17 @@
   "scripts": {
     "dev:web": "npm --workspace apps/web run dev",
     "dev:api": "npm --workspace apps/api run dev",
-    "amplify:sandbox": "npx ampx sandbox",
-    "amplify:deploy": "npx ampx pipeline-deploy --branch main",
-    "amplify:outputs": "npx ampx generate outputs --format json --out-dir .",
+    "amplify:sandbox": ". ./switch-aws-env.sh personal && npx ampx sandbox",
+    "amplify:deploy": ". ./switch-aws-env.sh personal && npx ampx pipeline-deploy --branch main",
+    "amplify:outputs": ". ./switch-aws-env.sh personal && npx ampx generate outputs --format json --out-dir .",
     "build:web": "npm --workspace apps/web run build",
     "check:web": "npm --workspace apps/web run check",
     "lint": "npm --workspace apps/web run lint",
     "test": "npm --workspace apps/web run test"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.21.0",
+    "@aws-amplify/backend-cli": "^1.8.2",
+    "@types/node": "^25.3.3"
   }
 }

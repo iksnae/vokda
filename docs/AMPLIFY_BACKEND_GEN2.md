@@ -22,6 +22,7 @@ From repo root:
 
 1. `npm install`
 2. `npm run amplify:sandbox`
+3. Amplify scripts in this repo auto-switch AWS credentials to `personal` via `switch-aws-env.sh`.
 
 This will provision a temporary Amplify backend environment and output connection details.
 
