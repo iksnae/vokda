@@ -16,6 +16,7 @@ import {
   saveFavorite,
   updateCollectionVoiceNote as updateCollectionVoiceNoteRemote
 } from '$lib/data/user-library';
+import { fetchCurationWorkspace, saveCurationWorkspace } from '$lib/data/curation-workspace';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
 type AppState = {
@@ -66,6 +67,12 @@ function cloudEnabled(): boolean {
   return Boolean(snapshot.user);
 }
 
+function curationWriteEnabled(): boolean {
+  if (!browser || AUTH_MODE !== 'amplify') return false;
+  const roles = getAuthSnapshot().user?.roles ?? [];
+  return roles.includes('curator') || roles.includes('admin');
+}
+
 function reportSyncError(operation: string, error: unknown) {
   console.warn(`[vokda:data] ${operation} failed`, error);
 }
@@ -91,10 +98,60 @@ async function hydrateCloudState() {
   }
 }
 
+async function hydrateCurationState() {
+  if (!browser || AUTH_MODE !== 'amplify') return;
+
+  try {
+    const curation = await fetchCurationWorkspace();
+    appState.update((state) => ({
+      ...state,
+      metadataOverrides: curation.metadataOverrides,
+      customVoices: curation.customVoices
+    }));
+  } catch (error) {
+    reportSyncError('hydrateCuration', error);
+  }
+}
+
+function getAppStateSnapshot(): AppState {
+  let snapshot = defaultState;
+
+  appState.subscribe((value) => {
+    snapshot = value;
+  })();
+
+  return snapshot;
+}
+
+let curationSyncTimer: ReturnType<typeof setTimeout> | null = null;
+
+function queueCurationSync() {
+  if (!curationWriteEnabled()) return;
+
+  if (curationSyncTimer) {
+    clearTimeout(curationSyncTimer);
+  }
+
+  curationSyncTimer = setTimeout(() => {
+    const snapshot = getAppStateSnapshot();
+    void saveCurationWorkspace({
+      metadataOverrides: snapshot.metadataOverrides,
+      customVoices: snapshot.customVoices
+    }).catch((error) => {
+      reportSyncError('saveCurationWorkspace', error);
+      void hydrateCurationState();
+    });
+  }, 250);
+}
+
 let activeActorKey = 'visitor';
 const appState = writable<AppState>(loadState(activeActorKey));
 
 if (browser) {
+  if (AUTH_MODE === 'amplify') {
+    void hydrateCurationState();
+  }
+
   appState.subscribe((value) => {
     localStorage.setItem(makeStorageKey(activeActorKey), JSON.stringify(value));
   });
@@ -108,6 +165,10 @@ if (browser) {
 
     if ($auth.user && AUTH_MODE === 'amplify') {
       void hydrateCloudState();
+    }
+
+    if (AUTH_MODE === 'amplify') {
+      void hydrateCurationState();
     }
   });
 }
@@ -217,6 +278,8 @@ export function upsertMetadataOverride(voiceId: string, patch: VoiceMetadataPatc
       }
     }
   }));
+
+  queueCurationSync();
 }
 
 export function addCustomVoice(voice: Voice) {
@@ -227,6 +290,8 @@ export function addCustomVoice(voice: Voice) {
       customVoices: [...state.customVoices, voice]
     };
   });
+
+  queueCurationSync();
 }
 
 export function createCollection(name: string) {

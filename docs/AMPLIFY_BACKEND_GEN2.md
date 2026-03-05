@@ -68,6 +68,7 @@ Defined models:
 - `CollectionVoice`
 - `CartItem`
 - `CurationShelf`
+- `CurationWorkspace`
 - `AdminAuditEvent`
 
 Authorization highlights:
@@ -79,9 +80,11 @@ Authorization highlights:
 ## 6. Current Integration Status
 
 Favorites, collections, collection voices, and cart items now sync to Amplify Data for authenticated users.
+Curation metadata overrides and curated custom voices sync via shared `CurationWorkspace`.
 
 Current behavior:
-- `visitor`: local-only browsing state
+- `visitor`: local-only browsing state, plus published curation workspace overlays
 - `guest` and higher: optimistic UI with Amplify Data persistence + cloud rehydration on sign-in
+- `curator` and `admin`: can update shared curation workspace
 
 Next task: migrate curation drafts and metadata overrides from local storage to Amplify Data-backed curator workflows.

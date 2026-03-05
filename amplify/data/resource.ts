@@ -51,6 +51,16 @@ const schema = a.schema({
       allow.publicApiKey().to(['read'])
     ]),
 
+  CurationWorkspace: a
+    .model({
+      key: a.string().required(),
+      metadataOverrides: a.json().required(),
+      customVoices: a.json().required(),
+      updatedAtIso: a.string().required(),
+      published: a.boolean().default(false)
+    })
+    .authorization((allow) => [allow.groups(['curator', 'admin']), allow.publicApiKey().to(['read'])]),
+
   AdminAuditEvent: a
     .model({
       action: a.string().required(),
