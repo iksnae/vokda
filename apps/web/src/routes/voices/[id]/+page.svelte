@@ -155,12 +155,52 @@
 </script>
 
 <svelte:head>
-  <title>{voice ? `${voice.name} | Vokda` : 'Voice | Vokda'}</title>
+  <title>{voice ? `${voice.name} — ${voice.provider} | Vokda` : 'Voice | Vokda'}</title>
   {#if voice}
+    {@const baseUrl = 'https://vokda.iksnae.com'}
+    {@const voiceUrl = `${baseUrl}/voices/${voice.id}`}
+    {@const ogImage = `${baseUrl}/og/voices/${voice.id}.png`}
+    {@const ogDesc = `${voice.metadata.shortLabel ? voice.metadata.shortLabel + ' · ' : ''}${voice.description}`}
+
+    <!-- Canonical & description -->
+    <link rel="canonical" href={voiceUrl} />
+    <meta name="description" content={ogDesc} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="music.song" />
     <meta property="og:title" content="{voice.name} — {voice.provider} | Vokda" />
-    <meta property="og:description" content="{voice.description}" />
+    <meta property="og:description" content={ogDesc} />
+    <meta property="og:url" content={voiceUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Voice card for {voice.name} by {voice.provider}" />
+    {#if sampleAudioUrl}
+      <meta property="og:audio" content="{baseUrl}{sampleAudioUrl}" />
+      <meta property="og:audio:type" content="audio/mpeg" />
+    {/if}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{voice.name} — {voice.provider} | Vokda" />
-    <meta name="twitter:description" content="{voice.description}" />
+    <meta name="twitter:description" content={ogDesc} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Voice card for {voice.name} by {voice.provider}" />
+
+    <!-- Structured data (JSON-LD) -->
+    {@html `<script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AudioObject",
+      "name": voice.name,
+      "description": voice.description,
+      "provider": { "@type": "Organization", "name": voice.provider },
+      "inLanguage": voice.languages[0] || "en",
+      ...(sampleAudioUrl ? { "contentUrl": `${baseUrl}${sampleAudioUrl}`, "encodingFormat": "audio/mpeg" } : {}),
+      "url": voiceUrl,
+      "image": ogImage,
+      "keywords": voice.tags.join(", "),
+      "license": voice.modelCard?.licenseUrl || voice.licenseNotes
+    })}</script>`}
   {/if}
 </svelte:head>
 

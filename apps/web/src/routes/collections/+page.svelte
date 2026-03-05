@@ -44,10 +44,14 @@
 
 <svelte:head>
   <title>Collections | Vokda</title>
+  <link rel="canonical" href="https://vokda.iksnae.com/collections" />
+  <meta property="og:url" content="https://vokda.iksnae.com/collections" />
   <meta property="og:title" content="Voice Collections | Vokda" />
   <meta property="og:description" content="Curate and organize your favorite TTS voices into collections." />
+  <meta property="og:image" content="https://vokda.iksnae.com/og-image.png" />
   <meta name="twitter:title" content="Voice Collections | Vokda" />
   <meta name="twitter:description" content="Curate and organize your favorite TTS voices into collections." />
+  <meta name="twitter:image" content="https://vokda.iksnae.com/og-image.png" />
 </svelte:head>
 
 <main>

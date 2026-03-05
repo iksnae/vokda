@@ -224,10 +224,14 @@
 
 <svelte:head>
   <title>Discover Voices | Vokda</title>
+  <link rel="canonical" href="https://vokda.iksnae.com" />
+  <meta property="og:url" content="https://vokda.iksnae.com" />
   <meta property="og:title" content="Discover Voices | Vokda" />
   <meta property="og:description" content="Browse {effectiveVoices.length} TTS voices across 15 providers. Audition samples, compare model cards, and curate collections." />
+  <meta property="og:image" content="https://vokda.iksnae.com/og-image.png" />
   <meta name="twitter:title" content="Discover Voices | Vokda" />
   <meta name="twitter:description" content="Browse {effectiveVoices.length} TTS voices across 15 providers. Audition samples, compare model cards, and curate collections." />
+  <meta name="twitter:image" content="https://vokda.iksnae.com/og-image.png" />
 </svelte:head>
 
 <main>
