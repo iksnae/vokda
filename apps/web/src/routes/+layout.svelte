@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { auth, initAuth, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
-  import { cartCount, collections, favoritesCount } from '$lib/stores/app-state';
+  import { collections, favoritesCount } from '$lib/stores/app-state';
 
   onMount(() => {
     initAuth();
@@ -27,10 +27,12 @@
 
     <nav>
       <a href="/">Catalog</a>
-      <a href="/account">Account</a>
-      <a href="/collections">Collections ({$collections.length})</a>
-      <a href="/cart">Cart ({$cartCount})</a>
-      <a href="/?favorites=1">Favorites ({$favoritesCount})</a>
+      {#if $roleFlags.isGuest}
+        <a href="/collections">Collections ({$collections.length + 1})</a>
+      {/if}
+      {#if $roleFlags.isGuest}
+        <a href="/?favorites=1">Starred ({$favoritesCount})</a>
+      {/if}
       {#if $roleFlags.isCurator}
         <a href="/curation">Curation</a>
       {/if}

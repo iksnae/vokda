@@ -1,26 +1,30 @@
 <script lang="ts">
-  import { AUTH_MODE } from '$lib/auth/config';
+  import { onMount } from 'svelte';
   import {
     auth,
-    authDebugConfig,
     confirmSignUpWithCode,
+    isAuthReady,
     refreshAuthRoles,
-    roleFlags,
-    setMockRole,
-    signIn,
     signInWithPassword,
     signOut,
     signUpWithPassword,
-    resendSignUpConfirmation,
-    isAuthReady
+    resendSignUpConfirmation
   } from '$lib/auth/store';
 
+  type AuthView = 'signin' | 'signup' | 'verify';
+
+  let view: AuthView = 'signin';
   let email = '';
   let password = '';
   let confirmationCode = '';
   let status = '';
   let pending = false;
-  let needsConfirmation = false;
+
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('intent') === 'signup') view = 'signup';
+    if (params.get('intent') === 'signin') view = 'signin';
+  });
 
   async function handleSignIn() {
     pending = true;
@@ -28,7 +32,9 @@
 
     const result = await signInWithPassword(email.trim(), password);
     status = result.message;
-    needsConfirmation = Boolean(result.needsConfirmation);
+    if (result.needsConfirmation) {
+      view = 'verify';
+    }
 
     pending = false;
   }
@@ -39,7 +45,7 @@
 
     const result = await signUpWithPassword(email.trim(), password);
     status = result.message;
-    needsConfirmation = Boolean(result.needsConfirmation);
+    view = result.needsConfirmation ? 'verify' : 'signin';
 
     pending = false;
   }
@@ -50,8 +56,9 @@
 
     const result = await confirmSignUpWithCode(email.trim(), confirmationCode.trim());
     status = result.message;
+
     if (result.success) {
-      needsConfirmation = false;
+      view = 'signin';
       confirmationCode = '';
     }
 
@@ -70,153 +77,144 @@
     status = '';
 
     await refreshAuthRoles();
-    status = 'Access claims refreshed from Cognito.';
+    status = 'Access updated.';
+
     pending = false;
   }
 </script>
 
 <svelte:head>
-  <title>Account | Vokda</title>
+  <title>Sign In | Vokda</title>
 </svelte:head>
 
 <main>
-  <h1>Account</h1>
-
-  <section class="panel">
-    <p><strong>Auth mode:</strong> {AUTH_MODE}</p>
-
+  <section class="auth-shell">
     {#if !$isAuthReady}
-      <p>Loading account session...</p>
+      <p class="status">Loading session...</p>
     {:else if $auth.isAuthenticated}
-      <p><strong>Signed in as:</strong> {$auth.user?.email ?? $auth.user?.id}</p>
-      <p><strong>Roles:</strong> {$auth.user?.roles.join(', ')}</p>
+      <h1>Account</h1>
+      <p class="sub">Signed in as {$auth.user?.email ?? $auth.user?.id}</p>
+      <p class="sub">Access: {$auth.user?.roles.join(', ')}</p>
+
       <div class="actions">
-        <button class="ghost" on:click={handleRefreshAccess} disabled={pending}>Refresh access</button>
-        <button on:click={signOut} disabled={pending}>Sign out</button>
+        <button class="ghost" on:click={handleRefreshAccess} disabled={pending}>Refresh Access</button>
+        <button on:click={signOut} disabled={pending}>Sign Out</button>
       </div>
-    {:else if AUTH_MODE === 'amplify'}
-      <p>Register or sign in with your email to unlock favorites, collections, and role-based access.</p>
+
+      {#if status}
+        <p class="status">{status}</p>
+      {/if}
+    {:else}
+      <div class="tabs">
+        <button class:active={view === 'signin'} on:click={() => (view = 'signin')}>Sign In</button>
+        <button class:active={view === 'signup'} on:click={() => (view = 'signup')}>Create Account</button>
+      </div>
+
+      {#if view === 'signin'}
+        <h1>Welcome Back</h1>
+        <p class="sub">Sign in to save and organize voices.</p>
+      {:else if view === 'signup'}
+        <h1>Create Account</h1>
+        <p class="sub">Create your account to start building collections.</p>
+      {:else}
+        <h1>Verify Email</h1>
+        <p class="sub">Enter the code sent to your email.</p>
+      {/if}
+
       <div class="form-grid">
         <label>
           Email
           <input type="email" bind:value={email} placeholder="you@domain.com" autocomplete="email" />
         </label>
 
-        <label>
-          Password
-          <input
-            type="password"
-            bind:value={password}
-            placeholder="Your password"
-            autocomplete="current-password"
-          />
-        </label>
-
-        <div class="actions">
-          <button on:click={handleSignIn} disabled={pending || !email || !password}>Sign in</button>
-          <button class="ghost" on:click={handleSignUp} disabled={pending || !email || !password}>
-            Create account
-          </button>
-        </div>
-      </div>
-
-      {#if needsConfirmation}
-        <div class="confirm">
+        {#if view !== 'verify'}
           <label>
-            Verification code
+            Password
+            <input type="password" bind:value={password} placeholder="Password" autocomplete="current-password" />
+          </label>
+        {/if}
+
+        {#if view === 'verify'}
+          <label>
+            Verification Code
             <input type="text" bind:value={confirmationCode} placeholder="123456" />
           </label>
-          <div class="actions">
-            <button class="ghost" on:click={handleConfirm} disabled={pending || !confirmationCode}>Confirm email</button>
-            <button class="ghost" on:click={handleResend} disabled={pending || !email}>Resend code</button>
-          </div>
+        {/if}
+
+        <div class="actions">
+          {#if view === 'signin'}
+            <button on:click={handleSignIn} disabled={pending || !email || !password}>Sign In</button>
+          {:else if view === 'signup'}
+            <button on:click={handleSignUp} disabled={pending || !email || !password}>Create Account</button>
+          {:else}
+            <button on:click={handleConfirm} disabled={pending || !email || !confirmationCode}>Verify</button>
+            <button class="ghost" on:click={handleResend} disabled={pending || !email}>Resend Code</button>
+          {/if}
         </div>
-      {/if}
+      </div>
 
       {#if status}
         <p class="status">{status}</p>
       {/if}
-    {:else}
-      <p>You are currently browsing as a visitor.</p>
-      <button on:click={signIn}>Sign in</button>
     {/if}
   </section>
-
-  {#if AUTH_MODE !== 'amplify' && $auth.isAuthenticated}
-    <section class="panel">
-      <h2>Mock Role Controls</h2>
-      <p>Use these only in local/non-amplify mode for UI testing.</p>
-      <div class="actions">
-        <button class="ghost" on:click={() => setMockRole('guest')}>Set Guest</button>
-        <button class="ghost" on:click={() => setMockRole('curator')}>Set Curator</button>
-        <button class="ghost" on:click={() => setMockRole('admin')}>Set Admin</button>
-      </div>
-    </section>
-  {/if}
-
-  <section class="panel">
-    <h2>Access Summary</h2>
-    <ul>
-      <li>Visitor: browse catalog only</li>
-      <li>Guest: favorites + collections + cart/export</li>
-      <li>Curator: guest features + curation tools</li>
-      <li>Admin: full access + admin tools</li>
-    </ul>
-    <p>
-      <strong>Current flags:</strong>
-      guest={$roleFlags.isGuest ? 'yes' : 'no'},
-      curator={$roleFlags.isCurator ? 'yes' : 'no'},
-      admin={$roleFlags.isAdmin ? 'yes' : 'no'}
-    </p>
-  </section>
-
-  {#if AUTH_MODE === 'amplify'}
-    {@const cfg = authDebugConfig()}
-    <section class="panel">
-      <h2>Amplify Auth</h2>
-      <p><strong>Provider:</strong> {cfg.provider}</p>
-      <p><strong>Mode:</strong> {cfg.mode}</p>
-    </section>
-  {/if}
 </main>
 
 <style>
   main {
-    max-width: 900px;
+    max-width: 560px;
     margin: 0 auto;
-    padding: 0.85rem 1rem 3rem;
-    animation: slideIn 320ms ease;
+    padding: 1rem;
   }
 
-  .panel {
-    margin-top: 0.9rem;
+  .auth-shell {
     border: 1px solid var(--stroke-soft);
-    border-radius: 16px;
+    border-radius: 18px;
     background: linear-gradient(180deg, #fff 0%, #fbfdfe 100%);
-    padding: 0.85rem;
-    box-shadow: 0 10px 22px rgba(17, 39, 57, 0.08);
+    padding: 1rem;
+    box-shadow: var(--elev-1);
+    display: grid;
+    gap: 0.75rem;
   }
 
   h1,
-  h2,
   p {
     margin: 0;
   }
 
-  h2,
-  p,
-  ul,
-  .form-grid,
-  .confirm {
-    margin-top: 0.45rem;
+  .tabs {
+    display: inline-flex;
+    gap: 0.35rem;
+    background: #eef4f8;
+    border: 1px solid #cfdae4;
+    border-radius: 999px;
+    padding: 0.25rem;
+    width: fit-content;
   }
 
-  ul {
-    padding-left: 1.1rem;
+  .tabs button {
+    border: none;
+    background: transparent;
+    color: #355069;
+    border-radius: 999px;
+    padding: 0.35rem 0.72rem;
+    font-size: 0.86rem;
+    font-weight: 650;
+    cursor: pointer;
   }
 
-  .form-grid,
-  .confirm {
+  .tabs button.active {
+    background: #fff;
+    color: #123b58;
+    box-shadow: 0 2px 8px rgba(16, 40, 59, 0.12);
+  }
+
+  .sub {
+    color: #3f5973;
+    font-size: 0.92rem;
+  }
+
+  .form-grid {
     display: grid;
     gap: 0.55rem;
   }
@@ -224,7 +222,7 @@
   label {
     display: grid;
     gap: 0.3rem;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #2f4760;
   }
@@ -232,7 +230,7 @@
   input {
     border: 1px solid #c1d2df;
     border-radius: 12px;
-    padding: 0.48rem 0.6rem;
+    padding: 0.55rem 0.68rem;
     font-size: 0.95rem;
   }
 
@@ -245,16 +243,11 @@
   button {
     border: none;
     border-radius: 11px;
-    padding: 0.48rem 0.78rem;
+    padding: 0.5rem 0.82rem;
     background: linear-gradient(154deg, var(--brand-600) 0%, var(--brand-700) 100%);
     color: #fff;
     font-weight: 650;
     cursor: pointer;
-  }
-
-  button:disabled {
-    opacity: 0.55;
-    cursor: not-allowed;
   }
 
   .ghost {
@@ -263,21 +256,17 @@
     border: 1px solid #bdcbd9;
   }
 
+  button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
   .status {
     border: 1px solid #ceddeb;
     border-radius: 11px;
     background: #edf5fb;
     padding: 0.45rem 0.55rem;
-  }
-
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    color: #2b4f67;
+    font-size: 0.88rem;
   }
 </style>

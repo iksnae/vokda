@@ -2,10 +2,13 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import {
-    addToCart,
+    addVoiceToCollection,
+    collections,
+    createCollection,
     customVoices,
     favorites,
     metadataOverrides,
+    removeVoiceFromCollection,
     toggleFavorite
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
@@ -22,6 +25,8 @@
   let ssmlOnly = false;
   let onlyFavorites = false;
   let selectedCardId = '';
+  let newCollectionName = '';
+  let collectionMessage = '';
 
   onMount(() => {
     if (!browser) return;
@@ -45,9 +50,38 @@
   }
 
   function quickAdd(voice: Voice) {
-    const variant = voice.variants.find((entry) => entry.runnable) ?? voice.variants[0];
-    if (!variant) return;
-    addToCart(voice.id, variant.id);
+    if (!$collections.length) return;
+    addVoiceToCollection($collections[0].id, voice.id);
+    collectionMessage = `Saved to ${$collections[0].name}.`;
+  }
+
+  function inCollection(collectionId: string, voiceId: string) {
+    const collection = $collections.find((entry) => entry.id === collectionId);
+    return collection?.voiceIds.includes(voiceId) ?? false;
+  }
+
+  function toggleCollection(voiceId: string, collectionId: string) {
+    if (inCollection(collectionId, voiceId)) {
+      removeVoiceFromCollection(collectionId, voiceId);
+      collectionMessage = 'Removed from collection.';
+      return;
+    }
+
+    addVoiceToCollection(collectionId, voiceId);
+    const collection = $collections.find((entry) => entry.id === collectionId);
+    collectionMessage = collection ? `Saved to ${collection.name}.` : 'Saved to collection.';
+  }
+
+  function createAndAttach(voiceId: string) {
+    const name = newCollectionName.trim();
+    if (!name) return;
+
+    createCollection(name);
+    const created = $collections.find((collection) => collection.name.toLowerCase() === name.toLowerCase());
+    if (!created) return;
+    addVoiceToCollection(created.id, voiceId);
+    newCollectionName = '';
+    collectionMessage = `Created ${created.name}.`;
   }
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
@@ -223,11 +257,44 @@
         </button>
 
         <div class="card-actions">
-          <button class="ghost" on:click={() => quickAdd(voice)}>
-            Add
+          <button class="ghost" on:click={() => quickAdd(voice)} disabled={!$roleFlags.isGuest || !$collections.length}>
+            Save
           </button>
           <a class="details-link" href={`/voices/${voice.id}`}>View</a>
         </div>
+
+        {#if selectedCardId === voice.id}
+          <div class="collection-panel">
+            {#if !$roleFlags.isGuest}
+              <p class="inline-note">Sign in to save voices to collections.</p>
+            {:else}
+              <p class="inline-note">Save to one or more collections</p>
+              <div class="collection-chips">
+                <button
+                  class:active={$favorites.includes(voice.id)}
+                  on:click={() => toggleFavorite(voice.id)}
+                >
+                  {$favorites.includes(voice.id) ? 'Starred' : 'Star'}
+                </button>
+                {#each $collections as collection}
+                  <button
+                    class:active={inCollection(collection.id, voice.id)}
+                    on:click={() => toggleCollection(voice.id, collection.id)}
+                  >
+                    {collection.name}
+                  </button>
+                {/each}
+              </div>
+              <div class="new-collection-row">
+                <input bind:value={newCollectionName} placeholder="New collection" />
+                <button class="ghost" on:click={() => createAndAttach(voice.id)}>Create + Add</button>
+              </div>
+              {#if collectionMessage}
+                <p class="inline-note">{collectionMessage}</p>
+              {/if}
+            {/if}
+          </div>
+        {/if}
       </article>
     {:else}
       <p class="empty">No voices matched the active filters.</p>
@@ -512,6 +579,55 @@
     align-items: center;
   }
 
+  .collection-panel {
+    border-top: 1px solid #d8e3ec;
+    padding-top: 0.55rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .collection-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.38rem;
+  }
+
+  .collection-chips button {
+    border: 1px solid #c2d2df;
+    background: #f2f7fb;
+    color: #2e4b61;
+    border-radius: 999px;
+    padding: 0.22rem 0.55rem;
+    font-size: 0.77rem;
+    font-weight: 650;
+    cursor: pointer;
+  }
+
+  .collection-chips button.active {
+    background: #dcedf8;
+    border-color: #93b2c9;
+    color: #123b57;
+  }
+
+  .new-collection-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.4rem;
+  }
+
+  .new-collection-row input {
+    border: 1px solid #bfd0dd;
+    border-radius: 10px;
+    padding: 0.45rem 0.62rem;
+    font-size: 0.84rem;
+  }
+
+  .inline-note {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #40627c;
+  }
+
   .star {
     border: 1px solid #cfdae4;
     background: #fff;
@@ -576,6 +692,10 @@
 
   @media (max-width: 620px) {
     .filters {
+      grid-template-columns: 1fr;
+    }
+
+    .new-collection-row {
       grid-template-columns: 1fr;
     }
   }
