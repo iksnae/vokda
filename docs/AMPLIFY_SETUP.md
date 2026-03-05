@@ -22,13 +22,13 @@ For `main` branch in Amplify:
 
 - `PUBLIC_APP_ENV=production`
 - `PUBLIC_AUTH_MODE=amplify`
-- `PUBLIC_API_BASE_URL=https://<api-domain-or-gateway-base-url>`
+- `PUBLIC_API_BASE_URL=https://vokda.iksnae.com/api`
 
 For preview branches:
 
 - `PUBLIC_APP_ENV=preview`
 - `PUBLIC_AUTH_MODE=amplify`
-- `PUBLIC_API_BASE_URL=https://<preview-api-domain-or-gateway-base-url>`
+- `PUBLIC_API_BASE_URL=https://vokda.iksnae.com/api`
 
 Notes:
 - Web auth now uses Amplify JS + Cognito User Pool directly from `amplify_outputs.json`.
@@ -48,3 +48,4 @@ Notes:
 
 - Add custom domain in Amplify.
 - Add backend environment separation when `apps/api` is introduced.
+- Primary production domain: `https://vokda.iksnae.com`
