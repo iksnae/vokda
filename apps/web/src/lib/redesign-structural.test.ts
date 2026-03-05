@@ -206,9 +206,9 @@ describe('Phase C: Discovery & delight', () => {
   });
 
   describe('11. Collapsible sections on detail page', () => {
-    it('detail page has collapsible about section', () => {
+    it('detail page has voice profile section', () => {
       const detail = readComponent('routes/voices/[id]/+page.svelte');
-      expect(detail).toContain('aboutOpen');
+      expect(detail).toContain('Voice profile');
     });
 
     it('detail page has collapsible technical section', () => {

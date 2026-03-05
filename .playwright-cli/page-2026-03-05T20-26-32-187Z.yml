@@ -1,0 +1,70 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "V Vokda" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: V
+      - generic [ref=e7]: Vokda
+    - navigation
+    - button "Sign in" [ref=e63] [cursor=pointer]
+  - main [ref=e10]:
+    - link "Back to catalog" [ref=e11] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: AWS Polly
+      - heading "Joanna" [level=1] [ref=e14]
+      - paragraph [ref=e15]: US English voice widely used for assistants, explainers, and narration.
+      - paragraph [ref=e16]: Warm US narrator · en-US · premium tier
+      - list [ref=e17]:
+        - listitem [ref=e18]: narration
+        - listitem [ref=e19]: assistant
+        - listitem [ref=e20]: us-english
+      - paragraph [ref=e21]: "License: Use governed by AWS service terms and account-level usage rights."
+      - paragraph [ref=e22]: Balanced American English female voice for guides, onboarding flows, and general narration.
+    - generic [ref=e23]:
+      - heading "Audition Studio" [level=2] [ref=e24]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - text: Variant for preview
+          - combobox "Variant for preview" [ref=e27]:
+            - option "Cloud Provider · aws:polly:joanna" [selected]
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - radio "Plain text" [checked] [ref=e30]
+            - text: Plain text
+          - generic [ref=e31]:
+            - radio "SSML input" [ref=e32]
+            - text: SSML input
+        - generic [ref=e33]:
+          - text: Preview input
+          - textbox "Preview input" [ref=e34]:
+            - /placeholder: Enter text or SSML for quick audition
+            - text: This is a live audition preview from Vokda. Use this to validate tone, pacing, and clarity.
+        - generic [ref=e35]:
+          - button "Play Preview" [ref=e36] [cursor=pointer]
+          - button "Stop" [ref=e37] [cursor=pointer]
+    - generic [ref=e38]:
+      - heading "Samples" [level=2] [ref=e39]
+      - list [ref=e40]:
+        - listitem [ref=e41]:
+          - heading "Product Brief" [level=3] [ref=e42]
+          - paragraph [ref=e43]: This release adds multilingual voice routing and higher reliability across all synthesis adapters.
+          - paragraph [ref=e44]: Audio sample not linked yet.
+    - generic [ref=e45]:
+      - heading "Variants" [level=2] [ref=e46]
+      - list [ref=e47]:
+        - listitem [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - heading "Cloud Provider" [level=3] [ref=e51]
+              - paragraph [ref=e52]: aws:polly:joanna
+            - button "Add to Cart" [active] [ref=e53] [cursor=pointer]
+          - generic [ref=e54]:
+            - generic [ref=e55]: Runnable
+            - generic [ref=e56]: SSML supported
+            - generic [ref=e57]: mp3, wav, pcm
+            - generic [ref=e58]: "Max chars: 3000"
+      - paragraph [ref=e64]: Variant added to cart.
+    - generic [ref=e59]:
+      - heading "Save To Collection" [level=2] [ref=e60]
+      - button "Add to favorites" [disabled] [ref=e61]
+      - paragraph [ref=e62]: Sign in as a registered guest or higher to save favorites and collections.

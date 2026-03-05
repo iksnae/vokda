@@ -1,0 +1,339 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "V Vokda" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: V
+      - generic [ref=e7]: Vokda
+    - navigation [ref=e8]
+    - button "Sign in" [ref=e10] [cursor=pointer]
+  - main [ref=e11]:
+    - generic [ref=e13]:
+      - heading "Find TTS voices fast" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Search by voice name, tone, language, or use case.
+      - textbox "Search voices..." [ref=e17]
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - text: Provider
+        - combobox "Provider" [ref=e20]:
+          - option "All providers" [selected]
+          - option "AWS Polly"
+          - option "Azure Speech"
+          - option "ElevenLabs"
+          - option "Google Cloud TTS"
+          - option "Hugging Face"
+          - option "OpenAI"
+      - generic [ref=e21]:
+        - text: Language
+        - combobox "Language" [ref=e22]:
+          - option "All languages" [selected]
+          - option "de-DE"
+          - option "en-GB"
+          - option "en-US"
+          - option "es-ES"
+          - option "fr-FR"
+          - option "it-IT"
+          - option "ja-JP"
+          - option "ko-KR"
+          - option "pt-BR"
+          - option "ru-RU"
+          - option "zh-CN"
+      - generic [ref=e23]:
+        - text: Source
+        - combobox "Source" [ref=e24]:
+          - option "All sources" [selected]
+          - option "Cloud"
+          - option "HF Model"
+      - generic [ref=e25]:
+        - checkbox "Runnable" [ref=e26]
+        - text: Runnable
+      - generic [ref=e27]:
+        - checkbox "SSML" [ref=e28]
+        - text: SSML
+      - generic [ref=e29]:
+        - checkbox "Starred" [ref=e30]
+        - text: Starred
+    - paragraph [ref=e31]: 12 results
+    - generic [ref=e32]:
+      - article [ref=e33]:
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: AWS Polly
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: premium
+            - button "Star voice" [disabled] [ref=e38]: ☆
+        - button "Joanna Warm US narrator US English voice widely used for assistants, explainers, and narration. Balanced American English female voice for guides, onboarding flows, and general narration. en-US narration assistant us-english warm confident 1 variants · 1 samples · runnable" [ref=e39] [cursor=pointer]:
+          - heading "Joanna" [level=2] [ref=e40]
+          - paragraph [ref=e41]: Warm US narrator
+          - paragraph [ref=e42]: US English voice widely used for assistants, explainers, and narration.
+          - paragraph [ref=e43]: Balanced American English female voice for guides, onboarding flows, and general narration.
+          - generic [ref=e44]:
+            - generic [ref=e45]: en-US
+            - generic [ref=e46]: narration
+            - generic [ref=e47]: assistant
+            - generic [ref=e48]: us-english
+            - generic [ref=e49]: warm
+            - generic [ref=e50]: confident
+          - paragraph [ref=e51]: 1 variants · 1 samples · runnable
+        - generic [ref=e52]:
+          - button "Save" [disabled] [ref=e53]
+          - link "View" [ref=e54] [cursor=pointer]:
+            - /url: /voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1
+      - article [ref=e55]:
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: AWS Polly
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: premium
+            - button "Star voice" [disabled] [ref=e60]: ☆
+        - button "Matthew Documentary male narrator US English male voice suited for long-form informational narration. Low-variance US male delivery for explainers, educational long-form reads, and policy narration. en-US long-form neutral us-english neutral calm 1 variants · 1 samples · runnable" [ref=e61] [cursor=pointer]:
+          - heading "Matthew" [level=2] [ref=e62]
+          - paragraph [ref=e63]: Documentary male narrator
+          - paragraph [ref=e64]: US English male voice suited for long-form informational narration.
+          - paragraph [ref=e65]: Low-variance US male delivery for explainers, educational long-form reads, and policy narration.
+          - generic [ref=e66]:
+            - generic [ref=e67]: en-US
+            - generic [ref=e68]: long-form
+            - generic [ref=e69]: neutral
+            - generic [ref=e70]: us-english
+            - generic [ref=e71]: neutral
+            - generic [ref=e72]: calm
+          - paragraph [ref=e73]: 1 variants · 1 samples · runnable
+        - generic [ref=e74]:
+          - button "Save" [disabled] [ref=e75]
+          - link "View" [ref=e76] [cursor=pointer]:
+            - /url: /voices/01JCVK8Q2WQEC05YF88Q3AJ1B2
+      - article [ref=e77]:
+        - generic [ref=e78]:
+          - paragraph [ref=e79]: Azure Speech
+          - generic [ref=e80]:
+            - paragraph [ref=e81]: premium
+            - button "Star voice" [disabled] [ref=e82]: ☆
+        - button "en-US-JennyNeural Enterprise support assistant High-quality US English neural voice commonly used in enterprise assistants. Clean, conversational US voice tuned for support and product guidance interactions. en-US enterprise conversational us-english friendly professional 1 variants · 1 samples · runnable" [ref=e83] [cursor=pointer]:
+          - heading "en-US-JennyNeural" [level=2] [ref=e84]
+          - paragraph [ref=e85]: Enterprise support assistant
+          - paragraph [ref=e86]: High-quality US English neural voice commonly used in enterprise assistants.
+          - paragraph [ref=e87]: Clean, conversational US voice tuned for support and product guidance interactions.
+          - generic [ref=e88]:
+            - generic [ref=e89]: en-US
+            - generic [ref=e90]: enterprise
+            - generic [ref=e91]: conversational
+            - generic [ref=e92]: us-english
+            - generic [ref=e93]: friendly
+            - generic [ref=e94]: professional
+          - paragraph [ref=e95]: 1 variants · 1 samples · runnable
+        - generic [ref=e96]:
+          - button "Save" [disabled] [ref=e97]
+          - link "View" [ref=e98] [cursor=pointer]:
+            - /url: /voices/01JCVKBX2W7R5P4SQA0WV8X7D8
+      - article [ref=e99]:
+        - generic [ref=e100]:
+          - paragraph [ref=e101]: Azure Speech
+          - generic [ref=e102]:
+            - paragraph [ref=e103]: premium
+            - button "Star voice" [disabled] [ref=e104]: ☆
+        - button "en-GB-RyanNeural UK training narrator British English neural voice with strong clarity for product education and training. British English voice with instructional cadence for onboarding and policy education. en-GB uk-english training clear clear measured 1 variants · 1 samples · runnable" [ref=e105] [cursor=pointer]:
+          - heading "en-GB-RyanNeural" [level=2] [ref=e106]
+          - paragraph [ref=e107]: UK training narrator
+          - paragraph [ref=e108]: British English neural voice with strong clarity for product education and training.
+          - paragraph [ref=e109]: British English voice with instructional cadence for onboarding and policy education.
+          - generic [ref=e110]:
+            - generic [ref=e111]: en-GB
+            - generic [ref=e112]: uk-english
+            - generic [ref=e113]: training
+            - generic [ref=e114]: clear
+            - generic [ref=e115]: clear
+            - generic [ref=e116]: measured
+          - paragraph [ref=e117]: 1 variants · 1 samples · runnable
+        - generic [ref=e118]:
+          - button "Save" [disabled] [ref=e119]
+          - link "View" [ref=e120] [cursor=pointer]:
+            - /url: /voices/01JCVKFCM1B6K24RH7BGN2M1A7
+      - article [ref=e121]:
+        - generic [ref=e122]:
+          - paragraph [ref=e123]: Google Cloud TTS
+          - generic [ref=e124]:
+            - paragraph [ref=e125]: premium
+            - button "Star voice" [disabled] [ref=e126]: ☆
+        - button "en-US-Neural2-J General US all-purpose Google Neural2 US English voice for general-purpose synthesis. Versatile US voice with stable cadence for product UIs and system narration. en-US google neural2 general-purpose neutral steady 1 variants · 1 samples · runnable" [ref=e127] [cursor=pointer]:
+          - heading "en-US-Neural2-J" [level=2] [ref=e128]
+          - paragraph [ref=e129]: General US all-purpose
+          - paragraph [ref=e130]: Google Neural2 US English voice for general-purpose synthesis.
+          - paragraph [ref=e131]: Versatile US voice with stable cadence for product UIs and system narration.
+          - generic [ref=e132]:
+            - generic [ref=e133]: en-US
+            - generic [ref=e134]: google
+            - generic [ref=e135]: neural2
+            - generic [ref=e136]: general-purpose
+            - generic [ref=e137]: neutral
+            - generic [ref=e138]: steady
+          - paragraph [ref=e139]: 1 variants · 1 samples · runnable
+        - generic [ref=e140]:
+          - button "Save" [disabled] [ref=e141]
+          - link "View" [ref=e142] [cursor=pointer]:
+            - /url: /voices/01JCVKJ9RVY2ENMZXJ2R0W31C3
+      - article [ref=e143]:
+        - generic [ref=e144]:
+          - paragraph [ref=e145]: Google Cloud TTS
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: premium
+            - button "Star voice" [disabled] [ref=e148]: ☆
+        - button "en-US-News-N Broadcast headline voice News-oriented US English voice optimized for broadcast-style reads. Crisp US newscast profile with high clarity and energetic information delivery. en-US news broadcast us-english energetic assertive 1 variants · 1 samples · runnable" [ref=e149] [cursor=pointer]:
+          - heading "en-US-News-N" [level=2] [ref=e150]
+          - paragraph [ref=e151]: Broadcast headline voice
+          - paragraph [ref=e152]: News-oriented US English voice optimized for broadcast-style reads.
+          - paragraph [ref=e153]: Crisp US newscast profile with high clarity and energetic information delivery.
+          - generic [ref=e154]:
+            - generic [ref=e155]: en-US
+            - generic [ref=e156]: news
+            - generic [ref=e157]: broadcast
+            - generic [ref=e158]: us-english
+            - generic [ref=e159]: energetic
+            - generic [ref=e160]: assertive
+          - paragraph [ref=e161]: 1 variants · 1 samples · runnable
+        - generic [ref=e162]:
+          - button "Save" [disabled] [ref=e163]
+          - link "View" [ref=e164] [cursor=pointer]:
+            - /url: /voices/01JCVKN3XGS1D8VCVBQJ6D7Y8M
+      - article [ref=e165]:
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: ElevenLabs
+          - generic [ref=e168]:
+            - paragraph [ref=e169]: premium
+            - button "Star voice" [disabled] [ref=e170]: ☆
+        - button "Mark Expressive story narrator Expressive English voice featured in ElevenLabs text-to-speech demos. Characterful English narration voice with stronger emotional contour. en-US expressive narration elevenlabs dramatic vivid 1 variants · 1 samples · runnable" [ref=e171] [cursor=pointer]:
+          - heading "Mark" [level=2] [ref=e172]
+          - paragraph [ref=e173]: Expressive story narrator
+          - paragraph [ref=e174]: Expressive English voice featured in ElevenLabs text-to-speech demos.
+          - paragraph [ref=e175]: Characterful English narration voice with stronger emotional contour.
+          - generic [ref=e176]:
+            - generic [ref=e177]: en-US
+            - generic [ref=e178]: expressive
+            - generic [ref=e179]: narration
+            - generic [ref=e180]: elevenlabs
+            - generic [ref=e181]: dramatic
+            - generic [ref=e182]: vivid
+          - paragraph [ref=e183]: 1 variants · 1 samples · runnable
+        - generic [ref=e184]:
+          - button "Save" [disabled] [ref=e185]
+          - link "View" [ref=e186] [cursor=pointer]:
+            - /url: /voices/01JCVKRBPYQ0T2MCPW7GSD9K11
+      - article [ref=e187]:
+        - generic [ref=e188]:
+          - paragraph [ref=e189]: Hugging Face
+          - generic [ref=e190]:
+            - paragraph [ref=e191]: standard
+            - button "Star voice" [disabled] [ref=e192]: ☆
+        - button "Kokoro 82M Open self-host TTS Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting. Open-weight model option for teams prioritizing self-hosting and infrastructure control. en-US open-model self-hosted apache-2.0 neutral 1 variants · 1 samples · runnable" [ref=e193] [cursor=pointer]:
+          - heading "Kokoro 82M" [level=2] [ref=e194]
+          - paragraph [ref=e195]: Open self-host TTS
+          - paragraph [ref=e196]: Open-weight TTS model (hexgrad/Kokoro-82M), commonly deployed via self-hosting.
+          - paragraph [ref=e197]: Open-weight model option for teams prioritizing self-hosting and infrastructure control.
+          - generic [ref=e198]:
+            - generic [ref=e199]: en-US
+            - generic [ref=e200]: open-model
+            - generic [ref=e201]: self-hosted
+            - generic [ref=e202]: apache-2.0
+            - generic [ref=e203]: neutral
+          - paragraph [ref=e204]: 1 variants · 1 samples · runnable
+        - generic [ref=e205]:
+          - button "Save" [disabled] [ref=e206]
+          - link "View" [ref=e207] [cursor=pointer]:
+            - /url: /voices/01JCVKV2YSMBG9V43CMWDM3QFA
+      - article [ref=e208]:
+        - generic [ref=e209]:
+          - paragraph [ref=e210]: Hugging Face
+          - generic [ref=e211]:
+            - paragraph [ref=e212]: premium
+            - button "Star voice" [disabled] [ref=e213]: ☆
+        - button "Qwen3-TTS-12Hz-1.7B-Base Multilingual open model Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths. Large open multilingual base suitable for custom voice products and localization pipelines. en-US zh-CN ja-JP de-DE fr-FR es-ES it-IT pt-BR ru-RU ko-KR open-model multilingual qwen3 model-dependent 1 variants · 1 samples · runnable" [ref=e214] [cursor=pointer]:
+          - heading "Qwen3-TTS-12Hz-1.7B-Base" [level=2] [ref=e215]
+          - paragraph [ref=e216]: Multilingual open model
+          - paragraph [ref=e217]: Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.
+          - paragraph [ref=e218]: Large open multilingual base suitable for custom voice products and localization pipelines.
+          - generic [ref=e219]:
+            - generic [ref=e220]: en-US
+            - generic [ref=e221]: zh-CN
+            - generic [ref=e222]: ja-JP
+            - generic [ref=e223]: de-DE
+            - generic [ref=e224]: fr-FR
+            - generic [ref=e225]: es-ES
+            - generic [ref=e226]: it-IT
+            - generic [ref=e227]: pt-BR
+            - generic [ref=e228]: ru-RU
+            - generic [ref=e229]: ko-KR
+            - generic [ref=e230]: open-model
+            - generic [ref=e231]: multilingual
+            - generic [ref=e232]: qwen3
+            - generic [ref=e233]: model-dependent
+          - paragraph [ref=e234]: 1 variants · 1 samples · runnable
+        - generic [ref=e235]:
+          - button "Save" [disabled] [ref=e236]
+          - link "View" [ref=e237] [cursor=pointer]:
+            - /url: /voices/01JCVKYGHM7N2NQ9S18N9RF89C
+      - article [ref=e238]:
+        - generic [ref=e239]:
+          - paragraph [ref=e240]: OpenAI
+          - generic [ref=e241]:
+            - paragraph [ref=e242]: premium
+            - button "Star voice" [disabled] [ref=e243]: ☆
+        - button "alloy Balanced assistant voice General-purpose OpenAI TTS voice with balanced delivery for UI and assistant prompts. Reliable neutral voice for product narration, prompts, and lightweight explainers. en-US assistant general-purpose openai neutral clear 1 variants · 1 samples · runnable" [ref=e244] [cursor=pointer]:
+          - heading "alloy" [level=2] [ref=e245]
+          - paragraph [ref=e246]: Balanced assistant voice
+          - paragraph [ref=e247]: General-purpose OpenAI TTS voice with balanced delivery for UI and assistant prompts.
+          - paragraph [ref=e248]: Reliable neutral voice for product narration, prompts, and lightweight explainers.
+          - generic [ref=e249]:
+            - generic [ref=e250]: en-US
+            - generic [ref=e251]: assistant
+            - generic [ref=e252]: general-purpose
+            - generic [ref=e253]: openai
+            - generic [ref=e254]: neutral
+            - generic [ref=e255]: clear
+          - paragraph [ref=e256]: 1 variants · 1 samples · runnable
+        - generic [ref=e257]:
+          - button "Save" [disabled] [ref=e258]
+          - link "View" [ref=e259] [cursor=pointer]:
+            - /url: /voices/01JCW012A9N9Y3W08F0Q0A1O1
+      - article [ref=e260]:
+        - generic [ref=e261]:
+          - paragraph [ref=e262]: OpenAI
+          - generic [ref=e263]:
+            - paragraph [ref=e264]: premium
+            - button "Star voice" [disabled] [ref=e265]: ☆
+        - button "nova Energetic creative narrator Expressive OpenAI voice for storytelling and energetic marketing reads. Higher-energy voice suitable for launch videos, social clips, and dynamic narration. en-US expressive storytelling openai energetic vivid 1 variants · 1 samples · runnable" [ref=e266] [cursor=pointer]:
+          - heading "nova" [level=2] [ref=e267]
+          - paragraph [ref=e268]: Energetic creative narrator
+          - paragraph [ref=e269]: Expressive OpenAI voice for storytelling and energetic marketing reads.
+          - paragraph [ref=e270]: Higher-energy voice suitable for launch videos, social clips, and dynamic narration.
+          - generic [ref=e271]:
+            - generic [ref=e272]: en-US
+            - generic [ref=e273]: expressive
+            - generic [ref=e274]: storytelling
+            - generic [ref=e275]: openai
+            - generic [ref=e276]: energetic
+            - generic [ref=e277]: vivid
+          - paragraph [ref=e278]: 1 variants · 1 samples · runnable
+        - generic [ref=e279]:
+          - button "Save" [disabled] [ref=e280]
+          - link "View" [ref=e281] [cursor=pointer]:
+            - /url: /voices/01JCW015M2Q4MFX8K2CZ9R2D2
+      - article [ref=e282]:
+        - generic [ref=e283]:
+          - paragraph [ref=e284]: OpenAI
+          - generic [ref=e285]:
+            - paragraph [ref=e286]: premium
+            - button "Star voice" [disabled] [ref=e287]: ☆
+        - button "onyx Low-register documentary Low-register OpenAI voice suited for documentary, policy, and long-form informational audio. Grounded low-register voice for educational narration and formal explainers. en-US documentary long-form openai calm authoritative 1 variants · 1 samples · runnable" [ref=e288] [cursor=pointer]:
+          - heading "onyx" [level=2] [ref=e289]
+          - paragraph [ref=e290]: Low-register documentary
+          - paragraph [ref=e291]: Low-register OpenAI voice suited for documentary, policy, and long-form informational audio.
+          - paragraph [ref=e292]: Grounded low-register voice for educational narration and formal explainers.
+          - generic [ref=e293]:
+            - generic [ref=e294]: en-US
+            - generic [ref=e295]: documentary
+            - generic [ref=e296]: long-form
+            - generic [ref=e297]: openai
+            - generic [ref=e298]: calm
+            - generic [ref=e299]: authoritative
+          - paragraph [ref=e300]: 1 variants · 1 samples · runnable
+        - generic [ref=e301]:
+          - button "Save" [disabled] [ref=e302]
+          - link "View" [ref=e303] [cursor=pointer]:
+            - /url: /voices/01JCW018P8BMX7D34R7XJ93T3

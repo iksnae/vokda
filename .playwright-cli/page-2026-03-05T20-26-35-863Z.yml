@@ -1,0 +1,20 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "V Vokda" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: V
+      - generic [ref=e7]: Vokda
+    - navigation
+    - generic [ref=e9]: auth...
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Cart" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Finalize selected variants and export an import-ready voice catalog bundle.
+      - generic [ref=e14]:
+        - article [ref=e15]:
+          - strong [ref=e16]: "0"
+          - text: Selected Variants
+        - article [ref=e17]:
+          - strong [ref=e18]: "0"
+          - text: Runnable
+    - paragraph [ref=e19]: Your cart is empty. Open a voice profile and add one or more variants.

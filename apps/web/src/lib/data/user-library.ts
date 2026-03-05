@@ -1,4 +1,4 @@
-import type { CartItem, Collection } from '$lib/types';
+import type { Collection } from '$lib/types';
 import { dataClient } from '$lib/data/client';
 
 type FavoriteRecord = {
@@ -20,13 +20,6 @@ type CollectionVoiceRecord = {
   note?: string | null;
   position?: number | null;
   addedAtIso: string;
-};
-
-type CartItemRecord = {
-  id: string;
-  voiceId: string;
-  variantId: string;
-  createdAtIso: string;
 };
 
 type ListPage<T> = {
@@ -60,11 +53,10 @@ async function listAll<T>(
 export async function fetchLibraryState(): Promise<{
   favorites: string[];
   collections: Collection[];
-  cart: CartItem[];
 }> {
   const client = dataClient();
 
-  const [favoritesRaw, collectionsRaw, collectionVoicesRaw, cartRaw] = await Promise.all([
+  const [favoritesRaw, collectionsRaw, collectionVoicesRaw] = await Promise.all([
     listAll<FavoriteRecord>(async (nextToken) => {
       const response = await client.models.Favorite.list({ limit: 200, nextToken });
       return response as ListPage<FavoriteRecord>;
@@ -76,10 +68,6 @@ export async function fetchLibraryState(): Promise<{
     listAll<CollectionVoiceRecord>(async (nextToken) => {
       const response = await client.models.CollectionVoice.list({ limit: 200, nextToken });
       return response as ListPage<CollectionVoiceRecord>;
-    }),
-    listAll<CartItemRecord>(async (nextToken) => {
-      const response = await client.models.CartItem.list({ limit: 200, nextToken });
-      return response as ListPage<CartItemRecord>;
     })
   ]);
 
@@ -112,19 +100,11 @@ export async function fetchLibraryState(): Promise<{
     })
     .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
 
-  const cart: CartItem[] = cartRaw
-    .map((item) => ({
-      voiceId: item.voiceId,
-      variantId: item.variantId,
-      addedAt: item.createdAtIso
-    }))
-    .sort((a, b) => a.addedAt.localeCompare(b.addedAt));
-
   const favorites = favoritesRaw
     .sort((a, b) => a.createdAtIso.localeCompare(b.createdAtIso))
     .map((entry) => entry.voiceId);
 
-  return { favorites, collections, cart };
+  return { favorites, collections };
 }
 
 export async function saveFavorite(voiceId: string) {
@@ -160,66 +140,6 @@ export async function removeFavorite(voiceId: string) {
       .filter((entry) => Boolean(entry.id))
       .map(async (entry) => {
         const deleted = await client.models.Favorite.delete({ id: entry.id });
-        assertNoErrors(deleted.errors);
-      })
-  );
-}
-
-export async function saveCartItem(voiceId: string, variantId: string) {
-  const client = dataClient();
-  const existing = (await client.models.CartItem.list({
-    limit: 1,
-    filter: {
-      and: [{ voiceId: { eq: voiceId } }, { variantId: { eq: variantId } }]
-    }
-  })) as ListPage<CartItemRecord>;
-
-  assertNoErrors(existing.errors);
-  if (existing.data.length > 0) return;
-
-  const created = await client.models.CartItem.create({
-    voiceId,
-    variantId,
-    createdAtIso: new Date().toISOString()
-  });
-  assertNoErrors(created.errors);
-}
-
-export async function removeCartItem(voiceId: string, variantId: string) {
-  const client = dataClient();
-  const entries = await listAll<CartItemRecord>(async (nextToken) => {
-    const response = await client.models.CartItem.list({
-      limit: 200,
-      nextToken,
-      filter: {
-        and: [{ voiceId: { eq: voiceId } }, { variantId: { eq: variantId } }]
-      }
-    });
-    return response as ListPage<CartItemRecord>;
-  });
-
-  await Promise.all(
-    entries
-      .filter((entry) => Boolean(entry.id))
-      .map(async (entry) => {
-        const deleted = await client.models.CartItem.delete({ id: entry.id });
-        assertNoErrors(deleted.errors);
-      })
-  );
-}
-
-export async function clearRemoteCart() {
-  const client = dataClient();
-  const entries = await listAll<CartItemRecord>(async (nextToken) => {
-    const response = await client.models.CartItem.list({ limit: 200, nextToken });
-    return response as ListPage<CartItemRecord>;
-  });
-
-  await Promise.all(
-    entries
-      .filter((entry) => Boolean(entry.id))
-      .map(async (entry) => {
-        const deleted = await client.models.CartItem.delete({ id: entry.id });
         assertNoErrors(deleted.errors);
       })
   );

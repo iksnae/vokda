@@ -1,18 +1,15 @@
 import { browser } from '$app/environment';
 import { derived, writable } from 'svelte/store';
-import type { CartItem, Collection, ProviderDefinition, Voice, VoicePack } from '$lib/types';
+import type { Collection, ProviderDefinition, Voice, VoicePack } from '$lib/types';
 import { AUTH_MODE } from '$lib/auth/config';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
 import { DEFAULT_PROVIDERS, normalizeProviderId } from '$lib/providers';
 import {
   addCollectionVoice,
-  clearRemoteCart,
   fetchLibraryState,
-  removeCartItem as removeRemoteCartItem,
   removeCollection,
   removeCollectionVoice,
   removeFavorite,
-  saveCartItem,
   saveCollection,
   saveFavorite,
   updateCollectionVoiceNote as updateCollectionVoiceNoteRemote
@@ -21,7 +18,6 @@ import { fetchCurationWorkspace, saveCurationWorkspace } from '$lib/data/curatio
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
 type AppState = {
-  cart: CartItem[];
   collections: Collection[];
   favorites: string[];
   customVoices: Voice[];
@@ -32,7 +28,6 @@ type AppState = {
 const STORAGE_PREFIX = 'vokda.app.state.v2';
 
 const defaultState: AppState = {
-  cart: [],
   collections: [],
   favorites: [],
   customVoices: [],
@@ -53,7 +48,6 @@ function loadState(actorKey: string): AppState {
 
     const parsed = JSON.parse(raw) as AppState;
     return {
-      cart: parsed.cart ?? [],
       collections: parsed.collections ?? [],
       favorites: parsed.favorites ?? [],
       customVoices: parsed.customVoices ?? [],
@@ -94,8 +88,7 @@ async function hydrateCloudState() {
     appState.update((state) => ({
       ...state,
       favorites: cloud.favorites,
-      collections: cloud.collections,
-      cart: cloud.cart
+      collections: cloud.collections
     }));
   } catch (error) {
     reportSyncError('hydrate', error);
@@ -179,69 +172,12 @@ if (browser) {
   });
 }
 
-export const cartItems = derived(appState, ($state) => $state.cart);
 export const collections = derived(appState, ($state) => $state.collections);
 export const favorites = derived(appState, ($state) => $state.favorites);
 export const customVoices = derived(appState, ($state) => $state.customVoices);
 export const metadataOverrides = derived(appState, ($state) => $state.metadataOverrides);
 export const providerCatalog = derived(appState, ($state) => $state.providerCatalog);
-export const cartCount = derived(cartItems, ($cart) => $cart.length);
 export const favoritesCount = derived(favorites, ($favorites) => $favorites.length);
-
-export function addToCart(voiceId: string, variantId: string) {
-  let created = false;
-
-  appState.update((state) => {
-    const exists = state.cart.some((item) => item.voiceId === voiceId && item.variantId === variantId);
-    if (exists) return state;
-
-    created = true;
-
-    return {
-      ...state,
-      cart: [
-        ...state.cart,
-        {
-          voiceId,
-          variantId,
-          addedAt: new Date().toISOString()
-        }
-      ]
-    };
-  });
-
-  if (!created || !cloudEnabled()) return;
-
-  void saveCartItem(voiceId, variantId).catch((error) => {
-    reportSyncError('addToCart', error);
-    void hydrateCloudState();
-  });
-}
-
-export function removeFromCart(voiceId: string, variantId: string) {
-  appState.update((state) => ({
-    ...state,
-    cart: state.cart.filter((item) => !(item.voiceId === voiceId && item.variantId === variantId))
-  }));
-
-  if (!cloudEnabled()) return;
-
-  void removeRemoteCartItem(voiceId, variantId).catch((error) => {
-    reportSyncError('removeFromCart', error);
-    void hydrateCloudState();
-  });
-}
-
-export function clearCart() {
-  appState.update((state) => ({ ...state, cart: [] }));
-
-  if (!cloudEnabled()) return;
-
-  void clearRemoteCart().catch((error) => {
-    reportSyncError('clearCart', error);
-    void hydrateCloudState();
-  });
-}
 
 export function toggleFavorite(voiceId: string) {
   let removing = false;
@@ -562,109 +498,58 @@ function normalizeProvider(provider: string): string {
   return normalizeProviderId(provider);
 }
 
-export function buildVoicePack(voices: Voice[], items: CartItem[]): VoicePack {
-  const selected = items
-    .map((item) => {
-      const voice = voices.find((entry) => entry.id === item.voiceId);
-      if (!voice) return null;
+export function buildVoicePack(
+  collectionName: string,
+  voices: Voice[],
+  voiceIds: string[]
+): VoicePack {
+  const selected = voiceIds
+    .map((id) => voices.find((entry) => entry.id === id))
+    .filter((entry): entry is Voice => Boolean(entry));
 
-      const variant = voice.variants.find((entry) => entry.id === item.variantId);
-      if (!variant) return null;
+  const now = new Date().toISOString();
 
-      return { item, voice, variant };
-    })
-    .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
-
-  const profileByKey = new Map<
-    string,
-    {
-      id: string;
-      name: string;
-      description?: string;
-      language: string;
-      gender?: string;
-      ageRange?: string;
-      tone?: string;
-      accent?: string;
-      personalityTags?: string[];
-      emotionalRange?: string[];
-      voiceQuality?: string;
-      previewUrl?: string;
-      recommendedFor?: string[];
-      sampleCount: number;
-      provider?: string;
-      providerVoiceId?: string;
-      seed?: boolean;
-      createdAt: string;
-      updatedAt: string;
-    }
-  >();
-
-  const entries = selected.map(({ voice, variant }) => {
+  const voiceProfiles = selected.map((voice) => {
+    const variant = voice.variants[0];
     const provider = normalizeProvider(voice.providerId ?? voice.provider);
-    const providerVoiceId = voice.providerVoiceId ?? deriveProviderVoiceId(variant.sourceKey);
-    const language = voice.languages[0] ?? 'en-US';
-    const profileKey = `${provider}::${providerVoiceId}::${language}`;
-
-    if (!profileByKey.has(profileKey)) {
-      const now = new Date().toISOString();
-
-      profileByKey.set(profileKey, {
-        id: generateVoiceProfileId(),
-        name: voice.name,
-        description: voice.description,
-        language,
-        gender: voice.metadata.genderPresentation,
-        ageRange: voice.metadata.agePresentation,
-        tone: voice.metadata.speakingStyle,
-        accent: voice.metadata.accent,
-        personalityTags: voice.metadata.machineTags,
-        emotionalRange: voice.metadata.toneTags,
-        voiceQuality: voice.qualityTier,
-        previewUrl: voice.samples.find((sample) => Boolean(sample.audioUrl))?.audioUrl,
-        recommendedFor: voice.metadata.useCases,
-        sampleCount: voice.samples.length,
-        provider,
-        providerVoiceId,
-        seed: !voice.id.startsWith('custom-'),
-        createdAt: now,
-        updatedAt: now
-      });
-    }
-
-    const profile = profileByKey.get(profileKey);
-    if (!profile) {
-      throw new Error('Failed to build voice profile map.');
-    }
+    const providerVoiceId =
+      voice.providerVoiceId ?? (variant ? deriveProviderVoiceId(variant.sourceKey) : voice.name);
 
     return {
-      voiceId: voice.id,
-      voiceName: voice.name,
-      variantId: variant.id,
-      sourceType: variant.sourceType,
-      sourceKey: variant.sourceKey,
-      runnable: variant.runnable,
-      supportsSsml: variant.supportsSsml,
-      outputFormats: variant.outputFormats,
-      licenseNotes: voice.licenseNotes,
-      voiceProfileId: profile.id
+      id: generateVoiceProfileId(),
+      name: voice.name,
+      description: voice.description,
+      language: voice.languages[0] ?? 'en-US',
+      gender: voice.metadata.genderPresentation,
+      ageRange: voice.metadata.agePresentation,
+      tone: voice.metadata.speakingStyle,
+      accent: voice.metadata.accent,
+      personalityTags: voice.metadata.machineTags,
+      emotionalRange: voice.metadata.toneTags,
+      voiceQuality: voice.qualityTier,
+      previewUrl: voice.samples.find((sample) => Boolean(sample.audioUrl))?.audioUrl,
+      recommendedFor: voice.metadata.useCases,
+      sampleCount: voice.samples.length,
+      provider,
+      providerVoiceId,
+      seed: !voice.id.startsWith('custom-'),
+      createdAt: now,
+      updatedAt: now
     };
   });
 
-  const voiceProfiles = Array.from(profileByKey.values());
-
   return {
-    version: '1.1.0',
-    createdAt: new Date().toISOString(),
-    format: 'vokda.voice-catalog.v1',
+    version: '2.0.0',
+    createdAt: now,
+    collectionName,
+    format: 'vokda.voice-collection.v1',
     voiceProfiles,
     catalogHints: {
-      castingHints: entries.map((entry) => ({
-        voiceProfileId: entry.voiceProfileId,
-        voiceProfileName: entry.voiceName,
+      castingHints: voiceProfiles.map((profile) => ({
+        voiceProfileId: profile.id,
+        voiceProfileName: profile.name,
         manualOverride: true
       }))
-    },
-    items: entries.map(({ voiceProfileId, ...entry }) => entry)
+    }
   };
 }

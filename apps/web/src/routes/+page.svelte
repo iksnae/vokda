@@ -91,6 +91,7 @@
 
   const typeLabels: Record<VoiceVariant['sourceType'], string> = {
     cloud_provider: 'Cloud provider',
+    local_model: 'Local model',
     hf_model: 'Open model',
     hf_space: 'HF Space',
     hf_endpoint: 'HF Endpoint',

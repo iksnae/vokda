@@ -1,0 +1,72 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "V Vokda" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: V
+      - generic [ref=e7]: Vokda
+    - navigation
+    - generic [ref=e9]: auth...
+  - main [ref=e10]:
+    - link "Back to catalog" [ref=e11] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: Hugging Face
+      - heading "Qwen3-TTS-12Hz-1.7B-Base" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Open Qwen3-TTS base model for multilingual synthesis and custom deployment paths.
+      - paragraph [ref=e16]: Multilingual open model · en-US, zh-CN, ja-JP, de-DE, fr-FR, es-ES, it-IT, pt-BR, ru-RU, ko-KR · premium tier
+      - list [ref=e17]:
+        - listitem [ref=e18]: open-model
+        - listitem [ref=e19]: multilingual
+        - listitem [ref=e20]: qwen3
+      - paragraph [ref=e21]: "License: Check the current Hugging Face model card and upstream license terms before production export."
+      - paragraph [ref=e22]: Large open multilingual base suitable for custom voice products and localization pipelines.
+    - generic [ref=e23]:
+      - heading "Audition Studio" [level=2] [ref=e24]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - text: Variant for preview
+          - combobox "Variant for preview" [ref=e27]:
+            - option "HF Model · hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base" [selected]
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - radio "Plain text" [checked] [ref=e30]
+            - text: Plain text
+          - generic [ref=e31]:
+            - radio "SSML input" [ref=e32]
+            - text: SSML input
+        - generic [ref=e33]:
+          - text: Preview input
+          - textbox "Preview input" [ref=e34]:
+            - /placeholder: Enter text or SSML for quick audition
+            - text: This is a live audition preview from Vokda. Use this to validate tone, pacing, and clarity.
+        - list [ref=e35]:
+          - listitem [ref=e36]: SSML will be stripped for this variant.
+          - listitem [ref=e37]: Review licensing terms before commercial distribution.
+        - generic [ref=e38]:
+          - button "Play Preview" [ref=e39] [cursor=pointer]
+          - button "Stop" [ref=e40] [cursor=pointer]
+    - generic [ref=e41]:
+      - heading "Samples" [level=2] [ref=e42]
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - heading "Multilingual" [level=3] [ref=e45]
+          - paragraph [ref=e46]: This base model is typically adapted for product-specific voices and deployment constraints.
+          - paragraph [ref=e47]: Audio sample not linked yet.
+    - generic [ref=e48]:
+      - heading "Variants" [level=2] [ref=e49]
+      - list [ref=e50]:
+        - listitem [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - heading "HF Model" [level=3] [ref=e54]
+              - paragraph [ref=e55]: hf:Qwen/Qwen3-TTS-12Hz-1.7B-Base
+            - button "Add to Cart" [ref=e56] [cursor=pointer]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Runnable
+            - generic [ref=e59]: No SSML
+            - generic [ref=e60]: wav, pcm
+            - generic [ref=e61]: "Max chars: 2500"
+    - generic [ref=e62]:
+      - heading "Save To Collection" [level=2] [ref=e63]
+      - button "Add to favorites" [disabled] [ref=e64]
+      - paragraph [ref=e65]: Sign in as a registered guest or higher to save favorites and collections.

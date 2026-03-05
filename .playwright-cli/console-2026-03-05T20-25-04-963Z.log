@@ -1,0 +1,2 @@
+[     229ms] [WARNING] <Layout> was created with unknown prop 'params' @ http://localhost:5173/@fs/Users/k/Projects/vokda/node_modules/@sveltejs/kit/src/runtime/client/client.js?v=4fc619f3:3211
+[     229ms] [WARNING] <Page> was created with unknown prop 'params' @ http://localhost:5173/@fs/Users/k/Projects/vokda/node_modules/@sveltejs/kit/src/runtime/client/client.js?v=4fc619f3:3211

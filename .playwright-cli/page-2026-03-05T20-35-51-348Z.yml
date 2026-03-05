@@ -1,0 +1,13 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "V Vokda" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e6]: V
+      - generic [ref=e7]: Vokda
+    - navigation
+    - button "Sign in" [ref=e9] [cursor=pointer]
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Collections" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Build reusable voice sets for projects, scenes, and publishing workflows.
+    - paragraph [ref=e14]: Sign in as a registered guest or higher to save and manage collections.

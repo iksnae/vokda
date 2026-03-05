@@ -1,6 +1,6 @@
 export type VoiceVariant = {
   id: string;
-  sourceType: 'cloud_provider' | 'hf_model' | 'hf_space' | 'hf_endpoint' | 'self_hosted';
+  sourceType: 'cloud_provider' | 'local_model' | 'hf_model' | 'hf_space' | 'hf_endpoint' | 'self_hosted';
   sourceKey: string;
   runnable: boolean;
   supportsSsml: boolean;
@@ -47,12 +47,6 @@ export type VoiceSample = {
   audioUrl?: string;
 };
 
-export type CartItem = {
-  voiceId: string;
-  variantId: string;
-  addedAt: string;
-};
-
 export type Collection = {
   id: string;
   name: string;
@@ -64,22 +58,12 @@ export type Collection = {
 export type VoicePack = {
   version: string;
   createdAt: string;
-  format: 'vokda.voice-catalog.v1';
+  collectionName: string;
+  format: 'vokda.voice-collection.v1';
   voiceProfiles: VoiceProfile[];
   catalogHints?: {
     castingHints?: CharacterCastingHint[];
   };
-  items: Array<{
-    voiceId: string;
-    voiceName: string;
-    variantId: string;
-    sourceType: VoiceVariant['sourceType'];
-    sourceKey: string;
-    runnable: boolean;
-    supportsSsml: boolean;
-    outputFormats: VoiceVariant['outputFormats'];
-    licenseNotes: string;
-  }>;
 };
 
 export type ProviderDefinition = {
