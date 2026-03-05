@@ -4,16 +4,39 @@
   export let data: { voices: Voice[] };
 
   let query = '';
+  let selectedLanguage = 'all';
+  let selectedSource = 'all';
+  let runnableOnly = false;
+  let ssmlOnly = false;
+
+  $: availableLanguages = Array.from(
+    new Set(data.voices.flatMap((voice) => voice.languages))
+  ).sort();
+
+  $: availableSources = Array.from(
+    new Set(data.voices.flatMap((voice) => voice.variants.map((variant) => variant.sourceType)))
+  ).sort();
 
   $: filtered = data.voices.filter((voice) => {
     const q = query.trim().toLowerCase();
-    if (!q) return true;
-
-    return (
+    const matchesQuery =
+      !q ||
       voice.name.toLowerCase().includes(q) ||
       voice.description.toLowerCase().includes(q) ||
-      voice.tags.some((tag) => tag.toLowerCase().includes(q))
-    );
+      voice.tags.some((tag) => tag.toLowerCase().includes(q));
+
+    const matchesLanguage =
+      selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
+
+    const matchesSource =
+      selectedSource === 'all' ||
+      voice.variants.some((variant) => variant.sourceType === selectedSource);
+
+    const matchesRunnable = !runnableOnly || voice.variants.some((variant) => variant.runnable);
+
+    const matchesSsml = !ssmlOnly || voice.variants.some((variant) => variant.supportsSsml);
+
+    return matchesQuery && matchesLanguage && matchesSource && matchesRunnable && matchesSsml;
   });
 </script>
 
@@ -29,6 +52,38 @@
     Search voices
     <input bind:value={query} placeholder="narrator, warm, multilingual..." />
   </label>
+
+  <section class="filters">
+    <label>
+      Language
+      <select bind:value={selectedLanguage}>
+        <option value="all">All languages</option>
+        {#each availableLanguages as language}
+          <option value={language}>{language}</option>
+        {/each}
+      </select>
+    </label>
+
+    <label>
+      Source type
+      <select bind:value={selectedSource}>
+        <option value="all">All sources</option>
+        {#each availableSources as source}
+          <option value={source}>{source}</option>
+        {/each}
+      </select>
+    </label>
+
+    <label class="toggle">
+      <input type="checkbox" bind:checked={runnableOnly} />
+      Runnable only
+    </label>
+
+    <label class="toggle">
+      <input type="checkbox" bind:checked={ssmlOnly} />
+      SSML supported
+    </label>
+  </section>
 
   <ul>
     {#each filtered as voice}
@@ -75,6 +130,29 @@
     border-radius: 10px;
     padding: 0.6rem 0.75rem;
     font-size: 1rem;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+  }
+
+  select {
+    border: 1px solid #9aa8b8;
+    border-radius: 10px;
+    padding: 0.55rem 0.7rem;
+    font-size: 1rem;
+    background: #fff;
+  }
+
+  .toggle {
+    align-self: end;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
   }
 
   ul {
