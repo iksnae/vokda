@@ -264,7 +264,7 @@
         </button>
 
         <div class="pin-wrapper">
-          <button class="action-btn" on:click={handlePin}>
+          <button class="action-btn" on:click|stopPropagation={handlePin}>
             <Icon name="pin" size={18} />
             Save to collection
             <Icon name="chevron-down" size={14} />

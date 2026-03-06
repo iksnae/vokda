@@ -408,7 +408,7 @@
           <div class="pin-wrapper">
             <button
               class="icon-btn"
-              on:click={() => handlePin(voice.id)}
+              on:click|stopPropagation={() => handlePin(voice.id)}
               aria-label="Pin to collection"
               title="Pin to collection"
             >
