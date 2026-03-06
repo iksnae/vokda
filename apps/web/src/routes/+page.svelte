@@ -212,34 +212,38 @@
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
-  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages))).sort();
+  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages ?? []))).sort();
   $: availableSources = Array.from(
-    new Set(effectiveVoices.flatMap((v) => v.variants.map((vr) => vr.sourceType)))
+    new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
   $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
 
   $: filtered = effectiveVoices.filter((voice) => {
     const q = query.trim().toLowerCase();
 
+    const meta = voice.metadata ?? {};
+    const tags = voice.tags ?? [];
+    const variants = voice.variants ?? [];
+
     const matchesQuery =
       !q ||
       voice.name.toLowerCase().includes(q) ||
-      voice.metadata.shortLabel.toLowerCase().includes(q) ||
+      (meta.shortLabel ?? '').toLowerCase().includes(q) ||
       voice.provider.toLowerCase().includes(q) ||
-      voice.description.toLowerCase().includes(q) ||
-      voice.metadata.machineTags.some((t) => t.toLowerCase().includes(q)) ||
-      voice.metadata.useCases.some((u) => u.toLowerCase().includes(q)) ||
-      voice.metadata.audienceTags.some((a) => a.toLowerCase().includes(q)) ||
-      voice.metadata.toneTags.some((t) => t.toLowerCase().includes(q)) ||
-      voice.tags.some((t) => t.toLowerCase().includes(q));
+      (voice.description ?? '').toLowerCase().includes(q) ||
+      (meta.machineTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+      (meta.useCases ?? []).some((u: string) => u.toLowerCase().includes(q)) ||
+      (meta.audienceTags ?? []).some((a: string) => a.toLowerCase().includes(q)) ||
+      (meta.toneTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+      tags.some((t: string) => t.toLowerCase().includes(q));
 
-    const matchesLanguage = selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
+    const matchesLanguage = selectedLanguage === 'all' || (voice.languages ?? []).includes(selectedLanguage);
     const matchesSource =
       selectedSource === 'all' ||
-      voice.variants.some((vr) => vr.sourceType === selectedSource);
+      variants.some((vr: { sourceType: string }) => vr.sourceType === selectedSource);
     const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
-    const matchesRunnable = !runnableOnly || voice.variants.some((vr) => vr.runnable);
-    const matchesSsml = !ssmlOnly || voice.variants.some((vr) => vr.supportsSsml);
+    const matchesRunnable = !runnableOnly || variants.some((vr: { runnable: boolean }) => vr.runnable);
+    const matchesSsml = !ssmlOnly || variants.some((vr: { supportsSsml: boolean }) => vr.supportsSsml);
     const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
 
     return (
@@ -348,7 +352,7 @@
     {#each filtered as voice (voice.id)}
       {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
       {@const isFav = $favorites.includes(voice.id)}
-      {@const sampleUrl = voice.samples[0]?.audioUrl ?? voice.audioUrl}
+      {@const sampleUrl = (voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl}
       {@const isPlaying = playingVoiceId === voice.id}
       <article>
         <!-- Play button hero area -->
@@ -375,15 +379,15 @@
               style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
             >{voice.provider}</span>
             <span class="sep">·</span>
-            <span>{voice.languages[0] ?? ''}</span>
+            <span>{(voice.languages ?? [])[0] ?? ''}</span>
             <span class="sep">·</span>
             <span>{voice.qualityTier}</span>
           </p>
           <div class="chips">
-            {#each voice.tags.slice(0, 3) as tag}
+            {#each (voice.tags ?? []).slice(0, 3) as tag}
               <span class="chip">{tag}</span>
             {/each}
-            {#if voice.metadata.toneTags.length > 0}
+            {#if (voice.metadata?.toneTags ?? []).length > 0}
               <span class="chip tone-chip">{voice.metadata.toneTags[0]}</span>
             {/if}
           </div>

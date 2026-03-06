@@ -26,6 +26,7 @@
     "@aws-amplify/backend-cli": "^1.8.2",
     "@aws-sdk/client-dynamodb": "^3.1003.0",
     "@aws-sdk/lib-dynamodb": "^3.1003.0",
-    "@types/node": "^25.3.3"
+    "@types/node": "^25.3.3",
+    "playwright": "^1.58.2"
   }
 }
