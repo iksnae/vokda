@@ -55,12 +55,19 @@
     </a>
 
     <nav>
+      <a href="/docs/providers" class="nav-link">
+        <Icon name="globe" size={14} />
+        Providers
+      </a>
       <a href="/collections" class="nav-link">
         <Icon name="folder" size={14} />
         Collections
         {#if collectionCount > 0}
           <span class="badge">{collectionCount}</span>
         {/if}
+      </a>
+      <a href="/docs" class="nav-link">
+        Docs
       </a>
       {#if $roleFlags.isCurator}
         <a href="/curation" class="nav-link">

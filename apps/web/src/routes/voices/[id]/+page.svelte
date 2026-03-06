@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { slide } from 'svelte/transition';
   import {
     addVoiceToCollection,
@@ -14,7 +15,7 @@
   import Icon from '$lib/components/Icon.svelte';
   import { isAuthenticated } from '$lib/auth/store';
   import { isProviderConnected } from '$lib/stores/credentials';
-  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
+  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, hasServerSynthesis, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
   import { refreshClips } from '$lib/stores/clips';
   import SsmlEditor from '$lib/components/SsmlEditor.svelte';
   import ProviderSetupGuide from '$lib/components/ProviderSetupGuide.svelte';
@@ -150,8 +151,11 @@
   $: variant = voice?.variants[0] ?? null;
 
   // ─── Audition / Synthesis ───
-  let auditionText = 'Hello! This is a preview of this voice. How does it sound to you?';
-  let auditionMode: PreviewInputMode = 'text';
+  // Support pre-filled text from URL params (e.g., re-synth from clips page)
+  const urlText = $page.url.searchParams.get('text');
+  const urlMode = $page.url.searchParams.get('mode');
+  let auditionText = urlText || 'Hello! This is a preview of this voice. How does it sound to you?';
+  let auditionMode: PreviewInputMode = (urlMode === 'ssml' ? 'ssml' : 'text');
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
   let auditionError = '';
@@ -161,8 +165,8 @@
   let auditionDuration = 0;
   let auditionReady = false;
 
-  $: auditionProvider = variant ? getSynthesisProvider(variant) : null;
-  $: auditionHasRealAdapter = variant ? canSynthesizeReal(variant) : false;
+  $: auditionProvider = variant ? getSynthesisProvider(variant, voice?.providerId) : (voice?.providerId ?? null);
+  $: auditionHasRealAdapter = variant ? canSynthesizeReal(variant, voice?.providerId) : false;
   $: auditionProviderConnected = auditionProvider ? isProviderConnected(auditionProvider) : false;
   $: auditionProgressPct = auditionDuration > 0 ? (auditionTime / auditionDuration) * 100 : 0;
 

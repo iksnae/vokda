@@ -35,7 +35,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
     throw new Error('Sign in is required for synthesis.');
   }
 
-  const provider = getProviderForVariant(request.variant);
+  const provider = getProviderForVariant(request.variant, request.voice.providerId);
   if (!provider) {
     throw new Error(`Cannot determine provider for voice "${request.voice.name}".`);
   }
@@ -52,7 +52,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
       provider,
       voiceId: request.voice.id,
       voiceName: request.voice.name,
-      providerVoiceId: request.variant.sourceKey?.split('/').pop() ?? request.variant.id,
+      providerVoiceId: request.voice.providerVoiceId || request.variant.sourceKey || request.variant.id,
       mode: request.mode ?? 'text',
     }),
   });
@@ -182,17 +182,34 @@ export async function synthesizePreview(request: SynthesisRequest): Promise<Synt
 /**
  * Check if real (non-mock) synthesis is available for a variant.
  */
-export function canSynthesizeReal(variant: VoiceVariant): boolean {
-  if (SYNTHESIS_API_URL) return true;
+export function canSynthesizeReal(variant: VoiceVariant, providerId?: string): boolean {
+  // Check if this provider has a server-side adapter
+  const provider = getProviderForVariant(variant, providerId);
+  if (provider && SERVER_SYNTH_PROVIDERS.has(provider)) {
+    if (SYNTHESIS_API_URL) return true;
+  }
   if (SYNTH_MODE === 'gateway') return true;
-  return hasRealAdapter(variant);
+  return hasRealAdapter(variant, providerId);
 }
+
+/** Providers that have server-side synthesis adapters on the Vokda API. */
+const SERVER_SYNTH_PROVIDERS = new Set([
+  'openai', 'elevenlabs', 'deepgram', 'gemini-tts',
+  'cartesia', 'lmnt', 'gcp-tts', 'azure-speech', 'aws-polly',
+]);
 
 /**
  * Get the provider ID for a variant (for checking credential status).
  */
-export function getSynthesisProvider(variant: VoiceVariant): string | null {
-  return getProviderForVariant(variant);
+export function getSynthesisProvider(variant: VoiceVariant, providerId?: string): string | null {
+  return getProviderForVariant(variant, providerId);
+}
+
+/**
+ * Check if a provider has server-side synthesis support.
+ */
+export function hasServerSynthesis(providerId: string): boolean {
+  return SERVER_SYNTH_PROVIDERS.has(providerId);
 }
 
 /**

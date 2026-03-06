@@ -1,199 +1,320 @@
 # Vokda Architecture
 
 > See [VISION.md](./VISION.md) for the product vision this architecture serves.
+> See [SYNTHESIS_API.md](./SYNTHESIS_API.md) for API endpoint documentation.
 
 ---
 
-## 1. Current State (March 2026)
+## 1. System Overview (March 2026)
 
-Vokda is a **static-first SvelteKit app** deployed on AWS Amplify, with Amplify Gen2 backend (Cognito auth + AppSync/DynamoDB) and a lightweight Node.js admin API.
+Vokda is a **static-first SvelteKit app** deployed on AWS Amplify, backed by a serverless Synthesis API (AWS Lambda + API Gateway), Amplify Gen2 backend (Cognito auth + AppSync/DynamoDB), and an S3 audio storage layer.
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Browser                                        │
-│  SvelteKit app (static, client-side rendered)   │
-│  - voices.json (130 voices, bundled)            │
-│  - audio samples (static /audio/samples/*.mp3)  │
-│  - localStorage (favorites, collections)        │
-└───────────────┬─────────────────────────────────┘
-                │
-        ┌───────▼──────┐      ┌──────────────────┐
-        │ AWS Amplify  │      │ Amplify Gen2     │
-        │ (hosting)    │      │ - Cognito auth   │
-        │ main → prod  │      │ - AppSync/DDB    │
-        │ PR → preview │      │ (wired, unused)  │
-        └──────────────┘      └──────────────────┘
+┌──────────────────────────────────────────────────────┐
+│  Browser                                             │
+│  SvelteKit 4 (static, client-side rendered)          │
+│  - 550 voices from voices.json (bundled at build)    │
+│  - Audio samples from /audio/samples/*.mp3           │
+│  - SSML visual editor (7 tags, 4 SSML providers)     │
+│  - Clips store (API-backed, not IndexedDB)           │
+└──────────┬───────────────────────────────────────────┘
+           │
+   ┌───────▼──────────┐     ┌───────────────────────────────┐
+   │  AWS Amplify      │     │  Amplify Gen2 Backend          │
+   │  (static hosting) │     │  - Cognito user pools           │
+   │  main → prod      │     │  - AppSync / DynamoDB (12 tbl)  │
+   │  PRs → preview    │     │  - Identity pool                │
+   └──────────────────┘     └──────────┬────────────────────┘
                                        │
-                              ┌────────▼─────────┐
-                              │  apps/api        │
-                              │  Node.js HTTP    │
-                              │  - role mgmt     │
-                              │  - synthesis gw  │
-                              │  (scaffolded)    │
-                              └──────────────────┘
+   ┌───────────────────────────────────▼────────────────────┐
+   │  Synthesis API  (api.vokda.iksnae.com)                 │
+   │  SAM stack: vokda-synthesis-dev                        │
+   │  ┌─────────────────────────────────────────────────┐   │
+   │  │  API Gateway (HTTP API)                         │   │
+   │  │  → SynthesisRouter Lambda (512MB, Node 20)      │   │
+   │  │    ├─ POST /v1/synthesize  (9 provider adapters)│   │
+   │  │    ├─ GET/PATCH/DELETE /v1/jobs/{id}            │   │
+   │  │    ├─ POST/GET/DELETE /v1/keys                  │   │
+   │  │    └─ GET /v1/media/usage                       │   │
+   │  ├─────────────────────────────────────────────────┤   │
+   │  │  SynthesisWorker Lambda (async, SQS-triggered)  │   │
+   │  │  Auth Lambda (Cognito JWT + API key validation)  │   │
+   │  ├─────────────────────────────────────────────────┤   │
+   │  │  S3: vokda-audio-bucket (user synth clips)      │   │
+   │  │  SQS: vokda-synthesis-dev (async job queue)     │   │
+   │  │  DynamoDB: VokdaApiKey-dev, UserMediaUsage-dev  │   │
+   │  └─────────────────────────────────────────────────┘   │
+   └────────────────────────────────────────────────────────┘
 ```
-
-**Key limitation today:** Amplify Data (DynamoDB) is fully scaffolded but favorites and collections still live in localStorage. Auth is live but saves don't persist across sessions.
 
 ---
 
-## 2. Target Architecture
-
-As Vokda grows into the full vision (discovery + industry hub), the architecture expands in three areas:
-
-### 2a. Audio CDN
-Static audio samples bundled in the repo won't scale past a few hundred voices. Audio moves to S3 + CloudFront:
-```
-voices.json → references audioUrl: "https://cdn.vokda.com/samples/{voiceId}/{scriptKey}.mp3"
-```
-
-### 2b. Backend API (apps/api)
-The admin API becomes a proper service layer:
-- `GET /voices` — filterable catalog (eventually DB-backed, not static JSON)
-- `POST /synthesize` — proxied real-time synthesis (provider-agnostic)
-- `POST /ingest/run` — trigger provider sync jobs
-- `GET /news` — curated TTS news feed entries
-- `GET /models` — provider + model registry
-
-### 2c. Ingestion Pipeline
-Scheduled jobs (Lambda or local cron) that:
-- Query provider APIs for new voices
-- Diff against current catalog
-- Generate samples for new entries
-- Queue for admin review before going live
-
----
-
-## 3. Components
+## 2. Components
 
 ### Frontend (`apps/web`)
 
-- SvelteKit 4 with static adapter
-- TypeScript strict mode throughout
-- Component-scoped CSS (no framework)
-- Phosphor icons via `phosphor-svelte`
+SvelteKit 4 with static adapter. TypeScript strict mode. Component-scoped CSS.
 
 **Key modules:**
 ```
 src/lib/
-  types.ts              — All shared TypeScript types (Voice, VoiceVariant, Collection, etc.)
-  catalog.ts            — Loads voices.json at build time
-  voice-catalog.ts      — Metadata patching, effective catalog builder
-  voice-utils.ts        — SSML stripping, variant warnings, text truncation
-  providers.ts          — Provider definitions and normalization
-  provider-colors.ts    — Per-provider brand color schemes
-  stores/app-state.ts   — Collections, favorites, curation state (Svelte stores)
-  auth/                 — Amplify Cognito auth (store, config, types, client)
-  data/                 — Amplify Data layer (user-library, curation-workspace)
-  synthesis/            — Adapter registry + adapters (all mock currently)
+  types.ts                 — All shared TypeScript types
+  catalog.ts               — Loads voices.json at runtime (fetch)
+  voice-catalog.ts         — Metadata patching, effective catalog builder
+  voice-utils.ts           — SSML stripping, variant warnings, text truncation
+  providers.ts             — Provider definitions and normalization
+
+  auth/
+    store.ts               — Amplify Cognito auth state (writable store)
+    config.ts              — Auth mode config (amplify vs mock)
+    amplify-client.ts      — Amplify client initialization
+
+  stores/
+    app-state.ts           — Collections, favorites, curation (Svelte stores)
+    clips.ts               — API-backed clip store (fetch from /v1/jobs)
+    credentials.ts         — Provider credential management
+
+  data/
+    user-library.ts        — Amplify Data: favorites, collections
+    credential-store.ts    — Amplify Data: UserProviderCredential CRUD
+    clip-store.ts          — Legacy (replaced by stores/clips.ts)
+
+  synthesis/
+    service.ts             — Orchestrates synthesis (API mode, gateway, browser)
+    registry.ts            — Adapter registry, provider detection
+    provider-auth.ts       — Provider credential checking
+    constraints.ts         — Input normalization (char limits, etc.)
+    types.ts               — SynthesisRequest, SynthesisPreview types
+    adapters/              — 9 real + mock adapters per provider
+
+  ssml/
+    tags.ts                — Tag registry (7 tags, 4 providers, attributes)
+    validate.ts            — DOMParser-based SSML validation
+    serialize.ts           — wrapSpeak, insertTag with cursor positioning
+
   components/
-    Icon.svelte         — Phosphor icon wrapper
-    Toast.svelte        — Toast notification UI
+    Icon.svelte            — Icon wrapper (20+ icons)
+    SsmlEditor.svelte      — Composite SSML editor (toolbar + textarea + validation)
+    SsmlToolbar.svelte     — Tag buttons with attribute popovers
+    ProviderSetupGuide.svelte — Contextual provider setup guidance
 ```
 
 **Routes:**
 ```
-/                       — Catalog browse (Pinterest grid)
-/voices/[id]            — Voice detail (player, audition, variants)
-/collections            — Collections list
-/collections/[id]       — Collection detail + export
-/curation               — Curator metadata workspace (curator+)
-/admin                  — Admin panel (admin only)
-/account                — Sign in / sign up / verify
+/                          — Catalog browse (Pinterest grid, 11 filters, URL-synced)
+/voices/[id]               — Voice detail (player, audition studio, SSML editor)
+/collections               — Collections list
+/collections/[id]          — Collection detail + Voice Pack export
+/curation                  — Curator metadata workspace (curator+)
+/admin                     — Admin panel (admin only)
+/account                   — Sign in / sign up / verify / quick nav
+/account/providers         — BYOK provider key management
+/account/api-keys          — Vokda API key management
+/account/clips             — Audio clip library (full CRUD)
 ```
 
 ### Catalog Data (`apps/web/static/data/voices.json`)
 
-Source of truth for the voice catalog. Format documented in [voice-discovery-process.md](./voice-discovery-process.md).
+Source of truth for voice metadata. **550 voices** across **25 providers** in **53 languages**.
 
-**Current scale:** 130 voices, 128 with audio samples. Growing.
+Structure per voice:
+```json
+{
+  "id": "01KJ...",
+  "name": "Joanna",
+  "providerId": "aws-polly",
+  "providerVoiceId": "Joanna",
+  "description": "...",
+  "tags": ["narration", "assistant"],
+  "languages": ["en-US"],
+  "qualityTier": "premium",
+  "gender": "female",
+  "speakingStyle": "balanced",
+  "variants": [{ "id": "...", "sourceKey": "aws:polly:Joanna", "supportsSsml": true, ... }],
+  "samples": [{ "scriptKey": "intro", "audioUrl": "/audio/samples/..." }],
+  "modelCard": { "modelName": "...", "capabilities": {...}, ... }
+}
+```
 
-**Future:** JSON stays as the canonical source for the static build. A DB-backed API layer will mirror it for dynamic queries and admin operations.
+### Synthesis API (`infra/`)
 
-### Admin API (`apps/api`)
+SAM-deployed serverless stack. Three Lambda functions behind API Gateway.
 
-Vanilla Node.js HTTP server. Currently handles:
-- Cognito user role management (promote/demote users to guest/curator/admin)
-- Synthesis preview gateway (scaffolded, adapters mock)
+**Router Lambda** — synchronous synthesis + clip CRUD + key management:
+- Authenticates via Cognito JWT or Vokda API key (`vk_live_...`)
+- Routes to provider adapters based on `provider` field
+- Stores audio in S3, metadata in DynamoDB (SynthesisJob table)
+- Presigns S3 URLs (7-day expiry)
+
+**9 Provider Adapters:**
+
+| Adapter | File | Auth Type | Method |
+|---------|------|-----------|--------|
+| OpenAI | `openai.mjs` | API key | REST API |
+| ElevenLabs | `elevenlabs.mjs` | API key | REST API |
+| Deepgram | `deepgram.mjs` | API key | REST API |
+| Gemini TTS | `gemini-tts.mjs` | API key | REST API |
+| Cartesia | `cartesia.mjs` | API key | REST API |
+| LMNT | `lmnt.mjs` | API key | REST API |
+| Google Cloud TTS | `gcp-tts.mjs` | API key | REST API |
+| Azure Speech | `azure-speech.mjs` | Subscription key + region | REST API |
+| AWS Polly | `aws-polly.mjs` | IAM credentials | AWS SDK |
+
+**Worker Lambda** — SQS-triggered async processing (future use).
+
+**Auth Lambda** — standalone authorizer (used by API Gateway).
 
 ### Amplify Backend (`amplify/`)
 
 Amplify Gen2 (TypeScript-first). Manages:
-- **Auth:** Cognito user pools with email login. Groups: `guest`, `curator`, `admin`
-- **Data:** AppSync + DynamoDB schema for Favorite, Collection, CollectionVoice, CurationWorkspace
 
-### Scripts (`scripts/`)
+**Auth** — Cognito user pools with email login. Groups: `guest`, `curator`, `admin`.
 
-Node.js and Python scripts for catalog management:
-- `discover-voices.mjs` — Query provider APIs for available voices
-- `curate-catalog.mjs` — Filter discovery output to catalog additions
-- `generate-all-samples.mjs` — Generate MP3 samples via cloud APIs
-- `generate-local-samples.py` — Generate samples via mlx-audio (Kokoro, Qwen3)
+**Data** — AppSync + DynamoDB. 10 tables:
 
----
+| Model | Purpose | Auth |
+|-------|---------|------|
+| `Favorite` | Saved voice IDs | Owner only |
+| `Collection` | Named voice collections | Owner + curator/admin |
+| `CollectionVoice` | Voice-to-collection mapping | Owner + curator/admin |
+| `CurationShelf` | Curated themed voice lists | Curator/admin + public read |
+| `CurationWorkspace` | Metadata override workspace | Curator/admin + public read |
+| `VoiceRecord` | DB-backed voice catalog (future) | Curator/admin + public read |
+| `ProviderRecord` | Provider registry (future) | Curator/admin + public read |
+| `UserProviderCredential` | BYOK encrypted API keys | Owner only |
+| `SynthesisJob` | Synthesis job/clip metadata | Owner only |
+| `AdminAuditEvent` | Admin action log | Admin only |
 
-## 4. Data Flow
+**SAM-managed tables** (2):
 
-### Browse & Discover (current)
-```
-Build time: voices.json → bundled into static build
-Runtime: client loads catalog → filter/search in-browser → play from /audio/samples/
-```
-
-### Save to Collection (current — localStorage)
-```
-User pins voice → app-state.ts store → localStorage → lost on new device/browser
-```
-
-### Save to Collection (target — Amplify)
-```
-User pins voice → app-state.ts store → Amplify Data client → AppSync → DynamoDB
-                                     ← sync on load (authenticated)
-```
-
-### Live Synthesis (target)
-```
-User types text on detail page → POST /synthesize (apps/api) 
-  → provider adapter (AWS Polly / ElevenLabs / OpenAI / ...) 
-  → stream audio back → play in browser
-```
+| Table | Purpose |
+|-------|---------|
+| `VokdaApiKey-dev` | Vokda API key hashes + metadata |
+| `UserMediaUsage-dev` | Per-user storage quota tracking |
 
 ---
 
-## 5. Auth Model
+## 3. Data Flow
+
+### Browse & Discover
+```
+Build: voices.json bundled into static build
+Runtime: client fetches /data/voices.json → filter/search in-browser → play /audio/samples/
+Filters sync to URL params → shareable/bookmarkable filtered views
+```
+
+### Synthesis (API Mode — Default)
+```
+User types text → Ctrl+Enter → synthesizePreview()
+  → POST /v1/synthesize (api.vokda.iksnae.com)
+  → Router authenticates (JWT or API key)
+  → Router loads user's provider credential from DynamoDB
+  → Provider adapter calls external TTS API
+  → Audio saved to S3, metadata to SynthesisJob table
+  → Presigned S3 URL returned to client
+  → Client plays audio, clip appears in library
+```
+
+### Clip Management
+```
+Clips page loads → GET /v1/jobs (auth token in header)
+  → Router returns all user's jobs with presigned audio URLs
+Edit clip → PATCH /v1/jobs/{id} → update clipName/clipDescription/clipTags
+Delete clip → DELETE /v1/jobs/{id} → removes DynamoDB record + S3 object
+Re-synth → navigate to /voices/{id}?text=...&mode=ssml → pre-filled audition panel
+```
+
+### SSML Pipeline
+```
+User switches to SSML mode in audition panel
+  → SsmlEditor renders: SsmlToolbar + textarea + validation bar
+  → Tag insertion: click button → configure attributes in popover → insert at cursor
+  → Real-time validation: DOMParser checks well-formedness, provider-aware tag checking
+  → On synthesize: mode='ssml' sent to API → adapter passes SSML to provider
+  → Provider-specific handling (e.g., GCP: { ssml: text }, Polly: TextType='ssml')
+```
+
+### Authentication
+```
+Sign up: email + password → Cognito → verification email → confirm code
+Sign in: email + password → Cognito → JWT (ID + access token) → stored in auth store
+API calls: JWT sent as Bearer token → Router validates issuer + expiry
+API keys: create via POST /v1/keys → SHA-256 hashed in DynamoDB → use as Bearer token
+```
+
+---
+
+## 4. Auth Model
 
 | Role | Access |
 |------|--------|
-| `visitor` | Browse catalog, play samples |
-| `guest` | + Save favorites, manage collections, export Voice Packs, use audition studio |
-| `curator` | + Curation workspace (metadata enrichment, voice drafts) |
-| `admin` | + Admin panel (role management, ingestion triggers, catalog ops) |
+| `visitor` | Browse catalog, play samples, use filters |
+| `guest` | + Favorites, collections, export Voice Packs, synthesis, clips |
+| `curator` | + Curation workspace, metadata editing, curated shelves |
+| `admin` | + User role management, provider CRUD, admin panel |
+
+**BYOK (Bring Your Own Key):** Users store their own provider API keys. Keys are encrypted in DynamoDB with owner-only access. The Synthesis API reads keys server-side — they never appear in request/response bodies.
+
+---
+
+## 5. Infrastructure
+
+### AWS Resources
+
+| Service | Resource | Purpose |
+|---------|----------|---------|
+| Amplify | App `d2k1odilh9xpem` | Static hosting (main → prod) |
+| Cognito | Pool `us-east-1_O3MJpNRMk` | User authentication |
+| Cognito | Client `3n25mheafl42ttssn8pde92lh8` | App client |
+| Cognito | Identity pool `us-east-1:2616cc88-...` | Federated identity |
+| AppSync | API `qye3mrxz5rcfjpgw4uebq6emfi` | GraphQL data layer |
+| DynamoDB | 12 tables | Data storage |
+| Lambda | 3 functions | Synthesis API |
+| API Gateway | HTTP API | API routing + CORS |
+| S3 | Audio bucket | Synthesized clip storage |
+| SQS | Queue | Async job processing |
+| Route 53 | `api.vokda.iksnae.com` | API custom domain |
+
+### Environment Variables
+
+| Variable | Values | Where |
+|----------|--------|-------|
+| `PUBLIC_APP_ENV` | `development` / `production` | Amplify Console |
+| `PUBLIC_AUTH_MODE` | `amplify` / `mock` | Amplify Console |
+| `PUBLIC_SYNTHESIS_API_URL` | `https://api.vokda.iksnae.com` | Amplify Console |
 
 ---
 
 ## 6. Deployment
 
+### Frontend
 | Environment | Trigger | URL |
 |-------------|---------|-----|
 | Production | Push to `main` | https://vokda.iknsae.com |
 | Preview | Open PR | `https://<branch>.amplifyapp.com` |
 
-**AWS Amplify** owns frontend hosting. GitHub Actions runs quality checks (typecheck, tests) on push/PR but does not deploy.
+### Synthesis API
+```bash
+cd infra && sam build && sam deploy    # deploys to us-east-1
+```
+Stack: `vokda-synthesis-dev`. Changes deploy immediately on `sam deploy`.
 
-Required env vars:
-- `PUBLIC_APP_ENV` — `development` | `production`
-- `PUBLIC_AUTH_MODE` — `amplify` | `mock`
-- `PUBLIC_SYNTH_MODE` — `mock` | `gateway`
+### Amplify Backend
+```bash
+npx ampx sandbox    # local dev (generates amplify_outputs.json)
+```
+Production backend deployed automatically by Amplify on push to `main`.
 
 ---
 
-## 7. Catalog Growth Strategy
+## 7. Catalog Scale
 
-| Phase | Source | Scale |
-|-------|--------|-------|
-| Now | Hand-curated + discovery scripts | ~130 voices |
-| Phase 1 | + Cartesia, PlayHT, Fish Audio, Hume | ~200+ voices |
-| Phase 2 | + Automated HuggingFace scanner | Open-ended |
-| Phase 3 | + Community submissions (curator-reviewed) | Open-ended |
-
-The catalog will always be **curated, not exhaustive.** Every voice that ships has a sample. Every sample is quality-checked. The curation bar is what makes Vokda trustworthy.
+| Metric | Current |
+|--------|---------|
+| **Voices** | 550 |
+| **Providers** | 25 |
+| **Languages** | 53 |
+| **Audio samples** | 550 (100% coverage) |
+| **SSML-capable variants** | 114 |
+| **Server-side synthesis** | 9 providers |
+| **Unit tests** | 178 |
