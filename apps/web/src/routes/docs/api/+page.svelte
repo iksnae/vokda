@@ -417,6 +417,11 @@ curl -X POST https://api.vokda.iksnae.com/v1/keys \\
   section p a { color: var(--brand-600); }
   .note { font-size: var(--text-small); color: #5a7a90; }
 
+  .base-urls {
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
   .base-url {
     padding: 0.55rem 0.85rem;
     border: 1px solid #d6e2ec;
@@ -424,13 +429,45 @@ curl -X POST https://api.vokda.iksnae.com/v1/keys \\
     background: #f8fbfd;
     font-size: var(--text-small);
     color: #2c4b60;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
   }
   .base-url code {
     background: #0e2233; color: #68d391;
     padding: 0.15rem 0.45rem; border-radius: 6px;
     font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 0.85em; margin-left: 0.3rem;
+    font-size: 0.85em;
+  }
+  .url-note {
+    font-size: var(--text-xs, 0.75rem);
+    color: #7a9ab0;
+    font-weight: 500;
+  }
+  .resource-links {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: var(--text-small);
+    font-weight: 650;
+    color: var(--brand-700, #1d4ed8);
+    background: #f0f7fd;
+    border: 1px solid var(--brand-100, #dbeafe);
+    border-radius: 10px;
+    padding: 0.4rem 0.7rem;
+    text-decoration: none;
+    transition: background 120ms, border-color 120ms;
+  }
+  .resource-link:hover {
+    background: var(--brand-100, #dbeafe);
+    border-color: var(--brand-600, #2563eb);
   }
 
   code {

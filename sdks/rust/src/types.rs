@@ -136,7 +136,7 @@ pub struct ClipList {
     pub count: u32,
 }
 
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Default, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ClipUpdate {
     #[serde(skip_serializing_if = "Option::is_none")]
