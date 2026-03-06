@@ -42,7 +42,7 @@ export function createAwsPollyAdapter(credential: AwsCredentials): SynthesisAdap
       const engine = resolveEngine(request.variant.sourceKey);
 
       // AWS Polly requires SigV4 — use proxy
-      const proxyUrl = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string) || 'http://127.0.0.1:8787';
+      const proxyUrl = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string) || 'https://api.vokda.iksnae.com';
 
       const response = await fetch(`${proxyUrl}/v1/synthesize/aws-polly`, {
         method: 'POST',

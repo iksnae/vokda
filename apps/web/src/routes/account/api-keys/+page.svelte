@@ -4,7 +4,7 @@
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
 
-  const API_BASE = import.meta.env.PUBLIC_SYNTHESIS_API_URL || '';
+  const API_BASE = import.meta.env.PUBLIC_SYNTHESIS_API_URL || 'https://api.vokda.iksnae.com';
 
   type ApiKey = {
     id: string;
