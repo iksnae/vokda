@@ -13,6 +13,10 @@
  *   POST   /v1/keys           — Create API key
  *   GET    /v1/keys           — List API keys
  *   DELETE /v1/keys/{id}      — Revoke API key
+ *   POST   /v1/credentials         — Store provider credential (BYOK)
+ *   GET    /v1/credentials         — List credentials (masked)
+ *   DELETE /v1/credentials/{prov}  — Remove credential
+ *   POST   /v1/credentials/test    — Test credential (dry-run)
  */
 
 import { createHash, randomBytes } from 'node:crypto';
@@ -25,6 +29,7 @@ import { SQSClient, SendMessageCommand } from '@aws-sdk/client-sqs';
 import { createJob, getJob, listJobs, deleteJob, updateJob } from './lib/jobs.mjs';
 import { checkQuota, getUsage, incrementUsage, decrementUsage } from './lib/quota.mjs';
 import { createApiKey, listApiKeys, revokeApiKey } from './lib/keys.mjs';
+import { saveCredential, listCredentials, deleteCredential, testCredential } from './lib/credentials.mjs';
 
 // Adapters
 import * as openaiAdapter from './lib/adapters/openai.mjs';
@@ -167,6 +172,21 @@ export async function handler(event) {
     if (method === 'DELETE' && path.startsWith('/v1/keys/')) {
       const keyId = path.split('/v1/keys/')[1];
       return await handleDeleteKey(userId, keyId);
+    }
+
+    // Credential management
+    if (method === 'POST' && path === '/v1/credentials') {
+      return await handleSaveCredential(userId, event);
+    }
+    if (method === 'GET' && path === '/v1/credentials') {
+      return await handleListCredentials(userId);
+    }
+    if (method === 'POST' && path === '/v1/credentials/test') {
+      return await handleTestCredential(userId, event);
+    }
+    if (method === 'DELETE' && path.startsWith('/v1/credentials/')) {
+      const providerId = decodeURIComponent(path.split('/v1/credentials/')[1]);
+      return await handleDeleteCredential(userId, providerId);
     }
 
     // Also handle stage-prefixed paths: /dev/v1/...
@@ -435,6 +455,61 @@ async function handleListKeys(userId) {
 async function handleDeleteKey(userId, keyId) {
   await revokeApiKey(userId, keyId);
   return respond(200, { revoked: true });
+}
+
+// ─── POST /v1/credentials ───
+
+async function handleSaveCredential(userId, event) {
+  const body = JSON.parse(event.body || '{}');
+  const { providerId, credentialData, label } = body;
+
+  if (!providerId) return respond(400, { error: 'providerId is required' });
+  if (!credentialData || typeof credentialData !== 'object') {
+    return respond(400, { error: 'credentialData object is required' });
+  }
+
+  try {
+    const result = await saveCredential(userId, providerId, credentialData, label);
+    return respond(200, result);
+  } catch (err) {
+    return respond(err.statusCode || 400, {
+      error: err.message,
+      ...(err.supported ? { supported: err.supported } : {}),
+    });
+  }
+}
+
+// ─── GET /v1/credentials ───
+
+async function handleListCredentials(userId) {
+  const credentials = await listCredentials(userId);
+  return respond(200, { credentials, count: credentials.length });
+}
+
+// ─── DELETE /v1/credentials/{providerId} ───
+
+async function handleDeleteCredential(userId, providerId) {
+  try {
+    const result = await deleteCredential(userId, providerId);
+    return respond(200, result);
+  } catch (err) {
+    return respond(err.statusCode || 400, { error: err.message });
+  }
+}
+
+// ─── POST /v1/credentials/test ───
+
+async function handleTestCredential(userId, event) {
+  const body = JSON.parse(event.body || '{}');
+  const { providerId, credentialData } = body;
+
+  if (!providerId) return respond(400, { error: 'providerId is required' });
+  if (!credentialData || typeof credentialData !== 'object') {
+    return respond(400, { error: 'credentialData object is required' });
+  }
+
+  const result = await testCredential(providerId, credentialData, adapters);
+  return respond(200, result);
 }
 
 // ─── Helpers ───

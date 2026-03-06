@@ -24,9 +24,23 @@ This document is an index. For full documentation, see:
 | PATCH | `/v1/jobs/{id}` | ✓ | Update clip name/description/tags |
 | DELETE | `/v1/jobs/{id}` | ✓ | Delete clip and audio |
 | GET | `/v1/media/usage` | ✓ | Storage quota and usage |
+| POST | `/v1/credentials` | ✓ | Store provider credential (BYOK) |
+| GET | `/v1/credentials` | ✓ | List credentials (masked) |
+| POST | `/v1/credentials/test` | ✓ | Test credential (dry run) |
+| DELETE | `/v1/credentials/{provider}` | ✓ | Remove credential |
 | POST | `/v1/keys` | ✓ | Create API key |
 | GET | `/v1/keys` | ✓ | List API keys |
 | DELETE | `/v1/keys/{id}` | ✓ | Revoke API key |
+
+### Catalog API (Public, No Auth)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/api/v1/voices.json` | Full voice catalog (550 voices) |
+| GET | `/api/v1/voices/{id}.json` | Individual voice detail |
+| GET | `/api/v1/providers.json` | Provider directory with pricing, links |
+| GET | `/api/v1/stats.json` | Catalog statistics |
+| GET | `/api/v1/openapi.json` | OpenAPI 3.1 spec (all endpoints) |
 
 Authentication: `Authorization: Bearer vk_live_...` (API key) or `Bearer eyJ...` (Cognito JWT).
 

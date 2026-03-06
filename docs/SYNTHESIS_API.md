@@ -368,6 +368,122 @@ Common errors:
 
 ---
 
+## Provider Credentials (BYOK)
+
+The Synthesis API uses Bring Your Own Key. Manage your stored provider API keys programmatically.
+
+### POST /v1/credentials
+
+Store or update a provider credential. One credential per provider (upsert).
+
+**Request:**
+
+```json
+{
+  "providerId": "openai",
+  "credentialData": { "apiKey": "sk-your-key-here" },
+  "label": "My OpenAI Key"
+}
+```
+
+**Credential formats by auth type:**
+
+| Auth Type | Providers | Format |
+|-----------|-----------|--------|
+| `api_key` | openai, elevenlabs, deepgram, cartesia, lmnt, gcp-tts, gemini-tts | `{"apiKey": "..."}` |
+| `subscription_key` | azure-speech | `{"subscriptionKey": "...", "region": "eastus"}` |
+| `aws_credentials` | aws-polly | `{"accessKeyId": "...", "secretAccessKey": "...", "region": "us-east-1"}` |
+
+**Response (200):**
+
+```json
+{
+  "providerId": "openai",
+  "label": "My OpenAI Key",
+  "authType": "api_key",
+  "status": "active",
+  "createdAt": "2026-03-06T12:00:00.000Z",
+  "updatedAt": "2026-03-06T12:00:00.000Z"
+}
+```
+
+---
+
+### GET /v1/credentials
+
+List your stored credentials with masked key values.
+
+**Response (200):**
+
+```json
+{
+  "credentials": [
+    {
+      "providerId": "openai",
+      "label": "My OpenAI Key",
+      "authType": "api_key",
+      "status": "active",
+      "maskedKey": "sk-p…MmcA",
+      "createdAt": "2026-03-06T12:00:00.000Z",
+      "updatedAt": "2026-03-06T12:00:00.000Z",
+      "lastTestedAt": null
+    }
+  ],
+  "count": 1
+}
+```
+
+---
+
+### POST /v1/credentials/test
+
+Test a credential without storing it. Performs a minimal synthesis to verify the key works.
+
+**Request:**
+
+```json
+{
+  "providerId": "openai",
+  "credentialData": { "apiKey": "sk-your-key-here" }
+}
+```
+
+**Response (200):**
+
+```json
+{
+  "success": true,
+  "latencyMs": 305
+}
+```
+
+Or on failure:
+
+```json
+{
+  "success": false,
+  "latencyMs": 305,
+  "error": "OpenAI TTS 401: Incorrect API key provided..."
+}
+```
+
+---
+
+### DELETE /v1/credentials/{providerId}
+
+Remove a stored credential.
+
+**Response (200):**
+
+```json
+{
+  "deleted": true,
+  "providerId": "openai"
+}
+```
+
+---
+
 ## Examples
 
 ### cURL — Synthesize with OpenAI
@@ -422,6 +538,30 @@ curl -X PATCH https://api.vokda.iksnae.com/v1/jobs/01KK1TYX403VB9KK398W \
     "clipDescription": "30-second intro for product walkthrough video",
     "clipTags": ["product", "intro", "demo"]
   }'
+```
+
+### cURL — Manage Provider Credentials
+
+```bash
+# Store a credential
+curl -X POST https://api.vokda.iksnae.com/v1/credentials \
+  -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"providerId": "openai", "credentialData": {"apiKey": "sk-..."}}'
+
+# Test a credential (dry run — not stored)
+curl -X POST https://api.vokda.iksnae.com/v1/credentials/test \
+  -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"providerId": "openai", "credentialData": {"apiKey": "sk-..."}}'
+
+# List credentials (masked)
+curl https://api.vokda.iksnae.com/v1/credentials \
+  -H "Authorization: Bearer vk_live_YOUR_KEY"
+
+# Delete a credential
+curl -X DELETE https://api.vokda.iksnae.com/v1/credentials/openai \
+  -H "Authorization: Bearer vk_live_YOUR_KEY"
 ```
 
 ### cURL — Manage API Keys

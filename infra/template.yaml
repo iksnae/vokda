@@ -146,7 +146,7 @@ Resources:
             TableName: !Ref SynthesisJobTableName
         - DynamoDBCrudPolicy:
             TableName: !Ref UserMediaUsageTable
-        - DynamoDBReadPolicy:
+        - DynamoDBCrudPolicy:
             TableName: !Ref UserCredentialTableName
         - DynamoDBCrudPolicy:
             TableName: !Ref VokdaApiKeyTable
@@ -208,6 +208,30 @@ Resources:
           Properties:
             ApiId: !Ref SynthesisApi
             Path: /v1/keys/{id}
+            Method: DELETE
+        SaveCredential:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/credentials
+            Method: POST
+        ListCredentials:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/credentials
+            Method: GET
+        TestCredential:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/credentials/test
+            Method: POST
+        DeleteCredential:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/credentials/{providerId}
             Method: DELETE
 
   # ─── Lambda: Synthesis Worker (SQS consumer) ───
