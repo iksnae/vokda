@@ -74,11 +74,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3",
+  "imageUrl": "/images/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.jpg",
+  "audioUrl": "/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3",
+      "audioUrl": "/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3",
       "id": "s-ZQSKT02DZY3QTBXW89QT5KP9J2",
       "label": "Default",
       "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
@@ -93,8 +93,5 @@
       "label": "Izanami",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/ZQSKT02DZY3QTBXW89QT5KP9J2",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.json"
+  ]
 }

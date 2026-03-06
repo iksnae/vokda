@@ -75,12 +75,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3",
+  "imageUrl": "/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
+  "audioUrl": "/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3",
   "samples": [
     {
       "scriptKey": "support",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3",
+      "audioUrl": "/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3",
       "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
       "id": "01JCVKD6EPX0S90S2NY0G0CHY2",
       "label": "Support Agent"
@@ -101,8 +101,5 @@
       "id": "01JCVKE9MBBH6Y2WKY0M2J6XP4",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01JCVKBX2W7R5P4SQA0WV8X7D8",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.json"
+  ]
 }

@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
+  "imageUrl": "/images/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
+  "audioUrl": "/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
+      "audioUrl": "/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
       "id": "s-A9XVQNQSVNW9VWE85VHHHHM2DW",
       "label": "Default",
       "text": "Hello! I'm Mitchell, speaking New Zealand English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Mitchell",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/A9XVQNQSVNW9VWE85VHHHHM2DW",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.json"
+  ]
 }

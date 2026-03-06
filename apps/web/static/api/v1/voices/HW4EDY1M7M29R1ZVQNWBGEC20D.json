@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
+  "imageUrl": "/images/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.jpg",
+  "audioUrl": "/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
+      "audioUrl": "/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
       "id": "s-HW4EDY1M7M29R1ZVQNWBGEC20D",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Darren - Friendly Barritone",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/HW4EDY1M7M29R1ZVQNWBGEC20D",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.json"
+  ]
 }

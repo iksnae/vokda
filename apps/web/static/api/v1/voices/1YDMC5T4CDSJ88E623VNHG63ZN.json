@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/1YDMC5T4CDSJ88E623VNHG63ZN.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
+  "imageUrl": "/images/voices/1YDMC5T4CDSJ88E623VNHG63ZN.jpg",
+  "audioUrl": "/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
+      "audioUrl": "/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
       "id": "s-1YDMC5T4CDSJ88E623VNHG63ZN",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Samantha - Angry Support Leader",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1YDMC5T4CDSJ88E623VNHG63ZN.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/1YDMC5T4CDSJ88E623VNHG63ZN",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1YDMC5T4CDSJ88E623VNHG63ZN.json"
+  ]
 }

@@ -87,11 +87,11 @@
     "presetId": "v2/en_speaker_2",
     "primaryLanguage": "en"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMOK434CC61C5CEFD75B.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMOK434CC61C5CEFD75B.mp3",
+  "imageUrl": "/images/voices/00MME5GMOK434CC61C5CEFD75B.jpg",
+  "audioUrl": "/audio/samples/00MME5GMOK434CC61C5CEFD75B.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMOK434CC61C5CEFD75B.mp3",
+      "audioUrl": "/audio/samples/00MME5GMOK434CC61C5CEFD75B.mp3",
       "id": "sample-00MME5GMOK434CC61C5CEFD75B",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
@@ -104,8 +104,5 @@
       "label": "Bark v2 EN Speaker 2",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMOK434CC61C5CEFD75B.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMOK434CC61C5CEFD75B",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMOK434CC61C5CEFD75B.json"
+  ]
 }

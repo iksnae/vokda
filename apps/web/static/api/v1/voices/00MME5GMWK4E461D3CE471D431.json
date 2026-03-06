@@ -75,11 +75,11 @@
     "maxInputLength": 5000,
     "channels": 1
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMWK4E461D3CE471D431.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
+  "imageUrl": "/images/voices/00MME5GMWK4E461D3CE471D431.jpg",
+  "audioUrl": "/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
+      "audioUrl": "/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
       "id": "sample-00MME5GMWK4E461D3CE471D431",
       "text": "Welcome back everyone. Today we have a special guest joining us to talk about voice technology."
     }
@@ -92,8 +92,5 @@
       "label": "Dia 1.6B Speaker 2 (4-bit)",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMWK4E461D3CE471D431.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMWK4E461D3CE471D431",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMWK4E461D3CE471D431.json"
+  ]
 }

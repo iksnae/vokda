@@ -1,36 +1,43 @@
 {
   "total": 25,
-  "generatedAt": "2026-03-06T17:45:57.971Z",
+  "generatedAt": "2026-03-06T18:10:36.107Z",
   "providers": [
     {
-      "id": "azure-speech",
-      "name": "Azure Speech",
-      "voiceCount": 22,
+      "id": "cartesia",
+      "name": "Cartesia",
+      "type": "cloud",
+      "description": "Ultra-low latency synthesis for real-time applications.",
+      "voiceCount": 154,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
       "qualityTiers": [
         "premium"
       ],
-      "languages": [
-        "en-AU",
-        "en-GB",
-        "en-IE",
-        "en-IN",
-        "en-US"
+      "genders": [
+        "female",
+        "male"
       ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
-        "license": "Azure AI Services Terms",
-        "commercialUse": true
-      }
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://cartesia.ai",
+      "docsUrl": "https://docs.cartesia.ai",
+      "signupUrl": "https://cartesia.ai",
+      "pricingUrl": "https://cartesia.ai/pricing",
+      "pricingSummary": "Free tier available. Pay-per-use at scale",
+      "freeTier": "Limited free credits",
+      "license": "Proprietary (Cartesia API)",
+      "commercialUse": true
     },
     {
       "id": "deepgram",
       "name": "Deepgram",
+      "type": "cloud",
+      "description": "Aura TTS with 100+ voices. Strong multilingual support.",
       "voiceCount": 102,
-      "qualityTiers": [
-        "premium",
-        "standard"
-      ],
       "languages": [
         "de-DE",
         "en-AU",
@@ -48,156 +55,34 @@
         "ja-JP",
         "nl-NL"
       ],
-      "modelCard": {
-        "providerType": "cloud_provider",
-        "providerUrl": "https://deepgram.com/aura",
-        "license": "Proprietary (Deepgram API)",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "elevenlabs",
-      "name": "ElevenLabs",
-      "voiceCount": 22,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://elevenlabs.io",
-        "license": "ElevenLabs Terms of Service",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "cartesia",
-      "name": "Cartesia",
-      "voiceCount": 154,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "cloud_provider",
-        "providerUrl": "https://cartesia.ai",
-        "license": "Proprietary (Cartesia API)",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "qwen3-tts",
-      "name": "Qwen3 TTS",
-      "voiceCount": 7,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "bark",
-      "name": "Bark",
-      "voiceCount": 13,
-      "qualityTiers": [
-        "standard"
-      ],
-      "languages": [
-        "de-DE",
-        "en-US",
-        "es-ES",
-        "fr-FR",
-        "hi-IN",
-        "it-IT",
-        "ja-JP",
-        "ko-KR",
-        "pl-PL",
-        "pt-BR",
-        "ru-RU",
-        "tr-TR",
-        "zh-CN"
-      ],
-      "modelCard": {
-        "providerType": "local",
-        "providerUrl": "https://huggingface.co/suno/bark",
-        "license": "MIT",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "gemini-tts",
-      "name": "Gemini TTS",
-      "voiceCount": 30,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "ar",
-        "bn",
-        "de",
-        "el",
-        "en-US",
-        "fi",
-        "fil",
-        "fr",
-        "gl",
-        "gu",
-        "he",
-        "hi",
-        "ht",
-        "hu",
-        "id",
-        "is",
-        "it",
-        "ja",
-        "ka",
-        "nl"
-      ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
-        "license": "Google AI Terms of Service",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "gcp-tts",
-      "name": "Google Cloud TTS",
-      "voiceCount": 27,
+      "languageCount": 15,
       "qualityTiers": [
         "premium",
         "standard"
       ],
-      "languages": [
-        "en-AU",
-        "en-GB",
-        "en-US"
+      "genders": [
+        "female",
+        "male"
       ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://cloud.google.com/text-to-speech",
-        "license": "Google Cloud Terms of Service",
-        "commercialUse": true
-      }
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://deepgram.com",
+      "docsUrl": "https://developers.deepgram.com/docs/tts-rest",
+      "signupUrl": "https://console.deepgram.com/signup",
+      "pricingUrl": "https://deepgram.com/pricing",
+      "pricingSummary": "Free: $200 credit. Then pay-per-use",
+      "freeTier": "$200 credit",
+      "license": "Proprietary (Deepgram API)",
+      "commercialUse": true
     },
     {
       "id": "edge-tts",
       "name": "Edge TTS",
+      "type": "free",
+      "description": "Microsoft Edge's free neural TTS. No API key required.",
       "voiceCount": 47,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "de-DE",
         "en-AU",
@@ -222,20 +107,241 @@
         "pt-BR",
         "zh-CN"
       ],
-      "modelCard": {
-        "providerType": "cloud_provider",
-        "providerUrl": "https://github.com/rany2/edge-tts",
-        "license": "Free (Microsoft Edge TTS API)",
-        "commercialUse": false
-      }
+      "languageCount": 22,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": true,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://github.com/rany2/edge-tts",
+      "docsUrl": "https://github.com/rany2/edge-tts",
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": "Free — no API key, no account, no limits",
+      "freeTier": "Unlimited (free)",
+      "license": "Free (Microsoft Edge TTS API)",
+      "commercialUse": false
+    },
+    {
+      "id": "lmnt",
+      "name": "LMNT",
+      "type": "cloud",
+      "description": "Fast, expressive TTS with voice cloning.",
+      "voiceCount": 44,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "genders": [
+        "female",
+        "male",
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://lmnt.com",
+      "docsUrl": "https://docs.lmnt.com",
+      "signupUrl": "https://lmnt.com",
+      "pricingUrl": "https://lmnt.com/pricing",
+      "pricingSummary": "Free tier available. Usage-based pricing",
+      "freeTier": "Free tier available",
+      "license": "Proprietary (LMNT API)",
+      "commercialUse": true
+    },
+    {
+      "id": "gemini-tts",
+      "name": "Gemini TTS",
+      "type": "cloud",
+      "description": "Google's Gemini TTS with high naturalness and multilingual support.",
+      "voiceCount": 30,
+      "languages": [
+        "ar",
+        "bn",
+        "de",
+        "el",
+        "en-US",
+        "fi",
+        "fil",
+        "fr",
+        "gl",
+        "gu",
+        "he",
+        "hi",
+        "ht",
+        "hu",
+        "id",
+        "is",
+        "it",
+        "ja",
+        "ka",
+        "nl"
+      ],
+      "languageCount": 20,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://ai.google.dev",
+      "docsUrl": "https://ai.google.dev/gemini-api/docs/text-generation",
+      "signupUrl": "https://aistudio.google.com/apikey",
+      "pricingUrl": "https://ai.google.dev/pricing",
+      "pricingSummary": "Free: 10 req/min. Paid plans for higher throughput",
+      "freeTier": "10 requests/minute",
+      "license": "Google AI Terms of Service",
+      "commercialUse": true
+    },
+    {
+      "id": "gcp-tts",
+      "name": "Google Cloud TTS",
+      "type": "cloud",
+      "description": "Enterprise-grade TTS with WaveNet/Neural2 voices and full SSML.",
+      "voiceCount": 27,
+      "languages": [
+        "en-AU",
+        "en-GB",
+        "en-US"
+      ],
+      "languageCount": 3,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": true,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://cloud.google.com/text-to-speech",
+      "docsUrl": "https://cloud.google.com/text-to-speech/docs",
+      "signupUrl": "https://console.cloud.google.com/apis/credentials",
+      "pricingUrl": "https://cloud.google.com/text-to-speech/pricing",
+      "pricingSummary": "Free: 4M chars/mo (standard). Then $4-$16/1M",
+      "freeTier": "4M characters/month (standard voices)",
+      "license": "Google Cloud Terms of Service",
+      "commercialUse": true
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro",
+      "type": "local",
+      "description": "High-quality open-source TTS (82M params). Runs locally via mlx-audio.",
+      "voiceCount": 24,
+      "languages": [
+        "en-GB",
+        "en-US"
+      ],
+      "languageCount": 2,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "docsUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": "Free — runs on your own hardware",
+      "freeTier": "Free (local)",
+      "license": "Apache 2.0",
+      "commercialUse": true
+    },
+    {
+      "id": "azure-speech",
+      "name": "Azure Speech",
+      "type": "cloud",
+      "description": "Microsoft cognitive speech with extensive SSML and 140+ languages.",
+      "voiceCount": 22,
+      "languages": [
+        "en-AU",
+        "en-GB",
+        "en-IE",
+        "en-IN",
+        "en-US"
+      ],
+      "languageCount": 5,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": true,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "subscription_key",
+      "websiteUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+      "docsUrl": "https://learn.microsoft.com/azure/ai-services/speech-service/",
+      "signupUrl": "https://portal.azure.com",
+      "pricingUrl": "https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/",
+      "pricingSummary": "Free: 500K chars/mo. Standard: $16/1M chars",
+      "freeTier": "500,000 characters/month",
+      "license": "Azure AI Services Terms",
+      "commercialUse": true
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "type": "cloud",
+      "description": "Industry-leading voice cloning and synthesis with emotion control.",
+      "voiceCount": 22,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "male",
+        "unknown"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://elevenlabs.io",
+      "docsUrl": "https://docs.elevenlabs.io/api-reference/text-to-speech",
+      "signupUrl": "https://elevenlabs.io",
+      "pricingUrl": "https://elevenlabs.io/pricing",
+      "pricingSummary": "Free: 10K chars/mo. Creator $22/mo, Pro $99/mo",
+      "freeTier": "10,000 characters/month",
+      "license": "ElevenLabs Terms of Service",
+      "commercialUse": true
     },
     {
       "id": "aws-polly",
       "name": "AWS Polly",
+      "type": "cloud",
+      "description": "Amazon's TTS with neural and standard engines, full SSML support.",
       "voiceCount": 18,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "de-DE",
         "en-AU",
@@ -245,270 +351,481 @@
         "en-US",
         "fr-CA"
       ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://aws.amazon.com/polly/",
-        "license": "AWS Service Terms",
-        "commercialUse": true
-      }
+      "languageCount": 7,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": true,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "aws_credentials",
+      "websiteUrl": "https://aws.amazon.com/polly/",
+      "docsUrl": "https://docs.aws.amazon.com/polly/",
+      "signupUrl": "https://console.aws.amazon.com/iam/",
+      "pricingUrl": "https://aws.amazon.com/polly/pricing/",
+      "pricingSummary": "Free: 5M chars/mo (12 months). Then $4-$16/1M",
+      "freeTier": "5M characters/month for 12 months",
+      "license": "AWS Service Terms",
+      "commercialUse": true
+    },
+    {
+      "id": "bark",
+      "name": "Bark",
+      "type": "cloud",
+      "description": null,
+      "voiceCount": 13,
+      "languages": [
+        "de-DE",
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "hi-IN",
+        "it-IT",
+        "ja-JP",
+        "ko-KR",
+        "pl-PL",
+        "pt-BR",
+        "ru-RU",
+        "tr-TR",
+        "zh-CN"
+      ],
+      "languageCount": 13,
+      "qualityTiers": [
+        "standard"
+      ],
+      "genders": [
+        "neutral",
+        "variable"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/suno/bark",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "MIT",
+      "commercialUse": true
     },
     {
       "id": "openai",
       "name": "OpenAI",
+      "type": "cloud",
+      "description": "High-quality voices via GPT-4o audio models. Near-human naturalness.",
       "voiceCount": 11,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
       "qualityTiers": [
         "premium"
       ],
-      "languages": [
-        "en-US"
+      "genders": [
+        "female",
+        "male",
+        "neutral"
       ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
-        "license": "OpenAI Usage Policies",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "kokoro",
-      "name": "Kokoro",
-      "voiceCount": 24,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-GB",
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "dia",
-      "name": "Dia",
-      "voiceCount": 3,
-      "qualityTiers": [
-        "premium",
-        "standard"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "vibevoice",
-      "name": "VibeVoice",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
-        "license": "Community License",
-        "commercialUse": false
-      }
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": true,
+      "authType": "api_key",
+      "websiteUrl": "https://openai.com",
+      "docsUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+      "signupUrl": "https://platform.openai.com/signup",
+      "pricingUrl": "https://openai.com/api/pricing/",
+      "pricingSummary": "$15/1M chars (tts-1), $30/1M chars (tts-1-hd)",
+      "freeTier": null,
+      "license": "OpenAI Usage Policies",
+      "commercialUse": true
     },
     {
       "id": "kittentts",
       "name": "KittenTTS",
+      "type": "cloud",
+      "description": null,
       "voiceCount": 8,
-      "qualityTiers": [
-        "standard"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://github.com/KittenML/KittenTTS",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "standard"
+      ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://github.com/KittenML/KittenTTS",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
     },
     {
       "id": "orpheus",
       "name": "Orpheus TTS",
+      "type": "cloud",
+      "description": null,
       "voiceCount": 8,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "open_model",
-        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "soprano",
-      "name": "Soprano",
-      "voiceCount": 1,
+      "languageCount": 1,
       "qualityTiers": [
         "premium"
       ],
+      "genders": [
+        "female",
+        "male"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://github.com/canopyai/Orpheus-TTS",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
+    },
+    {
+      "id": "qwen3-tts",
+      "name": "Qwen3 TTS",
+      "type": "local",
+      "description": null,
+      "voiceCount": 7,
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/SWivid/Soprano-80M",
-        "license": "MIT",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female",
+        "male",
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
     },
     {
-      "id": "lmnt",
-      "name": "LMNT",
-      "voiceCount": 44,
+      "id": "dia",
+      "name": "Dia",
+      "type": "local",
+      "description": null,
+      "voiceCount": 3,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
       "qualityTiers": [
         "premium",
         "standard"
       ],
-      "languages": [
-        "en-US"
+      "genders": [
+        "female",
+        "neutral"
       ],
-      "modelCard": {
-        "providerType": "cloud_provider",
-        "providerUrl": "https://lmnt.com",
-        "license": "Proprietary (LMNT API)",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "pocket-tts",
-      "name": "Pocket TTS",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/ShoukanLabs/pocket-tts",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "spark-tts",
-      "name": "Spark TTS",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "chatterbox",
-      "name": "Chatterbox",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/resemble-ai/chatterbox",
-        "license": "MIT",
-        "commercialUse": true
-      }
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
     },
     {
       "id": "marvis",
       "name": "Marvis",
+      "type": "cloud",
+      "description": null,
       "voiceCount": 2,
-      "qualityTiers": [
-        "standard",
-        "premium"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://huggingface.co/Marvis-AI",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "genders": [
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/Marvis-AI",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
+    },
+    {
+      "id": "vibevoice",
+      "name": "VibeVoice",
+      "type": "cloud",
+      "description": null,
+      "voiceCount": 1,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Community License",
+      "commercialUse": false
+    },
+    {
+      "id": "soprano",
+      "name": "Soprano",
+      "type": "local",
+      "description": null,
+      "voiceCount": 1,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/SWivid/Soprano-80M",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "MIT",
+      "commercialUse": true
+    },
+    {
+      "id": "pocket-tts",
+      "name": "Pocket TTS",
+      "type": "local",
+      "description": null,
+      "voiceCount": 1,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/ShoukanLabs/pocket-tts",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
+    },
+    {
+      "id": "spark-tts",
+      "name": "Spark TTS",
+      "type": "local",
+      "description": null,
+      "voiceCount": 1,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
+    },
+    {
+      "id": "chatterbox",
+      "name": "Chatterbox",
+      "type": "local",
+      "description": null,
+      "voiceCount": 1,
+      "languages": [
+        "en-US"
+      ],
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "male"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/resemble-ai/chatterbox",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "MIT",
+      "commercialUse": true
     },
     {
       "id": "chatterbox-turbo",
       "name": "Chatterbox Turbo",
+      "type": "cloud",
+      "description": null,
       "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "open_model",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": null,
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
     },
     {
       "id": "outetts",
       "name": "OuteTTS",
+      "type": "local",
+      "description": null,
       "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B",
-        "license": "CC-BY-4.0",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "neutral"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "CC-BY-4.0",
+      "commercialUse": true
     },
     {
       "id": "voxcpm",
       "name": "VoxCPM",
+      "type": "local",
+      "description": null,
       "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
       "languages": [
         "en-US"
       ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
+      "languageCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "genders": [
+        "female"
+      ],
+      "ssmlCapable": false,
+      "audioSampleCoverage": "100%",
+      "hasSynthesis": false,
+      "authType": "none",
+      "websiteUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
+      "docsUrl": null,
+      "signupUrl": null,
+      "pricingUrl": null,
+      "pricingSummary": null,
+      "freeTier": null,
+      "license": "Apache 2.0",
+      "commercialUse": true
     }
   ]
 }

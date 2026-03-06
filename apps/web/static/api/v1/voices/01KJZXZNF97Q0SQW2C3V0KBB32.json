@@ -61,12 +61,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3",
+  "imageUrl": "/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
+  "audioUrl": "/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3",
+      "audioUrl": "/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3",
       "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
       "id": "01KJZXZNF9Y6WQGAAGMFNQ2YY2",
       "label": "Default"
@@ -87,8 +87,5 @@
       "id": "01KJZXZNF9PHSXYABB9XDSNM1G",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF97Q0SQW2C3V0KBB32",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF97Q0SQW2C3V0KBB32.json"
+  ]
 }

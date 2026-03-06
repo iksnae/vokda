@@ -61,12 +61,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3",
+  "imageUrl": "/images/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg",
+  "audioUrl": "/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3",
+      "audioUrl": "/audio/samples/01KJZXZNFC6052ZH0C9Q9R9X3M.mp3",
       "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
       "id": "01KJZXZNFC10YACFXNJRNX2Y8R",
       "label": "Default"
@@ -86,8 +86,5 @@
       "id": "01KJZXZNFCDJZG733TE0X0PKVM",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFC6052ZH0C9Q9R9X3M",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFC6052ZH0C9Q9R9X3M.json"
+  ]
 }

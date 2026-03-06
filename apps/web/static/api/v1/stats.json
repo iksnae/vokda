@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-03-06T17:45:57.971Z",
+  "generatedAt": "2026-03-06T18:10:36.107Z",
   "totalVoices": 550,
   "totalProviders": 25,
+  "totalLanguages": 51,
   "withAudio": 550,
   "withImage": 550,
   "withModelCard": 550,
@@ -137,9 +138,8 @@
     "standard": 60,
     "basic": 0
   },
-  "totalLanguages": 51,
   "capabilities": {
-    "localModels": 73,
+    "localModels": 40,
     "multilingual": 36,
     "ssmlSupport": 114
   }

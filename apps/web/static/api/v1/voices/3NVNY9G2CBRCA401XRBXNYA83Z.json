@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
+  "imageUrl": "/images/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
+  "audioUrl": "/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
+      "audioUrl": "/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
       "id": "s-3NVNY9G2CBRCA401XRBXNYA83Z",
       "label": "Default",
       "text": "Hello! I'm Rosa, speaking Philippine English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Rosa",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/3NVNY9G2CBRCA401XRBXNYA83Z",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3NVNY9G2CBRCA401XRBXNYA83Z.json"
+  ]
 }

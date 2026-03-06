@@ -90,12 +90,12 @@
     "bitDepth": 16,
     "defaultVoiceNote": "Default voice when no voice file provided; supports loading custom voice profiles from .wav/.npz files"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6S38FFD301435EAD.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
+  "imageUrl": "/images/voices/0100MME43A6S38FFD301435EAD.jpg",
+  "audioUrl": "/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
+      "audioUrl": "/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
       "transcript": "Welcome to the future of voice synthesis running entirely on your local device.",
       "id": "0100MME43A6S68DD5CAAD00AE2",
       "label": "Default"
@@ -115,8 +115,5 @@
       "id": "0100MME43A6SFA8F53AADF7B6E",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME43A6S38FFD301435EAD.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6S38FFD301435EAD",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6S38FFD301435EAD.json"
+  ]
 }

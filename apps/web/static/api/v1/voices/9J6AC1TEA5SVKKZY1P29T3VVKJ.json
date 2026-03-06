@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
+  "imageUrl": "/images/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",
+  "audioUrl": "/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
+      "audioUrl": "/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
       "id": "s-9J6AC1TEA5SVKKZY1P29T3VVKJ",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Aurora - Fairy Princess",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.json"
+  ]
 }

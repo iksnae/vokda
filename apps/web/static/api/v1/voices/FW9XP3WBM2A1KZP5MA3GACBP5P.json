@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
+  "imageUrl": "/images/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.jpg",
+  "audioUrl": "/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
+      "audioUrl": "/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
       "id": "s-FW9XP3WBM2A1KZP5MA3GACBP5P",
       "label": "Default",
       "text": "Hello, I'm Zac. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -101,8 +101,5 @@
       "label": "Zac",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/FW9XP3WBM2A1KZP5MA3GACBP5P",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.json"
+  ]
 }

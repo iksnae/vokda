@@ -76,12 +76,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3",
+  "imageUrl": "/images/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg",
+  "audioUrl": "/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3",
+      "audioUrl": "/audio/samples/01KJZXZNFBHJ2VVTWXYFTA1A1H.mp3",
       "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
       "id": "01KJZXZNFBFK462GFHHDSA0RQT",
       "label": "Default"
@@ -102,8 +102,5 @@
       "id": "01KJZXZNFBPMP14KD523KBFX26",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBHJ2VVTWXYFTA1A1H.json"
+  ]
 }

@@ -72,11 +72,11 @@
     "age": "Young Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/HVR24BM8FSP6DG8C06447P7HNS.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/HVR24BM8FSP6DG8C06447P7HNS.mp3",
+  "imageUrl": "/images/voices/HVR24BM8FSP6DG8C06447P7HNS.jpg",
+  "audioUrl": "/audio/samples/HVR24BM8FSP6DG8C06447P7HNS.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/HVR24BM8FSP6DG8C06447P7HNS.mp3",
+      "audioUrl": "/audio/samples/HVR24BM8FSP6DG8C06447P7HNS.mp3",
       "id": "s-HVR24BM8FSP6DG8C06447P7HNS",
       "label": "Default",
       "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
@@ -91,8 +91,5 @@
       "label": "Maia",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HVR24BM8FSP6DG8C06447P7HNS.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/HVR24BM8FSP6DG8C06447P7HNS",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HVR24BM8FSP6DG8C06447P7HNS.json"
+  ]
 }

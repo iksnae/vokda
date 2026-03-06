@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
+  "imageUrl": "/images/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
+  "audioUrl": "/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
+      "audioUrl": "/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
       "id": "s-87RFJ23QJ85HMADZZJC6E1M4FK",
       "label": "Default",
       "text": "Hello! I'm Luke, speaking South African English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Luke",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/87RFJ23QJ85HMADZZJC6E1M4FK",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/87RFJ23QJ85HMADZZJC6E1M4FK.json"
+  ]
 }

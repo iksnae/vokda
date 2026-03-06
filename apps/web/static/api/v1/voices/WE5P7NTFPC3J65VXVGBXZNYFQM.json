@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
+  "imageUrl": "/images/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",
+  "audioUrl": "/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
+      "audioUrl": "/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
       "id": "s-WE5P7NTFPC3J65VXVGBXZNYFQM",
       "label": "Default",
       "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
@@ -91,8 +91,5 @@
       "label": "Melia",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/WE5P7NTFPC3J65VXVGBXZNYFQM",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.json"
+  ]
 }

@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
+  "imageUrl": "/images/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
+  "audioUrl": "/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
+      "audioUrl": "/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
       "id": "s-6E1QNR7T60DG3NKKT6802A2FP5",
       "label": "Default",
       "text": "Hello! I'm Maisie, speaking British English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Maisie",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/6E1QNR7T60DG3NKKT6802A2FP5",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/6E1QNR7T60DG3NKKT6802A2FP5.json"
+  ]
 }

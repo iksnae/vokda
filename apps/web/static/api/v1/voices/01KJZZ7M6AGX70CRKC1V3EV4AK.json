@@ -78,12 +78,12 @@
     "maxInputLength": 5000,
     "channels": 1
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3",
+  "imageUrl": "/images/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg",
+  "audioUrl": "/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3",
+      "audioUrl": "/audio/samples/01KJZZ7M6AGX70CRKC1V3EV4AK.mp3",
       "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
       "id": "01KJZZ7M6AJ8N3TZS77XJA21M3",
       "label": "Default"
@@ -103,8 +103,5 @@
       "id": "01KJZZ7M6ATJBJHN9MASKH3WKT",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01KJZZ7M6AGX70CRKC1V3EV4AK",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ7M6AGX70CRKC1V3EV4AK.json"
+  ]
 }

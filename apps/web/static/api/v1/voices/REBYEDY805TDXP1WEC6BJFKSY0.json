@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/REBYEDY805TDXP1WEC6BJFKSY0.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
+  "imageUrl": "/images/voices/REBYEDY805TDXP1WEC6BJFKSY0.jpg",
+  "audioUrl": "/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
+      "audioUrl": "/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
       "id": "s-REBYEDY805TDXP1WEC6BJFKSY0",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Jo - Go to Gal",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/REBYEDY805TDXP1WEC6BJFKSY0.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/REBYEDY805TDXP1WEC6BJFKSY0",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/REBYEDY805TDXP1WEC6BJFKSY0.json"
+  ]
 }

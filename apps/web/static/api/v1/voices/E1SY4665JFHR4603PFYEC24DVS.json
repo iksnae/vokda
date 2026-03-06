@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
+  "imageUrl": "/images/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
+  "audioUrl": "/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
+      "audioUrl": "/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
       "id": "s-E1SY4665JFHR4603PFYEC24DVS",
       "label": "Default",
       "text": "Hello! I'm Imani, speaking Tanzanian English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Imani",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/E1SY4665JFHR4603PFYEC24DVS",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E1SY4665JFHR4603PFYEC24DVS.json"
+  ]
 }

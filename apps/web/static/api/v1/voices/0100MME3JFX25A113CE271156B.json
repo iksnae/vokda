@@ -77,12 +77,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX25A113CE271156B.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3",
+  "imageUrl": "/images/voices/0100MME3JFX25A113CE271156B.jpg",
+  "audioUrl": "/audio/samples/0100MME3JFX25A113CE271156B.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3",
+      "audioUrl": "/audio/samples/0100MME3JFX25A113CE271156B.mp3",
       "transcript": "Hey everyone, thanks for tuning in. Today we are going to talk about three productivity hacks that actually work.",
       "id": "0100MME3JFX2258320F8550FC4",
       "label": "Default"
@@ -102,8 +102,5 @@
       "id": "0100MME3JFX2F7889E13EADBDF",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX25A113CE271156B.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX25A113CE271156B",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX25A113CE271156B.json"
+  ]
 }

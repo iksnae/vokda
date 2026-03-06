@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
+  "imageUrl": "/images/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
+  "audioUrl": "/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
+      "audioUrl": "/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
       "id": "s-VMBZR4C0DG1G87VP5ZR1RE03KT",
       "label": "Default",
       "text": "Hello! I'm Natasha, speaking Australian English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Natasha",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/VMBZR4C0DG1G87VP5ZR1RE03KT",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.json"
+  ]
 }

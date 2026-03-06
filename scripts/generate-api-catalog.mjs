@@ -271,18 +271,390 @@ function generateStats() {
 // ─── Generate OpenAPI spec ───────────────────────────────────────────────────
 
 function generateOpenAPI() {
+  const providerEnum = ['openai', 'elevenlabs', 'deepgram', 'gemini-tts', 'cartesia', 'lmnt', 'gcp-tts', 'azure-speech', 'aws-polly'];
+
+  // ── Component schemas ──
+
+  const schemas = {
+    Error: {
+      type: 'object',
+      required: ['error'],
+      properties: {
+        error: { type: 'string', description: 'Machine-readable error code or short message' },
+        message: { type: 'string', description: 'Human-readable detail' },
+        supported: { type: 'array', items: { type: 'string' }, description: 'Supported values (when applicable)' },
+      },
+    },
+
+    // ── Catalog ──
+
+    VoiceSample: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        label: { type: 'string' },
+        scriptKey: { type: 'string' },
+        transcript: { type: 'string' },
+        audioUrl: { type: 'string', format: 'uri' },
+      },
+    },
+    VoiceVariant: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        sourceKey: { type: 'string', description: 'Provider-specific voice identifier' },
+        sourceType: { type: 'string' },
+        runnable: { type: 'boolean' },
+        previewOnly: { type: 'boolean' },
+        supportsSsml: { type: 'boolean' },
+        outputFormats: { type: 'array', items: { type: 'string' } },
+        maxInputChars: { type: 'integer', nullable: true },
+      },
+    },
+    VoiceMetadata: {
+      type: 'object',
+      properties: {
+        genderPresentation: { type: 'string', enum: ['male', 'female', 'neutral'] },
+        agePresentation: { type: 'string' },
+        toneTags: { type: 'array', items: { type: 'string' } },
+        useCases: { type: 'array', items: { type: 'string' } },
+        audienceTags: { type: 'array', items: { type: 'string' } },
+        machineTags: { type: 'array', items: { type: 'string' } },
+        shortLabel: { type: 'string' },
+        searchDescription: { type: 'string' },
+        metadataQuality: { type: 'string', enum: ['curated', 'generated', 'sparse'] },
+      },
+    },
+    ModelCard: {
+      type: 'object',
+      properties: {
+        modelFamily: { type: 'string' },
+        architecture: { type: 'string' },
+        providerName: { type: 'string' },
+        providerType: { type: 'string' },
+        providerUrl: { type: 'string', format: 'uri' },
+        releaseDate: { type: 'string' },
+        sampleRate: { type: 'integer' },
+        multilingual: { type: 'boolean' },
+        ssmlSupport: { type: 'boolean' },
+        emotionControl: { type: 'boolean' },
+        voiceCloning: { type: 'boolean' },
+        streamingSupport: { type: 'boolean' },
+        wordTimestamps: { type: 'boolean' },
+        latencyMs: { type: 'string' },
+        license: { type: 'string' },
+        licenseUrl: { type: 'string', format: 'uri' },
+        commercialUse: { type: 'boolean' },
+        attributionRequired: { type: 'boolean' },
+        gdprCompliant: { type: 'boolean' },
+        knownLimitations: { type: 'array', items: { type: 'string' } },
+      },
+    },
+    Voice: {
+      type: 'object',
+      required: ['id', 'name', 'provider', 'providerId'],
+      properties: {
+        id: { type: 'string', description: 'ULID' },
+        name: { type: 'string' },
+        provider: { type: 'string', description: 'Display name' },
+        providerId: { type: 'string', description: 'Machine identifier' },
+        providerVoiceId: { type: 'string', description: "Provider's own voice ID" },
+        description: { type: 'string' },
+        tags: { type: 'array', items: { type: 'string' } },
+        languages: { type: 'array', items: { type: 'string' }, description: 'BCP 47 codes' },
+        qualityTier: { type: 'string', enum: ['premium', 'standard', 'basic'] },
+        gender: { type: 'string', enum: ['male', 'female', 'neutral'] },
+        imageUrl: { type: 'string', format: 'uri', nullable: true },
+        licenseNotes: { type: 'string' },
+        metadata: { $ref: '#/components/schemas/VoiceMetadata' },
+        modelCard: { $ref: '#/components/schemas/ModelCard' },
+        variants: { type: 'array', items: { $ref: '#/components/schemas/VoiceVariant' } },
+        samples: { type: 'array', items: { $ref: '#/components/schemas/VoiceSample' } },
+      },
+    },
+    VoiceCatalog: {
+      type: 'object',
+      properties: {
+        voices: { type: 'array', items: { $ref: '#/components/schemas/Voice' } },
+        generatedAt: { type: 'string', format: 'date-time' },
+      },
+    },
+    Provider: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        name: { type: 'string' },
+        type: { type: 'string', enum: ['cloud', 'local', 'free'] },
+        description: { type: 'string', nullable: true },
+        voiceCount: { type: 'integer' },
+        languages: { type: 'array', items: { type: 'string' } },
+        languageCount: { type: 'integer' },
+        qualityTiers: { type: 'array', items: { type: 'string' } },
+        genders: { type: 'array', items: { type: 'string' } },
+        ssmlCapable: { type: 'boolean' },
+        audioSampleCoverage: { type: 'string' },
+        hasSynthesis: { type: 'boolean' },
+        authType: { type: 'string', enum: ['api_key', 'subscription_key', 'aws_credentials', 'none'] },
+        websiteUrl: { type: 'string', format: 'uri', nullable: true },
+        docsUrl: { type: 'string', format: 'uri', nullable: true },
+        signupUrl: { type: 'string', format: 'uri', nullable: true },
+        pricingUrl: { type: 'string', format: 'uri', nullable: true },
+        pricingSummary: { type: 'string', nullable: true },
+        freeTier: { type: 'string', nullable: true },
+        license: { type: 'string', nullable: true },
+        commercialUse: { type: 'boolean', nullable: true },
+      },
+    },
+    ProviderList: {
+      type: 'object',
+      properties: {
+        total: { type: 'integer' },
+        generatedAt: { type: 'string', format: 'date-time' },
+        providers: { type: 'array', items: { $ref: '#/components/schemas/Provider' } },
+      },
+    },
+    CatalogStats: {
+      type: 'object',
+      properties: {
+        generatedAt: { type: 'string', format: 'date-time' },
+        totalVoices: { type: 'integer' },
+        totalProviders: { type: 'integer' },
+        totalLanguages: { type: 'integer' },
+        withAudio: { type: 'integer' },
+        withImage: { type: 'integer' },
+        withModelCard: { type: 'integer' },
+        byProvider: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: { type: 'string' },
+              name: { type: 'string' },
+              count: { type: 'integer' },
+            },
+          },
+        },
+        byQualityTier: {
+          type: 'object',
+          properties: {
+            premium: { type: 'integer' },
+            standard: { type: 'integer' },
+            basic: { type: 'integer' },
+          },
+        },
+        capabilities: {
+          type: 'object',
+          properties: {
+            localModels: { type: 'integer' },
+            multilingual: { type: 'integer' },
+            ssmlSupport: { type: 'integer' },
+          },
+        },
+      },
+    },
+
+    // ── Synthesis ──
+
+    SynthesizeRequest: {
+      type: 'object',
+      required: ['text', 'provider'],
+      properties: {
+        text: { type: 'string', description: 'Input text or SSML', maxLength: 5000 },
+        provider: { type: 'string', enum: providerEnum },
+        providerVoiceId: { type: 'string', description: "Provider's own voice ID" },
+        voiceName: { type: 'string', description: 'Display name (stored with clip)' },
+        voiceId: { type: 'string', description: 'Vokda catalog voice ID' },
+        mode: { type: 'string', enum: ['text', 'ssml'], default: 'text' },
+        async: { type: 'boolean', default: false, description: 'Queue for async processing' },
+        options: { type: 'object', description: 'Provider-specific options (format, model, etc.)' },
+      },
+    },
+    SynthesizeResponse: {
+      type: 'object',
+      properties: {
+        jobId: { type: 'string' },
+        status: { type: 'string', enum: ['completed', 'pending', 'failed'] },
+        audioUrl: { type: 'string', format: 'uri', description: 'Presigned S3 URL (7-day expiry)' },
+        fileSizeBytes: { type: 'integer' },
+        durationMs: { type: 'integer', nullable: true },
+        latencyMs: { type: 'integer' },
+        provider: { type: 'string' },
+        voiceId: { type: 'string', nullable: true },
+        voiceName: { type: 'string', nullable: true },
+        createdAt: { type: 'string', format: 'date-time' },
+      },
+    },
+
+    // ── Clips ──
+
+    Clip: {
+      type: 'object',
+      properties: {
+        jobId: { type: 'string' },
+        voiceId: { type: 'string' },
+        voiceName: { type: 'string', nullable: true },
+        provider: { type: 'string' },
+        status: { type: 'string', enum: ['completed', 'pending', 'failed'] },
+        inputText: { type: 'string' },
+        inputMode: { type: 'string', enum: ['text', 'ssml'] },
+        clipName: { type: 'string', nullable: true },
+        clipDescription: { type: 'string', nullable: true },
+        clipTags: { type: 'array', items: { type: 'string' } },
+        audioUrl: { type: 'string', format: 'uri', nullable: true },
+        fileSizeBytes: { type: 'integer', nullable: true },
+        durationMs: { type: 'integer', nullable: true },
+        latencyMs: { type: 'integer', nullable: true },
+        errorMessage: { type: 'string', nullable: true },
+        createdAt: { type: 'string', format: 'date-time' },
+      },
+    },
+    ClipList: {
+      type: 'object',
+      properties: {
+        jobs: { type: 'array', items: { $ref: '#/components/schemas/Clip' } },
+        count: { type: 'integer' },
+      },
+    },
+    ClipUpdate: {
+      type: 'object',
+      properties: {
+        clipName: { type: 'string', nullable: true, maxLength: 500 },
+        clipDescription: { type: 'string', nullable: true, maxLength: 500 },
+        clipTags: { type: 'array', items: { type: 'string' }, maxItems: 20 },
+      },
+    },
+    ClipDeleted: {
+      type: 'object',
+      properties: {
+        deleted: { type: 'boolean' },
+        freedBytes: { type: 'integer' },
+      },
+    },
+
+    // ── Credentials ──
+
+    SaveCredentialRequest: {
+      type: 'object',
+      required: ['providerId', 'credentialData'],
+      properties: {
+        providerId: { type: 'string', enum: providerEnum },
+        credentialData: {
+          type: 'object',
+          description: 'Provider-specific fields. API key: `{"apiKey":"sk-..."}`. Azure: `{"subscriptionKey":"...","region":"eastus"}`. Polly: `{"accessKeyId":"...","secretAccessKey":"...","region":"us-east-1"}`.',
+        },
+        label: { type: 'string', description: 'Optional display label' },
+      },
+    },
+    CredentialSaved: {
+      type: 'object',
+      properties: {
+        providerId: { type: 'string' },
+        label: { type: 'string' },
+        authType: { type: 'string', enum: ['api_key', 'subscription_key', 'aws_credentials'] },
+        status: { type: 'string', enum: ['active'] },
+        createdAt: { type: 'string', format: 'date-time' },
+        updatedAt: { type: 'string', format: 'date-time' },
+      },
+    },
+    Credential: {
+      type: 'object',
+      properties: {
+        providerId: { type: 'string' },
+        label: { type: 'string' },
+        authType: { type: 'string', enum: ['api_key', 'subscription_key', 'aws_credentials'] },
+        status: { type: 'string' },
+        maskedKey: { type: 'string', nullable: true, description: 'First 4 + last 4 chars' },
+        createdAt: { type: 'string', format: 'date-time' },
+        updatedAt: { type: 'string', format: 'date-time' },
+        lastTestedAt: { type: 'string', format: 'date-time', nullable: true },
+      },
+    },
+    CredentialList: {
+      type: 'object',
+      properties: {
+        credentials: { type: 'array', items: { $ref: '#/components/schemas/Credential' } },
+        count: { type: 'integer' },
+      },
+    },
+    CredentialTestRequest: {
+      type: 'object',
+      required: ['providerId', 'credentialData'],
+      properties: {
+        providerId: { type: 'string', enum: providerEnum },
+        credentialData: { type: 'object' },
+      },
+    },
+    CredentialTestResult: {
+      type: 'object',
+      properties: {
+        success: { type: 'boolean' },
+        latencyMs: { type: 'integer' },
+        error: { type: 'string', description: 'Present when success=false' },
+      },
+    },
+    CredentialDeleted: {
+      type: 'object',
+      properties: {
+        deleted: { type: 'boolean' },
+        providerId: { type: 'string' },
+      },
+    },
+
+    // ── Keys ──
+
+    ApiKey: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        keyPrefix: { type: 'string', description: 'Masked prefix (vk_live__Cve...)' },
+        label: { type: 'string', nullable: true },
+        status: { type: 'string', enum: ['active', 'revoked'] },
+        createdAt: { type: 'string', format: 'date-time' },
+        lastUsedAt: { type: 'string', format: 'date-time', nullable: true },
+      },
+    },
+    ApiKeyCreated: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        key: { type: 'string', description: 'Full key value (shown only once)' },
+        keyPrefix: { type: 'string' },
+        label: { type: 'string' },
+        status: { type: 'string' },
+        createdAt: { type: 'string', format: 'date-time' },
+      },
+    },
+    ApiKeyList: {
+      type: 'object',
+      properties: {
+        keys: { type: 'array', items: { $ref: '#/components/schemas/ApiKey' } },
+      },
+    },
+
+    // ── Usage ──
+
+    Usage: {
+      type: 'object',
+      properties: {
+        totalBytes: { type: 'integer' },
+        fileCount: { type: 'integer' },
+        quotaBytes: { type: 'integer' },
+        usagePercent: { type: 'number' },
+        remainingBytes: { type: 'integer' },
+      },
+    },
+  };
+
+  const ref = (name) => ({ $ref: `#/components/schemas/${name}` });
+  const jsonContent = (schemaName) => ({ content: { 'application/json': { schema: ref(schemaName) } } });
+  const errorResp = (desc) => ({ description: desc, ...jsonContent('Error') });
+
   return {
     openapi: '3.1.0',
     info: {
       title: 'Vokda API',
       version: '1.0.0',
-      description: `Vokda is the central hub for text-to-speech. This API covers two surfaces:
-
-**Catalog API** (public, no auth) — Browse ${voices.length} voices across ${new Set(voices.map(v => v.providerId)).size} providers.
-Served as static JSON from \`https://vokda.iksnae.com/api/v1/\`.
-
-**Synthesis API** (authenticated) — Synthesize speech, manage clips, keys, and provider credentials.
-Base URL: \`https://api.vokda.iksnae.com\`.`,
+      description: `Vokda is the central hub for text-to-speech voice discovery and synthesis.\n\n**Catalog API** (public, no auth) — Browse ${voices.length} voices across ${new Set(voices.map(v => v.providerId)).size} providers.\nBase URL: \`https://vokda.iksnae.com\`\n\n**Synthesis API** (authenticated) — Synthesize speech, manage clips, keys, and provider credentials.\nBase URL: \`https://api.vokda.iksnae.com\`\n\nAuthentication: Include \`Authorization: Bearer <token>\` header with either a Vokda API key (\`vk_live_...\`) or a Cognito JWT.`,
       contact: { name: 'Vokda', url: 'https://vokda.iksnae.com' },
       license: { name: 'Proprietary' },
     },
@@ -291,46 +663,49 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
       { url: 'https://api.vokda.iksnae.com', description: 'Synthesis API (authenticated)' },
     ],
     tags: [
-      { name: 'catalog', description: 'Voice catalog (public, no auth)' },
-      { name: 'synthesis', description: 'Text-to-speech synthesis' },
-      { name: 'clips', description: 'Audio clip management' },
+      { name: 'catalog', description: 'Voice catalog — browse voices, providers, stats (public, no auth)' },
+      { name: 'synthesis', description: 'Text-to-speech synthesis (BYOK)' },
+      { name: 'clips', description: 'Audio clip storage and metadata' },
       { name: 'credentials', description: 'Provider credential management (BYOK)' },
       { name: 'keys', description: 'Vokda API key management' },
-      { name: 'usage', description: 'Storage and quota' },
+      { name: 'usage', description: 'Storage quota and usage' },
     ],
-    security: [{ BearerAuth: [] }],
     components: {
       securitySchemes: {
         BearerAuth: {
           type: 'http',
           scheme: 'bearer',
-          description: 'Vokda API key (`vk_live_...`) or Cognito JWT (`eyJ...`)',
+          description: 'Vokda API key (`vk_live_...`) or Cognito JWT',
         },
       },
+      schemas,
     },
+    security: [{ BearerAuth: [] }],
     paths: {
-      // ─── Catalog (public) ───
+      // ── Catalog ──
       '/api/v1/voices.json': {
         get: {
           operationId: 'listVoices',
           summary: 'List all voices',
-          description: `Returns the full voice catalog (${voices.length} voices). No authentication required.`,
+          description: `Returns the full voice catalog (${voices.length} voices).`,
           tags: ['catalog'],
           security: [],
-          responses: { 200: { description: 'Voice catalog' } },
+          responses: {
+            200: { description: 'Voice catalog', ...jsonContent('VoiceCatalog') },
+          },
         },
       },
       '/api/v1/voices/{voiceId}.json': {
         get: {
           operationId: 'getVoice',
           summary: 'Get voice detail',
-          description: 'Returns full detail for a single voice including model card, samples, and variants.',
+          description: 'Returns full detail for a single voice.',
           tags: ['catalog'],
           security: [],
-          parameters: [{ name: 'voiceId', in: 'path', required: true, schema: { type: 'string' } }],
+          parameters: [{ name: 'voiceId', in: 'path', required: true, schema: { type: 'string' }, description: 'Voice ULID' }],
           responses: {
-            200: { description: 'Voice detail' },
-            404: { description: 'Voice not found' },
+            200: { description: 'Voice detail', ...jsonContent('Voice') },
+            404: errorResp('Voice not found'),
           },
         },
       },
@@ -338,75 +713,56 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
         get: {
           operationId: 'listProviders',
           summary: 'List all providers',
-          description: 'Provider directory with voice counts, capabilities, pricing, and links.',
+          description: 'Provider directory with capabilities, pricing, and links.',
           tags: ['catalog'],
           security: [],
-          responses: { 200: { description: 'Provider list' } },
+          responses: {
+            200: { description: 'Provider list', ...jsonContent('ProviderList') },
+          },
         },
       },
       '/api/v1/stats.json': {
         get: {
           operationId: 'getCatalogStats',
           summary: 'Catalog statistics',
-          description: 'Aggregate stats: voice counts, provider breakdown, quality tiers, capabilities.',
+          description: 'Aggregate stats: voice counts, provider breakdown, quality tiers.',
           tags: ['catalog'],
           security: [],
-          responses: { 200: { description: 'Catalog stats' } },
+          responses: {
+            200: { description: 'Catalog stats', ...jsonContent('CatalogStats') },
+          },
         },
       },
-      // ─── Synthesis ───
+      // ── Synthesis ──
       '/v1/synthesize': {
         post: {
           operationId: 'synthesize',
           summary: 'Synthesize speech',
-          description: 'Generate speech from text or SSML using a connected provider. Requires a stored provider credential.',
+          description: 'Generate speech from text or SSML. Requires a stored provider credential.',
           tags: ['synthesis'],
-          requestBody: {
-            required: true,
-            content: { 'application/json': { schema: {
-              type: 'object',
-              required: ['text', 'provider'],
-              properties: {
-                text: { type: 'string', description: 'Input text (max 5,000 chars)', maxLength: 5000 },
-                provider: { type: 'string', description: 'Provider ID', enum: ['openai', 'elevenlabs', 'deepgram', 'gemini-tts', 'cartesia', 'lmnt', 'gcp-tts', 'azure-speech', 'aws-polly'] },
-                providerVoiceId: { type: 'string', description: "Provider's own voice ID" },
-                voiceName: { type: 'string', description: 'Display name (stored with clip)' },
-                voiceId: { type: 'string', description: 'Vokda catalog voice ID' },
-                mode: { type: 'string', enum: ['text', 'ssml'], default: 'text' },
-              },
-            }}},
-          },
+          requestBody: { required: true, ...jsonContent('SynthesizeRequest') },
           responses: {
-            200: { description: 'Synthesis completed', content: { 'application/json': { schema: {
-              type: 'object',
-              properties: {
-                jobId: { type: 'string' },
-                status: { type: 'string', enum: ['completed', 'pending', 'failed'] },
-                audioUrl: { type: 'string', description: 'Presigned S3 URL (7-day expiry)' },
-                fileSizeBytes: { type: 'integer' },
-                durationMs: { type: 'integer', nullable: true },
-                latencyMs: { type: 'integer' },
-                provider: { type: 'string' },
-                voiceName: { type: 'string' },
-                createdAt: { type: 'string', format: 'date-time' },
-              },
-            }}}},
-            400: { description: 'Bad request (missing field, unsupported provider, no credential)' },
-            401: { description: 'Unauthorized' },
+            200: { description: 'Synthesis completed', ...jsonContent('SynthesizeResponse') },
+            202: { description: 'Async job queued (when async=true)', ...jsonContent('SynthesizeResponse') },
+            400: errorResp('Bad request'),
+            401: errorResp('Unauthorized'),
           },
         },
       },
-      // ─── Clips ───
+      // ── Clips ──
       '/v1/jobs': {
         get: {
           operationId: 'listClips',
           summary: 'List audio clips',
           tags: ['clips'],
           parameters: [
-            { name: 'limit', in: 'query', schema: { type: 'integer', default: 50, maximum: 200 } },
+            { name: 'limit', in: 'query', schema: { type: 'integer', default: 50, maximum: 200 }, description: 'Max clips to return' },
             { name: 'status', in: 'query', schema: { type: 'string', enum: ['completed', 'pending', 'failed'] } },
           ],
-          responses: { 200: { description: 'Clip list with count' } },
+          responses: {
+            200: { description: 'Clip list', ...jsonContent('ClipList') },
+            401: errorResp('Unauthorized'),
+          },
         },
       },
       '/v1/jobs/{id}': {
@@ -415,53 +771,44 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
           summary: 'Get clip detail',
           tags: ['clips'],
           parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'string' } }],
-          responses: { 200: { description: 'Clip detail with fresh audio URL' }, 404: { description: 'Not found' } },
+          responses: {
+            200: { description: 'Clip with fresh presigned audio URL', ...jsonContent('Clip') },
+            404: errorResp('Clip not found'),
+          },
         },
         patch: {
           operationId: 'updateClip',
           summary: 'Update clip metadata',
           tags: ['clips'],
           parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'string' } }],
-          requestBody: { content: { 'application/json': { schema: {
-            type: 'object',
-            properties: {
-              clipName: { type: 'string', nullable: true, maxLength: 500 },
-              clipDescription: { type: 'string', nullable: true, maxLength: 500 },
-              clipTags: { type: 'array', items: { type: 'string' }, maxItems: 20 },
-            },
-          }}}},
-          responses: { 200: { description: 'Updated clip' } },
+          requestBody: { ...jsonContent('ClipUpdate') },
+          responses: {
+            200: { description: 'Updated clip', ...jsonContent('Clip') },
+            404: errorResp('Clip not found'),
+          },
         },
         delete: {
           operationId: 'deleteClip',
           summary: 'Delete clip and audio',
           tags: ['clips'],
           parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'string' } }],
-          responses: { 200: { description: 'Deleted with freed bytes' } },
+          responses: {
+            200: { description: 'Clip deleted', ...jsonContent('ClipDeleted') },
+            404: errorResp('Clip not found'),
+          },
         },
       },
-      // ─── Credentials ───
+      // ── Credentials ──
       '/v1/credentials': {
         post: {
           operationId: 'saveCredential',
           summary: 'Store provider credential',
-          description: 'Create or update a BYOK provider API key. One credential per provider (upsert).',
+          description: 'Create or update a BYOK provider key. One credential per provider (upsert).',
           tags: ['credentials'],
-          requestBody: { required: true, content: { 'application/json': { schema: {
-            type: 'object',
-            required: ['providerId', 'credentialData'],
-            properties: {
-              providerId: { type: 'string', enum: ['openai', 'elevenlabs', 'deepgram', 'gemini-tts', 'cartesia', 'lmnt', 'gcp-tts', 'azure-speech', 'aws-polly'] },
-              credentialData: {
-                type: 'object',
-                description: 'Provider-specific credential fields. API key providers: `{"apiKey":"sk-..."}`. Azure: `{"subscriptionKey":"...","region":"eastus"}`. AWS Polly: `{"accessKeyId":"...","secretAccessKey":"...","region":"us-east-1"}`.',
-              },
-              label: { type: 'string', description: 'Optional display label' },
-            },
-          }}}},
+          requestBody: { required: true, ...jsonContent('SaveCredentialRequest') },
           responses: {
-            200: { description: 'Credential saved' },
-            400: { description: 'Invalid provider or missing fields' },
+            200: { description: 'Credential saved', ...jsonContent('CredentialSaved') },
+            400: errorResp('Invalid provider or missing fields'),
           },
         },
         get: {
@@ -469,24 +816,21 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
           summary: 'List provider credentials',
           description: 'Returns all stored credentials with masked key values.',
           tags: ['credentials'],
-          responses: { 200: { description: 'Credential list' } },
+          responses: {
+            200: { description: 'Credential list', ...jsonContent('CredentialList') },
+          },
         },
       },
       '/v1/credentials/test': {
         post: {
           operationId: 'testCredential',
-          summary: 'Test a credential (dry run)',
-          description: 'Verifies a credential works by attempting a minimal synthesis. Does NOT store the credential.',
+          summary: 'Test credential (dry run)',
+          description: 'Verifies a credential by performing a minimal synthesis. Does NOT store it.',
           tags: ['credentials'],
-          requestBody: { required: true, content: { 'application/json': { schema: {
-            type: 'object',
-            required: ['providerId', 'credentialData'],
-            properties: {
-              providerId: { type: 'string' },
-              credentialData: { type: 'object' },
-            },
-          }}}},
-          responses: { 200: { description: '`{success, latencyMs, error?}`' } },
+          requestBody: { required: true, ...jsonContent('CredentialTestRequest') },
+          responses: {
+            200: { description: 'Test result', ...jsonContent('CredentialTestResult') },
+          },
         },
       },
       '/v1/credentials/{providerId}': {
@@ -494,29 +838,35 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
           operationId: 'deleteCredential',
           summary: 'Remove provider credential',
           tags: ['credentials'],
-          parameters: [{ name: 'providerId', in: 'path', required: true, schema: { type: 'string' } }],
-          responses: { 200: { description: 'Deleted' }, 404: { description: 'No credential for this provider' } },
+          parameters: [{ name: 'providerId', in: 'path', required: true, schema: { type: 'string', enum: providerEnum } }],
+          responses: {
+            200: { description: 'Credential deleted', ...jsonContent('CredentialDeleted') },
+            404: errorResp('No credential for this provider'),
+          },
         },
       },
-      // ─── Keys ───
+      // ── Keys ──
       '/v1/keys': {
         post: {
           operationId: 'createApiKey',
           summary: 'Create Vokda API key',
-          description: 'Creates a `vk_live_...` key. The full key is returned only once.',
+          description: 'Creates a `vk_live_...` key. The full key value is returned **only once**.',
           tags: ['keys'],
           requestBody: { content: { 'application/json': { schema: {
             type: 'object',
-            properties: { label: { type: 'string' } },
+            properties: { label: { type: 'string', description: 'Optional label for the key' } },
           }}}},
-          responses: { 201: { description: 'Key created (full value shown once)' } },
+          responses: {
+            201: { description: 'Key created', ...jsonContent('ApiKeyCreated') },
+          },
         },
         get: {
           operationId: 'listApiKeys',
           summary: 'List API keys',
-          description: 'Returns all keys with masked values.',
           tags: ['keys'],
-          responses: { 200: { description: 'Key list' } },
+          responses: {
+            200: { description: 'Key list', ...jsonContent('ApiKeyList') },
+          },
         },
       },
       '/v1/keys/{id}': {
@@ -525,16 +875,20 @@ Base URL: \`https://api.vokda.iksnae.com\`.`,
           summary: 'Revoke API key',
           tags: ['keys'],
           parameters: [{ name: 'id', in: 'path', required: true, schema: { type: 'string' } }],
-          responses: { 200: { description: 'Revoked' } },
+          responses: {
+            200: { description: 'Key revoked' },
+          },
         },
       },
-      // ─── Usage ───
+      // ── Usage ──
       '/v1/media/usage': {
         get: {
           operationId: 'getUsage',
           summary: 'Storage usage and quota',
           tags: ['usage'],
-          responses: { 200: { description: 'Usage stats (totalBytes, fileCount, quotaBytes, usagePercent)' } },
+          responses: {
+            200: { description: 'Usage stats', ...jsonContent('Usage') },
+          },
         },
       },
     },

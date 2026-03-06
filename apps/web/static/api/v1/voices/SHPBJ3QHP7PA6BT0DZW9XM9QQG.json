@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
+  "imageUrl": "/images/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.jpg",
+  "audioUrl": "/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
+      "audioUrl": "/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
       "id": "s-SHPBJ3QHP7PA6BT0DZW9XM9QQG",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Clint - Rugged Actor",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.json"
+  ]
 }

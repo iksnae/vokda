@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
+  "imageUrl": "/images/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
+  "audioUrl": "/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
+      "audioUrl": "/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
       "id": "s-A9M0EE07TBHSSVVZYE89QXZHZQ",
       "label": "Default",
       "text": "Hello! I'm Neerja Expressive, speaking Indian English. This is a preview of how I sound in natural conversation."
@@ -90,8 +90,5 @@
       "label": "Neerja Expressive",
       "supportsSsml": true
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/A9M0EE07TBHSSVVZYE89QXZHZQ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.json"
+  ]
 }

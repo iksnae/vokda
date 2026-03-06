@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/J4405KQY3VG4E2FNVKT89QHSM1.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
+  "imageUrl": "/images/voices/J4405KQY3VG4E2FNVKT89QHSM1.jpg",
+  "audioUrl": "/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
+      "audioUrl": "/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
       "id": "s-J4405KQY3VG4E2FNVKT89QHSM1",
       "label": "Default",
       "text": "Bonjour! Voici un aperçu de ma voix dans une conversation naturelle. Je peux aider avec le service client et la narration."
@@ -91,8 +91,5 @@
       "label": "Agathe",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J4405KQY3VG4E2FNVKT89QHSM1.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/J4405KQY3VG4E2FNVKT89QHSM1",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J4405KQY3VG4E2FNVKT89QHSM1.json"
+  ]
 }

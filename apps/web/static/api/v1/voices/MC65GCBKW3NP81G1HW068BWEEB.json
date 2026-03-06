@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
+  "imageUrl": "/images/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",
+  "audioUrl": "/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
+      "audioUrl": "/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
       "id": "s-MC65GCBKW3NP81G1HW068BWEEB",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,8 +70,5 @@
       "label": "Daniel - Modern Assistant",
       "supportsSsml": false
     }
-  ],
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/MC65GCBKW3NP81G1HW068BWEEB",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/MC65GCBKW3NP81G1HW068BWEEB.json"
+  ]
 }
