@@ -14,7 +14,7 @@
   import Icon from '$lib/components/Icon.svelte';
   import { isAuthenticated } from '$lib/auth/store';
   import { isProviderConnected } from '$lib/stores/credentials';
-  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback } from '$lib/synthesis/service';
+  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -184,7 +184,7 @@
         addToast(auditionResult.warnings.join(' '), 'info');
       }
     } catch (err) {
-      auditionError = err instanceof Error ? err.message : 'Synthesis failed.';
+      auditionError = humanizeSynthesisError(err);
       addToast(auditionError, 'error');
     } finally {
       auditionLoading = false;

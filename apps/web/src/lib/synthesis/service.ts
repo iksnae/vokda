@@ -115,6 +115,59 @@ export function getSynthesisProvider(variant: VoiceVariant): string | null {
   return getProviderForVariant(variant);
 }
 
+/**
+ * Parse a raw adapter error into a user-friendly message.
+ *
+ * Extracts the HTTP status and provider name from the standard
+ * adapter error format: "{Provider} TTS failed ({status}): {body}"
+ * then maps to actionable guidance.
+ */
+export function humanizeSynthesisError(error: unknown): string {
+  const raw = error instanceof Error ? error.message : String(error);
+
+  // Extract status code from "{Provider} TTS failed (NNN): ..."
+  const statusMatch = raw.match(/failed \((\d{3})\)/);
+  const status = statusMatch ? Number(statusMatch[1]) : 0;
+
+  // Extract provider name
+  const providerMatch = raw.match(/^(\w[\w\s-]*?) TTS failed/);
+  const provider = providerMatch ? providerMatch[1] : 'Provider';
+
+  if (status === 401 || status === 403) {
+    // Log full detail for debugging
+    console.warn('[synthesis] Auth error from provider:', raw);
+    return `${provider} rejected your API key. Check your key at Account → Provider Keys, or upgrade your plan if on a free tier.`;
+  }
+
+  if (status === 429) {
+    return `${provider} rate limit reached. Wait a moment and try again, or check your plan's usage quota.`;
+  }
+
+  if (status === 402) {
+    return `${provider} requires payment. Your account may have exceeded its free quota.`;
+  }
+
+  if (status >= 500) {
+    return `${provider} is experiencing issues (${status}). Try again in a moment.`;
+  }
+
+  if (status === 400) {
+    return `${provider} rejected the request. The input text may be too long or contain unsupported characters.`;
+  }
+
+  // Network / fetch errors
+  if (raw.includes('Failed to fetch') || raw.includes('NetworkError') || raw.includes('net::')) {
+    return `Could not reach ${provider}. Check your internet connection or try again.`;
+  }
+
+  // Fallback: truncate to something reasonable
+  if (raw.length > 160) {
+    return raw.slice(0, 150).trim() + '…';
+  }
+
+  return raw;
+}
+
 export function stopPreviewPlayback() {
   if (!browser || !('speechSynthesis' in window)) return;
   speechSynthesis.cancel();
