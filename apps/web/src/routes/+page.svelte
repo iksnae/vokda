@@ -507,98 +507,7 @@
 
     {#if !panelCollapsed}
       <nav class="filter-sections" aria-label="Filter voices">
-        <!-- Provider chips -->
-        <div class="filter-section">
-          <span class="section-label">Provider</span>
-          <div class="chip-group">
-            {#each availableProviders as provider}
-              {@const colors = getProviderColor(provider)}
-              {@const isActive = selectedProviders.has(provider)}
-              <button
-                class="filter-chip"
-                class:active={isActive}
-                style={isActive ? `background:${colors.bg};border-color:${colors.border};color:${colors.text}` : ''}
-                on:click={() => { selectedProviders = toggleSetValue(selectedProviders, provider); }}
-              >
-                {provider}
-              </button>
-            {/each}
-          </div>
-        </div>
-
-        <!-- Gender chips -->
-        {#if availableGenders.length > 0}
-          <div class="filter-section">
-            <span class="section-label">Gender</span>
-            <div class="chip-group">
-              {#each availableGenders as gender}
-                <button
-                  class="filter-chip"
-                  class:active={selectedGenders.has(gender)}
-                  on:click={() => { selectedGenders = toggleSetValue(selectedGenders, gender); }}
-                >
-                  {genderLabels[gender] ?? capitalize(gender)}
-                </button>
-              {/each}
-            </div>
-          </div>
-        {/if}
-
-        <!-- Age chips -->
-        {#if availableAges.length > 0}
-          <div class="filter-section">
-            <span class="section-label">Age</span>
-            <div class="chip-group">
-              {#each availableAges as age}
-                <button
-                  class="filter-chip"
-                  class:active={selectedAges.has(age)}
-                  on:click={() => { selectedAges = toggleSetValue(selectedAges, age); }}
-                >
-                  {ageLabels[age] ?? capitalize(age)}
-                </button>
-              {/each}
-            </div>
-          </div>
-        {/if}
-
-        <!-- Tone chips -->
-        {#if availableTones.length > 0}
-          <div class="filter-section">
-            <span class="section-label">Tone</span>
-            <div class="chip-group">
-              {#each availableTones as tone}
-                <button
-                  class="filter-chip"
-                  class:active={selectedTones.has(tone)}
-                  on:click={() => { selectedTones = toggleSetValue(selectedTones, tone); }}
-                >
-                  {capitalize(tone)}
-                </button>
-              {/each}
-            </div>
-          </div>
-        {/if}
-
-        <!-- Quality tier chips -->
-        {#if availableTiers.length > 1}
-          <div class="filter-section">
-            <span class="section-label">Quality</span>
-            <div class="chip-group">
-              {#each availableTiers as tier}
-                <button
-                  class="filter-chip"
-                  class:active={selectedTiers.has(tier)}
-                  on:click={() => { selectedTiers = toggleSetValue(selectedTiers, tier); }}
-                >
-                  {tierLabels[tier] ?? capitalize(tier)}
-                </button>
-              {/each}
-            </div>
-          </div>
-        {/if}
-
-        <!-- Language chips (Tier 1) -->
+        <!-- 1. Language chips (Tier 1) — hardest constraint, eliminates the most non-matches -->
         <div class="filter-section">
           <span class="section-label">Language</span>
           <div class="chip-group">
@@ -646,7 +555,98 @@
           </div>
         {/if}
 
-        <!-- Type chips -->
+        <!-- 2. Gender — first creative character decision -->
+        {#if availableGenders.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Gender</span>
+            <div class="chip-group">
+              {#each availableGenders as gender}
+                <button
+                  class="filter-chip"
+                  class:active={selectedGenders.has(gender)}
+                  on:click={() => { selectedGenders = toggleSetValue(selectedGenders, gender); }}
+                >
+                  {genderLabels[gender] ?? capitalize(gender)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- 3. Age — second character trait, pairs naturally with gender -->
+        {#if availableAges.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Age</span>
+            <div class="chip-group">
+              {#each availableAges as age}
+                <button
+                  class="filter-chip"
+                  class:active={selectedAges.has(age)}
+                  on:click={() => { selectedAges = toggleSetValue(selectedAges, age); }}
+                >
+                  {ageLabels[age] ?? capitalize(age)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- 4. Tone — personality/feel, refines character after gender + age -->
+        {#if availableTones.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Tone</span>
+            <div class="chip-group">
+              {#each availableTones as tone}
+                <button
+                  class="filter-chip"
+                  class:active={selectedTones.has(tone)}
+                  on:click={() => { selectedTones = toggleSetValue(selectedTones, tone); }}
+                >
+                  {capitalize(tone)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- 5. Quality — practical constraint after character selection -->
+        {#if availableTiers.length > 1}
+          <div class="filter-section">
+            <span class="section-label">Quality</span>
+            <div class="chip-group">
+              {#each availableTiers as tier}
+                <button
+                  class="filter-chip"
+                  class:active={selectedTiers.has(tier)}
+                  on:click={() => { selectedTiers = toggleSetValue(selectedTiers, tier); }}
+                >
+                  {tierLabels[tier] ?? capitalize(tier)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- 6. Provider — commercial/technical preference, power users -->
+        <div class="filter-section">
+          <span class="section-label">Provider</span>
+          <div class="chip-group">
+            {#each availableProviders as provider}
+              {@const colors = getProviderColor(provider)}
+              {@const isActive = selectedProviders.has(provider)}
+              <button
+                class="filter-chip"
+                class:active={isActive}
+                style={isActive ? `background:${colors.bg};border-color:${colors.border};color:${colors.text}` : ''}
+                on:click={() => { selectedProviders = toggleSetValue(selectedProviders, provider); }}
+              >
+                {provider}
+              </button>
+            {/each}
+          </div>
+        </div>
+
+        <!-- 7. Type — deployment concern, power users only -->
         <div class="filter-section">
           <span class="section-label">Type</span>
           <div class="chip-group">
@@ -662,7 +662,7 @@
           </div>
         </div>
 
-        <!-- Capability toggles -->
+        <!-- 8. Capabilities — narrowest, most technical filters last -->
         <div class="filter-section">
           <span class="section-label">Capabilities</span>
           <div class="chip-group">
