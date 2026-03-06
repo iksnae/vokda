@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { auth, initAuth, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
+  import { auth, initAuth, isAuthenticated, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
   import { collections } from '$lib/stores/app-state';
   import Toast from '$lib/components/Toast.svelte';
   import Icon from '$lib/components/Icon.svelte';
@@ -61,6 +61,18 @@
           <span class="badge">{collectionCount}</span>
         {/if}
       </a>
+      {#if $roleFlags.isCurator}
+        <a href="/curation" class="nav-link">
+          <Icon name="pencil" size={14} />
+          Curation
+        </a>
+      {/if}
+      {#if $roleFlags.isAdmin}
+        <a href="/admin" class="nav-link">
+          <Icon name="gear" size={14} />
+          Admin
+        </a>
+      {/if}
     </nav>
 
     <div class="auth-actions">

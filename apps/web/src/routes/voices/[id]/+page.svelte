@@ -12,6 +12,10 @@
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
+  import { isAuthenticated } from '$lib/auth/store';
+  import { isProviderConnected } from '$lib/stores/credentials';
+  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback } from '$lib/synthesis/service';
+  import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voice: Voice | null; voiceId: string };
@@ -141,6 +145,68 @@
   }
 
   $: variant = voice?.variants[0] ?? null;
+
+  // ─── Audition / Synthesis ───
+  let auditionText = 'Hello! This is a preview of this voice. How does it sound to you?';
+  let auditionMode: PreviewInputMode = 'text';
+  let auditionLoading = false;
+  let auditionResult: SynthesisPreview | null = null;
+  let auditionError = '';
+  let auditionAudioEl: HTMLAudioElement | null = null;
+  let auditionPlaying = false;
+  let auditionTime = 0;
+  let auditionDuration = 0;
+  let auditionReady = false;
+
+  $: auditionProvider = variant ? getSynthesisProvider(variant) : null;
+  $: auditionHasRealAdapter = variant ? canSynthesizeReal(variant) : false;
+  $: auditionProviderConnected = auditionProvider ? isProviderConnected(auditionProvider) : false;
+  $: auditionProgressPct = auditionDuration > 0 ? (auditionTime / auditionDuration) * 100 : 0;
+
+  async function runAudition() {
+    if (!voice || !variant || !auditionText.trim()) return;
+
+    auditionLoading = true;
+    auditionError = '';
+    auditionResult = null;
+    auditionReady = false;
+    stopPreviewPlayback();
+
+    try {
+      auditionResult = await synthesizePreview({
+        voice,
+        variant,
+        input: auditionText,
+        mode: auditionMode
+      });
+
+      if (auditionResult.warnings.length > 0) {
+        addToast(auditionResult.warnings.join(' '), 'info');
+      }
+    } catch (err) {
+      auditionError = err instanceof Error ? err.message : 'Synthesis failed.';
+      addToast(auditionError, 'error');
+    } finally {
+      auditionLoading = false;
+    }
+  }
+
+  function toggleAuditionPlay() {
+    if (!auditionAudioEl) return;
+    if (auditionPlaying) {
+      auditionAudioEl.pause();
+    } else {
+      void auditionAudioEl.play();
+    }
+  }
+
+  function handleAuditionSeek(e: MouseEvent) {
+    if (!auditionAudioEl || !auditionDuration) return;
+    const bar = e.currentTarget as HTMLElement;
+    const rect = bar.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    auditionAudioEl.currentTime = pct * auditionDuration;
+  }
 </script>
 
 <svelte:head>
@@ -370,6 +436,128 @@
         </div>
       </section>
     {/if}
+
+    <!-- ─── Audition / Live Synthesis ─── -->
+    <section class="audition-section">
+      <div class="audition-card">
+        <div class="audition-header">
+          <Icon name="waveform" size={20} />
+          <h2>Audition</h2>
+          <span class="audition-label">
+            {#if auditionHasRealAdapter}
+              <span class="adapter-badge real"><Icon name="lightning" size={11} /> Live</span>
+            {:else}
+              <span class="adapter-badge mock">Mock</span>
+            {/if}
+          </span>
+        </div>
+
+        {#if !$isAuthenticated}
+          <div class="audition-gate">
+            <Icon name="user" size={22} />
+            <p>Sign in to audition this voice with custom text.</p>
+            <a href="/account?intent=signin" class="audition-signin-btn">Sign In</a>
+          </div>
+        {:else}
+          <div class="audition-body">
+            <div class="audition-input-row">
+              <div class="audition-mode-toggle">
+                <button
+                  class="mode-btn"
+                  class:active={auditionMode === 'text'}
+                  on:click={() => auditionMode = 'text'}
+                >Text</button>
+                <button
+                  class="mode-btn"
+                  class:active={auditionMode === 'ssml'}
+                  on:click={() => auditionMode = 'ssml'}
+                >SSML</button>
+              </div>
+
+              {#if auditionProvider && !auditionProviderConnected && !auditionHasRealAdapter}
+                <a href="/account/providers" class="key-hint">
+                  <Icon name="key" size={12} />
+                  Add {auditionProvider} key for live synthesis
+                </a>
+              {/if}
+            </div>
+
+            <textarea
+              class="audition-textarea"
+              bind:value={auditionText}
+              placeholder={auditionMode === 'ssml' ? '<speak>Enter SSML here…</speak>' : 'Type any text to hear this voice speak it…'}
+              rows="3"
+              on:keydown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); runAudition(); } }}
+            ></textarea>
+
+            <div class="audition-actions">
+              <button
+                class="synthesize-btn"
+                on:click={runAudition}
+                disabled={auditionLoading || !auditionText.trim()}
+              >
+                {#if auditionLoading}
+                  <span class="spinner"></span>
+                  Synthesizing…
+                {:else}
+                  <Icon name="play" size={16} />
+                  Synthesize
+                {/if}
+              </button>
+
+              {#if auditionResult}
+                <span class="latency-info">
+                  {auditionResult.latencyMs}ms · {auditionResult.adapter}
+                </span>
+              {/if}
+            </div>
+
+            {#if auditionError}
+              <div class="audition-error">
+                <Icon name="x" size={14} />
+                {auditionError}
+              </div>
+            {/if}
+
+            {#if auditionResult?.audioUrl}
+              <div class="audition-player">
+                <button
+                  class="play-btn-small"
+                  on:click={toggleAuditionPlay}
+                  disabled={!auditionReady}
+                  aria-label={auditionPlaying ? 'Pause' : 'Play'}
+                >
+                  <Icon name={auditionPlaying ? 'pause' : 'play'} size={16} />
+                </button>
+
+                <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                <div class="audition-progress" on:click={handleAuditionSeek}>
+                  <div class="audition-progress-fill" style="width:{auditionProgressPct}%"></div>
+                </div>
+
+                <span class="audition-time">{formatTime(auditionTime)} / {formatTime(auditionDuration)}</span>
+
+                <audio
+                  bind:this={auditionAudioEl}
+                  src={auditionResult.audioUrl}
+                  on:timeupdate={() => { if (auditionAudioEl) auditionTime = auditionAudioEl.currentTime; }}
+                  on:loadedmetadata={() => { if (auditionAudioEl) { auditionDuration = auditionAudioEl.duration; auditionReady = true; } }}
+                  on:play={() => auditionPlaying = true}
+                  on:pause={() => auditionPlaying = false}
+                  on:ended={() => { auditionPlaying = false; auditionTime = 0; }}
+                  preload="auto"
+                ></audio>
+              </div>
+            {:else if auditionResult && !auditionResult.audioUrl}
+              <div class="audition-fallback-notice">
+                <Icon name="info" size={14} />
+                <span>Using browser speech synthesis as fallback — no audio URL returned.</span>
+              </div>
+            {/if}
+          </div>
+        {/if}
+      </div>
+    </section>
 
     <!-- ─── Voice Profile Grid ─── -->
     <section class="profile-section">
@@ -992,6 +1180,279 @@
     color: #3e5972;
     line-height: 1.55;
     font-style: italic;
+  }
+
+  /* ─── Audition ─── */
+  .audition-section {
+    margin-top: 1.2rem;
+  }
+
+  .audition-card {
+    border: 1px solid var(--stroke-soft);
+    border-radius: 20px;
+    background: linear-gradient(180deg, #fff 0%, #f9fcfe 100%);
+    padding: 1rem 1.15rem;
+    box-shadow: 0 10px 22px rgba(17, 39, 57, 0.06);
+  }
+
+  .audition-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .audition-header h2 {
+    font-size: var(--text-heading);
+    font-weight: 700;
+    margin: 0;
+    flex: 1;
+  }
+
+  .audition-label {
+    font-size: var(--text-xs);
+  }
+
+  .adapter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: var(--text-xs);
+    border: 1px solid;
+  }
+
+  .adapter-badge.real {
+    color: #2e7d32;
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+  }
+
+  .adapter-badge.mock {
+    color: #8d5c16;
+    background: #fefbe8;
+    border-color: #f0c36e;
+  }
+
+  .audition-gate {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a6a82;
+    font-size: var(--text-body);
+  }
+
+  .audition-signin-btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.45rem 0.9rem;
+    background: linear-gradient(154deg, var(--brand-600), var(--brand-700));
+    color: #fff;
+    font-weight: 680;
+    font-size: var(--text-small);
+    box-shadow: 0 4px 12px rgba(20, 94, 121, 0.2);
+  }
+
+  .audition-body {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .audition-input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .audition-mode-toggle {
+    display: inline-flex;
+    border: 1px solid #c5d5e2;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .mode-btn {
+    border: none;
+    background: #f3f7fa;
+    padding: 0.3rem 0.65rem;
+    font-size: var(--text-xs);
+    font-weight: 660;
+    color: #5a7a90;
+    cursor: pointer;
+    transition: all 120ms;
+  }
+
+  .mode-btn.active {
+    background: var(--brand-600);
+    color: #fff;
+  }
+
+  .key-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--text-xs);
+    color: var(--brand-600);
+    font-weight: 620;
+    text-decoration: none;
+  }
+
+  .key-hint:hover {
+    text-decoration: underline;
+  }
+
+  .audition-textarea {
+    width: 100%;
+    border: 1px solid #bfd0de;
+    border-radius: 12px;
+    padding: 0.6rem 0.75rem;
+    font-size: var(--text-body);
+    font-family: inherit;
+    resize: vertical;
+    min-height: 72px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  .audition-textarea:focus {
+    outline: 2px solid var(--brand-600);
+    outline-offset: -1px;
+  }
+
+  .audition-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .synthesize-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: none;
+    border-radius: 11px;
+    padding: 0.55rem 1rem;
+    background: linear-gradient(154deg, var(--brand-600), var(--brand-700));
+    color: #fff;
+    font-weight: 680;
+    font-size: var(--text-small);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(20, 94, 121, 0.2);
+    transition: box-shadow 120ms;
+  }
+
+  .synthesize-btn:hover:not(:disabled) {
+    box-shadow: 0 6px 16px rgba(20, 94, 121, 0.3);
+  }
+
+  .synthesize-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .latency-info {
+    font-size: var(--text-xs);
+    color: #5a7a90;
+    font-weight: 620;
+  }
+
+  .audition-error {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 10px;
+    background: #fff5f5;
+    border: 1px solid #ef9a9a;
+    color: #c62828;
+    font-size: var(--text-small);
+  }
+
+  .audition-player {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.65rem;
+    border-radius: 12px;
+    background: #f0f5f9;
+    border: 1px solid #d5e0e9;
+  }
+
+  .play-btn-small {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(154deg, var(--brand-600), var(--brand-700));
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .play-btn-small:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .audition-progress {
+    flex: 1;
+    height: 6px;
+    background: #d5e0e9;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .audition-progress-fill {
+    height: 100%;
+    background: var(--brand-600);
+    border-radius: 3px;
+    transition: width 100ms linear;
+  }
+
+  .audition-time {
+    font-size: var(--text-xs);
+    color: #5a7a90;
+    font-weight: 620;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .audition-fallback-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.65rem;
+    border-radius: 10px;
+    background: #edf5fb;
+    border: 1px solid #ceddeb;
+    color: #2b4f67;
+    font-size: var(--text-small);
   }
 
   /* ─── Voice Profile ─── */

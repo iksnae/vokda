@@ -34,6 +34,12 @@
   import Microphone from 'phosphor-svelte/lib/Microphone';
   import ChatCircle from 'phosphor-svelte/lib/ChatCircle';
   import CaretUp from 'phosphor-svelte/lib/CaretUp';
+  import Gear from 'phosphor-svelte/lib/Gear';
+  import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
+  import Key from 'phosphor-svelte/lib/Key';
+  import Waveform from 'phosphor-svelte/lib/Waveform';
+  import Lightning from 'phosphor-svelte/lib/Lightning';
+  import Folder from 'phosphor-svelte/lib/Folder';
 
   export let name: string;
   export let size: number = 16;
@@ -71,7 +77,13 @@
     desktop: Desktop,
     microphone: Microphone,
     chat: ChatCircle,
-    'chevron-up': CaretUp
+    'chevron-up': CaretUp,
+    gear: Gear,
+    'arrow-right': ArrowRight,
+    key: Key,
+    waveform: Waveform,
+    lightning: Lightning,
+    folder: Folder
   };
 
   const filledNames = new Set([
