@@ -587,7 +587,7 @@
             <div class="chip-group">
               {#each availableTiers as tier}
                 <button
-                  class="filter-chip filter-chip--tier filter-chip--tier-{tier}"
+                  class="filter-chip"
                   class:active={selectedTiers.has(tier)}
                   on:click={() => { selectedTiers = toggleSetValue(selectedTiers, tier); }}
                 >
@@ -1004,31 +1004,6 @@
   .filter-chip.active .chip-count {
     color: var(--brand-600, #177089);
     opacity: 0.8;
-  }
-
-  /* Quality tier chips — distinct inactive colours */
-  .filter-chip--tier-premium:not(.active) {
-    border-color: #c9b8e8;
-    color: #5c3d8f;
-    background: #faf7ff;
-  }
-  .filter-chip--tier-premium:not(.active):hover {
-    background: #f0eafc;
-    border-color: #a98bd4;
-  }
-  .filter-chip--tier-premium.active {
-    background: #ede4fc;
-    border-color: #7c4dbd;
-    color: #4a2880;
-  }
-  .filter-chip--tier-standard:not(.active) {
-    border-color: #b8cfd8;
-    color: #2e5a6e;
-    background: #f6fafc;
-  }
-  .filter-chip--tier-standard:not(.active):hover {
-    background: #eaf3f7;
-    border-color: #8bb3c2;
   }
 
   /* Accent section gets a subtle left indent to signal hierarchy */
