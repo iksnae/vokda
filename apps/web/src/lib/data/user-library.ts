@@ -260,6 +260,43 @@ export async function removeCollectionVoice(collectionId: string, voiceId: strin
   await touchCollection(collectionId);
 }
 
+export async function reorderCollectionVoices(collectionId: string, orderedVoiceIds: string[]) {
+  const client = dataClient();
+
+  const entries = await listAll<CollectionVoiceRecord>(async (nextToken) => {
+    const response = await client.models.CollectionVoice.list({
+      limit: 200,
+      nextToken,
+      filter: { collectionId: { eq: collectionId } }
+    });
+    return response as ListPage<CollectionVoiceRecord>;
+  });
+
+  // Build a map of voiceId → record
+  const byVoiceId = new Map<string, CollectionVoiceRecord>();
+  for (const entry of entries) {
+    byVoiceId.set(entry.voiceId, entry);
+  }
+
+  // Update positions to match new order
+  const updates = orderedVoiceIds
+    .map((voiceId, index) => {
+      const record = byVoiceId.get(voiceId);
+      if (!record || record.position === index) return null;
+      return { id: record.id, position: index };
+    })
+    .filter((u): u is { id: string; position: number } => u !== null);
+
+  await Promise.all(
+    updates.map(async ({ id, position }) => {
+      const updated = await client.models.CollectionVoice.update({ id, position });
+      assertNoErrors(updated.errors);
+    })
+  );
+
+  await touchCollection(collectionId);
+}
+
 export async function updateCollectionVoiceNote(collectionId: string, voiceId: string, note: string) {
   const client = dataClient();
   const existing = (await client.models.CollectionVoice.list({

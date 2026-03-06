@@ -657,7 +657,7 @@ describe('BYOK Synthesis — Account Providers Page', () => {
     const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
     expect(existsSync(pagePath)).toBe(true);
     const content = readFileSync(pagePath, 'utf8');
-    expect(content).toContain('Provider Accounts');
+    expect(content).toContain('Provider API Keys');
     expect(content).toContain('connectProvider');
     expect(content).toContain('disconnectProvider');
     expect(content).toContain('testCredential');
@@ -665,15 +665,23 @@ describe('BYOK Synthesis — Account Providers Page', () => {
     expect(content).toContain('Free Providers');
   });
 
-  it('providers page includes OAuth sign-in buttons', () => {
+  it('providers page supports save and remove actions', () => {
     const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
     const content = readFileSync(pagePath, 'utf8');
-    expect(content).toContain('oauthSignIn');
-    expect(content).toContain('oauthSignOut');
-    expect(content).toContain('oauth-btn');
-    expect(content).toContain('handleOAuthSignIn');
-    expect(content).toContain('handleOAuthSignOut');
-    expect(content).toContain('oauth-section');
-    expect(content).toContain('auth-divider');
+    expect(content).toContain('handleSave');
+    expect(content).toContain('handleRemove');
+    expect(content).toContain('handleTest');
+    expect(content).toContain('Save Key');
+    expect(content).toContain('Test Connection');
+  });
+
+  it('vokda api-keys page exists', () => {
+    const pagePath = resolve(__dirname, '../../routes/account/api-keys/+page.svelte');
+    expect(existsSync(pagePath)).toBe(true);
+    const content = readFileSync(pagePath, 'utf8');
+    expect(content).toContain('Vokda API Keys');
+    expect(content).toContain('Create Key');
+    expect(content).toContain('revokeKey');
+    expect(content).toContain('/v1/keys');
   });
 });
