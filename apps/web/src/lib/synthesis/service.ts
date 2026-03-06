@@ -222,12 +222,15 @@ export function hasServerSynthesis(providerId: string): boolean {
 export function humanizeSynthesisError(error: unknown): string {
   const raw = error instanceof Error ? error.message : String(error);
 
-  // Extract status code from "{Provider} TTS failed (NNN): ..."
-  const statusMatch = raw.match(/failed \((\d{3})\)/);
+  // Extract status code from various error formats:
+  //   "{Provider} TTS {NNN}: ..."     (adapter format)
+  //   "{Provider} TTS failed (NNN):"  (legacy format)
+  //   "HTTP {NNN}"                    (generic)
+  const statusMatch = raw.match(/TTS (\d{3}):/) || raw.match(/failed \((\d{3})\)/) || raw.match(/HTTP (\d{3})/);
   const status = statusMatch ? Number(statusMatch[1]) : 0;
 
-  // Extract provider name
-  const providerMatch = raw.match(/^(\w[\w\s-]*?) TTS failed/);
+  // Extract provider name from "{Provider} TTS ..." or "{Provider} error"
+  const providerMatch = raw.match(/^(\w[\w\s-]*?) TTS /) || raw.match(/^(\w[\w\s-]*?) (?:error|returned)/);
   const provider = providerMatch ? providerMatch[1] : 'Provider';
 
   if (status === 401 || status === 403) {
