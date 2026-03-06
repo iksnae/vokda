@@ -47,6 +47,7 @@
   let selectedGenders: Set<string> = new Set();
   let selectedAges: Set<string> = new Set();
   let selectedTones: Set<string> = new Set();
+  let selectedTiers: Set<string> = new Set();
 
   let runnableOnly = false;
   let ssmlOnly = false;
@@ -159,6 +160,8 @@
     if (ageParam) selectedAges = new Set(ageParam.split(',').filter(Boolean));
     const toneParam = params.get('tone');
     if (toneParam) selectedTones = new Set(toneParam.split(',').filter(Boolean));
+    const tierParam = params.get('tier');
+    if (tierParam) selectedTiers = new Set(tierParam.split(',').filter(Boolean));
 
     runnableOnly = params.get('runnable') === '1';
     ssmlOnly = params.get('ssml') === '1';
@@ -171,6 +174,7 @@
     if (selectedProviders.size > 0 || selectedLanguageBases.size > 0 ||
         selectedAccents.size > 0 || selectedSources.size > 0 ||
         selectedGenders.size > 0 || selectedAges.size > 0 || selectedTones.size > 0 ||
+        selectedTiers.size > 0 ||
         runnableOnly || ssmlOnly || hasAudioOnly) {
       filtersOpen = true;
     }
@@ -196,6 +200,7 @@
     if (selectedGenders.size > 0) params.set('gender', Array.from(selectedGenders).join(','));
     if (selectedAges.size > 0) params.set('age', Array.from(selectedAges).join(','));
     if (selectedTones.size > 0) params.set('tone', Array.from(selectedTones).join(','));
+    if (selectedTiers.size > 0) params.set('tier', Array.from(selectedTiers).join(','));
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
     if (hasAudioOnly) params.set('audio', '1');
@@ -289,6 +294,7 @@
     selectedGenders = new Set();
     selectedAges = new Set();
     selectedTones = new Set();
+    selectedTiers = new Set();
     runnableOnly = false;
     ssmlOnly = false;
     hasAudioOnly = false;
@@ -303,6 +309,7 @@
     selectedGenders.size > 0,
     selectedAges.size > 0,
     selectedTones.size > 0,
+    selectedTiers.size > 0,
     runnableOnly,
     ssmlOnly,
     hasAudioOnly,
@@ -319,6 +326,20 @@
   $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
   const genderOrder = ['female', 'male', 'neutral', 'variable', 'unknown'];
   const ageOrder = ['child', 'young', 'young adult', 'adult', 'middle_aged', 'mature', 'old', 'variable'];
+
+  const tierOrder = ['premium', 'standard', 'basic'];
+  $: availableTiers = Array.from(
+    new Set(effectiveVoices.map((v) => v.qualityTier).filter(Boolean))
+  ).sort((a, b) => {
+    const ai = tierOrder.indexOf(a), bi = tierOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+
+  const tierLabels: Record<string, string> = {
+    premium: 'Premium',
+    standard: 'Standard',
+    basic: 'Basic',
+  };
 
   $: availableGenders = Array.from(
     new Set(effectiveVoices.map((v) => v.metadata?.genderPresentation ?? '').filter(Boolean))
@@ -412,6 +433,8 @@
     const matchesTone =
       selectedTones.size === 0 ||
       normalizedVoiceTones.some((t: string) => selectedTones.has(t));
+    const matchesTier =
+      selectedTiers.size === 0 || selectedTiers.has(voice.qualityTier);
     const matchesRunnable = !runnableOnly || (voice.variants ?? []).some((vr) => vr.runnable);
     const matchesSsml = !ssmlOnly || (voice.variants ?? []).some((vr) => vr.supportsSsml);
     const matchesAudio = !hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl);
@@ -426,6 +449,7 @@
       matchesGender &&
       matchesAge &&
       matchesTone &&
+      matchesTier &&
       matchesRunnable &&
       matchesSsml &&
       matchesAudio &&
@@ -550,6 +574,24 @@
                   on:click={() => { selectedTones = toggleSetValue(selectedTones, tone); }}
                 >
                   {capitalize(tone)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- Quality tier chips -->
+        {#if availableTiers.length > 1}
+          <div class="filter-section">
+            <span class="section-label">Quality</span>
+            <div class="chip-group">
+              {#each availableTiers as tier}
+                <button
+                  class="filter-chip filter-chip--tier filter-chip--tier-{tier}"
+                  class:active={selectedTiers.has(tier)}
+                  on:click={() => { selectedTiers = toggleSetValue(selectedTiers, tier); }}
+                >
+                  {tierLabels[tier] ?? capitalize(tier)}
                 </button>
               {/each}
             </div>
@@ -962,6 +1004,31 @@
   .filter-chip.active .chip-count {
     color: var(--brand-600, #177089);
     opacity: 0.8;
+  }
+
+  /* Quality tier chips — distinct inactive colours */
+  .filter-chip--tier-premium:not(.active) {
+    border-color: #c9b8e8;
+    color: #5c3d8f;
+    background: #faf7ff;
+  }
+  .filter-chip--tier-premium:not(.active):hover {
+    background: #f0eafc;
+    border-color: #a98bd4;
+  }
+  .filter-chip--tier-premium.active {
+    background: #ede4fc;
+    border-color: #7c4dbd;
+    color: #4a2880;
+  }
+  .filter-chip--tier-standard:not(.active) {
+    border-color: #b8cfd8;
+    color: #2e5a6e;
+    background: #f6fafc;
+  }
+  .filter-chip--tier-standard:not(.active):hover {
+    background: #eaf3f7;
+    border-color: #8bb3c2;
   }
 
   /* Accent section gets a subtle left indent to signal hierarchy */
