@@ -26,9 +26,15 @@
   let selectedLanguage = 'all';
   let selectedSource = 'all';
   let selectedProvider = 'all';
+  let selectedGender = 'all';
+  let selectedQuality = 'all';
+  let selectedAge = 'all';
+  let selectedStyle = 'all';
   let runnableOnly = false;
   let ssmlOnly = false;
+  let hasAudioOnly = false;
   let onlyFavorites = false;
+  let sortBy: 'name' | 'provider' | 'newest' = 'name';
 
   /** Whether we've finished reading initial URL params (prevents sync-back on first load) */
   let urlInitialized = false;
@@ -89,12 +95,20 @@
     selectedProvider = params.get('provider') ?? 'all';
     selectedLanguage = params.get('lang') ?? 'all';
     selectedSource = params.get('type') ?? 'all';
+    selectedGender = params.get('gender') ?? 'all';
+    selectedQuality = params.get('quality') ?? 'all';
+    selectedAge = params.get('age') ?? 'all';
+    selectedStyle = params.get('style') ?? 'all';
     runnableOnly = params.get('runnable') === '1';
     ssmlOnly = params.get('ssml') === '1';
+    hasAudioOnly = params.get('audio') === '1';
     onlyFavorites = params.get('favorites') === '1';
+    sortBy = (params.get('sort') as typeof sortBy) ?? 'name';
 
     // Auto-open filters panel if any filter is active from URL
-    if (selectedProvider !== 'all' || selectedLanguage !== 'all' || selectedSource !== 'all' || runnableOnly || ssmlOnly) {
+    if (selectedProvider !== 'all' || selectedLanguage !== 'all' || selectedSource !== 'all' ||
+        selectedGender !== 'all' || selectedQuality !== 'all' || selectedAge !== 'all' ||
+        selectedStyle !== 'all' || runnableOnly || ssmlOnly || hasAudioOnly) {
       filtersOpen = true;
     }
 
@@ -117,9 +131,15 @@
     if (selectedProvider !== 'all') params.set('provider', selectedProvider);
     if (selectedLanguage !== 'all') params.set('lang', selectedLanguage);
     if (selectedSource !== 'all') params.set('type', selectedSource);
+    if (selectedGender !== 'all') params.set('gender', selectedGender);
+    if (selectedQuality !== 'all') params.set('quality', selectedQuality);
+    if (selectedAge !== 'all') params.set('age', selectedAge);
+    if (selectedStyle !== 'all') params.set('style', selectedStyle);
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
+    if (hasAudioOnly) params.set('audio', '1');
     if (onlyFavorites) params.set('favorites', '1');
+    if (sortBy !== 'name') params.set('sort', sortBy);
 
     const qs = params.toString();
     const newUrl = qs ? `?${qs}` : window.location.pathname;
@@ -205,10 +225,31 @@
     selectedProvider !== 'all',
     selectedLanguage !== 'all',
     selectedSource !== 'all',
+    selectedGender !== 'all',
+    selectedQuality !== 'all',
+    selectedAge !== 'all',
+    selectedStyle !== 'all',
     runnableOnly,
     ssmlOnly,
+    hasAudioOnly,
     onlyFavorites
   ].filter(Boolean).length;
+
+  function clearAllFilters() {
+    query = '';
+    selectedProvider = 'all';
+    selectedLanguage = 'all';
+    selectedSource = 'all';
+    selectedGender = 'all';
+    selectedQuality = 'all';
+    selectedAge = 'all';
+    selectedStyle = 'all';
+    runnableOnly = false;
+    ssmlOnly = false;
+    hasAudioOnly = false;
+    onlyFavorites = false;
+    sortBy = 'name';
+  }
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
@@ -217,6 +258,38 @@
     new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
   $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
+  $: availableGenders = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.genderPresentation ?? '').filter(Boolean))
+  ).sort();
+  $: availableAges = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.agePresentation ?? '').filter(Boolean))
+  ).sort();
+  $: availableStyles = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.speakingStyle ?? '').filter(Boolean))
+  ).sort();
+
+  const genderLabels: Record<string, string> = {
+    female: 'Female',
+    male: 'Male',
+    neutral: 'Neutral',
+    variable: 'Variable',
+    unknown: 'Unknown',
+  };
+
+  const ageLabels: Record<string, string> = {
+    child: 'Child',
+    young: 'Young',
+    'young adult': 'Young adult',
+    adult: 'Adult',
+    middle_aged: 'Middle-aged',
+    mature: 'Mature',
+    old: 'Senior',
+    variable: 'Variable',
+  };
+
+  function capitalize(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
 
   $: filtered = effectiveVoices.filter((voice) => {
     const q = query.trim().toLowerCase();
@@ -230,7 +303,11 @@
       voice.name.toLowerCase().includes(q) ||
       (meta.shortLabel ?? '').toLowerCase().includes(q) ||
       voice.provider.toLowerCase().includes(q) ||
+      (voice.providerId ?? '').toLowerCase().includes(q) ||
       (voice.description ?? '').toLowerCase().includes(q) ||
+      (meta.genderPresentation ?? '').toLowerCase().includes(q) ||
+      (meta.speakingStyle ?? '').toLowerCase().includes(q) ||
+      (meta.accent ?? '').toLowerCase().includes(q) ||
       (meta.machineTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
       (meta.useCases ?? []).some((u: string) => u.toLowerCase().includes(q)) ||
       (meta.audienceTags ?? []).some((a: string) => a.toLowerCase().includes(q)) ||
@@ -242,8 +319,14 @@
       selectedSource === 'all' ||
       variants.some((vr: { sourceType: string }) => vr.sourceType === selectedSource);
     const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
+    const matchesGender =
+      selectedGender === 'all' || (meta.genderPresentation ?? '') === selectedGender;
+    const matchesQuality = selectedQuality === 'all' || voice.qualityTier === selectedQuality;
+    const matchesAge = selectedAge === 'all' || (meta.agePresentation ?? '') === selectedAge;
+    const matchesStyle = selectedStyle === 'all' || (meta.speakingStyle ?? '') === selectedStyle;
     const matchesRunnable = !runnableOnly || variants.some((vr: { runnable: boolean }) => vr.runnable);
     const matchesSsml = !ssmlOnly || variants.some((vr: { supportsSsml: boolean }) => vr.supportsSsml);
+    const matchesAudio = !hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl);
     const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
 
     return (
@@ -251,10 +334,28 @@
       matchesLanguage &&
       matchesSource &&
       matchesProvider &&
+      matchesGender &&
+      matchesQuality &&
+      matchesAge &&
+      matchesStyle &&
       matchesRunnable &&
       matchesSsml &&
+      matchesAudio &&
       matchesFavorite
     );
+  });
+
+  $: sorted = [...filtered].sort((a, b) => {
+    if (sortBy === 'provider') {
+      const pCmp = a.provider.localeCompare(b.provider);
+      if (pCmp !== 0) return pCmp;
+      return a.name.localeCompare(b.name);
+    }
+    if (sortBy === 'newest') {
+      // Voices don't have createdAt, use ID (ULID = sortable by time)
+      return b.id.localeCompare(a.id);
+    }
+    return a.name.localeCompare(b.name);
   });
 </script>
 
@@ -306,50 +407,123 @@
 
   {#if filtersOpen}
     <section class="filters" transition:slide|local>
-      <label>
-        Provider
-        <select bind:value={selectedProvider}>
-          <option value="all">All providers</option>
-          {#each availableProviders as provider}
-            <option value={provider}>{provider}</option>
-          {/each}
-        </select>
-      </label>
+      <div class="filter-row">
+        <label>
+          Provider
+          <select bind:value={selectedProvider}>
+            <option value="all">All providers</option>
+            {#each availableProviders as provider}
+              <option value={provider}>{provider}</option>
+            {/each}
+          </select>
+        </label>
 
-      <label>
-        Language
-        <select bind:value={selectedLanguage}>
-          <option value="all">All languages</option>
-          {#each availableLanguages as language}
-            <option value={language}>{language}</option>
-          {/each}
-        </select>
-      </label>
+        <label>
+          Language
+          <select bind:value={selectedLanguage}>
+            <option value="all">All languages</option>
+            {#each availableLanguages as language}
+              <option value={language}>{language}</option>
+            {/each}
+          </select>
+        </label>
 
-      <label>
-        Type
-        <select bind:value={selectedSource}>
-          <option value="all">All types</option>
-          {#each availableSources as source}
-            <option value={source}>{typeLabel(source)}</option>
-          {/each}
-        </select>
-      </label>
+        <label>
+          Gender
+          <select bind:value={selectedGender}>
+            <option value="all">All genders</option>
+            {#each availableGenders as gender}
+              <option value={gender}>{genderLabels[gender] ?? capitalize(gender)}</option>
+            {/each}
+          </select>
+        </label>
 
-      <label class="toggle">
-        <input type="checkbox" bind:checked={runnableOnly} /> Live preview
-      </label>
+        <label>
+          Quality
+          <select bind:value={selectedQuality}>
+            <option value="all">All tiers</option>
+            <option value="premium">Premium</option>
+            <option value="standard">Standard</option>
+          </select>
+        </label>
+      </div>
 
-      <label class="toggle">
-        <input type="checkbox" bind:checked={ssmlOnly} /> SSML
-      </label>
+      <div class="filter-row">
+        <label>
+          Age
+          <select bind:value={selectedAge}>
+            <option value="all">All ages</option>
+            {#each availableAges as age}
+              <option value={age}>{ageLabels[age] ?? capitalize(age)}</option>
+            {/each}
+          </select>
+        </label>
+
+        <label>
+          Style
+          <select bind:value={selectedStyle}>
+            <option value="all">All styles</option>
+            {#each availableStyles as style}
+              <option value={style}>{capitalize(style)}</option>
+            {/each}
+          </select>
+        </label>
+
+        <label>
+          Type
+          <select bind:value={selectedSource}>
+            <option value="all">All types</option>
+            {#each availableSources as source}
+              <option value={source}>{typeLabel(source)}</option>
+            {/each}
+          </select>
+        </label>
+
+        <label>
+          Sort
+          <select bind:value={sortBy}>
+            <option value="name">Name A–Z</option>
+            <option value="provider">Provider</option>
+            <option value="newest">Newest first</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="filter-toggles">
+        <label class="toggle">
+          <input type="checkbox" bind:checked={ssmlOnly} />
+          <span class="toggle-label">SSML enabled</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" bind:checked={runnableOnly} />
+          <span class="toggle-label">Live preview</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" bind:checked={hasAudioOnly} />
+          <span class="toggle-label">Has audio sample</span>
+        </label>
+
+        {#if activeFilterCount > 0}
+          <button class="clear-filters" on:click={clearAllFilters}>
+            <Icon name="x" size={12} />
+            Clear all
+          </button>
+        {/if}
+      </div>
     </section>
   {/if}
 
-  <p class="results">{filtered.length} voice{filtered.length !== 1 ? 's' : ''}</p>
+  <p class="results">
+    {sorted.length} voice{sorted.length !== 1 ? 's' : ''}
+    {#if activeFilterCount > 0}
+      <span class="results-filter-hint">
+        ({activeFilterCount} filter{activeFilterCount !== 1 ? 's' : ''} active)
+      </span>
+    {/if}
+  </p>
 
   <section class="grid">
-    {#each filtered as voice (voice.id)}
+    {#each sorted as voice (voice.id)}
       {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
       {@const isFav = $favorites.includes(voice.id)}
       {@const sampleUrl = (voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl}
@@ -380,14 +554,23 @@
             >{voice.provider}</span>
             <span class="sep">·</span>
             <span>{(voice.languages ?? [])[0] ?? ''}</span>
+            {#if voice.metadata?.genderPresentation && voice.metadata.genderPresentation !== 'unknown'}
+              <span class="sep">·</span>
+              <span>{voice.metadata.genderPresentation}</span>
+            {/if}
             <span class="sep">·</span>
             <span>{voice.qualityTier}</span>
+            {#if (voice.variants ?? []).some((vr) => vr.supportsSsml)}
+              <span class="ssml-badge" title="Supports SSML markup">SSML</span>
+            {/if}
           </p>
           <div class="chips">
             {#each (voice.tags ?? []).slice(0, 3) as tag}
               <span class="chip">{tag}</span>
             {/each}
-            {#if (voice.metadata?.toneTags ?? []).length > 0}
+            {#if voice.metadata?.speakingStyle}
+              <span class="chip style-chip">{voice.metadata.speakingStyle}</span>
+            {:else if (voice.metadata?.toneTags ?? []).length > 0}
               <span class="chip tone-chip">{voice.metadata.toneTags[0]}</span>
             {/if}
           </div>
@@ -576,8 +759,8 @@
   .filters {
     margin-top: 0.6rem;
     padding: 0.82rem;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 0.6rem;
     border: 1px solid var(--stroke-soft);
     border-radius: 18px;
@@ -585,11 +768,66 @@
     animation: slideDown 200ms ease;
   }
 
+  .filter-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .filter-toggles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    flex-wrap: wrap;
+  }
+
+  .filter-toggles .toggle {
+    padding-bottom: 0;
+  }
+
+  .toggle-label {
+    white-space: nowrap;
+  }
+
+  .clear-filters {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-left: auto;
+    border: 1px solid #c9d7e3;
+    background: transparent;
+    border-radius: 999px;
+    padding: 0.28rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 620;
+    color: #88576a;
+    cursor: pointer;
+    transition: background 150ms;
+  }
+
+  .clear-filters:hover {
+    background: rgba(231, 76, 60, 0.06);
+    border-color: #e0a0a0;
+  }
+
   .results {
     margin: 0.7rem 0 0;
     color: #47657d;
     font-size: var(--text-small);
     font-weight: 620;
+  }
+
+  .results-filter-hint {
+    font-weight: 500;
+    color: #8899a6;
+  }
+
+  @media (max-width: 640px) {
+    .filter-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   label {
@@ -766,6 +1004,26 @@
     background: #fff2e3;
     border-color: #f0dcbf;
     color: #8d5c16;
+  }
+
+  .style-chip {
+    background: #eee8f7;
+    border-color: #d4c5ee;
+    color: #5c3d8f;
+  }
+
+  .ssml-badge {
+    display: inline-block;
+    font-size: 0.58rem;
+    font-weight: 720;
+    letter-spacing: 0.04em;
+    color: #2e7d32;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    padding: 0 0.3rem;
+    vertical-align: middle;
+    margin-left: 0.15rem;
   }
 
   /* Card actions */
