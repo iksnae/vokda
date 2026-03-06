@@ -1,0 +1,97 @@
+{
+  "id": "1HQT5WDSQJAEBY43QWEE5J8C09",
+  "name": "Guy (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-GuyNeural",
+  "description": "Neutral US male voice versatile enough for any general-purpose application.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "male",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Guy — Edge US",
+    "searchDescription": "Edge TTS Guy: Neutral US male voice versatile enough for any general-purpose application.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-GuyNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-GuyNeural",
+      "label": "Guy",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1HQT5WDSQJAEBY43QWEE5J8C09.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1HQT5WDSQJAEBY43QWEE5J8C09.jpg",
+  "samples": [
+    {
+      "id": "s-1HQT5WDSQJAEBY43QWEE5J8C09",
+      "label": "Default",
+      "text": "Hello! I'm Guy, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1HQT5WDSQJAEBY43QWEE5J8C09.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1HQT5WDSQJAEBY43QWEE5J8C09.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1HQT5WDSQJAEBY43QWEE5J8C09",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1HQT5WDSQJAEBY43QWEE5J8C09.json"
+}

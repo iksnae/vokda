@@ -1,0 +1,97 @@
+{
+  "id": "J9MA0029TAC5ZVM5PFJ6EA86A4",
+  "name": "Ezinne (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-NG-EzinneNeural",
+  "description": "Nigerian English female voice with warm, expressive delivery.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ng",
+    "female",
+    "nigerian"
+  ],
+  "languages": [
+    "en-NG"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Ezinne — Edge Nigerian",
+    "searchDescription": "Edge TTS Ezinne: Nigerian English female voice with warm, expressive delivery.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-ng"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-NG-EzinneNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Nigerian",
+    "locale": "en-NG",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-NG-EzinneNeural",
+      "label": "Ezinne",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9MA0029TAC5ZVM5PFJ6EA86A4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.jpg",
+  "samples": [
+    {
+      "id": "s-J9MA0029TAC5ZVM5PFJ6EA86A4",
+      "label": "Default",
+      "text": "Hello! I'm Ezinne, speaking Nigerian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9MA0029TAC5ZVM5PFJ6EA86A4.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J9MA0029TAC5ZVM5PFJ6EA86A4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.json"
+}

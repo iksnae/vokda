@@ -1,0 +1,97 @@
+{
+  "id": "M05HP8BKG00BQM9VYA05VXT3J2",
+  "name": "Leah (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-ZA-LeahNeural",
+  "description": "South African English female voice for regional media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-za",
+    "female",
+    "south-african"
+  ],
+  "languages": [
+    "en-ZA"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Leah — Edge South African",
+    "searchDescription": "Edge TTS Leah: South African English female voice for regional media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-za"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-ZA-LeahNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "South African",
+    "locale": "en-ZA",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-ZA-LeahNeural",
+      "label": "Leah",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M05HP8BKG00BQM9VYA05VXT3J2.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M05HP8BKG00BQM9VYA05VXT3J2.jpg",
+  "samples": [
+    {
+      "id": "s-M05HP8BKG00BQM9VYA05VXT3J2",
+      "label": "Default",
+      "text": "Hello! I'm Leah, speaking South African English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M05HP8BKG00BQM9VYA05VXT3J2.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M05HP8BKG00BQM9VYA05VXT3J2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/M05HP8BKG00BQM9VYA05VXT3J2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M05HP8BKG00BQM9VYA05VXT3J2.json"
+}

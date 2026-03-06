@@ -1,0 +1,108 @@
+{
+  "id": "P2A09KTBJ8DY5SPCC8A9W448BQ",
+  "name": "Zoe",
+  "provider": "Orpheus TTS",
+  "providerId": "orpheus",
+  "providerVoiceId": "zoe",
+  "description": "Calm, soothing female voice ideal for meditation and relaxation content.",
+  "tags": [
+    "conversational",
+    "expressive",
+    "emotion-control",
+    "local",
+    "mlx",
+    "open-model",
+    "llama-based"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Apache 2.0",
+  "metadata": {
+    "shortLabel": "Zoe — Orpheus",
+    "searchDescription": "Zoe: Calm, soothing female voice ideal for meditation and relaxation content.",
+    "machineTags": [
+      "orpheus",
+      "llama",
+      "emotion",
+      "mlx",
+      "local",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "narration",
+      "podcasts",
+      "audiobooks",
+      "characters"
+    ],
+    "toneTags": [
+      "natural",
+      "expressive",
+      "human-like"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "researchers"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Orpheus 3B 0.1 Fine-tuned",
+    "modelVersion": "0.1-ft",
+    "architecture": "LLaMA 3.2 3B",
+    "modelSize": "3B parameters (4-bit: ~1.8GB)",
+    "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+    "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+    "providerType": "open_model",
+    "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+    "license": "Apache 2.0",
+    "commercialUse": true,
+    "supportsCloning": true,
+    "supportsEmotionTags": true,
+    "emotionTags": [
+      "laugh",
+      "sigh",
+      "gasp",
+      "cry",
+      "whisper"
+    ],
+    "sampleRate": 24000,
+    "outputFormat": "wav",
+    "streamingCapable": true,
+    "latencyMs": 200,
+    "totalSpeakers": 8,
+    "trainingData": "Fine-tuned on conversational speech data",
+    "specialCapabilities": [
+      "Zero-shot voice cloning",
+      "Emotion control via tags",
+      "Real-time streaming (~200ms latency)"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "zoe",
+      "label": "Zoe",
+      "engine": "orpheus",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+  "samples": [
+    {
+      "id": "s-P2A09KTBJ8DY5SPCC8A9W448BQ",
+      "label": "Default",
+      "text": "Hello, I'm Zoe. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/P2A09KTBJ8DY5SPCC8A9W448BQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.json"
+}

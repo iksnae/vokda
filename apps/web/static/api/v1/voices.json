@@ -1,7 +1,7 @@
 {
   "$schema": "https://vokda.iksnae.com/api/v1/openapi.json",
-  "total": 194,
-  "generatedAt": "2026-03-06T00:42:38.585Z",
+  "total": 250,
+  "generatedAt": "2026-03-06T01:08:50.933Z",
   "voices": [
     {
       "id": "01JCVK5F2Q2W5P4TQ8KT4NR1A1",
@@ -6797,6 +6797,2288 @@
           "Creative dialogue"
         ],
         "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "QY0081VY1KR64FTBY3QY2EFQW6",
+      "name": "Tara",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Conversational female voice with natural intonation and clear articulation.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/QY0081VY1KR64FTBY3QY2EFQW6.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/QY0081VY1KR64FTBY3QY2EFQW6.json",
+      "webUrl": "https://vokda.iksnae.com/voices/QY0081VY1KR64FTBY3QY2EFQW6",
+      "metadata": {
+        "shortLabel": "Tara — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "female"
+      }
+    },
+    {
+      "id": "P7M1SXR201WE9XT5QSYABHQVKZ",
+      "name": "Leah",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Warm female voice with a friendly, approachable tone.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/P7M1SXR201WE9XT5QSYABHQVKZ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/P7M1SXR201WE9XT5QSYABHQVKZ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/P7M1SXR201WE9XT5QSYABHQVKZ",
+      "metadata": {
+        "shortLabel": "Leah — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "female"
+      }
+    },
+    {
+      "id": "HR0A888061ZMA861XJ03XP3SZK",
+      "name": "Jess",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Energetic, youthful female voice suited for casual content.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/HR0A888061ZMA861XJ03XP3SZK.json",
+      "webUrl": "https://vokda.iksnae.com/voices/HR0A888061ZMA861XJ03XP3SZK",
+      "metadata": {
+        "shortLabel": "Jess — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "female"
+      }
+    },
+    {
+      "id": "HJ9KP48FSKXNWC63SZKKTBQZQY",
+      "name": "Mia",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Soft-spoken female voice with gentle delivery and calm presence.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.json",
+      "webUrl": "https://vokda.iksnae.com/voices/HJ9KP48FSKXNWC63SZKKTBQZQY",
+      "metadata": {
+        "shortLabel": "Mia — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "female"
+      }
+    },
+    {
+      "id": "P2A09KTBJ8DY5SPCC8A9W448BQ",
+      "name": "Zoe",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Calm, soothing female voice ideal for meditation and relaxation content.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/P2A09KTBJ8DY5SPCC8A9W448BQ",
+      "metadata": {
+        "shortLabel": "Zoe — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "female"
+      }
+    },
+    {
+      "id": "0DW1J3P49R3YFMBXQQNNJ2DP3V",
+      "name": "Leo",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Authoritative male voice with a deep tone, great for narration.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.json",
+      "webUrl": "https://vokda.iksnae.com/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V",
+      "metadata": {
+        "shortLabel": "Leo — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "male"
+      }
+    },
+    {
+      "id": "FNWEFHVP7NSKY3SP1QJBVM20FG",
+      "name": "Dan",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Friendly, casual male voice for everyday conversational use.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FNWEFHVP7NSKY3SP1QJBVM20FG.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/FNWEFHVP7NSKY3SP1QJBVM20FG.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/FNWEFHVP7NSKY3SP1QJBVM20FG.json",
+      "webUrl": "https://vokda.iksnae.com/voices/FNWEFHVP7NSKY3SP1QJBVM20FG",
+      "metadata": {
+        "shortLabel": "Dan — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "male"
+      }
+    },
+    {
+      "id": "FW9XP3WBM2A1KZP5MA3GACBP5P",
+      "name": "Zac",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "description": "Upbeat male voice with clear enunciation and natural pacing.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.json",
+      "webUrl": "https://vokda.iksnae.com/voices/FW9XP3WBM2A1KZP5MA3GACBP5P",
+      "metadata": {
+        "shortLabel": "Zac — Orpheus",
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "genderPresentation": "male"
+      }
+    },
+    {
+      "id": "G5W7P3Y3SHWFR5KZJEFHT3ST83",
+      "name": "Chatterbox Turbo",
+      "provider": "Chatterbox Turbo",
+      "providerId": "chatterbox-turbo",
+      "description": "Faster variant of Chatterbox TTS with significantly reduced inference time while maintaining natural speech quality.",
+      "tags": [
+        "fast",
+        "conversational",
+        "local",
+        "mlx",
+        "open-model",
+        "voice-cloning"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.json",
+      "webUrl": "https://vokda.iksnae.com/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83",
+      "metadata": {
+        "shortLabel": "Turbo — Chatterbox",
+        "toneTags": [
+          "natural",
+          "fast",
+          "responsive"
+        ],
+        "useCases": [
+          "conversational",
+          "real-time",
+          "assistants",
+          "interactive"
+        ]
+      }
+    },
+    {
+      "id": "W9W829MBSQHR4BVJ3NWCE1NHZW",
+      "name": "Aria (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Versatile US female voice with expressive range, suitable for chat, narration, and customer service.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.json",
+      "webUrl": "https://vokda.iksnae.com/voices/W9W829MBSQHR4BVJ3NWCE1NHZW",
+      "metadata": {
+        "shortLabel": "Aria — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "3HVWAFXR8DKYC2607KXXW849HV",
+      "name": "Jenny (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Warm, professional US female voice ideal for corporate narration and e-learning.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/3HVWAFXR8DKYC2607KXXW849HV.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/3HVWAFXR8DKYC2607KXXW849HV.json",
+      "webUrl": "https://vokda.iksnae.com/voices/3HVWAFXR8DKYC2607KXXW849HV",
+      "metadata": {
+        "shortLabel": "Jenny — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "C1TCAAAFR6205T1R69ZZMFPC81",
+      "name": "Ana (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Child-like US female voice designed for kids' content and educational material.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/C1TCAAAFR6205T1R69ZZMFPC81.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/C1TCAAAFR6205T1R69ZZMFPC81.json",
+      "webUrl": "https://vokda.iksnae.com/voices/C1TCAAAFR6205T1R69ZZMFPC81",
+      "metadata": {
+        "shortLabel": "Ana — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "child"
+      }
+    },
+    {
+      "id": "RBHZHNT3XWAFP6E1TCC9YDRFVY",
+      "name": "Ava (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Clear, modern US female voice suited for assistants and conversational AI.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.json",
+      "webUrl": "https://vokda.iksnae.com/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY",
+      "metadata": {
+        "shortLabel": "Ava — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "7M25NMDKSSKR223ZJFRDG8827K",
+      "name": "Ava Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Multilingual US female voice that can switch between languages seamlessly.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/7M25NMDKSSKR223ZJFRDG8827K.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/7M25NMDKSSKR223ZJFRDG8827K.json",
+      "webUrl": "https://vokda.iksnae.com/voices/7M25NMDKSSKR223ZJFRDG8827K",
+      "metadata": {
+        "shortLabel": "Ava Multilingual — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "ZREFTBRC85JA0AEE667M3XSKSN",
+      "name": "Emma (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Bright, enthusiastic US female voice for news, promotions, and announcements.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/ZREFTBRC85JA0AEE667M3XSKSN.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/ZREFTBRC85JA0AEE667M3XSKSN.json",
+      "webUrl": "https://vokda.iksnae.com/voices/ZREFTBRC85JA0AEE667M3XSKSN",
+      "metadata": {
+        "shortLabel": "Emma — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "5M7Y69XT6EBZT9T87SYA9J9NSZ",
+      "name": "Emma Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Multilingual version of Emma with natural language switching.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ",
+      "metadata": {
+        "shortLabel": "Emma Multilingual — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "MDSTC0BR5VXHNR7XT60FT67R5R",
+      "name": "Michelle (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Balanced US female voice with a friendly, approachable quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/MDSTC0BR5VXHNR7XT60FT67R5R.json",
+      "webUrl": "https://vokda.iksnae.com/voices/MDSTC0BR5VXHNR7XT60FT67R5R",
+      "metadata": {
+        "shortLabel": "Michelle — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "A3TDMC0FQVNY0DWCC6FM5SPCFV",
+      "name": "Andrew (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Conversational US male voice with a natural, relaxed tone.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.json",
+      "webUrl": "https://vokda.iksnae.com/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV",
+      "metadata": {
+        "shortLabel": "Andrew — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "9ZQT4E7W9QP5HNMFHTA82FZRDN",
+      "name": "Andrew Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Multilingual US male voice for international content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9ZQT4E7W9QP5HNMFHTA82FZRDN.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/9ZQT4E7W9QP5HNMFHTA82FZRDN.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/9ZQT4E7W9QP5HNMFHTA82FZRDN.json",
+      "webUrl": "https://vokda.iksnae.com/voices/9ZQT4E7W9QP5HNMFHTA82FZRDN",
+      "metadata": {
+        "shortLabel": "Andrew Multilingual — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "G3WC1SSY7R3G3WA3J685XSR9GE",
+      "name": "Brian (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Strong, clear US male voice for narration and professional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/G3WC1SSY7R3G3WA3J685XSR9GE.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/G3WC1SSY7R3G3WA3J685XSR9GE.json",
+      "webUrl": "https://vokda.iksnae.com/voices/G3WC1SSY7R3G3WA3J685XSR9GE",
+      "metadata": {
+        "shortLabel": "Brian — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "4DJFY2C9NQNZWA7KVT84E01VKH",
+      "name": "Brian Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Multilingual US male voice with natural cross-language delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/4DJFY2C9NQNZWA7KVT84E01VKH.json",
+      "webUrl": "https://vokda.iksnae.com/voices/4DJFY2C9NQNZWA7KVT84E01VKH",
+      "metadata": {
+        "shortLabel": "Brian Multilingual — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "QHM1ZR8BHPC1NYE84BPA9W229W",
+      "name": "Christopher (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Authoritative US male voice suited for news and documentary narration.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/QHM1ZR8BHPC1NYE84BPA9W229W.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/QHM1ZR8BHPC1NYE84BPA9W229W.json",
+      "webUrl": "https://vokda.iksnae.com/voices/QHM1ZR8BHPC1NYE84BPA9W229W",
+      "metadata": {
+        "shortLabel": "Christopher — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "NNSM087P3MA6C9W1ZMBHVY1SNH",
+      "name": "Eric (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Mature US male voice with steady delivery for professional use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.json",
+      "webUrl": "https://vokda.iksnae.com/voices/NNSM087P3MA6C9W1ZMBHVY1SNH",
+      "metadata": {
+        "shortLabel": "Eric — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "1HQT5WDSQJAEBY43QWEE5J8C09",
+      "name": "Guy (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Neutral US male voice versatile enough for any general-purpose application.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1HQT5WDSQJAEBY43QWEE5J8C09.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/1HQT5WDSQJAEBY43QWEE5J8C09.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/1HQT5WDSQJAEBY43QWEE5J8C09.json",
+      "webUrl": "https://vokda.iksnae.com/voices/1HQT5WDSQJAEBY43QWEE5J8C09",
+      "metadata": {
+        "shortLabel": "Guy — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VG9R6DJ23M3TC7HZRDT5T0FZXP",
+      "name": "Roger (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Deep, resonant US male voice ideal for audiobooks and podcasts.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP",
+      "metadata": {
+        "shortLabel": "Roger — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VGEC4FM83KJ5QSKG20FZG5W0A2",
+      "name": "Steffan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Youthful US male voice with an energetic, engaging quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VGEC4FM83KJ5QSKG20FZG5W0A2",
+      "metadata": {
+        "shortLabel": "Steffan — Edge US",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "2224DKZZY3M3M3ZQTDW0FM02E4",
+      "name": "Sonia (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Professional British female voice with clear diction for business content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2224DKZZY3M3M3ZQTDW0FM02E4.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/2224DKZZY3M3M3ZQTDW0FM02E4.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/2224DKZZY3M3M3ZQTDW0FM02E4.json",
+      "webUrl": "https://vokda.iksnae.com/voices/2224DKZZY3M3M3ZQTDW0FM02E4",
+      "metadata": {
+        "shortLabel": "Sonia — Edge British",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "EA9RBYACBJE5TFZKT3NG21JFG2",
+      "name": "Libby (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Warm British female voice with a natural, conversational feel.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/EA9RBYACBJE5TFZKT3NG21JFG2.json",
+      "webUrl": "https://vokda.iksnae.com/voices/EA9RBYACBJE5TFZKT3NG21JFG2",
+      "metadata": {
+        "shortLabel": "Libby — Edge British",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "6E1QNR7T60DG3NKKT6802A2FP5",
+      "name": "Maisie (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Youthful British female voice for casual and creative content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/6E1QNR7T60DG3NKKT6802A2FP5.json",
+      "webUrl": "https://vokda.iksnae.com/voices/6E1QNR7T60DG3NKKT6802A2FP5",
+      "metadata": {
+        "shortLabel": "Maisie — Edge British",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+      "name": "Ryan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Confident British male voice for narration, training, and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "male",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+      "metadata": {
+        "shortLabel": "Ryan — Edge British",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "PBHR2A0829KW4FVM9J1YC7T2E3",
+      "name": "Thomas (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Refined British male voice with articulate delivery for formal content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "male",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/PBHR2A0829KW4FVM9J1YC7T2E3.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/PBHR2A0829KW4FVM9J1YC7T2E3.json",
+      "webUrl": "https://vokda.iksnae.com/voices/PBHR2A0829KW4FVM9J1YC7T2E3",
+      "metadata": {
+        "shortLabel": "Thomas — Edge British",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VMBZR4C0DG1G87VP5ZR1RE03KT",
+      "name": "Natasha (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Friendly Australian female voice for customer service and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-au",
+        "female",
+        "australian"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VMBZR4C0DG1G87VP5ZR1RE03KT",
+      "metadata": {
+        "shortLabel": "Natasha — Edge Australian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "SR7VHY9SR6E69YFNKZP21NYBP8",
+      "name": "William (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Australian male multilingual voice for international and regional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-au",
+        "multilingual",
+        "male",
+        "australian"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/SR7VHY9SR6E69YFNKZP21NYBP8.json",
+      "webUrl": "https://vokda.iksnae.com/voices/SR7VHY9SR6E69YFNKZP21NYBP8",
+      "metadata": {
+        "shortLabel": "William — Edge Australian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "G05P49TFP9P1W62ABM1JFNNT3S",
+      "name": "Clara (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Clear Canadian female voice suited for education and customer service.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ca",
+        "female",
+        "canadian"
+      ],
+      "languages": [
+        "en-CA"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G05P49TFP9P1W62ABM1JFNNT3S.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/G05P49TFP9P1W62ABM1JFNNT3S.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/G05P49TFP9P1W62ABM1JFNNT3S.json",
+      "webUrl": "https://vokda.iksnae.com/voices/G05P49TFP9P1W62ABM1JFNNT3S",
+      "metadata": {
+        "shortLabel": "Clara — Edge Canadian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "BSMDHKZNXG9SQSQVT27T5XZXWB",
+      "name": "Liam (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Friendly Canadian male voice for conversational and commercial use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ca",
+        "male",
+        "canadian"
+      ],
+      "languages": [
+        "en-CA"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.json",
+      "webUrl": "https://vokda.iksnae.com/voices/BSMDHKZNXG9SQSQVT27T5XZXWB",
+      "metadata": {
+        "shortLabel": "Liam — Edge Canadian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "HXY41R669J9G9NJ2DR25Y3ZKRC",
+      "name": "Neerja (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Indian English female voice with clear pronunciation for diverse audiences.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "female",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HXY41R669J9G9NJ2DR25Y3ZKRC.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/HXY41R669J9G9NJ2DR25Y3ZKRC.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/HXY41R669J9G9NJ2DR25Y3ZKRC.json",
+      "webUrl": "https://vokda.iksnae.com/voices/HXY41R669J9G9NJ2DR25Y3ZKRC",
+      "metadata": {
+        "shortLabel": "Neerja — Edge Indian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "A9M0EE07TBHSSVVZYE89QXZHZQ",
+      "name": "Neerja Expressive (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Expressive Indian English female voice with enhanced emotional range.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "female",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/A9M0EE07TBHSSVVZYE89QXZHZQ",
+      "metadata": {
+        "shortLabel": "Neerja Expressive — Edge Indian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "YE25HM1G3WFSJ4A4BJA21YDXKY",
+      "name": "Prabhat (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Indian English male voice for professional and educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "male",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.json",
+      "webUrl": "https://vokda.iksnae.com/voices/YE25HM1G3WFSJ4A4BJA21YDXKY",
+      "metadata": {
+        "shortLabel": "Prabhat — Edge Indian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VPAA61RC27HKP8C1T5Y5T8E3HJ",
+      "name": "Connor (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Irish English male voice with a distinctive, warm accent.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ie",
+        "male",
+        "irish"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ",
+      "metadata": {
+        "shortLabel": "Connor — Edge Irish",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "84A5JFZQG4AC420DT5SJ8FJ1P1",
+      "name": "Emily (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Irish English female voice with a natural, engaging quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ie",
+        "female",
+        "irish"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.json",
+      "webUrl": "https://vokda.iksnae.com/voices/84A5JFZQG4AC420DT5SJ8FJ1P1",
+      "metadata": {
+        "shortLabel": "Emily — Edge Irish",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "KQM7RDXJCCA7NVVW243RBJBG2C",
+      "name": "Yan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Hong Kong English female voice for regional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-hk",
+        "female",
+        "hong-kong"
+      ],
+      "languages": [
+        "en-HK"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/KQM7RDXJCCA7NVVW243RBJBG2C.json",
+      "webUrl": "https://vokda.iksnae.com/voices/KQM7RDXJCCA7NVVW243RBJBG2C",
+      "metadata": {
+        "shortLabel": "Yan — Edge Hong Kong",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "BZQME8DJ3XG7J1M2BM41NP6884",
+      "name": "Sam (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Hong Kong English male voice for business and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-hk",
+        "male",
+        "hong-kong"
+      ],
+      "languages": [
+        "en-HK"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BZQME8DJ3XG7J1M2BM41NP6884.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/BZQME8DJ3XG7J1M2BM41NP6884.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/BZQME8DJ3XG7J1M2BM41NP6884.json",
+      "webUrl": "https://vokda.iksnae.com/voices/BZQME8DJ3XG7J1M2BM41NP6884",
+      "metadata": {
+        "shortLabel": "Sam — Edge Hong Kong",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "NVRBT3HTDZVKRBXY3PFR7ZMA3W",
+      "name": "Asilia (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Kenyan English female voice representing East African speech patterns.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ke",
+        "female",
+        "kenyan"
+      ],
+      "languages": [
+        "en-KE"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NVRBT3HTDZVKRBXY3PFR7ZMA3W.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/NVRBT3HTDZVKRBXY3PFR7ZMA3W.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/NVRBT3HTDZVKRBXY3PFR7ZMA3W.json",
+      "webUrl": "https://vokda.iksnae.com/voices/NVRBT3HTDZVKRBXY3PFR7ZMA3W",
+      "metadata": {
+        "shortLabel": "Asilia — Edge Kenyan",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VM3TA09R5T9KKT9G8ADJFW4A7X",
+      "name": "Chilemba (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Kenyan English male voice for regional and educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ke",
+        "male",
+        "kenyan"
+      ],
+      "languages": [
+        "en-KE"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VM3TA09R5T9KKT9G8ADJFW4A7X",
+      "metadata": {
+        "shortLabel": "Chilemba — Edge Kenyan",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+      "name": "Abeo (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Nigerian English male voice for West African content and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ng",
+        "male",
+        "nigerian"
+      ],
+      "languages": [
+        "en-NG"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.json",
+      "webUrl": "https://vokda.iksnae.com/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+      "metadata": {
+        "shortLabel": "Abeo — Edge Nigerian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "J9MA0029TAC5ZVM5PFJ6EA86A4",
+      "name": "Ezinne (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Nigerian English female voice with warm, expressive delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ng",
+        "female",
+        "nigerian"
+      ],
+      "languages": [
+        "en-NG"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9MA0029TAC5ZVM5PFJ6EA86A4.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.json",
+      "webUrl": "https://vokda.iksnae.com/voices/J9MA0029TAC5ZVM5PFJ6EA86A4",
+      "metadata": {
+        "shortLabel": "Ezinne — Edge Nigerian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "A9XVQNQSVNW9VWE85VHHHHM2DW",
+      "name": "Mitchell (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "New Zealand English male voice for regional media and content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-nz",
+        "male",
+        "new-zealand"
+      ],
+      "languages": [
+        "en-NZ"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.json",
+      "webUrl": "https://vokda.iksnae.com/voices/A9XVQNQSVNW9VWE85VHHHHM2DW",
+      "metadata": {
+        "shortLabel": "Mitchell — Edge New Zealand",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "44BQQZQW01XJ21STFHNQT9QMFZ",
+      "name": "Molly (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "New Zealand English female voice with friendly, natural delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-nz",
+        "female",
+        "new-zealand"
+      ],
+      "languages": [
+        "en-NZ"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/44BQQZQW01XJ21STFHNQT9QMFZ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/44BQQZQW01XJ21STFHNQT9QMFZ",
+      "metadata": {
+        "shortLabel": "Molly — Edge New Zealand",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "6E6C6DZW5G7XM9QSHYBXY9KT84",
+      "name": "James (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Philippine English male voice for Southeast Asian content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ph",
+        "male",
+        "philippine"
+      ],
+      "languages": [
+        "en-PH"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6E6C6DZW5G7XM9QSHYBXY9KT84.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/6E6C6DZW5G7XM9QSHYBXY9KT84.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/6E6C6DZW5G7XM9QSHYBXY9KT84.json",
+      "webUrl": "https://vokda.iksnae.com/voices/6E6C6DZW5G7XM9QSHYBXY9KT84",
+      "metadata": {
+        "shortLabel": "James — Edge Philippine",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "3NVNY9G2CBRCA401XRBXNYA83Z",
+      "name": "Rosa (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Philippine English female voice for customer service and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ph",
+        "female",
+        "philippine"
+      ],
+      "languages": [
+        "en-PH"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/3NVNY9G2CBRCA401XRBXNYA83Z.json",
+      "webUrl": "https://vokda.iksnae.com/voices/3NVNY9G2CBRCA401XRBXNYA83Z",
+      "metadata": {
+        "shortLabel": "Rosa — Edge Philippine",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "YE9YDRBSXST2E65P7W2E7ZT805",
+      "name": "Luna (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Singaporean English female voice for Southeast Asian audiences.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-sg",
+        "female",
+        "singaporean"
+      ],
+      "languages": [
+        "en-SG"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/YE9YDRBSXST2E65P7W2E7ZT805.json",
+      "webUrl": "https://vokda.iksnae.com/voices/YE9YDRBSXST2E65P7W2E7ZT805",
+      "metadata": {
+        "shortLabel": "Luna — Edge Singaporean",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "VJDJBG7G69Y84E9NNYEAA3XY62",
+      "name": "Wayne (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Singaporean English male voice for business and educational use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-sg",
+        "male",
+        "singaporean"
+      ],
+      "languages": [
+        "en-SG"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/VJDJBG7G69Y84E9NNYEAA3XY62.json",
+      "webUrl": "https://vokda.iksnae.com/voices/VJDJBG7G69Y84E9NNYEAA3XY62",
+      "metadata": {
+        "shortLabel": "Wayne — Edge Singaporean",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "M05HP8BKG00BQM9VYA05VXT3J2",
+      "name": "Leah (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "South African English female voice for regional media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-za",
+        "female",
+        "south-african"
+      ],
+      "languages": [
+        "en-ZA"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M05HP8BKG00BQM9VYA05VXT3J2.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/M05HP8BKG00BQM9VYA05VXT3J2.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/M05HP8BKG00BQM9VYA05VXT3J2.json",
+      "webUrl": "https://vokda.iksnae.com/voices/M05HP8BKG00BQM9VYA05VXT3J2",
+      "metadata": {
+        "shortLabel": "Leah — Edge South African",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "87RFJ23QJ85HMADZZJC6E1M4FK",
+      "name": "Luke (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "South African English male voice with clear, professional delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-za",
+        "male",
+        "south-african"
+      ],
+      "languages": [
+        "en-ZA"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/87RFJ23QJ85HMADZZJC6E1M4FK.json",
+      "webUrl": "https://vokda.iksnae.com/voices/87RFJ23QJ85HMADZZJC6E1M4FK",
+      "metadata": {
+        "shortLabel": "Luke — Edge South African",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "45VSXYE46FVT7P5WA1HNHZPDZQ",
+      "name": "Elimu (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Tanzanian English male voice for East African educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-tz",
+        "male",
+        "tanzanian"
+      ],
+      "languages": [
+        "en-TZ"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.json",
+      "webUrl": "https://vokda.iksnae.com/voices/45VSXYE46FVT7P5WA1HNHZPDZQ",
+      "metadata": {
+        "shortLabel": "Elimu — Edge Tanzanian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "E1SY4665JFHR4603PFYEC24DVS",
+      "name": "Imani (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "description": "Tanzanian English female voice with warm, engaging tone.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-tz",
+        "female",
+        "tanzanian"
+      ],
+      "languages": [
+        "en-TZ"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/E1SY4665JFHR4603PFYEC24DVS.json",
+      "webUrl": "https://vokda.iksnae.com/voices/E1SY4665JFHR4603PFYEC24DVS",
+      "metadata": {
+        "shortLabel": "Imani — Edge Tanzanian",
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "genderPresentation": "female",
         "agePresentation": "adult"
       }
     }

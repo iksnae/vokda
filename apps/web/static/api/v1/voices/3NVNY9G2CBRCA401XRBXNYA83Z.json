@@ -1,0 +1,97 @@
+{
+  "id": "3NVNY9G2CBRCA401XRBXNYA83Z",
+  "name": "Rosa (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-PH-RosaNeural",
+  "description": "Philippine English female voice for customer service and media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ph",
+    "female",
+    "philippine"
+  ],
+  "languages": [
+    "en-PH"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Rosa — Edge Philippine",
+    "searchDescription": "Edge TTS Rosa: Philippine English female voice for customer service and media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-ph"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-PH-RosaNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Philippine",
+    "locale": "en-PH",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-PH-RosaNeural",
+      "label": "Rosa",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
+  "samples": [
+    {
+      "id": "s-3NVNY9G2CBRCA401XRBXNYA83Z",
+      "label": "Default",
+      "text": "Hello! I'm Rosa, speaking Philippine English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3NVNY9G2CBRCA401XRBXNYA83Z",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3NVNY9G2CBRCA401XRBXNYA83Z.json"
+}

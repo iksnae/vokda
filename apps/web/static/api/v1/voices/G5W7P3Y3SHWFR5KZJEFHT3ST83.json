@@ -1,0 +1,88 @@
+{
+  "id": "G5W7P3Y3SHWFR5KZJEFHT3ST83",
+  "name": "Chatterbox Turbo",
+  "provider": "Chatterbox Turbo",
+  "providerId": "chatterbox-turbo",
+  "providerVoiceId": "default",
+  "description": "Faster variant of Chatterbox TTS with significantly reduced inference time while maintaining natural speech quality.",
+  "tags": [
+    "fast",
+    "conversational",
+    "local",
+    "mlx",
+    "open-model",
+    "voice-cloning"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Apache 2.0",
+  "metadata": {
+    "shortLabel": "Turbo — Chatterbox",
+    "searchDescription": "Chatterbox Turbo: Fast, natural speech synthesis with voice cloning support.",
+    "machineTags": [
+      "chatterbox",
+      "turbo",
+      "fast",
+      "mlx",
+      "local"
+    ],
+    "useCases": [
+      "conversational",
+      "real-time",
+      "assistants",
+      "interactive"
+    ],
+    "toneTags": [
+      "natural",
+      "fast",
+      "responsive"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Chatterbox Turbo TTS",
+    "architecture": "chatterbox_turbo",
+    "modelSize": "4-bit quantized",
+    "huggingFaceUrl": "https://huggingface.co/mlx-community/Chatterbox-Turbo-TTS-4bit",
+    "providerType": "open_model",
+    "license": "Apache 2.0",
+    "commercialUse": true,
+    "supportsCloning": true,
+    "sampleRate": 24000,
+    "outputFormat": "wav",
+    "streamingCapable": false,
+    "specialCapabilities": [
+      "Voice cloning via reference audio",
+      "Significantly faster than standard Chatterbox"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "default",
+      "label": "Default",
+      "engine": "chatterbox-turbo",
+      "supportsStreaming": false,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
+  "samples": [
+    {
+      "id": "s-G5W7P3Y3SHWFR5KZJEFHT3ST83",
+      "label": "Default",
+      "text": "The quick brown fox jumps over the lazy dog near the riverbank.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.json"
+}

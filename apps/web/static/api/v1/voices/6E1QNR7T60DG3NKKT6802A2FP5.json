@@ -1,0 +1,97 @@
+{
+  "id": "6E1QNR7T60DG3NKKT6802A2FP5",
+  "name": "Maisie (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-GB-MaisieNeural",
+  "description": "Youthful British female voice for casual and creative content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-gb",
+    "female",
+    "british"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Maisie — Edge British",
+    "searchDescription": "Edge TTS Maisie: Youthful British female voice for casual and creative content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-gb"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-GB-MaisieNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "British",
+    "locale": "en-GB",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-GB-MaisieNeural",
+      "label": "Maisie",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
+  "samples": [
+    {
+      "id": "s-6E1QNR7T60DG3NKKT6802A2FP5",
+      "label": "Default",
+      "text": "Hello! I'm Maisie, speaking British English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/6E1QNR7T60DG3NKKT6802A2FP5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/6E1QNR7T60DG3NKKT6802A2FP5.json"
+}

@@ -1,6 +1,6 @@
 {
   "name": "Vokda",
-  "description": "TTS voice discovery platform. 194 voices across 19 providers.",
+  "description": "TTS voice discovery platform. 250 voices across 22 providers.",
   "url": "https://vokda.iksnae.com",
   "capabilities": [
     "voice-catalog",

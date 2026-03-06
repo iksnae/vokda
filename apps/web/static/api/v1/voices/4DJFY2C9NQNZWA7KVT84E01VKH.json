@@ -1,0 +1,107 @@
+{
+  "id": "4DJFY2C9NQNZWA7KVT84E01VKH",
+  "name": "Brian Multilingual (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-BrianMultilingualNeural",
+  "description": "Multilingual US male voice with natural cross-language delivery.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "multilingual",
+    "male",
+    "us"
+  ],
+  "languages": [
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE",
+    "it-IT",
+    "pt-BR",
+    "ja-JP",
+    "zh-CN",
+    "ko-KR"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Brian Multilingual — Edge US",
+    "searchDescription": "Edge TTS Brian Multilingual: Multilingual US male voice with natural cross-language delivery.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-BrianMultilingualNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "Multilingual speech",
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-BrianMultilingualNeural",
+      "label": "Brian Multilingual",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+  "samples": [
+    {
+      "id": "s-4DJFY2C9NQNZWA7KVT84E01VKH",
+      "label": "Default",
+      "text": "Hello! I'm Brian Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/4DJFY2C9NQNZWA7KVT84E01VKH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/4DJFY2C9NQNZWA7KVT84E01VKH.json"
+}

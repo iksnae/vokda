@@ -1,0 +1,97 @@
+{
+  "id": "87RFJ23QJ85HMADZZJC6E1M4FK",
+  "name": "Luke (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-ZA-LukeNeural",
+  "description": "South African English male voice with clear, professional delivery.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-za",
+    "male",
+    "south-african"
+  ],
+  "languages": [
+    "en-ZA"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Luke — Edge South African",
+    "searchDescription": "Edge TTS Luke: South African English male voice with clear, professional delivery.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-za"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-ZA-LukeNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "South African",
+    "locale": "en-ZA",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-ZA-LukeNeural",
+      "label": "Luke",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
+  "samples": [
+    {
+      "id": "s-87RFJ23QJ85HMADZZJC6E1M4FK",
+      "label": "Default",
+      "text": "Hello! I'm Luke, speaking South African English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/87RFJ23QJ85HMADZZJC6E1M4FK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/87RFJ23QJ85HMADZZJC6E1M4FK.json"
+}

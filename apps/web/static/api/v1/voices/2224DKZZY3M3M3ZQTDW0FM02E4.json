@@ -1,0 +1,97 @@
+{
+  "id": "2224DKZZY3M3M3ZQTDW0FM02E4",
+  "name": "Sonia (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-GB-SoniaNeural",
+  "description": "Professional British female voice with clear diction for business content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-gb",
+    "female",
+    "british"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Sonia — Edge British",
+    "searchDescription": "Edge TTS Sonia: Professional British female voice with clear diction for business content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-gb"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-GB-SoniaNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "British",
+    "locale": "en-GB",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-GB-SoniaNeural",
+      "label": "Sonia",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2224DKZZY3M3M3ZQTDW0FM02E4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2224DKZZY3M3M3ZQTDW0FM02E4.jpg",
+  "samples": [
+    {
+      "id": "s-2224DKZZY3M3M3ZQTDW0FM02E4",
+      "label": "Default",
+      "text": "Hello! I'm Sonia, speaking British English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2224DKZZY3M3M3ZQTDW0FM02E4.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/2224DKZZY3M3M3ZQTDW0FM02E4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/2224DKZZY3M3M3ZQTDW0FM02E4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/2224DKZZY3M3M3ZQTDW0FM02E4.json"
+}

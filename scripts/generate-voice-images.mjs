@@ -34,6 +34,14 @@ const PALETTES = {
   'pocket-tts':   { dark: '#3e0520', mid: '#ad1457', light: '#f48fb1', accent: '#d81b60' },
   'spark-tts':    { dark: '#3e3000', mid: '#f57f17', light: '#ffe082', accent: '#ffab00' },
   voxcpm:         { dark: '#0a2e10', mid: '#2e7d32', light: '#a5d6a7', accent: '#43a047' },
+  kittentts:      { dark: '#3e0530', mid: '#9b1b5a', light: '#f8a4c8', accent: '#c2185b' },
+  marvis:         { dark: '#0d1150', mid: '#1a237e', light: '#7986cb', accent: '#3949ab' },
+  vibevoice:      { dark: '#002a40', mid: '#01579b', light: '#4fc3f7', accent: '#0288d1' },
+  bark:           { dark: '#3e1f00', mid: '#e65100', light: '#ffb74d', accent: '#ff6d00' },
+  'gemini-tts':   { dark: '#0a2a50', mid: '#1967d2', light: '#669df6', accent: '#4285f4' },
+  orpheus:        { dark: '#1a0a40', mid: '#4527a0', light: '#b39ddb', accent: '#7e57c2' },
+  'chatterbox-turbo': { dark: '#0a2a50', mid: '#1565c0', light: '#90caf9', accent: '#1e88e5' },
+  'edge-tts':     { dark: '#0a2050', mid: '#0d47a1', light: '#64b5f6', accent: '#1976d2' },
 };
 const DEFAULT_PAL = { dark: '#0a2a3e', mid: '#1c5c76', light: '#7abcd0', accent: '#2a9ab5' };
 

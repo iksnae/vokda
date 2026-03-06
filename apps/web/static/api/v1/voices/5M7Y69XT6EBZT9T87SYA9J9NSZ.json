@@ -1,0 +1,107 @@
+{
+  "id": "5M7Y69XT6EBZT9T87SYA9J9NSZ",
+  "name": "Emma Multilingual (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-EmmaMultilingualNeural",
+  "description": "Multilingual version of Emma with natural language switching.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "multilingual",
+    "female",
+    "us"
+  ],
+  "languages": [
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE",
+    "it-IT",
+    "pt-BR",
+    "ja-JP",
+    "zh-CN",
+    "ko-KR"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Emma Multilingual — Edge US",
+    "searchDescription": "Edge TTS Emma Multilingual: Multilingual version of Emma with natural language switching.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-EmmaMultilingualNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "Multilingual speech",
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-EmmaMultilingualNeural",
+      "label": "Emma Multilingual",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
+  "samples": [
+    {
+      "id": "s-5M7Y69XT6EBZT9T87SYA9J9NSZ",
+      "label": "Default",
+      "text": "Hello! I'm Emma Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.json"
+}

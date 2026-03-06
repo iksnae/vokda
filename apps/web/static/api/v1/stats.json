@@ -1,11 +1,16 @@
 {
-  "generatedAt": "2026-03-06T00:42:38.600Z",
-  "totalVoices": 194,
-  "totalProviders": 19,
-  "withAudio": 194,
-  "withImage": 194,
-  "withModelCard": 194,
+  "generatedAt": "2026-03-06T01:08:50.952Z",
+  "totalVoices": 250,
+  "totalProviders": 22,
+  "withAudio": 250,
+  "withImage": 250,
+  "withModelCard": 250,
   "byProvider": [
+    {
+      "id": "edge-tts",
+      "name": "Edge TTS",
+      "count": 47
+    },
     {
       "id": "gemini-tts",
       "name": "Gemini TTS",
@@ -49,6 +54,11 @@
     {
       "id": "kittentts",
       "name": "KittenTTS",
+      "count": 8
+    },
+    {
+      "id": "orpheus",
+      "name": "Orpheus TTS",
       "count": 8
     },
     {
@@ -100,17 +110,22 @@
       "id": "vibevoice",
       "name": "VibeVoice",
       "count": 1
+    },
+    {
+      "id": "chatterbox-turbo",
+      "name": "Chatterbox Turbo",
+      "count": 1
     }
   ],
   "byQualityTier": {
-    "premium": 168,
+    "premium": 224,
     "standard": 26,
     "basic": 0
   },
-  "totalLanguages": 39,
+  "totalLanguages": 47,
   "capabilities": {
-    "localModels": 64,
-    "multilingual": 31,
-    "ssmlSupport": 67
+    "localModels": 73,
+    "multilingual": 36,
+    "ssmlSupport": 114
   }
 }

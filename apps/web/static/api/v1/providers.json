@@ -1,6 +1,6 @@
 {
-  "total": 19,
-  "generatedAt": "2026-03-06T00:42:38.599Z",
+  "total": 22,
+  "generatedAt": "2026-03-06T01:08:50.952Z",
   "providers": [
     {
       "id": "aws-polly",
@@ -371,6 +371,77 @@
         "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
         "license": "Google AI Terms of Service",
         "commercialUse": true
+      }
+    },
+    {
+      "id": "orpheus",
+      "name": "Orpheus TTS",
+      "voiceCount": 8,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "chatterbox-turbo",
+      "name": "Chatterbox Turbo",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "open_model",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "edge-tts",
+      "name": "Edge TTS",
+      "voiceCount": 47,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "de-DE",
+        "en-AU",
+        "en-CA",
+        "en-GB",
+        "en-HK",
+        "en-IE",
+        "en-IN",
+        "en-KE",
+        "en-NG",
+        "en-NZ",
+        "en-PH",
+        "en-SG",
+        "en-TZ",
+        "en-US",
+        "en-ZA",
+        "es-ES",
+        "fr-FR",
+        "it-IT",
+        "ja-JP",
+        "ko-KR",
+        "pt-BR",
+        "zh-CN"
+      ],
+      "modelCard": {
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false
       }
     }
   ]

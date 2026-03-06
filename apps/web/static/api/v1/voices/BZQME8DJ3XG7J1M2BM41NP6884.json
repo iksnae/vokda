@@ -1,0 +1,97 @@
+{
+  "id": "BZQME8DJ3XG7J1M2BM41NP6884",
+  "name": "Sam (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-HK-SamNeural",
+  "description": "Hong Kong English male voice for business and media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-hk",
+    "male",
+    "hong-kong"
+  ],
+  "languages": [
+    "en-HK"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Sam — Edge Hong Kong",
+    "searchDescription": "Edge TTS Sam: Hong Kong English male voice for business and media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-hk"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-HK-SamNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Hong Kong",
+    "locale": "en-HK",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-HK-SamNeural",
+      "label": "Sam",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BZQME8DJ3XG7J1M2BM41NP6884.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BZQME8DJ3XG7J1M2BM41NP6884.jpg",
+  "samples": [
+    {
+      "id": "s-BZQME8DJ3XG7J1M2BM41NP6884",
+      "label": "Default",
+      "text": "Hello! I'm Sam, speaking Hong Kong English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BZQME8DJ3XG7J1M2BM41NP6884.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/BZQME8DJ3XG7J1M2BM41NP6884.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/BZQME8DJ3XG7J1M2BM41NP6884",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/BZQME8DJ3XG7J1M2BM41NP6884.json"
+}

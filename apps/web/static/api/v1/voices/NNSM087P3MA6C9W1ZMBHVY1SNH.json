@@ -1,0 +1,97 @@
+{
+  "id": "NNSM087P3MA6C9W1ZMBHVY1SNH",
+  "name": "Eric (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-EricNeural",
+  "description": "Mature US male voice with steady delivery for professional use.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "male",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Eric — Edge US",
+    "searchDescription": "Edge TTS Eric: Mature US male voice with steady delivery for professional use.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-EricNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-EricNeural",
+      "label": "Eric",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
+  "samples": [
+    {
+      "id": "s-NNSM087P3MA6C9W1ZMBHVY1SNH",
+      "label": "Default",
+      "text": "Hello! I'm Eric, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NNSM087P3MA6C9W1ZMBHVY1SNH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.json"
+}

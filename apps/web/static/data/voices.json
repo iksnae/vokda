@@ -20337,6 +20337,5399 @@
         ],
         "voiceCloningMethod": "ref_audio"
       }
+    },
+    {
+      "id": "QY0081VY1KR64FTBY3QY2EFQW6",
+      "name": "Tara",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "tara",
+      "description": "Conversational female voice with natural intonation and clear articulation.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Tara — Orpheus",
+        "searchDescription": "Tara: Conversational female voice with natural intonation and clear articulation.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "female"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "female",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "tara",
+          "label": "Tara",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
+      "imageUrl": "/images/voices/QY0081VY1KR64FTBY3QY2EFQW6.jpg",
+      "samples": [
+        {
+          "id": "s-QY0081VY1KR64FTBY3QY2EFQW6",
+          "label": "Default",
+          "text": "Hello, I'm Tara. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3"
+        }
+      ]
+    },
+    {
+      "id": "P7M1SXR201WE9XT5QSYABHQVKZ",
+      "name": "Leah",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "leah",
+      "description": "Warm female voice with a friendly, approachable tone.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Leah — Orpheus",
+        "searchDescription": "Leah: Warm female voice with a friendly, approachable tone.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "female"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "female",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "leah",
+          "label": "Leah",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
+      "imageUrl": "/images/voices/P7M1SXR201WE9XT5QSYABHQVKZ.jpg",
+      "samples": [
+        {
+          "id": "s-P7M1SXR201WE9XT5QSYABHQVKZ",
+          "label": "Default",
+          "text": "Hello, I'm Leah. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "HR0A888061ZMA861XJ03XP3SZK",
+      "name": "Jess",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "jess",
+      "description": "Energetic, youthful female voice suited for casual content.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Jess — Orpheus",
+        "searchDescription": "Jess: Energetic, youthful female voice suited for casual content.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "female"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "female",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "jess",
+          "label": "Jess",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
+      "imageUrl": "/images/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+      "samples": [
+        {
+          "id": "s-HR0A888061ZMA861XJ03XP3SZK",
+          "label": "Default",
+          "text": "Hello, I'm Jess. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3"
+        }
+      ]
+    },
+    {
+      "id": "HJ9KP48FSKXNWC63SZKKTBQZQY",
+      "name": "Mia",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "mia",
+      "description": "Soft-spoken female voice with gentle delivery and calm presence.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Mia — Orpheus",
+        "searchDescription": "Mia: Soft-spoken female voice with gentle delivery and calm presence.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "female"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "female",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "mia",
+          "label": "Mia",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
+      "imageUrl": "/images/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.jpg",
+      "samples": [
+        {
+          "id": "s-HJ9KP48FSKXNWC63SZKKTBQZQY",
+          "label": "Default",
+          "text": "Hello, I'm Mia. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3"
+        }
+      ]
+    },
+    {
+      "id": "P2A09KTBJ8DY5SPCC8A9W448BQ",
+      "name": "Zoe",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "zoe",
+      "description": "Calm, soothing female voice ideal for meditation and relaxation content.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Zoe — Orpheus",
+        "searchDescription": "Zoe: Calm, soothing female voice ideal for meditation and relaxation content.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "female"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "female",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "zoe",
+          "label": "Zoe",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
+      "imageUrl": "/images/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+      "samples": [
+        {
+          "id": "s-P2A09KTBJ8DY5SPCC8A9W448BQ",
+          "label": "Default",
+          "text": "Hello, I'm Zoe. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "0DW1J3P49R3YFMBXQQNNJ2DP3V",
+      "name": "Leo",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "leo",
+      "description": "Authoritative male voice with a deep tone, great for narration.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Leo — Orpheus",
+        "searchDescription": "Leo: Authoritative male voice with a deep tone, great for narration.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "male"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "male",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "leo",
+          "label": "Leo",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
+      "imageUrl": "/images/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.jpg",
+      "samples": [
+        {
+          "id": "s-0DW1J3P49R3YFMBXQQNNJ2DP3V",
+          "label": "Default",
+          "text": "Hello, I'm Leo. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3"
+        }
+      ]
+    },
+    {
+      "id": "FNWEFHVP7NSKY3SP1QJBVM20FG",
+      "name": "Dan",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "dan",
+      "description": "Friendly, casual male voice for everyday conversational use.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Dan — Orpheus",
+        "searchDescription": "Dan: Friendly, casual male voice for everyday conversational use.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "male"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "male",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "dan",
+          "label": "Dan",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/FNWEFHVP7NSKY3SP1QJBVM20FG.mp3",
+      "imageUrl": "/images/voices/FNWEFHVP7NSKY3SP1QJBVM20FG.jpg",
+      "samples": [
+        {
+          "id": "s-FNWEFHVP7NSKY3SP1QJBVM20FG",
+          "label": "Default",
+          "text": "Hello, I'm Dan. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/FNWEFHVP7NSKY3SP1QJBVM20FG.mp3"
+        }
+      ]
+    },
+    {
+      "id": "FW9XP3WBM2A1KZP5MA3GACBP5P",
+      "name": "Zac",
+      "provider": "Orpheus TTS",
+      "providerId": "orpheus",
+      "providerVoiceId": "zac",
+      "description": "Upbeat male voice with clear enunciation and natural pacing.",
+      "tags": [
+        "conversational",
+        "expressive",
+        "emotion-control",
+        "local",
+        "mlx",
+        "open-model",
+        "llama-based"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Zac — Orpheus",
+        "searchDescription": "Zac: Upbeat male voice with clear enunciation and natural pacing.",
+        "machineTags": [
+          "orpheus",
+          "llama",
+          "emotion",
+          "mlx",
+          "local",
+          "male"
+        ],
+        "useCases": [
+          "conversational",
+          "narration",
+          "podcasts",
+          "audiobooks",
+          "characters"
+        ],
+        "toneTags": [
+          "natural",
+          "expressive",
+          "human-like"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "researchers"
+        ],
+        "genderPresentation": "male",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Orpheus 3B 0.1 Fine-tuned",
+        "modelVersion": "0.1-ft",
+        "architecture": "LLaMA 3.2 3B",
+        "modelSize": "3B parameters (4-bit: ~1.8GB)",
+        "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "supportsEmotionTags": true,
+        "emotionTags": [
+          "laugh",
+          "sigh",
+          "gasp",
+          "cry",
+          "whisper"
+        ],
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": true,
+        "latencyMs": 200,
+        "totalSpeakers": 8,
+        "trainingData": "Fine-tuned on conversational speech data",
+        "specialCapabilities": [
+          "Zero-shot voice cloning",
+          "Emotion control via tags",
+          "Real-time streaming (~200ms latency)"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "zac",
+          "label": "Zac",
+          "engine": "orpheus",
+          "supportsStreaming": true,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3",
+      "imageUrl": "/images/voices/FW9XP3WBM2A1KZP5MA3GACBP5P.jpg",
+      "samples": [
+        {
+          "id": "s-FW9XP3WBM2A1KZP5MA3GACBP5P",
+          "label": "Default",
+          "text": "Hello, I'm Zac. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+          "audioUrl": "/audio/samples/FW9XP3WBM2A1KZP5MA3GACBP5P.mp3"
+        }
+      ]
+    },
+    {
+      "id": "G5W7P3Y3SHWFR5KZJEFHT3ST83",
+      "name": "Chatterbox Turbo",
+      "provider": "Chatterbox Turbo",
+      "providerId": "chatterbox-turbo",
+      "providerVoiceId": "default",
+      "description": "Faster variant of Chatterbox TTS with significantly reduced inference time while maintaining natural speech quality.",
+      "tags": [
+        "fast",
+        "conversational",
+        "local",
+        "mlx",
+        "open-model",
+        "voice-cloning"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Apache 2.0",
+      "metadata": {
+        "shortLabel": "Turbo — Chatterbox",
+        "searchDescription": "Chatterbox Turbo: Fast, natural speech synthesis with voice cloning support.",
+        "machineTags": [
+          "chatterbox",
+          "turbo",
+          "fast",
+          "mlx",
+          "local"
+        ],
+        "useCases": [
+          "conversational",
+          "real-time",
+          "assistants",
+          "interactive"
+        ],
+        "toneTags": [
+          "natural",
+          "fast",
+          "responsive"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators"
+        ],
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "Chatterbox Turbo TTS",
+        "architecture": "chatterbox_turbo",
+        "modelSize": "4-bit quantized",
+        "huggingFaceUrl": "https://huggingface.co/mlx-community/Chatterbox-Turbo-TTS-4bit",
+        "providerType": "open_model",
+        "license": "Apache 2.0",
+        "commercialUse": true,
+        "supportsCloning": true,
+        "sampleRate": 24000,
+        "outputFormat": "wav",
+        "streamingCapable": false,
+        "specialCapabilities": [
+          "Voice cloning via reference audio",
+          "Significantly faster than standard Chatterbox"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "default",
+          "label": "Default",
+          "engine": "chatterbox-turbo",
+          "supportsStreaming": false,
+          "supportsSsml": false,
+          "maxChars": 2000
+        }
+      ],
+      "audioUrl": "/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
+      "imageUrl": "/images/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
+      "samples": [
+        {
+          "id": "s-G5W7P3Y3SHWFR5KZJEFHT3ST83",
+          "label": "Default",
+          "text": "The quick brown fox jumps over the lazy dog near the riverbank.",
+          "audioUrl": "/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3"
+        }
+      ]
+    },
+    {
+      "id": "W9W829MBSQHR4BVJ3NWCE1NHZW",
+      "name": "Aria (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AriaNeural",
+      "description": "Versatile US female voice with expressive range, suitable for chat, narration, and customer service.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Aria — Edge US",
+        "searchDescription": "Edge TTS Aria: Versatile US female voice with expressive range, suitable for chat, narration, and customer service.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AriaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AriaNeural",
+          "label": "Aria",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
+      "imageUrl": "/images/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.jpg",
+      "samples": [
+        {
+          "id": "s-W9W829MBSQHR4BVJ3NWCE1NHZW",
+          "label": "Default",
+          "text": "Hello! I'm Aria, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3"
+        }
+      ]
+    },
+    {
+      "id": "3HVWAFXR8DKYC2607KXXW849HV",
+      "name": "Jenny (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-JennyNeural",
+      "description": "Warm, professional US female voice ideal for corporate narration and e-learning.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Jenny — Edge US",
+        "searchDescription": "Edge TTS Jenny: Warm, professional US female voice ideal for corporate narration and e-learning.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-JennyNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-JennyNeural",
+          "label": "Jenny",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
+      "imageUrl": "/images/voices/3HVWAFXR8DKYC2607KXXW849HV.jpg",
+      "samples": [
+        {
+          "id": "s-3HVWAFXR8DKYC2607KXXW849HV",
+          "label": "Default",
+          "text": "Hello! I'm Jenny, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3"
+        }
+      ]
+    },
+    {
+      "id": "C1TCAAAFR6205T1R69ZZMFPC81",
+      "name": "Ana (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AnaNeural",
+      "description": "Child-like US female voice designed for kids' content and educational material.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Ana — Edge US",
+        "searchDescription": "Edge TTS Ana: Child-like US female voice designed for kids' content and educational material.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "child",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AnaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AnaNeural",
+          "label": "Ana",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
+      "imageUrl": "/images/voices/C1TCAAAFR6205T1R69ZZMFPC81.jpg",
+      "samples": [
+        {
+          "id": "s-C1TCAAAFR6205T1R69ZZMFPC81",
+          "label": "Default",
+          "text": "Hello! I'm Ana, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3"
+        }
+      ]
+    },
+    {
+      "id": "RBHZHNT3XWAFP6E1TCC9YDRFVY",
+      "name": "Ava (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AvaNeural",
+      "description": "Clear, modern US female voice suited for assistants and conversational AI.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Ava — Edge US",
+        "searchDescription": "Edge TTS Ava: Clear, modern US female voice suited for assistants and conversational AI.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AvaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AvaNeural",
+          "label": "Ava",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
+      "imageUrl": "/images/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
+      "samples": [
+        {
+          "id": "s-RBHZHNT3XWAFP6E1TCC9YDRFVY",
+          "label": "Default",
+          "text": "Hello! I'm Ava, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3"
+        }
+      ]
+    },
+    {
+      "id": "7M25NMDKSSKR223ZJFRDG8827K",
+      "name": "Ava Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AvaMultilingualNeural",
+      "description": "Multilingual US female voice that can switch between languages seamlessly.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Ava Multilingual — Edge US",
+        "searchDescription": "Edge TTS Ava Multilingual: Multilingual US female voice that can switch between languages seamlessly.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AvaMultilingualNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "Multilingual speech",
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AvaMultilingualNeural",
+          "label": "Ava Multilingual",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
+      "imageUrl": "/images/voices/7M25NMDKSSKR223ZJFRDG8827K.jpg",
+      "samples": [
+        {
+          "id": "s-7M25NMDKSSKR223ZJFRDG8827K",
+          "label": "Default",
+          "text": "Hello! I'm Ava Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3"
+        }
+      ]
+    },
+    {
+      "id": "ZREFTBRC85JA0AEE667M3XSKSN",
+      "name": "Emma (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-EmmaNeural",
+      "description": "Bright, enthusiastic US female voice for news, promotions, and announcements.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Emma — Edge US",
+        "searchDescription": "Edge TTS Emma: Bright, enthusiastic US female voice for news, promotions, and announcements.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-EmmaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-EmmaNeural",
+          "label": "Emma",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
+      "imageUrl": "/images/voices/ZREFTBRC85JA0AEE667M3XSKSN.jpg",
+      "samples": [
+        {
+          "id": "s-ZREFTBRC85JA0AEE667M3XSKSN",
+          "label": "Default",
+          "text": "Hello! I'm Emma, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3"
+        }
+      ]
+    },
+    {
+      "id": "5M7Y69XT6EBZT9T87SYA9J9NSZ",
+      "name": "Emma Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-EmmaMultilingualNeural",
+      "description": "Multilingual version of Emma with natural language switching.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Emma Multilingual — Edge US",
+        "searchDescription": "Edge TTS Emma Multilingual: Multilingual version of Emma with natural language switching.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-EmmaMultilingualNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "Multilingual speech",
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-EmmaMultilingualNeural",
+          "label": "Emma Multilingual",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
+      "imageUrl": "/images/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
+      "samples": [
+        {
+          "id": "s-5M7Y69XT6EBZT9T87SYA9J9NSZ",
+          "label": "Default",
+          "text": "Hello! I'm Emma Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "MDSTC0BR5VXHNR7XT60FT67R5R",
+      "name": "Michelle (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-MichelleNeural",
+      "description": "Balanced US female voice with a friendly, approachable quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "female",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Michelle — Edge US",
+        "searchDescription": "Edge TTS Michelle: Balanced US female voice with a friendly, approachable quality.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-MichelleNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-MichelleNeural",
+          "label": "Michelle",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
+      "imageUrl": "/images/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+      "samples": [
+        {
+          "id": "s-MDSTC0BR5VXHNR7XT60FT67R5R",
+          "label": "Default",
+          "text": "Hello! I'm Michelle, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3"
+        }
+      ]
+    },
+    {
+      "id": "A3TDMC0FQVNY0DWCC6FM5SPCFV",
+      "name": "Andrew (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AndrewNeural",
+      "description": "Conversational US male voice with a natural, relaxed tone.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Andrew — Edge US",
+        "searchDescription": "Edge TTS Andrew: Conversational US male voice with a natural, relaxed tone.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AndrewNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AndrewNeural",
+          "label": "Andrew",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
+      "imageUrl": "/images/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.jpg",
+      "samples": [
+        {
+          "id": "s-A3TDMC0FQVNY0DWCC6FM5SPCFV",
+          "label": "Default",
+          "text": "Hello! I'm Andrew, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3"
+        }
+      ]
+    },
+    {
+      "id": "9ZQT4E7W9QP5HNMFHTA82FZRDN",
+      "name": "Andrew Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-AndrewMultilingualNeural",
+      "description": "Multilingual US male voice for international content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Andrew Multilingual — Edge US",
+        "searchDescription": "Edge TTS Andrew Multilingual: Multilingual US male voice for international content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-AndrewMultilingualNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "Multilingual speech",
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-AndrewMultilingualNeural",
+          "label": "Andrew Multilingual",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/9ZQT4E7W9QP5HNMFHTA82FZRDN.mp3",
+      "imageUrl": "/images/voices/9ZQT4E7W9QP5HNMFHTA82FZRDN.jpg",
+      "samples": [
+        {
+          "id": "s-9ZQT4E7W9QP5HNMFHTA82FZRDN",
+          "label": "Default",
+          "text": "Hello! I'm Andrew Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/9ZQT4E7W9QP5HNMFHTA82FZRDN.mp3"
+        }
+      ]
+    },
+    {
+      "id": "G3WC1SSY7R3G3WA3J685XSR9GE",
+      "name": "Brian (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-BrianNeural",
+      "description": "Strong, clear US male voice for narration and professional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Brian — Edge US",
+        "searchDescription": "Edge TTS Brian: Strong, clear US male voice for narration and professional content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-BrianNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-BrianNeural",
+          "label": "Brian",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
+      "imageUrl": "/images/voices/G3WC1SSY7R3G3WA3J685XSR9GE.jpg",
+      "samples": [
+        {
+          "id": "s-G3WC1SSY7R3G3WA3J685XSR9GE",
+          "label": "Default",
+          "text": "Hello! I'm Brian, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3"
+        }
+      ]
+    },
+    {
+      "id": "4DJFY2C9NQNZWA7KVT84E01VKH",
+      "name": "Brian Multilingual (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-BrianMultilingualNeural",
+      "description": "Multilingual US male voice with natural cross-language delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "multilingual",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Brian Multilingual — Edge US",
+        "searchDescription": "Edge TTS Brian Multilingual: Multilingual US male voice with natural cross-language delivery.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-BrianMultilingualNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "Multilingual speech",
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-BrianMultilingualNeural",
+          "label": "Brian Multilingual",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
+      "imageUrl": "/images/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+      "samples": [
+        {
+          "id": "s-4DJFY2C9NQNZWA7KVT84E01VKH",
+          "label": "Default",
+          "text": "Hello! I'm Brian Multilingual, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3"
+        }
+      ]
+    },
+    {
+      "id": "QHM1ZR8BHPC1NYE84BPA9W229W",
+      "name": "Christopher (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-ChristopherNeural",
+      "description": "Authoritative US male voice suited for news and documentary narration.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Christopher — Edge US",
+        "searchDescription": "Edge TTS Christopher: Authoritative US male voice suited for news and documentary narration.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-ChristopherNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-ChristopherNeural",
+          "label": "Christopher",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
+      "imageUrl": "/images/voices/QHM1ZR8BHPC1NYE84BPA9W229W.jpg",
+      "samples": [
+        {
+          "id": "s-QHM1ZR8BHPC1NYE84BPA9W229W",
+          "label": "Default",
+          "text": "Hello! I'm Christopher, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3"
+        }
+      ]
+    },
+    {
+      "id": "NNSM087P3MA6C9W1ZMBHVY1SNH",
+      "name": "Eric (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-EricNeural",
+      "description": "Mature US male voice with steady delivery for professional use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Eric — Edge US",
+        "searchDescription": "Edge TTS Eric: Mature US male voice with steady delivery for professional use.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-EricNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-EricNeural",
+          "label": "Eric",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
+      "imageUrl": "/images/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
+      "samples": [
+        {
+          "id": "s-NNSM087P3MA6C9W1ZMBHVY1SNH",
+          "label": "Default",
+          "text": "Hello! I'm Eric, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3"
+        }
+      ]
+    },
+    {
+      "id": "1HQT5WDSQJAEBY43QWEE5J8C09",
+      "name": "Guy (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-GuyNeural",
+      "description": "Neutral US male voice versatile enough for any general-purpose application.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Guy — Edge US",
+        "searchDescription": "Edge TTS Guy: Neutral US male voice versatile enough for any general-purpose application.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-GuyNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-GuyNeural",
+          "label": "Guy",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/1HQT5WDSQJAEBY43QWEE5J8C09.mp3",
+      "imageUrl": "/images/voices/1HQT5WDSQJAEBY43QWEE5J8C09.jpg",
+      "samples": [
+        {
+          "id": "s-1HQT5WDSQJAEBY43QWEE5J8C09",
+          "label": "Default",
+          "text": "Hello! I'm Guy, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/1HQT5WDSQJAEBY43QWEE5J8C09.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VG9R6DJ23M3TC7HZRDT5T0FZXP",
+      "name": "Roger (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-RogerNeural",
+      "description": "Deep, resonant US male voice ideal for audiobooks and podcasts.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Roger — Edge US",
+        "searchDescription": "Edge TTS Roger: Deep, resonant US male voice ideal for audiobooks and podcasts.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-RogerNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-RogerNeural",
+          "label": "Roger",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
+      "imageUrl": "/images/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.jpg",
+      "samples": [
+        {
+          "id": "s-VG9R6DJ23M3TC7HZRDT5T0FZXP",
+          "label": "Default",
+          "text": "Hello! I'm Roger, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VGEC4FM83KJ5QSKG20FZG5W0A2",
+      "name": "Steffan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-US-SteffanNeural",
+      "description": "Youthful US male voice with an energetic, engaging quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-us",
+        "male",
+        "us"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Steffan — Edge US",
+        "searchDescription": "Edge TTS Steffan: Youthful US male voice with an energetic, engaging quality.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-us"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-US-SteffanNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "US",
+        "locale": "en-US",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-US-SteffanNeural",
+          "label": "Steffan",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
+      "imageUrl": "/images/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.jpg",
+      "samples": [
+        {
+          "id": "s-VGEC4FM83KJ5QSKG20FZG5W0A2",
+          "label": "Default",
+          "text": "Hello! I'm Steffan, speaking US English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3"
+        }
+      ]
+    },
+    {
+      "id": "2224DKZZY3M3M3ZQTDW0FM02E4",
+      "name": "Sonia (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-GB-SoniaNeural",
+      "description": "Professional British female voice with clear diction for business content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Sonia — Edge British",
+        "searchDescription": "Edge TTS Sonia: Professional British female voice with clear diction for business content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-gb"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-GB-SoniaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "British",
+        "locale": "en-GB",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-GB-SoniaNeural",
+          "label": "Sonia",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/2224DKZZY3M3M3ZQTDW0FM02E4.mp3",
+      "imageUrl": "/images/voices/2224DKZZY3M3M3ZQTDW0FM02E4.jpg",
+      "samples": [
+        {
+          "id": "s-2224DKZZY3M3M3ZQTDW0FM02E4",
+          "label": "Default",
+          "text": "Hello! I'm Sonia, speaking British English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/2224DKZZY3M3M3ZQTDW0FM02E4.mp3"
+        }
+      ]
+    },
+    {
+      "id": "EA9RBYACBJE5TFZKT3NG21JFG2",
+      "name": "Libby (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-GB-LibbyNeural",
+      "description": "Warm British female voice with a natural, conversational feel.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Libby — Edge British",
+        "searchDescription": "Edge TTS Libby: Warm British female voice with a natural, conversational feel.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-gb"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-GB-LibbyNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "British",
+        "locale": "en-GB",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-GB-LibbyNeural",
+          "label": "Libby",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
+      "imageUrl": "/images/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+      "samples": [
+        {
+          "id": "s-EA9RBYACBJE5TFZKT3NG21JFG2",
+          "label": "Default",
+          "text": "Hello! I'm Libby, speaking British English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3"
+        }
+      ]
+    },
+    {
+      "id": "6E1QNR7T60DG3NKKT6802A2FP5",
+      "name": "Maisie (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-GB-MaisieNeural",
+      "description": "Youthful British female voice for casual and creative content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "female",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Maisie — Edge British",
+        "searchDescription": "Edge TTS Maisie: Youthful British female voice for casual and creative content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-gb"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-GB-MaisieNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "British",
+        "locale": "en-GB",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-GB-MaisieNeural",
+          "label": "Maisie",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3",
+      "imageUrl": "/images/voices/6E1QNR7T60DG3NKKT6802A2FP5.jpg",
+      "samples": [
+        {
+          "id": "s-6E1QNR7T60DG3NKKT6802A2FP5",
+          "label": "Default",
+          "text": "Hello! I'm Maisie, speaking British English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/6E1QNR7T60DG3NKKT6802A2FP5.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+      "name": "Ryan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-GB-RyanNeural",
+      "description": "Confident British male voice for narration, training, and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "male",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Ryan — Edge British",
+        "searchDescription": "Edge TTS Ryan: Confident British male voice for narration, training, and media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-gb"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-GB-RyanNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "British",
+        "locale": "en-GB",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-GB-RyanNeural",
+          "label": "Ryan",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.mp3",
+      "imageUrl": "/images/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.jpg",
+      "samples": [
+        {
+          "id": "s-VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+          "label": "Default",
+          "text": "Hello! I'm Ryan, speaking British English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.mp3"
+        }
+      ]
+    },
+    {
+      "id": "PBHR2A0829KW4FVM9J1YC7T2E3",
+      "name": "Thomas (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-GB-ThomasNeural",
+      "description": "Refined British male voice with articulate delivery for formal content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-gb",
+        "male",
+        "british"
+      ],
+      "languages": [
+        "en-GB"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Thomas — Edge British",
+        "searchDescription": "Edge TTS Thomas: Refined British male voice with articulate delivery for formal content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-gb"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-GB-ThomasNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "British",
+        "locale": "en-GB",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-GB-ThomasNeural",
+          "label": "Thomas",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
+      "imageUrl": "/images/voices/PBHR2A0829KW4FVM9J1YC7T2E3.jpg",
+      "samples": [
+        {
+          "id": "s-PBHR2A0829KW4FVM9J1YC7T2E3",
+          "label": "Default",
+          "text": "Hello! I'm Thomas, speaking British English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VMBZR4C0DG1G87VP5ZR1RE03KT",
+      "name": "Natasha (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-AU-NatashaNeural",
+      "description": "Friendly Australian female voice for customer service and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-au",
+        "female",
+        "australian"
+      ],
+      "languages": [
+        "en-AU"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Natasha — Edge Australian",
+        "searchDescription": "Edge TTS Natasha: Friendly Australian female voice for customer service and media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-au"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-AU-NatashaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Australian",
+        "locale": "en-AU",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-AU-NatashaNeural",
+          "label": "Natasha",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
+      "imageUrl": "/images/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
+      "samples": [
+        {
+          "id": "s-VMBZR4C0DG1G87VP5ZR1RE03KT",
+          "label": "Default",
+          "text": "Hello! I'm Natasha, speaking Australian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3"
+        }
+      ]
+    },
+    {
+      "id": "SR7VHY9SR6E69YFNKZP21NYBP8",
+      "name": "William (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-AU-WilliamMultilingualNeural",
+      "description": "Australian male multilingual voice for international and regional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-au",
+        "multilingual",
+        "male",
+        "australian"
+      ],
+      "languages": [
+        "en-US",
+        "es-ES",
+        "fr-FR",
+        "de-DE",
+        "it-IT",
+        "pt-BR",
+        "ja-JP",
+        "zh-CN",
+        "ko-KR"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "William — Edge Australian",
+        "searchDescription": "Edge TTS William: Australian male multilingual voice for international and regional content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-au"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-AU-WilliamMultilingualNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Australian",
+        "locale": "en-AU",
+        "specialCapabilities": [
+          "Multilingual speech",
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-AU-WilliamMultilingualNeural",
+          "label": "William",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
+      "imageUrl": "/images/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
+      "samples": [
+        {
+          "id": "s-SR7VHY9SR6E69YFNKZP21NYBP8",
+          "label": "Default",
+          "text": "Hello! I'm William, speaking Australian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3"
+        }
+      ]
+    },
+    {
+      "id": "G05P49TFP9P1W62ABM1JFNNT3S",
+      "name": "Clara (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-CA-ClaraNeural",
+      "description": "Clear Canadian female voice suited for education and customer service.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ca",
+        "female",
+        "canadian"
+      ],
+      "languages": [
+        "en-CA"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Clara — Edge Canadian",
+        "searchDescription": "Edge TTS Clara: Clear Canadian female voice suited for education and customer service.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-ca"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-CA-ClaraNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Canadian",
+        "locale": "en-CA",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-CA-ClaraNeural",
+          "label": "Clara",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/G05P49TFP9P1W62ABM1JFNNT3S.mp3",
+      "imageUrl": "/images/voices/G05P49TFP9P1W62ABM1JFNNT3S.jpg",
+      "samples": [
+        {
+          "id": "s-G05P49TFP9P1W62ABM1JFNNT3S",
+          "label": "Default",
+          "text": "Hello! I'm Clara, speaking Canadian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/G05P49TFP9P1W62ABM1JFNNT3S.mp3"
+        }
+      ]
+    },
+    {
+      "id": "BSMDHKZNXG9SQSQVT27T5XZXWB",
+      "name": "Liam (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-CA-LiamNeural",
+      "description": "Friendly Canadian male voice for conversational and commercial use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ca",
+        "male",
+        "canadian"
+      ],
+      "languages": [
+        "en-CA"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Liam — Edge Canadian",
+        "searchDescription": "Edge TTS Liam: Friendly Canadian male voice for conversational and commercial use.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-ca"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-CA-LiamNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Canadian",
+        "locale": "en-CA",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-CA-LiamNeural",
+          "label": "Liam",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
+      "imageUrl": "/images/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
+      "samples": [
+        {
+          "id": "s-BSMDHKZNXG9SQSQVT27T5XZXWB",
+          "label": "Default",
+          "text": "Hello! I'm Liam, speaking Canadian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3"
+        }
+      ]
+    },
+    {
+      "id": "HXY41R669J9G9NJ2DR25Y3ZKRC",
+      "name": "Neerja (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-IN-NeerjaNeural",
+      "description": "Indian English female voice with clear pronunciation for diverse audiences.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "female",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Neerja — Edge Indian",
+        "searchDescription": "Edge TTS Neerja: Indian English female voice with clear pronunciation for diverse audiences.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-in"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-IN-NeerjaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Indian",
+        "locale": "en-IN",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-IN-NeerjaNeural",
+          "label": "Neerja",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/HXY41R669J9G9NJ2DR25Y3ZKRC.mp3",
+      "imageUrl": "/images/voices/HXY41R669J9G9NJ2DR25Y3ZKRC.jpg",
+      "samples": [
+        {
+          "id": "s-HXY41R669J9G9NJ2DR25Y3ZKRC",
+          "label": "Default",
+          "text": "Hello! I'm Neerja, speaking Indian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/HXY41R669J9G9NJ2DR25Y3ZKRC.mp3"
+        }
+      ]
+    },
+    {
+      "id": "A9M0EE07TBHSSVVZYE89QXZHZQ",
+      "name": "Neerja Expressive (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-IN-NeerjaExpressiveNeural",
+      "description": "Expressive Indian English female voice with enhanced emotional range.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "female",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Neerja Expressive — Edge Indian",
+        "searchDescription": "Edge TTS Neerja Expressive: Expressive Indian English female voice with enhanced emotional range.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-in"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-IN-NeerjaExpressiveNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Indian",
+        "locale": "en-IN",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-IN-NeerjaExpressiveNeural",
+          "label": "Neerja Expressive",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
+      "imageUrl": "/images/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
+      "samples": [
+        {
+          "id": "s-A9M0EE07TBHSSVVZYE89QXZHZQ",
+          "label": "Default",
+          "text": "Hello! I'm Neerja Expressive, speaking Indian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "YE25HM1G3WFSJ4A4BJA21YDXKY",
+      "name": "Prabhat (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-IN-PrabhatNeural",
+      "description": "Indian English male voice for professional and educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-in",
+        "male",
+        "indian"
+      ],
+      "languages": [
+        "en-IN"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Prabhat — Edge Indian",
+        "searchDescription": "Edge TTS Prabhat: Indian English male voice for professional and educational content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-in"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-IN-PrabhatNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Indian",
+        "locale": "en-IN",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-IN-PrabhatNeural",
+          "label": "Prabhat",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+      "imageUrl": "/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+      "samples": [
+        {
+          "id": "s-YE25HM1G3WFSJ4A4BJA21YDXKY",
+          "label": "Default",
+          "text": "Hello! I'm Prabhat, speaking Indian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VPAA61RC27HKP8C1T5Y5T8E3HJ",
+      "name": "Connor (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-IE-ConnorNeural",
+      "description": "Irish English male voice with a distinctive, warm accent.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ie",
+        "male",
+        "irish"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Connor — Edge Irish",
+        "searchDescription": "Edge TTS Connor: Irish English male voice with a distinctive, warm accent.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-ie"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-IE-ConnorNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Irish",
+        "locale": "en-IE",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-IE-ConnorNeural",
+          "label": "Connor",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+      "imageUrl": "/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+      "samples": [
+        {
+          "id": "s-VPAA61RC27HKP8C1T5Y5T8E3HJ",
+          "label": "Default",
+          "text": "Hello! I'm Connor, speaking Irish English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "84A5JFZQG4AC420DT5SJ8FJ1P1",
+      "name": "Emily (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-IE-EmilyNeural",
+      "description": "Irish English female voice with a natural, engaging quality.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ie",
+        "female",
+        "irish"
+      ],
+      "languages": [
+        "en-IE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Emily — Edge Irish",
+        "searchDescription": "Edge TTS Emily: Irish English female voice with a natural, engaging quality.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-ie"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-IE-EmilyNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Irish",
+        "locale": "en-IE",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-IE-EmilyNeural",
+          "label": "Emily",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
+      "imageUrl": "/images/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.jpg",
+      "samples": [
+        {
+          "id": "s-84A5JFZQG4AC420DT5SJ8FJ1P1",
+          "label": "Default",
+          "text": "Hello! I'm Emily, speaking Irish English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3"
+        }
+      ]
+    },
+    {
+      "id": "KQM7RDXJCCA7NVVW243RBJBG2C",
+      "name": "Yan (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-HK-YanNeural",
+      "description": "Hong Kong English female voice for regional content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-hk",
+        "female",
+        "hong-kong"
+      ],
+      "languages": [
+        "en-HK"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Yan — Edge Hong Kong",
+        "searchDescription": "Edge TTS Yan: Hong Kong English female voice for regional content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-hk"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-HK-YanNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Hong Kong",
+        "locale": "en-HK",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-HK-YanNeural",
+          "label": "Yan",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+      "imageUrl": "/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
+      "samples": [
+        {
+          "id": "s-KQM7RDXJCCA7NVVW243RBJBG2C",
+          "label": "Default",
+          "text": "Hello! I'm Yan, speaking Hong Kong English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "BZQME8DJ3XG7J1M2BM41NP6884",
+      "name": "Sam (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-HK-SamNeural",
+      "description": "Hong Kong English male voice for business and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-hk",
+        "male",
+        "hong-kong"
+      ],
+      "languages": [
+        "en-HK"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Sam — Edge Hong Kong",
+        "searchDescription": "Edge TTS Sam: Hong Kong English male voice for business and media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-hk"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-HK-SamNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Hong Kong",
+        "locale": "en-HK",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-HK-SamNeural",
+          "label": "Sam",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/BZQME8DJ3XG7J1M2BM41NP6884.mp3",
+      "imageUrl": "/images/voices/BZQME8DJ3XG7J1M2BM41NP6884.jpg",
+      "samples": [
+        {
+          "id": "s-BZQME8DJ3XG7J1M2BM41NP6884",
+          "label": "Default",
+          "text": "Hello! I'm Sam, speaking Hong Kong English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/BZQME8DJ3XG7J1M2BM41NP6884.mp3"
+        }
+      ]
+    },
+    {
+      "id": "NVRBT3HTDZVKRBXY3PFR7ZMA3W",
+      "name": "Asilia (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-KE-AsiliaNeural",
+      "description": "Kenyan English female voice representing East African speech patterns.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ke",
+        "female",
+        "kenyan"
+      ],
+      "languages": [
+        "en-KE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Asilia — Edge Kenyan",
+        "searchDescription": "Edge TTS Asilia: Kenyan English female voice representing East African speech patterns.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-ke"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-KE-AsiliaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Kenyan",
+        "locale": "en-KE",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-KE-AsiliaNeural",
+          "label": "Asilia",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/NVRBT3HTDZVKRBXY3PFR7ZMA3W.mp3",
+      "imageUrl": "/images/voices/NVRBT3HTDZVKRBXY3PFR7ZMA3W.jpg",
+      "samples": [
+        {
+          "id": "s-NVRBT3HTDZVKRBXY3PFR7ZMA3W",
+          "label": "Default",
+          "text": "Hello! I'm Asilia, speaking Kenyan English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/NVRBT3HTDZVKRBXY3PFR7ZMA3W.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VM3TA09R5T9KKT9G8ADJFW4A7X",
+      "name": "Chilemba (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-KE-ChilembaNeural",
+      "description": "Kenyan English male voice for regional and educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ke",
+        "male",
+        "kenyan"
+      ],
+      "languages": [
+        "en-KE"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Chilemba — Edge Kenyan",
+        "searchDescription": "Edge TTS Chilemba: Kenyan English male voice for regional and educational content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-ke"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-KE-ChilembaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Kenyan",
+        "locale": "en-KE",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-KE-ChilembaNeural",
+          "label": "Chilemba",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+      "imageUrl": "/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
+      "samples": [
+        {
+          "id": "s-VM3TA09R5T9KKT9G8ADJFW4A7X",
+          "label": "Default",
+          "text": "Hello! I'm Chilemba, speaking Kenyan English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3"
+        }
+      ]
+    },
+    {
+      "id": "9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+      "name": "Abeo (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-NG-AbeoNeural",
+      "description": "Nigerian English male voice for West African content and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ng",
+        "male",
+        "nigerian"
+      ],
+      "languages": [
+        "en-NG"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Abeo — Edge Nigerian",
+        "searchDescription": "Edge TTS Abeo: Nigerian English male voice for West African content and media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-ng"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-NG-AbeoNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Nigerian",
+        "locale": "en-NG",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-NG-AbeoNeural",
+          "label": "Abeo",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
+      "imageUrl": "/images/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+      "samples": [
+        {
+          "id": "s-9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+          "label": "Default",
+          "text": "Hello! I'm Abeo, speaking Nigerian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3"
+        }
+      ]
+    },
+    {
+      "id": "J9MA0029TAC5ZVM5PFJ6EA86A4",
+      "name": "Ezinne (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-NG-EzinneNeural",
+      "description": "Nigerian English female voice with warm, expressive delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ng",
+        "female",
+        "nigerian"
+      ],
+      "languages": [
+        "en-NG"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Ezinne — Edge Nigerian",
+        "searchDescription": "Edge TTS Ezinne: Nigerian English female voice with warm, expressive delivery.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-ng"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-NG-EzinneNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Nigerian",
+        "locale": "en-NG",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-NG-EzinneNeural",
+          "label": "Ezinne",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/J9MA0029TAC5ZVM5PFJ6EA86A4.mp3",
+      "imageUrl": "/images/voices/J9MA0029TAC5ZVM5PFJ6EA86A4.jpg",
+      "samples": [
+        {
+          "id": "s-J9MA0029TAC5ZVM5PFJ6EA86A4",
+          "label": "Default",
+          "text": "Hello! I'm Ezinne, speaking Nigerian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/J9MA0029TAC5ZVM5PFJ6EA86A4.mp3"
+        }
+      ]
+    },
+    {
+      "id": "A9XVQNQSVNW9VWE85VHHHHM2DW",
+      "name": "Mitchell (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-NZ-MitchellNeural",
+      "description": "New Zealand English male voice for regional media and content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-nz",
+        "male",
+        "new-zealand"
+      ],
+      "languages": [
+        "en-NZ"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Mitchell — Edge New Zealand",
+        "searchDescription": "Edge TTS Mitchell: New Zealand English male voice for regional media and content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-nz"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-NZ-MitchellNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "New Zealand",
+        "locale": "en-NZ",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-NZ-MitchellNeural",
+          "label": "Mitchell",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
+      "imageUrl": "/images/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
+      "samples": [
+        {
+          "id": "s-A9XVQNQSVNW9VWE85VHHHHM2DW",
+          "label": "Default",
+          "text": "Hello! I'm Mitchell, speaking New Zealand English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3"
+        }
+      ]
+    },
+    {
+      "id": "44BQQZQW01XJ21STFHNQT9QMFZ",
+      "name": "Molly (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-NZ-MollyNeural",
+      "description": "New Zealand English female voice with friendly, natural delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-nz",
+        "female",
+        "new-zealand"
+      ],
+      "languages": [
+        "en-NZ"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Molly — Edge New Zealand",
+        "searchDescription": "Edge TTS Molly: New Zealand English female voice with friendly, natural delivery.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-nz"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-NZ-MollyNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "New Zealand",
+        "locale": "en-NZ",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-NZ-MollyNeural",
+          "label": "Molly",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+      "imageUrl": "/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
+      "samples": [
+        {
+          "id": "s-44BQQZQW01XJ21STFHNQT9QMFZ",
+          "label": "Default",
+          "text": "Hello! I'm Molly, speaking New Zealand English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "6E6C6DZW5G7XM9QSHYBXY9KT84",
+      "name": "James (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-PH-JamesNeural",
+      "description": "Philippine English male voice for Southeast Asian content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ph",
+        "male",
+        "philippine"
+      ],
+      "languages": [
+        "en-PH"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "James — Edge Philippine",
+        "searchDescription": "Edge TTS James: Philippine English male voice for Southeast Asian content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-ph"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-PH-JamesNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Philippine",
+        "locale": "en-PH",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-PH-JamesNeural",
+          "label": "James",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/6E6C6DZW5G7XM9QSHYBXY9KT84.mp3",
+      "imageUrl": "/images/voices/6E6C6DZW5G7XM9QSHYBXY9KT84.jpg",
+      "samples": [
+        {
+          "id": "s-6E6C6DZW5G7XM9QSHYBXY9KT84",
+          "label": "Default",
+          "text": "Hello! I'm James, speaking Philippine English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/6E6C6DZW5G7XM9QSHYBXY9KT84.mp3"
+        }
+      ]
+    },
+    {
+      "id": "3NVNY9G2CBRCA401XRBXNYA83Z",
+      "name": "Rosa (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-PH-RosaNeural",
+      "description": "Philippine English female voice for customer service and media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-ph",
+        "female",
+        "philippine"
+      ],
+      "languages": [
+        "en-PH"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Rosa — Edge Philippine",
+        "searchDescription": "Edge TTS Rosa: Philippine English female voice for customer service and media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-ph"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-PH-RosaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Philippine",
+        "locale": "en-PH",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-PH-RosaNeural",
+          "label": "Rosa",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3",
+      "imageUrl": "/images/voices/3NVNY9G2CBRCA401XRBXNYA83Z.jpg",
+      "samples": [
+        {
+          "id": "s-3NVNY9G2CBRCA401XRBXNYA83Z",
+          "label": "Default",
+          "text": "Hello! I'm Rosa, speaking Philippine English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/3NVNY9G2CBRCA401XRBXNYA83Z.mp3"
+        }
+      ]
+    },
+    {
+      "id": "YE9YDRBSXST2E65P7W2E7ZT805",
+      "name": "Luna (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-SG-LunaNeural",
+      "description": "Singaporean English female voice for Southeast Asian audiences.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-sg",
+        "female",
+        "singaporean"
+      ],
+      "languages": [
+        "en-SG"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Luna — Edge Singaporean",
+        "searchDescription": "Edge TTS Luna: Singaporean English female voice for Southeast Asian audiences.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-sg"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-SG-LunaNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Singaporean",
+        "locale": "en-SG",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-SG-LunaNeural",
+          "label": "Luna",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
+      "imageUrl": "/images/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
+      "samples": [
+        {
+          "id": "s-YE9YDRBSXST2E65P7W2E7ZT805",
+          "label": "Default",
+          "text": "Hello! I'm Luna, speaking Singaporean English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3"
+        }
+      ]
+    },
+    {
+      "id": "VJDJBG7G69Y84E9NNYEAA3XY62",
+      "name": "Wayne (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-SG-WayneNeural",
+      "description": "Singaporean English male voice for business and educational use.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-sg",
+        "male",
+        "singaporean"
+      ],
+      "languages": [
+        "en-SG"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Wayne — Edge Singaporean",
+        "searchDescription": "Edge TTS Wayne: Singaporean English male voice for business and educational use.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-sg"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-SG-WayneNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Singaporean",
+        "locale": "en-SG",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-SG-WayneNeural",
+          "label": "Wayne",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
+      "imageUrl": "/images/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
+      "samples": [
+        {
+          "id": "s-VJDJBG7G69Y84E9NNYEAA3XY62",
+          "label": "Default",
+          "text": "Hello! I'm Wayne, speaking Singaporean English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3"
+        }
+      ]
+    },
+    {
+      "id": "M05HP8BKG00BQM9VYA05VXT3J2",
+      "name": "Leah (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-ZA-LeahNeural",
+      "description": "South African English female voice for regional media.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-za",
+        "female",
+        "south-african"
+      ],
+      "languages": [
+        "en-ZA"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Leah — Edge South African",
+        "searchDescription": "Edge TTS Leah: South African English female voice for regional media.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-za"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-ZA-LeahNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "South African",
+        "locale": "en-ZA",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-ZA-LeahNeural",
+          "label": "Leah",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/M05HP8BKG00BQM9VYA05VXT3J2.mp3",
+      "imageUrl": "/images/voices/M05HP8BKG00BQM9VYA05VXT3J2.jpg",
+      "samples": [
+        {
+          "id": "s-M05HP8BKG00BQM9VYA05VXT3J2",
+          "label": "Default",
+          "text": "Hello! I'm Leah, speaking South African English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/M05HP8BKG00BQM9VYA05VXT3J2.mp3"
+        }
+      ]
+    },
+    {
+      "id": "87RFJ23QJ85HMADZZJC6E1M4FK",
+      "name": "Luke (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-ZA-LukeNeural",
+      "description": "South African English male voice with clear, professional delivery.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-za",
+        "male",
+        "south-african"
+      ],
+      "languages": [
+        "en-ZA"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Luke — Edge South African",
+        "searchDescription": "Edge TTS Luke: South African English male voice with clear, professional delivery.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-za"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-ZA-LukeNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "South African",
+        "locale": "en-ZA",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-ZA-LukeNeural",
+          "label": "Luke",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3",
+      "imageUrl": "/images/voices/87RFJ23QJ85HMADZZJC6E1M4FK.jpg",
+      "samples": [
+        {
+          "id": "s-87RFJ23QJ85HMADZZJC6E1M4FK",
+          "label": "Default",
+          "text": "Hello! I'm Luke, speaking South African English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/87RFJ23QJ85HMADZZJC6E1M4FK.mp3"
+        }
+      ]
+    },
+    {
+      "id": "45VSXYE46FVT7P5WA1HNHZPDZQ",
+      "name": "Elimu (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-TZ-ElimuNeural",
+      "description": "Tanzanian English male voice for East African educational content.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-tz",
+        "male",
+        "tanzanian"
+      ],
+      "languages": [
+        "en-TZ"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Elimu — Edge Tanzanian",
+        "searchDescription": "Edge TTS Elimu: Tanzanian English male voice for East African educational content.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "male",
+          "en-tz"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-TZ-ElimuNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Tanzanian",
+        "locale": "en-TZ",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-TZ-ElimuNeural",
+          "label": "Elimu",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
+      "imageUrl": "/images/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
+      "samples": [
+        {
+          "id": "s-45VSXYE46FVT7P5WA1HNHZPDZQ",
+          "label": "Default",
+          "text": "Hello! I'm Elimu, speaking Tanzanian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3"
+        }
+      ]
+    },
+    {
+      "id": "E1SY4665JFHR4603PFYEC24DVS",
+      "name": "Imani (Edge)",
+      "provider": "Edge TTS",
+      "providerId": "edge-tts",
+      "providerVoiceId": "en-TZ-ImaniNeural",
+      "description": "Tanzanian English female voice with warm, engaging tone.",
+      "tags": [
+        "neural",
+        "free",
+        "no-api-key",
+        "en-tz",
+        "female",
+        "tanzanian"
+      ],
+      "languages": [
+        "en-TZ"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+      "metadata": {
+        "shortLabel": "Imani — Edge Tanzanian",
+        "searchDescription": "Edge TTS Imani: Tanzanian English female voice with warm, engaging tone.",
+        "machineTags": [
+          "edge-tts",
+          "microsoft",
+          "neural",
+          "free",
+          "female",
+          "en-tz"
+        ],
+        "useCases": [
+          "narration",
+          "assistants",
+          "e-learning",
+          "accessibility",
+          "prototyping"
+        ],
+        "toneTags": [
+          "clear",
+          "professional",
+          "natural"
+        ],
+        "audienceTags": [
+          "developers",
+          "creators",
+          "educators"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult",
+        "metadataQuality": "curated"
+      },
+      "modelCard": {
+        "modelName": "en-TZ-ImaniNeural",
+        "architecture": "Azure Neural TTS",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://github.com/rany2/edge-tts",
+        "license": "Free (Microsoft Edge TTS API)",
+        "commercialUse": false,
+        "sampleRate": 24000,
+        "outputFormat": "mp3",
+        "streamingCapable": true,
+        "supportsSSML": true,
+        "totalVoices": 322,
+        "totalEnglishVoices": 47,
+        "region": "Tanzanian",
+        "locale": "en-TZ",
+        "specialCapabilities": [
+          "SSML support",
+          "No API key required",
+          "Real-time streaming"
+        ]
+      },
+      "variants": [
+        {
+          "sourceKey": "en-TZ-ImaniNeural",
+          "label": "Imani",
+          "engine": "edge-tts",
+          "supportsStreaming": true,
+          "supportsSsml": true,
+          "maxChars": 5000
+        }
+      ],
+      "audioUrl": "/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
+      "imageUrl": "/images/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
+      "samples": [
+        {
+          "id": "s-E1SY4665JFHR4603PFYEC24DVS",
+          "label": "Default",
+          "text": "Hello! I'm Imani, speaking Tanzanian English. This is a preview of how I sound in natural conversation.",
+          "audioUrl": "/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,97 @@
+{
+  "id": "45VSXYE46FVT7P5WA1HNHZPDZQ",
+  "name": "Elimu (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-TZ-ElimuNeural",
+  "description": "Tanzanian English male voice for East African educational content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-tz",
+    "male",
+    "tanzanian"
+  ],
+  "languages": [
+    "en-TZ"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Elimu — Edge Tanzanian",
+    "searchDescription": "Edge TTS Elimu: Tanzanian English male voice for East African educational content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-tz"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-TZ-ElimuNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Tanzanian",
+    "locale": "en-TZ",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-TZ-ElimuNeural",
+      "label": "Elimu",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
+  "samples": [
+    {
+      "id": "s-45VSXYE46FVT7P5WA1HNHZPDZQ",
+      "label": "Default",
+      "text": "Hello! I'm Elimu, speaking Tanzanian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/45VSXYE46FVT7P5WA1HNHZPDZQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.json"
+}

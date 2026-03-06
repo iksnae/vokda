@@ -1,0 +1,97 @@
+{
+  "id": "A9XVQNQSVNW9VWE85VHHHHM2DW",
+  "name": "Mitchell (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-NZ-MitchellNeural",
+  "description": "New Zealand English male voice for regional media and content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-nz",
+    "male",
+    "new-zealand"
+  ],
+  "languages": [
+    "en-NZ"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Mitchell — Edge New Zealand",
+    "searchDescription": "Edge TTS Mitchell: New Zealand English male voice for regional media and content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-nz"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-NZ-MitchellNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "New Zealand",
+    "locale": "en-NZ",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-NZ-MitchellNeural",
+      "label": "Mitchell",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
+  "samples": [
+    {
+      "id": "s-A9XVQNQSVNW9VWE85VHHHHM2DW",
+      "label": "Default",
+      "text": "Hello! I'm Mitchell, speaking New Zealand English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9XVQNQSVNW9VWE85VHHHHM2DW.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A9XVQNQSVNW9VWE85VHHHHM2DW",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A9XVQNQSVNW9VWE85VHHHHM2DW.json"
+}

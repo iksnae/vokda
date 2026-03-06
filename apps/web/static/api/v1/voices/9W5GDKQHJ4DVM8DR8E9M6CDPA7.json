@@ -1,0 +1,97 @@
+{
+  "id": "9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+  "name": "Abeo (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-NG-AbeoNeural",
+  "description": "Nigerian English male voice for West African content and media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ng",
+    "male",
+    "nigerian"
+  ],
+  "languages": [
+    "en-NG"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Abeo — Edge Nigerian",
+    "searchDescription": "Edge TTS Abeo: Nigerian English male voice for West African content and media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-ng"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-NG-AbeoNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Nigerian",
+    "locale": "en-NG",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-NG-AbeoNeural",
+      "label": "Abeo",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+  "samples": [
+    {
+      "id": "s-9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+      "label": "Default",
+      "text": "Hello! I'm Abeo, speaking Nigerian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.json"
+}

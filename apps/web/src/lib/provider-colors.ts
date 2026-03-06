@@ -106,6 +106,21 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#e8f0fe',
     border: '#669df6',
     text: '#1967d2'
+  },
+  orpheus: {
+    bg: '#ede7f6',
+    border: '#b39ddb',
+    text: '#4527a0'
+  },
+  'chatterbox-turbo': {
+    bg: '#e3f2fd',
+    border: '#90caf9',
+    text: '#1565c0'
+  },
+  'edge-tts': {
+    bg: '#e3f2fd',
+    border: '#64b5f6',
+    text: '#0d47a1'
   }
 };
 

@@ -1,0 +1,97 @@
+{
+  "id": "G05P49TFP9P1W62ABM1JFNNT3S",
+  "name": "Clara (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-CA-ClaraNeural",
+  "description": "Clear Canadian female voice suited for education and customer service.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ca",
+    "female",
+    "canadian"
+  ],
+  "languages": [
+    "en-CA"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Clara — Edge Canadian",
+    "searchDescription": "Edge TTS Clara: Clear Canadian female voice suited for education and customer service.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-ca"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-CA-ClaraNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Canadian",
+    "locale": "en-CA",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-CA-ClaraNeural",
+      "label": "Clara",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G05P49TFP9P1W62ABM1JFNNT3S.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G05P49TFP9P1W62ABM1JFNNT3S.jpg",
+  "samples": [
+    {
+      "id": "s-G05P49TFP9P1W62ABM1JFNNT3S",
+      "label": "Default",
+      "text": "Hello! I'm Clara, speaking Canadian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G05P49TFP9P1W62ABM1JFNNT3S.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G05P49TFP9P1W62ABM1JFNNT3S.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G05P49TFP9P1W62ABM1JFNNT3S",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G05P49TFP9P1W62ABM1JFNNT3S.json"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "SR7VHY9SR6E69YFNKZP21NYBP8",
+  "name": "William (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-AU-WilliamMultilingualNeural",
+  "description": "Australian male multilingual voice for international and regional content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-au",
+    "multilingual",
+    "male",
+    "australian"
+  ],
+  "languages": [
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "de-DE",
+    "it-IT",
+    "pt-BR",
+    "ja-JP",
+    "zh-CN",
+    "ko-KR"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "William — Edge Australian",
+    "searchDescription": "Edge TTS William: Australian male multilingual voice for international and regional content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-au"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-AU-WilliamMultilingualNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Australian",
+    "locale": "en-AU",
+    "specialCapabilities": [
+      "Multilingual speech",
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-AU-WilliamMultilingualNeural",
+      "label": "William",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
+  "samples": [
+    {
+      "id": "s-SR7VHY9SR6E69YFNKZP21NYBP8",
+      "label": "Default",
+      "text": "Hello! I'm William, speaking Australian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SR7VHY9SR6E69YFNKZP21NYBP8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SR7VHY9SR6E69YFNKZP21NYBP8.json"
+}

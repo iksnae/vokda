@@ -1,0 +1,97 @@
+{
+  "id": "E1SY4665JFHR4603PFYEC24DVS",
+  "name": "Imani (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-TZ-ImaniNeural",
+  "description": "Tanzanian English female voice with warm, engaging tone.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-tz",
+    "female",
+    "tanzanian"
+  ],
+  "languages": [
+    "en-TZ"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Imani — Edge Tanzanian",
+    "searchDescription": "Edge TTS Imani: Tanzanian English female voice with warm, engaging tone.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-tz"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-TZ-ImaniNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Tanzanian",
+    "locale": "en-TZ",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-TZ-ImaniNeural",
+      "label": "Imani",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
+  "samples": [
+    {
+      "id": "s-E1SY4665JFHR4603PFYEC24DVS",
+      "label": "Default",
+      "text": "Hello! I'm Imani, speaking Tanzanian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E1SY4665JFHR4603PFYEC24DVS.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E1SY4665JFHR4603PFYEC24DVS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E1SY4665JFHR4603PFYEC24DVS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E1SY4665JFHR4603PFYEC24DVS.json"
+}

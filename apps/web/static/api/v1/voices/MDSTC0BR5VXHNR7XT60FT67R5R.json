@@ -1,0 +1,97 @@
+{
+  "id": "MDSTC0BR5VXHNR7XT60FT67R5R",
+  "name": "Michelle (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-MichelleNeural",
+  "description": "Balanced US female voice with a friendly, approachable quality.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "female",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Michelle — Edge US",
+    "searchDescription": "Edge TTS Michelle: Balanced US female voice with a friendly, approachable quality.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-MichelleNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-MichelleNeural",
+      "label": "Michelle",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+  "samples": [
+    {
+      "id": "s-MDSTC0BR5VXHNR7XT60FT67R5R",
+      "label": "Default",
+      "text": "Hello! I'm Michelle, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/MDSTC0BR5VXHNR7XT60FT67R5R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/MDSTC0BR5VXHNR7XT60FT67R5R.json"
+}

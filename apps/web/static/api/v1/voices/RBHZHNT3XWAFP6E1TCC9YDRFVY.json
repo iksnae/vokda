@@ -1,0 +1,97 @@
+{
+  "id": "RBHZHNT3XWAFP6E1TCC9YDRFVY",
+  "name": "Ava (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-US-AvaNeural",
+  "description": "Clear, modern US female voice suited for assistants and conversational AI.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-us",
+    "female",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Ava — Edge US",
+    "searchDescription": "Edge TTS Ava: Clear, modern US female voice suited for assistants and conversational AI.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-us"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-US-AvaNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "US",
+    "locale": "en-US",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-US-AvaNeural",
+      "label": "Ava",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
+  "samples": [
+    {
+      "id": "s-RBHZHNT3XWAFP6E1TCC9YDRFVY",
+      "label": "Default",
+      "text": "Hello! I'm Ava, speaking US English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.json"
+}

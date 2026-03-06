@@ -120,6 +120,24 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'Gemini TTS',
     type: 'cloud_provider',
     websiteUrl: 'https://ai.google.dev/gemini-api/docs/speech-generation'
+  },
+  {
+    id: 'orpheus',
+    name: 'Orpheus TTS',
+    type: 'open_model',
+    websiteUrl: 'https://github.com/canopyai/Orpheus-TTS'
+  },
+  {
+    id: 'chatterbox-turbo',
+    name: 'Chatterbox Turbo',
+    type: 'open_model',
+    websiteUrl: 'https://huggingface.co/mlx-community/Chatterbox-Turbo-TTS-4bit'
+  },
+  {
+    id: 'edge-tts',
+    name: 'Edge TTS',
+    type: 'cloud_provider',
+    websiteUrl: 'https://github.com/rany2/edge-tts'
   }
 ];
 

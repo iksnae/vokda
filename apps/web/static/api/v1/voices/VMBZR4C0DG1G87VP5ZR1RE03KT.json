@@ -1,0 +1,97 @@
+{
+  "id": "VMBZR4C0DG1G87VP5ZR1RE03KT",
+  "name": "Natasha (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-AU-NatashaNeural",
+  "description": "Friendly Australian female voice for customer service and media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-au",
+    "female",
+    "australian"
+  ],
+  "languages": [
+    "en-AU"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Natasha — Edge Australian",
+    "searchDescription": "Edge TTS Natasha: Friendly Australian female voice for customer service and media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-au"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-AU-NatashaNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Australian",
+    "locale": "en-AU",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-AU-NatashaNeural",
+      "label": "Natasha",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
+  "samples": [
+    {
+      "id": "s-VMBZR4C0DG1G87VP5ZR1RE03KT",
+      "label": "Default",
+      "text": "Hello! I'm Natasha, speaking Australian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VMBZR4C0DG1G87VP5ZR1RE03KT.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VMBZR4C0DG1G87VP5ZR1RE03KT",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VMBZR4C0DG1G87VP5ZR1RE03KT.json"
+}

@@ -1,0 +1,97 @@
+{
+  "id": "VJDJBG7G69Y84E9NNYEAA3XY62",
+  "name": "Wayne (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-SG-WayneNeural",
+  "description": "Singaporean English male voice for business and educational use.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-sg",
+    "male",
+    "singaporean"
+  ],
+  "languages": [
+    "en-SG"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Wayne — Edge Singaporean",
+    "searchDescription": "Edge TTS Wayne: Singaporean English male voice for business and educational use.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-sg"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-SG-WayneNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Singaporean",
+    "locale": "en-SG",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-SG-WayneNeural",
+      "label": "Wayne",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
+  "samples": [
+    {
+      "id": "s-VJDJBG7G69Y84E9NNYEAA3XY62",
+      "label": "Default",
+      "text": "Hello! I'm Wayne, speaking Singaporean English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VJDJBG7G69Y84E9NNYEAA3XY62",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VJDJBG7G69Y84E9NNYEAA3XY62.json"
+}

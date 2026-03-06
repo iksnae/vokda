@@ -1,0 +1,108 @@
+{
+  "id": "HR0A888061ZMA861XJ03XP3SZK",
+  "name": "Jess",
+  "provider": "Orpheus TTS",
+  "providerId": "orpheus",
+  "providerVoiceId": "jess",
+  "description": "Energetic, youthful female voice suited for casual content.",
+  "tags": [
+    "conversational",
+    "expressive",
+    "emotion-control",
+    "local",
+    "mlx",
+    "open-model",
+    "llama-based"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Apache 2.0",
+  "metadata": {
+    "shortLabel": "Jess — Orpheus",
+    "searchDescription": "Jess: Energetic, youthful female voice suited for casual content.",
+    "machineTags": [
+      "orpheus",
+      "llama",
+      "emotion",
+      "mlx",
+      "local",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "narration",
+      "podcasts",
+      "audiobooks",
+      "characters"
+    ],
+    "toneTags": [
+      "natural",
+      "expressive",
+      "human-like"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "researchers"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Orpheus 3B 0.1 Fine-tuned",
+    "modelVersion": "0.1-ft",
+    "architecture": "LLaMA 3.2 3B",
+    "modelSize": "3B parameters (4-bit: ~1.8GB)",
+    "baseModel": "meta-llama/Llama-3.2-3B-Instruct",
+    "huggingFaceUrl": "https://huggingface.co/mlx-community/orpheus-3b-0.1-ft-4bit",
+    "providerType": "open_model",
+    "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+    "license": "Apache 2.0",
+    "commercialUse": true,
+    "supportsCloning": true,
+    "supportsEmotionTags": true,
+    "emotionTags": [
+      "laugh",
+      "sigh",
+      "gasp",
+      "cry",
+      "whisper"
+    ],
+    "sampleRate": 24000,
+    "outputFormat": "wav",
+    "streamingCapable": true,
+    "latencyMs": 200,
+    "totalSpeakers": 8,
+    "trainingData": "Fine-tuned on conversational speech data",
+    "specialCapabilities": [
+      "Zero-shot voice cloning",
+      "Emotion control via tags",
+      "Real-time streaming (~200ms latency)"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "jess",
+      "label": "Jess",
+      "engine": "orpheus",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+  "samples": [
+    {
+      "id": "s-HR0A888061ZMA861XJ03XP3SZK",
+      "label": "Default",
+      "text": "Hello, I'm Jess. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HR0A888061ZMA861XJ03XP3SZK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HR0A888061ZMA861XJ03XP3SZK.json"
+}

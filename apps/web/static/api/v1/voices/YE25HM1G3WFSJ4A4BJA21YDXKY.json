@@ -1,0 +1,97 @@
+{
+  "id": "YE25HM1G3WFSJ4A4BJA21YDXKY",
+  "name": "Prabhat (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-IN-PrabhatNeural",
+  "description": "Indian English male voice for professional and educational content.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-in",
+    "male",
+    "indian"
+  ],
+  "languages": [
+    "en-IN"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Prabhat — Edge Indian",
+    "searchDescription": "Edge TTS Prabhat: Indian English male voice for professional and educational content.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-in"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-IN-PrabhatNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Indian",
+    "locale": "en-IN",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-IN-PrabhatNeural",
+      "label": "Prabhat",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+  "samples": [
+    {
+      "id": "s-YE25HM1G3WFSJ4A4BJA21YDXKY",
+      "label": "Default",
+      "text": "Hello! I'm Prabhat, speaking Indian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/YE25HM1G3WFSJ4A4BJA21YDXKY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.json"
+}

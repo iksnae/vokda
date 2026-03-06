@@ -1,0 +1,97 @@
+{
+  "id": "EA9RBYACBJE5TFZKT3NG21JFG2",
+  "name": "Libby (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-GB-LibbyNeural",
+  "description": "Warm British female voice with a natural, conversational feel.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-gb",
+    "female",
+    "british"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Libby — Edge British",
+    "searchDescription": "Edge TTS Libby: Warm British female voice with a natural, conversational feel.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-gb"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-GB-LibbyNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "British",
+    "locale": "en-GB",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-GB-LibbyNeural",
+      "label": "Libby",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+  "samples": [
+    {
+      "id": "s-EA9RBYACBJE5TFZKT3NG21JFG2",
+      "label": "Default",
+      "text": "Hello! I'm Libby, speaking British English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/EA9RBYACBJE5TFZKT3NG21JFG2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/EA9RBYACBJE5TFZKT3NG21JFG2.json"
+}

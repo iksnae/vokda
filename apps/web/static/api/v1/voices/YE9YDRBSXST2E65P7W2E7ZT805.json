@@ -1,0 +1,97 @@
+{
+  "id": "YE9YDRBSXST2E65P7W2E7ZT805",
+  "name": "Luna (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-SG-LunaNeural",
+  "description": "Singaporean English female voice for Southeast Asian audiences.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-sg",
+    "female",
+    "singaporean"
+  ],
+  "languages": [
+    "en-SG"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Luna — Edge Singaporean",
+    "searchDescription": "Edge TTS Luna: Singaporean English female voice for Southeast Asian audiences.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-sg"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-SG-LunaNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Singaporean",
+    "locale": "en-SG",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-SG-LunaNeural",
+      "label": "Luna",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
+  "samples": [
+    {
+      "id": "s-YE9YDRBSXST2E65P7W2E7ZT805",
+      "label": "Default",
+      "text": "Hello! I'm Luna, speaking Singaporean English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/YE9YDRBSXST2E65P7W2E7ZT805",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE9YDRBSXST2E65P7W2E7ZT805.json"
+}

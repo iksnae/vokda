@@ -1,0 +1,97 @@
+{
+  "id": "VPAA61RC27HKP8C1T5Y5T8E3HJ",
+  "name": "Connor (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-IE-ConnorNeural",
+  "description": "Irish English male voice with a distinctive, warm accent.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ie",
+    "male",
+    "irish"
+  ],
+  "languages": [
+    "en-IE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Connor — Edge Irish",
+    "searchDescription": "Edge TTS Connor: Irish English male voice with a distinctive, warm accent.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-ie"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-IE-ConnorNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Irish",
+    "locale": "en-IE",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-IE-ConnorNeural",
+      "label": "Connor",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+  "samples": [
+    {
+      "id": "s-VPAA61RC27HKP8C1T5Y5T8E3HJ",
+      "label": "Default",
+      "text": "Hello! I'm Connor, speaking Irish English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.json"
+}

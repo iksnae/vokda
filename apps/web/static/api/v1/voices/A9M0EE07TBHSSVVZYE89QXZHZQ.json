@@ -1,0 +1,97 @@
+{
+  "id": "A9M0EE07TBHSSVVZYE89QXZHZQ",
+  "name": "Neerja Expressive (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-IN-NeerjaExpressiveNeural",
+  "description": "Expressive Indian English female voice with enhanced emotional range.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-in",
+    "female",
+    "indian"
+  ],
+  "languages": [
+    "en-IN"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Neerja Expressive — Edge Indian",
+    "searchDescription": "Edge TTS Neerja Expressive: Expressive Indian English female voice with enhanced emotional range.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-in"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-IN-NeerjaExpressiveNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Indian",
+    "locale": "en-IN",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-IN-NeerjaExpressiveNeural",
+      "label": "Neerja Expressive",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
+  "samples": [
+    {
+      "id": "s-A9M0EE07TBHSSVVZYE89QXZHZQ",
+      "label": "Default",
+      "text": "Hello! I'm Neerja Expressive, speaking Indian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9M0EE07TBHSSVVZYE89QXZHZQ.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A9M0EE07TBHSSVVZYE89QXZHZQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A9M0EE07TBHSSVVZYE89QXZHZQ.json"
+}

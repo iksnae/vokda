@@ -1,0 +1,97 @@
+{
+  "id": "BSMDHKZNXG9SQSQVT27T5XZXWB",
+  "name": "Liam (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-CA-LiamNeural",
+  "description": "Friendly Canadian male voice for conversational and commercial use.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-ca",
+    "male",
+    "canadian"
+  ],
+  "languages": [
+    "en-CA"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Liam — Edge Canadian",
+    "searchDescription": "Edge TTS Liam: Friendly Canadian male voice for conversational and commercial use.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-ca"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-CA-LiamNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "Canadian",
+    "locale": "en-CA",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-CA-LiamNeural",
+      "label": "Liam",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
+  "samples": [
+    {
+      "id": "s-BSMDHKZNXG9SQSQVT27T5XZXWB",
+      "label": "Default",
+      "text": "Hello! I'm Liam, speaking Canadian English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/BSMDHKZNXG9SQSQVT27T5XZXWB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.json"
+}

@@ -1,0 +1,97 @@
+{
+  "id": "VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+  "name": "Ryan (Edge)",
+  "provider": "Edge TTS",
+  "providerId": "edge-tts",
+  "providerVoiceId": "en-GB-RyanNeural",
+  "description": "Confident British male voice for narration, training, and media.",
+  "tags": [
+    "neural",
+    "free",
+    "no-api-key",
+    "en-gb",
+    "male",
+    "british"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
+  "metadata": {
+    "shortLabel": "Ryan — Edge British",
+    "searchDescription": "Edge TTS Ryan: Confident British male voice for narration, training, and media.",
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-gb"
+    ],
+    "useCases": [
+      "narration",
+      "assistants",
+      "e-learning",
+      "accessibility",
+      "prototyping"
+    ],
+    "toneTags": [
+      "clear",
+      "professional",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "creators",
+      "educators"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "en-GB-RyanNeural",
+    "architecture": "Azure Neural TTS",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://github.com/rany2/edge-tts",
+    "license": "Free (Microsoft Edge TTS API)",
+    "commercialUse": false,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "totalEnglishVoices": 47,
+    "region": "British",
+    "locale": "en-GB",
+    "specialCapabilities": [
+      "SSML support",
+      "No API key required",
+      "Real-time streaming"
+    ]
+  },
+  "variants": [
+    {
+      "sourceKey": "en-GB-RyanNeural",
+      "label": "Ryan",
+      "engine": "edge-tts",
+      "supportsStreaming": true,
+      "supportsSsml": true,
+      "maxChars": 5000
+    }
+  ],
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.jpg",
+  "samples": [
+    {
+      "id": "s-VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+      "label": "Default",
+      "text": "Hello! I'm Ryan, speaking British English. This is a preview of how I sound in natural conversation.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.mp3"
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VR1ZM1JFXT1ZKVNHW7TFKHW8E1.json"
+}
