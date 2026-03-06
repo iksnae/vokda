@@ -22,6 +22,7 @@
     buildAccentOptions,
     voiceMatchesLanguage,
     voiceMatchesAccent,
+    getPrimaryLanguage,
   } from '$lib/language-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -116,6 +117,63 @@
       next.add(value);
     }
     return next;
+  }
+
+  // ── Filter engine ─────────────────────────────────────────────────────────
+
+  type FilterState = {
+    query: string;
+    selectedProviders: Set<string>;
+    selectedLanguageBases: Set<string>;
+    selectedAccents: Set<string>;
+    selectedSources: Set<string>;
+    selectedGenders: Set<string>;
+    selectedAges: Set<string>;
+    selectedTones: Set<string>;
+    selectedTiers: Set<string>;
+    runnableOnly: boolean;
+    ssmlOnly: boolean;
+    hasAudioOnly: boolean;
+    onlyFavorites: boolean;
+    favoriteIds: string[];
+  };
+
+  function filterVoices(voices: Voice[], s: FilterState): Voice[] {
+    const q = s.query.trim().toLowerCase();
+    return voices.filter((voice) => {
+      const meta = voice.metadata ?? {};
+      if (q) {
+        const matchesQuery =
+          voice.name.toLowerCase().includes(q) ||
+          (meta.shortLabel ?? '').toLowerCase().includes(q) ||
+          voice.provider.toLowerCase().includes(q) ||
+          (voice.providerId ?? '').toLowerCase().includes(q) ||
+          (voice.description ?? '').toLowerCase().includes(q) ||
+          (meta.genderPresentation ?? '').toLowerCase().includes(q) ||
+          (meta.speakingStyle ?? '').toLowerCase().includes(q) ||
+          (meta.accent ?? '').toLowerCase().includes(q) ||
+          (meta.machineTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+          (meta.useCases ?? []).some((u: string) => u.toLowerCase().includes(q)) ||
+          (meta.audienceTags ?? []).some((a: string) => a.toLowerCase().includes(q)) ||
+          (meta.toneTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+          (voice.tags ?? []).some((t: string) => t.toLowerCase().includes(q));
+        if (!matchesQuery) return false;
+      }
+      return (
+        voiceMatchesLanguage(voice, s.selectedLanguageBases) &&
+        voiceMatchesAccent(voice, s.selectedAccents) &&
+        (s.selectedProviders.size === 0 || s.selectedProviders.has(voice.provider)) &&
+        (s.selectedSources.size === 0 || (voice.variants ?? []).some((vr) => s.selectedSources.has(vr.sourceType))) &&
+        (s.selectedGenders.size === 0 || s.selectedGenders.has(meta.genderPresentation ?? '')) &&
+        (s.selectedAges.size === 0 || s.selectedAges.has(meta.agePresentation ?? '')) &&
+        (s.selectedTones.size === 0 || (meta.toneTags ?? []).map((t: string) => t.trim().toLowerCase()).some((t) => s.selectedTones.has(t))) &&
+        (s.selectedTiers.size === 0 || s.selectedTiers.has(voice.qualityTier)) &&
+        (!s.runnableOnly || (voice.variants ?? []).some((vr) => vr.runnable)) &&
+        (!s.ssmlOnly || (voice.variants ?? []).some((vr) => vr.supportsSsml)) &&
+        (!s.hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl)) &&
+        (!s.onlyFavorites || s.favoriteIds.includes(voice.id))
+      );
+    });
   }
 
   /** Read filter state from URL search params on mount */
@@ -319,7 +377,12 @@
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
   $: languageOptions = buildLanguageOptions(effectiveVoices);
-  $: accentOptions = buildAccentOptions(effectiveVoices, selectedLanguageBases);
+  // Always build accent options from the full catalog so the section never disappears.
+  // Availability per chip is controlled in the template via selectedLanguageBases.
+  $: accentOptions = buildAccentOptions(
+    effectiveVoices,
+    new Set(languageOptions.map((o) => o.base))
+  );
   $: availableSources = Array.from(
     new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
@@ -396,66 +459,51 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
-  $: filtered = effectiveVoices.filter((voice) => {
-    const q = query.trim().toLowerCase();
+  $: filterState = {
+    query,
+    selectedProviders,
+    selectedLanguageBases,
+    selectedAccents,
+    selectedSources,
+    selectedGenders,
+    selectedAges,
+    selectedTones,
+    selectedTiers,
+    runnableOnly,
+    ssmlOnly,
+    hasAudioOnly,
+    onlyFavorites,
+    favoriteIds: $favorites,
+  };
 
-    const meta = voice.metadata ?? {};
-    const tags = voice.tags ?? [];
-    const variants = voice.variants ?? [];
+  $: filtered = filterVoices(effectiveVoices, filterState);
 
-    const matchesQuery =
-      !q ||
-      voice.name.toLowerCase().includes(q) ||
-      (meta.shortLabel ?? '').toLowerCase().includes(q) ||
-      voice.provider.toLowerCase().includes(q) ||
-      (voice.providerId ?? '').toLowerCase().includes(q) ||
-      (voice.description ?? '').toLowerCase().includes(q) ||
-      (meta.genderPresentation ?? '').toLowerCase().includes(q) ||
-      (meta.speakingStyle ?? '').toLowerCase().includes(q) ||
-      (meta.accent ?? '').toLowerCase().includes(q) ||
-      (meta.machineTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
-      (meta.useCases ?? []).some((u: string) => u.toLowerCase().includes(q)) ||
-      (meta.audienceTags ?? []).some((a: string) => a.toLowerCase().includes(q)) ||
-      (meta.toneTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
-      tags.some((t: string) => t.toLowerCase().includes(q));
+  // ── Cross-filter bases: each call clears one dimension so other filters still apply.
+  //    Query is excluded from availability — chips respond to filter state only.
+  $: _cfProvider  = filterVoices(effectiveVoices, { ...filterState, query: '', selectedProviders: new Set() });
+  $: _cfLanguage  = filterVoices(effectiveVoices, { ...filterState, query: '', selectedLanguageBases: new Set(), selectedAccents: new Set() });
+  $: _cfAccent    = filterVoices(effectiveVoices, { ...filterState, query: '', selectedAccents: new Set() });
+  $: _cfSource    = filterVoices(effectiveVoices, { ...filterState, query: '', selectedSources: new Set() });
+  $: _cfGender    = filterVoices(effectiveVoices, { ...filterState, query: '', selectedGenders: new Set() });
+  $: _cfAge       = filterVoices(effectiveVoices, { ...filterState, query: '', selectedAges: new Set() });
+  $: _cfTone      = filterVoices(effectiveVoices, { ...filterState, query: '', selectedTones: new Set() });
+  $: _cfTier      = filterVoices(effectiveVoices, { ...filterState, query: '', selectedTiers: new Set() });
+  $: _cfRunnable  = filterVoices(effectiveVoices, { ...filterState, query: '', runnableOnly: false });
+  $: _cfSsml      = filterVoices(effectiveVoices, { ...filterState, query: '', ssmlOnly: false });
+  $: _cfFavorites = filterVoices(effectiveVoices, { ...filterState, query: '', onlyFavorites: false });
 
-    const matchesLanguage = voiceMatchesLanguage(voice, selectedLanguageBases);
-    const matchesAccent = voiceMatchesAccent(voice, selectedAccents);
-    const matchesSource =
-      selectedSources.size === 0 ||
-      (voice.variants ?? []).some((vr) => selectedSources.has(vr.sourceType));
-    const matchesProvider = selectedProviders.size === 0 || selectedProviders.has(voice.provider);
-    const matchesGender =
-      selectedGenders.size === 0 || selectedGenders.has(meta.genderPresentation ?? '');
-    const matchesAge =
-      selectedAges.size === 0 || selectedAges.has(meta.agePresentation ?? '');
-    const normalizedVoiceTones = (meta.toneTags ?? []).map((t: string) => t.trim().toLowerCase());
-    const matchesTone =
-      selectedTones.size === 0 ||
-      normalizedVoiceTones.some((t: string) => selectedTones.has(t));
-    const matchesTier =
-      selectedTiers.size === 0 || selectedTiers.has(voice.qualityTier);
-    const matchesRunnable = !runnableOnly || (voice.variants ?? []).some((vr) => vr.runnable);
-    const matchesSsml = !ssmlOnly || (voice.variants ?? []).some((vr) => vr.supportsSsml);
-    const matchesAudio = !hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl);
-    const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
-
-    return (
-      matchesQuery &&
-      matchesLanguage &&
-      matchesAccent &&
-      matchesSource &&
-      matchesProvider &&
-      matchesGender &&
-      matchesAge &&
-      matchesTone &&
-      matchesTier &&
-      matchesRunnable &&
-      matchesSsml &&
-      matchesAudio &&
-      matchesFavorite
-    );
-  });
+  // ── Availability sets: values that produce ≥1 result given current other filters ──
+  $: providerAvailable  = new Set(_cfProvider.map((v) => v.provider));
+  $: languageAvailable  = new Set(_cfLanguage.map((v) => getPrimaryLanguage(v).split('-')[0]));
+  $: accentAvailable    = new Set(_cfAccent.map((v) => getPrimaryLanguage(v)));
+  $: sourceAvailable    = new Set(_cfSource.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)));
+  $: genderAvailable    = new Set(_cfGender.map((v) => v.metadata?.genderPresentation ?? '').filter(Boolean));
+  $: ageAvailable       = new Set(_cfAge.map((v) => v.metadata?.agePresentation ?? '').filter(Boolean));
+  $: toneAvailable      = new Set(_cfTone.flatMap((v) => (v.metadata?.toneTags ?? []).map((t: string) => t.trim().toLowerCase())));
+  $: tierAvailable      = new Set(_cfTier.map((v) => v.qualityTier).filter(Boolean));
+  $: runnableAvailable  = _cfRunnable.some((v) => (v.variants ?? []).some((vr) => vr.runnable));
+  $: ssmlAvailable      = _cfSsml.some((v) => (v.variants ?? []).some((vr) => vr.supportsSsml));
+  $: favoritesAvailable = _cfFavorites.some((v) => $favorites.includes(v.id));
 
   $: sorted = (() => {
     const list = [...filtered];
@@ -512,9 +560,13 @@
           <span class="section-label">Language</span>
           <div class="chip-group">
             {#each languageOptions as option (option.base)}
+              {@const isLangActive = selectedLanguageBases.has(option.base)}
+              {@const isLangAvailable = isLangActive || languageAvailable.has(option.base)}
               <button
                 class="filter-chip"
-                class:active={selectedLanguageBases.has(option.base)}
+                class:active={isLangActive}
+                class:unavailable={!isLangAvailable}
+                disabled={!isLangAvailable}
                 on:click={() => {
                   selectedLanguageBases = toggleSetValue(selectedLanguageBases, option.base);
                   // Clear any accents for this base when deselecting the language
@@ -534,17 +586,19 @@
           </div>
         </div>
 
-        <!-- Accent / Region chips (Tier 2) — only shown when ≥2 locales exist for the selection -->
+        <!-- Accent chips — always visible; inactive when their language base is not selected -->
         {#if accentOptions.length > 0}
           <div class="filter-section filter-section--accent">
-            <span class="section-label">
-              {selectedLanguageBases.size === 1 && selectedLanguageBases.has('en') ? 'Accent' : 'Region'}
-            </span>
+            <span class="section-label">Accent</span>
             <div class="chip-group">
               {#each accentOptions as option (option.locale)}
+                {@const isActive = selectedAccents.has(option.locale)}
+                {@const isAvailable = isActive || accentAvailable.has(option.locale)}
                 <button
                   class="filter-chip"
-                  class:active={selectedAccents.has(option.locale)}
+                  class:active={isActive}
+                  class:unavailable={!isAvailable}
+                  disabled={!isAvailable}
                   on:click={() => { selectedAccents = toggleSetValue(selectedAccents, option.locale); }}
                 >
                   {option.label}
@@ -561,9 +615,13 @@
             <span class="section-label">Gender</span>
             <div class="chip-group">
               {#each availableGenders as gender}
+                {@const isActive = selectedGenders.has(gender)}
+                {@const isAvailable = isActive || genderAvailable.has(gender)}
                 <button
                   class="filter-chip"
-                  class:active={selectedGenders.has(gender)}
+                  class:active={isActive}
+                  class:unavailable={!isAvailable}
+                  disabled={!isAvailable}
                   on:click={() => { selectedGenders = toggleSetValue(selectedGenders, gender); }}
                 >
                   {genderLabels[gender] ?? capitalize(gender)}
@@ -579,9 +637,13 @@
             <span class="section-label">Age</span>
             <div class="chip-group">
               {#each availableAges as age}
+                {@const isActive = selectedAges.has(age)}
+                {@const isAvailable = isActive || ageAvailable.has(age)}
                 <button
                   class="filter-chip"
-                  class:active={selectedAges.has(age)}
+                  class:active={isActive}
+                  class:unavailable={!isAvailable}
+                  disabled={!isAvailable}
                   on:click={() => { selectedAges = toggleSetValue(selectedAges, age); }}
                 >
                   {ageLabels[age] ?? capitalize(age)}
@@ -597,9 +659,13 @@
             <span class="section-label">Tone</span>
             <div class="chip-group">
               {#each availableTones as tone}
+                {@const isActive = selectedTones.has(tone)}
+                {@const isAvailable = isActive || toneAvailable.has(tone)}
                 <button
                   class="filter-chip"
-                  class:active={selectedTones.has(tone)}
+                  class:active={isActive}
+                  class:unavailable={!isAvailable}
+                  disabled={!isAvailable}
                   on:click={() => { selectedTones = toggleSetValue(selectedTones, tone); }}
                 >
                   {capitalize(tone)}
@@ -615,9 +681,13 @@
             <span class="section-label">Quality</span>
             <div class="chip-group">
               {#each availableTiers as tier}
+                {@const isActive = selectedTiers.has(tier)}
+                {@const isAvailable = isActive || tierAvailable.has(tier)}
                 <button
                   class="filter-chip"
-                  class:active={selectedTiers.has(tier)}
+                  class:active={isActive}
+                  class:unavailable={!isAvailable}
+                  disabled={!isAvailable}
                   on:click={() => { selectedTiers = toggleSetValue(selectedTiers, tier); }}
                 >
                   {tierLabels[tier] ?? capitalize(tier)}
@@ -634,9 +704,12 @@
             {#each availableProviders as provider}
               {@const colors = getProviderColor(provider)}
               {@const isActive = selectedProviders.has(provider)}
+              {@const isAvailable = isActive || providerAvailable.has(provider)}
               <button
                 class="filter-chip"
                 class:active={isActive}
+                class:unavailable={!isAvailable}
+                disabled={!isAvailable}
                 style={isActive ? `background:${colors.bg};border-color:${colors.border};color:${colors.text}` : ''}
                 on:click={() => { selectedProviders = toggleSetValue(selectedProviders, provider); }}
               >
@@ -651,9 +724,13 @@
           <span class="section-label">Type</span>
           <div class="chip-group">
             {#each availableSources as source}
+              {@const isActive = selectedSources.has(source)}
+              {@const isAvailable = isActive || sourceAvailable.has(source)}
               <button
                 class="filter-chip"
-                class:active={selectedSources.has(source)}
+                class:active={isActive}
+                class:unavailable={!isAvailable}
+                disabled={!isAvailable}
                 on:click={() => { selectedSources = toggleSetValue(selectedSources, source); }}
               >
                 {typeLabel(source)}
@@ -669,6 +746,8 @@
             <button
               class="filter-chip"
               class:active={runnableOnly}
+              class:unavailable={!runnableOnly && !runnableAvailable}
+              disabled={!runnableOnly && !runnableAvailable}
               on:click={() => { runnableOnly = !runnableOnly; }}
             >
               Live preview
@@ -676,6 +755,8 @@
             <button
               class="filter-chip"
               class:active={ssmlOnly}
+              class:unavailable={!ssmlOnly && !ssmlAvailable}
+              disabled={!ssmlOnly && !ssmlAvailable}
               on:click={() => { ssmlOnly = !ssmlOnly; }}
             >
               SSML
@@ -683,6 +764,8 @@
             <button
               class="filter-chip"
               class:active={onlyFavorites}
+              class:unavailable={!onlyFavorites && !favoritesAvailable}
+              disabled={!onlyFavorites && !favoritesAvailable}
               on:click={() => { onlyFavorites = !onlyFavorites; }}
             >
               <Icon name="heart" size={12} />
@@ -992,6 +1075,12 @@
     border-color: var(--brand-600, #177089);
     color: var(--brand-700, #0e5568);
     font-weight: 680;
+  }
+
+  .filter-chip:disabled {
+    opacity: var(--opacity-disabled, 0.35);
+    cursor: default;
+    pointer-events: none;
   }
 
   .chip-count {
