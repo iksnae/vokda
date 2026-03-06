@@ -1353,11 +1353,11 @@
   },
   "storage": {
     "aws_region": "us-east-1",
-    "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-lficxtvxk7nb",
+    "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui",
     "buckets": [
       {
         "name": "vokdaAudio",
-        "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-lficxtvxk7nb",
+        "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui",
         "aws_region": "us-east-1",
         "paths": {
           "catalog/*": {
