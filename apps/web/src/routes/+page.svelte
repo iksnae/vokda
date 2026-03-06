@@ -15,7 +15,6 @@
     toggleFavorite
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
-  import { roleFlags } from '$lib/auth/store';
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
@@ -154,21 +153,12 @@
   }
 
   function handleFavorite(voiceId: string) {
-    if (!$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
     const wasFav = $favorites.includes(voiceId);
     toggleFavorite(voiceId);
     addToast(wasFav ? 'Removed from favorites.' : 'Added to favorites.');
   }
 
   function handlePin(voiceId: string) {
-    if (!$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
-
     if ($collections.length === 0) {
       createCollection('Saved');
       const created = $collections.find((c) => c.name === 'Saved');
@@ -406,7 +396,7 @@
             class:active={isFav}
             on:click={() => handleFavorite(voice.id)}
             aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
-            title={$roleFlags.isGuest ? (isFav ? 'Remove from favorites' : 'Add to favorites') : 'Sign in to save voices'}
+            title={isFav ? 'Remove from favorites' : 'Add to favorites'}
           >
             <Icon name={isFav ? 'heart-filled' : 'heart'} size={18} />
           </button>
@@ -416,7 +406,7 @@
               class="icon-btn"
               on:click={() => handlePin(voice.id)}
               aria-label="Pin to collection"
-              title={$roleFlags.isGuest ? 'Pin to collection' : 'Sign in to save voices'}
+              title="Pin to collection"
             >
               <Icon name="pin" size={18} />
             </button>

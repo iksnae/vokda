@@ -8,7 +8,7 @@
     toggleFavorite,
     removeVoiceFromCollection
   } from '$lib/stores/app-state';
-  import { roleFlags } from '$lib/auth/store';
+
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
@@ -74,20 +74,13 @@
 
   function handleFavorite() {
     if (!voice) return;
-    if (!$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
     const wasFav = $favorites.includes(voice.id);
     toggleFavorite(voice.id);
     addToast(wasFav ? 'Removed from favorites.' : 'Added to favorites.');
   }
 
   function handlePin() {
-    if (!voice || !$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
+    if (!voice) return;
     pinOpen = !pinOpen;
   }
 
@@ -280,9 +273,6 @@
           {#if pinOpen}
             <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
             <div class="pin-popover" on:click|stopPropagation>
-              {#if !$roleFlags.isGuest}
-                <p class="popover-note">Sign in to organize voices into collections.</p>
-              {:else}
                 <div class="popover-list">
                   {#each $collections as collection}
                     <label class="popover-item">
@@ -305,7 +295,6 @@
                     <Icon name="plus" size={14} />
                   </button>
                 </div>
-              {/if}
             </div>
           {/if}
         </div>
@@ -800,7 +789,7 @@
     animation: popIn 180ms ease;
   }
 
-  .popover-note { font-size: var(--text-small); color: #4f667d; padding: 0.3rem; }
+
 
   .popover-list {
     display: grid;
