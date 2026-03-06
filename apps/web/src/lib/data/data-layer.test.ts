@@ -599,6 +599,59 @@ describe('BYOK Synthesis — Registry', () => {
   });
 });
 
+describe('BYOK Synthesis — OAuth Infrastructure', () => {
+  it('oauth.ts exports Google and Microsoft sign-in', () => {
+    const filePath = resolve(__dirname, '../synthesis/oauth.ts');
+    expect(existsSync(filePath)).toBe(true);
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain('export async function signInWithGoogle');
+    expect(content).toContain('export async function signInWithMicrosoft');
+    expect(content).toContain('export async function oauthSignIn');
+    expect(content).toContain('export async function oauthSignOut');
+    expect(content).toContain('export function getOAuthToken');
+    expect(content).toContain('export function hasValidOAuthToken');
+    expect(content).toContain('export function getAccessTokenForProvider');
+  });
+
+  it('oauth.ts defines configs for Google and Microsoft', () => {
+    const filePath = resolve(__dirname, '../synthesis/oauth.ts');
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain("provider: 'google'");
+    expect(content).toContain("provider: 'microsoft'");
+    expect(content).toContain("coversProviders: ['gcp-tts', 'gemini-tts']");
+    expect(content).toContain("coversProviders: ['azure-speech']");
+  });
+
+  it('provider-auth configs include OAuth options for Google and Microsoft providers', () => {
+    const filePath = resolve(__dirname, '../synthesis/provider-auth.ts');
+    const content = readFileSync(filePath, 'utf8');
+    // GCP TTS, Gemini TTS, and Azure Speech should have oauth options
+    expect(content).toContain("provider: 'google'");
+    expect(content).toContain("provider: 'microsoft'");
+    expect(content).toContain("buttonLabel: 'Sign in with Google'");
+    expect(content).toContain("buttonLabel: 'Sign in with Microsoft'");
+  });
+
+  it('real adapters check for OAuth tokens', () => {
+    const gcpAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/gcp-tts-real.ts'), 'utf8');
+    expect(gcpAdapter).toContain('getAccessTokenForProvider');
+    expect(gcpAdapter).toContain('oauthToken');
+
+    const geminiAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/gemini-tts-real.ts'), 'utf8');
+    expect(geminiAdapter).toContain('getAccessTokenForProvider');
+    expect(geminiAdapter).toContain('oauthToken');
+
+    const azureAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/azure-speech-real.ts'), 'utf8');
+    expect(azureAdapter).toContain('getAccessTokenForProvider');
+    expect(azureAdapter).toContain('oauthToken');
+  });
+
+  it('registry checks OAuth tokens in hasRealAdapter', () => {
+    const registry = readFileSync(resolve(__dirname, '../synthesis/registry.ts'), 'utf8');
+    expect(registry).toContain('hasValidOAuthToken');
+  });
+});
+
 describe('BYOK Synthesis — Account Providers Page', () => {
   it('account/providers page exists', () => {
     const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
@@ -610,5 +663,17 @@ describe('BYOK Synthesis — Account Providers Page', () => {
     expect(content).toContain('testCredential');
     expect(content).toContain('Cloud Providers');
     expect(content).toContain('Free Providers');
+  });
+
+  it('providers page includes OAuth sign-in buttons', () => {
+    const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
+    const content = readFileSync(pagePath, 'utf8');
+    expect(content).toContain('oauthSignIn');
+    expect(content).toContain('oauthSignOut');
+    expect(content).toContain('oauth-btn');
+    expect(content).toContain('handleOAuthSignIn');
+    expect(content).toContain('handleOAuthSignOut');
+    expect(content).toContain('oauth-section');
+    expect(content).toContain('auth-divider');
   });
 });

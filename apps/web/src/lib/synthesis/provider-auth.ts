@@ -2,12 +2,21 @@
  * Provider authentication requirements.
  *
  * Defines what credentials each provider needs for BYOK synthesis.
- * Three auth types:
+ * Auth types:
  * - 'api_key': Single API key (most providers)
  * - 'aws_credentials': AWS access key + secret + region
  * - 'subscription_key': Azure-style key + region
  * - 'none': Free provider, no credentials needed
+ *
+ * Some providers also support OAuth as an alternative to API keys:
+ * - Google (GCP TTS + Gemini TTS) — Sign in with Google
+ * - Microsoft (Azure Speech) — Sign in with Microsoft
+ *
+ * OAuth tokens are short-lived (~1 hour) and stored in memory only.
+ * API keys are stored persistently in DynamoDB (owner-only auth).
  */
+
+import type { OAuthProvider } from './oauth';
 
 export type CredentialField = {
   key: string;
@@ -17,12 +26,21 @@ export type CredentialField = {
   required: boolean;
 };
 
+export type OAuthOption = {
+  provider: OAuthProvider;
+  label: string;
+  buttonLabel: string;
+  /** What scopes are needed */
+  scopes: string[];
+};
+
 export type ProviderAuthConfig = {
   providerId: string;
   authType: 'api_key' | 'aws_credentials' | 'subscription_key' | 'none';
   fields: CredentialField[];
   docsUrl?: string;
-  oauthAvailable?: boolean;
+  /** OAuth alternative to API key (if available) */
+  oauth?: OAuthOption;
   freeProvider?: boolean;
   notes?: string;
 };
@@ -35,7 +53,7 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
       { key: 'apiKey', label: 'API Key', type: 'password', placeholder: 'sk-...', required: true }
     ],
     docsUrl: 'https://platform.openai.com/api-keys',
-    notes: 'Uses tts-1 / tts-1-hd / gpt-4o-mini-tts models'
+    notes: 'Uses tts-1 / tts-1-hd / gpt-4o-mini-tts models. API key only — OpenAI does not offer OAuth for API access.'
   },
   {
     providerId: 'elevenlabs',
@@ -82,7 +100,6 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
       { key: 'region', label: 'Region', type: 'text', placeholder: 'us-east-1', required: true }
     ],
     docsUrl: 'https://docs.aws.amazon.com/polly/',
-    oauthAvailable: true,
     notes: 'Free tier: 5M chars/month for 12 months'
   },
   {
@@ -93,7 +110,13 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
       { key: 'region', label: 'Region', type: 'text', placeholder: 'eastus', required: true }
     ],
     docsUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub',
-    notes: 'Free tier: 0.5M chars/month'
+    oauth: {
+      provider: 'microsoft',
+      label: 'Sign in with Microsoft',
+      buttonLabel: 'Sign in with Microsoft',
+      scopes: ['https://cognitiveservices.azure.com/.default'],
+    },
+    notes: 'Free tier: 0.5M chars/month. OAuth available via Microsoft Entra ID.'
   },
   {
     providerId: 'gcp-tts',
@@ -102,7 +125,13 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
       { key: 'apiKey', label: 'API Key', type: 'password', placeholder: 'AIza...', required: true }
     ],
     docsUrl: 'https://console.cloud.google.com/apis/credentials',
-    notes: 'Free tier: 4M chars/month (standard), 1M (WaveNet)'
+    oauth: {
+      provider: 'google',
+      label: 'Sign in with Google',
+      buttonLabel: 'Sign in with Google',
+      scopes: ['https://www.googleapis.com/auth/cloud-platform'],
+    },
+    notes: 'Free tier: 4M chars/month (standard), 1M (WaveNet). OAuth sign-in available.'
   },
   {
     providerId: 'gemini-tts',
@@ -111,7 +140,13 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
       { key: 'apiKey', label: 'Gemini API Key', type: 'password', placeholder: 'AIza...', required: true }
     ],
     docsUrl: 'https://aistudio.google.com/apikey',
-    notes: 'Free tier: 10 req/min'
+    oauth: {
+      provider: 'google',
+      label: 'Sign in with Google',
+      buttonLabel: 'Sign in with Google',
+      scopes: ['https://www.googleapis.com/auth/generative-language'],
+    },
+    notes: 'Free tier: 10 req/min. OAuth sign-in available.'
   },
   // ─── Free providers ───
   {
@@ -168,14 +203,13 @@ export const PROVIDER_AUTH_CONFIGS: ProviderAuthConfig[] = [
 
 /**
  * Get auth config for a provider.
- * Returns undefined if provider has no config (treat as unknown/unsupported).
  */
 export function getProviderAuthConfig(providerId: string): ProviderAuthConfig | undefined {
   return PROVIDER_AUTH_CONFIGS.find((c) => c.providerId === providerId);
 }
 
 /**
- * Check if a provider requires API credentials.
+ * Check if a provider requires API credentials (API key or OAuth).
  */
 export function providerRequiresCredentials(providerId: string): boolean {
   const config = getProviderAuthConfig(providerId);
@@ -198,9 +232,17 @@ export function getFreeProviders(): ProviderAuthConfig[] {
 }
 
 /**
- * Credential data shapes stored in DynamoDB (as JSON string in credentialData field).
+ * Get providers that support OAuth sign-in.
+ */
+export function getOAuthProviders(): ProviderAuthConfig[] {
+  return PROVIDER_AUTH_CONFIGS.filter((c) => c.oauth !== undefined);
+}
+
+/**
+ * Credential data shapes stored in DynamoDB (as JSON string).
  */
 export type ApiKeyCredential = { apiKey: string };
 export type AwsCredentials = { accessKeyId: string; secretAccessKey: string; region: string };
 export type SubscriptionKeyCredential = { subscriptionKey: string; region: string };
-export type CredentialData = ApiKeyCredential | AwsCredentials | SubscriptionKeyCredential;
+export type OAuthTokenCredential = { oauthProvider: string; accessToken: string; expiresAt: number };
+export type CredentialData = ApiKeyCredential | AwsCredentials | SubscriptionKeyCredential | OAuthTokenCredential;

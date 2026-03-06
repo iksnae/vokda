@@ -24,6 +24,7 @@ import {
   clearCredentialAdapters,
 } from '$lib/synthesis/registry';
 import { providerRequiresCredentials } from '$lib/synthesis/provider-auth';
+import { hasValidOAuthToken } from '$lib/synthesis/oauth';
 
 type CredentialState = {
   credentials: UserProviderCredential[];
@@ -240,8 +241,14 @@ export const connectedProviders = derived(credentialState, ($s) => {
 /**
  * Check if a specific provider has an active credential.
  */
+/**
+ * Check if a specific provider has an active credential or OAuth token.
+ */
 export function isProviderConnected(providerId: string): boolean {
   if (!providerRequiresCredentials(providerId)) return true; // free provider
+  // Check OAuth token (in-memory, session-scoped)
+  if (hasValidOAuthToken(providerId)) return true;
+  // Check stored credential (DynamoDB)
   const snap = getSnapshot();
   return snap.credentials.some(
     (c) => c.providerId === providerId && c.status === 'active'

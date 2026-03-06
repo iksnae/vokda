@@ -7,6 +7,7 @@
 
 import type { SynthesisAdapter, SynthesisRequest, SynthesisPreview } from '../types';
 import type { ApiKeyCredential } from '../provider-auth';
+import { getAccessTokenForProvider } from '../oauth';
 
 function extractVoiceId(sourceKey: string): string {
   // sourceKey: "gemini:tts:Kore" → "Kore"
@@ -22,11 +23,21 @@ export function createGeminiTtsAdapter(credential: ApiKeyCredential): SynthesisA
       const start = Date.now();
       const voiceId = extractVoiceId(request.variant.sourceKey);
 
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${credential.apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+      // Prefer OAuth token if available, fall back to API key
+      const oauthToken = getAccessTokenForProvider('gemini-tts');
+      const url = oauthToken
+        ? 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent'
+        : `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${credential.apiKey}`;
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+      };
+      if (oauthToken) {
+        headers['Authorization'] = `Bearer ${oauthToken}`;
+      }
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers,
           body: JSON.stringify({
             contents: [
               {

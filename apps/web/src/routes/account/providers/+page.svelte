@@ -20,9 +20,20 @@
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { getProviderColor as getProviderColorScheme } from '$lib/provider-colors';
+  import {
+    oauthSignIn,
+    oauthSignOut,
+    getOAuthToken,
+    getAvailableOAuthConfigs,
+    hasValidOAuthToken,
+    oauthTokens,
+    type OAuthProvider,
+  } from '$lib/synthesis/oauth';
+  import { registerCredentialAdapter } from '$lib/synthesis/registry';
 
   const credProviders = getCredentialProviders();
   const freeProviders = getFreeProviders();
+  const availableOAuth = getAvailableOAuthConfigs();
 
   // ─── Form state per provider ───
   type FormState = {
@@ -155,6 +166,51 @@
     return data as CredentialData;
   }
 
+  // ─── OAuth actions ───
+  let oauthLoading: Record<string, boolean> = {};
+
+  async function handleOAuthSignIn(config: ProviderAuthConfig) {
+    if (!config.oauth) return;
+    const provider = config.oauth.provider;
+    oauthLoading = { ...oauthLoading, [config.providerId]: true };
+
+    try {
+      const token = await oauthSignIn(provider);
+      addToast(`Signed in with ${config.oauth.label.replace('Sign in with ', '')}. Token valid for ~1 hour.`);
+
+      // Register a placeholder adapter that the real adapter will use via getAccessTokenForProvider()
+      // The real adapters already check for OAuth tokens internally
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'OAuth sign-in failed';
+      addToast(msg, 'error');
+    } finally {
+      oauthLoading = { ...oauthLoading, [config.providerId]: false };
+    }
+  }
+
+  async function handleOAuthSignOut(config: ProviderAuthConfig) {
+    if (!config.oauth) return;
+    try {
+      await oauthSignOut(config.oauth.provider);
+      addToast(`Signed out of ${config.oauth.label.replace('Sign in with ', '')}.`);
+    } catch {
+      addToast('Sign-out failed.', 'error');
+    }
+  }
+
+  function isOAuthConnected(config: ProviderAuthConfig): boolean {
+    if (!config.oauth) return false;
+    return hasValidOAuthToken(config.providerId);
+  }
+
+  function getOAuthExpiryLabel(provider: OAuthProvider): string {
+    const token = getOAuthToken(provider);
+    if (!token) return '';
+    const minutesLeft = Math.max(0, Math.round((token.expiresAt - Date.now()) / 60000));
+    if (minutesLeft < 1) return 'Expired';
+    return `${minutesLeft} min remaining`;
+  }
+
   function statusIcon(status: string | undefined): string {
     switch (status) {
       case 'active': return 'check';
@@ -218,7 +274,8 @@
         {#each credProviders as config}
           {@const status = $connectedProviders.get(config.providerId)}
           {@const f = getForm(config.providerId)}
-          {@const isConnected = status === 'active'}
+          {@const oauthConnected = isOAuthConnected(config)}
+          {@const isConnected = status === 'active' || oauthConnected}
           <article
             class="provider-card"
             class:connected={isConnected}
@@ -231,9 +288,9 @@
                 <span class="provider-name">{config.providerId}</span>
               </div>
               <div class="card-status">
-                <span class="status-badge" class:active={isConnected} class:invalid={status === 'invalid'}>
-                  <Icon name={statusIcon(status)} size={12} />
-                  {statusLabel(status)}
+                <span class="status-badge" class:active={isConnected} class:oauth={oauthConnected && status !== 'active'} class:invalid={status === 'invalid'}>
+                  <Icon name={isConnected ? 'check' : statusIcon(status)} size={12} />
+                  {oauthConnected && status !== 'active' ? 'OAuth' : statusLabel(isConnected ? 'active' : status)}
                 </span>
                 <Icon name={f.expanded ? 'chevron-up' : 'chevron-down'} size={14} />
               </div>
@@ -243,6 +300,61 @@
               <div class="card-body">
                 {#if config.notes}
                   <p class="notes">{config.notes}</p>
+                {/if}
+
+                <!-- OAuth option (when available) -->
+                {#if config.oauth}
+                  {@const oauthActive = isOAuthConnected(config)}
+                  <div class="oauth-section">
+                    <div class="oauth-header">
+                      <span class="oauth-label">Quick Connect</span>
+                      {#if oauthActive}
+                        <span class="oauth-timer">{getOAuthExpiryLabel(config.oauth.provider)}</span>
+                      {/if}
+                    </div>
+
+                    {#if oauthActive}
+                      <div class="oauth-connected">
+                        <span class="oauth-status">
+                          <Icon name="check" size={14} />
+                          Signed in via {config.oauth.label.replace('Sign in with ', '')}
+                        </span>
+                        <button class="ghost-btn small" on:click={() => handleOAuthSignOut(config)}>
+                          Sign Out
+                        </button>
+                      </div>
+                    {:else}
+                      <button
+                        class="oauth-btn"
+                        class:google={config.oauth.provider === 'google'}
+                        class:microsoft={config.oauth.provider === 'microsoft'}
+                        on:click={() => handleOAuthSignIn(config)}
+                        disabled={oauthLoading[config.providerId]}
+                      >
+                        {#if config.oauth.provider === 'google'}
+                          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                          </svg>
+                        {:else if config.oauth.provider === 'microsoft'}
+                          <svg viewBox="0 0 21 21" width="18" height="18" aria-hidden="true">
+                            <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
+                            <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
+                            <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
+                            <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+                          </svg>
+                        {/if}
+                        {oauthLoading[config.providerId] ? 'Signing in...' : config.oauth.buttonLabel}
+                      </button>
+                      <p class="oauth-note">Session-based · Token expires in ~1 hour · No key stored</p>
+                    {/if}
+                  </div>
+
+                  <div class="auth-divider">
+                    <span>or use API key</span>
+                  </div>
                 {/if}
 
                 {#if !isConnected}
@@ -276,11 +388,11 @@
                       on:click={() => saveProvider(config)}
                       disabled={f.saving}
                     >
-                      {f.saving ? 'Saving...' : 'Connect'}
+                      {f.saving ? 'Saving...' : 'Save API Key'}
                     </button>
                   </div>
                 {:else}
-                  <!-- Connected state -->
+                  <!-- Connected via API key -->
                   <div class="connected-info">
                     <p>✓ API key stored securely in your account.</p>
 
@@ -300,7 +412,7 @@
                       {f.testing ? 'Testing...' : 'Test Connection'}
                     </button>
                     <button class="danger-btn" on:click={() => removeProvider(config)}>
-                      Disconnect
+                      Remove Key
                     </button>
                   </div>
                 {/if}
@@ -644,6 +756,116 @@
     grid-column: 1 / -1;
     font-size: var(--text-xs);
     color: #5a7a90;
+  }
+
+  /* OAuth section */
+  .oauth-section {
+    margin: 0.55rem 0;
+    padding: 0.65rem;
+    border: 1px solid #e0e8ef;
+    border-radius: 12px;
+    background: #f7fafc;
+  }
+
+  .oauth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .oauth-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #5a7a90;
+  }
+
+  .oauth-timer {
+    font-size: var(--text-xs);
+    color: #8d5c16;
+    font-weight: 620;
+  }
+
+  .oauth-connected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .oauth-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: var(--text-small);
+    font-weight: 640;
+    color: #2e7d32;
+  }
+
+  .oauth-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid #d0dce6;
+    border-radius: 11px;
+    padding: 0.6rem 1rem;
+    background: #fff;
+    font-size: var(--text-body);
+    font-weight: 620;
+    color: #3e5972;
+    cursor: pointer;
+    transition: all 150ms;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .oauth-btn:hover {
+    background: #f7fafc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .oauth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .oauth-btn.google:hover { border-color: #4285F4; }
+  .oauth-btn.microsoft:hover { border-color: #00a4ef; }
+
+  .oauth-note {
+    margin: 0.35rem 0 0;
+    font-size: var(--text-xs);
+    color: #7a8fa0;
+    text-align: center;
+  }
+
+  .auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.65rem 0;
+    color: #8a9fb0;
+    font-size: var(--text-xs);
+    font-weight: 620;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .auth-divider::before,
+  .auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #d6e2ec;
+  }
+
+  .status-badge.oauth {
+    color: #1565c0;
+    background: #e3f2fd;
+    border-color: #90caf9;
   }
 
   @keyframes reveal {

@@ -16,6 +16,7 @@ import type {
   CredentialData,
   SubscriptionKeyCredential,
 } from './provider-auth';
+import { hasValidOAuthToken } from './oauth';
 
 // ─── Mock adapters (legacy, used when no credentials available) ───
 import { createMockAdapter } from './adapters/mock-base';
@@ -146,11 +147,16 @@ export function getProviderForVariant(variant: VoiceVariant): string | null {
 
 /**
  * Check if a real (non-mock) adapter is available for a variant.
+ * Checks both credential-backed adapters and OAuth tokens.
  */
 export function hasRealAdapter(variant: VoiceVariant): boolean {
   const providerId = getProviderForVariant(variant);
   if (!providerId) return false;
-  return activeAdapters.has(providerId);
+  // Real adapter from stored credentials
+  if (activeAdapters.has(providerId)) return true;
+  // OAuth token available (adapters will pick it up automatically)
+  if (hasValidOAuthToken(providerId)) return true;
+  return false;
 }
 
 /**

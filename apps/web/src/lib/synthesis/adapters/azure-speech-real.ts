@@ -7,6 +7,7 @@
 
 import type { SynthesisAdapter, SynthesisRequest, SynthesisPreview } from '../types';
 import type { SubscriptionKeyCredential } from '../provider-auth';
+import { getAccessTokenForProvider } from '../oauth';
 
 function extractVoiceId(sourceKey: string): string {
   // sourceKey: "azure:tts:en-US-JennyNeural"
@@ -32,10 +33,16 @@ export function createAzureSpeechAdapter(credential: SubscriptionKeyCredential):
 
       const endpoint = `https://${credential.region}.tts.speech.microsoft.com/cognitiveservices/v1`;
 
+      // Prefer OAuth token if available, fall back to subscription key
+      const oauthToken = getAccessTokenForProvider('azure-speech');
+      const authHeaders: Record<string, string> = oauthToken
+        ? { 'Authorization': `Bearer ${oauthToken}` }
+        : { 'Ocp-Apim-Subscription-Key': credential.subscriptionKey };
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
-          'Ocp-Apim-Subscription-Key': credential.subscriptionKey,
+          ...authHeaders,
           'Content-Type': 'application/ssml+xml',
           'X-Microsoft-OutputFormat': 'audio-16khz-128kbitrate-mono-mp3',
         },
