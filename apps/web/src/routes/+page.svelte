@@ -1,9 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
   import { onMount } from 'svelte';
-  import { slide } from 'svelte/transition';
   import {
     addVoiceToCollection,
     collections,
@@ -24,9 +22,12 @@
   export let data: { voices: Voice[] };
 
   let query = '';
-  let selectedLanguage = 'all';
-  let selectedSource = 'all';
-  let selectedProvider = 'all';
+
+  /** Multi-select filter sets */
+  let selectedProviders: Set<string> = new Set();
+  let selectedLanguages: Set<string> = new Set();
+  let selectedSources: Set<string> = new Set();
+
   let runnableOnly = false;
   let ssmlOnly = false;
   let onlyFavorites = false;
@@ -34,10 +35,16 @@
   /** Whether we've finished reading initial URL params (prevents sync-back on first load) */
   let urlInitialized = false;
 
-  /** Collapsible filter panel — collapsed by default */
+  /** Mobile: filter drawer open */
   let filtersOpen = false;
 
-  /** Pin popover: tracks which card's popover is open */
+  /** Desktop: filter panel collapsed */
+  let panelCollapsed = false;
+
+  /** Sort order */
+  let sortOrder: 'alphabetical' | 'newest' | 'provider' = 'alphabetical';
+
+  /** Pin popover: tracks which row's popover is open */
   let pinOpenForId = '';
   let newCollectionName = '';
 
@@ -48,14 +55,12 @@
   function togglePlay(voiceId: string, audioUrl: string | undefined) {
     if (!audioUrl) return;
 
-    // If same voice is playing, pause it
     if (playingVoiceId === voiceId && audioElement) {
       audioElement.pause();
       playingVoiceId = '';
       return;
     }
 
-    // Stop any current playback
     if (audioElement) {
       audioElement.pause();
       audioElement = null;
@@ -81,28 +86,39 @@
     });
   }
 
+  /** Toggle a value in a Set (for chip multi-select) */
+  function toggleSetValue(set: Set<string>, value: string): Set<string> {
+    const next = new Set(set);
+    if (next.has(value)) {
+      next.delete(value);
+    } else {
+      next.add(value);
+    }
+    return next;
+  }
+
   /** Read filter state from URL search params on mount */
   onMount(() => {
     if (!browser) return;
 
     const params = new URLSearchParams(window.location.search);
     query = params.get('q') ?? '';
-    selectedProvider = params.get('provider') ?? 'all';
-    selectedLanguage = params.get('lang') ?? 'all';
-    selectedSource = params.get('type') ?? 'all';
+
+    const providerParam = params.get('provider');
+    if (providerParam) selectedProviders = new Set(providerParam.split(',').filter(Boolean));
+
+    const langParam = params.get('lang');
+    if (langParam) selectedLanguages = new Set(langParam.split(',').filter(Boolean));
+
+    const typeParam = params.get('type');
+    if (typeParam) selectedSources = new Set(typeParam.split(',').filter(Boolean));
+
     runnableOnly = params.get('runnable') === '1';
     ssmlOnly = params.get('ssml') === '1';
     onlyFavorites = params.get('favorites') === '1';
 
-    // Auto-open filters panel if any filter is active from URL
-    if (selectedProvider !== 'all' || selectedLanguage !== 'all' || selectedSource !== 'all' || runnableOnly || ssmlOnly) {
-      filtersOpen = true;
-    }
-
-    // Mark initialized after a tick so the reactive block below doesn't fire on initial hydration
     requestAnimationFrame(() => { urlInitialized = true; });
 
-    // Cleanup on unmount
     return () => {
       if (audioElement) {
         audioElement.pause();
@@ -115,9 +131,9 @@
   $: if (browser && urlInitialized) {
     const params = new URLSearchParams();
     if (query.trim()) params.set('q', query.trim());
-    if (selectedProvider !== 'all') params.set('provider', selectedProvider);
-    if (selectedLanguage !== 'all') params.set('lang', selectedLanguage);
-    if (selectedSource !== 'all') params.set('type', selectedSource);
+    if (selectedProviders.size > 0) params.set('provider', Array.from(selectedProviders).join(','));
+    if (selectedLanguages.size > 0) params.set('lang', Array.from(selectedLanguages).join(','));
+    if (selectedSources.size > 0) params.set('type', Array.from(selectedSources).join(','));
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
     if (onlyFavorites) params.set('favorites', '1');
@@ -125,15 +141,14 @@
     const qs = params.toString();
     const newUrl = qs ? `?${qs}` : window.location.pathname;
 
-    // Only update if changed — avoids infinite loop
     if (newUrl !== `${window.location.pathname}${window.location.search}`) {
       goto(newUrl, { replaceState: true, keepFocus: true, noScroll: true });
     }
   }
 
   const typeLabels: Record<VoiceVariant['sourceType'], string> = {
-    cloud_provider: 'Cloud provider',
-    local_model: 'Local model',
+    cloud_provider: 'Cloud',
+    local_model: 'Local',
     hf_model: 'Open model',
     hf_space: 'HF Space',
     hf_endpoint: 'HF Endpoint',
@@ -210,11 +225,19 @@
     closePinPopover();
   }
 
-  /** Count active filters for badge */
+  function clearAllFilters() {
+    selectedProviders = new Set();
+    selectedLanguages = new Set();
+    selectedSources = new Set();
+    runnableOnly = false;
+    ssmlOnly = false;
+    onlyFavorites = false;
+  }
+
   $: activeFilterCount = [
-    selectedProvider !== 'all',
-    selectedLanguage !== 'all',
-    selectedSource !== 'all',
+    selectedProviders.size > 0,
+    selectedLanguages.size > 0,
+    selectedSources.size > 0,
     runnableOnly,
     ssmlOnly,
     onlyFavorites
@@ -243,11 +266,11 @@
       voice.metadata.toneTags.some((t) => t.toLowerCase().includes(q)) ||
       voice.tags.some((t) => t.toLowerCase().includes(q));
 
-    const matchesLanguage = selectedLanguage === 'all' || voice.languages.includes(selectedLanguage);
+    const matchesLanguage = selectedLanguages.size === 0 || voice.languages.some((l) => selectedLanguages.has(l));
     const matchesSource =
-      selectedSource === 'all' ||
-      voice.variants.some((vr) => vr.sourceType === selectedSource);
-    const matchesProvider = selectedProvider === 'all' || voice.provider === selectedProvider;
+      selectedSources.size === 0 ||
+      voice.variants.some((vr) => selectedSources.has(vr.sourceType));
+    const matchesProvider = selectedProviders.size === 0 || selectedProviders.has(voice.provider);
     const matchesRunnable = !runnableOnly || voice.variants.some((vr) => vr.runnable);
     const matchesSsml = !ssmlOnly || voice.variants.some((vr) => vr.supportsSsml);
     const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
@@ -262,6 +285,21 @@
       matchesFavorite
     );
   });
+
+  $: sorted = (() => {
+    const list = [...filtered];
+    if (sortOrder === 'alphabetical') {
+      list.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortOrder === 'provider') {
+      list.sort((a, b) => {
+        const p = a.provider.localeCompare(b.provider);
+        return p !== 0 ? p : a.name.localeCompare(b.name);
+      });
+    } else if (sortOrder === 'newest') {
+      list.sort((a, b) => (a.id > b.id ? -1 : 1));
+    }
+    return list;
+  })();
 </script>
 
 <svelte:head>
@@ -276,93 +314,163 @@
   <meta name="twitter:image" content="https://vokda.iksnae.com/og-image.png" />
 </svelte:head>
 
-<main>
-  <section class="hero">
-    <div>
-      <h1>Discover voices for every project</h1>
-      <p class="summary">Browse TTS voices across providers, listen instantly, and build your perfect voice set.</p>
-      <div class="search-shell">
-        <Icon name="search" size={18} />
-        <input bind:value={query} placeholder="Search by name, style, or use case..." />
-      </div>
+<main class="page-layout" class:panel-collapsed={panelCollapsed}>
+  <!-- Filter panel (left) -->
+  <aside class="filter-panel" class:open={filtersOpen} class:collapsed={panelCollapsed}>
+    <div class="panel-header">
+      <button
+        class="panel-toggle"
+        on:click={() => { panelCollapsed = !panelCollapsed; }}
+        aria-label={panelCollapsed ? 'Expand filters' : 'Collapse filters'}
+      >
+        <Icon name={panelCollapsed ? 'sliders' : 'x'} size={16} />
+      </button>
+      {#if !panelCollapsed}
+        <h2 class="panel-title">Filters</h2>
+        {#if activeFilterCount > 0}
+          <span class="filter-badge">{activeFilterCount}</span>
+          <button class="clear-btn" on:click={clearAllFilters}>Clear all</button>
+        {/if}
+      {/if}
     </div>
-  </section>
 
-  <div class="filter-bar">
+    {#if !panelCollapsed}
+      <nav class="filter-sections" aria-label="Filter voices">
+        <!-- Provider chips -->
+        <div class="filter-section">
+          <span class="section-label">Provider</span>
+          <div class="chip-group">
+            {#each availableProviders as provider}
+              {@const colors = getProviderColor(provider)}
+              {@const isActive = selectedProviders.has(provider)}
+              <button
+                class="filter-chip"
+                class:active={isActive}
+                style={isActive ? `background:${colors.bg};border-color:${colors.border};color:${colors.text}` : ''}
+                on:click={() => { selectedProviders = toggleSetValue(selectedProviders, provider); }}
+              >
+                {provider}
+              </button>
+            {/each}
+          </div>
+        </div>
+
+        <!-- Language chips -->
+        <div class="filter-section">
+          <span class="section-label">Language</span>
+          <div class="chip-group">
+            {#each availableLanguages as language}
+              <button
+                class="filter-chip"
+                class:active={selectedLanguages.has(language)}
+                on:click={() => { selectedLanguages = toggleSetValue(selectedLanguages, language); }}
+              >
+                {language}
+              </button>
+            {/each}
+          </div>
+        </div>
+
+        <!-- Type chips -->
+        <div class="filter-section">
+          <span class="section-label">Type</span>
+          <div class="chip-group">
+            {#each availableSources as source}
+              <button
+                class="filter-chip"
+                class:active={selectedSources.has(source)}
+                on:click={() => { selectedSources = toggleSetValue(selectedSources, source); }}
+              >
+                {typeLabel(source)}
+              </button>
+            {/each}
+          </div>
+        </div>
+
+        <!-- Capability toggles -->
+        <div class="filter-section">
+          <span class="section-label">Capabilities</span>
+          <div class="chip-group">
+            <button
+              class="filter-chip"
+              class:active={runnableOnly}
+              on:click={() => { runnableOnly = !runnableOnly; }}
+            >
+              Live preview
+            </button>
+            <button
+              class="filter-chip"
+              class:active={ssmlOnly}
+              on:click={() => { ssmlOnly = !ssmlOnly; }}
+            >
+              SSML
+            </button>
+            <button
+              class="filter-chip"
+              class:active={onlyFavorites}
+              on:click={() => { onlyFavorites = !onlyFavorites; }}
+            >
+              <Icon name="heart" size={12} />
+              Favorites
+            </button>
+          </div>
+        </div>
+      </nav>
+    {/if}
+  </aside>
+
+  <!-- Mobile: overlay when filter panel open -->
+  {#if filtersOpen}
+    <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+    <div class="panel-overlay" on:click={() => (filtersOpen = false)} aria-hidden="true" />
+  {/if}
+
+  <!-- Main content -->
+  <div class="content">
+    <!-- Mobile filter toggle -->
     <button
-      class="filter-toggle"
-      class:active={filtersOpen || activeFilterCount > 0}
+      class="filter-drawer-toggle"
       on:click={() => (filtersOpen = !filtersOpen)}
       aria-expanded={filtersOpen}
+      aria-label="Toggle filters"
     >
       <Icon name="sliders" size={16} />
       Filters
       {#if activeFilterCount > 0}
-        <span class="filter-count">{activeFilterCount}</span>
+        <span class="filter-badge">{activeFilterCount}</span>
       {/if}
-      <Icon name={filtersOpen ? 'chevron-down' : 'chevron-right'} size={14} />
     </button>
 
-    <label class="toggle-inline">
-      <input type="checkbox" bind:checked={onlyFavorites} />
-      <Icon name="heart" size={14} />
-      Favorites
-    </label>
-  </div>
+    <!-- Search bar -->
+    <div class="search-bar">
+      <Icon name="search" size={18} />
+      <input bind:value={query} placeholder="Search voices..." />
+      {#if query}
+        <button class="search-clear" on:click={() => { query = ''; }} aria-label="Clear search">
+          <Icon name="x" size={14} />
+        </button>
+      {/if}
+    </div>
 
-  {#if filtersOpen}
-    <section class="filters" transition:slide|local>
-      <label>
-        Provider
-        <select bind:value={selectedProvider}>
-          <option value="all">All providers</option>
-          {#each availableProviders as provider}
-            <option value={provider}>{provider}</option>
-          {/each}
-        </select>
-      </label>
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <p class="results">{filtered.length} of {effectiveVoices.length} voice{effectiveVoices.length !== 1 ? 's' : ''}</p>
+      <select bind:value={sortOrder} class="sort-select" aria-label="Sort by">
+        <option value="alphabetical">Alphabetical</option>
+        <option value="newest">Newest</option>
+        <option value="provider">By provider</option>
+      </select>
+    </div>
 
-      <label>
-        Language
-        <select bind:value={selectedLanguage}>
-          <option value="all">All languages</option>
-          {#each availableLanguages as language}
-            <option value={language}>{language}</option>
-          {/each}
-        </select>
-      </label>
-
-      <label>
-        Type
-        <select bind:value={selectedSource}>
-          <option value="all">All types</option>
-          {#each availableSources as source}
-            <option value={source}>{typeLabel(source)}</option>
-          {/each}
-        </select>
-      </label>
-
-      <label class="toggle">
-        <input type="checkbox" bind:checked={runnableOnly} /> Live preview
-      </label>
-
-      <label class="toggle">
-        <input type="checkbox" bind:checked={ssmlOnly} /> SSML
-      </label>
-    </section>
-  {/if}
-
-  <p class="results">{filtered.length} voice{filtered.length !== 1 ? 's' : ''}</p>
-
-  <section class="grid">
-    {#each filtered as voice (voice.id)}
-      {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
-      {@const isFav = $favorites.includes(voice.id)}
-      {@const sampleUrl = voice.samples[0]?.audioUrl ?? voice.audioUrl}
-      {@const isPlaying = playingVoiceId === voice.id}
-      <article>
-        <!-- Play button hero area -->
-        <div class="play-area" style={voice.imageUrl ? `background-image:url(${voice.imageUrl})` : ''}>
+    <!-- Voice rows -->
+    <section class="voice-list" aria-label="Voice results">
+      {#each sorted as voice (voice.id)}
+        {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
+        {@const isFav = $favorites.includes(voice.id)}
+        {@const sampleUrl = voice.samples[0]?.audioUrl ?? voice.audioUrl}
+        {@const isPlaying = playingVoiceId === voice.id}
+        {@const topTag = voice.metadata.toneTags[0] ?? voice.tags[0] ?? ''}
+        <article class="voice-row" class:playing={isPlaying}>
           <button
             class="play-btn"
             class:playing={isPlaying}
@@ -371,488 +479,522 @@
             disabled={!sampleUrl}
             on:click|stopPropagation={() => togglePlay(voice.id, sampleUrl)}
           >
-            <Icon name={isPlaying ? 'pause' : 'play'} size={22} weight="fill" />
-          </button>
-        </div>
-
-        <!-- Card body — clicks navigate to detail -->
-        <a class="card-body" href="/voices/{voice.id}">
-          <h2>{voice.name}</h2>
-          <p class="short-label">{voice.metadata.shortLabel}</p>
-          <p class="compact-meta">
-            <span
-              class="provider-badge"
-              style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
-            >{voice.provider}</span>
-            <span class="sep">·</span>
-            <span>{voice.languages[0] ?? ''}</span>
-            <span class="sep">·</span>
-            <span>{voice.qualityTier}</span>
-          </p>
-          <div class="chips">
-            {#each voice.tags.slice(0, 3) as tag}
-              <span class="chip">{tag}</span>
-            {/each}
-            {#if voice.metadata.toneTags.length > 0}
-              <span class="chip tone-chip">{voice.metadata.toneTags[0]}</span>
-            {/if}
-          </div>
-        </a>
-
-        <!-- Save actions -->
-        <div class="card-actions">
-          <button
-            class="icon-btn"
-            class:active={isFav}
-            on:click={() => handleFavorite(voice.id)}
-            aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
-            title={$roleFlags.isGuest ? (isFav ? 'Remove from favorites' : 'Add to favorites') : 'Sign in to save voices'}
-          >
-            <Icon name={isFav ? 'heart-filled' : 'heart'} size={18} />
+            <Icon name={isPlaying ? 'pause' : 'play'} size={14} weight="fill" />
           </button>
 
-          <div class="pin-wrapper">
+          <a class="voice-name" href="/voices/{voice.id}">{voice.name}</a>
+
+          <span
+            class="provider-pill"
+            style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
+          >{voice.provider}</span>
+
+          <span class="voice-lang">{voice.languages[0] ?? ''}</span>
+          <span class="voice-tier">{voice.qualityTier}</span>
+
+          {#if topTag}
+            <span class="voice-tag">{topTag}</span>
+          {:else}
+            <span class="voice-tag-empty"></span>
+          {/if}
+
+          <div class="row-actions">
             <button
-              class="icon-btn"
-              on:click={() => handlePin(voice.id)}
-              aria-label="Pin to collection"
-              title={$roleFlags.isGuest ? 'Pin to collection' : 'Sign in to save voices'}
+              class="action-btn"
+              class:fav-active={isFav}
+              on:click={() => handleFavorite(voice.id)}
+              aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+              title={$roleFlags.isGuest ? (isFav ? 'Remove from favorites' : 'Add to favorites') : 'Sign in to save voices'}
             >
-              <Icon name="pin" size={18} />
+              <Icon name={isFav ? 'heart-filled' : 'heart'} size={16} />
             </button>
 
-            {#if pinOpenForId === voice.id}
-              <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-              <div class="pin-popover" on:click|stopPropagation>
-                <p class="popover-label">Pin to collection</p>
-                <div class="popover-list">
-                  {#each $collections as collection}
-                    <label class="popover-item">
-                      <input
-                        type="checkbox"
-                        checked={inCollection(collection.id, voice.id)}
-                        on:change={() => toggleCollection(voice.id, collection.id)}
-                      />
-                      {collection.name}
-                    </label>
-                  {/each}
+            <div class="pin-wrapper">
+              <button
+                class="action-btn"
+                on:click={() => handlePin(voice.id)}
+                aria-label="Pin to collection"
+                title={$roleFlags.isGuest ? 'Pin to collection' : 'Sign in to save voices'}
+              >
+                <Icon name="pin" size={16} />
+              </button>
+
+              {#if pinOpenForId === voice.id}
+                <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                <div class="pin-popover" on:click|stopPropagation>
+                  <p class="popover-label">Pin to collection</p>
+                  <div class="popover-list">
+                    {#each $collections as collection}
+                      <label class="popover-item">
+                        <input
+                          type="checkbox"
+                          checked={inCollection(collection.id, voice.id)}
+                          on:change={() => toggleCollection(voice.id, collection.id)}
+                        />
+                        {collection.name}
+                      </label>
+                    {/each}
+                  </div>
+                  <div class="popover-create">
+                    <input
+                      bind:value={newCollectionName}
+                      placeholder="New collection"
+                      on:keydown={(e) => { if (e.key === 'Enter') createAndPin(voice.id); }}
+                    />
+                    <button class="popover-create-btn" on:click={() => createAndPin(voice.id)}>
+                      <Icon name="plus" size={14} />
+                    </button>
+                  </div>
                 </div>
-                <div class="popover-create">
-                  <input
-                    bind:value={newCollectionName}
-                    placeholder="New collection"
-                    on:keydown={(e) => { if (e.key === 'Enter') createAndPin(voice.id); }}
-                  />
-                  <button class="popover-create-btn" on:click={() => createAndPin(voice.id)}>
-                    <Icon name="plus" size={14} />
-                  </button>
-                </div>
-              </div>
-            {/if}
+              {/if}
+            </div>
           </div>
-        </div>
-      </article>
-    {:else}
-      <p class="empty">No voices found. Try different filters or search terms.</p>
-    {/each}
-  </section>
+        </article>
+      {:else}
+        <p class="empty">No voices found. Try different filters or search terms.</p>
+      {/each}
+    </section>
+  </div>
 </main>
 
-<!-- Close pin popover when clicking outside -->
-<svelte:window on:click={closePinPopover} />
+<svelte:window
+  on:click={closePinPopover}
+  on:keydown={(e) => {
+    if (e.key === 'Escape' && filtersOpen) {
+      filtersOpen = false;
+    }
+  }}
+/>
 
 <style>
-  main {
-    max-width: 1120px;
-    margin: 0 auto 2.4rem;
-    padding: 0.7rem 1rem 3.2rem;
-    animation: rise 360ms ease;
-  }
-
-  .hero {
+  /* ── Layout ── */
+  .page-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem 3rem;
+    gap: 1rem;
+    animation: rise 300ms ease;
     position: relative;
+  }
+
+  /* ── Filter Panel ── */
+  .filter-panel {
+    width: 260px;
+    flex-shrink: 0;
+    padding: 0.75rem;
+    border: 1px solid var(--stroke-soft, #d0dce6);
+    border-radius: var(--radius-md, 12px);
+    background: rgba(248, 252, 254, 0.95);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-self: flex-start;
+    position: sticky;
+    top: 5.5rem;
+    max-height: calc(100vh - 6.5rem);
+    overflow-y: auto;
+    transition: width 200ms ease;
+  }
+
+  .filter-panel.collapsed {
+    width: 44px;
+    padding: 0.5rem;
+    align-items: center;
     overflow: hidden;
-    padding: 1.35rem;
-    border-radius: 26px;
-    border: 1px solid var(--stroke-soft);
-    background:
-      radial-gradient(circle at 85% 12%, #dff0f7 0%, transparent 32%),
-      radial-gradient(circle at 12% 100%, #f5e8d1 0%, transparent 34%),
-      linear-gradient(152deg, #f8fbfd 0%, #eef5f9 50%, #e8eff4 100%);
-    box-shadow: var(--elev-1);
-    display: block;
   }
 
-  h1 {
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .panel-toggle {
+    border: 1px solid #d0dce6;
+    background: #fff;
+    color: #547087;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition: border-color 150ms, color 150ms;
+  }
+
+  .panel-toggle:hover {
+    border-color: var(--brand-600, #177089);
+    color: var(--brand-700, #0e5568);
+  }
+
+  .panel-title {
     margin: 0;
-    font-size: var(--text-display);
-    line-height: 1.2;
-    max-width: 18ch;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #284f69;
   }
 
-  .summary {
-    margin: 0.55rem 0 0;
-    color: #395367;
-    max-width: 44ch;
-    line-height: 1.45;
-    font-size: var(--text-body);
+  .filter-badge {
+    background: var(--brand-100, #d4f0f7);
+    color: var(--brand-700, #0e5568);
+    font-size: 0.65rem;
+    font-weight: 720;
+    border-radius: 999px;
+    padding: 0.05rem 0.32rem;
+    min-width: 1rem;
+    text-align: center;
   }
 
-  .search-shell {
-    margin-top: 0.8rem;
+  .clear-btn {
+    margin-left: auto;
+    border: none;
+    background: none;
+    color: var(--brand-600, #177089);
+    font-size: 0.72rem;
+    font-weight: 620;
+    cursor: pointer;
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+  }
+
+  .clear-btn:hover {
+    background: var(--brand-100, #d4f0f7);
+  }
+
+  .filter-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 680;
+    color: #446078;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .filter-chip {
+    border: 1px solid #c9d7e3;
+    background: #fff;
+    color: #446078;
+    border-radius: 999px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 120ms, border-color 120ms, color 120ms;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .filter-chip:hover {
+    border-color: #9eb6c8;
+    background: #f4f8fb;
+  }
+
+  .filter-chip.active {
+    background: var(--brand-100, #d4f0f7);
+    border-color: var(--brand-600, #177089);
+    color: var(--brand-700, #0e5568);
+    font-weight: 680;
+  }
+
+  /* ── Main Content ── */
+  .content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .filter-drawer-toggle {
+    display: none;
+  }
+
+  .panel-overlay {
+    display: none;
+  }
+
+  /* ── Search Bar ── */
+  .search-bar {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     border: 1px solid #b4c9d8;
-    border-radius: 14px;
-    padding: 0 0.82rem;
+    border-radius: 12px;
+    padding: 0 0.75rem;
     background: #fff;
     color: #7a96aa;
+    margin-bottom: 0.6rem;
   }
 
-  .search-shell:focus-within {
-    border-color: var(--brand-600);
-    box-shadow: 0 0 0 3px rgba(23, 112, 137, 0.12);
+  .search-bar:focus-within {
+    border-color: var(--brand-600, #177089);
+    box-shadow: 0 0 0 2px rgba(23, 112, 137, 0.12);
   }
 
-  .search-shell input {
+  .search-bar input {
     flex: 1;
     border: none;
-    padding: 0.7rem 0;
+    padding: 0.55rem 0;
     background: transparent;
-    font-size: 1rem;
+    font-size: 0.92rem;
     color: #173046;
     outline: none;
   }
 
-  /* Filter bar */
-  .filter-bar {
-    margin-top: 1rem;
+  .search-clear {
+    border: none;
+    background: none;
+    color: #7a96aa;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .search-clear:hover {
+    color: #284f69;
+  }
+
+  /* ── Toolbar ── */
+  .toolbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.6rem;
-  }
-
-  .filter-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    border: 1px solid var(--stroke-soft);
-    background: #ffffffd6;
-    border-radius: 999px;
-    padding: 0.4rem 0.75rem;
-    font-size: var(--text-small);
-    font-weight: 670;
-    color: #284f69;
-    cursor: pointer;
-    transition: border-color 180ms ease, background 180ms ease;
-  }
-
-  .filter-toggle:hover,
-  .filter-toggle.active {
-    border-color: #9eb6c8;
-    background: #fff;
-  }
-
-  .filter-count {
-    background: var(--brand-100);
-    color: var(--brand-700);
-    font-size: 0.7rem;
-    font-weight: 720;
-    border-radius: 999px;
-    padding: 0.05rem 0.35rem;
-    min-width: 1.1rem;
-    text-align: center;
-  }
-
-  .toggle-inline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: var(--text-small);
-    font-weight: 620;
-    color: #446078;
-    cursor: pointer;
-  }
-
-  .toggle-inline input {
-    accent-color: var(--brand-600);
-  }
-
-  .filters {
-    margin-top: 0.6rem;
-    padding: 0.82rem;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 0.6rem;
-    border: 1px solid var(--stroke-soft);
-    border-radius: 18px;
-    background: rgba(248, 252, 254, 0.86);
-    animation: slideDown 200ms ease;
+    margin-bottom: 0.4rem;
+    padding: 0 0.1rem;
   }
 
   .results {
-    margin: 0.7rem 0 0;
+    margin: 0;
     color: #47657d;
-    font-size: var(--text-small);
+    font-size: 0.78rem;
     font-weight: 620;
   }
 
-  label {
-    display: grid;
-    gap: 0.32rem;
-    font-size: var(--text-xs);
-    font-weight: 650;
-    color: #446078;
-  }
-
-  input,
-  select {
+  .sort-select {
     border: 1px solid #bfd0dd;
-    border-radius: 12px;
-    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
     background: #fff;
-    font-size: var(--text-body);
+    font-size: 0.78rem;
     color: #173046;
   }
 
-  .toggle {
-    align-self: end;
+  /* ── Voice Rows ── */
+  .voice-list {
     display: flex;
-    align-items: center;
-    gap: 0.42rem;
-    font-size: 0.78rem;
-    padding-bottom: 0.32rem;
+    flex-direction: column;
   }
 
-  .grid {
-    margin-top: 1.2rem;
+  .voice-row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 0.86rem;
-  }
-
-  article {
-    border: 1px solid #c9d7e3;
-    border-radius: 18px;
-    background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
-    padding: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    box-shadow: 0 10px 24px rgba(17, 38, 56, 0.08);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-    animation: cardIn 420ms ease both;
-    overflow: hidden;
-  }
-
-  article:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 30px rgba(15, 39, 58, 0.12);
-  }
-
-  article:nth-child(2) { animation-delay: 60ms; }
-  article:nth-child(3) { animation-delay: 120ms; }
-  article:nth-child(4) { animation-delay: 180ms; }
-
-  /* Play area */
-  .play-area {
-    display: flex;
+    grid-template-columns: 32px 1fr auto auto auto auto auto;
     align-items: center;
-    justify-content: center;
-    padding: 1.2rem 1rem 0.6rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 18px 18px 0 0;
-    min-height: 120px;
+    gap: 0 0.65rem;
+    padding: 0.45rem 0.5rem;
+    border-bottom: 1px solid #edf2f6;
+    transition: background 100ms;
+    border-left: 3px solid transparent;
+  }
+
+  .voice-row:first-child {
+    border-top: 1px solid #edf2f6;
+  }
+
+  .voice-row:hover {
+    background: #f6f9fb;
+  }
+
+  .voice-row.playing {
+    border-left-color: var(--brand-600, #177089);
+    background: #f0f8fa;
   }
 
   .play-btn {
-    width: 52px;
-    height: 52px;
+    width: 30px;
+    height: 30px;
     border-radius: 999px;
-    border: 2px solid #d0dce6;
-    background: linear-gradient(180deg, #f8fbfd 0%, #eef5f9 100%);
-    color: var(--brand-700);
+    border: 1px solid #d0dce6;
+    background: #fff;
+    color: var(--brand-700, #0e5568);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
-    box-shadow: 0 4px 12px rgba(17, 38, 56, 0.08);
     padding: 0;
+    flex-shrink: 0;
+    transition: transform 100ms, border-color 100ms, background 100ms;
   }
 
   .play-btn:hover:not(:disabled) {
     transform: scale(1.08);
-    border-color: var(--brand-600);
-    box-shadow: 0 6px 18px rgba(23, 112, 137, 0.18);
+    border-color: var(--brand-600, #177089);
+    background: var(--brand-100, #d4f0f7);
   }
 
   .play-btn.playing {
-    border-color: var(--brand-600);
-    background: linear-gradient(180deg, #e0f2f7 0%, #d0eaf2 100%);
-    color: var(--brand-600);
+    border-color: var(--brand-600, #177089);
+    background: var(--brand-100, #d4f0f7);
+    color: var(--brand-600, #177089);
     animation: pulseRing 1.5s ease-in-out infinite;
   }
 
   .play-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.35;
     cursor: not-allowed;
   }
 
-  /* Card body — clickable link */
-  .card-body {
+  .voice-name {
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: #173046;
     text-decoration: none;
-    color: inherit;
-    padding: 0 1rem;
-    display: grid;
-    gap: 0.35rem;
+    transition: color 120ms;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 
-  .card-body:hover h2 {
-    color: var(--brand-600);
+  .voice-name:hover {
+    color: var(--brand-600, #177089);
   }
 
-  h2 {
-    margin: 0;
-    font-size: var(--text-subhead);
-    transition: color 150ms;
-  }
-
-  .short-label {
-    margin: 0;
-    font-size: var(--text-small);
-    color: #2f4e66;
-    font-weight: 620;
-  }
-
-  .compact-meta {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.32rem;
-    flex-wrap: wrap;
-    font-size: var(--text-xs);
-    color: #547087;
-  }
-
-  .provider-badge {
-    font-size: var(--text-xs);
+  .provider-pill {
+    font-size: 0.62rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     font-weight: 720;
     border-radius: 999px;
-    padding: 0.12rem 0.45rem;
+    padding: 0.1rem 0.4rem;
     border: 1px solid;
+    white-space: nowrap;
   }
 
-  .sep {
-    color: #b6c8d6;
+  .voice-lang {
+    font-size: 0.75rem;
+    color: #547087;
+    white-space: nowrap;
   }
 
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-top: 0.15rem;
+  .voice-tier {
+    font-size: 0.72rem;
+    color: #6b8a9e;
+    white-space: nowrap;
   }
 
-  .chip {
+  .voice-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #5a7a5e;
     background: #edf5ee;
     border: 1px solid #d4e4d8;
     border-radius: 999px;
-    padding: 0.12rem 0.42rem;
-    font-size: 0.7rem;
-    font-weight: 620;
-    color: #41633e;
+    padding: 0.08rem 0.38rem;
+    white-space: nowrap;
+    max-width: 10ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .tone-chip {
-    background: #fff2e3;
-    border-color: #f0dcbf;
-    color: #8d5c16;
+  .voice-tag-empty {
+    min-width: 0;
   }
 
-  /* Card actions */
-  .card-actions {
+  .row-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 0.3rem;
-    padding: 0.55rem 1rem 0.75rem;
+    gap: 0.15rem;
   }
 
-  .icon-btn {
-    border: 1px solid #d0dce6;
-    background: #fff;
-    color: #547087;
+  .action-btn {
+    border: none;
+    background: none;
+    color: #8fa8b9;
     border-radius: 999px;
-    width: 2.1rem;
-    height: 2.1rem;
+    width: 28px;
+    height: 28px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     padding: 0;
-    transition: transform 150ms, border-color 150ms, color 150ms, background 150ms;
+    transition: color 120ms, background 120ms;
   }
 
-  .icon-btn:hover {
-    transform: translateY(-1px);
-    border-color: #9eb6c8;
-    color: var(--brand-700);
+  .action-btn:hover {
+    color: var(--brand-700, #0e5568);
+    background: rgba(23, 112, 137, 0.08);
   }
 
-  .icon-btn.active {
+  .action-btn.fav-active {
     color: #c0392b;
-    border-color: #e5b4ab;
-    background: #fef0ee;
   }
 
-  /* Pin popover */
   .pin-wrapper {
     position: relative;
   }
 
   .pin-popover {
     position: absolute;
-    bottom: calc(100% + 8px);
+    bottom: calc(100% + 6px);
     right: 0;
-    min-width: 220px;
+    min-width: 200px;
     background: #fff;
     border: 1px solid #c9d7e3;
-    border-radius: 14px;
-    padding: 0.65rem;
-    box-shadow: 0 12px 32px rgba(15, 35, 54, 0.16);
+    border-radius: 12px;
+    padding: 0.55rem;
+    box-shadow: 0 10px 28px rgba(15, 35, 54, 0.14);
     z-index: 30;
     animation: popIn 180ms ease;
   }
 
   .popover-label {
-    margin: 0 0 0.4rem;
-    font-size: var(--text-small);
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
     font-weight: 680;
     color: #284f69;
   }
 
   .popover-list {
     display: grid;
-    gap: 0.25rem;
-    max-height: 160px;
+    gap: 0.2rem;
+    max-height: 140px;
     overflow-y: auto;
   }
 
   .popover-item {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: var(--text-small);
+    gap: 0.35rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #2e4b61;
     cursor: pointer;
-    padding: 0.25rem 0.3rem;
-    border-radius: 8px;
+    padding: 0.2rem 0.28rem;
+    border-radius: 6px;
   }
 
   .popover-item:hover {
@@ -860,34 +1002,34 @@
   }
 
   .popover-item input[type="checkbox"] {
-    accent-color: var(--brand-600);
+    accent-color: var(--brand-600, #177089);
     width: auto;
     padding: 0;
   }
 
   .popover-create {
-    margin-top: 0.45rem;
+    margin-top: 0.4rem;
     display: flex;
-    gap: 0.3rem;
+    gap: 0.25rem;
     border-top: 1px solid #e8eff4;
-    padding-top: 0.45rem;
+    padding-top: 0.4rem;
   }
 
   .popover-create input {
     flex: 1;
     border: 1px solid #c0d1df;
-    border-radius: 10px;
-    padding: 0.35rem 0.5rem;
-    font-size: var(--text-small);
+    border-radius: 8px;
+    padding: 0.3rem 0.45rem;
+    font-size: 0.8rem;
     min-width: 0;
   }
 
   .popover-create-btn {
     border: 1px solid #c0d1df;
     background: #f4f8fb;
-    border-radius: 10px;
-    width: 2rem;
-    height: 2rem;
+    border-radius: 8px;
+    width: 1.8rem;
+    height: 1.8rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -898,31 +1040,116 @@
 
   .popover-create-btn:hover {
     background: #e8f0f6;
-    border-color: var(--brand-600);
-    color: var(--brand-600);
+    border-color: var(--brand-600, #177089);
+    color: var(--brand-600, #177089);
   }
 
   .empty {
-    grid-column: 1 / -1;
     margin: 0;
     border: 1px dashed #b8cad7;
-    border-radius: 14px;
+    border-radius: 12px;
     background: #ffffff88;
     padding: 1.5rem;
     color: #4a6279;
     text-align: center;
-    font-size: var(--text-body);
+    font-size: 0.9rem;
   }
 
+  /* ── Responsive: tablet — panel becomes drawer ── */
   @media (max-width: 980px) {
-    .filters {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .page-layout {
+      flex-direction: column;
+    }
+
+    .filter-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      max-width: 85vw;
+      z-index: 100;
+      border-radius: 0;
+      border-right: 1px solid var(--stroke-soft, #d0dce6);
+      transform: translateX(-100%);
+      transition: transform 220ms ease;
+      box-shadow: none;
+      max-height: 100vh;
+    }
+
+    .filter-panel.collapsed {
+      width: 280px;
+    }
+
+    .filter-panel.open {
+      transform: translateX(0);
+      box-shadow: 4px 0 24px rgba(15, 35, 54, 0.12);
+    }
+
+    .filter-drawer-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: 1px solid var(--stroke-soft, #d0dce6);
+      background: #fff;
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 670;
+      color: #284f69;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-drawer-toggle:hover {
+      border-color: #9eb6c8;
+      background: #f8fbfd;
+    }
+
+    .panel-overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 27, 38, 0.35);
+      z-index: 99;
+      animation: fadeIn 180ms ease;
     }
   }
 
-  @media (max-width: 620px) {
-    .filters {
-      grid-template-columns: 1fr;
+  /* ── Responsive: mobile — rows stack ── */
+  @media (max-width: 640px) {
+    .voice-row {
+      grid-template-columns: 30px 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 0.15rem 0.5rem;
+      padding: 0.5rem 0.4rem;
+    }
+
+    .voice-name {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .provider-pill {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+    }
+
+    .voice-lang,
+    .voice-tier,
+    .voice-tag,
+    .voice-tag-empty {
+      display: none;
+    }
+
+    .row-actions {
+      grid-column: 3;
+      grid-row: 1 / -1;
+    }
+
+    .toolbar {
+      flex-wrap: wrap;
     }
   }
 
@@ -931,23 +1158,18 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes cardIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
   @keyframes popIn {
     from { opacity: 0; transform: translateY(4px) scale(0.96); }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
   @keyframes pulseRing {
     0%, 100% { box-shadow: 0 0 0 0 rgba(23, 112, 137, 0.25); }
-    50% { box-shadow: 0 0 0 6px rgba(23, 112, 137, 0); }
+    50% { box-shadow: 0 0 0 5px rgba(23, 112, 137, 0); }
   }
 </style>

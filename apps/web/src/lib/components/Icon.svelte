@@ -24,6 +24,8 @@
   import MagnifyingGlass from 'phosphor-svelte/lib/MagnifyingGlass';
   import SpeakerHigh from 'phosphor-svelte/lib/SpeakerHigh';
   import SlidersHorizontal from 'phosphor-svelte/lib/SlidersHorizontal';
+  import SquaresFour from 'phosphor-svelte/lib/SquaresFour';
+  import List from 'phosphor-svelte/lib/List';
 
   export let name: string;
   export let size: number = 16;
@@ -51,7 +53,9 @@
     'bookmark-filled': BookmarkSimple,
     search: MagnifyingGlass,
     speaker: SpeakerHigh,
-    sliders: SlidersHorizontal
+    sliders: SlidersHorizontal,
+    grid: SquaresFour,
+    list: List
   };
 
   const filledNames = new Set([
