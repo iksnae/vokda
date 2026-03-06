@@ -97,6 +97,13 @@ export async function connectProvider(
   label: string,
   data: CredentialData
 ): Promise<UserProviderCredential> {
+  if (AUTH_MODE !== 'amplify') {
+    throw new Error('Provider credentials require Amplify auth mode. Set PUBLIC_AUTH_MODE=amplify and restart the dev server.');
+  }
+  const authSnap = getAuthSnapshot();
+  if (!authSnap.isAuthenticated || !authSnap.user) {
+    throw new Error('You must be signed in to save provider credentials. Please sign in at /account first.');
+  }
   const cred = await saveCredential(providerId, label, data);
 
   // Register the real adapter immediately

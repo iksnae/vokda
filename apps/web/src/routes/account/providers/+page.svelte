@@ -87,13 +87,16 @@
 
     try {
       const data = buildCredentialData(config, f.fields);
+      console.log(`[providers] Saving credential for ${config.providerId}...`);
       await connectProvider(config.providerId, config.providerId, data);
+      console.log(`[providers] Credential saved for ${config.providerId}`);
       addToast(`${config.providerId} connected!`);
       forms = {
         ...forms,
         [config.providerId]: { ...f, saving: false, expanded: false, testResult: undefined },
       };
     } catch (err) {
+      console.error(`[providers] Save failed for ${config.providerId}:`, err);
       const msg = err instanceof Error ? err.message : 'Save failed';
       addToast(msg, 'error');
       forms = { ...forms, [config.providerId]: { ...f, saving: false } };
