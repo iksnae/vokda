@@ -443,13 +443,11 @@
         <div class="audition-header">
           <Icon name="waveform" size={20} />
           <h2>Audition</h2>
-          <span class="audition-label">
-            {#if auditionHasRealAdapter}
+          {#if $isAuthenticated && auditionHasRealAdapter}
+            <span class="audition-label">
               <span class="adapter-badge real"><Icon name="lightning" size={11} /> Live</span>
-            {:else}
-              <span class="adapter-badge mock">Mock</span>
-            {/if}
-          </span>
+            </span>
+          {/if}
         </div>
 
         {#if !$isAuthenticated}
@@ -457,6 +455,20 @@
             <Icon name="user" size={22} />
             <p>Sign in to audition this voice with custom text.</p>
             <a href="/account?intent=signin" class="audition-signin-btn">Sign In</a>
+          </div>
+        {:else if !auditionHasRealAdapter}
+          <div class="audition-gate">
+            <Icon name="key" size={22} />
+            {#if auditionProvider}
+              <p>Connect your <strong>{auditionProvider}</strong> API key to synthesize this voice.</p>
+              <a href="/account/providers" class="audition-signin-btn">
+                <Icon name="key" size={14} />
+                Add Provider Key
+              </a>
+            {:else}
+              <p>No synthesis adapter available for this voice.</p>
+            {/if}
+            <p class="audition-gate-hint">Audition uses your own provider API keys to generate speech in real time.</p>
           </div>
         {:else}
           <div class="audition-body">
@@ -474,12 +486,10 @@
                 >SSML</button>
               </div>
 
-              {#if auditionProvider && !auditionProviderConnected && !auditionHasRealAdapter}
-                <a href="/account/providers" class="key-hint">
-                  <Icon name="key" size={12} />
-                  Add {auditionProvider} key for live synthesis
-                </a>
-              {/if}
+              <span class="provider-badge-inline">
+                <Icon name="lightning" size={11} />
+                {auditionProvider}
+              </span>
             </div>
 
             <textarea
@@ -549,9 +559,9 @@
                 ></audio>
               </div>
             {:else if auditionResult && !auditionResult.audioUrl}
-              <div class="audition-fallback-notice">
+              <div class="audition-error">
                 <Icon name="info" size={14} />
-                <span>Using browser speech synthesis as fallback — no audio URL returned.</span>
+                No audio returned. Check your API key configuration.
               </div>
             {/if}
           </div>
@@ -1230,10 +1240,23 @@
     border-color: #a5d6a7;
   }
 
-  .adapter-badge.mock {
-    color: #8d5c16;
-    background: #fefbe8;
-    border-color: #f0c36e;
+  .audition-gate-hint {
+    font-size: var(--text-xs);
+    color: #6a8ea6;
+    margin-top: 0.15rem;
+  }
+
+  .provider-badge-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: var(--text-xs);
+    font-weight: 680;
+    color: #2e7d32;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 999px;
+    padding: 0.12rem 0.45rem;
   }
 
   .audition-gate {
@@ -1293,20 +1316,6 @@
   .mode-btn.active {
     background: var(--brand-600);
     color: #fff;
-  }
-
-  .key-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: var(--text-xs);
-    color: var(--brand-600);
-    font-weight: 620;
-    text-decoration: none;
-  }
-
-  .key-hint:hover {
-    text-decoration: underline;
   }
 
   .audition-textarea {
@@ -1441,18 +1450,6 @@
     font-weight: 620;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
-  }
-
-  .audition-fallback-notice {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.45rem 0.65rem;
-    border-radius: 10px;
-    background: #edf5fb;
-    border: 1px solid #ceddeb;
-    color: #2b4f67;
-    font-size: var(--text-small);
   }
 
   /* ─── Voice Profile ─── */
