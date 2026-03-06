@@ -15,7 +15,7 @@
   import Icon from '$lib/components/Icon.svelte';
   import { isAuthenticated } from '$lib/auth/store';
   import { isProviderConnected } from '$lib/stores/credentials';
-  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
+  import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, hasServerSynthesis, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
   import { refreshClips } from '$lib/stores/clips';
   import SsmlEditor from '$lib/components/SsmlEditor.svelte';
   import ProviderSetupGuide from '$lib/components/ProviderSetupGuide.svelte';
@@ -165,8 +165,8 @@
   let auditionDuration = 0;
   let auditionReady = false;
 
-  $: auditionProvider = variant ? getSynthesisProvider(variant) : null;
-  $: auditionHasRealAdapter = variant ? canSynthesizeReal(variant) : false;
+  $: auditionProvider = variant ? getSynthesisProvider(variant, voice?.providerId) : (voice?.providerId ?? null);
+  $: auditionHasRealAdapter = variant ? canSynthesizeReal(variant, voice?.providerId) : false;
   $: auditionProviderConnected = auditionProvider ? isProviderConnected(auditionProvider) : false;
   $: auditionProgressPct = auditionDuration > 0 ? (auditionTime / auditionDuration) * 100 : 0;
 

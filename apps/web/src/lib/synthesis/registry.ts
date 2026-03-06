@@ -129,8 +129,12 @@ export function clearCredentialAdapters(): void {
 
 /**
  * Get the provider ID a variant belongs to.
+ *
+ * First checks sourceKey prefix (e.g. "openai:tts:alloy" → "openai").
+ * Falls back to `providerId` hint (from the parent Voice object) for
+ * providers whose sourceKeys are bare IDs without a prefix.
  */
-export function getProviderForVariant(variant: VoiceVariant): string | null {
+export function getProviderForVariant(variant: VoiceVariant, providerId?: string): string | null {
   const sourceKey = variant.sourceKey;
   if (sourceKey.startsWith('openai:')) return 'openai';
   if (sourceKey.startsWith('elevenlabs:')) return 'elevenlabs';
@@ -142,6 +146,13 @@ export function getProviderForVariant(variant: VoiceVariant): string | null {
   if (sourceKey.startsWith('gemini:')) return 'gemini-tts';
   if (sourceKey.startsWith('aws-polly:')) return 'aws-polly';
   if (sourceKey.startsWith('edge-tts:')) return 'edge-tts';
+  if (sourceKey.startsWith('mlx:')) return 'kokoro'; // mlx-audio local models
+  if (sourceKey.startsWith('bark:')) return 'bark';
+  if (sourceKey.startsWith('kittentts:')) return 'kittentts';
+  if (sourceKey.startsWith('marvis:')) return 'marvis';
+  if (sourceKey.startsWith('vibevoice:')) return 'vibevoice';
+  // Fall back to providerId hint for bare sourceKeys (UUIDs, plain names)
+  if (providerId) return providerId;
   return null;
 }
 
@@ -149,8 +160,8 @@ export function getProviderForVariant(variant: VoiceVariant): string | null {
  * Check if a real (non-mock) adapter is available for a variant.
  * Checks both credential-backed adapters and OAuth tokens.
  */
-export function hasRealAdapter(variant: VoiceVariant): boolean {
-  const providerId = getProviderForVariant(variant);
+export function hasRealAdapter(variant: VoiceVariant, providerIdHint?: string): boolean {
+  const providerId = getProviderForVariant(variant, providerIdHint);
   if (!providerId) return false;
   // Real adapter from stored credentials
   if (activeAdapters.has(providerId)) return true;
