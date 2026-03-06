@@ -4,12 +4,14 @@
   "provider": "Chatterbox",
   "providerId": "chatterbox",
   "providerVoiceId": "default",
-  "description": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control. Runs locally on Apple Silicon via MLX.",
+  "description": "Chatterbox Turbo — high-quality single-voice model with voice cloning via reference audio. Supports exaggeration and CFG weight controls for expressive output.",
   "tags": [
     "male",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "voice-cloning",
+    "expressive"
   ],
   "languages": [
     "en-US"
@@ -91,7 +93,16 @@
       "Voice cloning requires reference audio",
       "Default voice only without reference",
       "Emotion control via text prompt engineering"
-    ]
+    ],
+    "singleVoice": true,
+    "voiceCloningMethod": "ref_audio (reference audio input)",
+    "expressiveControls": [
+      "exaggeration",
+      "cfg_weight",
+      "temperature"
+    ],
+    "defaultVoiceNote": "One built-in voice; additional voices require reference audio for cloning",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",

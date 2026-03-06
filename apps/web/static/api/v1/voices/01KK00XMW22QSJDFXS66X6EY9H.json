@@ -1,15 +1,17 @@
 {
   "id": "01KK00XMW22QSJDFXS66X6EY9H",
-  "name": "Dia",
+  "name": "Dia Speaker 1",
   "provider": "Dia",
   "providerId": "dia",
-  "providerVoiceId": "default",
-  "description": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues. Runs locally on Apple Silicon via MLX.",
+  "providerVoiceId": "S1",
+  "description": "Dia 1.6B Speaker 1 — primary voice in Nari Labs' dialogue-native generative model. Clear, articulate delivery.",
   "tags": [
     "female",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "multi-speaker",
+    "dialogue"
   ],
   "languages": [
     "en-US"
@@ -17,7 +19,7 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (1.6B params). Check model card for license terms.",
   "metadata": {
-    "shortLabel": "MLX · 1.6B · female",
+    "shortLabel": "Dia primary speaker",
     "searchDescription": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues.",
     "machineTags": [
       "female",
@@ -78,7 +80,7 @@
     "ssmlSupport": false,
     "multilingual": false,
     "emotionControl": true,
-    "voiceCloning": false,
+    "voiceCloning": true,
     "maxInputLength": 5000,
     "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/nari-labs/Dia-1.6B/blob/main/LICENSE",
@@ -92,7 +94,12 @@
       "Supports nonverbal cues like (laughs), (sighs)",
       "Multi-speaker via [S1] [S2] tags in text",
       "Slower than single-speaker models"
-    ]
+    ],
+    "multiSpeaker": true,
+    "totalSpeakers": 2,
+    "speakerTag": "[S1]",
+    "dialogueCapable": true,
+    "voiceCloningMethod": "ref_audio"
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",

@@ -4,7 +4,7 @@
   "provider": "VoxCPM",
   "providerId": "voxcpm",
   "providerVoiceId": "default",
-  "description": "Chinese-first bilingual TTS with natural English output. Strong prosody and rhythm. Runs locally on Apple Silicon via MLX.",
+  "description": "VoxCPM 1.5 — Chinese-focused voice model with English support. Voice capabilities could not be fully verified due to weight loading issues in current mlx-audio version.",
   "tags": [
     "female",
     "open-model",
@@ -94,7 +94,9 @@
       "Primarily trained on Chinese, English is secondary",
       "Single voice only",
       "May have Chinese-accented English prosody"
-    ]
+    ],
+    "verificationNote": "Weight files not found in fp16 cache — model may need redownload or different quantization",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3",

@@ -1,16 +1,17 @@
 {
   "id": "0100MME43A6QB8F613D78BB212",
-  "name": "Marvis TTS 250M",
+  "name": "Marvis Conversational A",
   "provider": "Marvis",
   "providerId": "marvis",
-  "providerVoiceId": "default",
-  "description": "Conversational neural TTS with natural prosody. 250M parameter model running locally via mlx-audio. Produces expressive, human-like speech.",
+  "providerVoiceId": "conversational_a",
+  "description": "Marvis TTS 250M Conversational A — casual, natural speech style. Based on Sesame CSM architecture with streaming support.",
   "tags": [
     "conversational",
     "expressive",
     "mlx",
     "local",
-    "marvis"
+    "marvis",
+    "multi-voice"
   ],
   "languages": [
     "en-US"
@@ -18,7 +19,7 @@
   "qualityTier": "premium",
   "licenseNotes": "Marvis TTS released under Apache 2.0 license.",
   "metadata": {
-    "shortLabel": "Conversational TTS · Marvis 250M · local",
+    "shortLabel": "Casual conversational",
     "searchDescription": "Marvis conversational neural TTS 250M local mlx Apple Silicon expressive natural prosody",
     "machineTags": [
       "conversational",
@@ -52,7 +53,7 @@
     {
       "id": "0100MME43A6Q4D2825FA896AB8",
       "sourceType": "self_hosted",
-      "sourceKey": "marvis:250m-v0.2:default",
+      "sourceKey": "marvis:250m-v0.2:conversational_a",
       "runnable": true,
       "supportsSsml": false,
       "outputFormats": [
@@ -60,7 +61,8 @@
         "mp3"
       ],
       "maxInputChars": 4000,
-      "previewOnly": false
+      "previewOnly": false,
+      "label": "Marvis 250M Conversational A (8-bit)"
     }
   ],
   "modelCard": {
@@ -75,12 +77,12 @@
     "sampleRate": 24000,
     "bitDepth": 16,
     "channels": 1,
-    "streamingSupport": false,
+    "streamingSupport": true,
     "ssmlSupport": false,
     "wordTimestamps": false,
     "multilingual": false,
     "emotionControl": false,
-    "voiceCloning": false,
+    "voiceCloning": true,
     "maxInputLength": 4000,
     "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
@@ -98,7 +100,18 @@
     ],
     "notes": "Runs locally via mlx-audio. 250M parameter conversational TTS model. Also available in 100M, 6-bit, and fp16 variants. Uses sesame architecture mapping in mlx-audio.",
     "runtimeFramework": "mlx-audio 0.3.1",
-    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM for 8-bit"
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM for 8-bit",
+    "voicePreset": "conversational_a",
+    "totalVoicePresets": 6,
+    "availablePresets": [
+      "conversational_a",
+      "conversational_b",
+      "read_speech_a",
+      "read_speech_b",
+      "read_speech_c",
+      "read_speech_d"
+    ],
+    "voiceCloningMethod": "ref_audio"
   },
   "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6QB8F613D78BB212.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6QB8F613D78BB212.jpg",

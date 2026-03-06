@@ -122,7 +122,9 @@
     ],
     "notes": "Sound effect notation guide: [laughter], [laughs], [sighs], [music], [gasps], [clears throat] for inline effects. Use ♪ ... ♪ for singing. Combine speech and effects freely: \"Hello! [laughter] That was funny.\" Non-deterministic — re-generate for different results. Supports 13+ languages for the speech portion.",
     "runtimeFramework": "mlx-audio 0.3.1",
-    "hardwareRequirements": "Apple Silicon Mac (M1+), ~300MB RAM"
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~300MB RAM",
+    "totalPresets": 261,
+    "presetNote": "Sound effects use the same model — any voice preset can produce non-speech audio via special tokens."
   },
   "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6T72014725EBE070.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6T72014725EBE070.jpg",

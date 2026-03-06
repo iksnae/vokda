@@ -1,7 +1,7 @@
 {
   "$schema": "https://vokda.iksnae.com/api/v1/openapi.json",
-  "total": 180,
-  "generatedAt": "2026-03-06T00:00:17.619Z",
+  "total": 194,
+  "generatedAt": "2026-03-06T00:22:17.324Z",
   "voices": [
     {
       "id": "01JCVK5F2Q2W5P4TQ8KT4NR1A1",
@@ -288,12 +288,14 @@
       "name": "Chatterbox Turbo",
       "provider": "Chatterbox",
       "providerId": "chatterbox",
-      "description": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control. Runs locally on Apple Silicon via MLX.",
+      "description": "Chatterbox Turbo — high-quality single-voice model with voice cloning via reference audio. Supports exaggeration and CFG weight controls for expressive output.",
       "tags": [
         "male",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "voice-cloning",
+        "expressive"
       ],
       "languages": [
         "en-US"
@@ -315,15 +317,17 @@
     },
     {
       "id": "01KK00XMW22QSJDFXS66X6EY9H",
-      "name": "Dia",
+      "name": "Dia Speaker 1",
       "provider": "Dia",
       "providerId": "dia",
-      "description": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues. Runs locally on Apple Silicon via MLX.",
+      "description": "Dia 1.6B Speaker 1 — primary voice in Nari Labs' dialogue-native generative model. Clear, articulate delivery.",
       "tags": [
         "female",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "multi-speaker",
+        "dialogue"
       ],
       "languages": [
         "en-US"
@@ -334,7 +338,7 @@
       "detailUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XMW22QSJDFXS66X6EY9H.json",
       "webUrl": "https://vokda.iksnae.com/voices/01KK00XMW22QSJDFXS66X6EY9H",
       "metadata": {
-        "shortLabel": "MLX · 1.6B · female",
+        "shortLabel": "Dia primary speaker",
         "toneTags": [
           "natural"
         ],
@@ -1162,12 +1166,13 @@
       "name": "OuteTTS 1.0",
       "provider": "OuteTTS",
       "providerId": "outetts",
-      "description": "Llama-based text-to-speech. 1B parameter model with clear, articulate output. Runs locally on Apple Silicon via MLX.",
+      "description": "OuteTTS 1.0 1B — LLaMA-based open TTS model. Single default voice with potential for voice cloning (architecture supports it).",
       "tags": [
         "neutral",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "llama-based"
       ],
       "languages": [
         "en-US"
@@ -1192,12 +1197,14 @@
       "name": "Pocket TTS",
       "provider": "Pocket TTS",
       "providerId": "pocket-tts",
-      "description": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size. Runs locally on Apple Silicon via MLX.",
+      "description": "Pocket TTS 0.2B — ultra-compact voice model. Has voice parameter and reference audio cloning support, but ships with a single default voice.",
       "tags": [
         "female",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "voice-cloning",
+        "ultra-compact"
       ],
       "languages": [
         "en-US"
@@ -1432,12 +1439,14 @@
       "name": "Soprano",
       "provider": "Soprano",
       "providerId": "soprano",
-      "description": "Ultra-light 80M parameter TTS. Fast, natural female voice with clean articulation. Runs locally on Apple Silicon via MLX.",
+      "description": "Soprano 80M — lightweight single-voice TTS model. Fast inference, small footprint. Voice parameter exists in API but is unused in base model.",
       "tags": [
         "female",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "single-voice",
+        "lightweight"
       ],
       "languages": [
         "en-US"
@@ -1462,12 +1471,14 @@
       "name": "Spark TTS",
       "provider": "Spark TTS",
       "providerId": "spark-tts",
-      "description": "SparkAudio voice-clone-capable TTS. Supports zero-shot speaker adaptation. Runs locally on Apple Silicon via MLX.",
+      "description": "Spark TTS 0.5B — Qwen2-based voice model with speed control and voice cloning via reference audio. Single default voice.",
       "tags": [
         "female",
         "open-model",
         "local",
-        "mlx"
+        "mlx",
+        "voice-cloning",
+        "speed-control"
       ],
       "languages": [
         "en-US"
@@ -1492,7 +1503,7 @@
       "name": "VoxCPM 1.5",
       "provider": "VoxCPM",
       "providerId": "voxcpm",
-      "description": "Chinese-first bilingual TTS with natural English output. Strong prosody and rhythm. Runs locally on Apple Silicon via MLX.",
+      "description": "VoxCPM 1.5 — Chinese-focused voice model with English support. Voice capabilities could not be fully verified due to weight loading issues in current mlx-audio version.",
       "tags": [
         "female",
         "open-model",
@@ -4406,16 +4417,17 @@
     },
     {
       "id": "0100MME43A6QB8F613D78BB212",
-      "name": "Marvis TTS 250M",
+      "name": "Marvis Conversational A",
       "provider": "Marvis",
       "providerId": "marvis",
-      "description": "Conversational neural TTS with natural prosody. 250M parameter model running locally via mlx-audio. Produces expressive, human-like speech.",
+      "description": "Marvis TTS 250M Conversational A — casual, natural speech style. Based on Sesame CSM architecture with streaming support.",
       "tags": [
         "conversational",
         "expressive",
         "mlx",
         "local",
-        "marvis"
+        "marvis",
+        "multi-voice"
       ],
       "languages": [
         "en-US"
@@ -4426,7 +4438,7 @@
       "detailUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6QB8F613D78BB212.json",
       "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6QB8F613D78BB212",
       "metadata": {
-        "shortLabel": "Conversational TTS · Marvis 250M · local",
+        "shortLabel": "Casual conversational",
         "toneTags": [
           "natural",
           "conversational"
@@ -4445,14 +4457,16 @@
       "name": "VibeVoice Realtime 0.5B",
       "provider": "VibeVoice",
       "providerId": "vibevoice",
-      "description": "Real-time streaming TTS model with natural conversational quality. 0.5B parameters, runs locally on Apple Silicon via mlx-audio (fp16 weights required — 4-bit/8-bit quant have weight shape issues).",
+      "description": "VibeVoice Realtime 0.5B — supports voice loading from files and multi-speaker dialogue via voice+text list pairs. Single default voice without reference files.",
       "tags": [
         "realtime",
         "streaming",
         "conversational",
         "mlx",
         "local",
-        "vibevoice"
+        "vibevoice",
+        "voice-loading",
+        "dialogue-capable"
       ],
       "languages": [
         "en-US"
@@ -4489,7 +4503,9 @@
         "variable",
         "mlx",
         "local",
-        "bark"
+        "bark",
+        "multilingual",
+        "multi-preset"
       ],
       "languages": [
         "en-US",
@@ -6242,6 +6258,543 @@
           "narration",
           "podcast",
           "audiobook"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMLL4C3FDCDCFF7CC5D7",
+      "name": "Bark EN-0",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 0 — distinct voice character generated from pretrained embedding.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-0"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMLL4C3FDCDCFF7CC5D7.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMLL4C3FDCDCFF7CC5D7.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMLL4C3FDCDCFF7CC5D7.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMLL4C3FDCDCFF7CC5D7",
+      "metadata": {
+        "shortLabel": "Bark preset 0",
+        "toneTags": [
+          "clear",
+          "natural"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMNMAA7A10430DDEC75A",
+      "name": "Bark EN-1",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 1 — distinct voice with unique timbre and cadence.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-1"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMNMAA7A10430DDEC75A.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMNMAA7A10430DDEC75A.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMNMAA7A10430DDEC75A.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMNMAA7A10430DDEC75A",
+      "metadata": {
+        "shortLabel": "Bark preset 1",
+        "toneTags": [
+          "warm",
+          "conversational"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMOK434CC61C5CEFD75B",
+      "name": "Bark EN-2",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 2 — varied pitch and rhythm compared to other presets.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-2"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMOK434CC61C5CEFD75B.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMOK434CC61C5CEFD75B.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMOK434CC61C5CEFD75B.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMOK434CC61C5CEFD75B",
+      "metadata": {
+        "shortLabel": "Bark preset 2",
+        "toneTags": [
+          "expressive",
+          "dynamic"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMPIC7823EDFB316EC61",
+      "name": "Bark EN-3",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 3 — slightly lower register with natural pacing.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-3"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMPIC7823EDFB316EC61.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMPIC7823EDFB316EC61.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMPIC7823EDFB316EC61.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMPIC7823EDFB316EC61",
+      "metadata": {
+        "shortLabel": "Bark preset 3",
+        "toneTags": [
+          "deep",
+          "steady"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMQFA18949EABD40BC1F",
+      "name": "Bark EN-4",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 4 — bright, upbeat character with clear articulation.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-4"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMQFA18949EABD40BC1F.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMQFA18949EABD40BC1F.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMQFA18949EABD40BC1F.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMQFA18949EABD40BC1F",
+      "metadata": {
+        "shortLabel": "Bark preset 4",
+        "toneTags": [
+          "bright",
+          "articulate"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMRAEC4F528962E996CA",
+      "name": "Bark EN-5",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 5 — relaxed delivery with smooth transitions.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-5"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMRAEC4F528962E996CA.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMRAEC4F528962E996CA.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMRAEC4F528962E996CA.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMRAEC4F528962E996CA",
+      "metadata": {
+        "shortLabel": "Bark preset 5",
+        "toneTags": [
+          "relaxed",
+          "smooth"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMS6FC12FE5C29F9F8DF",
+      "name": "Bark EN-6",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 6 — energetic voice with varied intonation patterns.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-6"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMS6FC12FE5C29F9F8DF.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMS6FC12FE5C29F9F8DF.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMS6FC12FE5C29F9F8DF.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMS6FC12FE5C29F9F8DF",
+      "metadata": {
+        "shortLabel": "Bark preset 6",
+        "toneTags": [
+          "energetic",
+          "varied"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMT24E4947717A70ED45",
+      "name": "Bark EN-7",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 7 — measured pace with deliberate emphasis.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-7"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMT24E4947717A70ED45.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMT24E4947717A70ED45.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMT24E4947717A70ED45.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMT24E4947717A70ED45",
+      "metadata": {
+        "shortLabel": "Bark preset 7",
+        "toneTags": [
+          "measured",
+          "deliberate"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMTX55549D201F0D9313",
+      "name": "Bark EN-8",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 8 — lighter voice with quick, natural phrasing.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-8"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMTX55549D201F0D9313.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMTX55549D201F0D9313.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMTX55549D201F0D9313.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMTX55549D201F0D9313",
+      "metadata": {
+        "shortLabel": "Bark preset 8",
+        "toneTags": [
+          "light",
+          "quick"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMUU623D92E9D671FBA8",
+      "name": "Bark EN-9",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark English speaker preset 9 — neutral delivery with balanced prosody.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "multilingual",
+        "preset-9"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMUU623D92E9D671FBA8.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMUU623D92E9D671FBA8.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMUU623D92E9D671FBA8.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMUU623D92E9D671FBA8",
+      "metadata": {
+        "shortLabel": "Bark preset 9",
+        "toneTags": [
+          "neutral",
+          "balanced"
+        ],
+        "useCases": [
+          "Creative projects",
+          "Prototyping",
+          "Short-form narration",
+          "Game dialogue"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMVP72CFE223A7444FEC",
+      "name": "Bark Announcer",
+      "provider": "Bark",
+      "providerId": "bark",
+      "description": "Bark built-in announcer voice — bold, projected delivery ideal for headlines and announcements.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "generative",
+        "announcer",
+        "multilingual"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMVP72CFE223A7444FEC.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMVP72CFE223A7444FEC.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMVP72CFE223A7444FEC.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMVP72CFE223A7444FEC",
+      "metadata": {
+        "shortLabel": "Bold announcer",
+        "toneTags": [
+          "bold",
+          "projected",
+          "authoritative"
+        ],
+        "useCases": [
+          "Announcements",
+          "Headlines",
+          "Trailers",
+          "Podcast intros"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMWK4E461D3CE471D431",
+      "name": "Dia Speaker 2",
+      "provider": "Dia",
+      "providerId": "dia",
+      "description": "Dia 1.6B Speaker 2 — secondary voice in dialogue generation. Distinct timbre from Speaker 1, used as conversational partner.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "dialogue",
+        "multi-speaker",
+        "generative"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMWK4E461D3CE471D431.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMWK4E461D3CE471D431.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMWK4E461D3CE471D431",
+      "metadata": {
+        "shortLabel": "Dia secondary speaker",
+        "toneTags": [
+          "conversational",
+          "distinct",
+          "responsive"
+        ],
+        "useCases": [
+          "Dialogue generation",
+          "Conversational AI",
+          "Podcast simulation",
+          "Interactive fiction"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMXF79AB0D78FAE56416",
+      "name": "Dia Dialogue",
+      "provider": "Dia",
+      "providerId": "dia",
+      "description": "Dia 1.6B multi-speaker dialogue mode — generates natural conversation between two distinct voices ([S1] and [S2]) in a single pass.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "dialogue",
+        "multi-speaker",
+        "generative",
+        "two-voice"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMXF79AB0D78FAE56416.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMXF79AB0D78FAE56416.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMXF79AB0D78FAE56416.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMXF79AB0D78FAE56416",
+      "metadata": {
+        "shortLabel": "Two-voice dialogue",
+        "toneTags": [
+          "conversational",
+          "interactive",
+          "natural"
+        ],
+        "useCases": [
+          "Podcast generation",
+          "Interview simulation",
+          "Audiobook dialogue",
+          "Demo conversations"
+        ],
+        "genderPresentation": "neutral",
+        "agePresentation": "adult"
+      }
+    },
+    {
+      "id": "00MME5GMYC8835FBD5EBC017A8",
+      "name": "Marvis Conversational B",
+      "provider": "Marvis",
+      "providerId": "marvis",
+      "description": "Marvis TTS 250M Conversational B — second conversational voice with distinct character. Different timbre and pacing from Conversational A.",
+      "tags": [
+        "mlx",
+        "local",
+        "open-source",
+        "conversational",
+        "multi-voice",
+        "streaming"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "standard",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+      "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMYC8835FBD5EBC017A8.json",
+      "webUrl": "https://vokda.iksnae.com/voices/00MME5GMYC8835FBD5EBC017A8",
+      "metadata": {
+        "shortLabel": "Second conversational voice",
+        "toneTags": [
+          "casual",
+          "animated",
+          "distinct"
+        ],
+        "useCases": [
+          "Conversational AI",
+          "Multi-speaker demos",
+          "Prototyping",
+          "Creative dialogue"
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"

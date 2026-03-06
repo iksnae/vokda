@@ -4,12 +4,14 @@
   "provider": "Pocket TTS",
   "providerId": "pocket-tts",
   "providerVoiceId": "default",
-  "description": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size. Runs locally on Apple Silicon via MLX.",
+  "description": "Pocket TTS 0.2B — ultra-compact voice model. Has voice parameter and reference audio cloning support, but ships with a single default voice.",
   "tags": [
     "female",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "voice-cloning",
+    "ultra-compact"
   ],
   "languages": [
     "en-US"
@@ -78,7 +80,7 @@
     "ssmlSupport": false,
     "multilingual": false,
     "emotionControl": false,
-    "voiceCloning": false,
+    "voiceCloning": true,
     "maxInputLength": 5000,
     "license": "Apache 2.0",
     "commercialUse": true,
@@ -90,7 +92,11 @@
       "Single voice only",
       "English only",
       "Optimized for short utterances"
-    ]
+    ],
+    "singleVoice": true,
+    "voiceCloningMethod": "ref_audio + voice param",
+    "defaultVoiceNote": "voice parameter accepted but no built-in presets beyond default; reference audio enables cloning",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y63ESEW8T9B9RSNQPQKN.mp3",

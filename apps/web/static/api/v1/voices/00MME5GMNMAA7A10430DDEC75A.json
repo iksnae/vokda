@@ -1,0 +1,111 @@
+{
+  "id": "00MME5GMNMAA7A10430DDEC75A",
+  "name": "Bark EN-1",
+  "provider": "Bark",
+  "providerId": "bark",
+  "providerVoiceId": "v2/en_speaker_1",
+  "description": "Bark English speaker preset 1 — distinct voice with unique timbre and cadence.",
+  "tags": [
+    "mlx",
+    "local",
+    "open-source",
+    "generative",
+    "multilingual",
+    "preset-1"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "MIT license — full commercial use",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMNMAA7A10430DDEC75A.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMNMAA7A10430DDEC75A.jpg",
+  "metadata": {
+    "shortLabel": "Bark preset 1",
+    "toneTags": [
+      "warm",
+      "conversational"
+    ],
+    "useCases": [
+      "Creative projects",
+      "Prototyping",
+      "Short-form narration",
+      "Game dialogue"
+    ],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult"
+  },
+  "samples": [
+    {
+      "id": "sample-00MME5GMNMAA7A10430DDEC75A",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMNMAA7A10430DDEC75A.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "variant-00MME5GMNMAA7A10430DDEC75A",
+      "label": "Bark v2 EN Speaker 1",
+      "sourceType": "open_model",
+      "sourceKey": "bark:small:v2_en_speaker_1",
+      "supportsSsml": false
+    }
+  ],
+  "modelCard": {
+    "modelName": "Bark Small",
+    "modelVersion": "small",
+    "architecture": "bark",
+    "parameterCount": "~100M",
+    "quantization": "none",
+    "providerType": "local",
+    "providerUrl": "https://huggingface.co/suno/bark",
+    "huggingFaceUrl": "https://huggingface.co/mlx-community/bark-small",
+    "license": "MIT",
+    "commercialUse": true,
+    "inputFormats": [
+      "plain_text"
+    ],
+    "outputFormats": [
+      "wav"
+    ],
+    "sampleRate": 24000,
+    "maxInputLength": 250,
+    "streamingSupport": false,
+    "emotionControl": true,
+    "ssmlSupport": false,
+    "multiLanguage": true,
+    "supportedLanguages": [
+      "en",
+      "de",
+      "es",
+      "fr",
+      "hi",
+      "it",
+      "ja",
+      "ko",
+      "pl",
+      "pt",
+      "ru",
+      "tr",
+      "zh"
+    ],
+    "runnableLocal": true,
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM",
+    "inferenceSpeed": "~0.8x realtime on M1",
+    "trainingData": "Proprietary (Suno AI)",
+    "primaryLanguage": "en",
+    "knownLimitations": [
+      "Short-form generation only (~15s max)",
+      "Non-deterministic output",
+      "May produce artifacts at boundaries"
+    ],
+    "presetId": "v2/en_speaker_1",
+    "speakerLabel": "v2/en_speaker_1",
+    "totalPresets": 261,
+    "totalEnglishPresets": 10,
+    "supportedPresetLanguages": 13
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMNMAA7A10430DDEC75A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMNMAA7A10430DDEC75A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMNMAA7A10430DDEC75A.json"
+}

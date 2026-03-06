@@ -4,12 +4,13 @@
   "provider": "OuteTTS",
   "providerId": "outetts",
   "providerVoiceId": "default",
-  "description": "Llama-based text-to-speech. 1B parameter model with clear, articulate output. Runs locally on Apple Silicon via MLX.",
+  "description": "OuteTTS 1.0 1B — LLaMA-based open TTS model. Single default voice with potential for voice cloning (architecture supports it).",
   "tags": [
     "neutral",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "llama-based"
   ],
   "languages": [
     "en-US"
@@ -79,7 +80,7 @@
     "ssmlSupport": false,
     "multilingual": true,
     "emotionControl": false,
-    "voiceCloning": true,
+    "voiceCloning": false,
     "supportedLanguages": [
       "en",
       "zh",
@@ -98,7 +99,10 @@
       "Slower generation than smaller models",
       "Voice cloning requires reference audio input",
       "Attribution required under CC-BY-4.0"
-    ]
+    ],
+    "singleVoice": true,
+    "defaultVoiceNote": "Single built-in voice; LLaMA architecture may support fine-tuning for additional voices",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y0G4PNGS13DQWVDQQAZ4.mp3",

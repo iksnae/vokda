@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-06T00:00:17.633Z",
-  "totalVoices": 180,
+  "generatedAt": "2026-03-06T00:22:17.345Z",
+  "totalVoices": 194,
   "totalProviders": 19,
-  "withAudio": 180,
-  "withImage": 180,
-  "withModelCard": 180,
+  "withAudio": 194,
+  "withImage": 194,
+  "withModelCard": 194,
   "byProvider": [
     {
       "id": "gemini-tts",
@@ -37,6 +37,11 @@
       "count": 18
     },
     {
+      "id": "bark",
+      "name": "Bark",
+      "count": 13
+    },
+    {
       "id": "openai",
       "name": "OpenAI",
       "count": 11
@@ -52,18 +57,18 @@
       "count": 7
     },
     {
-      "id": "bark",
-      "name": "Bark",
+      "id": "dia",
+      "name": "Dia",
+      "count": 3
+    },
+    {
+      "id": "marvis",
+      "name": "Marvis",
       "count": 2
     },
     {
       "id": "chatterbox",
       "name": "Chatterbox",
-      "count": 1
-    },
-    {
-      "id": "dia",
-      "name": "Dia",
       "count": 1
     },
     {
@@ -92,11 +97,6 @@
       "count": 1
     },
     {
-      "id": "marvis",
-      "name": "Marvis",
-      "count": 1
-    },
-    {
       "id": "vibevoice",
       "name": "VibeVoice",
       "count": 1
@@ -104,21 +104,22 @@
   ],
   "byQualityTier": {
     "premium": 168,
-    "standard": 12,
+    "standard": 26,
     "basic": 0
   },
   "bySourceType": {
     "cloud_provider": 130,
     "local_model": 38,
-    "self_hosted": 12
+    "self_hosted": 12,
+    "open_model": 14
   },
   "totalLanguages": 39,
   "capabilities": {
-    "localModels": 50,
+    "localModels": 64,
     "cloudProviders": 130,
     "multilingual": 31,
     "ssmlSupport": 67,
-    "emotionControl": 76,
+    "emotionControl": 89,
     "soundEffects": 1,
     "styleControl": 30
   }

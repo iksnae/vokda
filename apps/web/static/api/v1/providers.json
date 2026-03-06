@@ -1,6 +1,6 @@
 {
   "total": 19,
-  "generatedAt": "2026-03-06T00:00:17.633Z",
+  "generatedAt": "2026-03-06T00:22:17.345Z",
   "providers": [
     {
       "id": "aws-polly",
@@ -103,9 +103,10 @@
     {
       "id": "dia",
       "name": "Dia",
-      "voiceCount": 1,
+      "voiceCount": 3,
       "qualityTiers": [
-        "premium"
+        "premium",
+        "standard"
       ],
       "languages": [
         "en-US"
@@ -274,9 +275,10 @@
     {
       "id": "marvis",
       "name": "Marvis",
-      "voiceCount": 1,
+      "voiceCount": 2,
       "qualityTiers": [
-        "premium"
+        "premium",
+        "standard"
       ],
       "languages": [
         "en-US"
@@ -308,7 +310,7 @@
     {
       "id": "bark",
       "name": "Bark",
-      "voiceCount": 2,
+      "voiceCount": 13,
       "qualityTiers": [
         "standard"
       ],

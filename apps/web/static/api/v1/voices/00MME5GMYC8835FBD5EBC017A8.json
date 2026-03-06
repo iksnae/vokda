@@ -1,0 +1,106 @@
+{
+  "id": "00MME5GMYC8835FBD5EBC017A8",
+  "name": "Marvis Conversational B",
+  "provider": "Marvis",
+  "providerId": "marvis",
+  "providerVoiceId": "conversational_b",
+  "description": "Marvis TTS 250M Conversational B — second conversational voice with distinct character. Different timbre and pacing from Conversational A.",
+  "tags": [
+    "mlx",
+    "local",
+    "open-source",
+    "conversational",
+    "multi-voice",
+    "streaming"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Marvis TTS released under Apache 2.0 license.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
+  "metadata": {
+    "shortLabel": "Second conversational voice",
+    "toneTags": [
+      "casual",
+      "animated",
+      "distinct"
+    ],
+    "useCases": [
+      "Conversational AI",
+      "Multi-speaker demos",
+      "Prototyping",
+      "Creative dialogue"
+    ],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult"
+  },
+  "samples": [
+    {
+      "id": "sample-00MME5GMYC8835FBD5EBC017A8",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "variant-00MME5GMYC8835FBD5EBC017A8",
+      "label": "Marvis 250M Conversational B (8-bit)",
+      "sourceType": "open_model",
+      "sourceKey": "marvis:250m-v0.2:conversational_b",
+      "supportsSsml": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Marvis AI",
+    "providerType": "local_model",
+    "providerUrl": "https://huggingface.co/Marvis-AI",
+    "modelFamily": "Marvis TTS",
+    "modelName": "marvis-tts-250m-v0.2-MLX-8bit",
+    "modelId": "Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
+    "modelVersion": "0.2",
+    "architecture": "Sesame-family conversational TTS (MLX 8-bit quantized)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": true,
+    "maxInputLength": 4000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://huggingface.co/Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Local inference only — no data leaves device",
+    "latencyMs": "~1000-3000",
+    "releaseDate": "2025-02-01",
+    "knownLimitations": [
+      "English only",
+      "No SSML support",
+      "No voice selection — single default voice",
+      "No streaming output",
+      "Requires mlx-audio 0.3.1+ on Apple Silicon"
+    ],
+    "notes": "Runs locally via mlx-audio. 250M parameter conversational TTS model. Also available in 100M, 6-bit, and fp16 variants. Uses sesame architecture mapping in mlx-audio.",
+    "runtimeFramework": "mlx-audio 0.3.1",
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM for 8-bit",
+    "voicePreset": "conversational_b",
+    "totalVoicePresets": 6,
+    "availablePresets": [
+      "conversational_a",
+      "conversational_b",
+      "read_speech_a",
+      "read_speech_b",
+      "read_speech_c",
+      "read_speech_d"
+    ],
+    "voiceCloningMethod": "ref_audio"
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMYC8835FBD5EBC017A8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMYC8835FBD5EBC017A8.json"
+}

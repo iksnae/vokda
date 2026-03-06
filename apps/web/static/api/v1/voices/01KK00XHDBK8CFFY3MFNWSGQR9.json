@@ -4,12 +4,14 @@
   "provider": "Soprano",
   "providerId": "soprano",
   "providerVoiceId": "default",
-  "description": "Ultra-light 80M parameter TTS. Fast, natural female voice with clean articulation. Runs locally on Apple Silicon via MLX.",
+  "description": "Soprano 80M — lightweight single-voice TTS model. Fast inference, small footprint. Voice parameter exists in API but is unused in base model.",
   "tags": [
     "female",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "single-voice",
+    "lightweight"
   ],
   "languages": [
     "en-US"
@@ -90,7 +92,10 @@
       "Single voice only",
       "English only",
       "Ultra-light model trades some naturalness for speed"
-    ]
+    ],
+    "singleVoice": true,
+    "voiceParameterNote": "voice param exists in generate() but is explicitly unused (_ = voice)",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3",

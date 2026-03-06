@@ -4,14 +4,16 @@
   "provider": "VibeVoice",
   "providerId": "vibevoice",
   "providerVoiceId": "default",
-  "description": "Real-time streaming TTS model with natural conversational quality. 0.5B parameters, runs locally on Apple Silicon via mlx-audio (fp16 weights required — 4-bit/8-bit quant have weight shape issues).",
+  "description": "VibeVoice Realtime 0.5B — supports voice loading from files and multi-speaker dialogue via voice+text list pairs. Single default voice without reference files.",
   "tags": [
     "realtime",
     "streaming",
     "conversational",
     "mlx",
     "local",
-    "vibevoice"
+    "vibevoice",
+    "voice-loading",
+    "dialogue-capable"
   ],
   "languages": [
     "en-US"
@@ -82,7 +84,7 @@
     "wordTimestamps": false,
     "multilingual": false,
     "emotionControl": false,
-    "voiceCloning": false,
+    "voiceCloning": true,
     "maxInputLength": 4000,
     "license": "Community License",
     "licenseUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
@@ -101,7 +103,16 @@
     ],
     "notes": "Runs locally via mlx-audio. Use ONLY the fp16 variant — 4-bit and 8-bit quants fail with \"Expected shape (151936, 896) but received shape (151936, 112)\" weight mismatch. Designed for real-time streaming output.",
     "runtimeFramework": "mlx-audio 0.3.1",
-    "hardwareRequirements": "Apple Silicon Mac (M1+), ~1GB RAM for fp16"
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~1GB RAM for fp16",
+    "singleVoice": true,
+    "voiceCloningMethod": "voice file path or list of (voice, text) tuples for multi-speaker",
+    "dialogueCapable": true,
+    "defaultVoiceNote": "Default voice when no voice file provided; supports loading custom voice profiles from .wav/.npz files",
+    "expressiveControls": [
+      "cfg_scale",
+      "ddpm_steps"
+    ],
+    "multiSpeaker": true
   },
   "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6S38FFD301435EAD.jpg",

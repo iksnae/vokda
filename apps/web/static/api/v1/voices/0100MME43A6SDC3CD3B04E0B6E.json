@@ -11,7 +11,9 @@
     "variable",
     "mlx",
     "local",
-    "bark"
+    "bark",
+    "multilingual",
+    "multi-preset"
   ],
   "languages": [
     "en-US",
@@ -113,7 +115,11 @@
     ],
     "notes": "Bark generates speech with variable voice characteristics — each generation may sound like a different speaker. Supports 13+ languages. Also supports sound effect notation: [laughter], [sighs], [music], [gasps], [clears throat], and ♪ for singing. See Bark (Sound Effects) for SFX-focused voice entry.",
     "runtimeFramework": "mlx-audio 0.3.1",
-    "hardwareRequirements": "Apple Silicon Mac (M1+), ~300MB RAM"
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~300MB RAM",
+    "totalPresets": 261,
+    "totalEnglishPresets": 10,
+    "supportedPresetLanguages": 13,
+    "presetNote": "261 built-in speaker presets across 13 languages (10 speakers × 13 languages + announcer). Each preset produces a distinct, consistent voice."
   },
   "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6SDC3CD3B04E0B6E.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6SDC3CD3B04E0B6E.jpg",

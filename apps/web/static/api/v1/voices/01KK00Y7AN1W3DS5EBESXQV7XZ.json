@@ -4,12 +4,14 @@
   "provider": "Spark TTS",
   "providerId": "spark-tts",
   "providerVoiceId": "default",
-  "description": "SparkAudio voice-clone-capable TTS. Supports zero-shot speaker adaptation. Runs locally on Apple Silicon via MLX.",
+  "description": "Spark TTS 0.5B — Qwen2-based voice model with speed control and voice cloning via reference audio. Single default voice.",
   "tags": [
     "female",
     "open-model",
     "local",
-    "mlx"
+    "mlx",
+    "voice-cloning",
+    "speed-control"
   ],
   "languages": [
     "en-US"
@@ -97,7 +99,15 @@
       "Zero-shot cloning requires reference audio",
       "Default voice without reference",
       "Chinese and English only"
-    ]
+    ],
+    "singleVoice": true,
+    "voiceCloningMethod": "ref_audio (reference audio input)",
+    "expressiveControls": [
+      "speed",
+      "temperature"
+    ],
+    "defaultVoiceNote": "One built-in voice; additional voices require reference audio for cloning",
+    "multiSpeaker": false
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3",
