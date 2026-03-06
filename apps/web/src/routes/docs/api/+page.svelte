@@ -12,9 +12,26 @@
   <h1>API Reference</h1>
   <p class="subtitle">Synthesize speech, manage clips, and administer keys — programmatically.</p>
 
-  <div class="base-url">
-    <strong>Base URL:</strong>
-    <code>https://api.vokda.iksnae.com</code>
+  <div class="base-urls">
+    <div class="base-url">
+      <strong>Synthesis API:</strong>
+      <code>https://api.vokda.iksnae.com</code>
+      <span class="url-note">Authenticated — requires API key or JWT</span>
+    </div>
+    <div class="base-url">
+      <strong>Catalog API:</strong>
+      <code>https://vokda.iksnae.com/api/v1/</code>
+      <span class="url-note">Public — no authentication required</span>
+    </div>
+  </div>
+
+  <div class="resource-links">
+    <a href="/api/v1/openapi.json" target="_blank" class="resource-link">
+      <Icon name="globe" size={14} /> OpenAPI 3.1 Spec
+    </a>
+    <a href="/docs/sdk" class="resource-link">
+      <Icon name="lightning" size={14} /> TypeScript SDK
+    </a>
   </div>
 
   <section id="auth">
@@ -204,6 +221,114 @@
     </div>
 
     <div class="tip">Provider errors (401, 403, 429 from the upstream API) are returned as 400/500 with the provider's error message included. Check <code>message</code> for details.</div>
+  </section>
+
+  <section id="credentials">
+    <h2>Provider Credentials (BYOK)</h2>
+    <p>Store and manage your Bring Your Own Key provider API keys programmatically.</p>
+
+    <article class="endpoint">
+      <h3>POST /v1/credentials</h3>
+      <p>Store or update a provider credential. One credential per provider (upsert).</p>
+      <pre class="code">{`{
+  "providerId": "openai",
+  "credentialData": { "apiKey": "sk-..." },
+  "label": "My OpenAI Key"
+}`}</pre>
+
+      <h4>Credential Formats</h4>
+      <div class="field-table">
+        <div class="field"><code>api_key</code> <span class="opt">OpenAI, ElevenLabs, Deepgram, Cartesia, LMNT, GCP, Gemini</span> <span><code>{`{ "apiKey": "..." }`}</code></span></div>
+        <div class="field"><code>subscription_key</code> <span class="opt">Azure Speech</span> <span><code>{`{ "subscriptionKey": "...", "region": "eastus" }`}</code></span></div>
+        <div class="field"><code>aws_credentials</code> <span class="opt">AWS Polly</span> <span><code>{`{ "accessKeyId": "...", "secretAccessKey": "...", "region": "us-east-1" }`}</code></span></div>
+      </div>
+
+      <h4>Response <span class="status-badge ok">200</span></h4>
+      <pre class="code">{`{
+  "providerId": "openai",
+  "label": "My OpenAI Key",
+  "authType": "api_key",
+  "status": "active",
+  "createdAt": "2026-03-06T12:00:00.000Z",
+  "updatedAt": "2026-03-06T12:00:00.000Z"
+}`}</pre>
+    </article>
+
+    <article class="endpoint">
+      <h3>GET /v1/credentials</h3>
+      <p>List all stored credentials with masked key values.</p>
+      <h4>Response <span class="status-badge ok">200</span></h4>
+      <pre class="code">{`{
+  "credentials": [
+    {
+      "providerId": "openai",
+      "label": "My OpenAI Key",
+      "authType": "api_key",
+      "status": "active",
+      "maskedKey": "sk-p…MmcA",
+      "createdAt": "...",
+      "updatedAt": "...",
+      "lastTestedAt": null
+    }
+  ],
+  "count": 1
+}`}</pre>
+    </article>
+
+    <article class="endpoint">
+      <h3>POST /v1/credentials/test</h3>
+      <p>Test a credential without storing it. Performs a minimal synthesis to verify the key works.</p>
+      <pre class="code">{`{
+  "providerId": "openai",
+  "credentialData": { "apiKey": "sk-..." }
+}`}</pre>
+      <h4>Response <span class="status-badge ok">200</span></h4>
+      <pre class="code">{`{ "success": true, "latencyMs": 305 }`}</pre>
+      <p class="note">On failure: <code>{`{ "success": false, "latencyMs": 305, "error": "..." }`}</code></p>
+    </article>
+
+    <article class="endpoint">
+      <h3>DELETE /v1/credentials/{'{providerId}'}</h3>
+      <p>Remove a stored credential.</p>
+      <h4>Response <span class="status-badge ok">200</span></h4>
+      <pre class="code">{`{ "deleted": true, "providerId": "openai" }`}</pre>
+    </article>
+  </section>
+
+  <section id="catalog-api">
+    <h2>Catalog API (Public)</h2>
+    <p>Browse the voice catalog without authentication. Static JSON served from <code>https://vokda.iksnae.com</code>.</p>
+
+    <article class="endpoint">
+      <h3>GET /api/v1/voices.json</h3>
+      <p>Full voice catalog — 550 voices across 25 providers.</p>
+      <pre class="code">{`curl https://vokda.iksnae.com/api/v1/voices.json | jq '.voices | length'
+# → 550`}</pre>
+    </article>
+
+    <article class="endpoint">
+      <h3>GET /api/v1/voices/{'{voiceId}'}.json</h3>
+      <p>Individual voice detail with samples, variants, model card, and metadata.</p>
+      <pre class="code">{`curl https://vokda.iksnae.com/api/v1/voices/01JCW012A9N9Y3W08F0Q0A1O1.json | jq '{name, provider, languages}'
+# → { "name": "alloy", "provider": "OpenAI", "languages": ["en-US"] }`}</pre>
+    </article>
+
+    <article class="endpoint">
+      <h3>GET /api/v1/providers.json</h3>
+      <p>Provider directory with voice counts, capabilities, pricing, auth type, and links.</p>
+      <pre class="code">{`curl https://vokda.iksnae.com/api/v1/providers.json | jq '.providers[] | {name, voiceCount, freeTier}'`}</pre>
+    </article>
+
+    <article class="endpoint">
+      <h3>GET /api/v1/stats.json</h3>
+      <p>Aggregate catalog statistics.</p>
+    </article>
+
+    <article class="endpoint">
+      <h3>GET /api/v1/openapi.json</h3>
+      <p>Complete OpenAPI 3.1 specification covering all 13 endpoints with 27 component schemas.</p>
+      <p class="note">Use with tools like <a href="https://editor.swagger.io/" target="_blank">Swagger Editor</a>, <a href="https://github.com/Redocly/redoc" target="_blank">Redoc</a>, or any OpenAPI client generator.</p>
+    </article>
   </section>
 
   <section id="examples">

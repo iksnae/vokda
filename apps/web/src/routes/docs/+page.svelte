@@ -33,7 +33,13 @@
     <a href="/docs/api" class="doc-card">
       <div class="doc-icon"><Icon name="key" size={20} /></div>
       <h2>API Reference</h2>
-      <p>Synthesize, manage clips, and administer keys programmatically. Full endpoint documentation with examples.</p>
+      <p>Synthesize, manage clips, credentials, and keys programmatically. Full endpoint documentation with examples.</p>
+    </a>
+
+    <a href="/docs/sdk" class="doc-card">
+      <div class="doc-icon"><Icon name="lightning" size={20} /></div>
+      <h2>SDKs & Client Libraries</h2>
+      <p>Official clients for TypeScript, Python, Go, and Rust. Browse the catalog, synthesize speech, and manage clips programmatically.</p>
     </a>
   </div>
 
@@ -46,6 +52,7 @@
       <a href="/account/clips">Audio Clips</a>
       <a href="/account/providers">Provider Keys</a>
       <a href="/account/api-keys">API Keys</a>
+      <a href="/api/v1/openapi.json" target="_blank">OpenAPI Spec ↗</a>
     </div>
   </section>
 </main>
