@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy } from 'svelte';
+  import { goto } from '$app/navigation';
   import { isAuthenticated } from '$lib/auth/store';
   import {
     clips,
@@ -10,6 +11,7 @@
     downloadClip,
     getClipPlaybackUrl,
     refreshClips,
+    updateClip,
     type Clip,
   } from '$lib/stores/clips';
   import { addToast } from '$lib/components/toast-store';
@@ -22,6 +24,32 @@
   let duration = 0;
 
   $: progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  // ─── Edit state ───
+  let editingClipId: string | null = null;
+  let editName = '';
+  let editDescription = '';
+  let editTags = '';
+  let editSaving = false;
+
+  // ─── Filter/search ───
+  let searchQuery = '';
+  let filterProvider = 'all';
+
+  $: availableProviders = [...new Set($clips.map((c) => c.provider))].sort();
+
+  $: filteredClips = $clips.filter((c) => {
+    const q = searchQuery.trim().toLowerCase();
+    const matchesQuery = !q ||
+      (c.clipName ?? '').toLowerCase().includes(q) ||
+      c.voiceName.toLowerCase().includes(q) ||
+      c.inputText.toLowerCase().includes(q) ||
+      c.provider.toLowerCase().includes(q) ||
+      (c.clipDescription ?? '').toLowerCase().includes(q) ||
+      c.clipTags.some((t) => t.toLowerCase().includes(q));
+    const matchesProvider = filterProvider === 'all' || c.provider === filterProvider;
+    return matchesQuery && matchesProvider;
+  });
 
   function formatTime(s: number): string {
     if (!isFinite(s) || s < 0) return '0:00';
@@ -47,30 +75,29 @@
     return text.slice(0, maxLen).trim() + '…';
   }
 
+  function displayName(clip: Clip): string {
+    return clip.clipName || clip.voiceName;
+  }
+
+  // ─── Playback ───
+
   function playClip(clip: Clip) {
-    // Stop current playback
     if (audioEl) {
       audioEl.pause();
       audioEl.src = '';
     }
-
-    // If clicking same clip, just stop
     if (playingClipId === clip.id) {
       playingClipId = null;
       return;
     }
-
     const url = getClipPlaybackUrl(clip);
     if (!url) {
       addToast('Audio not available.', 'error');
       return;
     }
-
     playingClipId = clip.id;
     currentTime = 0;
     duration = 0;
-
-    // Set source and play after binding
     requestAnimationFrame(() => {
       if (audioEl) {
         audioEl.src = url;
@@ -78,6 +105,70 @@
       }
     });
   }
+
+  function handleSeek(e: MouseEvent) {
+    if (!audioEl || !duration) return;
+    const bar = e.currentTarget as HTMLElement;
+    const rect = bar.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    audioEl.currentTime = pct * duration;
+  }
+
+  // ─── Edit ───
+
+  function startEdit(clip: Clip) {
+    editingClipId = clip.id;
+    editName = clip.clipName ?? '';
+    editDescription = clip.clipDescription ?? '';
+    editTags = clip.clipTags.join(', ');
+  }
+
+  function cancelEdit() {
+    editingClipId = null;
+    editName = '';
+    editDescription = '';
+    editTags = '';
+  }
+
+  async function saveEdit() {
+    if (!editingClipId) return;
+    editSaving = true;
+    try {
+      const tags = editTags
+        .split(',')
+        .map((t) => t.trim())
+        .filter(Boolean);
+      await updateClip(editingClipId, {
+        clipName: editName.trim() || null,
+        clipDescription: editDescription.trim() || null,
+        clipTags: tags,
+      });
+      addToast('Clip updated.');
+      editingClipId = null;
+    } catch (err) {
+      addToast('Failed to save: ' + (err instanceof Error ? err.message : 'Unknown error'), 'error');
+    } finally {
+      editSaving = false;
+    }
+  }
+
+  // ─── Re-synthesize ───
+
+  function reSynthesize(clip: Clip) {
+    // Navigate to the voice page with the clip's text pre-filled
+    const params = new URLSearchParams();
+    params.set('text', clip.inputText);
+    if (clip.inputMode === 'ssml') params.set('mode', 'ssml');
+    if (clip.voiceId) {
+      goto(`/voices/${clip.voiceId}?${params.toString()}`);
+    } else {
+      // No voiceId — go to browse with search for the provider
+      addToast(`Navigate to a ${clip.provider} voice to re-synthesize.`, 'info');
+      goto(`/?provider=${encodeURIComponent(clip.provider)}`);
+    }
+  }
+
+  // ─── Actions ───
 
   async function handleDownload(clip: Clip) {
     try {
@@ -89,27 +180,18 @@
   }
 
   async function handleDelete(clip: Clip) {
-    if (!confirm(`Delete this clip from "${clip.voiceName}"?`)) return;
-
+    if (!confirm(`Delete clip "${displayName(clip)}"?`)) return;
     if (playingClipId === clip.id) {
       if (audioEl) audioEl.pause();
       playingClipId = null;
     }
-
+    if (editingClipId === clip.id) cancelEdit();
     try {
       await removeClip(clip.id);
       addToast('Clip deleted.');
     } catch {
       addToast('Delete failed.', 'error');
     }
-  }
-
-  function handleSeek(e: MouseEvent) {
-    if (!audioEl || !duration) return;
-    const bar = e.currentTarget as HTMLElement;
-    const rect = bar.getBoundingClientRect();
-    const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    audioEl.currentTime = pct * duration;
   }
 
   onDestroy(() => {
@@ -128,7 +210,7 @@
   <header class="page-header">
     <a href="/account" class="back"><Icon name="arrow-left" size={14} /> Account</a>
     <h1>Audio Clips</h1>
-    <p class="subtitle">Manage your synthesized voice clips.</p>
+    <p class="subtitle">Manage your synthesized voice clips — name, tag, re-synthesize, or download.</p>
   </header>
 
   {#if !$isAuthenticated}
@@ -146,6 +228,25 @@
       </button>
     </div>
 
+    {#if $clips.length > 0}
+      <div class="search-bar">
+        <Icon name="search" size={15} />
+        <input
+          bind:value={searchQuery}
+          placeholder="Search clips by name, voice, text, tags…"
+          class="search-input"
+        />
+        {#if availableProviders.length > 1}
+          <select bind:value={filterProvider} class="provider-filter">
+            <option value="all">All providers</option>
+            {#each availableProviders as p}
+              <option value={p}>{p}</option>
+            {/each}
+          </select>
+        {/if}
+      </div>
+    {/if}
+
     {#if $clipsLoading && $clips.length === 0}
       <div class="empty-state">
         <p>Loading clips…</p>
@@ -157,6 +258,10 @@
         <p class="hint">Use the <strong>Audition</strong> panel on any voice page to synthesize and save clips.</p>
         <a href="/" class="btn primary">Browse Voices</a>
       </div>
+    {:else if filteredClips.length === 0}
+      <div class="empty-state">
+        <p>No clips match your search.</p>
+      </div>
     {:else}
       <audio
         bind:this={audioEl}
@@ -167,9 +272,10 @@
       ></audio>
 
       <div class="clip-list">
-        {#each $clips as clip (clip.id)}
+        {#each filteredClips as clip (clip.id)}
           {@const isPlaying = playingClipId === clip.id}
-          <article class="clip-card" class:playing={isPlaying}>
+          {@const isEditing = editingClipId === clip.id}
+          <article class="clip-card" class:playing={isPlaying} class:editing={isEditing}>
             <button
               class="play-btn"
               on:click={() => playClip(clip)}
@@ -179,52 +285,115 @@
             </button>
 
             <div class="clip-info">
-              <div class="clip-top-row">
-                {#if clip.voiceId}
-                  <a class="clip-voice" href="/voices/{clip.voiceId}">{clip.voiceName}</a>
-                {:else}
-                  <span class="clip-voice">{clip.voiceName}</span>
-                {/if}
-                <span class="clip-provider">{clip.provider}</span>
-                <span class="clip-date">{formatDate(clip.createdAt)}</span>
-              </div>
-
-              <p class="clip-text">"{truncateText(clip.inputText, 120)}"</p>
-
-              {#if isPlaying}
-                <div class="clip-player">
-                  <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-                  <div class="clip-progress" on:click={handleSeek}>
-                    <div class="clip-progress-fill" style="width:{progressPct}%"></div>
+              {#if isEditing}
+                <!-- Edit mode -->
+                <div class="edit-form">
+                  <label class="edit-field">
+                    <span class="edit-label">Name</span>
+                    <input bind:value={editName} placeholder="Give this clip a name…" class="edit-input" />
+                  </label>
+                  <label class="edit-field">
+                    <span class="edit-label">Description</span>
+                    <input bind:value={editDescription} placeholder="Optional description…" class="edit-input" />
+                  </label>
+                  <label class="edit-field">
+                    <span class="edit-label">Tags</span>
+                    <input bind:value={editTags} placeholder="Comma-separated tags…" class="edit-input" />
+                  </label>
+                  <div class="edit-actions">
+                    <button class="btn ghost sm" on:click={cancelEdit} disabled={editSaving}>Cancel</button>
+                    <button class="btn primary sm" on:click={saveEdit} disabled={editSaving}>
+                      {editSaving ? 'Saving…' : 'Save'}
+                    </button>
                   </div>
-                  <span class="clip-time">{formatTime(currentTime)} / {formatTime(duration)}</span>
                 </div>
               {:else}
-                <div class="clip-meta">
-                  {#if clip.latencyMs > 0}<span>{clip.latencyMs}ms</span><span>·</span>{/if}
-                  {#if clip.fileSizeBytes > 0}<span>{formatBytes(clip.fileSizeBytes)}</span>{/if}
+                <!-- Display mode -->
+                <div class="clip-top-row">
+                  <span class="clip-name">
+                    {#if clip.clipName}
+                      <strong>{clip.clipName}</strong>
+                    {/if}
+                    {#if clip.voiceId}
+                      <a class="clip-voice" href="/voices/{clip.voiceId}">{clip.voiceName}</a>
+                    {:else}
+                      <span class="clip-voice">{clip.voiceName}</span>
+                    {/if}
+                  </span>
+                  <span class="clip-provider">{clip.provider}</span>
+                  {#if clip.inputMode === 'ssml'}
+                    <span class="ssml-badge">SSML</span>
+                  {/if}
+                  <span class="clip-date">{formatDate(clip.createdAt)}</span>
                 </div>
+
+                {#if clip.clipDescription}
+                  <p class="clip-description">{clip.clipDescription}</p>
+                {/if}
+
+                <p class="clip-text">"{truncateText(clip.inputText, 120)}"</p>
+
+                {#if clip.clipTags.length > 0}
+                  <div class="clip-tags">
+                    {#each clip.clipTags as tag}
+                      <span class="tag">{tag}</span>
+                    {/each}
+                  </div>
+                {/if}
+
+                {#if isPlaying}
+                  <div class="clip-player">
+                    <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                    <div class="clip-progress" on:click={handleSeek}>
+                      <div class="clip-progress-fill" style="width:{progressPct}%"></div>
+                    </div>
+                    <span class="clip-time">{formatTime(currentTime)} / {formatTime(duration)}</span>
+                  </div>
+                {:else}
+                  <div class="clip-meta">
+                    {#if clip.latencyMs > 0}<span>{clip.latencyMs}ms</span><span class="sep">·</span>{/if}
+                    {#if clip.fileSizeBytes > 0}<span>{formatBytes(clip.fileSizeBytes)}</span>{/if}
+                  </div>
+                {/if}
               {/if}
             </div>
 
-            <div class="clip-actions">
-              <button
-                class="icon-btn"
-                on:click={() => handleDownload(clip)}
-                title="Download"
-                aria-label="Download clip"
-              >
-                <Icon name="export" size={16} />
-              </button>
-              <button
-                class="icon-btn danger"
-                on:click={() => handleDelete(clip)}
-                title="Delete"
-                aria-label="Delete clip"
-              >
-                <Icon name="trash" size={16} />
-              </button>
-            </div>
+            {#if !isEditing}
+              <div class="clip-actions">
+                <button
+                  class="icon-btn"
+                  on:click={() => reSynthesize(clip)}
+                  title="Re-synthesize with edits"
+                  aria-label="Re-synthesize"
+                >
+                  <Icon name="lightning" size={16} />
+                </button>
+                <button
+                  class="icon-btn"
+                  on:click={() => startEdit(clip)}
+                  title="Edit name, tags, description"
+                  aria-label="Edit clip"
+                >
+                  <Icon name="sliders" size={16} />
+                </button>
+                <button
+                  class="icon-btn"
+                  on:click={() => handleDownload(clip)}
+                  title="Download"
+                  aria-label="Download clip"
+                >
+                  <Icon name="export" size={16} />
+                </button>
+                <button
+                  class="icon-btn danger"
+                  on:click={() => handleDelete(clip)}
+                  title="Delete"
+                  aria-label="Delete clip"
+                >
+                  <Icon name="trash" size={16} />
+                </button>
+              </div>
+            {/if}
           </article>
         {/each}
       </div>
@@ -290,6 +459,39 @@
   .stats-bar strong { color: var(--brand-700); }
   .storage { color: #6a8ea6; margin-left: auto; }
 
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #d6e2ec;
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 0.75rem;
+    color: #7a96aa;
+  }
+  .search-bar:focus-within {
+    border-color: var(--brand-600);
+    box-shadow: 0 0 0 2px rgba(23, 112, 137, 0.1);
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: var(--text-body);
+    color: #173046;
+    outline: none;
+    padding: 0.3rem 0;
+  }
+  .provider-filter {
+    border: 1px solid #d6e2ec;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    font-size: var(--text-small);
+    color: #3e5972;
+    background: #f8fbfd;
+  }
+
   .empty-state {
     text-align: center;
     padding: 3rem 1rem;
@@ -328,7 +530,7 @@
     color: #2c4b60;
     border: 1px solid #c3d1de;
   }
-  .btn.ghost.sm { padding: 0.35rem 0.65rem; }
+  .btn.sm { padding: 0.35rem 0.65rem; font-size: var(--text-xs); }
 
   .clip-list { display: grid; gap: 0.5rem; }
 
@@ -346,6 +548,10 @@
   .clip-card.playing {
     border-color: var(--brand-600);
     box-shadow: 0 0 0 1px var(--brand-600), 0 4px 16px rgba(20, 94, 121, 0.12);
+  }
+  .clip-card.editing {
+    border-color: var(--brand-600);
+    background: #f8fcfe;
   }
 
   .play-btn {
@@ -384,9 +590,19 @@
     flex-wrap: wrap;
   }
 
+  .clip-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .clip-name strong {
+    color: #173046;
+    font-size: var(--text-body);
+  }
+
   .clip-voice {
     font-weight: 680;
-    font-size: var(--text-body);
+    font-size: var(--text-small);
     color: var(--brand-700);
     text-decoration: none;
   }
@@ -401,10 +617,29 @@
     padding: 0.08rem 0.4rem;
   }
 
+  .ssml-badge {
+    font-size: 0.6rem;
+    font-weight: 720;
+    color: #2e7d32;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    padding: 0 0.3rem;
+    letter-spacing: 0.03em;
+  }
+
   .clip-date {
     font-size: var(--text-xs);
     color: #8a9fb2;
     margin-left: auto;
+  }
+
+  .clip-description {
+    margin: 0;
+    font-size: var(--text-xs);
+    color: #5a7a90;
+    font-style: italic;
+    line-height: 1.4;
   }
 
   .clip-text {
@@ -416,6 +651,21 @@
     text-overflow: ellipsis;
   }
 
+  .clip-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .tag {
+    font-size: 0.65rem;
+    font-weight: 620;
+    color: #5c3d8f;
+    background: #eee8f7;
+    border: 1px solid #d4c5ee;
+    border-radius: 999px;
+    padding: 0.05rem 0.4rem;
+  }
+
   .clip-meta {
     display: flex;
     gap: 0.3rem;
@@ -423,6 +673,7 @@
     color: #8a9fb2;
     font-weight: 600;
   }
+  .sep { color: #c3d1de; }
 
   .clip-player {
     display: flex;
@@ -478,4 +729,38 @@
   }
   .icon-btn:hover { border-color: #9eb6c8; background: #f7fafc; }
   .icon-btn.danger:hover { color: #c62828; border-color: #ef9a9a; background: #fff5f5; }
+
+  /* Edit form */
+  .edit-form {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .edit-field {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .edit-label {
+    font-size: var(--text-xs);
+    font-weight: 660;
+    color: #446078;
+  }
+  .edit-input {
+    border: 1px solid #c3d1de;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    font-size: var(--text-small);
+    color: #173046;
+    background: #fff;
+  }
+  .edit-input:focus {
+    outline: none;
+    border-color: var(--brand-600);
+    box-shadow: 0 0 0 2px rgba(23, 112, 137, 0.1);
+  }
+  .edit-actions {
+    display: flex;
+    gap: 0.4rem;
+    justify-content: flex-end;
+    margin-top: 0.15rem;
+  }
 </style>

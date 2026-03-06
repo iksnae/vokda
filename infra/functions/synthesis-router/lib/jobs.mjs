@@ -72,6 +72,9 @@ export async function createJob({
     inputText,
     inputMode,
     status,
+    clipName: null,
+    clipDescription: null,
+    clipTags: [],
     audioPath: audioPath || null,
     audioUrl: audioUrl || null,
     fileSizeBytes: fileSizeBytes || null,
@@ -157,20 +160,24 @@ export async function listJobs(userId, { limit = 50, status: filterStatus } = {}
     exprValues[':status'] = filterStatus;
   }
 
-  const result = await ddb.send(new ScanCommand({
-    TableName: TABLE,
-    FilterExpression: filterExpr,
-    ExpressionAttributeNames: exprNames,
-    ExpressionAttributeValues: exprValues,
-    Limit: Math.min(limit, 100),
-  }));
+  // Paginate through all scan pages (Limit caps scanned items, not filtered results)
+  let items = [];
+  let lastKey = undefined;
+  do {
+    const result = await ddb.send(new ScanCommand({
+      TableName: TABLE,
+      FilterExpression: filterExpr,
+      ExpressionAttributeNames: exprNames,
+      ExpressionAttributeValues: exprValues,
+      ExclusiveStartKey: lastKey,
+    }));
+    items.push(...(result.Items || []));
+    lastKey = result.LastEvaluatedKey;
+  } while (lastKey);
 
-  // Sort newest first
-  const items = (result.Items || []).sort(
-    (a, b) => (b.createdAtIso || '').localeCompare(a.createdAtIso || '')
-  );
-
-  return items;
+  // Sort newest first, then apply limit
+  items.sort((a, b) => (b.createdAtIso || '').localeCompare(a.createdAtIso || ''));
+  return items.slice(0, Math.min(limit, 200));
 }
 
 /**

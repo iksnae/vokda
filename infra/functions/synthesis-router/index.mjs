@@ -22,7 +22,7 @@ import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { SQSClient, SendMessageCommand } from '@aws-sdk/client-sqs';
 
-import { createJob, getJob, listJobs, deleteJob } from './lib/jobs.mjs';
+import { createJob, getJob, listJobs, deleteJob, updateJob } from './lib/jobs.mjs';
 import { checkQuota, getUsage, incrementUsage, decrementUsage } from './lib/quota.mjs';
 import { createApiKey, listApiKeys, revokeApiKey } from './lib/keys.mjs';
 
@@ -144,6 +144,10 @@ export async function handler(event) {
     if (method === 'GET' && path.startsWith('/v1/jobs/')) {
       const jobId = path.split('/v1/jobs/')[1];
       return await handleGetJob(userId, jobId);
+    }
+    if (method === 'PATCH' && path.startsWith('/v1/jobs/')) {
+      const jobId = path.split('/v1/jobs/')[1];
+      return await handleUpdateJob(userId, jobId, event);
     }
     if (method === 'DELETE' && path.startsWith('/v1/jobs/')) {
       const jobId = path.split('/v1/jobs/')[1];
@@ -345,6 +349,46 @@ async function handleGetJob(userId, jobId) {
   return respond(200, formatJob(job));
 }
 
+// ─── PATCH /v1/jobs/{id} ───
+
+async function handleUpdateJob(userId, jobId, event) {
+  const job = await getJob(userId, jobId);
+  if (!job) return respond(404, { error: 'Job not found' });
+
+  const body = JSON.parse(event.body || '{}');
+  const allowedFields = ['clipName', 'clipDescription', 'clipTags'];
+  const updates = {};
+
+  for (const field of allowedFields) {
+    if (field in body) {
+      if (field === 'clipTags') {
+        if (!Array.isArray(body.clipTags)) return respond(400, { error: 'clipTags must be an array' });
+        if (body.clipTags.length > 20) return respond(400, { error: 'Maximum 20 tags' });
+        updates.clipTags = body.clipTags.map(String).slice(0, 20);
+      } else {
+        const val = body[field];
+        updates[field] = typeof val === 'string' ? val.slice(0, 500) : null;
+      }
+    }
+  }
+
+  if (Object.keys(updates).length === 0) {
+    return respond(400, { error: 'No valid fields to update. Allowed: clipName, clipDescription, clipTags' });
+  }
+
+  await updateJob(jobId, updates);
+
+  // Return updated job
+  const updated = await getJob(userId, jobId);
+  if (updated?.audioPath) {
+    updated.audioUrl = await getSignedUrl(s3, new GetObjectCommand({
+      Bucket: BUCKET,
+      Key: updated.audioPath,
+    }), { expiresIn: 604800 });
+  }
+  return respond(200, formatJob(updated));
+}
+
 // ─── DELETE /v1/jobs/{id} ───
 
 async function handleDeleteJob(userId, jobId) {
@@ -430,6 +474,9 @@ function formatJob(job) {
     status: job.status,
     inputText: job.inputText,
     inputMode: job.inputMode,
+    clipName: job.clipName || null,
+    clipDescription: job.clipDescription || null,
+    clipTags: job.clipTags || [],
     audioUrl: job.audioUrl,
     fileSizeBytes: job.fileSizeBytes,
     durationMs: job.durationMs,

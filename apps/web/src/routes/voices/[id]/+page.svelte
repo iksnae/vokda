@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { slide } from 'svelte/transition';
   import {
     addVoiceToCollection,
@@ -150,8 +151,11 @@
   $: variant = voice?.variants[0] ?? null;
 
   // ─── Audition / Synthesis ───
-  let auditionText = 'Hello! This is a preview of this voice. How does it sound to you?';
-  let auditionMode: PreviewInputMode = 'text';
+  // Support pre-filled text from URL params (e.g., re-synth from clips page)
+  const urlText = $page.url.searchParams.get('text');
+  const urlMode = $page.url.searchParams.get('mode');
+  let auditionText = urlText || 'Hello! This is a preview of this voice. How does it sound to you?';
+  let auditionMode: PreviewInputMode = (urlMode === 'ssml' ? 'ssml' : 'text');
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
   let auditionError = '';

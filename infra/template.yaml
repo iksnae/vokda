@@ -54,6 +54,7 @@ Resources:
         AllowMethods:
           - GET
           - POST
+          - PATCH
           - DELETE
           - OPTIONS
         AllowHeaders:
@@ -172,6 +173,12 @@ Resources:
             ApiId: !Ref SynthesisApi
             Path: /v1/jobs/{id}
             Method: GET
+        UpdateJob:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/jobs/{id}
+            Method: PATCH
         DeleteJob:
           Type: HttpApi
           Properties:

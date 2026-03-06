@@ -5,7 +5,7 @@
  */
 
 import { browser } from '$app/environment';
-import { writable, derived } from 'svelte/store';
+import { writable, derived, get } from 'svelte/store';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
 
 const API_BASE = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) || 'https://api.vokda.iksnae.com';
@@ -17,6 +17,9 @@ export type Clip = {
   provider: string;
   inputText: string;
   inputMode: 'text' | 'ssml';
+  clipName: string | null;
+  clipDescription: string | null;
+  clipTags: string[];
   latencyMs: number;
   durationMs: number;
   fileSizeBytes: number;
@@ -51,6 +54,9 @@ type ApiJob = {
   status: string;
   inputText: string;
   inputMode: string;
+  clipName: string | null;
+  clipDescription: string | null;
+  clipTags: string[];
   audioUrl: string | null;
   fileSizeBytes: number | null;
   durationMs: number | null;
@@ -67,6 +73,9 @@ function apiJobToClip(job: ApiJob): Clip {
     provider: job.provider,
     inputText: job.inputText,
     inputMode: (job.inputMode as 'text' | 'ssml') || 'text',
+    clipName: job.clipName || null,
+    clipDescription: job.clipDescription || null,
+    clipTags: job.clipTags || [],
     latencyMs: job.latencyMs ?? 0,
     durationMs: job.durationMs ?? 0,
     fileSizeBytes: job.fileSizeBytes ?? 0,
@@ -77,7 +86,7 @@ function apiJobToClip(job: ApiJob): Clip {
 }
 
 async function loadClips() {
-  if (!browser || !API_BASE) return;
+  if (!browser) return;
   const header = getAuthHeader();
   if (!header) return;
 
@@ -101,11 +110,14 @@ async function loadClips() {
   }
 }
 
-// Auto-load on auth change
+// Auto-load on auth change — use a small delay to ensure tokens are propagated
 if (browser) {
+  let loadTimeout: ReturnType<typeof setTimeout> | null = null;
   auth.subscribe(($auth) => {
+    if (loadTimeout) clearTimeout(loadTimeout);
     if ($auth.isAuthenticated && $auth.user) {
-      void loadClips();
+      // Small delay so the auth state is fully settled before we read tokens
+      loadTimeout = setTimeout(() => void loadClips(), 100);
     } else {
       clipState.set({ clips: [], loading: false, loaded: false });
     }
@@ -113,11 +125,41 @@ if (browser) {
 }
 
 /**
+ * Update a clip's metadata (name, description, tags).
+ */
+export async function updateClip(
+  clipId: string,
+  updates: { clipName?: string | null; clipDescription?: string | null; clipTags?: string[] }
+): Promise<Clip> {
+  const header = getAuthHeader();
+  if (!header) throw new Error('Not authenticated');
+
+  const resp = await fetch(`${API_BASE}/v1/jobs/${clipId}`, {
+    method: 'PATCH',
+    headers: { Authorization: header, 'Content-Type': 'application/json' },
+    body: JSON.stringify(updates),
+  });
+  if (!resp.ok) {
+    const body = await resp.json().catch(() => ({ error: `HTTP ${resp.status}` }));
+    throw new Error((body as { error?: string }).error ?? `HTTP ${resp.status}`);
+  }
+
+  const updated = apiJobToClip(await resp.json() as ApiJob);
+
+  clipState.update((s) => ({
+    ...s,
+    clips: s.clips.map((c) => (c.id === clipId ? updated : c)),
+  }));
+
+  return updated;
+}
+
+/**
  * Delete a clip (server-side).
  */
 export async function removeClip(clipId: string): Promise<void> {
   const header = getAuthHeader();
-  if (!header || !API_BASE) throw new Error('Not authenticated');
+  if (!header) throw new Error('Not authenticated');
 
   const resp = await fetch(`${API_BASE}/v1/jobs/${clipId}`, {
     method: 'DELETE',
@@ -148,7 +190,7 @@ export async function downloadClip(clip: Clip): Promise<void> {
   if (!resp.ok) throw new Error('Failed to download audio.');
   const blob = await resp.blob();
 
-  const safeName = (clip.voiceName || 'clip').replace(/[^a-zA-Z0-9-_ ]/g, '').trim();
+  const safeName = (clip.clipName || clip.voiceName || 'clip').replace(/[^a-zA-Z0-9-_ ]/g, '').trim();
   const filename = `${safeName}-${clip.id}.mp3`;
 
   const url = URL.createObjectURL(blob);
