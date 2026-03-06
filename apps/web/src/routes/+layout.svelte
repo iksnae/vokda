@@ -13,7 +13,28 @@
   $: userInitial = $auth.user?.name?.[0]?.toUpperCase()
     ?? $auth.user?.email?.[0]?.toUpperCase()
     ?? '?';
+
+  let userMenuOpen = false;
+
+  function toggleUserMenu() {
+    userMenuOpen = !userMenuOpen;
+  }
+
+  function closeUserMenu() {
+    userMenuOpen = false;
+  }
+
+  function handleMenuKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') closeUserMenu();
+  }
+
+  function handleSignOut() {
+    closeUserMenu();
+    signOut();
+  }
 </script>
+
+<svelte:window on:click={closeUserMenu} />
 
 <svelte:head>
   <title>Vokda</title>
@@ -33,30 +54,74 @@
     </a>
 
     <nav>
-      <a href="/" class="nav-link">Explore</a>
       <a href="/collections" class="nav-link">
+        <Icon name="folder" size={14} />
         Collections
         {#if collectionCount > 0}
           <span class="badge">{collectionCount}</span>
         {/if}
       </a>
-      {#if $roleFlags.isCurator}
-        <a href="/curation" class="nav-link">Curation</a>
-      {/if}
-      {#if $roleFlags.isAdmin}
-        <a href="/admin" class="nav-link">Admin</a>
-      {/if}
-      {#if $auth.isAuthenticated}
-        <a href="/account/providers" class="nav-link">API Keys</a>
-      {/if}
     </nav>
 
     <div class="auth-actions">
       {#if !$isAuthReady}
         <span class="avatar-skeleton" aria-label="Loading authentication"></span>
       {:else if $auth.isAuthenticated}
-        <span class="avatar" title="{$auth.user?.email ?? 'User'} ({$auth.user?.roles.join(', ')})">{userInitial}</span>
-        <button class="ghost" on:click={signOut}>Sign out</button>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+        <div class="user-menu-wrapper" on:keydown={handleMenuKeydown} role="navigation" aria-label="User menu">
+          <button
+            class="avatar-btn"
+            on:click|stopPropagation={toggleUserMenu}
+            title="{$auth.user?.email ?? 'User'}"
+            aria-expanded={userMenuOpen}
+            aria-haspopup="true"
+          >
+            <span class="avatar">{userInitial}</span>
+          </button>
+
+          {#if userMenuOpen}
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="user-menu" on:click|stopPropagation>
+              <div class="menu-header">
+                <span class="menu-email">{$auth.user?.email ?? 'User'}</span>
+                <span class="menu-role">{$auth.user?.roles.join(', ')}</span>
+              </div>
+              <div class="menu-divider"></div>
+              <a href="/account" class="menu-item" on:click={closeUserMenu}>
+                <Icon name="user" size={15} />
+                Account
+              </a>
+              <a href="/account/providers" class="menu-item" on:click={closeUserMenu}>
+                <Icon name="globe" size={15} />
+                API Keys
+              </a>
+              <a href="/collections" class="menu-item" on:click={closeUserMenu}>
+                <Icon name="folder" size={15} />
+                Collections
+              </a>
+              {#if $roleFlags.isCurator}
+                <div class="menu-divider"></div>
+                <a href="/curation" class="menu-item" on:click={closeUserMenu}>
+                  <Icon name="pencil" size={15} />
+                  Curation
+                </a>
+              {/if}
+              {#if $roleFlags.isAdmin}
+                <a href="/admin" class="menu-item" on:click={closeUserMenu}>
+                  <Icon name="gear" size={15} />
+                  Admin
+                </a>
+              {/if}
+              <div class="menu-divider"></div>
+              <button class="menu-item danger" on:click={handleSignOut}>
+                <Icon name="x" size={15} />
+                Sign Out
+              </button>
+            </div>
+          {/if}
+        </div>
       {:else}
         <button class="btn-signin" on:click={signIn}>
           Sign in
@@ -246,7 +311,104 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: default;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  .avatar-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+
+  .avatar-btn:hover {
+    transform: scale(1.08);
+  }
+
+  .avatar-btn:hover .avatar {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--brand-600);
+  }
+
+  .user-menu-wrapper {
+    position: relative;
+  }
+
+  .user-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid var(--stroke-soft);
+    border-radius: var(--radius-md);
+    box-shadow: var(--elev-2);
+    padding: 0.35rem;
+    z-index: 100;
+    animation: menuIn 140ms ease;
+  }
+
+  @keyframes menuIn {
+    from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .menu-header {
+    padding: 0.55rem 0.65rem 0.4rem;
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .menu-email {
+    font-size: var(--text-small);
+    font-weight: 660;
+    color: #1a3347;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .menu-role {
+    font-size: var(--text-xs);
+    color: #5a7a90;
+  }
+
+  .menu-divider {
+    height: 1px;
+    background: #e8eff4;
+    margin: 0.25rem 0.4rem;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.48rem 0.65rem;
+    border-radius: 10px;
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: #2c4b60;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    transition: background 100ms;
+  }
+
+  .menu-item:hover {
+    background: #f0f5f9;
+  }
+
+  .menu-item.danger {
+    color: #c62828;
+  }
+
+  .menu-item.danger:hover {
+    background: #fff5f5;
   }
 
   .avatar-skeleton {
@@ -273,22 +435,7 @@
     box-shadow: 0 10px 20px rgba(20, 94, 121, 0.35);
   }
 
-  .ghost {
-    background: #f3f7fa;
-    color: #2c4b60;
-    border: 1px solid #c3d1de;
-    border-radius: 999px;
-    padding: 0.38rem 0.74rem;
-    font-weight: 680;
-    cursor: pointer;
-    box-shadow: none;
-    font-size: var(--text-small);
-  }
 
-  .ghost:hover {
-    background: #edf2f7;
-    border-color: #a8b9c9;
-  }
 
   @keyframes drift {
     0%,
