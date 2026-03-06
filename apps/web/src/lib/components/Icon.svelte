@@ -24,6 +24,16 @@
   import MagnifyingGlass from 'phosphor-svelte/lib/MagnifyingGlass';
   import SpeakerHigh from 'phosphor-svelte/lib/SpeakerHigh';
   import SlidersHorizontal from 'phosphor-svelte/lib/SlidersHorizontal';
+  import User from 'phosphor-svelte/lib/User';
+  import Users from 'phosphor-svelte/lib/Users';
+  import Globe from 'phosphor-svelte/lib/Globe';
+  import Info from 'phosphor-svelte/lib/Info';
+  import Minus from 'phosphor-svelte/lib/Minus';
+  import Pencil from 'phosphor-svelte/lib/Pencil';
+  import Desktop from 'phosphor-svelte/lib/Desktop';
+  import Microphone from 'phosphor-svelte/lib/Microphone';
+  import ChatCircle from 'phosphor-svelte/lib/ChatCircle';
+  import CaretUp from 'phosphor-svelte/lib/CaretUp';
 
   export let name: string;
   export let size: number = 16;
@@ -51,7 +61,17 @@
     'bookmark-filled': BookmarkSimple,
     search: MagnifyingGlass,
     speaker: SpeakerHigh,
-    sliders: SlidersHorizontal
+    sliders: SlidersHorizontal,
+    user: User,
+    users: Users,
+    globe: Globe,
+    info: Info,
+    minus: Minus,
+    pencil: Pencil,
+    desktop: Desktop,
+    microphone: Microphone,
+    chat: ChatCircle,
+    'chevron-up': CaretUp
   };
 
   const filledNames = new Set([

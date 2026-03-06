@@ -34,10 +34,33 @@
 | S3 Storage | `amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui` | empty (audio upload deferred) |
 | AppSync API | `fzstnqh5p5glrout7qs7ys4shu.appsync-api.us-east-1.amazonaws.com` | 8 models |
 
+## Completed (Phase 2)
+
+### S3 Audio Upload ✅
+- `scripts/upload-audio-s3.mjs` — uploads audio, images, OG images to S3
+- 550 audio samples + 551 voice images + 550 OG images uploaded
+- Bucket has public access blocked (Amplify Storage design) — catalog assets
+  continue serving from Amplify Hosting CDN which is free and fast
+- S3 bucket reserved for user-generated audio (BYOK synthesis M3)
+
+### Curation Page Wired to VoiceRecord ✅
+- Tabbed UI: Metadata Editor / New Voice / Database
+- Database tab shows all VoiceRecords with publish/archive/delete actions
+- Stats bar: total, published, draft, archived counts
+- "Save to database" toggle on metadata editor and voice draft forms
+- Metadata saves propagate to both local store AND DynamoDB VoiceRecord
+
+### Admin Page Wired to ProviderRecord ✅
+- Tabbed UI: User Roles / Providers
+- Provider cards show DB sync status ("DB · N voices" or "local only")
+- Provider create/save syncs to both local catalog AND DynamoDB ProviderRecord
+- Voice count from DB displayed per provider
+
+### Icon Component Extended
+- Added 10 new Phosphor icons: User, Users, Globe, Info, Minus, Pencil,
+  Desktop, Microphone, ChatCircle, CaretUp
+- Total: 32 icon mappings in Icon.svelte
+
 ## Remaining Work
 
-- [ ] Upload audio files to S3 (`scripts/upload-audio-s3.mjs`)
-- [ ] Set `PUBLIC_AUDIO_BASE_URL` in production
-- [ ] Wire curation page to use VoiceRecord CRUD
-- [ ] Wire admin page to use ProviderRecord CRUD
 - [ ] M3: BYOK synthesis (UserProviderCredential, SynthesisJob, credential encryption)
