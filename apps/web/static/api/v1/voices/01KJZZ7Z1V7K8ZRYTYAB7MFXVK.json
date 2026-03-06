@@ -1,0 +1,114 @@
+{
+  "id": "01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
+  "name": "Aiden (Qwen3-TTS-1.7B)",
+  "provider": "Qwen3 TTS",
+  "providerId": "qwen3-tts",
+  "providerVoiceId": "aiden",
+  "description": "Young, dynamic male voice. Runs locally via Qwen3-TTS-1.7B on Apple Silicon.",
+  "tags": [
+    "male",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
+  "metadata": {
+    "shortLabel": "En male voice",
+    "searchDescription": "Young, dynamic male voice.",
+    "machineTags": [
+      "male",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "accent": null,
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KJZZ7Z1VGACRCY1TQAH400H4",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZZ7Z1VMWB8HAYMWJHS1Q5Q",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:Qwen3-TTS-1.7B:aiden",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Alibaba Qwen",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
+    "modelUrl": "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+    "modelFamily": "Qwen3-TTS",
+    "architecture": "LLM-based codec language model + speech tokenizer",
+    "baseModel": "Qwen3-1.7B",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "8-bit",
+    "diskSize": "~2.4GB",
+    "memoryRequired": "~3GB",
+    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "multilingual": true,
+    "emotionControl": false,
+    "voiceCloning": true,
+    "supportedLanguages": [
+      "en",
+      "zh",
+      "de",
+      "it",
+      "pt",
+      "es",
+      "ja",
+      "ko",
+      "fr",
+      "ru"
+    ],
+    "maxInputLength": 5000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://huggingface.co/Qwen/Qwen3-TTS/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "realtimeFactor": "~10x realtime",
+    "latencyMs": "~1500-3000",
+    "releaseDate": "2025-05-22",
+    "paperUrl": "https://arxiv.org/abs/2505.15311",
+    "knownLimitations": [
+      "CustomVoice variant requires speaker name parameter",
+      "Base variant has no built-in speaker presets",
+      "Tokenizer regex warning (cosmetic, does not affect output)"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ7Z1V7K8ZRYTYAB7MFXVK.json"
+}

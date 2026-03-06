@@ -1,0 +1,111 @@
+{
+  "id": "01JCW018P8BMX7D34R7XJ93T3",
+  "name": "onyx",
+  "provider": "OpenAI",
+  "providerId": "openai",
+  "providerVoiceId": "onyx",
+  "description": "Low-register OpenAI voice suited for documentary, policy, and long-form informational audio.",
+  "tags": [
+    "documentary",
+    "long-form",
+    "openai"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+  "metadata": {
+    "shortLabel": "Low-register documentary",
+    "searchDescription": "Grounded low-register voice for educational narration and formal explainers.",
+    "machineTags": [
+      "documentary",
+      "grounded",
+      "education",
+      "long-form"
+    ],
+    "useCases": [
+      "Educational narration",
+      "Policy explainers",
+      "Documentary VO"
+    ],
+    "toneTags": [
+      "calm",
+      "authoritative",
+      "measured"
+    ],
+    "audienceTags": [
+      "enterprise",
+      "education"
+    ],
+    "accent": "General American",
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "speakingStyle": "measured and grounded",
+    "metadataQuality": "editorial"
+  },
+  "samples": [
+    {
+      "id": "01JCW018P8BMX7D34R7XJ93Y3",
+      "scriptKey": "policy",
+      "label": "Policy Read",
+      "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW018P8BMX7D34R7XJ93T3.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01JCW018P8BMX7D34R7XJ9403",
+      "sourceType": "cloud_provider",
+      "sourceKey": "openai:tts:onyx",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "OpenAI",
+    "providerType": "cloud_api",
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "modelFamily": "OpenAI TTS",
+    "architecture": "Proprietary neural TTS",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 4096,
+    "license": "OpenAI Usage Policies",
+    "licenseUrl": "https://openai.com/policies/usage-policies",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "latencyMs": "~300-800",
+    "releaseDate": "2023-11-06",
+    "knownLimitations": [
+      "No SSML support",
+      "No word-level timestamps",
+      "Voice selection is limited to preset voices"
+    ],
+    "modelName": "tts-1",
+    "modelVersion": "tts-1",
+    "modelId": "tts-1",
+    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCW018P8BMX7D34R7XJ93T3.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW018P8BMX7D34R7XJ93T3.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCW018P8BMX7D34R7XJ93T3.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01JCW018P8BMX7D34R7XJ93T3",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCW018P8BMX7D34R7XJ93T3.json"
+}

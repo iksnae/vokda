@@ -1,0 +1,111 @@
+{
+  "id": "0100MME43A6S38FFD301435EAD",
+  "name": "VibeVoice Realtime 0.5B",
+  "provider": "VibeVoice",
+  "providerId": "vibevoice",
+  "providerVoiceId": "default",
+  "description": "Real-time streaming TTS model with natural conversational quality. 0.5B parameters, runs locally on Apple Silicon via mlx-audio (fp16 weights required — 4-bit/8-bit quant have weight shape issues).",
+  "tags": [
+    "realtime",
+    "streaming",
+    "conversational",
+    "mlx",
+    "local",
+    "vibevoice"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "VibeVoice released under community license. Check HuggingFace for latest terms.",
+  "metadata": {
+    "shortLabel": "Realtime conversational · VibeVoice 0.5B · local",
+    "searchDescription": "VibeVoice realtime streaming conversational TTS 0.5B local mlx Apple Silicon natural speech",
+    "machineTags": [
+      "realtime",
+      "streaming",
+      "conversational",
+      "local"
+    ],
+    "useCases": [
+      "assistant",
+      "dialogue",
+      "interactive"
+    ],
+    "toneTags": [
+      "natural",
+      "conversational"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME43A6S68DD5CAAD00AE2",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Welcome to the future of voice synthesis running entirely on your local device.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6S38FFD301435EAD.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME43A6SFA8F53AADF7B6E",
+      "sourceType": "self_hosted",
+      "sourceKey": "vibevoice:0.5b-fp16:default",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "VibeVoice",
+    "providerType": "local_model",
+    "providerUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
+    "modelFamily": "VibeVoice",
+    "modelName": "VibeVoice-Realtime-0.5B-fp16",
+    "modelId": "mlx-community/VibeVoice-Realtime-0.5B-fp16",
+    "modelVersion": "0.5B",
+    "architecture": "VibeVoice streaming TTS (MLX fp16)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 4000,
+    "license": "Community License",
+    "licenseUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
+    "commercialUse": false,
+    "attributionRequired": true,
+    "dataRetention": "Local inference only — no data leaves device",
+    "latencyMs": "~800-2000",
+    "releaseDate": "2025-01-01",
+    "knownLimitations": [
+      "English only",
+      "No SSML support",
+      "fp16 weights required — 4-bit and 8-bit quantized variants have weight shape mismatch",
+      "No voice selection — single default voice",
+      "Larger memory footprint than quantized models (~1GB RAM)",
+      "Requires mlx-audio 0.3.1+ on Apple Silicon"
+    ],
+    "notes": "Runs locally via mlx-audio. Use ONLY the fp16 variant — 4-bit and 8-bit quants fail with \"Expected shape (151936, 896) but received shape (151936, 112)\" weight mismatch. Designed for real-time streaming output.",
+    "runtimeFramework": "mlx-audio 0.3.1",
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~1GB RAM for fp16"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6S38FFD301435EAD.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6S38FFD301435EAD.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME43A6S38FFD301435EAD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6S38FFD301435EAD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6S38FFD301435EAD.json"
+}

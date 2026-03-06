@@ -1,0 +1,100 @@
+{
+  "id": "01KK00Y63ESEW8T9B9RSNQPQKN",
+  "name": "Pocket TTS",
+  "provider": "Pocket TTS",
+  "providerId": "pocket-tts",
+  "providerVoiceId": "default",
+  "description": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size. Runs locally on Apple Silicon via MLX.",
+  "tags": [
+    "female",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (~50M params). Check model card for license terms.",
+  "metadata": {
+    "shortLabel": "MLX · ~50M · female",
+    "searchDescription": "Ultra-compact TTS designed for edge devices. Remarkably natural for its tiny size.",
+    "machineTags": [
+      "female",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KK00Y63E5R4JZBBBZ6A53AHR",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y63ESEW8T9B9RSNQPQKN.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KK00Y63EM3W55SNDMG2FBMHK",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:pocket-tts:default",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "ShoukanLabs",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/ShoukanLabs/pocket-tts",
+    "modelUrl": "https://huggingface.co/mlx-community/pocket-tts",
+    "modelFamily": "Pocket TTS",
+    "modelName": "Pocket TTS",
+    "modelSize": "~50M parameters",
+    "architecture": "Compact neural TTS for edge devices",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "bf16",
+    "diskSize": "~100MB",
+    "memoryRequired": "~150MB",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 5000,
+    "license": "Apache 2.0",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "realtimeFactor": "~200x realtime",
+    "latencyMs": "~100-300",
+    "releaseDate": "2025-04-01",
+    "knownLimitations": [
+      "Single voice only",
+      "English only",
+      "Optimized for short utterances"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y63ESEW8T9B9RSNQPQKN.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00Y63ESEW8T9B9RSNQPQKN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00Y63ESEW8T9B9RSNQPQKN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00Y63ESEW8T9B9RSNQPQKN.json"
+}

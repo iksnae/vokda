@@ -1,0 +1,94 @@
+{
+  "id": "01KJZXZNF97Q0SQW2C3V0KBB32",
+  "name": "en-AU-WilliamNeural",
+  "provider": "Azure Speech",
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-AU-WilliamNeural",
+  "description": "English (Australia) Male neural voice.",
+  "tags": [
+    "male",
+    "au"
+  ],
+  "languages": [
+    "en-AU"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "en-AU male voice",
+    "searchDescription": "English (Australia) Male neural voice.",
+    "machineTags": [
+      "male",
+      "au"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "steady"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNF9Y6WQGAAGMFNQ2YY2",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNF9PHSXYABB9XDSNM1G",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-AU-WilliamNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF97Q0SQW2C3V0KBB32.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF97Q0SQW2C3V0KBB32.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF97Q0SQW2C3V0KBB32",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF97Q0SQW2C3V0KBB32.json"
+}

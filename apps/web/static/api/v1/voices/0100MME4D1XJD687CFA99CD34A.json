@@ -1,0 +1,132 @@
+{
+  "id": "0100MME4D1XJD687CFA99CD34A",
+  "name": "Sadachbia",
+  "provider": "Gemini TTS",
+  "providerId": "gemini-tts",
+  "providerVoiceId": "Sadachbia",
+  "description": "Lively voice. Gemini 2.5 Flash TTS with natural language style control. Supports prompt-directed tone, accent, pace, and multi-speaker conversations.",
+  "tags": [
+    "lively",
+    "entertainment",
+    "multilingual",
+    "style-control",
+    "gemini",
+    "google"
+  ],
+  "languages": [
+    "en-US",
+    "ar",
+    "fil",
+    "bn",
+    "fi",
+    "nl",
+    "gl",
+    "en",
+    "ka",
+    "fr",
+    "el",
+    "de",
+    "gu",
+    "hi",
+    "ht",
+    "id",
+    "he",
+    "it",
+    "hu",
+    "ja",
+    "is"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Gemini API usage governed by Google AI Terms of Service.",
+  "metadata": {
+    "shortLabel": "Lively · Gemini 2.5 Flash TTS",
+    "searchDescription": "Sadachbia Lively Gemini TTS Google AI voice style control multilingual lively entertainment",
+    "machineTags": [
+      "lively",
+      "entertainment",
+      "multilingual",
+      "style-control"
+    ],
+    "useCases": [
+      "entertainment",
+      "podcast",
+      "audiobook"
+    ],
+    "toneTags": [
+      "lively"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME4D1XJE0476F1461ACEF",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "The festival kicked off with a burst of color, music, and infectious energy from every direction.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME4D1XJE992302419B730",
+      "sourceType": "cloud_provider",
+      "sourceKey": "gemini:2.5-flash-tts:Sadachbia",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "pcm",
+        "mp3"
+      ],
+      "maxInputChars": 8000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Google AI (Gemini)",
+    "providerType": "cloud_api",
+    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
+    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+    "modelFamily": "Gemini 2.5",
+    "modelName": "gemini-2.5-flash-preview-tts",
+    "modelId": "gemini-2.5-flash-preview-tts",
+    "modelVersion": "2.5-flash-preview",
+    "architecture": "Gemini multimodal transformer with TTS output head",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 8000,
+    "license": "Google AI Terms of Service",
+    "licenseUrl": "https://ai.google.dev/gemini-api/terms",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Subject to Google AI data usage policy",
+    "latencyMs": "~1000-5000",
+    "releaseDate": "2025-05-01",
+    "knownLimitations": [
+      "Preview — API may change before GA",
+      "Text-only input, audio-only output (no multimodal mixing in TTS mode)",
+      "No SSML — uses natural language prompts for style control instead",
+      "Multi-speaker limited to 2 speakers per request",
+      "32k token context window limit",
+      "Rate limited: 10 requests/minute on free tier"
+    ],
+    "notes": "Voice style: \"Lively\". Supports natural language style direction — prefix text with instructions like \"Say cheerfully:\" or \"In a whisper:\". Multi-speaker mode supports up to 2 voices per conversation. Also available on gemini-2.5-pro-preview-tts for higher quality. 70+ languages supported. Style, accent, pace, and tone controllable via prompt engineering.",
+    "runtimeFramework": "Gemini API (REST/SDK)",
+    "hardwareRequirements": "Cloud API — no local hardware required"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XJD687CFA99CD34A.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XJD687CFA99CD34A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XJD687CFA99CD34A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XJD687CFA99CD34A.json"
+}

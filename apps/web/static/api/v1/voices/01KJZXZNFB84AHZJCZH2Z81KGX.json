@@ -1,0 +1,98 @@
+{
+  "id": "01KJZXZNFB84AHZJCZH2Z81KGX",
+  "name": "en-US-KaiNeural",
+  "provider": "Azure Speech",
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-US-KaiNeural",
+  "description": "English (United States) Male neural voice. Styles: conversation.",
+  "tags": [
+    "male",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "en-US male voice",
+    "searchDescription": "English (United States) Male neural voice. Styles: conversation.",
+    "machineTags": [
+      "male",
+      "us"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "conversation"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "speakingStyle": "conversation",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNFB241CPEKSE2R6BXH4",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFB84AHZJCZH2Z81KGX.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNFBCRGKFV970DVT1542",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-US-KaiNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ],
+    "supportedStyles": [
+      "conversation"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFB84AHZJCZH2Z81KGX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFB84AHZJCZH2Z81KGX.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFB84AHZJCZH2Z81KGX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFB84AHZJCZH2Z81KGX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFB84AHZJCZH2Z81KGX.json"
+}

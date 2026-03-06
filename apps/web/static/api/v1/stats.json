@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-03-06T00:00:17.633Z",
+  "totalVoices": 180,
+  "totalProviders": 19,
+  "withAudio": 180,
+  "withImage": 180,
+  "withModelCard": 180,
+  "byProvider": [
+    {
+      "id": "gemini-tts",
+      "name": "Gemini TTS",
+      "count": 30
+    },
+    {
+      "id": "gcp-tts",
+      "name": "Google Cloud TTS",
+      "count": 27
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro",
+      "count": 24
+    },
+    {
+      "id": "azure-speech",
+      "name": "Azure Speech",
+      "count": 22
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "count": 22
+    },
+    {
+      "id": "aws-polly",
+      "name": "AWS Polly",
+      "count": 18
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "count": 11
+    },
+    {
+      "id": "kittentts",
+      "name": "KittenTTS",
+      "count": 8
+    },
+    {
+      "id": "qwen3-tts",
+      "name": "Qwen3 TTS",
+      "count": 7
+    },
+    {
+      "id": "bark",
+      "name": "Bark",
+      "count": 2
+    },
+    {
+      "id": "chatterbox",
+      "name": "Chatterbox",
+      "count": 1
+    },
+    {
+      "id": "dia",
+      "name": "Dia",
+      "count": 1
+    },
+    {
+      "id": "outetts",
+      "name": "OuteTTS",
+      "count": 1
+    },
+    {
+      "id": "pocket-tts",
+      "name": "Pocket TTS",
+      "count": 1
+    },
+    {
+      "id": "soprano",
+      "name": "Soprano",
+      "count": 1
+    },
+    {
+      "id": "spark-tts",
+      "name": "Spark TTS",
+      "count": 1
+    },
+    {
+      "id": "voxcpm",
+      "name": "VoxCPM",
+      "count": 1
+    },
+    {
+      "id": "marvis",
+      "name": "Marvis",
+      "count": 1
+    },
+    {
+      "id": "vibevoice",
+      "name": "VibeVoice",
+      "count": 1
+    }
+  ],
+  "byQualityTier": {
+    "premium": 168,
+    "standard": 12,
+    "basic": 0
+  },
+  "bySourceType": {
+    "cloud_provider": 130,
+    "local_model": 38,
+    "self_hosted": 12
+  },
+  "totalLanguages": 39,
+  "capabilities": {
+    "localModels": 50,
+    "cloudProviders": 130,
+    "multilingual": 31,
+    "ssmlSupport": 67,
+    "emotionControl": 76,
+    "soundEffects": 1,
+    "styleControl": 30
+  }
+}

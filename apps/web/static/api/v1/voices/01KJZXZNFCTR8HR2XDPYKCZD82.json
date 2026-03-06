@@ -1,0 +1,93 @@
+{
+  "id": "01KJZXZNFCTR8HR2XDPYKCZD82",
+  "name": "en-US-News-L",
+  "provider": "Google Cloud TTS",
+  "providerId": "gcp-tts",
+  "providerVoiceId": "en-US-News-L",
+  "description": "Google en-US-News-L — Female en-US voice.",
+  "tags": [
+    "female",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+  "metadata": {
+    "shortLabel": "en-US female voice",
+    "searchDescription": "Google en-US-News-L — Female en-US voice.",
+    "machineTags": [
+      "female",
+      "us"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "clear"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNFCFMECE0V3HN16RRMY",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCTR8HR2XDPYKCZD82.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNFC101ADJBTG9PB8TB5",
+      "sourceType": "cloud_provider",
+      "sourceKey": "gcp:tts:en-US-News-L",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Google Cloud",
+    "providerType": "cloud_api",
+    "providerUrl": "https://cloud.google.com/text-to-speech",
+    "apiEndpoint": "texttospeech.googleapis.com",
+    "modelFamily": "Google Cloud Text-to-Speech",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 5000,
+    "license": "Google Cloud Terms of Service",
+    "licenseUrl": "https://cloud.google.com/terms",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~200-600",
+    "releaseDate": "2018-03-27",
+    "knownLimitations": [
+      "Audio samples in this catalog used OpenAI fallback (GCP API key was invalid at generation time)",
+      "Neural2 voices may not be available in all regions",
+      "Studio voices have higher per-character cost"
+    ],
+    "architecture": "News (broadcast-optimized neural TTS)"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFCTR8HR2XDPYKCZD82.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCTR8HR2XDPYKCZD82.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFCTR8HR2XDPYKCZD82.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFCTR8HR2XDPYKCZD82",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFCTR8HR2XDPYKCZD82.json"
+}

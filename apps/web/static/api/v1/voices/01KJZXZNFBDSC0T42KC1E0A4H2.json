@@ -1,0 +1,109 @@
+{
+  "id": "01KJZXZNFBDSC0T42KC1E0A4H2",
+  "name": "en-US-TonyNeural",
+  "provider": "Azure Speech",
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-US-TonyNeural",
+  "description": "English (United States) Male neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+  "tags": [
+    "male",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "en-US male voice",
+    "searchDescription": "English (United States) Male neural voice. Styles: angry, cheerful, excited, friendly, hopeful, sad, shouting, terrified, unfriendly, whispering.",
+    "machineTags": [
+      "male",
+      "us"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "angry",
+      "cheerful",
+      "excited"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "speakingStyle": "angry",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNFB66PFTAZA031R8BCM",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBDSC0T42KC1E0A4H2.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNFBZ8XWCC838DNM4JF9",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-US-TonyNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ],
+    "supportedStyles": [
+      "angry",
+      "cheerful",
+      "excited",
+      "friendly",
+      "hopeful",
+      "sad",
+      "shouting",
+      "terrified",
+      "unfriendly",
+      "whispering"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBDSC0T42KC1E0A4H2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBDSC0T42KC1E0A4H2.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBDSC0T42KC1E0A4H2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBDSC0T42KC1E0A4H2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBDSC0T42KC1E0A4H2.json"
+}

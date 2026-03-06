@@ -1,0 +1,108 @@
+{
+  "id": "01KK00Y0G4PNGS13DQWVDQQAZ4",
+  "name": "OuteTTS 1.0",
+  "provider": "OuteTTS",
+  "providerId": "outetts",
+  "providerVoiceId": "default",
+  "description": "Llama-based text-to-speech. 1B parameter model with clear, articulate output. Runs locally on Apple Silicon via MLX.",
+  "tags": [
+    "neutral",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (1B params). Check model card for license terms.",
+  "metadata": {
+    "shortLabel": "MLX · 1B · neutral",
+    "searchDescription": "Llama-based text-to-speech. 1B parameter model with clear, articulate output.",
+    "machineTags": [
+      "neutral",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KK00Y0G42DTMRJHKBRPTDTV8",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y0G4PNGS13DQWVDQQAZ4.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KK00Y0G4PYPPKS7Z9281YMMY",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:outetts:default",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "OuteAI",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B",
+    "modelUrl": "https://huggingface.co/mlx-community/Llama-OuteTTS-1.0-1B-8bit",
+    "modelFamily": "OuteTTS",
+    "modelName": "Llama-OuteTTS-1.0-1B",
+    "modelSize": "1B parameters",
+    "architecture": "Llama backbone with WavTokenizer",
+    "baseModel": "Llama-3.2-1B",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "8-bit",
+    "diskSize": "~351MB",
+    "memoryRequired": "~600MB",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "multilingual": true,
+    "emotionControl": false,
+    "voiceCloning": true,
+    "supportedLanguages": [
+      "en",
+      "zh",
+      "ja",
+      "ko"
+    ],
+    "maxInputLength": 5000,
+    "license": "CC-BY-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "commercialUse": true,
+    "attributionRequired": true,
+    "realtimeFactor": "~5x realtime",
+    "latencyMs": "~3000-8000",
+    "releaseDate": "2025-02-28",
+    "knownLimitations": [
+      "Slower generation than smaller models",
+      "Voice cloning requires reference audio input",
+      "Attribution required under CC-BY-4.0"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y0G4PNGS13DQWVDQQAZ4.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00Y0G4PNGS13DQWVDQQAZ4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00Y0G4PNGS13DQWVDQQAZ4.json"
+}

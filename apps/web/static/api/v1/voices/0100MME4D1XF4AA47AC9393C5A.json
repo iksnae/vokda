@@ -1,0 +1,132 @@
+{
+  "id": "0100MME4D1XF4AA47AC9393C5A",
+  "name": "Leda",
+  "provider": "Gemini TTS",
+  "providerId": "gemini-tts",
+  "providerVoiceId": "Leda",
+  "description": "Youthful voice. Gemini 2.5 Flash TTS with natural language style control. Supports prompt-directed tone, accent, pace, and multi-speaker conversations.",
+  "tags": [
+    "youthful",
+    "social-media",
+    "multilingual",
+    "style-control",
+    "gemini",
+    "google"
+  ],
+  "languages": [
+    "en-US",
+    "ar",
+    "fil",
+    "bn",
+    "fi",
+    "nl",
+    "gl",
+    "en",
+    "ka",
+    "fr",
+    "el",
+    "de",
+    "gu",
+    "hi",
+    "ht",
+    "id",
+    "he",
+    "it",
+    "hu",
+    "ja",
+    "is"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Gemini API usage governed by Google AI Terms of Service.",
+  "metadata": {
+    "shortLabel": "Youthful · Gemini 2.5 Flash TTS",
+    "searchDescription": "Leda Youthful Gemini TTS Google AI voice style control multilingual youthful social-media",
+    "machineTags": [
+      "youthful",
+      "social-media",
+      "multilingual",
+      "style-control"
+    ],
+    "useCases": [
+      "social-media",
+      "podcast",
+      "audiobook"
+    ],
+    "toneTags": [
+      "youthful"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME4D1XF690FC441BCA5FB",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Hey there! So excited to share some amazing news with everyone today.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME4D1XFB5993321D9CBA5",
+      "sourceType": "cloud_provider",
+      "sourceKey": "gemini:2.5-flash-tts:Leda",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "pcm",
+        "mp3"
+      ],
+      "maxInputChars": 8000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Google AI (Gemini)",
+    "providerType": "cloud_api",
+    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
+    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+    "modelFamily": "Gemini 2.5",
+    "modelName": "gemini-2.5-flash-preview-tts",
+    "modelId": "gemini-2.5-flash-preview-tts",
+    "modelVersion": "2.5-flash-preview",
+    "architecture": "Gemini multimodal transformer with TTS output head",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 8000,
+    "license": "Google AI Terms of Service",
+    "licenseUrl": "https://ai.google.dev/gemini-api/terms",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Subject to Google AI data usage policy",
+    "latencyMs": "~1000-5000",
+    "releaseDate": "2025-05-01",
+    "knownLimitations": [
+      "Preview — API may change before GA",
+      "Text-only input, audio-only output (no multimodal mixing in TTS mode)",
+      "No SSML — uses natural language prompts for style control instead",
+      "Multi-speaker limited to 2 speakers per request",
+      "32k token context window limit",
+      "Rate limited: 10 requests/minute on free tier"
+    ],
+    "notes": "Voice style: \"Youthful\". Supports natural language style direction — prefix text with instructions like \"Say cheerfully:\" or \"In a whisper:\". Multi-speaker mode supports up to 2 voices per conversation. Also available on gemini-2.5-pro-preview-tts for higher quality. 70+ languages supported. Style, accent, pace, and tone controllable via prompt engineering.",
+    "runtimeFramework": "Gemini API (REST/SDK)",
+    "hardwareRequirements": "Cloud API — no local hardware required"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XF4AA47AC9393C5A.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XF4AA47AC9393C5A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XF4AA47AC9393C5A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XF4AA47AC9393C5A.json"
+}

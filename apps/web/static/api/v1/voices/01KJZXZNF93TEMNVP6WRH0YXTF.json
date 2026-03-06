@@ -1,0 +1,95 @@
+{
+  "id": "01KJZXZNF93TEMNVP6WRH0YXTF",
+  "name": "Liam",
+  "provider": "AWS Polly",
+  "providerId": "aws-polly",
+  "providerVoiceId": "liam",
+  "description": "Canadian French Male voice (Liam) — neural engine.",
+  "tags": [
+    "male",
+    "ca"
+  ],
+  "languages": [
+    "fr-CA"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+  "metadata": {
+    "shortLabel": "fr-CA male voice",
+    "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
+    "machineTags": [
+      "male",
+      "ca"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "steady"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNF99BFQDW0RRX3TDQZJ",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNF93HM0CTGSHVRN8FDK",
+      "sourceType": "cloud_provider",
+      "sourceKey": "aws:polly:liam",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 3000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Amazon Web Services",
+    "providerType": "cloud_api",
+    "providerUrl": "https://aws.amazon.com/polly/",
+    "apiEndpoint": "polly.{region}.amazonaws.com",
+    "modelFamily": "Amazon Polly Neural",
+    "architecture": "Neural TTS (NTTS)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 3000,
+    "license": "AWS Service Terms",
+    "licenseUrl": "https://aws.amazon.com/service-terms/",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~200-500",
+    "releaseDate": "2016-11-30",
+    "knownLimitations": [
+      "Neural engine not available for all voices in all regions",
+      "Some voices only support standard engine",
+      "SSML tag support varies by engine type"
+    ],
+    "modelVersion": "Neural engine"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF93TEMNVP6WRH0YXTF",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF93TEMNVP6WRH0YXTF.json"
+}

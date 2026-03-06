@@ -1,0 +1,109 @@
+{
+  "id": "01JCVK5F2Q2W5P4TQ8KT4NR1A1",
+  "name": "Joanna",
+  "provider": "AWS Polly",
+  "description": "US English voice widely used for assistants, explainers, and narration.",
+  "tags": [
+    "narration",
+    "assistant",
+    "us-english"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+  "metadata": {
+    "shortLabel": "Warm US narrator",
+    "searchDescription": "Balanced American English female voice for guides, onboarding flows, and general narration.",
+    "machineTags": [
+      "neutral",
+      "clean-diction",
+      "onboarding",
+      "assistant"
+    ],
+    "useCases": [
+      "Product onboarding",
+      "Help center narration",
+      "UI assistant prompts"
+    ],
+    "toneTags": [
+      "warm",
+      "confident",
+      "clear"
+    ],
+    "audienceTags": [
+      "general-consumer",
+      "saas-users"
+    ],
+    "accent": "General American",
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "speakingStyle": "steady and articulate",
+    "metadataQuality": "editorial"
+  },
+  "samples": [
+    {
+      "id": "01JCVK6A3GTNAQ0EJ4BT9HZ3A1",
+      "scriptKey": "briefing",
+      "label": "Product Brief",
+      "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVK5F2Q2W5P4TQ8KT4NR1A1.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01JCVK78QFQ6D6S2XH2V1HZRA1",
+      "sourceType": "cloud_provider",
+      "sourceKey": "aws:polly:joanna",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 3000,
+      "previewOnly": false
+    }
+  ],
+  "providerId": "aws-polly",
+  "providerVoiceId": "joanna",
+  "modelCard": {
+    "providerName": "Amazon Web Services",
+    "providerType": "cloud_api",
+    "providerUrl": "https://aws.amazon.com/polly/",
+    "apiEndpoint": "polly.{region}.amazonaws.com",
+    "modelFamily": "Amazon Polly Neural",
+    "architecture": "Neural TTS (NTTS)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 3000,
+    "license": "AWS Service Terms",
+    "licenseUrl": "https://aws.amazon.com/service-terms/",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~200-500",
+    "releaseDate": "2016-11-30",
+    "knownLimitations": [
+      "Neural engine not available for all voices in all regions",
+      "Some voices only support standard engine",
+      "SSML tag support varies by engine type"
+    ],
+    "modelVersion": "Neural engine"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVK5F2Q2W5P4TQ8KT4NR1A1.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.json"
+}

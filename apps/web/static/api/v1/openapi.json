@@ -1,0 +1,315 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vokda Voice Catalog API",
+    "version": "1.0.0",
+    "description": "Read-only API for discovering and browsing TTS voices across cloud providers and open models. All endpoints return static JSON — no authentication required.",
+    "contact": {
+      "name": "Vokda",
+      "url": "https://vokda.iksnae.com"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://vokda.iksnae.com/terms"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://vokda.iksnae.com",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/api/v1/voices.json": {
+      "get": {
+        "operationId": "listVoices",
+        "summary": "List all voices",
+        "description": "Returns the full voice catalog with summary metadata. Use client-side filtering on the response.",
+        "responses": {
+          "200": {
+            "description": "Voice catalog",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceCatalog"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "voices"
+        ]
+      }
+    },
+    "/api/v1/voices/{voiceId}.json": {
+      "get": {
+        "operationId": "getVoice",
+        "summary": "Get voice detail",
+        "description": "Returns full voice data including model card, samples, variants, and all metadata.",
+        "parameters": [
+          {
+            "name": "voiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ULID voice identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Voice detail",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Voice"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "voices"
+        ]
+      }
+    },
+    "/api/v1/providers.json": {
+      "get": {
+        "operationId": "listProviders",
+        "summary": "List all providers",
+        "description": "Returns provider registry with voice counts and capabilities.",
+        "responses": {
+          "200": {
+            "description": "Provider list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderList"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "providers"
+        ]
+      }
+    },
+    "/api/v1/stats.json": {
+      "get": {
+        "operationId": "getCatalogStats",
+        "summary": "Catalog statistics",
+        "description": "Returns aggregate statistics about the voice catalog.",
+        "responses": {
+          "200": {
+            "description": "Catalog stats",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogStats"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "catalog"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VoiceCatalog": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceSummary"
+            }
+          }
+        }
+      },
+      "VoiceSummary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ULID identifier"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "qualityTier": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "standard",
+              "premium"
+            ]
+          },
+          "audioUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "detailUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "webUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "Voice": {
+        "type": "object",
+        "description": "Full voice detail including model card, samples, and variants.",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audioUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "modelCard": {
+            "type": "object",
+            "description": "50+ fields of model metadata"
+          },
+          "samples": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "ProviderList": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Provider"
+            }
+          }
+        }
+      },
+      "Provider": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "voiceCount": {
+            "type": "integer"
+          },
+          "qualityTiers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CatalogStats": {
+        "type": "object",
+        "properties": {
+          "totalVoices": {
+            "type": "integer"
+          },
+          "totalProviders": {
+            "type": "integer"
+          },
+          "withAudio": {
+            "type": "integer"
+          },
+          "withModelCard": {
+            "type": "integer"
+          },
+          "capabilities": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

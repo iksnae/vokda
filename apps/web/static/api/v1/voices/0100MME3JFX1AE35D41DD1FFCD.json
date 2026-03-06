@@ -1,0 +1,109 @@
+{
+  "id": "0100MME3JFX1AE35D41DD1FFCD",
+  "name": "Bruno (KittenTTS)",
+  "provider": "KittenTTS",
+  "providerId": "kittentts",
+  "providerVoiceId": "Bruno",
+  "description": "Authoritative, resonant male voice for announcements. KittenTTS micro model running locally on Apple Silicon.",
+  "tags": [
+    "male",
+    "us",
+    "announcement",
+    "authoritative",
+    "mlx",
+    "local",
+    "kittentts"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "KittenTTS is released under Apache 2.0 license.",
+  "metadata": {
+    "shortLabel": "en-US male · KittenTTS micro · local",
+    "searchDescription": "Authoritative, resonant male voice for announcements. KittenTTS local open model Apple Silicon mlx",
+    "machineTags": [
+      "male",
+      "us",
+      "announcement",
+      "local"
+    ],
+    "useCases": [
+      "announcement"
+    ],
+    "toneTags": [
+      "authoritative"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME3JFX134B57ADCE4EC01",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Attention all passengers: the next train to Central Station departs in approximately five minutes.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME3JFX1B6AA4ECCD61029",
+      "sourceType": "self_hosted",
+      "sourceKey": "kittentts:micro:Bruno",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 2000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "KittenTTS",
+    "providerType": "local_model",
+    "providerUrl": "https://github.com/KittenML/KittenTTS",
+    "modelFamily": "KittenTTS",
+    "modelName": "kitten-tts-micro-0.8",
+    "modelId": "KittenML/kitten-tts-micro-0.8",
+    "modelVersion": "0.8.1",
+    "architecture": "KittenTTS neural TTS (local inference)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 2000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://github.com/KittenML/KittenTTS/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Local inference only — no data leaves device",
+    "latencyMs": "~500-2000",
+    "releaseDate": "2025-01-15",
+    "knownLimitations": [
+      "English only (en-US)",
+      "No SSML support",
+      "No streaming — full audio generated before playback",
+      "Requires local Python server (kittentts-server.py)",
+      "Apple Silicon recommended for best performance"
+    ],
+    "notes": "Runs locally via kittentts-server.py on port 8200. Requires Python 3.12 with kittentts wheel installed. Model: KittenML/kitten-tts-micro-0.8 (HuggingFace). 8 built-in voices. No cloud dependency — all inference is on-device.",
+    "apiEndpoint": "localhost:8200/generate",
+    "runtimeFramework": "KittenTTS Python (Apple Silicon optimized)",
+    "hardwareRequirements": "Apple Silicon Mac recommended (M1+), ~200MB RAM"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX1AE35D41DD1FFCD.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX1AE35D41DD1FFCD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX1AE35D41DD1FFCD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX1AE35D41DD1FFCD.json"
+}

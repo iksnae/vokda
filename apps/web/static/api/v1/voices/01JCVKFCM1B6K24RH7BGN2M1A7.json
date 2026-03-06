@@ -1,0 +1,108 @@
+{
+  "id": "01JCVKFCM1B6K24RH7BGN2M1A7",
+  "name": "en-GB-RyanNeural",
+  "provider": "Azure Speech",
+  "description": "British English neural voice with strong clarity for product education and training.",
+  "tags": [
+    "uk-english",
+    "training",
+    "clear"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "UK training narrator",
+    "searchDescription": "British English voice with instructional cadence for onboarding and policy education.",
+    "machineTags": [
+      "uk",
+      "training",
+      "instructional",
+      "clarity"
+    ],
+    "useCases": [
+      "Employee onboarding",
+      "Training modules",
+      "Compliance narration"
+    ],
+    "toneTags": [
+      "clear",
+      "measured",
+      "professional"
+    ],
+    "audienceTags": [
+      "enterprise",
+      "education"
+    ],
+    "accent": "British",
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "speakingStyle": "formal and crisp",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01JCVKGCH0Z4D9VNHENND6MD95",
+      "scriptKey": "onboarding",
+      "label": "Onboarding",
+      "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01JCVKH4X8Y9FHF5CJM9B5XH5T",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-GB-RyanNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-GB-RyanNeural",
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVKFCM1B6K24RH7BGN2M1A7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKFCM1B6K24RH7BGN2M1A7.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVKFCM1B6K24RH7BGN2M1A7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01JCVKFCM1B6K24RH7BGN2M1A7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVKFCM1B6K24RH7BGN2M1A7.json"
+}

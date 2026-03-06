@@ -15,10 +15,11 @@
     "amplify:sandbox": ". ./switch-aws-env.sh personal && npx ampx sandbox",
     "amplify:deploy": ". ./switch-aws-env.sh personal && npx ampx pipeline-deploy --branch main",
     "amplify:outputs": ". ./switch-aws-env.sh personal && npx ampx generate outputs --format json --out-dir .",
-    "build:web": "npm --workspace apps/web run build",
+    "build:web": "node scripts/generate-api.mjs && npm run -w apps/web build",
     "check:web": "npm --workspace apps/web run check",
     "lint": "npm --workspace apps/web run lint",
-    "test": "npm --workspace apps/web run test"
+    "test": "npm --workspace apps/web run test",
+    "generate:api": "node scripts/generate-api.mjs"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.21.0",

@@ -1,0 +1,132 @@
+{
+  "id": "0100MME4D1XG6C01198056150D",
+  "name": "Callirrhoe",
+  "provider": "Gemini TTS",
+  "providerId": "gemini-tts",
+  "providerVoiceId": "Callirrhoe",
+  "description": "Easy-going voice. Gemini 2.5 Flash TTS with natural language style control. Supports prompt-directed tone, accent, pace, and multi-speaker conversations.",
+  "tags": [
+    "easy-going",
+    "casual",
+    "multilingual",
+    "style-control",
+    "gemini",
+    "google"
+  ],
+  "languages": [
+    "en-US",
+    "ar",
+    "fil",
+    "bn",
+    "fi",
+    "nl",
+    "gl",
+    "en",
+    "ka",
+    "fr",
+    "el",
+    "de",
+    "gu",
+    "hi",
+    "ht",
+    "id",
+    "he",
+    "it",
+    "hu",
+    "ja",
+    "is"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Gemini API usage governed by Google AI Terms of Service.",
+  "metadata": {
+    "shortLabel": "Easy-going · Gemini 2.5 Flash TTS",
+    "searchDescription": "Callirrhoe Easy-going Gemini TTS Google AI voice style control multilingual easy-going casual",
+    "machineTags": [
+      "easy-going",
+      "casual",
+      "multilingual",
+      "style-control"
+    ],
+    "useCases": [
+      "casual",
+      "podcast",
+      "audiobook"
+    ],
+    "toneTags": [
+      "easy-going"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "neutral",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME4D1XGDE1089AEFC359D",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "No worries at all, take your time. We can figure this out together whenever you're ready.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG6C01198056150D.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME4D1XGF436740ACBCBB5",
+      "sourceType": "cloud_provider",
+      "sourceKey": "gemini:2.5-flash-tts:Callirrhoe",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "pcm",
+        "mp3"
+      ],
+      "maxInputChars": 8000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Google AI (Gemini)",
+    "providerType": "cloud_api",
+    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
+    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+    "modelFamily": "Gemini 2.5",
+    "modelName": "gemini-2.5-flash-preview-tts",
+    "modelId": "gemini-2.5-flash-preview-tts",
+    "modelVersion": "2.5-flash-preview",
+    "architecture": "Gemini multimodal transformer with TTS output head",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 8000,
+    "license": "Google AI Terms of Service",
+    "licenseUrl": "https://ai.google.dev/gemini-api/terms",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Subject to Google AI data usage policy",
+    "latencyMs": "~1000-5000",
+    "releaseDate": "2025-05-01",
+    "knownLimitations": [
+      "Preview — API may change before GA",
+      "Text-only input, audio-only output (no multimodal mixing in TTS mode)",
+      "No SSML — uses natural language prompts for style control instead",
+      "Multi-speaker limited to 2 speakers per request",
+      "32k token context window limit",
+      "Rate limited: 10 requests/minute on free tier"
+    ],
+    "notes": "Voice style: \"Easy-going\". Supports natural language style direction — prefix text with instructions like \"Say cheerfully:\" or \"In a whisper:\". Multi-speaker mode supports up to 2 voices per conversation. Also available on gemini-2.5-pro-preview-tts for higher quality. 70+ languages supported. Style, accent, pace, and tone controllable via prompt engineering.",
+    "runtimeFramework": "Gemini API (REST/SDK)",
+    "hardwareRequirements": "Cloud API — no local hardware required"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG6C01198056150D.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XG6C01198056150D.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XG6C01198056150D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XG6C01198056150D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XG6C01198056150D.json"
+}

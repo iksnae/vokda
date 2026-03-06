@@ -1,0 +1,93 @@
+{
+  "id": "01KJZXZNFCV9FV48QGXS3GRVKA",
+  "name": "en-GB-Neural2-C",
+  "provider": "Google Cloud TTS",
+  "providerId": "gcp-tts",
+  "providerVoiceId": "en-GB-Neural2-C",
+  "description": "Google en-GB-Neural2-C — Female en-GB voice.",
+  "tags": [
+    "female",
+    "gb"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
+  "metadata": {
+    "shortLabel": "en-GB female voice",
+    "searchDescription": "Google en-GB-Neural2-C — Female en-GB voice.",
+    "machineTags": [
+      "female",
+      "gb"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "clear"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNFCH1WNYAEJHC2EWCCR",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "I found three voice options that match your preferred tone and language targets.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCV9FV48QGXS3GRVKA.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNFCF3GPJVEQZTZ7H8FT",
+      "sourceType": "cloud_provider",
+      "sourceKey": "gcp:tts:en-GB-Neural2-C",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Google Cloud",
+    "providerType": "cloud_api",
+    "providerUrl": "https://cloud.google.com/text-to-speech",
+    "apiEndpoint": "texttospeech.googleapis.com",
+    "modelFamily": "Google Cloud Text-to-Speech",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 5000,
+    "license": "Google Cloud Terms of Service",
+    "licenseUrl": "https://cloud.google.com/terms",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~200-600",
+    "releaseDate": "2018-03-27",
+    "knownLimitations": [
+      "Audio samples in this catalog used OpenAI fallback (GCP API key was invalid at generation time)",
+      "Neural2 voices may not be available in all regions",
+      "Studio voices have higher per-character cost"
+    ],
+    "architecture": "Neural2 (2nd generation neural TTS)"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFCV9FV48QGXS3GRVKA.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCV9FV48QGXS3GRVKA.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFCV9FV48QGXS3GRVKA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFCV9FV48QGXS3GRVKA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFCV9FV48QGXS3GRVKA.json"
+}

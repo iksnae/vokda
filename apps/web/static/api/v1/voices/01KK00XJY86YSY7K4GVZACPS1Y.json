@@ -1,0 +1,101 @@
+{
+  "id": "01KK00XJY86YSY7K4GVZACPS1Y",
+  "name": "Chatterbox Turbo",
+  "provider": "Chatterbox",
+  "providerId": "chatterbox",
+  "providerVoiceId": "default",
+  "description": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control. Runs locally on Apple Silicon via MLX.",
+  "tags": [
+    "male",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (368M params). Check model card for license terms.",
+  "metadata": {
+    "shortLabel": "MLX · 368M · male",
+    "searchDescription": "Expressive voice-clone-capable TTS. Natural conversational style with emotion control.",
+    "machineTags": [
+      "male",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KK00XJY8VJ2Y7WJBE76R3GRN",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KK00XJY8W23CK36APTVG5G9W",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:chatterbox:default",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Resemble AI",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/resemble-ai/chatterbox",
+    "modelUrl": "https://huggingface.co/mlx-community/Chatterbox-Turbo-TTS-4bit",
+    "modelFamily": "Chatterbox",
+    "modelName": "Chatterbox-Turbo",
+    "modelSize": "368M parameters",
+    "architecture": "RVQ-based codec language model",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "4-bit",
+    "diskSize": "~368MB",
+    "memoryRequired": "~500MB",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "multilingual": false,
+    "emotionControl": true,
+    "voiceCloning": true,
+    "maxInputLength": 5000,
+    "license": "MIT",
+    "licenseUrl": "https://huggingface.co/resemble-ai/chatterbox/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "realtimeFactor": "~30x realtime",
+    "latencyMs": "~500-1000",
+    "releaseDate": "2025-06-12",
+    "knownLimitations": [
+      "Voice cloning requires reference audio",
+      "Default voice only without reference",
+      "Emotion control via text prompt engineering"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00XJY86YSY7K4GVZACPS1Y",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XJY86YSY7K4GVZACPS1Y.json"
+}

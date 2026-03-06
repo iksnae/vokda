@@ -1,0 +1,111 @@
+{
+  "id": "01JCW015M2Q4MFX8K2CZ9R2D2",
+  "name": "nova",
+  "provider": "OpenAI",
+  "providerId": "openai",
+  "providerVoiceId": "nova",
+  "description": "Expressive OpenAI voice for storytelling and energetic marketing reads.",
+  "tags": [
+    "expressive",
+    "storytelling",
+    "openai"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+  "metadata": {
+    "shortLabel": "Energetic creative narrator",
+    "searchDescription": "Higher-energy voice suitable for launch videos, social clips, and dynamic narration.",
+    "machineTags": [
+      "expressive",
+      "creative",
+      "launch-content",
+      "high-variation"
+    ],
+    "useCases": [
+      "Launch videos",
+      "Promo reads",
+      "Creative narration"
+    ],
+    "toneTags": [
+      "energetic",
+      "vivid",
+      "uplifting"
+    ],
+    "audienceTags": [
+      "creators",
+      "marketing"
+    ],
+    "accent": "General American",
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "speakingStyle": "dynamic and vivid",
+    "metadataQuality": "editorial"
+  },
+  "samples": [
+    {
+      "id": "01JCW015M2Q4MFX8K2CZ9R2H2",
+      "scriptKey": "launch",
+      "label": "Launch Spot",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW015M2Q4MFX8K2CZ9R2D2.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01JCW015M2Q4MFX8K2CZ9R2K2",
+      "sourceType": "cloud_provider",
+      "sourceKey": "openai:tts:nova",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "OpenAI",
+    "providerType": "cloud_api",
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "modelFamily": "OpenAI TTS",
+    "architecture": "Proprietary neural TTS",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 4096,
+    "license": "OpenAI Usage Policies",
+    "licenseUrl": "https://openai.com/policies/usage-policies",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "latencyMs": "~300-800",
+    "releaseDate": "2023-11-06",
+    "knownLimitations": [
+      "No SSML support",
+      "No word-level timestamps",
+      "Voice selection is limited to preset voices"
+    ],
+    "modelName": "tts-1",
+    "modelVersion": "tts-1",
+    "modelId": "tts-1",
+    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCW015M2Q4MFX8K2CZ9R2D2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW015M2Q4MFX8K2CZ9R2D2.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCW015M2Q4MFX8K2CZ9R2D2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01JCW015M2Q4MFX8K2CZ9R2D2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCW015M2Q4MFX8K2CZ9R2D2.json"
+}

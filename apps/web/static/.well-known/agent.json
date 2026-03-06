@@ -1,0 +1,24 @@
+{
+  "name": "Vokda",
+  "description": "TTS voice discovery and curation platform. Browse 180 voices across 19 providers.",
+  "url": "https://vokda.iksnae.com",
+  "capabilities": [
+    "voice-catalog",
+    "audio-samples",
+    "model-cards",
+    "provider-comparison"
+  ],
+  "api": {
+    "openapi": "https://vokda.iksnae.com/api/v1/openapi.json",
+    "endpoints": {
+      "voices": "https://vokda.iksnae.com/api/v1/voices.json",
+      "providers": "https://vokda.iksnae.com/api/v1/providers.json",
+      "stats": "https://vokda.iksnae.com/api/v1/stats.json"
+    }
+  },
+  "data_formats": [
+    "application/json"
+  ],
+  "authentication": "none",
+  "rate_limits": "No rate limits — static files served via CDN."
+}

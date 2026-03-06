@@ -1,0 +1,110 @@
+{
+  "id": "01KJZZ71X5Y9RJR09BKKPP68QD",
+  "name": "Bella (Kokoro-82M)",
+  "provider": "Kokoro",
+  "providerId": "kokoro",
+  "providerVoiceId": "af_bella",
+  "description": "Warm, expressive American female voice. Runs locally via Kokoro-82M on Apple Silicon.",
+  "tags": [
+    "female",
+    "american",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
+  "metadata": {
+    "shortLabel": "American female voice",
+    "searchDescription": "Warm, expressive American female voice.",
+    "machineTags": [
+      "female",
+      "american",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "accent": "american",
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KJZZ71X5M9KBVWX9GTPDTKGV",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ71X5Y9RJR09BKKPP68QD.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZZ71X5KCNX7KFP4251AG4A",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:Kokoro-82M:af_bella",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Hexgrad (Kokoro)",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "modelUrl": "https://huggingface.co/mlx-community/Kokoro-82M-bf16",
+    "modelFamily": "Kokoro",
+    "modelName": "Kokoro-82M",
+    "modelSize": "82M parameters",
+    "architecture": "StyleTTS2-based with ISTFTNet vocoder",
+    "baseModel": "Kokoro-82M",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "bf16",
+    "diskSize": "~160MB",
+    "memoryRequired": "~300MB",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": true,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "supportedLanguages": [
+      "en-US"
+    ],
+    "maxInputLength": 5000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "realtimeFactor": "~50x realtime",
+    "latencyMs": "~200-1000",
+    "releaseDate": "2024-12-25",
+    "trainingData": "Proprietary + public domain audiobooks",
+    "knownLimitations": [
+      "Requires espeak-ng for phonemizer",
+      "Some voice styles may sound similar",
+      "Long texts may have prosody drift"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ71X5Y9RJR09BKKPP68QD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ71X5Y9RJR09BKKPP68QD.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ71X5Y9RJR09BKKPP68QD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZZ71X5Y9RJR09BKKPP68QD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ71X5Y9RJR09BKKPP68QD.json"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "01KK00XMW22QSJDFXS66X6EY9H",
+  "name": "Dia",
+  "provider": "Dia",
+  "providerId": "dia",
+  "providerVoiceId": "default",
+  "description": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues. Runs locally on Apple Silicon via MLX.",
+  "tags": [
+    "female",
+    "open-model",
+    "local",
+    "mlx"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Open model (1.6B params). Check model card for license terms.",
+  "metadata": {
+    "shortLabel": "MLX · 1.6B · female",
+    "searchDescription": "Nari Labs dialogue model. Generates natural multi-speaker speech with nonverbal cues.",
+    "machineTags": [
+      "female",
+      "open-model",
+      "local",
+      "mlx"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "natural"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "samples": [
+    {
+      "id": "01KK00XMW22052KS8CCGDXDD2B",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KK00XMW226AMKZRFF0X08H95",
+      "sourceType": "local_model",
+      "sourceKey": "mlx:dia:default",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Nari Labs",
+    "providerType": "local_mlx",
+    "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
+    "modelUrl": "https://huggingface.co/mlx-community/Dia-1.6B",
+    "modelFamily": "Dia",
+    "modelName": "Dia-1.6B",
+    "modelSize": "1.6B parameters",
+    "architecture": "Encoder-decoder with DAC audio codec",
+    "runtime": "mlx-audio (Apple MLX)",
+    "quantization": "bf16",
+    "diskSize": "~3.2GB",
+    "memoryRequired": "~4GB",
+    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
+    "sampleRate": 24000,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "multilingual": false,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 5000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://huggingface.co/nari-labs/Dia-1.6B/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "realtimeFactor": "~5x realtime",
+    "latencyMs": "~5000-12000",
+    "releaseDate": "2025-03-24",
+    "knownLimitations": [
+      "Primarily a dialogue model — best for conversational text",
+      "Supports nonverbal cues like (laughs), (sighs)",
+      "Multi-speaker via [S1] [S2] tags in text",
+      "Slower than single-speaker models"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00XMW22QSJDFXS66X6EY9H",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XMW22QSJDFXS66X6EY9H.json"
+}

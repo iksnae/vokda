@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Vokda Voice Catalog",
+  "name_for_model": "vokda",
+  "description_for_human": "Discover and browse TTS voices across 19 providers — cloud APIs and local open models.",
+  "description_for_model": "Search and retrieve text-to-speech (TTS) voice metadata from the Vokda catalog. The catalog contains 180 voices across 19 providers including AWS Polly, Azure Speech, Google Cloud TTS, Gemini TTS, OpenAI, ElevenLabs, Kokoro, KittenTTS, Bark, and more. Each voice has audio samples, model cards with technical specifications, and provider compatibility information. Use /api/v1/voices.json for the full list, /api/v1/voices/{id}.json for details, /api/v1/providers.json for provider info, and /api/v1/stats.json for catalog statistics. All endpoints are static JSON — no authentication required.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://vokda.iksnae.com/api/v1/openapi.json"
+  },
+  "logo_url": "https://vokda.iksnae.com/favicon-192.png",
+  "contact_email": "hello@iksnae.com",
+  "legal_info_url": "https://vokda.iksnae.com/terms"
+}

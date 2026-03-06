@@ -1,0 +1,109 @@
+{
+  "id": "0100MME3JFX2E2A1CC924DA988",
+  "name": "Hugo (KittenTTS)",
+  "provider": "KittenTTS",
+  "providerId": "kittentts",
+  "providerVoiceId": "Hugo",
+  "description": "Deep, measured male voice ideal for documentary narration. KittenTTS micro model running locally on Apple Silicon.",
+  "tags": [
+    "male",
+    "us",
+    "documentary",
+    "measured",
+    "mlx",
+    "local",
+    "kittentts"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "KittenTTS is released under Apache 2.0 license.",
+  "metadata": {
+    "shortLabel": "en-US male · KittenTTS micro · local",
+    "searchDescription": "Deep, measured male voice ideal for documentary narration. KittenTTS local open model Apple Silicon mlx",
+    "machineTags": [
+      "male",
+      "us",
+      "documentary",
+      "local"
+    ],
+    "useCases": [
+      "documentary"
+    ],
+    "toneTags": [
+      "measured"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "complete"
+  },
+  "samples": [
+    {
+      "id": "0100MME3JFX271117FEA26243A",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "The quantum computing breakthrough promises to revolutionize how we approach complex optimization problems.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX2E2A1CC924DA988.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "0100MME3JFX260D90E9C5222CF",
+      "sourceType": "self_hosted",
+      "sourceKey": "kittentts:micro:Hugo",
+      "runnable": true,
+      "supportsSsml": false,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 2000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "KittenTTS",
+    "providerType": "local_model",
+    "providerUrl": "https://github.com/KittenML/KittenTTS",
+    "modelFamily": "KittenTTS",
+    "modelName": "kitten-tts-micro-0.8",
+    "modelId": "KittenML/kitten-tts-micro-0.8",
+    "modelVersion": "0.8.1",
+    "architecture": "KittenTTS neural TTS (local inference)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": false,
+    "ssmlSupport": false,
+    "wordTimestamps": false,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 2000,
+    "license": "Apache 2.0",
+    "licenseUrl": "https://github.com/KittenML/KittenTTS/blob/main/LICENSE",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "dataRetention": "Local inference only — no data leaves device",
+    "latencyMs": "~500-2000",
+    "releaseDate": "2025-01-15",
+    "knownLimitations": [
+      "English only (en-US)",
+      "No SSML support",
+      "No streaming — full audio generated before playback",
+      "Requires local Python server (kittentts-server.py)",
+      "Apple Silicon recommended for best performance"
+    ],
+    "notes": "Runs locally via kittentts-server.py on port 8200. Requires Python 3.12 with kittentts wheel installed. Model: KittenML/kitten-tts-micro-0.8 (HuggingFace). 8 built-in voices. No cloud dependency — all inference is on-device.",
+    "apiEndpoint": "localhost:8200/generate",
+    "runtimeFramework": "KittenTTS Python (Apple Silicon optimized)",
+    "hardwareRequirements": "Apple Silicon Mac recommended (M1+), ~200MB RAM"
+  },
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX2E2A1CC924DA988.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX2E2A1CC924DA988.jpg",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX2E2A1CC924DA988.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX2E2A1CC924DA988",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX2E2A1CC924DA988.json"
+}

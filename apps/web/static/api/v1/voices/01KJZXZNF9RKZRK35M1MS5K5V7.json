@@ -1,0 +1,100 @@
+{
+  "id": "01KJZXZNF9RKZRK35M1MS5K5V7",
+  "name": "en-GB-SoniaNeural",
+  "provider": "Azure Speech",
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-GB-SoniaNeural",
+  "description": "English (United Kingdom) Female neural voice. Styles: cheerful, sad.",
+  "tags": [
+    "female",
+    "gb"
+  ],
+  "languages": [
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "en-GB female voice",
+    "searchDescription": "English (United Kingdom) Female neural voice. Styles: cheerful, sad.",
+    "machineTags": [
+      "female",
+      "gb"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "cheerful",
+      "sad"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "speakingStyle": "cheerful",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNF9PD7DQSAW24EZQEMG",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9RKZRK35M1MS5K5V7.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNF9YDKEK0KCESQRV2QQ",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-GB-SoniaNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ],
+    "supportedStyles": [
+      "cheerful",
+      "sad"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF9RKZRK35M1MS5K5V7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9RKZRK35M1MS5K5V7.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF9RKZRK35M1MS5K5V7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF9RKZRK35M1MS5K5V7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF9RKZRK35M1MS5K5V7.json"
+}

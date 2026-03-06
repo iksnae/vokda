@@ -1,0 +1,95 @@
+{
+  "id": "01KJZXZNF8FEW0ZDB7XJMR1DW2",
+  "name": "Kendra",
+  "provider": "AWS Polly",
+  "providerId": "aws-polly",
+  "providerVoiceId": "kendra",
+  "description": "US English Female voice (Kendra) — neural engine.",
+  "tags": [
+    "female",
+    "us"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
+  "metadata": {
+    "shortLabel": "en-US female voice",
+    "searchDescription": "US English Female voice (Kendra) — neural engine.",
+    "machineTags": [
+      "female",
+      "us"
+    ],
+    "useCases": [],
+    "toneTags": [
+      "clear"
+    ],
+    "audienceTags": [],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "sparse"
+  },
+  "samples": [
+    {
+      "id": "01KJZXZNF8X38WCAH0Q5581NJT",
+      "scriptKey": "default",
+      "label": "Default",
+      "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF8FEW0ZDB7XJMR1DW2.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNF8Q10DA6XX68WKCJQX",
+      "sourceType": "cloud_provider",
+      "sourceKey": "aws:polly:kendra",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 3000,
+      "previewOnly": false
+    }
+  ],
+  "modelCard": {
+    "providerName": "Amazon Web Services",
+    "providerType": "cloud_api",
+    "providerUrl": "https://aws.amazon.com/polly/",
+    "apiEndpoint": "polly.{region}.amazonaws.com",
+    "modelFamily": "Amazon Polly Neural",
+    "architecture": "Neural TTS (NTTS)",
+    "sampleRate": 24000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": false,
+    "emotionControl": false,
+    "voiceCloning": false,
+    "maxInputLength": 3000,
+    "license": "AWS Service Terms",
+    "licenseUrl": "https://aws.amazon.com/service-terms/",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~200-500",
+    "releaseDate": "2016-11-30",
+    "knownLimitations": [
+      "Neural engine not available for all voices in all regions",
+      "Some voices only support standard engine",
+      "SSML tag support varies by engine type"
+    ],
+    "modelVersion": "Neural engine"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF8FEW0ZDB7XJMR1DW2.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF8FEW0ZDB7XJMR1DW2.json"
+}

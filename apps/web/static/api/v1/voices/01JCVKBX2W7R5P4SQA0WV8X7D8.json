@@ -1,0 +1,108 @@
+{
+  "id": "01JCVKBX2W7R5P4SQA0WV8X7D8",
+  "name": "en-US-JennyNeural",
+  "provider": "Azure Speech",
+  "description": "High-quality US English neural voice commonly used in enterprise assistants.",
+  "tags": [
+    "enterprise",
+    "conversational",
+    "us-english"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
+  "metadata": {
+    "shortLabel": "Enterprise support assistant",
+    "searchDescription": "Clean, conversational US voice tuned for support and product guidance interactions.",
+    "machineTags": [
+      "support",
+      "enterprise",
+      "assistant",
+      "conversational"
+    ],
+    "useCases": [
+      "Support bot",
+      "IVR guidance",
+      "Product walkthrough"
+    ],
+    "toneTags": [
+      "friendly",
+      "professional",
+      "clear"
+    ],
+    "audienceTags": [
+      "enterprise-users",
+      "customer-support"
+    ],
+    "accent": "General American",
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "speakingStyle": "modern and natural",
+    "metadataQuality": "editorial"
+  },
+  "samples": [
+    {
+      "id": "01JCVKD6EPX0S90S2NY0G0CHY2",
+      "scriptKey": "support",
+      "label": "Support Agent",
+      "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "id": "01JCVKE9MBBH6Y2WKY0M2J6XP4",
+      "sourceType": "cloud_provider",
+      "sourceKey": "azure:speech:en-US-JennyNeural",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 10000,
+      "previewOnly": false
+    }
+  ],
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-US-JennyNeural",
+  "modelCard": {
+    "providerName": "Microsoft Azure",
+    "providerType": "cloud_api",
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "modelFamily": "Azure Neural TTS",
+    "architecture": "Neural TTS with style and role support",
+    "sampleRate": 48000,
+    "bitDepth": 16,
+    "channels": 1,
+    "streamingSupport": true,
+    "ssmlSupport": true,
+    "wordTimestamps": true,
+    "multilingual": true,
+    "emotionControl": true,
+    "voiceCloning": false,
+    "maxInputLength": 10000,
+    "license": "Azure AI Services Terms",
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "attributionRequired": false,
+    "gdprCompliant": true,
+    "dataRetention": "Not stored after synthesis",
+    "latencyMs": "~150-400",
+    "releaseDate": "2019-09-01",
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ]
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKBX2W7R5P4SQA0WV8X7D8.mp3",
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01JCVKBX2W7R5P4SQA0WV8X7D8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVKBX2W7R5P4SQA0WV8X7D8.json"
+}

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vokda.iksnae.com/sitemap.xml
+
+# API endpoints (machine-readable)
+# https://vokda.iksnae.com/api/v1/voices.json
+# https://vokda.iksnae.com/api/v1/providers.json
+# https://vokda.iksnae.com/api/v1/stats.json
+# https://vokda.iksnae.com/api/v1/openapi.json
+# https://vokda.iksnae.com/.well-known/ai-plugin.json
