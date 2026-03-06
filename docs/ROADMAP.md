@@ -1,85 +1,111 @@
 # Vokda Roadmap
 
 > See [VISION.md](./VISION.md) for the full product vision.
+> See [ARCHITECTURE.md](./ARCHITECTURE.md) for current system architecture.
 
 Vokda has two parallel tracks that evolve together:
 
-- **Discovery Track** — the voice catalog, browsing experience, collections, and audio
+- **Discovery Track** — the voice catalog, browsing experience, collections, synthesis, and audio
 - **Hub Track** — industry news, model tracking, reviews, and guidance
 
 ---
 
 ## Current State (March 2026)
 
-**Shipped:**
-- 130 voices across 7 providers (AWS Polly, Azure Speech, Google Cloud TTS, OpenAI, ElevenLabs, Kokoro 82M, Qwen3 TTS)
-- 128 voices with real generated audio samples
-- Pinterest-style browse grid with play, favorite, pin, and filter
-- Voice detail page with custom audio player
-- Collections — pin, organize, export as Voice Pack JSON
-- Curation workspace for metadata enrichment
-- Auth scaffolded (Amplify Cognito): visitor → guest → curator → admin
-- Local TTS via mlx-audio (Kokoro + Qwen3 on Apple Silicon)
-- AWS Amplify deployment (main → prod, PRs → preview envs)
+### ✅ Shipped
 
-**Not yet built:**
-- Persistent saves (auth wired but not end-to-end)
-- Real synthesis (adapters return mock/pre-generated audio)
-- Industry news feed
-- Model tracking / release monitoring
-- Reviews and ratings
-- Guidance content
-- Cartesia, PlayHT, Fish Audio, Hume providers
+**Catalog & Discovery**
+- 550 voices across 25 providers in 53 languages
+- All 550 voices have real generated audio samples (100% coverage)
+- Pinterest-style browse grid with 11 filters, all URL-synced
+- Search across name, provider, description, tags, gender, accent, style
+- Voice detail pages with custom audio player, collapsible model card
+- Collections — pin, organize, export as Voice Pack JSON
+- Favorites system
+
+**Synthesis & Audition**
+- Server-side synthesis API with 9 provider adapters (OpenAI, ElevenLabs, Deepgram, Gemini TTS, Cartesia, LMNT, GCP TTS, Azure Speech, AWS Polly)
+- SSML visual editor with 7 tags, attribute popovers, real-time validation, provider-aware tag availability
+- Three-gate audition: auth gate → provider setup guide → full audition UI
+- BYOK (Bring Your Own Key) — users store their own provider API keys
+- Audio clip library with full CRUD (name, tags, description, re-synthesize, download, delete, search)
+- Contextual provider setup guidance per provider type (API, free, local model)
+
+**Auth & Infrastructure**
+- Cognito auth live (sign up/in/confirm), role hierarchy: visitor → guest → curator → admin
+- Vokda API keys for programmatic access (`vk_live_...`)
+- Custom API domain: `api.vokda.iksnae.com`
+- SAM-deployed serverless stack (Lambda + API Gateway + S3 + DynamoDB)
+- Amplify Gen2 backend (Cognito + AppSync + 10 DynamoDB tables)
+- 5 GB per-user storage quota with tracking
+- 178 unit tests passing
+
+**Curation**
+- Curation workspace for metadata enrichment (curator+)
+- Voice draft creation system
+- Admin panel for user role management
+
+### ⚠️ Known Gaps
+
+- Amplify Data (DynamoDB) scaffolded but favorites/collections still in localStorage — not persisted cross-session
+- ElevenLabs free tier key flagged — needs upgrade or different key
+- Metadata quality varies: original 12 seed voices have editorial labels; bulk-added voices have sparser metadata
+- No industry hub content yet (Phase 3)
 
 ---
 
-## Phase 1 — Catalog Quality (Active)
+## Phase 1 — Catalog Quality & Polish (Active)
 
-**Goal:** Make the existing 130 voices actually discoverable and trustworthy.
+**Goal:** Make the catalog reliable, metadata-rich, and pleasant to use.
 
 ### 1a. Metadata Enrichment
-- [ ] Enrich `shortLabel` for all bulk-added voices (currently generic: "en-US female voice")
-- [ ] Enrich `toneTags`, `useCases`, `audienceTags` for voices added via mass discovery
-- [ ] Standardize `metadataQuality` field across catalog (`sparse` → `curated` → `editorial`)
+- [ ] Enrich `shortLabel` for bulk-added voices (replace generic "en-US female voice")
+- [ ] Fill `toneTags`, `useCases`, `audienceTags` for sparse-metadata voices
+- [ ] Standardize `metadataQuality` across catalog (`sparse` → `curated` → `editorial`)
 - [ ] Add `genderPresentation`, `accent`, `speakingStyle` where missing
 
-### 1b. Catalog Coverage Gaps
-- [ ] Add Cartesia voices (ultra-low latency, real-time capable — high priority)
-- [ ] Add PlayHT voices (large library, cloning API)
-- [ ] Add Fish Audio voices (open-source friendly)
-- [ ] Add Hume AI (emotional TTS)
-- [ ] Run real Google Cloud TTS synthesis (currently using OpenAI fallback audio)
-- [ ] Fix OpenAI `ballad` and `verse` (missing samples — use gpt-4o-audio-preview)
+### 1b. Persistent Data
+- [ ] Wire Amplify Data end-to-end: favorites and collections sync to DynamoDB
+- [ ] Migrate localStorage state to Amplify Data on first sign-in
+- [ ] Collection sharing (public link to a curated voice set)
 
-### 1c. Audio Sample Quality
-- [ ] Standardize sample transcript across all voices (current: inconsistent per-voice)
-- [ ] Add multiple sample scripts per voice (e.g., conversational, narration, formal)
-- [ ] CDN-host audio samples (currently bundled as static assets — won't scale)
+### 1c. Audio & Playback
+- [ ] CDN-host audio samples (currently static assets — won't scale beyond ~1,000)
+- [ ] Add multiple sample scripts per voice (conversational, narration, formal)
+- [ ] Track clip duration (`durationMs`) via Web Audio API or server-side analysis
+- [ ] Fix: Google Cloud TTS samples with restricted API key
+
+### 1d. UX Polish
+- [ ] Voice ranking / featured order (not just insertion order)
+- [ ] Mobile bottom action bar on detail pages
+- [ ] Loading states and skeleton screens for async operations
+- [ ] Empty state improvements across all pages
 
 ---
 
 ## Phase 2 — Discovery Experience
 
-**Goal:** Make Vokda genuinely delightful to browse and use.
+**Goal:** Make Vokda genuinely delightful for finding the right voice.
 
-### 2a. Catalog UX Polish
-- [ ] Voice ranking / featured order (not just insertion order)
-- [ ] "Similar voices" on detail page
-- [ ] Mood/use-case browse pages (e.g., "Voices for audiobooks", "Voices for gaming NPCs")
-- [ ] Comparison mode — pick 2-3 voices and hear them speak the same text
-- [ ] Mobile bottom action bar on detail pages
+### 2a. Discovery Features
+- [ ] "Similar voices" on detail page (by tags, quality, provider type)
+- [ ] Comparison mode — pick 2-3 voices, hear them speak the same text
+- [ ] Mood/use-case browse pages ("Voices for audiobooks", "Voices for gaming NPCs")
+- [ ] Voice Finder wizard — answer questions, get a shortlist
+- [ ] Provider comparison page
 
-### 2b. Persistent Collections (Auth)
-- [ ] Wire Amplify Cognito auth end-to-end (saves currently in localStorage only)
-- [ ] Sync favorites and collections to Amplify Data (DynamoDB)
-- [ ] Collection sharing (public link to a curated voice set)
-- [ ] Default "Favorites" built-in collection (merge favorites into collections system)
+### 2b. Synthesis Enhancements
+- [ ] Synthesis parameter controls (speed, pitch, format) per provider
+- [ ] Streaming synthesis for low-latency providers (Cartesia, LMNT)
+- [ ] Batch synthesis — queue multiple voices with same text
+- [ ] Clip waveform visualization
+- [ ] Clip sharing (public presigned URL)
 
-### 2c. Live Audition
-- [ ] Real-time synthesis on voice detail page (type any text, hear it in that voice)
-- [ ] Wire cloud provider adapters: AWS Polly, Azure Speech, OpenAI TTS, ElevenLabs
-- [ ] Rate limiting and auth gate for synthesis (guest tier+)
-- [ ] SSML support toggle in audition panel
+### 2c. SSML Editor v2
+- [ ] Syntax highlighting in textarea (or switch to CodeMirror)
+- [ ] Provider-specific SSML template library
+- [ ] SSML diff view (before/after tag changes)
+- [ ] Amazon/Microsoft extension tags in toolbar
 
 ---
 
@@ -87,42 +113,26 @@ Vokda has two parallel tracks that evolve together:
 
 **Goal:** Make Vokda the place you go to stay current on TTS.
 
-> Architecture detail: see [docs/specs/hub-architecture.md](./specs/hub-architecture.md)
+> Architecture detail: [specs/hub-architecture.md](./specs/hub-architecture.md)
 
-**Hub is a two-piece system:**
-- `iksnae/vokda-hub` — separate Jekyll repo for editorial content (news, guides, provider & model profiles)
-- `iksnae/vokda` — SvelteKit consumes Jekyll JSON feeds; adds in-app `/hub` route and auth-gated reviews
-
-### 3a. `vokda-hub` Jekyll Repo (new repo)
-- [ ] Bootstrap `iksnae/vokda-hub` with Jekyll + GitHub Pages deploy
-- [ ] Set up `_posts`, `_providers`, `_models`, `_guides`, `_data` structure
-- [ ] Configure `api/news.json` and `api/models.json` Liquid templates (consumed by SvelteKit)
-- [ ] Seed: 3-5 news posts, provider profiles for all 7 current providers, 2 guides
-- [ ] Deploy to `hub.vokda.iknsae.com` via GitHub Pages CNAME
+### 3a. Hub Content (New Repo: `vokda-hub`)
+- [ ] Bootstrap `iksnae/vokda-hub` with Jekyll + GitHub Pages
+- [ ] Provider profiles for all 25 current providers
+- [ ] Model profiles for major open-source models
+- [ ] Seed 5-10 news posts (model releases, industry updates)
+- [ ] 3+ guides ("Choosing a TTS provider", "SSML best practices", "Open-source TTS overview")
 
 ### 3b. SvelteKit Hub Integration
-- [ ] Add `/hub` route — fetches Jekyll JSON feed, renders news + featured guide
-- [ ] Rename "Explore" → "Voices" in nav; add "Hub" nav link
-- [ ] Provider profile deep-links on voice detail pages ("About ElevenLabs →")
+- [ ] `/hub` route consuming Jekyll JSON feeds
+- [ ] Provider profile deep-links from voice detail pages
 - [ ] Model profile deep-links from open-model voice cards
+- [ ] Nav restructure: Voices | Hub | Account
 
-### 3c. Model & Provider Registry
-- [ ] `_providers/` profiles: feature matrix, pricing tiers, SSML support, latency
-- [ ] `_models/` profiles: HuggingFace link, license, benchmarks, known limitations
-- [ ] `_data/benchmarks.yml` — MOS scores, cost/char, latency (manually curated)
-- [ ] Model registry page on hub site
-
-### 3d. Reviews & Ratings (Amplify)
-- [ ] `VoiceReview` model in Amplify Data schema
+### 3c. Reviews & Ratings
+- [ ] `VoiceReview` model in Amplify Data
 - [ ] Review UI on voice detail page (curator+ can post)
-- [ ] Aggregate quality scores: naturalness, expressiveness, consistency, use-case fit
-- [ ] `SavedArticle` model — users can bookmark hub articles
-
-### 3e. Guidance Content
-- [ ] "Voice Finder" — answer a few questions, get a shortlist (SvelteKit interactive)
-- [ ] Use-case guide pages in Jekyll `_guides/`
-- [ ] Provider comparison guides (ElevenLabs vs OpenAI, cloud vs open-source)
-- [ ] Pricing context page
+- [ ] Aggregate quality scores: naturalness, expressiveness, consistency
+- [ ] Benchmark data (MOS scores, latency, cost/character)
 
 ---
 
@@ -130,33 +140,34 @@ Vokda has two parallel tracks that evolve together:
 
 **Goal:** Make Vokda useful as infrastructure, not just a discovery surface.
 
-### 4a. Backend API
-- [ ] `GET /voices` — filterable catalog endpoint
-- [ ] `POST /synthesize` — proxy synthesis through Vokda (normalized API across providers)
-- [ ] `GET /voices/:id/samples` — stream audio samples from CDN
-- [ ] Webhook support for new voice/model notifications
+### 4a. Public API
+- [ ] API documentation site (OpenAPI spec)
+- [ ] `GET /v1/voices` — public filterable catalog endpoint
+- [ ] `GET /v1/voices/:id` — voice detail + samples
+- [ ] `GET /v1/providers` — provider registry
+- [ ] Rate limiting tiers (free / pro)
 
 ### 4b. Ingestion Pipeline
-- [ ] Automated provider sync (run discovery scripts on schedule, diff against catalog)
-- [ ] HuggingFace model scanner (watch for new TTS models meeting quality bar)
-- [ ] Admin review queue for newly discovered voices before they go live
-- [ ] Sample regeneration pipeline (re-generate audio when model updates)
+- [ ] Automated provider sync (scheduled Lambda, diff against catalog)
+- [ ] HuggingFace model scanner (quality-gated)
+- [ ] Admin review queue for newly discovered voices
+- [ ] Sample regeneration pipeline
 
 ### 4c. Developer Tools
-- [ ] Vokda CLI — search voices, download samples, export packs from terminal
-- [ ] Voice Pack format v2 — structured for direct use in agent/pipeline configs
+- [ ] Vokda CLI — search voices, synthesize, manage clips from terminal
+- [ ] Voice Pack format v2 — structured for agent/pipeline configs
 - [ ] Embed widgets — drop a voice player onto any site
-- [ ] API keys for programmatic access
+- [ ] Webhook notifications (new voice, model release, provider update)
 
 ---
 
 ## Out of Scope (For Now)
 
 - Voice cloning / custom voice creation
-- Real-time streaming synthesis
+- Real-time streaming synthesis (WebSocket)
 - Multi-language UI localization
 - Mobile native app
 - Social features (follow curators, share reviews)
 - Monetization / marketplace
 
-These may become relevant later, but aren't on the path to making Vokda the trusted TTS hub.
+These may become relevant later, but aren't on the path to making Vokda the trusted TTS destination.
