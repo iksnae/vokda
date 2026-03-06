@@ -44,6 +44,10 @@
   let selectedAccents: Set<string> = new Set();
   let selectedSources: Set<string> = new Set();
 
+  let selectedGenders: Set<string> = new Set();
+  let selectedAges: Set<string> = new Set();
+  let selectedTones: Set<string> = new Set();
+
   let runnableOnly = false;
   let ssmlOnly = false;
   let hasAudioOnly = false;
@@ -149,6 +153,13 @@
     const typeParam = params.get('type');
     if (typeParam) selectedSources = new Set(typeParam.split(',').filter(Boolean));
 
+    const genderParam = params.get('gender');
+    if (genderParam) selectedGenders = new Set(genderParam.split(',').filter(Boolean));
+    const ageParam = params.get('age');
+    if (ageParam) selectedAges = new Set(ageParam.split(',').filter(Boolean));
+    const toneParam = params.get('tone');
+    if (toneParam) selectedTones = new Set(toneParam.split(',').filter(Boolean));
+
     runnableOnly = params.get('runnable') === '1';
     ssmlOnly = params.get('ssml') === '1';
     hasAudioOnly = params.get('audio') === '1';
@@ -159,6 +170,7 @@
     // Auto-open filters panel if any filter is active from URL
     if (selectedProviders.size > 0 || selectedLanguageBases.size > 0 ||
         selectedAccents.size > 0 || selectedSources.size > 0 ||
+        selectedGenders.size > 0 || selectedAges.size > 0 || selectedTones.size > 0 ||
         runnableOnly || ssmlOnly || hasAudioOnly) {
       filtersOpen = true;
     }
@@ -181,6 +193,9 @@
     if (selectedLanguageBases.size > 0) params.set('lang', Array.from(selectedLanguageBases).join(','));
     if (selectedAccents.size > 0) params.set('accent', Array.from(selectedAccents).join(','));
     if (selectedSources.size > 0) params.set('type', Array.from(selectedSources).join(','));
+    if (selectedGenders.size > 0) params.set('gender', Array.from(selectedGenders).join(','));
+    if (selectedAges.size > 0) params.set('age', Array.from(selectedAges).join(','));
+    if (selectedTones.size > 0) params.set('tone', Array.from(selectedTones).join(','));
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
     if (hasAudioOnly) params.set('audio', '1');
@@ -271,6 +286,9 @@
     selectedLanguageBases = new Set();
     selectedAccents = new Set();
     selectedSources = new Set();
+    selectedGenders = new Set();
+    selectedAges = new Set();
+    selectedTones = new Set();
     runnableOnly = false;
     ssmlOnly = false;
     hasAudioOnly = false;
@@ -282,6 +300,9 @@
     selectedProviders.size > 0,
     selectedLanguageBases.size > 0,   // Language and accent count as one filter group
     selectedSources.size > 0,
+    selectedGenders.size > 0,
+    selectedAges.size > 0,
+    selectedTones.size > 0,
     runnableOnly,
     ssmlOnly,
     hasAudioOnly,
@@ -296,15 +317,40 @@
     new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
   $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
+  const genderOrder = ['female', 'male', 'neutral', 'variable', 'unknown'];
+  const ageOrder = ['child', 'young', 'young adult', 'adult', 'middle_aged', 'mature', 'old', 'variable'];
+
   $: availableGenders = Array.from(
     new Set(effectiveVoices.map((v) => v.metadata?.genderPresentation ?? '').filter(Boolean))
-  ).sort();
+  ).sort((a, b) => {
+    const ai = genderOrder.indexOf(a), bi = genderOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
   $: availableAges = Array.from(
     new Set(effectiveVoices.map((v) => v.metadata?.agePresentation ?? '').filter(Boolean))
-  ).sort();
+  ).sort((a, b) => {
+    const ai = ageOrder.indexOf(a), bi = ageOrder.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
   $: availableStyles = Array.from(
     new Set(effectiveVoices.map((v) => v.metadata?.speakingStyle ?? '').filter(Boolean))
   ).sort();
+
+  /** Top tones by frequency across the catalog, normalized and alphabetically sorted. */
+  $: availableTones = (() => {
+    const counts = new Map<string, number>();
+    for (const v of effectiveVoices) {
+      for (const t of v.metadata?.toneTags ?? []) {
+        const norm = t.trim().toLowerCase();
+        counts.set(norm, (counts.get(norm) ?? 0) + 1);
+      }
+    }
+    return Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20)
+      .map(([tag]) => tag)
+      .sort();
+  })();
 
   const genderLabels: Record<string, string> = {
     female: 'Female',
@@ -358,6 +404,14 @@
       selectedSources.size === 0 ||
       (voice.variants ?? []).some((vr) => selectedSources.has(vr.sourceType));
     const matchesProvider = selectedProviders.size === 0 || selectedProviders.has(voice.provider);
+    const matchesGender =
+      selectedGenders.size === 0 || selectedGenders.has(meta.genderPresentation ?? '');
+    const matchesAge =
+      selectedAges.size === 0 || selectedAges.has(meta.agePresentation ?? '');
+    const normalizedVoiceTones = (meta.toneTags ?? []).map((t: string) => t.trim().toLowerCase());
+    const matchesTone =
+      selectedTones.size === 0 ||
+      normalizedVoiceTones.some((t: string) => selectedTones.has(t));
     const matchesRunnable = !runnableOnly || (voice.variants ?? []).some((vr) => vr.runnable);
     const matchesSsml = !ssmlOnly || (voice.variants ?? []).some((vr) => vr.supportsSsml);
     const matchesAudio = !hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl);
@@ -369,6 +423,9 @@
       matchesAccent &&
       matchesSource &&
       matchesProvider &&
+      matchesGender &&
+      matchesAge &&
+      matchesTone &&
       matchesRunnable &&
       matchesSsml &&
       matchesAudio &&
@@ -444,6 +501,60 @@
             {/each}
           </div>
         </div>
+
+        <!-- Gender chips -->
+        {#if availableGenders.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Gender</span>
+            <div class="chip-group">
+              {#each availableGenders as gender}
+                <button
+                  class="filter-chip"
+                  class:active={selectedGenders.has(gender)}
+                  on:click={() => { selectedGenders = toggleSetValue(selectedGenders, gender); }}
+                >
+                  {genderLabels[gender] ?? capitalize(gender)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- Age chips -->
+        {#if availableAges.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Age</span>
+            <div class="chip-group">
+              {#each availableAges as age}
+                <button
+                  class="filter-chip"
+                  class:active={selectedAges.has(age)}
+                  on:click={() => { selectedAges = toggleSetValue(selectedAges, age); }}
+                >
+                  {ageLabels[age] ?? capitalize(age)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
+
+        <!-- Tone chips -->
+        {#if availableTones.length > 0}
+          <div class="filter-section">
+            <span class="section-label">Tone</span>
+            <div class="chip-group">
+              {#each availableTones as tone}
+                <button
+                  class="filter-chip"
+                  class:active={selectedTones.has(tone)}
+                  on:click={() => { selectedTones = toggleSetValue(selectedTones, tone); }}
+                >
+                  {capitalize(tone)}
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
 
         <!-- Language chips (Tier 1) -->
         <div class="filter-section">
