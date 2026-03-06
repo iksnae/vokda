@@ -96,9 +96,8 @@ export async function revokeApiKey(userId, keyId) {
     TableName: TABLE,
     Key: { keyHash: target.keyHash },
     UpdateExpression: 'SET #s = :revoked',
-    ExpressionAttributeNames: { '#s': 'status' },
-    ExpressionAttributeValues: { ':revoked': 'revoked' },
     ConditionExpression: 'userId = :uid',
+    ExpressionAttributeNames: { '#s': 'status' },
     ExpressionAttributeValues: {
       ':revoked': 'revoked',
       ':uid': userId,
