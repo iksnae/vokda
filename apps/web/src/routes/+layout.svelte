@@ -95,7 +95,11 @@
               </a>
               <a href="/account/providers" class="menu-item" on:click={closeUserMenu}>
                 <Icon name="globe" size={15} />
-                API Keys
+                Provider Keys
+              </a>
+              <a href="/account/api-keys" class="menu-item" on:click={closeUserMenu}>
+                <Icon name="key" size={15} />
+                Vokda API Keys
               </a>
               <a href="/collections" class="menu-item" on:click={closeUserMenu}>
                 <Icon name="folder" size={15} />
