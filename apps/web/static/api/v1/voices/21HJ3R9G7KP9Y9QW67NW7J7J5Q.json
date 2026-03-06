@@ -72,11 +72,11 @@
     "age": "Mature",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.jpg",
-  "audioUrl": "/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3",
       "id": "s-21HJ3R9G7KP9Y9QW67NW7J7J5Q",
       "label": "Default",
       "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
@@ -91,5 +91,8 @@
       "label": "Fabian",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.json"
 }

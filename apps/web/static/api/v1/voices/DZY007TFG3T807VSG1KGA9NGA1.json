@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/DZY007TFG3T807VSG1KGA9NGA1.jpg",
-  "audioUrl": "/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DZY007TFG3T807VSG1KGA9NGA1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3",
       "id": "s-DZY007TFG3T807VSG1KGA9NGA1",
       "label": "Default",
       "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
@@ -91,5 +91,8 @@
       "label": "Olivia",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DZY007TFG3T807VSG1KGA9NGA1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DZY007TFG3T807VSG1KGA9NGA1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DZY007TFG3T807VSG1KGA9NGA1.json"
 }

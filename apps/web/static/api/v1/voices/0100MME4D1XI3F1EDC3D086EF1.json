@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XI3F1EDC3D086EF1.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XI3F1EDC3D086EF1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XI3F1EDC3D086EF1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI3F1EDC3D086EF1.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XI3F1EDC3D086EF1.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI3F1EDC3D086EF1.mp3",
       "transcript": "Listen, I've been around long enough to know when something doesn't add up.",
       "id": "0100MME4D1XI402CF477D0D060",
       "label": "Default"
@@ -124,5 +124,8 @@
       "id": "0100MME4D1XI1F90523E8B50CA",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XI3F1EDC3D086EF1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XI3F1EDC3D086EF1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XI3F1EDC3D086EF1.json"
 }

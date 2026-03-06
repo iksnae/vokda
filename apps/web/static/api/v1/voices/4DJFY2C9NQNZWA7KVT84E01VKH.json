@@ -81,11 +81,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
-  "audioUrl": "/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4DJFY2C9NQNZWA7KVT84E01VKH.mp3",
       "id": "s-4DJFY2C9NQNZWA7KVT84E01VKH",
       "label": "Default",
       "text": "Hello! I'm Brian Multilingual, speaking US English. This is a preview of how I sound in natural conversation."
@@ -100,5 +100,8 @@
       "label": "Brian Multilingual",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/4DJFY2C9NQNZWA7KVT84E01VKH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/4DJFY2C9NQNZWA7KVT84E01VKH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/4DJFY2C9NQNZWA7KVT84E01VKH.json"
 }

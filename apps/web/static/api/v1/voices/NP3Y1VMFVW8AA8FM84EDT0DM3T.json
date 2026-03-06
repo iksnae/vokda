@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.jpg",
-  "audioUrl": "/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3",
       "id": "s-NP3Y1VMFVW8AA8FM84EDT0DM3T",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Ellen - Welcome Agent",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.json"
 }

@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/DJ00A3HTFKVXRBVJ1W3M5G8A09.jpg",
-  "audioUrl": "/audio/samples/DJ00A3HTFKVXRBVJ1W3M5G8A09.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DJ00A3HTFKVXRBVJ1W3M5G8A09.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DJ00A3HTFKVXRBVJ1W3M5G8A09.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/DJ00A3HTFKVXRBVJ1W3M5G8A09.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DJ00A3HTFKVXRBVJ1W3M5G8A09.mp3",
       "id": "s-DJ00A3HTFKVXRBVJ1W3M5G8A09",
       "label": "Default",
       "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
@@ -91,5 +91,8 @@
       "label": "Viktoria",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DJ00A3HTFKVXRBVJ1W3M5G8A09.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DJ00A3HTFKVXRBVJ1W3M5G8A09",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DJ00A3HTFKVXRBVJ1W3M5G8A09.json"
 }

@@ -74,11 +74,11 @@
     "age": "Young Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",
-  "audioUrl": "/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
       "id": "s-QW8EEBM0DW1NHG67KVHY3MFHWC",
       "label": "Default",
       "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
@@ -93,5 +93,8 @@
       "label": "Uzume",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QW8EEBM0DW1NHG67KVHY3MFHWC",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.json"
 }

@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/QHM1ZR8BHPC1NYE84BPA9W229W.jpg",
-  "audioUrl": "/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QHM1ZR8BHPC1NYE84BPA9W229W.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QHM1ZR8BHPC1NYE84BPA9W229W.mp3",
       "id": "s-QHM1ZR8BHPC1NYE84BPA9W229W",
       "label": "Default",
       "text": "Hello! I'm Christopher, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Christopher",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QHM1ZR8BHPC1NYE84BPA9W229W.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QHM1ZR8BHPC1NYE84BPA9W229W",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QHM1ZR8BHPC1NYE84BPA9W229W.json"
 }

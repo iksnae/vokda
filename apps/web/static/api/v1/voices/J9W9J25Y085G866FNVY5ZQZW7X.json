@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
-  "audioUrl": "/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
       "id": "s-J9W9J25Y085G866FNVY5ZQZW7X",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Joey - Neighborhood Guy",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J9W9J25Y085G866FNVY5ZQZW7X",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J9W9J25Y085G866FNVY5ZQZW7X.json"
 }

@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/3HVWAFXR8DKYC2607KXXW849HV.jpg",
-  "audioUrl": "/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3HVWAFXR8DKYC2607KXXW849HV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3HVWAFXR8DKYC2607KXXW849HV.mp3",
       "id": "s-3HVWAFXR8DKYC2607KXXW849HV",
       "label": "Default",
       "text": "Hello! I'm Jenny, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Jenny",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3HVWAFXR8DKYC2607KXXW849HV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3HVWAFXR8DKYC2607KXXW849HV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3HVWAFXR8DKYC2607KXXW849HV.json"
 }

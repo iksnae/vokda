@@ -70,11 +70,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",
-  "audioUrl": "/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
       "id": "s-DHMBPDG841TBP0EDGFT87SM9PB",
       "label": "Default",
       "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
@@ -89,5 +89,8 @@
       "label": "Flavio",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DHMBPDG841TBP0EDGFT87SM9PB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DHMBPDG841TBP0EDGFT87SM9PB.json"
 }

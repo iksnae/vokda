@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/5RABQPDMBHJ23R9J041T869W7J.jpg",
-  "audioUrl": "/audio/samples/5RABQPDMBHJ23R9J041T869W7J.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5RABQPDMBHJ23R9J041T869W7J.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5RABQPDMBHJ23R9J041T869W7J.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/5RABQPDMBHJ23R9J041T869W7J.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5RABQPDMBHJ23R9J041T869W7J.mp3",
       "id": "s-5RABQPDMBHJ23R9J041T869W7J",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Melanie - Lively Spirit",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5RABQPDMBHJ23R9J041T869W7J.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5RABQPDMBHJ23R9J041T869W7J",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5RABQPDMBHJ23R9J041T869W7J.json"
 }

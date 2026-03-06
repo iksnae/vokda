@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/ZREFTBRC85JA0AEE667M3XSKSN.jpg",
-  "audioUrl": "/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZREFTBRC85JA0AEE667M3XSKSN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZREFTBRC85JA0AEE667M3XSKSN.mp3",
       "id": "s-ZREFTBRC85JA0AEE667M3XSKSN",
       "label": "Default",
       "text": "Hello! I'm Emma, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Emma",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZREFTBRC85JA0AEE667M3XSKSN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ZREFTBRC85JA0AEE667M3XSKSN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZREFTBRC85JA0AEE667M3XSKSN.json"
 }

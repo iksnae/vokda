@@ -80,12 +80,12 @@
     "channels": 1,
     "defaultVoiceNote": "One built-in voice; additional voices require reference audio for cloning"
   },
-  "imageUrl": "/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
-  "audioUrl": "/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XJY86YSY7K4GVZACPS1Y.mp3",
       "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
       "id": "01KK00XJY8VJ2Y7WJBE76R3GRN",
       "label": "Default"
@@ -105,5 +105,8 @@
       "id": "01KK00XJY8W23CK36APTVG5G9W",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00XJY86YSY7K4GVZACPS1Y.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00XJY86YSY7K4GVZACPS1Y",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XJY86YSY7K4GVZACPS1Y.json"
 }

@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XG8966A34517C8EF.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XG8966A34517C8EF.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XG8966A34517C8EF.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG8966A34517C8EF.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XG8966A34517C8EF.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG8966A34517C8EF.mp3",
       "transcript": "Close your eyes and imagine a place where time moves slowly and every breath feels intentional.",
       "id": "0100MME4D1XG4B7FB699F4706A",
       "label": "Default"
@@ -124,5 +124,8 @@
       "id": "0100MME4D1XGCDD2E441C032F1",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XG8966A34517C8EF.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XG8966A34517C8EF",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XG8966A34517C8EF.json"
 }

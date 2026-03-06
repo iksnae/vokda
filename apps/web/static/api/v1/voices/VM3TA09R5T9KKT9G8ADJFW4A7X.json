@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
-  "audioUrl": "/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
       "id": "s-VM3TA09R5T9KKT9G8ADJFW4A7X",
       "label": "Default",
       "text": "Hello! I'm Chilemba, speaking Kenyan English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Chilemba",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VM3TA09R5T9KKT9G8ADJFW4A7X",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.json"
 }

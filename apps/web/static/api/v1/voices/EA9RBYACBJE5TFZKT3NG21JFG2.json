@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
-  "audioUrl": "/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/EA9RBYACBJE5TFZKT3NG21JFG2.mp3",
       "id": "s-EA9RBYACBJE5TFZKT3NG21JFG2",
       "label": "Default",
       "text": "Hello! I'm Libby, speaking British English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Libby",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/EA9RBYACBJE5TFZKT3NG21JFG2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/EA9RBYACBJE5TFZKT3NG21JFG2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/EA9RBYACBJE5TFZKT3NG21JFG2.json"
 }

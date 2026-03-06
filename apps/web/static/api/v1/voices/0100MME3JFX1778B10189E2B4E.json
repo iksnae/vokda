@@ -77,12 +77,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME3JFX1778B10189E2B4E.jpg",
-  "audioUrl": "/audio/samples/0100MME3JFX1778B10189E2B4E.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX1778B10189E2B4E.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1778B10189E2B4E.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME3JFX1778B10189E2B4E.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1778B10189E2B4E.mp3",
       "transcript": "She whispered the secret to the old oak tree, knowing it would keep it safe forever.",
       "id": "0100MME3JFX10F31A04B975091",
       "label": "Default"
@@ -102,5 +102,8 @@
       "id": "0100MME3JFX141D0E8CB758604",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX1778B10189E2B4E.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX1778B10189E2B4E",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX1778B10189E2B4E.json"
 }

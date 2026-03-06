@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
-  "audioUrl": "/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
       "id": "s-YE25HM1G3WFSJ4A4BJA21YDXKY",
       "label": "Default",
       "text": "Hello! I'm Prabhat, speaking Indian English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Prabhat",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/YE25HM1G3WFSJ4A4BJA21YDXKY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.json"
 }

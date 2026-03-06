@@ -49,11 +49,11 @@
     "providerUrl": "https://lmnt.com",
     "architecture": "instant"
   },
-  "imageUrl": "/images/voices/DW0647HQT9WC9VT9M3J7XP9J9R.jpg",
-  "audioUrl": "/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DW0647HQT9WC9VT9M3J7XP9J9R.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3",
       "id": "s-DW0647HQT9WC9VT9M3J7XP9J9R",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -68,5 +68,8 @@
       "label": "Vesper",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DW0647HQT9WC9VT9M3J7XP9J9R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DW0647HQT9WC9VT9M3J7XP9J9R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DW0647HQT9WC9VT9M3J7XP9J9R.json"
 }

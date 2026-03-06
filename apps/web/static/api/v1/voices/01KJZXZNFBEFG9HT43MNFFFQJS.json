@@ -68,12 +68,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBEFG9HT43MNFFFQJS.mp3",
       "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
       "id": "01KJZXZNFB15V8XQ3S5F500RK9",
       "label": "Default"
@@ -93,5 +93,8 @@
       "id": "01KJZXZNFBXC5ZVC219ZDV8CY1",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBEFG9HT43MNFFFQJS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBEFG9HT43MNFFFQJS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBEFG9HT43MNFFFQJS.json"
 }

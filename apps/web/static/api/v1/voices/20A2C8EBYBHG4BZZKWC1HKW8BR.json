@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.jpg",
-  "audioUrl": "/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
       "id": "s-20A2C8EBYBHG4BZZKWC1HKW8BR",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Preston - Relatable Pal",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/20A2C8EBYBHG4BZZKWC1HKW8BR",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.json"
 }

@@ -67,12 +67,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNFBQRWDJ3N3NY6Y3J9R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBQRWDJ3N3NY6Y3J9R.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNFBQRWDJ3N3NY6Y3J9R.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBQRWDJ3N3NY6Y3J9R.mp3",
       "transcript": "This guidance applies to all production workloads starting with the next release cycle.",
       "id": "01KJZXZNFB9SRVSNNHDECQHP34",
       "label": "Default"
@@ -93,5 +93,8 @@
       "id": "01KJZXZNFBMH2Q9ECAR06EZQM5",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.json"
 }

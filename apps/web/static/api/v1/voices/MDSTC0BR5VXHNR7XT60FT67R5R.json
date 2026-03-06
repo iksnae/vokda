@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
-  "audioUrl": "/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MDSTC0BR5VXHNR7XT60FT67R5R.mp3",
       "id": "s-MDSTC0BR5VXHNR7XT60FT67R5R",
       "label": "Default",
       "text": "Hello! I'm Michelle, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Michelle",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/MDSTC0BR5VXHNR7XT60FT67R5R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/MDSTC0BR5VXHNR7XT60FT67R5R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/MDSTC0BR5VXHNR7XT60FT67R5R.json"
 }

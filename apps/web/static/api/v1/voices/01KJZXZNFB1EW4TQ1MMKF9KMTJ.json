@@ -64,12 +64,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFB1EW4TQ1MMKF9KMTJ.mp3",
       "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
       "id": "01KJZXZNFBVR5MRXBYTVBCTED2",
       "label": "Default"
@@ -90,5 +90,8 @@
       "id": "01KJZXZNFBG748X6NF0A160Z3Q",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFB1EW4TQ1MMKF9KMTJ.json"
 }

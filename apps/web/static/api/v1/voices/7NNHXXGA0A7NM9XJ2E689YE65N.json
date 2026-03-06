@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/7NNHXXGA0A7NM9XJ2E689YE65N.jpg",
-  "audioUrl": "/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7NNHXXGA0A7NM9XJ2E689YE65N.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
       "id": "s-7NNHXXGA0A7NM9XJ2E689YE65N",
       "label": "Default",
       "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
@@ -91,5 +91,8 @@
       "label": "Julius",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7NNHXXGA0A7NM9XJ2E689YE65N.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7NNHXXGA0A7NM9XJ2E689YE65N",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7NNHXXGA0A7NM9XJ2E689YE65N.json"
 }

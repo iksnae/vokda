@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.jpg",
-  "audioUrl": "/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A3TDMC0FQVNY0DWCC6FM5SPCFV.mp3",
       "id": "s-A3TDMC0FQVNY0DWCC6FM5SPCFV",
       "label": "Default",
       "text": "Hello! I'm Andrew, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Andrew",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A3TDMC0FQVNY0DWCC6FM5SPCFV.json"
 }

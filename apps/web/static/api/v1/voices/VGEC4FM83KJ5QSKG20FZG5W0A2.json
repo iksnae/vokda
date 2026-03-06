@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.jpg",
-  "audioUrl": "/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VGEC4FM83KJ5QSKG20FZG5W0A2.mp3",
       "id": "s-VGEC4FM83KJ5QSKG20FZG5W0A2",
       "label": "Default",
       "text": "Hello! I'm Steffan, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Steffan",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VGEC4FM83KJ5QSKG20FZG5W0A2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VGEC4FM83KJ5QSKG20FZG5W0A2.json"
 }

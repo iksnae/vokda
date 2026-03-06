@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/C1TCAAAFR6205T1R69ZZMFPC81.jpg",
-  "audioUrl": "/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C1TCAAAFR6205T1R69ZZMFPC81.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C1TCAAAFR6205T1R69ZZMFPC81.mp3",
       "id": "s-C1TCAAAFR6205T1R69ZZMFPC81",
       "label": "Default",
       "text": "Hello! I'm Ana, speaking US English. This is a preview of how I sound in natural conversation."
@@ -90,5 +90,8 @@
       "label": "Ana",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/C1TCAAAFR6205T1R69ZZMFPC81.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/C1TCAAAFR6205T1R69ZZMFPC81",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/C1TCAAAFR6205T1R69ZZMFPC81.json"
 }

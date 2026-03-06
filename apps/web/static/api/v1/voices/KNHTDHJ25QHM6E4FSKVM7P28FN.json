@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.jpg",
-  "audioUrl": "/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3",
       "id": "s-KNHTDHJ25QHM6E4FSKVM7P28FN",
       "label": "Default",
       "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
@@ -91,5 +91,8 @@
       "label": "Elara",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KNHTDHJ25QHM6E4FSKVM7P28FN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.json"
 }

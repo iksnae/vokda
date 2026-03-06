@@ -45,11 +45,11 @@
     "providerUrl": "https://lmnt.com",
     "architecture": "professional"
   },
-  "imageUrl": "/images/voices/25TBXT25G5TE5J48E81QZTE86B.jpg",
-  "audioUrl": "/audio/samples/25TBXT25G5TE5J48E81QZTE86B.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/25TBXT25G5TE5J48E81QZTE86B.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/25TBXT25G5TE5J48E81QZTE86B.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/25TBXT25G5TE5J48E81QZTE86B.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/25TBXT25G5TE5J48E81QZTE86B.mp3",
       "id": "s-25TBXT25G5TE5J48E81QZTE86B",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -64,5 +64,8 @@
       "label": "James",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/25TBXT25G5TE5J48E81QZTE86B.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/25TBXT25G5TE5J48E81QZTE86B",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/25TBXT25G5TE5J48E81QZTE86B.json"
 }

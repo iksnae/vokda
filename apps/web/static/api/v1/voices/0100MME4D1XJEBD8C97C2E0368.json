@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XJEBD8C97C2E0368.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XJEBD8C97C2E0368.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XJEBD8C97C2E0368.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJEBD8C97C2E0368.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XJEBD8C97C2E0368.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJEBD8C97C2E0368.mp3",
       "transcript": "Take a deep breath. Everything is going to work out just fine, one step at a time.",
       "id": "0100MME4D1XJF36D0300ADC715",
       "label": "Default"
@@ -124,5 +124,8 @@
       "id": "0100MME4D1XJC829A88741F3C5",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XJEBD8C97C2E0368.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XJEBD8C97C2E0368",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XJEBD8C97C2E0368.json"
 }

@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/HRABMDWC6FKJCBW082DZHNHVXS.jpg",
-  "audioUrl": "/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HRABMDWC6FKJCBW082DZHNHVXS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
       "id": "s-HRABMDWC6FKJCBW082DZHNHVXS",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Malcom - Talk Show Host",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HRABMDWC6FKJCBW082DZHNHVXS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HRABMDWC6FKJCBW082DZHNHVXS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HRABMDWC6FKJCBW082DZHNHVXS.json"
 }

@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "/images/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.jpg",
-  "audioUrl": "/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HJ9KP48FSKXNWC63SZKKTBQZQY.mp3",
       "id": "s-HJ9KP48FSKXNWC63SZKKTBQZQY",
       "label": "Default",
       "text": "Hello, I'm Mia. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -101,5 +101,8 @@
       "label": "Mia",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HJ9KP48FSKXNWC63SZKKTBQZQY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HJ9KP48FSKXNWC63SZKKTBQZQY.json"
 }

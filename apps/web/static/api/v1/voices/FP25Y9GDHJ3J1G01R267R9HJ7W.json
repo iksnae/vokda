@@ -70,11 +70,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",
-  "audioUrl": "/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
       "id": "s-FP25Y9GDHJ3J1G01R267R9HJ7W",
       "label": "Default",
       "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
@@ -89,5 +89,8 @@
       "label": "Sirio",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/FP25Y9GDHJ3J1G01R267R9HJ7W",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.json"
 }

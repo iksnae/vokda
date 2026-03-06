@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",
-  "audioUrl": "/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
       "id": "s-3T2065NJ9XP8E269SG5P3NXVZK",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Orin - Velvet Gentleman",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3T2065NJ9XP8E269SG5P3NXVZK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3T2065NJ9XP8E269SG5P3NXVZK.json"
 }

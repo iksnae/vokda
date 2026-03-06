@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",
-  "audioUrl": "/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
       "id": "s-8BPA1WFMA3YA8AA6DY9R9SY9HX",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Maya - Easygoing Ally",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.json"
 }

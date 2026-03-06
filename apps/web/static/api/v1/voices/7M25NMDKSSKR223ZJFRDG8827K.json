@@ -81,11 +81,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/7M25NMDKSSKR223ZJFRDG8827K.jpg",
-  "audioUrl": "/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7M25NMDKSSKR223ZJFRDG8827K.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7M25NMDKSSKR223ZJFRDG8827K.mp3",
       "id": "s-7M25NMDKSSKR223ZJFRDG8827K",
       "label": "Default",
       "text": "Hello! I'm Ava Multilingual, speaking US English. This is a preview of how I sound in natural conversation."
@@ -100,5 +100,8 @@
       "label": "Ava Multilingual",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7M25NMDKSSKR223ZJFRDG8827K.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7M25NMDKSSKR223ZJFRDG8827K",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7M25NMDKSSKR223ZJFRDG8827K.json"
 }

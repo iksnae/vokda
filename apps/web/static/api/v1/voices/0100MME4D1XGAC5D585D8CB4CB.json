@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XGAC5D585D8CB4CB.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XGAC5D585D8CB4CB.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XGAC5D585D8CB4CB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XGAC5D585D8CB4CB.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XGAC5D585D8CB4CB.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XGAC5D585D8CB4CB.mp3",
       "transcript": "Yeah, honestly, I think either option works fine. Whatever feels right to you.",
       "id": "0100MME4D1XG83588A4D8A94CE",
       "label": "Default"
@@ -124,5 +124,8 @@
       "id": "0100MME4D1XG799E272C25727D",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XGAC5D585D8CB4CB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XGAC5D585D8CB4CB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XGAC5D585D8CB4CB.json"
 }

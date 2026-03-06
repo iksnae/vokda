@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.jpg",
-  "audioUrl": "/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3",
       "id": "s-T1ZHM4CE3XP2A6BWFR5QP9Y47Z",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Krishna - Friendly Pal",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.json"
 }

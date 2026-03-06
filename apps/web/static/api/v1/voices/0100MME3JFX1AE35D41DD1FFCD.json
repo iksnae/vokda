@@ -77,12 +77,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME3JFX1AE35D41DD1FFCD.jpg",
-  "audioUrl": "/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX1AE35D41DD1FFCD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX1AE35D41DD1FFCD.mp3",
       "transcript": "Attention all passengers: the next train to Central Station departs in approximately five minutes.",
       "id": "0100MME3JFX134B57ADCE4EC01",
       "label": "Default"
@@ -102,5 +102,8 @@
       "id": "0100MME3JFX1B6AA4ECCD61029",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX1AE35D41DD1FFCD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX1AE35D41DD1FFCD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX1AE35D41DD1FFCD.json"
 }

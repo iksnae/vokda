@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "/images/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.jpg",
-  "audioUrl": "/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
       "id": "s-1PCFJ3MADGC9KNTCA5VQPACBRE",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -70,5 +70,8 @@
       "label": "Damon - Commanding Narrator",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1PCFJ3MADGC9KNTCA5VQPACBRE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.json"
 }

@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",
-  "audioUrl": "/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
       "id": "s-47YFQHJ5QTCC7ZMCADVXZZKXZY",
       "label": "Default",
       "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
@@ -91,5 +91,8 @@
       "label": "Fujin",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.json"
 }

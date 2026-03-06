@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XF6944C39B1A7287.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XF6944C39B1A7287.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XF6944C39B1A7287.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF6944C39B1A7287.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XF6944C39B1A7287.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF6944C39B1A7287.mp3",
       "transcript": "The committee has reviewed all proposals and will announce the selected candidates next Friday.",
       "id": "0100MME4D1XFBF3EEF9932D5C8",
       "label": "Default"
@@ -124,5 +124,8 @@
       "id": "0100MME4D1XF8D5D1B9ED4BB07",
       "supportsSsml": false
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XF6944C39B1A7287.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XF6944C39B1A7287",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XF6944C39B1A7287.json"
 }

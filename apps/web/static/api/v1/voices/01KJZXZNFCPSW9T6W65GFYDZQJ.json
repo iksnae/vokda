@@ -61,12 +61,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCPSW9T6W65GFYDZQJ.mp3",
       "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
       "id": "01KJZXZNFCAAXAAQY7HTTKYCG3",
       "label": "Default"
@@ -86,5 +86,8 @@
       "id": "01KJZXZNFCP05AT07VH84G6M7A",
       "supportsSsml": true
     }
-  ]
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFCPSW9T6W65GFYDZQJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFCPSW9T6W65GFYDZQJ.json"
 }
