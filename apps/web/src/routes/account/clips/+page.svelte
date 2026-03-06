@@ -5,22 +5,21 @@
     clips,
     clipsLoading,
     clipCount,
-    storageBytes,
+    totalBytes,
     removeClip,
     downloadClip,
     getClipPlaybackUrl,
     refreshClips,
+    type Clip,
   } from '$lib/stores/clips';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
-  import type { AudioClip } from '$lib/data/clip-store';
 
   // ─── Playback state ───
   let playingClipId: string | null = null;
   let audioEl: HTMLAudioElement | null = null;
   let currentTime = 0;
   let duration = 0;
-  let activeUrl: string | null = null;
 
   $: progressPct = duration > 0 ? (currentTime / duration) * 100 : 0;
 
@@ -48,15 +47,11 @@
     return text.slice(0, maxLen).trim() + '…';
   }
 
-  async function playClip(clip: AudioClip) {
+  function playClip(clip: Clip) {
     // Stop current playback
     if (audioEl) {
       audioEl.pause();
       audioEl.src = '';
-    }
-    if (activeUrl) {
-      URL.revokeObjectURL(activeUrl);
-      activeUrl = null;
     }
 
     // If clicking same clip, just stop
@@ -65,31 +60,26 @@
       return;
     }
 
-    try {
-      const url = await getClipPlaybackUrl(clip.id);
-      if (!url) {
-        addToast('Audio not found.', 'error');
-        return;
-      }
+    const url = getClipPlaybackUrl(clip);
+    if (!url) {
+      addToast('Audio not available.', 'error');
+      return;
+    }
 
-      activeUrl = url;
-      playingClipId = clip.id;
-      currentTime = 0;
-      duration = 0;
+    playingClipId = clip.id;
+    currentTime = 0;
+    duration = 0;
 
-      // Wait for the audio element to bind, then play
-      await new Promise((r) => setTimeout(r, 50));
+    // Set source and play after binding
+    requestAnimationFrame(() => {
       if (audioEl) {
         audioEl.src = url;
-        await audioEl.play();
+        void audioEl.play();
       }
-    } catch (err) {
-      addToast('Playback failed.', 'error');
-      playingClipId = null;
-    }
+    });
   }
 
-  async function handleDownload(clip: AudioClip) {
+  async function handleDownload(clip: Clip) {
     try {
       await downloadClip(clip);
       addToast('Download started.');
@@ -98,10 +88,9 @@
     }
   }
 
-  async function handleDelete(clip: AudioClip) {
+  async function handleDelete(clip: Clip) {
     if (!confirm(`Delete this clip from "${clip.voiceName}"?`)) return;
 
-    // Stop if playing
     if (playingClipId === clip.id) {
       if (audioEl) audioEl.pause();
       playingClipId = null;
@@ -128,9 +117,6 @@
       audioEl.pause();
       audioEl.src = '';
     }
-    if (activeUrl) {
-      URL.revokeObjectURL(activeUrl);
-    }
   });
 </script>
 
@@ -154,7 +140,7 @@
   {:else}
     <div class="stats-bar">
       <span><strong>{$clipCount}</strong> clip{$clipCount !== 1 ? 's' : ''}</span>
-      <span class="storage">{formatBytes($storageBytes)} stored locally</span>
+      <span class="storage">{formatBytes($totalBytes)}</span>
       <button class="btn ghost sm" on:click={refreshClips} disabled={$clipsLoading}>
         {$clipsLoading ? 'Loading…' : 'Refresh'}
       </button>
@@ -172,7 +158,6 @@
         <a href="/" class="btn primary">Browse Voices</a>
       </div>
     {:else}
-      <!-- Hidden audio element for playback -->
       <audio
         bind:this={audioEl}
         on:timeupdate={() => { if (audioEl) currentTime = audioEl.currentTime; }}
@@ -195,9 +180,11 @@
 
             <div class="clip-info">
               <div class="clip-top-row">
-                <a class="clip-voice" href="/voices/{clip.voiceId}">
-                  {clip.voiceName}
-                </a>
+                {#if clip.voiceId}
+                  <a class="clip-voice" href="/voices/{clip.voiceId}">{clip.voiceName}</a>
+                {:else}
+                  <span class="clip-voice">{clip.voiceName}</span>
+                {/if}
                 <span class="clip-provider">{clip.provider}</span>
                 <span class="clip-date">{formatDate(clip.createdAt)}</span>
               </div>
@@ -214,13 +201,8 @@
                 </div>
               {:else}
                 <div class="clip-meta">
-                  <span>{clip.latencyMs}ms</span>
-                  <span>·</span>
-                  <span>{clip.adapter}</span>
-                  {#if clip.durationMs > 0}
-                    <span>·</span>
-                    <span>{(clip.durationMs / 1000).toFixed(1)}s</span>
-                  {/if}
+                  {#if clip.latencyMs > 0}<span>{clip.latencyMs}ms</span><span>·</span>{/if}
+                  {#if clip.fileSizeBytes > 0}<span>{formatBytes(clip.fileSizeBytes)}</span>{/if}
                 </div>
               {/if}
             </div>
@@ -279,7 +261,6 @@
     font-size: var(--text-body);
   }
 
-  /* Auth gate */
   .auth-gate {
     text-align: center;
     padding: 3rem 1rem;
@@ -294,7 +275,6 @@
     color: #3e5972;
   }
 
-  /* Stats bar */
   .stats-bar {
     display: flex;
     align-items: center;
@@ -310,7 +290,6 @@
   .stats-bar strong { color: var(--brand-700); }
   .storage { color: #6a8ea6; margin-left: auto; }
 
-  /* Empty state */
   .empty-state {
     text-align: center;
     padding: 3rem 1rem;
@@ -325,7 +304,6 @@
   }
   .empty-state .hint { font-size: var(--text-small); color: #6a8ea6; }
 
-  /* Buttons */
   .btn {
     border: none;
     border-radius: 10px;
@@ -352,11 +330,7 @@
   }
   .btn.ghost.sm { padding: 0.35rem 0.65rem; }
 
-  /* Clip list */
-  .clip-list {
-    display: grid;
-    gap: 0.5rem;
-  }
+  .clip-list { display: grid; gap: 0.5rem; }
 
   .clip-card {
     display: flex;
@@ -368,17 +342,12 @@
     background: #fff;
     transition: border-color 150ms, box-shadow 150ms;
   }
-
-  .clip-card:hover {
-    border-color: #b6c8d6;
-  }
-
+  .clip-card:hover { border-color: #b6c8d6; }
   .clip-card.playing {
     border-color: var(--brand-600);
     box-shadow: 0 0 0 1px var(--brand-600), 0 4px 16px rgba(20, 94, 121, 0.12);
   }
 
-  /* Play button */
   .play-btn {
     width: 2.4rem;
     height: 2.4rem;
@@ -396,13 +365,11 @@
     transition: transform 100ms;
   }
   .play-btn:hover { transform: scale(1.06); }
-
   .clip-card.playing .play-btn {
     background: linear-gradient(154deg, #c62828, #b71c1c);
     box-shadow: 0 4px 12px rgba(198, 40, 40, 0.2);
   }
 
-  /* Clip info */
   .clip-info {
     flex: 1;
     min-width: 0;
@@ -423,7 +390,7 @@
     color: var(--brand-700);
     text-decoration: none;
   }
-  .clip-voice:hover { text-decoration: underline; }
+  a.clip-voice:hover { text-decoration: underline; }
 
   .clip-provider {
     font-size: var(--text-xs);
@@ -457,7 +424,6 @@
     font-weight: 600;
   }
 
-  /* Inline player */
   .clip-player {
     display: flex;
     align-items: center;
@@ -489,7 +455,6 @@
     white-space: nowrap;
   }
 
-  /* Actions */
   .clip-actions {
     display: flex;
     gap: 0.25rem;

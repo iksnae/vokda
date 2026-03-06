@@ -15,7 +15,7 @@
   import { isAuthenticated } from '$lib/auth/store';
   import { isProviderConnected } from '$lib/stores/credentials';
   import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
-  import { addClip } from '$lib/stores/clips';
+  import { refreshClips } from '$lib/stores/clips';
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -185,26 +185,9 @@
         addToast(auditionResult.warnings.join(' '), 'info');
       }
 
-      // Save clip to IndexedDB if audio was returned
+      // Refresh clips store so the clip count badge updates
       if (auditionResult.audioUrl) {
-        try {
-          const resp = await fetch(auditionResult.audioUrl);
-          const blob = await resp.blob();
-          await addClip({
-            voiceId: voice.id,
-            voiceName: voice.name,
-            provider: voice.provider,
-            providerId: voice.providerId ?? voice.provider,
-            inputText: auditionText,
-            inputMode: auditionMode,
-            latencyMs: auditionResult.latencyMs,
-            durationMs: 0,
-            adapter: auditionResult.adapter,
-          }, blob);
-          addToast('Clip saved.');
-        } catch (saveErr) {
-          console.warn('[audition] Failed to save clip:', saveErr);
-        }
+        void refreshClips();
       }
     } catch (err) {
       auditionError = humanizeSynthesisError(err);
