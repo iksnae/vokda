@@ -8,6 +8,8 @@ import {
   fetchAuthSession,
   getCurrentUser,
   resendSignUpCode,
+  resetPassword as amplifyResetPassword,
+  confirmResetPassword as amplifyConfirmResetPassword,
   signIn as amplifySignIn,
   signOut as amplifySignOut,
   signUp as amplifySignUp
@@ -242,6 +244,63 @@ export async function resendSignUpConfirmation(email: string): Promise<AuthResul
     return { success: true, message: 'New confirmation code sent.' };
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Failed to resend code.';
+    return { success: false, message };
+  }
+}
+
+export async function resetPasswordRequest(email: string): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Password reset is only available in browser context.' };
+  }
+
+  if (AUTH_MODE !== 'amplify') {
+    return { success: false, message: 'Password reset is disabled in mock auth mode.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    const result = await amplifyResetPassword({ username: email });
+
+    if (result.nextStep.resetPasswordStep === 'CONFIRM_RESET_PASSWORD_WITH_CODE') {
+      return {
+        success: true,
+        needsConfirmation: true,
+        message: 'Reset code sent to your email. Enter it below with your new password.'
+      };
+    }
+
+    return { success: true, message: 'Password reset initiated.' };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Password reset failed.';
+    return { success: false, message };
+  }
+}
+
+export async function confirmPasswordReset(
+  email: string,
+  code: string,
+  newPassword: string
+): Promise<AuthResult> {
+  if (!browser) {
+    return { success: false, message: 'Password reset is only available in browser context.' };
+  }
+
+  if (AUTH_MODE !== 'amplify') {
+    return { success: false, message: 'Password reset is disabled in mock auth mode.' };
+  }
+
+  ensureAmplifyConfigured();
+
+  try {
+    await amplifyConfirmResetPassword({
+      username: email,
+      confirmationCode: code,
+      newPassword
+    });
+    return { success: true, message: 'Password reset successfully. You can now sign in.' };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Password reset confirmation failed.';
     return { success: false, message };
   }
 }
