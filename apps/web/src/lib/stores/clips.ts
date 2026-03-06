@@ -8,7 +8,7 @@ import { browser } from '$app/environment';
 import { writable, derived } from 'svelte/store';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
 
-const API_BASE = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) ?? '';
+const API_BASE = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) || 'https://api.vokda.iksnae.com';
 
 export type Clip = {
   id: string;

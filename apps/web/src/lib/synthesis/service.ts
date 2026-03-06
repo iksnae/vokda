@@ -21,7 +21,7 @@ import type { VoiceVariant } from '$lib/types';
 
 const SYNTH_MODE = (import.meta.env.PUBLIC_SYNTH_MODE as string | undefined) ?? 'mock';
 const SYNTH_GATEWAY_URL = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string | undefined) ?? '';
-const SYNTHESIS_API_URL = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) ?? '';
+const SYNTHESIS_API_URL = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) || 'https://api.vokda.iksnae.com';
 
 /**
  * Call the Vokda Synthesis API (/v1/synthesize) with the user's auth token.
