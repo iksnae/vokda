@@ -168,31 +168,99 @@
 
 <style>
   :global(:root) {
-    --bg-ink: #0f1b26;
-    --bg-muted: #52657a;
-    --surface-0: #f2f6f9;
-    --surface-1: #f8fbfd;
-    --surface-2: #ffffff;
-    --stroke-soft: #d5e0e9;
-    --stroke-strong: #b6c8d6;
-    --brand-700: #0f5f7a;
-    --brand-600: #177089;
+    /* ── Primitives: brand scale ── */
+    --brand-50:  #f0f8fa;
     --brand-100: #dbeef5;
+    --brand-200: #a8dcea;
+    --brand-300: #5fc4df;
+    --brand-400: #3db0cc;
+    --brand-500: #229ab5;
+    --brand-600: #177089;
+    --brand-700: #0f5f7a;
+
+    /* ── Primitives: ink (blue-gray text) scale ── */
+    --ink-900: #173046;
+    --ink-800: #284f69;
+    --ink-700: #325067;
+    --ink-600: #446078;
+    --ink-500: #547087;
+    --ink-400: #7a96aa;
+    --ink-300: #8fa8b9;
+
+    /* ── Primitives: stroke scale ── */
+    --stroke-100: #edf2f6;
+    --stroke-200: #c9d7e3;
+    --stroke-300: #b4c9d8;
+    --stroke-400: #9eb6c8;
+
+    /* ── Primitives: named surfaces ── */
+    --bg-ink:      #0f1b26;
+    --bg-muted:    #52657a;
+    --surface-0:   #f2f6f9;
+    --surface-1:   #f8fbfd;
+    --surface-2:   #ffffff;
+    --surface-hover:  #f6f9fb;
+    --surface-raised: #f4f8fb;
+    --surface-active: #f0f8fa;
+
+    /* ── Primitives: strokes (legacy names kept) ── */
+    --stroke-soft:   #d5e0e9;
+    --stroke-strong: #b6c8d6;
+
+    /* ── Primitives: accent palette ── */
     --accent-100: #fef0db;
     --accent-700: #8f5a0b;
+
+    /* ── Primitives: danger ── */
+    --danger-600: #c0392b;
+
+    /* ── Primitives: elevation ── */
     --elev-1: 0 12px 24px rgba(15, 35, 54, 0.08);
     --elev-2: 0 20px 42px rgba(13, 29, 45, 0.14);
-    --radius-sm: 10px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
 
-    /* Type scale */
-    --text-display: clamp(1.6rem, 3vw, 2.2rem);
-    --text-heading: 1.15rem;
-    --text-subhead: 1.02rem;
-    --text-body: 0.9rem;
-    --text-small: 0.82rem;
-    --text-xs: 0.74rem;
+    /* ── Primitives: radius ── */
+    --radius-xs:   6px;
+    --radius-sm:   10px;
+    --radius-base: 12px;
+    --radius-md:   16px;
+    --radius-lg:   24px;
+
+    /* ── Primitives: type scale ── */
+    --text-display:  clamp(1.6rem, 3vw, 2.2rem);
+    --text-heading:  1.15rem;
+    --text-subhead:  1.02rem;
+    --text-body-lg:  1.0rem;
+    --text-body:     0.9rem;
+    --text-small:    0.82rem;
+    --text-xs:       0.74rem;
+    --text-micro:    0.62rem;
+
+    /* ── Semantic: text roles ── */
+    --text-primary:   var(--ink-900);
+    --text-secondary: var(--ink-800);
+    --text-tertiary:  var(--ink-600);
+    --text-muted:     var(--ink-500);
+    --text-subtle:    var(--ink-400);
+    --text-ghost:     var(--ink-300);
+
+    /* ── Semantic: stroke roles ── */
+    --stroke-control:       var(--stroke-200);
+    --stroke-control-hover: var(--stroke-400);
+    --stroke-divider:       var(--stroke-100);
+    --stroke-input:         var(--stroke-300);
+
+    /* ── Semantic: brand interaction ── */
+    --brand-hover-bg: rgba(23, 112, 137, 0.08);
+    --focus-ring:     rgba(23, 112, 137, 0.12);
+
+    /* ── Semantic: tag/tone palette ── */
+    --tag-fg:     #5a7a5e;
+    --tag-bg:     #edf5ee;
+    --tag-border: #d4e4d8;
+
+    /* ── Semantic: misc ── */
+    --opacity-disabled: 0.35;
+    --panel-bg: rgba(248, 252, 254, 0.95);
   }
 
   :global(*) {
