@@ -428,6 +428,60 @@ export type SynthesisJob = {
 2. **M2 second** — shrinks deploy artifact; audio served from S3; straightforward migration
 3. **M3 last** — highest complexity (encryption, proxy, per-provider adapters); only after M1+M2 prove the data and storage layers work
 
+---
+
+## Report
+
+**Completed:** March 5, 2026
+
+### What Was Implemented
+
+**Milestone 1 — DynamoDB as Source of Truth** (fully implemented):
+- `VoiceRecord` and `ProviderRecord` Amplify Data models in `amplify/data/resource.ts` with proper authorization (curator+admin write, public API key read)
+- Pure mapping functions in `apps/web/src/lib/data/voice-store.ts`: `voiceToRecord()`, `recordToVoice()`, `providerToRecord()`, `recordToProvider()`
+- New types in `apps/web/src/lib/types.ts`: `VoiceRecord`, `ProviderRecord`, `UserProviderCredential`, `SynthesisJob`
+- Seed script (`scripts/seed-dynamodb.mjs`) — reads 194 voices from `voices.json` and 20 providers from `providers.ts`, converts to DynamoDB record shapes with `--dry-run` validation mode
+- Publish script (`scripts/publish-catalog.mjs`) — replaces `generate-api.mjs` as the canonical static API generator, supports future `--from-db` mode for reading from DynamoDB
+
+**Milestone 2 — S3 for Audio Assets** (infrastructure implemented):
+- Amplify Storage resource (`amplify/storage/resource.ts`) — `vokdaAudio` bucket with `catalog/*` (guest read, admin write) and `users/{entity_id}/*` (per-user read/write)
+- CDN helper (`apps/web/src/lib/audio/cdn.ts`) — `audioUrl()` resolves to S3 when `PUBLIC_AUDIO_BASE_URL` is set, falls back to static path for local dev
+- Backend registration — storage wired into `amplify/backend.ts`
+- Upload script deferred until S3 bucket is provisioned via `npx ampx sandbox`
+
+**Milestone 3 — BYOK Synthesis** (types only, implementation deferred per plan sequencing):
+- `UserProviderCredential` and `SynthesisJob` types defined for future use
+
+### Issues Encountered and Resolved
+
+1. **Build failure (pre-existing)**: `voices.json` was a raw array instead of `{ voices: [...] }` — `loadCatalog()` returned `undefined`, causing `TypeError` during prerendering. Fixed by restoring the wrapper. Additionally, every voice detail page embedded the full 632KB catalog JSON, producing a 178MB build output. Fixed by loading only the single voice via `loadVoiceById()` and setting `prerender = false`. Build output dropped from 178MB to 31MB.
+
+2. **TypeScript strict mode**: `import.meta.env?.PUBLIC_AUDIO_BASE_URL as string` produced `string | false` type — fixed with explicit ternary and `String()` cast.
+
+3. **Provider parsing in seed script**: Initial approach using regex JSON extraction from TypeScript source failed due to complex string quoting. Replaced with per-object field extraction regex that handles the actual `providers.ts` format.
+
+4. **Test path resolution**: `__dirname` in vitest resolves to the source file's directory, requiring careful relative path counting. `apps/web/src/lib/data/` → repo root is 5 levels; → `static/` is 3 levels.
+
+### Refactoring Done
+
+- `scripts/generate-api.mjs` is now superseded by `scripts/publish-catalog.mjs` which serves the same role but is structured to support DynamoDB as a future data source
+- `package.json` build pipeline updated to use `publish-catalog.mjs`
+- Catalog loader (`catalog.ts`) now includes an in-memory cache to avoid redundant fetches within a session
+
+### Test Coverage
+
+37 new tests across 8 test groups (103 total across all 5 test files):
+- Amplify schema structural tests (7): VoiceRecord + ProviderRecord fields and authorization
+- Type export tests (6): all 4 new types compile and have correct shapes
+- CDN helper tests (6): `audioUrl()` fallback, `audioUrlWithBase()` S3 and static modes
+- Voice store mapping tests (8): round-trip voice↔record and provider↔record with field stripping
+- Catalog JSON shape tests (3): `{ voices: [...] }` wrapper, required fields on all 194 voices
+- Catalog loader tests (3): export verification for `loadCatalog`, `loadVoiceById`, `resetCatalogCache`
+- Infrastructure tests (3): storage resource exists, backend registers storage, seed script exists
+- Script existence (1): publish-catalog.mjs exists
+
+---
+
 ## What This Replaces
 
 | Before | After |
