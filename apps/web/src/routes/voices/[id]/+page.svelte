@@ -17,6 +17,7 @@
   import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
   import { refreshClips } from '$lib/stores/clips';
   import SsmlEditor from '$lib/components/SsmlEditor.svelte';
+  import ProviderSetupGuide from '$lib/components/ProviderSetupGuide.svelte';
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -464,19 +465,10 @@
             <a href="/account?intent=signin" class="audition-signin-btn">Sign In</a>
           </div>
         {:else if !auditionHasRealAdapter}
-          <div class="audition-gate">
-            <Icon name="key" size={22} />
-            {#if auditionProvider}
-              <p>Connect your <strong>{auditionProvider}</strong> API key to synthesize this voice.</p>
-              <a href="/account/providers" class="audition-signin-btn">
-                <Icon name="key" size={14} />
-                Add Provider Key
-              </a>
-            {:else}
-              <p>No synthesis adapter available for this voice.</p>
-            {/if}
-            <p class="audition-gate-hint">Audition uses your own provider API keys to generate speech in real time.</p>
-          </div>
+          <ProviderSetupGuide
+            providerId={voice?.providerId ?? auditionProvider ?? ''}
+            providerName={voice?.provider ?? auditionProvider ?? ''}
+          />
         {:else}
           <div class="audition-body">
             <div class="audition-input-row">
@@ -1256,12 +1248,6 @@
     color: #2e7d32;
     background: #e8f5e9;
     border-color: #a5d6a7;
-  }
-
-  .audition-gate-hint {
-    font-size: var(--text-xs);
-    color: #6a8ea6;
-    margin-top: 0.15rem;
   }
 
   .provider-badge-inline {
