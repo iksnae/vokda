@@ -1,0 +1,77 @@
+{
+  "id": "HW7KWDP04C81KG9XJ09XVG9P3Q",
+  "name": "Sheldon - Help Desk Man",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "39b376fc-488e-4d0c-8b37-e00b72059fdd",
+  "description": "Enunciating male for customer support use cases",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HW7KWDP04C81KG9XJ09XVG9P3Q.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HW7KWDP04C81KG9XJ09XVG9P3Q.jpg",
+  "metadata": {
+    "shortLabel": "Sheldon - Help Desk Man — Cartesia",
+    "searchDescription": "Cartesia Sheldon - Help Desk Man: Enunciating male for customer support use cases",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "39b376fc-488e-4d0c-8b37-e00b72059fdd",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-HW7KWDP04C81KG9XJ09XVG9P3Q",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HW7KWDP04C81KG9XJ09XVG9P3Q.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "39b376fc-488e-4d0c-8b37-e00b72059fdd",
+      "label": "Sheldon - Help Desk Man",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HW7KWDP04C81KG9XJ09XVG9P3Q.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HW7KWDP04C81KG9XJ09XVG9P3Q",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HW7KWDP04C81KG9XJ09XVG9P3Q.json"
+}

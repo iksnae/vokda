@@ -1,0 +1,99 @@
+{
+  "id": "KNHTDHJ25QHM6E4FSKVM7P28FN",
+  "name": "Elara (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-elara-de",
+  "description": "German-accented female voice (adult) with calm, clear, natural qualities. Aura 2 architecture.",
+  "tags": [
+    "calm",
+    "clear",
+    "natural",
+    "patient",
+    "trustworthy",
+    "aura-2",
+    "accent-german",
+    "female"
+  ],
+  "languages": [
+    "de",
+    "de-DE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.jpg",
+  "metadata": {
+    "shortLabel": "Elara — Deepgram Aura 2",
+    "searchDescription": "Deepgram Elara: German-accented female voice (adult) with calm, clear, natural qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "german"
+    ],
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "toneTags": [
+      "calm",
+      "clear",
+      "natural",
+      "patient",
+      "trustworthy"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Elara",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "German",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3d6c8fcebb3a3f57440f7b3282e757e71d5ac30a-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/cd9034f61fd6abea6ddb8f78906f26ed7bcded29.wav",
+    "deepgramUuid": "f0567c34-f689-4094-8e68-95ebc1f67807",
+    "totalVoices": 102,
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-KNHTDHJ25QHM6E4FSKVM7P28FN",
+      "label": "Default",
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KNHTDHJ25QHM6E4FSKVM7P28FN.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-elara-de",
+      "label": "Elara",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KNHTDHJ25QHM6E4FSKVM7P28FN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KNHTDHJ25QHM6E4FSKVM7P28FN.json"
+}

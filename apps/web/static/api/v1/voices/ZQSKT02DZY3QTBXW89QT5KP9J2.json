@@ -1,0 +1,101 @@
+{
+  "id": "ZQSKT02DZY3QTBXW89QT5KP9J2",
+  "name": "Izanami (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-izanami-ja",
+  "description": "Japanese-accented female voice (adult) with approachable, clear, knowledgeable qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "clear",
+    "knowledgeable",
+    "polite",
+    "professional",
+    "aura-2",
+    "accent-japanese",
+    "female"
+  ],
+  "languages": [
+    "ja",
+    "ja-JP"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.jpg",
+  "metadata": {
+    "shortLabel": "Izanami — Deepgram Aura 2",
+    "searchDescription": "Deepgram Izanami: Japanese-accented female voice (adult) with approachable, clear, knowledgeable qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "japanese"
+    ],
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "ivr"
+    ],
+    "toneTags": [
+      "approachable",
+      "clear",
+      "knowledgeable",
+      "polite",
+      "professional"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Izanami",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Japanese",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/53e1be365488fdba5a6a58138290971c31a9f3fd-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/c07845e2af88fb786d32470613271111cc718b13.wav",
+    "deepgramUuid": "74f1f833-dc66-4176-b40a-ac851933ce36",
+    "totalVoices": 102,
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "ivr"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-ZQSKT02DZY3QTBXW89QT5KP9J2",
+      "label": "Default",
+      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQSKT02DZY3QTBXW89QT5KP9J2.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-izanami-ja",
+      "label": "Izanami",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ZQSKT02DZY3QTBXW89QT5KP9J2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZQSKT02DZY3QTBXW89QT5KP9J2.json"
+}

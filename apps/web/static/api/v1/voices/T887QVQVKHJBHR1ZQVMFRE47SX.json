@@ -1,0 +1,77 @@
+{
+  "id": "T887QVQVKHJBHR1ZQVMFRE47SX",
+  "name": "Lira - Tranquil Voice",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
+  "description": "Soothing female voice with gentle warmth, ideal for calm narrations and ASMR",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T887QVQVKHJBHR1ZQVMFRE47SX.jpg",
+  "metadata": {
+    "shortLabel": "Lira - Tranquil Voice — Cartesia",
+    "searchDescription": "Cartesia Lira - Tranquil Voice: Soothing female voice with gentle warmth, ideal for calm narrations and ASMR",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-T887QVQVKHJBHR1ZQVMFRE47SX",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
+      "label": "Lira - Tranquil Voice",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T887QVQVKHJBHR1ZQVMFRE47SX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T887QVQVKHJBHR1ZQVMFRE47SX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T887QVQVKHJBHR1ZQVMFRE47SX.json"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "KJ81R9XY9P9SQQW9G87HNSR2BT",
+  "name": "Livia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-livia-it",
+  "description": "Italian-accented female voice (adult) with approachable, cheerful, clear qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "cheerful",
+    "clear",
+    "engaging",
+    "expressive",
+    "aura-2",
+    "accent-italian",
+    "female"
+  ],
+  "languages": [
+    "it",
+    "it-IT"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KJ81R9XY9P9SQQW9G87HNSR2BT.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KJ81R9XY9P9SQQW9G87HNSR2BT.jpg",
+  "metadata": {
+    "shortLabel": "Livia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Livia: Italian-accented female voice (adult) with approachable, cheerful, clear qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "italian"
+    ],
+    "useCases": [
+      "customer service",
+      "interview",
+      "audiobook"
+    ],
+    "toneTags": [
+      "approachable",
+      "cheerful",
+      "clear",
+      "engaging",
+      "expressive"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Livia",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Italian",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/1e3a6fe698f478ea7eff7f0eb0e6396a9cfcf061-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/0fa008b01cd6d9394d7c46e943b2e0670ce9348c.wav",
+    "deepgramUuid": "10337235-d8a1-4354-ad45-38f47814f906",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "interview",
+      "audiobook"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-KJ81R9XY9P9SQQW9G87HNSR2BT",
+      "label": "Default",
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KJ81R9XY9P9SQQW9G87HNSR2BT.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-livia-it",
+      "label": "Livia",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KJ81R9XY9P9SQQW9G87HNSR2BT.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KJ81R9XY9P9SQQW9G87HNSR2BT",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KJ81R9XY9P9SQQW9G87HNSR2BT.json"
+}

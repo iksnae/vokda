@@ -1,0 +1,77 @@
+{
+  "id": "280AFP3VJ3NQKP85TBZT6CE6E8",
+  "name": "Elaine - Confident Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+  "description": "Assured voice with calm confidence and clear tone, ideal for professional, informative, or guiding narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/280AFP3VJ3NQKP85TBZT6CE6E8.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/280AFP3VJ3NQKP85TBZT6CE6E8.jpg",
+  "metadata": {
+    "shortLabel": "Elaine - Confident Guide — Cartesia",
+    "searchDescription": "Cartesia Elaine - Confident Guide: Assured voice with calm confidence and clear tone, ideal for professional, informative, or guiding narration",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-280AFP3VJ3NQKP85TBZT6CE6E8",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/280AFP3VJ3NQKP85TBZT6CE6E8.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+      "label": "Elaine - Confident Guide",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/280AFP3VJ3NQKP85TBZT6CE6E8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/280AFP3VJ3NQKP85TBZT6CE6E8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/280AFP3VJ3NQKP85TBZT6CE6E8.json"
+}

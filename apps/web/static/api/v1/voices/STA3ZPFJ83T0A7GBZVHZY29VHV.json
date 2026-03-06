@@ -1,0 +1,93 @@
+{
+  "id": "STA3ZPFJ83T0A7GBZVHZY29VHV",
+  "name": "Delia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-delia-en",
+  "description": "American-accented female voice (young adult) with casual, friendly, cheerful qualities. Aura 2 architecture.",
+  "tags": [
+    "casual",
+    "friendly",
+    "cheerful",
+    "breathy",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/STA3ZPFJ83T0A7GBZVHZY29VHV.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/STA3ZPFJ83T0A7GBZVHZY29VHV.jpg",
+  "metadata": {
+    "shortLabel": "Delia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Delia: American-accented female voice (young adult) with casual, friendly, cheerful qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "interview"
+    ],
+    "toneTags": [
+      "casual",
+      "friendly",
+      "cheerful",
+      "breathy"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "young adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Delia",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Young Adult",
+    "deepgramColor": "#ffadd8",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/95e8430a436f984594ff819b9dc8b9ad804c41ed-201x200.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/a8d8fe34f3896408ff1989f9cd37a6c4d63d1817.wav",
+    "deepgramUuid": "547904fe-7751-464c-839c-b79e5666436b",
+    "totalVoices": 102,
+    "useCases": [
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-STA3ZPFJ83T0A7GBZVHZY29VHV",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/STA3ZPFJ83T0A7GBZVHZY29VHV.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-delia-en",
+      "label": "Delia",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/STA3ZPFJ83T0A7GBZVHZY29VHV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/STA3ZPFJ83T0A7GBZVHZY29VHV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/STA3ZPFJ83T0A7GBZVHZY29VHV.json"
+}

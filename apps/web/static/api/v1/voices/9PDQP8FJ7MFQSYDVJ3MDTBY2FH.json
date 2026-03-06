@@ -1,0 +1,99 @@
+{
+  "id": "9PDQP8FJ7MFQSYDVJ3MDTBY2FH",
+  "name": "Cinzia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-cinzia-it",
+  "description": "Italian-accented female voice (mature) with approachable, friendly, smooth qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "friendly",
+    "smooth",
+    "trustworthy",
+    "warm",
+    "aura-2",
+    "accent-italian",
+    "female"
+  ],
+  "languages": [
+    "it",
+    "it-IT"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9PDQP8FJ7MFQSYDVJ3MDTBY2FH.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9PDQP8FJ7MFQSYDVJ3MDTBY2FH.jpg",
+  "metadata": {
+    "shortLabel": "Cinzia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Cinzia: Italian-accented female voice (mature) with approachable, friendly, smooth qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "italian"
+    ],
+    "useCases": [
+      "customer service",
+      "interview",
+      "narration"
+    ],
+    "toneTags": [
+      "approachable",
+      "friendly",
+      "smooth",
+      "trustworthy",
+      "warm"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "mature",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Cinzia",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Italian",
+    "age": "Mature",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/798b53e00201eb222ea84757a5f845cfdd757ec3-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/d4f80f62ad7702bbd64bf4a267cbf3545c5f74d6.wav",
+    "deepgramUuid": "9c8e7223-0819-435e-adfd-711873d0670b",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "interview",
+      "narration"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-9PDQP8FJ7MFQSYDVJ3MDTBY2FH",
+      "label": "Default",
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9PDQP8FJ7MFQSYDVJ3MDTBY2FH.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-cinzia-it",
+      "label": "Cinzia",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9PDQP8FJ7MFQSYDVJ3MDTBY2FH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9PDQP8FJ7MFQSYDVJ3MDTBY2FH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9PDQP8FJ7MFQSYDVJ3MDTBY2FH.json"
+}

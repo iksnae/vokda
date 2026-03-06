@@ -1,0 +1,99 @@
+{
+  "id": "DZY007TFG3T807VSG1KGA9NGA1",
+  "name": "Olivia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-olivia-es",
+  "description": "Mexican-accented female voice (adult) with breathy, calm, casual qualities. Aura 2 architecture.",
+  "tags": [
+    "breathy",
+    "calm",
+    "casual",
+    "expressive",
+    "warm",
+    "aura-2",
+    "accent-mexican",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-MX"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DZY007TFG3T807VSG1KGA9NGA1.jpg",
+  "metadata": {
+    "shortLabel": "Olivia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Olivia: Mexican-accented female voice (adult) with breathy, calm, casual qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "mexican"
+    ],
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat"
+    ],
+    "toneTags": [
+      "breathy",
+      "calm",
+      "casual",
+      "expressive",
+      "warm"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Olivia",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Mexican",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3223779374bb50df5ec56ed55afc2e9a48d62d26-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/18b02dbef439f00b084f17f449dd495757265cd7.wav",
+    "deepgramUuid": "eb2760f5-5504-4c24-a46b-ea97d5191dde",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-DZY007TFG3T807VSG1KGA9NGA1",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DZY007TFG3T807VSG1KGA9NGA1.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-olivia-es",
+      "label": "Olivia",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DZY007TFG3T807VSG1KGA9NGA1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DZY007TFG3T807VSG1KGA9NGA1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DZY007TFG3T807VSG1KGA9NGA1.json"
+}

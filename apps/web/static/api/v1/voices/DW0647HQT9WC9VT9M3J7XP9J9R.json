@@ -1,0 +1,75 @@
+{
+  "id": "DW0647HQT9WC9VT9M3J7XP9J9R",
+  "name": "Vesper",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "vesper",
+  "description": "Distinctive voice with nerdy charm and comforting qualities. Inviting and approachable for explanatory content.",
+  "tags": [
+    "neutral",
+    "instant",
+    "streaming",
+    "low-latency",
+    "tutor",
+    "tutor-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DW0647HQT9WC9VT9M3J7XP9J9R.jpg",
+  "metadata": {
+    "shortLabel": "Vesper — LMNT",
+    "searchDescription": "LMNT Vesper: Distinctive voice with nerdy charm and comforting qualities. Inviting and approachable for explanatory content.",
+    "machineTags": [
+      "lmnt",
+      "neutral",
+      "instant"
+    ],
+    "useCases": [
+      "tutor agent"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-DW0647HQT9WC9VT9M3J7XP9J9R",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DW0647HQT9WC9VT9M3J7XP9J9R.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "vesper",
+      "label": "Vesper",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DW0647HQT9WC9VT9M3J7XP9J9R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DW0647HQT9WC9VT9M3J7XP9J9R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DW0647HQT9WC9VT9M3J7XP9J9R.json"
+}

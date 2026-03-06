@@ -1,0 +1,93 @@
+{
+  "id": "HG9ZKKKVKHG9M81QPCDKZVVSG5",
+  "name": "Atlas (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-atlas-en",
+  "description": "American-accented male voice (mature) with enthusiastic, confident, approachable qualities. Aura 2 architecture.",
+  "tags": [
+    "enthusiastic",
+    "confident",
+    "approachable",
+    "friendly",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.jpg",
+  "metadata": {
+    "shortLabel": "Atlas — Deepgram Aura 2",
+    "searchDescription": "Deepgram Atlas: American-accented male voice (mature) with enthusiastic, confident, approachable qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ],
+    "useCases": [
+      "advertising"
+    ],
+    "toneTags": [
+      "enthusiastic",
+      "confident",
+      "approachable",
+      "friendly"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "mature",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Atlas",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Mature",
+    "deepgramColor": "#7800ed",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/072239868ad1e3883ef4da0070e954aac67e438d-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4bc77f049399b72b11971cee63efe17a0942e4e3.wav",
+    "deepgramUuid": "a695b422-2277-44e1-8cfb-baec1aca10c6",
+    "totalVoices": 102,
+    "useCases": [
+      "advertising"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-HG9ZKKKVKHG9M81QPCDKZVVSG5",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-atlas-en",
+      "label": "Atlas",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.json"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "E1R8249R8FJBNNY7HSXM0CDKPB",
+  "name": "Stella",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "stella",
+  "description": "Soft, gentle female voice ideal for reading content. Measured and professional without being overly animated.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "broadcaster",
+    "news"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E1R8249R8FJBNNY7HSXM0CDKPB.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E1R8249R8FJBNNY7HSXM0CDKPB.jpg",
+  "metadata": {
+    "shortLabel": "Stella — LMNT",
+    "searchDescription": "LMNT Stella: Soft, gentle female voice ideal for reading content. Measured and professional without being overly animated.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "news"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-E1R8249R8FJBNNY7HSXM0CDKPB",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E1R8249R8FJBNNY7HSXM0CDKPB.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "stella",
+      "label": "Stella",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E1R8249R8FJBNNY7HSXM0CDKPB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E1R8249R8FJBNNY7HSXM0CDKPB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E1R8249R8FJBNNY7HSXM0CDKPB.json"
+}

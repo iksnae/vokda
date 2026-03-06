@@ -1,0 +1,77 @@
+{
+  "id": "1Y0A67R8FTFNJ1XHJ8A5YE029R",
+  "name": "Reese - Warm Companion",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "c7c790c5-2bf4-47e4-bc83-5f43e61f3803",
+  "description": "Casual, friendly female voice with a bright and welcoming tone suited for everyday conversations.",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1Y0A67R8FTFNJ1XHJ8A5YE029R.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1Y0A67R8FTFNJ1XHJ8A5YE029R.jpg",
+  "metadata": {
+    "shortLabel": "Reese - Warm Companion — Cartesia",
+    "searchDescription": "Cartesia Reese - Warm Companion: Casual, friendly female voice with a bright and welcoming tone suited for everyday conversations.",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "c7c790c5-2bf4-47e4-bc83-5f43e61f3803",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-1Y0A67R8FTFNJ1XHJ8A5YE029R",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1Y0A67R8FTFNJ1XHJ8A5YE029R.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "c7c790c5-2bf4-47e4-bc83-5f43e61f3803",
+      "label": "Reese - Warm Companion",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1Y0A67R8FTFNJ1XHJ8A5YE029R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1Y0A67R8FTFNJ1XHJ8A5YE029R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1Y0A67R8FTFNJ1XHJ8A5YE029R.json"
+}

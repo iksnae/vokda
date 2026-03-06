@@ -1,0 +1,75 @@
+{
+  "id": "HVVP3J0289SJDP0228C9R5JE2D",
+  "name": "Natalie",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "natalie",
+  "description": "Bright, youthful female voice with animated, friendly energy. Sounds like talking with a close friend.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "healthcare-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HVVP3J0289SJDP0228C9R5JE2D.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HVVP3J0289SJDP0228C9R5JE2D.jpg",
+  "metadata": {
+    "shortLabel": "Natalie — LMNT",
+    "searchDescription": "LMNT Natalie: Bright, youthful female voice with animated, friendly energy. Sounds like talking with a close friend.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "healthcare agent"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-HVVP3J0289SJDP0228C9R5JE2D",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HVVP3J0289SJDP0228C9R5JE2D.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "natalie",
+      "label": "Natalie",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HVVP3J0289SJDP0228C9R5JE2D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HVVP3J0289SJDP0228C9R5JE2D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HVVP3J0289SJDP0228C9R5JE2D.json"
+}

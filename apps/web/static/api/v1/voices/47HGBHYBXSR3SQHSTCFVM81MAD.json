@@ -1,0 +1,75 @@
+{
+  "id": "47HGBHYBXSR3SQHSTCFVM81MAD",
+  "name": "Kennedy",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "kennedy",
+  "description": "Young, emotive female voice that's conversational, inviting, and healing. Great for advertisements and friendly communication.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "marketer",
+    "advertisements"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/47HGBHYBXSR3SQHSTCFVM81MAD.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/47HGBHYBXSR3SQHSTCFVM81MAD.jpg",
+  "metadata": {
+    "shortLabel": "Kennedy — LMNT",
+    "searchDescription": "LMNT Kennedy: Young, emotive female voice that's conversational, inviting, and healing. Great for advertisements and friendly communication.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "advertisements"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-47HGBHYBXSR3SQHSTCFVM81MAD",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/47HGBHYBXSR3SQHSTCFVM81MAD.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "kennedy",
+      "label": "Kennedy",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/47HGBHYBXSR3SQHSTCFVM81MAD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/47HGBHYBXSR3SQHSTCFVM81MAD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/47HGBHYBXSR3SQHSTCFVM81MAD.json"
+}

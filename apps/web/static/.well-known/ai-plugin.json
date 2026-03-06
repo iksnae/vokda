@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "Vokda Voice Catalog",
   "name_for_model": "vokda",
-  "description_for_human": "Discover and browse TTS voices across 22 providers.",
-  "description_for_model": "Search and retrieve TTS voice metadata from the Vokda catalog. 250 voices across 22 providers. All endpoints are static JSON — no authentication required.",
+  "description_for_human": "Discover and browse TTS voices across 25 providers.",
+  "description_for_model": "Search and retrieve TTS voice metadata from the Vokda catalog. 550 voices across 25 providers. All endpoints are static JSON — no authentication required.",
   "auth": {
     "type": "none"
   },

@@ -1,0 +1,71 @@
+{
+  "id": "SJ5XT1NQMA41QJ5QG1T2BY67J6",
+  "name": "Zeke",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "zeke",
+  "description": "Conversational. Calm. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SJ5XT1NQMA41QJ5QG1T2BY67J6.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SJ5XT1NQMA41QJ5QG1T2BY67J6.jpg",
+  "metadata": {
+    "shortLabel": "Zeke — LMNT",
+    "searchDescription": "LMNT Zeke: Conversational. Calm. US",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-SJ5XT1NQMA41QJ5QG1T2BY67J6",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SJ5XT1NQMA41QJ5QG1T2BY67J6.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "zeke",
+      "label": "Zeke",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SJ5XT1NQMA41QJ5QG1T2BY67J6.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SJ5XT1NQMA41QJ5QG1T2BY67J6",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SJ5XT1NQMA41QJ5QG1T2BY67J6.json"
+}

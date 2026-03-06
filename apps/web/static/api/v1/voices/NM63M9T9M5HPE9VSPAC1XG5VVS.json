@@ -1,0 +1,77 @@
+{
+  "id": "NM63M9T9M5HPE9VSPAC1XG5VVS",
+  "name": "Elizabeth - Manager",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "248be419-c632-4f23-adf1-5324ed7dbf1d",
+  "description": "Enunicating young female for providing guidance and instructions",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NM63M9T9M5HPE9VSPAC1XG5VVS.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NM63M9T9M5HPE9VSPAC1XG5VVS.jpg",
+  "metadata": {
+    "shortLabel": "Elizabeth - Manager — Cartesia",
+    "searchDescription": "Cartesia Elizabeth - Manager: Enunicating young female for providing guidance and instructions",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "248be419-c632-4f23-adf1-5324ed7dbf1d",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-NM63M9T9M5HPE9VSPAC1XG5VVS",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NM63M9T9M5HPE9VSPAC1XG5VVS.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "248be419-c632-4f23-adf1-5324ed7dbf1d",
+      "label": "Elizabeth - Manager",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NM63M9T9M5HPE9VSPAC1XG5VVS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NM63M9T9M5HPE9VSPAC1XG5VVS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NM63M9T9M5HPE9VSPAC1XG5VVS.json"
+}

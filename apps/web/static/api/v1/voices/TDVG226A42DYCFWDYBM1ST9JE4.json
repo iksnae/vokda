@@ -1,0 +1,75 @@
+{
+  "id": "TDVG226A42DYCFWDYBM1ST9JE4",
+  "name": "Bella",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "bella",
+  "description": "Bella: female LMNT voice.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "asmr",
+    "whispering"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/TDVG226A42DYCFWDYBM1ST9JE4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/TDVG226A42DYCFWDYBM1ST9JE4.jpg",
+  "metadata": {
+    "shortLabel": "Bella — LMNT",
+    "searchDescription": "LMNT Bella: Bella: female LMNT voice.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "whispering"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-TDVG226A42DYCFWDYBM1ST9JE4",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/TDVG226A42DYCFWDYBM1ST9JE4.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "bella",
+      "label": "Bella",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/TDVG226A42DYCFWDYBM1ST9JE4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/TDVG226A42DYCFWDYBM1ST9JE4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/TDVG226A42DYCFWDYBM1ST9JE4.json"
+}

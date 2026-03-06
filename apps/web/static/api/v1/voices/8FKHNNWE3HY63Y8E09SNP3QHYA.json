@@ -1,0 +1,99 @@
+{
+  "id": "8FKHNNWE3HY63Y8E09SNP3QHYA",
+  "name": "Rhea (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-rhea-nl",
+  "description": "Dutch-accented female voice (adult) with caring, knowledgeable, positive qualities. Aura 2 architecture.",
+  "tags": [
+    "caring",
+    "knowledgeable",
+    "positive",
+    "smooth",
+    "warm",
+    "aura-2",
+    "accent-dutch",
+    "female"
+  ],
+  "languages": [
+    "nl",
+    "nl-NL"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8FKHNNWE3HY63Y8E09SNP3QHYA.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8FKHNNWE3HY63Y8E09SNP3QHYA.jpg",
+  "metadata": {
+    "shortLabel": "Rhea — Deepgram Aura 2",
+    "searchDescription": "Deepgram Rhea: Dutch-accented female voice (adult) with caring, knowledgeable, positive qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ],
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "toneTags": [
+      "caring",
+      "knowledgeable",
+      "positive",
+      "smooth",
+      "warm"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Rhea",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Dutch",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/26f28b18f434930794e41ec623524699515b3059-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/6d25e09867ffa467e0118e0b9385c6f380f4be01.wav",
+    "deepgramUuid": "18bbb52b-f936-4be5-b972-ca0c145c2d3a",
+    "totalVoices": 102,
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-8FKHNNWE3HY63Y8E09SNP3QHYA",
+      "label": "Default",
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8FKHNNWE3HY63Y8E09SNP3QHYA.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-rhea-nl",
+      "label": "Rhea",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/8FKHNNWE3HY63Y8E09SNP3QHYA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/8FKHNNWE3HY63Y8E09SNP3QHYA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/8FKHNNWE3HY63Y8E09SNP3QHYA.json"
+}

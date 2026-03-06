@@ -1,0 +1,97 @@
+{
+  "id": "WBJBQPA4C04FZHKGC2FST69QSJ",
+  "name": "Vesta (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-vesta-en",
+  "description": "American-accented female voice (adult) with natural, expressive, patient qualities. Aura 2 architecture.",
+  "tags": [
+    "natural",
+    "expressive",
+    "patient",
+    "empathetic",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/WBJBQPA4C04FZHKGC2FST69QSJ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/WBJBQPA4C04FZHKGC2FST69QSJ.jpg",
+  "metadata": {
+    "shortLabel": "Vesta — Deepgram Aura 2",
+    "searchDescription": "Deepgram Vesta: American-accented female voice (adult) with natural, expressive, patient qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "customer service",
+      "interview",
+      "storytelling"
+    ],
+    "toneTags": [
+      "natural",
+      "expressive",
+      "patient",
+      "empathetic"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Vesta",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#149afb",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/a15067c800a1a4a4480b4204b0dcca5bc92d605e-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/8595c997fb3aa8bdd4b0de085f7f5f68422dc1be.wav",
+    "deepgramUuid": "3f69587e-162c-41e7-8c69-bfbf86c79d19",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "interview",
+      "storytelling"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-WBJBQPA4C04FZHKGC2FST69QSJ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/WBJBQPA4C04FZHKGC2FST69QSJ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-vesta-en",
+      "label": "Vesta",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/WBJBQPA4C04FZHKGC2FST69QSJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/WBJBQPA4C04FZHKGC2FST69QSJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/WBJBQPA4C04FZHKGC2FST69QSJ.json"
+}

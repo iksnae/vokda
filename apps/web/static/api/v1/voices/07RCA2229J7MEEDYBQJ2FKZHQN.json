@@ -1,0 +1,91 @@
+{
+  "id": "07RCA2229J7MEEDYBQJ2FKZHQN",
+  "name": "Hyperion (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-hyperion-en",
+  "description": "Australian-accented male voice (adult) with caring, warm, empathetic qualities. Aura 2 architecture.",
+  "tags": [
+    "caring",
+    "warm",
+    "empathetic",
+    "aura-2",
+    "accent-australian",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-AU"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCA2229J7MEEDYBQJ2FKZHQN.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/07RCA2229J7MEEDYBQJ2FKZHQN.jpg",
+  "metadata": {
+    "shortLabel": "Hyperion — Deepgram Aura 2",
+    "searchDescription": "Deepgram Hyperion: Australian-accented male voice (adult) with caring, warm, empathetic qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "australian"
+    ],
+    "useCases": [
+      "interview"
+    ],
+    "toneTags": [
+      "caring",
+      "warm",
+      "empathetic"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Hyperion",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Australian",
+    "age": "Adult",
+    "deepgramColor": "#79affa",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/02b6636cd4954a669de684a9ec9c1ca6c94290fa-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/997c4cabfe0f2bd6fe09fa3b8aaafe05bb815c38.wav",
+    "deepgramUuid": "10c196f5-8e0e-464c-a039-7e8bd9e1ab49",
+    "totalVoices": 102,
+    "useCases": [
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-07RCA2229J7MEEDYBQJ2FKZHQN",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCA2229J7MEEDYBQJ2FKZHQN.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-hyperion-en",
+      "label": "Hyperion",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/07RCA2229J7MEEDYBQJ2FKZHQN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/07RCA2229J7MEEDYBQJ2FKZHQN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/07RCA2229J7MEEDYBQJ2FKZHQN.json"
+}

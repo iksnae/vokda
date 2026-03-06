@@ -1,0 +1,77 @@
+{
+  "id": "FHHSW88C3P283XVRC3W2DQJFWF",
+  "name": "Benedict - Royal Narrator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "7cf0e2b1-8daf-4fe4-89ad-f6039398f359",
+  "description": "Confident, firm male for narrations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FHHSW88C3P283XVRC3W2DQJFWF.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FHHSW88C3P283XVRC3W2DQJFWF.jpg",
+  "metadata": {
+    "shortLabel": "Benedict - Royal Narrator — Cartesia",
+    "searchDescription": "Cartesia Benedict - Royal Narrator: Confident, firm male for narrations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "7cf0e2b1-8daf-4fe4-89ad-f6039398f359",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-FHHSW88C3P283XVRC3W2DQJFWF",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FHHSW88C3P283XVRC3W2DQJFWF.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "7cf0e2b1-8daf-4fe4-89ad-f6039398f359",
+      "label": "Benedict - Royal Narrator",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/FHHSW88C3P283XVRC3W2DQJFWF.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/FHHSW88C3P283XVRC3W2DQJFWF",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/FHHSW88C3P283XVRC3W2DQJFWF.json"
+}

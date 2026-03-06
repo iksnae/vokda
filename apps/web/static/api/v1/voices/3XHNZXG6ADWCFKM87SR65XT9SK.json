@@ -1,0 +1,75 @@
+{
+  "id": "3XHNZXG6ADWCFKM87SR65XT9SK",
+  "name": "Autumn",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "autumn",
+  "description": "Warm, friendly female voice with a professional yet approachable tone. Ideal for customer support and guidance.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "healthcare-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3XHNZXG6ADWCFKM87SR65XT9SK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3XHNZXG6ADWCFKM87SR65XT9SK.jpg",
+  "metadata": {
+    "shortLabel": "Autumn — LMNT",
+    "searchDescription": "LMNT Autumn: Warm, friendly female voice with a professional yet approachable tone. Ideal for customer support and guidance.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "healthcare agent"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-3XHNZXG6ADWCFKM87SR65XT9SK",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3XHNZXG6ADWCFKM87SR65XT9SK.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "autumn",
+      "label": "Autumn",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3XHNZXG6ADWCFKM87SR65XT9SK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3XHNZXG6ADWCFKM87SR65XT9SK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3XHNZXG6ADWCFKM87SR65XT9SK.json"
+}

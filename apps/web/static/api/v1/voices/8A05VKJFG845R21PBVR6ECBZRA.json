@@ -1,0 +1,75 @@
+{
+  "id": "8A05VKJFG845R21PBVR6ECBZRA",
+  "name": "Elowen",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "elowen",
+  "description": "Warm, velvety female voice with youthful charm. Captivating for storytelling and narrative content.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "storyteller",
+    "narrator"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8A05VKJFG845R21PBVR6ECBZRA.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8A05VKJFG845R21PBVR6ECBZRA.jpg",
+  "metadata": {
+    "shortLabel": "Elowen — LMNT",
+    "searchDescription": "LMNT Elowen: Warm, velvety female voice with youthful charm. Captivating for storytelling and narrative content.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "narrator"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-8A05VKJFG845R21PBVR6ECBZRA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8A05VKJFG845R21PBVR6ECBZRA.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "elowen",
+      "label": "Elowen",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/8A05VKJFG845R21PBVR6ECBZRA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/8A05VKJFG845R21PBVR6ECBZRA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/8A05VKJFG845R21PBVR6ECBZRA.json"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "07M7W5SXHP5QKQQMFY7NVKR3Y1",
+  "name": "Andromeda (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-andromeda-en",
+  "description": "American-accented female voice (adult) with casual, expressive, comfortable qualities. Aura 2 architecture.",
+  "tags": [
+    "casual",
+    "expressive",
+    "comfortable",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/07M7W5SXHP5QKQQMFY7NVKR3Y1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/07M7W5SXHP5QKQQMFY7NVKR3Y1.jpg",
+  "metadata": {
+    "shortLabel": "Andromeda — Deepgram Aura 2",
+    "searchDescription": "Deepgram Andromeda: American-accented female voice (adult) with casual, expressive, comfortable qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "customer service",
+      "ivr"
+    ],
+    "toneTags": [
+      "casual",
+      "expressive",
+      "comfortable"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Andromeda",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#a1d7fd",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/d58505d55890c75c026aae456499712aefab6738-230x230.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/d6a7514b3b1c3dc48ed5d1d4baaa2bb73c41c59e.wav",
+    "deepgramUuid": "e65d4050-cbf1-4d9a-ab93-f6b399e37074",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "ivr"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-07M7W5SXHP5QKQQMFY7NVKR3Y1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/07M7W5SXHP5QKQQMFY7NVKR3Y1.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-andromeda-en",
+      "label": "Andromeda",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/07M7W5SXHP5QKQQMFY7NVKR3Y1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/07M7W5SXHP5QKQQMFY7NVKR3Y1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/07M7W5SXHP5QKQQMFY7NVKR3Y1.json"
+}

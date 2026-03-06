@@ -1,6 +1,6 @@
 {
-  "total": 22,
-  "generatedAt": "2026-03-06T01:08:50.952Z",
+  "total": 25,
+  "generatedAt": "2026-03-06T01:46:16.879Z",
   "providers": [
     {
       "id": "aws-polly",
@@ -442,6 +442,80 @@
         "providerUrl": "https://github.com/rany2/edge-tts",
         "license": "Free (Microsoft Edge TTS API)",
         "commercialUse": false
+      }
+    },
+    {
+      "id": "deepgram",
+      "name": "Deepgram",
+      "voiceCount": 102,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "languages": [
+        "de",
+        "de-DE",
+        "en",
+        "en-AU",
+        "en-GB",
+        "en-IE",
+        "en-PH",
+        "en-US",
+        "es",
+        "es-419",
+        "es-AR",
+        "es-CO",
+        "es-ES",
+        "es-MX",
+        "fr",
+        "fr-FR",
+        "it",
+        "it-IT",
+        "ja",
+        "ja-JP",
+        "nl",
+        "nl-NL"
+      ],
+      "modelCard": {
+        "providerType": "cloud_provider",
+        "providerUrl": "https://deepgram.com/aura",
+        "license": "Proprietary (Deepgram API)",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "lmnt",
+      "name": "LMNT",
+      "voiceCount": 44,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "cloud_provider",
+        "providerUrl": "https://lmnt.com",
+        "license": "Proprietary (LMNT API)",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "cartesia",
+      "name": "Cartesia",
+      "voiceCount": 154,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "cloud_provider",
+        "providerUrl": "https://cartesia.ai",
+        "license": "Proprietary (Cartesia API)",
+        "commercialUse": true
       }
     }
   ]

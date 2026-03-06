@@ -1,0 +1,77 @@
+{
+  "id": "06282E5WACCDKYBNXG3XZNM9J4",
+  "name": "Lauren - Lively Narrator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
+  "description": "Expressive female voice for narration, storytelling, and creative content",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",
+  "metadata": {
+    "shortLabel": "Lauren - Lively Narrator — Cartesia",
+    "searchDescription": "Cartesia Lauren - Lively Narrator: Expressive female voice for narration, storytelling, and creative content",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-06282E5WACCDKYBNXG3XZNM9J4",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
+      "label": "Lauren - Lively Narrator",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/06282E5WACCDKYBNXG3XZNM9J4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/06282E5WACCDKYBNXG3XZNM9J4.json"
+}

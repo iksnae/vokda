@@ -1,0 +1,97 @@
+{
+  "id": "W25M7HSQQG85NQRFGBPC5KT0E5",
+  "name": "Elio (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-elio-it",
+  "description": "Italian-accented male voice (adult) with breathy, calm, professional qualities. Aura 2 architecture.",
+  "tags": [
+    "breathy",
+    "calm",
+    "professional",
+    "smooth",
+    "trustworthy",
+    "aura-2",
+    "accent-italian",
+    "male"
+  ],
+  "languages": [
+    "it",
+    "it-IT"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W25M7HSQQG85NQRFGBPC5KT0E5.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W25M7HSQQG85NQRFGBPC5KT0E5.jpg",
+  "metadata": {
+    "shortLabel": "Elio — Deepgram Aura 2",
+    "searchDescription": "Deepgram Elio: Italian-accented male voice (adult) with breathy, calm, professional qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "italian"
+    ],
+    "useCases": [
+      "interview",
+      "casual chat"
+    ],
+    "toneTags": [
+      "breathy",
+      "calm",
+      "professional",
+      "smooth",
+      "trustworthy"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Elio",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Italian",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/e6be63107dc2a4517f1dce1bf907dacb8a194393-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/8b1d4932ce4668d0fd026c6208049304c4712706.wav",
+    "deepgramUuid": "deadb88c-67f2-48f5-9bd0-c0f1b583a633",
+    "totalVoices": 102,
+    "useCases": [
+      "interview",
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-W25M7HSQQG85NQRFGBPC5KT0E5",
+      "label": "Default",
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W25M7HSQQG85NQRFGBPC5KT0E5.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-elio-it",
+      "label": "Elio",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/W25M7HSQQG85NQRFGBPC5KT0E5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/W25M7HSQQG85NQRFGBPC5KT0E5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/W25M7HSQQG85NQRFGBPC5KT0E5.json"
+}

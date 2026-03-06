@@ -1,0 +1,101 @@
+{
+  "id": "9KTEBQKJ01HR69RDHW8C486482",
+  "name": "Daphne (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-daphne-nl",
+  "description": "Dutch-accented female voice (adult) with calm, clear, confident qualities. Aura 2 architecture.",
+  "tags": [
+    "calm",
+    "clear",
+    "confident",
+    "professional",
+    "smooth",
+    "aura-2",
+    "accent-dutch",
+    "female"
+  ],
+  "languages": [
+    "nl",
+    "nl-NL"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9KTEBQKJ01HR69RDHW8C486482.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9KTEBQKJ01HR69RDHW8C486482.jpg",
+  "metadata": {
+    "shortLabel": "Daphne — Deepgram Aura 2",
+    "searchDescription": "Deepgram Daphne: Dutch-accented female voice (adult) with calm, clear, confident qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ],
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat",
+      "audiobook"
+    ],
+    "toneTags": [
+      "calm",
+      "clear",
+      "confident",
+      "professional",
+      "smooth"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Daphne",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Dutch",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/a3ef0c0b516af460ac6d43137ea304a587957f6d-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ae4c742f01b3ecb8197c63670248a2fdffc34e25.wav",
+    "deepgramUuid": "e0d6fd50-2921-4b87-81f1-8813cf5597f9",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat",
+      "audiobook"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-9KTEBQKJ01HR69RDHW8C486482",
+      "label": "Default",
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9KTEBQKJ01HR69RDHW8C486482.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-daphne-nl",
+      "label": "Daphne",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9KTEBQKJ01HR69RDHW8C486482.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9KTEBQKJ01HR69RDHW8C486482",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9KTEBQKJ01HR69RDHW8C486482.json"
+}

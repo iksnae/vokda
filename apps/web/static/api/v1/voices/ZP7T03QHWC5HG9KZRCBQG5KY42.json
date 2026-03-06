@@ -1,0 +1,71 @@
+{
+  "id": "ZP7T03QHWC5HG9KZRCBQG5KY42",
+  "name": "Caleb",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "caleb",
+  "description": "Narrative. Confident. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZP7T03QHWC5HG9KZRCBQG5KY42.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZP7T03QHWC5HG9KZRCBQG5KY42.jpg",
+  "metadata": {
+    "shortLabel": "Caleb — LMNT",
+    "searchDescription": "LMNT Caleb: Narrative. Confident. US",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-ZP7T03QHWC5HG9KZRCBQG5KY42",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZP7T03QHWC5HG9KZRCBQG5KY42.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "caleb",
+      "label": "Caleb",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZP7T03QHWC5HG9KZRCBQG5KY42.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ZP7T03QHWC5HG9KZRCBQG5KY42",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZP7T03QHWC5HG9KZRCBQG5KY42.json"
+}

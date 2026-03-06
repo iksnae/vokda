@@ -1,0 +1,77 @@
+{
+  "id": "P6A8FPDQMBGADPE8E63MDGA20C",
+  "name": "Layla - Casual Friend",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "999df508-4de5-40a7-8bd3-8c12f678c284",
+  "description": "Chill voice with a smooth, easygoing tone that feels relaxed and effortlessly cool",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P6A8FPDQMBGADPE8E63MDGA20C.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P6A8FPDQMBGADPE8E63MDGA20C.jpg",
+  "metadata": {
+    "shortLabel": "Layla - Casual Friend — Cartesia",
+    "searchDescription": "Cartesia Layla - Casual Friend: Chill voice with a smooth, easygoing tone that feels relaxed and effortlessly cool",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "999df508-4de5-40a7-8bd3-8c12f678c284",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-P6A8FPDQMBGADPE8E63MDGA20C",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P6A8FPDQMBGADPE8E63MDGA20C.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "999df508-4de5-40a7-8bd3-8c12f678c284",
+      "label": "Layla - Casual Friend",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P6A8FPDQMBGADPE8E63MDGA20C.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/P6A8FPDQMBGADPE8E63MDGA20C",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P6A8FPDQMBGADPE8E63MDGA20C.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "9G9R9M41T9M2DYDGDR0CE1WFZR",
+  "name": "Liam - Guy Next Door",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "41f3c367-e0a8-4a85-89e0-c27bae9c9b6d",
+  "description": "Casual, friendly young male for authentic and engaging conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9G9R9M41T9M2DYDGDR0CE1WFZR.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9G9R9M41T9M2DYDGDR0CE1WFZR.jpg",
+  "metadata": {
+    "shortLabel": "Liam - Guy Next Door — Cartesia",
+    "searchDescription": "Cartesia Liam - Guy Next Door: Casual, friendly young male for authentic and engaging conversations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "41f3c367-e0a8-4a85-89e0-c27bae9c9b6d",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-9G9R9M41T9M2DYDGDR0CE1WFZR",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9G9R9M41T9M2DYDGDR0CE1WFZR.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "41f3c367-e0a8-4a85-89e0-c27bae9c9b6d",
+      "label": "Liam - Guy Next Door",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9G9R9M41T9M2DYDGDR0CE1WFZR.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9G9R9M41T9M2DYDGDR0CE1WFZR",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9G9R9M41T9M2DYDGDR0CE1WFZR.json"
+}

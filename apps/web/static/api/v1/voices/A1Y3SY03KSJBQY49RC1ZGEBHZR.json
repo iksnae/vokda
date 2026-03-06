@@ -1,0 +1,75 @@
+{
+  "id": "A1Y3SY03KSJBQY49RC1ZGEBHZR",
+  "name": "Jacob",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "jacob",
+  "description": "Jacob: male LMNT voice.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "asmr",
+    "whispering"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A1Y3SY03KSJBQY49RC1ZGEBHZR.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A1Y3SY03KSJBQY49RC1ZGEBHZR.jpg",
+  "metadata": {
+    "shortLabel": "Jacob — LMNT",
+    "searchDescription": "LMNT Jacob: Jacob: male LMNT voice.",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ],
+    "useCases": [
+      "whispering"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-A1Y3SY03KSJBQY49RC1ZGEBHZR",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A1Y3SY03KSJBQY49RC1ZGEBHZR.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "jacob",
+      "label": "Jacob",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A1Y3SY03KSJBQY49RC1ZGEBHZR.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A1Y3SY03KSJBQY49RC1ZGEBHZR",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A1Y3SY03KSJBQY49RC1ZGEBHZR.json"
+}

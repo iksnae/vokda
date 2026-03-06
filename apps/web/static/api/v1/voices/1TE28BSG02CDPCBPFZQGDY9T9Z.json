@@ -1,0 +1,77 @@
+{
+  "id": "1TE28BSG02CDPCBPFZQGDY9T9Z",
+  "name": "Romeo - Calm Narrator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f688c0a6-dddd-48ba-8246-c099d494a162",
+  "description": "Relaxing voice with smooth depth and calm pacing, perfect for storytelling and immersive narrations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.jpg",
+  "metadata": {
+    "shortLabel": "Romeo - Calm Narrator — Cartesia",
+    "searchDescription": "Cartesia Romeo - Calm Narrator: Relaxing voice with smooth depth and calm pacing, perfect for storytelling and immersive narrations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "f688c0a6-dddd-48ba-8246-c099d494a162",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-1TE28BSG02CDPCBPFZQGDY9T9Z",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f688c0a6-dddd-48ba-8246-c099d494a162",
+      "label": "Romeo - Calm Narrator",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1TE28BSG02CDPCBPFZQGDY9T9Z",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.json"
+}

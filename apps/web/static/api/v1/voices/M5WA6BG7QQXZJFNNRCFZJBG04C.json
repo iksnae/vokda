@@ -1,0 +1,77 @@
+{
+  "id": "M5WA6BG7QQXZJFNNRCFZJBG04C",
+  "name": "Donny - Steady Presence",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+  "description": "Neutral male voice with balanced tone and clarity, adaptable for a wide range of casual speaking contexts",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M5WA6BG7QQXZJFNNRCFZJBG04C.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.jpg",
+  "metadata": {
+    "shortLabel": "Donny - Steady Presence — Cartesia",
+    "searchDescription": "Cartesia Donny - Steady Presence: Neutral male voice with balanced tone and clarity, adaptable for a wide range of casual speaking contexts",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-M5WA6BG7QQXZJFNNRCFZJBG04C",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M5WA6BG7QQXZJFNNRCFZJBG04C.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+      "label": "Donny - Steady Presence",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/M5WA6BG7QQXZJFNNRCFZJBG04C",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.json"
+}

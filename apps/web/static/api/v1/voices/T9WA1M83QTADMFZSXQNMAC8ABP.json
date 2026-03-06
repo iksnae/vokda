@@ -1,0 +1,77 @@
+{
+  "id": "T9WA1M83QTADMFZSXQNMAC8ABP",
+  "name": "Serena - Laidback Girl",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3ef78ba6-9aaa-46a2-b5b5-f9ded76a2370",
+  "description": "Female adult voice with a relaxed, easygoing tone and laid-back delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T9WA1M83QTADMFZSXQNMAC8ABP.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T9WA1M83QTADMFZSXQNMAC8ABP.jpg",
+  "metadata": {
+    "shortLabel": "Serena - Laidback Girl — Cartesia",
+    "searchDescription": "Cartesia Serena - Laidback Girl: Female adult voice with a relaxed, easygoing tone and laid-back delivery",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "3ef78ba6-9aaa-46a2-b5b5-f9ded76a2370",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-T9WA1M83QTADMFZSXQNMAC8ABP",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T9WA1M83QTADMFZSXQNMAC8ABP.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3ef78ba6-9aaa-46a2-b5b5-f9ded76a2370",
+      "label": "Serena - Laidback Girl",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T9WA1M83QTADMFZSXQNMAC8ABP.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T9WA1M83QTADMFZSXQNMAC8ABP",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T9WA1M83QTADMFZSXQNMAC8ABP.json"
+}

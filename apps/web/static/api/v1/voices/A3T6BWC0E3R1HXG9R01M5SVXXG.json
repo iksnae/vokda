@@ -1,0 +1,93 @@
+{
+  "id": "A3T6BWC0E3R1HXG9R01M5SVXXG",
+  "name": "Draco (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-draco-en",
+  "description": "British-accented male voice (adult) with warm, approachable, trustworthy qualities. Aura 2 architecture.",
+  "tags": [
+    "warm",
+    "approachable",
+    "trustworthy",
+    "baritone",
+    "aura-2",
+    "accent-british",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A3T6BWC0E3R1HXG9R01M5SVXXG.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A3T6BWC0E3R1HXG9R01M5SVXXG.jpg",
+  "metadata": {
+    "shortLabel": "Draco — Deepgram Aura 2",
+    "searchDescription": "Deepgram Draco: British-accented male voice (adult) with warm, approachable, trustworthy qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "british"
+    ],
+    "useCases": [
+      "storytelling"
+    ],
+    "toneTags": [
+      "warm",
+      "approachable",
+      "trustworthy",
+      "baritone"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Draco",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "British",
+    "age": "Adult",
+    "deepgramColor": "#ee028c",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7cb3da9a6f4e882e6a7da4f88960e90a2d0c938f-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/02f3523c47f49521c37ce03b78d166aeaf703bde.wav",
+    "deepgramUuid": "a650a612-07fd-4ce0-84d9-63ebe211d4d8",
+    "totalVoices": 102,
+    "useCases": [
+      "storytelling"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-A3T6BWC0E3R1HXG9R01M5SVXXG",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A3T6BWC0E3R1HXG9R01M5SVXXG.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-draco-en",
+      "label": "Draco",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A3T6BWC0E3R1HXG9R01M5SVXXG.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A3T6BWC0E3R1HXG9R01M5SVXXG",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A3T6BWC0E3R1HXG9R01M5SVXXG.json"
+}

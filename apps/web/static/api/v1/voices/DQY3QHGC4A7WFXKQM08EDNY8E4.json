@@ -1,0 +1,77 @@
+{
+  "id": "DQY3QHGC4A7WFXKQM08EDNY8E4",
+  "name": "Dallas - Fireside Friend",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "23e9e50a-4ea2-447b-b589-df90dbb848a2",
+  "description": "Kind male for inviting and authentic conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DQY3QHGC4A7WFXKQM08EDNY8E4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DQY3QHGC4A7WFXKQM08EDNY8E4.jpg",
+  "metadata": {
+    "shortLabel": "Dallas - Fireside Friend — Cartesia",
+    "searchDescription": "Cartesia Dallas - Fireside Friend: Kind male for inviting and authentic conversations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "23e9e50a-4ea2-447b-b589-df90dbb848a2",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-DQY3QHGC4A7WFXKQM08EDNY8E4",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DQY3QHGC4A7WFXKQM08EDNY8E4.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "23e9e50a-4ea2-447b-b589-df90dbb848a2",
+      "label": "Dallas - Fireside Friend",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DQY3QHGC4A7WFXKQM08EDNY8E4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DQY3QHGC4A7WFXKQM08EDNY8E4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DQY3QHGC4A7WFXKQM08EDNY8E4.json"
+}

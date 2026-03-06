@@ -1,0 +1,97 @@
+{
+  "id": "CC067HM01PEDT9T3MFPFXRC9TD",
+  "name": "Estrella (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-estrella-es",
+  "description": "Mexican-accented female voice (mature) with approachable, calm, comfortable qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "calm",
+    "comfortable",
+    "expressive",
+    "natural",
+    "aura-2",
+    "accent-mexican",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-MX"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/CC067HM01PEDT9T3MFPFXRC9TD.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/CC067HM01PEDT9T3MFPFXRC9TD.jpg",
+  "metadata": {
+    "shortLabel": "Estrella — Deepgram Aura 2",
+    "searchDescription": "Deepgram Estrella: Mexican-accented female voice (mature) with approachable, calm, comfortable qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "mexican"
+    ],
+    "useCases": [
+      "interview",
+      "casual chat"
+    ],
+    "toneTags": [
+      "approachable",
+      "calm",
+      "comfortable",
+      "expressive",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "mature",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Estrella",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Mexican",
+    "age": "Mature",
+    "deepgramColor": "#13ef93",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/83cbb5ba605e742a4a2dc6d9c86978228f682823-371x372.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/634f431ac18a6ff2604b9ba25e3e951059787e65.wav",
+    "deepgramUuid": "d10b5662-d783-4028-b8dc-6b05fe7b9240",
+    "totalVoices": 102,
+    "useCases": [
+      "interview",
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-CC067HM01PEDT9T3MFPFXRC9TD",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/CC067HM01PEDT9T3MFPFXRC9TD.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-estrella-es",
+      "label": "Estrella",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/CC067HM01PEDT9T3MFPFXRC9TD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/CC067HM01PEDT9T3MFPFXRC9TD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/CC067HM01PEDT9T3MFPFXRC9TD.json"
+}

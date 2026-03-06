@@ -1,0 +1,77 @@
+{
+  "id": "NHPBNWBNXVGA3QM489HHT0E689",
+  "name": "Brent - Steady Conversationalist",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3d808d23-cb09-4c39-8afd-528e209cba4f",
+  "description": "English male adult voice with a calm, steady, and composed delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NHPBNWBNXVGA3QM489HHT0E689.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NHPBNWBNXVGA3QM489HHT0E689.jpg",
+  "metadata": {
+    "shortLabel": "Brent - Steady Conversationalist — Cartesia",
+    "searchDescription": "Cartesia Brent - Steady Conversationalist: English male adult voice with a calm, steady, and composed delivery",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "3d808d23-cb09-4c39-8afd-528e209cba4f",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-NHPBNWBNXVGA3QM489HHT0E689",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NHPBNWBNXVGA3QM489HHT0E689.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3d808d23-cb09-4c39-8afd-528e209cba4f",
+      "label": "Brent - Steady Conversationalist",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NHPBNWBNXVGA3QM489HHT0E689.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NHPBNWBNXVGA3QM489HHT0E689",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NHPBNWBNXVGA3QM489HHT0E689.json"
+}

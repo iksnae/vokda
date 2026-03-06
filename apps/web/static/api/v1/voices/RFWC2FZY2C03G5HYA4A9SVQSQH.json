@@ -1,0 +1,77 @@
+{
+  "id": "RFWC2FZY2C03G5HYA4A9SVQSQH",
+  "name": "Jewel - Commercial Announcer",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f39d8500-0d9b-4b8b-a080-38f5188f5892",
+  "description": "Smooth, confident, and engaging female voice for advertising, promos, and high-impact brand messaging",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/RFWC2FZY2C03G5HYA4A9SVQSQH.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/RFWC2FZY2C03G5HYA4A9SVQSQH.jpg",
+  "metadata": {
+    "shortLabel": "Jewel - Commercial Announcer — Cartesia",
+    "searchDescription": "Cartesia Jewel - Commercial Announcer: Smooth, confident, and engaging female voice for advertising, promos, and high-impact brand messaging",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "f39d8500-0d9b-4b8b-a080-38f5188f5892",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-RFWC2FZY2C03G5HYA4A9SVQSQH",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/RFWC2FZY2C03G5HYA4A9SVQSQH.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f39d8500-0d9b-4b8b-a080-38f5188f5892",
+      "label": "Jewel - Commercial Announcer",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RFWC2FZY2C03G5HYA4A9SVQSQH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/RFWC2FZY2C03G5HYA4A9SVQSQH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RFWC2FZY2C03G5HYA4A9SVQSQH.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "5QJCBZXSHSTE3TE86FW25JBKXY",
+  "name": "Asher - Podcaster",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "00967b2f-88a6-4a31-8153-110a92134b9f",
+  "description": "Firm adult male for audiobooks and clear communication",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5QJCBZXSHSTE3TE86FW25JBKXY.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5QJCBZXSHSTE3TE86FW25JBKXY.jpg",
+  "metadata": {
+    "shortLabel": "Asher - Podcaster — Cartesia",
+    "searchDescription": "Cartesia Asher - Podcaster: Firm adult male for audiobooks and clear communication",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "00967b2f-88a6-4a31-8153-110a92134b9f",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-5QJCBZXSHSTE3TE86FW25JBKXY",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5QJCBZXSHSTE3TE86FW25JBKXY.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "00967b2f-88a6-4a31-8153-110a92134b9f",
+      "label": "Asher - Podcaster",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5QJCBZXSHSTE3TE86FW25JBKXY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5QJCBZXSHSTE3TE86FW25JBKXY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5QJCBZXSHSTE3TE86FW25JBKXY.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "9XVT1J5HZVNR1XKWCA7R3W5VQW",
+  "name": "Wes - Customer Companion",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "2a4d065a-ac91-4203-a015-eb3fc3ee3365",
+  "description": "Kind male for engaging with customers",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9XVT1J5HZVNR1XKWCA7R3W5VQW.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9XVT1J5HZVNR1XKWCA7R3W5VQW.jpg",
+  "metadata": {
+    "shortLabel": "Wes - Customer Companion — Cartesia",
+    "searchDescription": "Cartesia Wes - Customer Companion: Kind male for engaging with customers",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "2a4d065a-ac91-4203-a015-eb3fc3ee3365",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-9XVT1J5HZVNR1XKWCA7R3W5VQW",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9XVT1J5HZVNR1XKWCA7R3W5VQW.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "2a4d065a-ac91-4203-a015-eb3fc3ee3365",
+      "label": "Wes - Customer Companion",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9XVT1J5HZVNR1XKWCA7R3W5VQW.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9XVT1J5HZVNR1XKWCA7R3W5VQW",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9XVT1J5HZVNR1XKWCA7R3W5VQW.json"
+}

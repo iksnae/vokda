@@ -1,0 +1,91 @@
+{
+  "id": "ZVQG67VXKHQG8E9Y3HSY9HXNXT",
+  "name": "Helios (Aura)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-helios-en",
+  "description": "British-accented male voice (adult) with postive, comfortable, polite qualities. Aura architecture.",
+  "tags": [
+    "postive",
+    "comfortable",
+    "polite",
+    "aura",
+    "accent-british",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-GB"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.jpg",
+  "metadata": {
+    "shortLabel": "Helios — Deepgram Aura",
+    "searchDescription": "Deepgram Helios: British-accented male voice (adult) with postive, comfortable, polite qualities. Aura architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "male",
+      "british"
+    ],
+    "useCases": [
+      "customer service"
+    ],
+    "toneTags": [
+      "postive",
+      "comfortable",
+      "polite"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura — Helios",
+    "architecture": "aura",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "British",
+    "age": "Adult",
+    "deepgramColor": "#f185be",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/9682830014919fbdfb6cc2bc96d629920b4078b8-144x144.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/9b0c74e03153b7b9efce7b1ae9694d4842c1e647.wav",
+    "deepgramUuid": "cf0cef61-cc9a-40b3-ab7e-313798957798",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-ZVQG67VXKHQG8E9Y3HSY9HXNXT",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-helios-en",
+      "label": "Helios",
+      "engine": "aura",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.json"
+}

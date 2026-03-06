@@ -1,0 +1,77 @@
+{
+  "id": "GDW7P83QJ0DQXKJ1TC2DHP1M7Y",
+  "name": "Camille - Friendly Expert",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "55deba52-bc73-4481-ab69-9c8831c8a7c3",
+  "description": "Calm, neutral female for customer support and instructional videos",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GDW7P83QJ0DQXKJ1TC2DHP1M7Y.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GDW7P83QJ0DQXKJ1TC2DHP1M7Y.jpg",
+  "metadata": {
+    "shortLabel": "Camille - Friendly Expert — Cartesia",
+    "searchDescription": "Cartesia Camille - Friendly Expert: Calm, neutral female for customer support and instructional videos",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "55deba52-bc73-4481-ab69-9c8831c8a7c3",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-GDW7P83QJ0DQXKJ1TC2DHP1M7Y",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GDW7P83QJ0DQXKJ1TC2DHP1M7Y.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "55deba52-bc73-4481-ab69-9c8831c8a7c3",
+      "label": "Camille - Friendly Expert",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GDW7P83QJ0DQXKJ1TC2DHP1M7Y.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GDW7P83QJ0DQXKJ1TC2DHP1M7Y",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GDW7P83QJ0DQXKJ1TC2DHP1M7Y.json"
+}

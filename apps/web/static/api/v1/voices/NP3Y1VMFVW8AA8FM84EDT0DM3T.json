@@ -1,0 +1,77 @@
+{
+  "id": "NP3Y1VMFVW8AA8FM84EDT0DM3T",
+  "name": "Ellen - Welcome Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5c9e800f-2a92-4720-969b-99c4ab8fbc87",
+  "description": "Authentic female voice with balanced warmth and clarity for both casual and support-driven contexts",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.jpg",
+  "metadata": {
+    "shortLabel": "Ellen - Welcome Agent — Cartesia",
+    "searchDescription": "Cartesia Ellen - Welcome Agent: Authentic female voice with balanced warmth and clarity for both casual and support-driven contexts",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "5c9e800f-2a92-4720-969b-99c4ab8fbc87",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-NP3Y1VMFVW8AA8FM84EDT0DM3T",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NP3Y1VMFVW8AA8FM84EDT0DM3T.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5c9e800f-2a92-4720-969b-99c4ab8fbc87",
+      "label": "Ellen - Welcome Agent",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NP3Y1VMFVW8AA8FM84EDT0DM3T.json"
+}

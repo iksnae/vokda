@@ -1,0 +1,91 @@
+{
+  "id": "6EBSQWE8DYEC3SXPFVP65Y5PEA",
+  "name": "Saturn (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-saturn-en",
+  "description": "American-accented male voice (adult) with knowledgeable, confident, baritone qualities. Aura 2 architecture.",
+  "tags": [
+    "knowledgeable",
+    "confident",
+    "baritone",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/6EBSQWE8DYEC3SXPFVP65Y5PEA.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/6EBSQWE8DYEC3SXPFVP65Y5PEA.jpg",
+  "metadata": {
+    "shortLabel": "Saturn — Deepgram Aura 2",
+    "searchDescription": "Deepgram Saturn: American-accented male voice (adult) with knowledgeable, confident, baritone qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ],
+    "useCases": [
+      "customer service"
+    ],
+    "toneTags": [
+      "knowledgeable",
+      "confident",
+      "baritone"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Saturn",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#fec84b",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/b65dd4ee2e5def65608d3429e295c77df1e131a6-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/22afa7dbf220c2c782fdedb250eebf1f7ceb013c.wav",
+    "deepgramUuid": "9e94b3e7-560a-48a7-a19b-d4c64af99553",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-6EBSQWE8DYEC3SXPFVP65Y5PEA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6EBSQWE8DYEC3SXPFVP65Y5PEA.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-saturn-en",
+      "label": "Saturn",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/6EBSQWE8DYEC3SXPFVP65Y5PEA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/6EBSQWE8DYEC3SXPFVP65Y5PEA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/6EBSQWE8DYEC3SXPFVP65Y5PEA.json"
+}

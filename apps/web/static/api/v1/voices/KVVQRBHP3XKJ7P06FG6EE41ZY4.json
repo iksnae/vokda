@@ -1,0 +1,75 @@
+{
+  "id": "KVVQRBHP3XKJ7P06FG6EE41ZY4",
+  "name": "Zain",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "zain",
+  "description": "Smoky male voice that's both kind and curious. Perfect for thoughtful conversations and inquiry.",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "customer-support"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KVVQRBHP3XKJ7P06FG6EE41ZY4.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KVVQRBHP3XKJ7P06FG6EE41ZY4.jpg",
+  "metadata": {
+    "shortLabel": "Zain — LMNT",
+    "searchDescription": "LMNT Zain: Smoky male voice that's both kind and curious. Perfect for thoughtful conversations and inquiry.",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ],
+    "useCases": [
+      "customer support"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-KVVQRBHP3XKJ7P06FG6EE41ZY4",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KVVQRBHP3XKJ7P06FG6EE41ZY4.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "zain",
+      "label": "Zain",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KVVQRBHP3XKJ7P06FG6EE41ZY4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KVVQRBHP3XKJ7P06FG6EE41ZY4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KVVQRBHP3XKJ7P06FG6EE41ZY4.json"
+}

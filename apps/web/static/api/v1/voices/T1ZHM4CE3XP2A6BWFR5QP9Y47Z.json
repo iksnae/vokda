@@ -1,0 +1,77 @@
+{
+  "id": "T1ZHM4CE3XP2A6BWFR5QP9Y47Z",
+  "name": "Krishna - Friendly Pal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "c63361f8-d142-4c62-8da7-8f8149d973d6",
+  "description": "Easygoing adult male voice with a slight Indian accent for casual conversations, approachable dialogue, and friendly interactions",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.jpg",
+  "metadata": {
+    "shortLabel": "Krishna - Friendly Pal — Cartesia",
+    "searchDescription": "Cartesia Krishna - Friendly Pal: Easygoing adult male voice with a slight Indian accent for casual conversations, approachable dialogue, and friendly interactions",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "c63361f8-d142-4c62-8da7-8f8149d973d6",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-T1ZHM4CE3XP2A6BWFR5QP9Y47Z",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "c63361f8-d142-4c62-8da7-8f8149d973d6",
+      "label": "Krishna - Friendly Pal",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T1ZHM4CE3XP2A6BWFR5QP9Y47Z.json"
+}

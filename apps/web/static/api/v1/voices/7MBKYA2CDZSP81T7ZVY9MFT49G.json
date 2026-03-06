@@ -1,0 +1,91 @@
+{
+  "id": "7MBKYA2CDZSP81T7ZVY9MFT49G",
+  "name": "Amalthea (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-amalthea-en",
+  "description": "Filipino-accented female voice (young adult) with engaging, natural, cheerful qualities. Aura 2 architecture.",
+  "tags": [
+    "engaging",
+    "natural",
+    "cheerful",
+    "aura-2",
+    "accent-filipino",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-PH"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7MBKYA2CDZSP81T7ZVY9MFT49G.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7MBKYA2CDZSP81T7ZVY9MFT49G.jpg",
+  "metadata": {
+    "shortLabel": "Amalthea — Deepgram Aura 2",
+    "searchDescription": "Deepgram Amalthea: Filipino-accented female voice (young adult) with engaging, natural, cheerful qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "filipino"
+    ],
+    "useCases": [
+      "casual chat"
+    ],
+    "toneTags": [
+      "engaging",
+      "natural",
+      "cheerful"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "young adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Amalthea",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Filipino",
+    "age": "Young Adult",
+    "deepgramColor": "#a1d7fd",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/2501a14752716e00c7d7366c1b52715636ea083b-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e5f50690fb8e1e2bcdd367290b7d268c495db202.wav",
+    "deepgramUuid": "cd7489bc-4a7a-4a70-a5d6-7d40607788a4",
+    "totalVoices": 102,
+    "useCases": [
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-7MBKYA2CDZSP81T7ZVY9MFT49G",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7MBKYA2CDZSP81T7ZVY9MFT49G.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-amalthea-en",
+      "label": "Amalthea",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7MBKYA2CDZSP81T7ZVY9MFT49G.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7MBKYA2CDZSP81T7ZVY9MFT49G",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7MBKYA2CDZSP81T7ZVY9MFT49G.json"
+}

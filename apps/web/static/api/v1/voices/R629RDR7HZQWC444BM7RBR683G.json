@@ -1,0 +1,91 @@
+{
+  "id": "R629RDR7HZQWC444BM7RBR683G",
+  "name": "Luna (Aura)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-luna-en",
+  "description": "American-accented female voice (young adult) with friendly, natural, engaging qualities. Aura architecture.",
+  "tags": [
+    "friendly",
+    "natural",
+    "engaging",
+    "aura",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/R629RDR7HZQWC444BM7RBR683G.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/R629RDR7HZQWC444BM7RBR683G.jpg",
+  "metadata": {
+    "shortLabel": "Luna — Deepgram Aura",
+    "searchDescription": "Deepgram Luna: American-accented female voice (young adult) with friendly, natural, engaging qualities. Aura architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "casual conversation"
+    ],
+    "toneTags": [
+      "friendly",
+      "natural",
+      "engaging"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "young adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura — Luna",
+    "architecture": "aura",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Young Adult",
+    "deepgramColor": "#949498",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/d49e915ecdd34e10bab996a3f5b604084c63a79e-301x301.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/17d9a3faa3c6097605140779a04be53d1522686c.wav",
+    "deepgramUuid": "2ec8db75-8e94-4ef2-a722-823c14465a33",
+    "totalVoices": 102,
+    "useCases": [
+      "casual conversation"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-R629RDR7HZQWC444BM7RBR683G",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/R629RDR7HZQWC444BM7RBR683G.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-luna-en",
+      "label": "Luna",
+      "engine": "aura",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/R629RDR7HZQWC444BM7RBR683G.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/R629RDR7HZQWC444BM7RBR683G",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/R629RDR7HZQWC444BM7RBR683G.json"
+}

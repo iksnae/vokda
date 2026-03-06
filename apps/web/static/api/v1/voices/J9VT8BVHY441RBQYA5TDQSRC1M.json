@@ -1,0 +1,91 @@
+{
+  "id": "J9VT8BVHY441RBQYA5TDQSRC1M",
+  "name": "Stella (Aura)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-stella-en",
+  "description": "American-accented female voice (adult) with raspy, engaging, cheerful qualities. Aura architecture.",
+  "tags": [
+    "raspy",
+    "engaging",
+    "cheerful",
+    "aura",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9VT8BVHY441RBQYA5TDQSRC1M.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J9VT8BVHY441RBQYA5TDQSRC1M.jpg",
+  "metadata": {
+    "shortLabel": "Stella — Deepgram Aura",
+    "searchDescription": "Deepgram Stella: American-accented female voice (adult) with raspy, engaging, cheerful qualities. Aura architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "interview"
+    ],
+    "toneTags": [
+      "raspy",
+      "engaging",
+      "cheerful"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura — Stella",
+    "architecture": "aura",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#00cf56",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/41fc4efd1710da7aa78c2ab2dfe927231c2b3e16-144x144.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/66f5f09b4447c2e1502004976fbe2582b7319d70.wav",
+    "deepgramUuid": "0c0a6dc2-1659-486b-a328-7666b8b7ab05",
+    "totalVoices": 102,
+    "useCases": [
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-J9VT8BVHY441RBQYA5TDQSRC1M",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9VT8BVHY441RBQYA5TDQSRC1M.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-stella-en",
+      "label": "Stella",
+      "engine": "aura",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J9VT8BVHY441RBQYA5TDQSRC1M.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J9VT8BVHY441RBQYA5TDQSRC1M",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J9VT8BVHY441RBQYA5TDQSRC1M.json"
+}

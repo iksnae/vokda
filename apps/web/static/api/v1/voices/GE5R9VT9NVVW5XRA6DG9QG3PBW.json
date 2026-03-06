@@ -1,0 +1,77 @@
+{
+  "id": "GE5R9VT9NVVW5XRA6DG9QG3PBW",
+  "name": "Carson - Scared Friendly Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
+  "description": "Friendly young adult male for customer support conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.jpg",
+  "metadata": {
+    "shortLabel": "Carson - Scared Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Scared Friendly Support: Friendly young adult male for customer support conversations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-GE5R9VT9NVVW5XRA6DG9QG3PBW",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
+      "label": "Carson - Scared Friendly Support",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "RCDKVM5HNMDNVHNT3Y07KHM45V",
+  "name": "Sylvia - Librarian",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "573e3144-a684-4e72-ac2b-9b2063a50b53",
+  "description": "Firm female for instructions and guidance",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/RCDKVM5HNMDNVHNT3Y07KHM45V.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/RCDKVM5HNMDNVHNT3Y07KHM45V.jpg",
+  "metadata": {
+    "shortLabel": "Sylvia - Librarian — Cartesia",
+    "searchDescription": "Cartesia Sylvia - Librarian: Firm female for instructions and guidance",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "573e3144-a684-4e72-ac2b-9b2063a50b53",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-RCDKVM5HNMDNVHNT3Y07KHM45V",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/RCDKVM5HNMDNVHNT3Y07KHM45V.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "573e3144-a684-4e72-ac2b-9b2063a50b53",
+      "label": "Sylvia - Librarian",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RCDKVM5HNMDNVHNT3Y07KHM45V.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/RCDKVM5HNMDNVHNT3Y07KHM45V",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RCDKVM5HNMDNVHNT3Y07KHM45V.json"
+}

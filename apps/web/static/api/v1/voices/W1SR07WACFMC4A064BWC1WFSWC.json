@@ -1,0 +1,77 @@
+{
+  "id": "W1SR07WACFMC4A064BWC1WFSWC",
+  "name": "Mia - Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "1d3ba41a-96e6-44ad-aabb-9817c56caa68",
+  "description": "Firm, young female for customer support and casual, natural conversation",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W1SR07WACFMC4A064BWC1WFSWC.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W1SR07WACFMC4A064BWC1WFSWC.jpg",
+  "metadata": {
+    "shortLabel": "Mia - Agent — Cartesia",
+    "searchDescription": "Cartesia Mia - Agent: Firm, young female for customer support and casual, natural conversation",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "1d3ba41a-96e6-44ad-aabb-9817c56caa68",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-W1SR07WACFMC4A064BWC1WFSWC",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W1SR07WACFMC4A064BWC1WFSWC.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "1d3ba41a-96e6-44ad-aabb-9817c56caa68",
+      "label": "Mia - Agent",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/W1SR07WACFMC4A064BWC1WFSWC.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/W1SR07WACFMC4A064BWC1WFSWC",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/W1SR07WACFMC4A064BWC1WFSWC.json"
+}

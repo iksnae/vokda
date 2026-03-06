@@ -1,0 +1,97 @@
+{
+  "id": "QNW7SHKXY1G9SKYBVMCEEBRDJ5",
+  "name": "Diana (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-diana-es",
+  "description": "Peninsular-accented female voice (adult) with professional, confident, expressive qualities. Aura 2 architecture.",
+  "tags": [
+    "professional",
+    "confident",
+    "expressive",
+    "polite",
+    "knowledgeable",
+    "aura-2",
+    "accent-peninsular",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-ES"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QNW7SHKXY1G9SKYBVMCEEBRDJ5.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QNW7SHKXY1G9SKYBVMCEEBRDJ5.jpg",
+  "metadata": {
+    "shortLabel": "Diana — Deepgram Aura 2",
+    "searchDescription": "Deepgram Diana: Peninsular-accented female voice (adult) with professional, confident, expressive qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "peninsular"
+    ],
+    "useCases": [
+      "storytelling",
+      "advertising"
+    ],
+    "toneTags": [
+      "professional",
+      "confident",
+      "expressive",
+      "polite",
+      "knowledgeable"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Diana",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Peninsular",
+    "age": "Adult",
+    "deepgramColor": "#7800ed",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7bb47b05ef73aa159c5354499366bcb1139fe2e3-372x373.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/0203de493eddb33e661f6d3b2eb4502f26ca8d41.wav",
+    "deepgramUuid": "45c985ef-0256-420e-8222-a93b3e7db2c9",
+    "totalVoices": 102,
+    "useCases": [
+      "storytelling",
+      "advertising"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-QNW7SHKXY1G9SKYBVMCEEBRDJ5",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QNW7SHKXY1G9SKYBVMCEEBRDJ5.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-diana-es",
+      "label": "Diana",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QNW7SHKXY1G9SKYBVMCEEBRDJ5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QNW7SHKXY1G9SKYBVMCEEBRDJ5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QNW7SHKXY1G9SKYBVMCEEBRDJ5.json"
+}

@@ -1,0 +1,93 @@
+{
+  "id": "3QR2C5KP0ADQY287XVZTDHM8C0",
+  "name": "Juno (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-juno-en",
+  "description": "American-accented female voice (adult) with natural, engaging, melodic qualities. Aura 2 architecture.",
+  "tags": [
+    "natural",
+    "engaging",
+    "melodic",
+    "breathy",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3QR2C5KP0ADQY287XVZTDHM8C0.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3QR2C5KP0ADQY287XVZTDHM8C0.jpg",
+  "metadata": {
+    "shortLabel": "Juno — Deepgram Aura 2",
+    "searchDescription": "Deepgram Juno: American-accented female voice (adult) with natural, engaging, melodic qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "interview"
+    ],
+    "toneTags": [
+      "natural",
+      "engaging",
+      "melodic",
+      "breathy"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Juno",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#c58dff",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/60221782c27342aa43eafd331bfd1b2f46226628-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/13edcfcc1339af95c4bf054f7e2dd3be17fde576.wav",
+    "deepgramUuid": "2b7c5e74-5a36-42a9-908f-b4f6e84aef46",
+    "totalVoices": 102,
+    "useCases": [
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-3QR2C5KP0ADQY287XVZTDHM8C0",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3QR2C5KP0ADQY287XVZTDHM8C0.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-juno-en",
+      "label": "Juno",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3QR2C5KP0ADQY287XVZTDHM8C0.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3QR2C5KP0ADQY287XVZTDHM8C0",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3QR2C5KP0ADQY287XVZTDHM8C0.json"
+}

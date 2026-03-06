@@ -1,0 +1,77 @@
+{
+  "id": "E8FT9QR5G62DNZJAE9HZJFHNW3",
+  "name": "Howard - Approachable Man",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "0d42f0f6-c019-4082-b250-1c16133d1c82",
+  "description": "Male adult voice with a clear, approachable tone and steady delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E8FT9QR5G62DNZJAE9HZJFHNW3.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E8FT9QR5G62DNZJAE9HZJFHNW3.jpg",
+  "metadata": {
+    "shortLabel": "Howard - Approachable Man — Cartesia",
+    "searchDescription": "Cartesia Howard - Approachable Man: Male adult voice with a clear, approachable tone and steady delivery",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "0d42f0f6-c019-4082-b250-1c16133d1c82",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-E8FT9QR5G62DNZJAE9HZJFHNW3",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E8FT9QR5G62DNZJAE9HZJFHNW3.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "0d42f0f6-c019-4082-b250-1c16133d1c82",
+      "label": "Howard - Approachable Man",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E8FT9QR5G62DNZJAE9HZJFHNW3.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E8FT9QR5G62DNZJAE9HZJFHNW3",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E8FT9QR5G62DNZJAE9HZJFHNW3.json"
+}

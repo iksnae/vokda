@@ -1,0 +1,77 @@
+{
+  "id": "EEFJ7VW1VTA8DP1PC2DJ8A667X",
+  "name": "Carl - Steady Storyteller",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "ed82c17b-4704-4d34-be43-5d19065acdf1",
+  "description": "Matured male voice with calm depth and measured pacing, perfect for narrations and documentaries",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/EEFJ7VW1VTA8DP1PC2DJ8A667X.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/EEFJ7VW1VTA8DP1PC2DJ8A667X.jpg",
+  "metadata": {
+    "shortLabel": "Carl - Steady Storyteller — Cartesia",
+    "searchDescription": "Cartesia Carl - Steady Storyteller: Matured male voice with calm depth and measured pacing, perfect for narrations and documentaries",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "ed82c17b-4704-4d34-be43-5d19065acdf1",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-EEFJ7VW1VTA8DP1PC2DJ8A667X",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/EEFJ7VW1VTA8DP1PC2DJ8A667X.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "ed82c17b-4704-4d34-be43-5d19065acdf1",
+      "label": "Carl - Steady Storyteller",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/EEFJ7VW1VTA8DP1PC2DJ8A667X.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/EEFJ7VW1VTA8DP1PC2DJ8A667X",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/EEFJ7VW1VTA8DP1PC2DJ8A667X.json"
+}

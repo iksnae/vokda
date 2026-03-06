@@ -1,0 +1,77 @@
+{
+  "id": "AC3NXZQTEBT4E63JEBZXXQSNQQ",
+  "name": "Molly - Upbeat Conversationalist",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+  "description": "Bright and cheerful American-accented female voice for upbeat conversations, advertisements, and lively interactions",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/AC3NXZQTEBT4E63JEBZXXQSNQQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.jpg",
+  "metadata": {
+    "shortLabel": "Molly - Upbeat Conversationalist — Cartesia",
+    "searchDescription": "Cartesia Molly - Upbeat Conversationalist: Bright and cheerful American-accented female voice for upbeat conversations, advertisements, and lively interactions",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-AC3NXZQTEBT4E63JEBZXXQSNQQ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/AC3NXZQTEBT4E63JEBZXXQSNQQ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+      "label": "Molly - Upbeat Conversationalist",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.json"
+}

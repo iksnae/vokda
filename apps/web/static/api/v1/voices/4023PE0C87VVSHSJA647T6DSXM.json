@@ -1,0 +1,91 @@
+{
+  "id": "4023PE0C87VVSHSJA647T6DSXM",
+  "name": "Minerva (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-minerva-en",
+  "description": "American-accented female voice (adult) with positive, friendly, natural qualities. Aura 2 architecture.",
+  "tags": [
+    "positive",
+    "friendly",
+    "natural",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4023PE0C87VVSHSJA647T6DSXM.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4023PE0C87VVSHSJA647T6DSXM.jpg",
+  "metadata": {
+    "shortLabel": "Minerva — Deepgram Aura 2",
+    "searchDescription": "Deepgram Minerva: American-accented female voice (adult) with positive, friendly, natural qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "storytelling"
+    ],
+    "toneTags": [
+      "positive",
+      "friendly",
+      "natural"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Minerva",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#a1d7fd",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/41b1caed8b379af089c782ab19bd822c4e332ebb-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ae741031efa09c570b7f45feef55615bcf5ddf75.wav",
+    "deepgramUuid": "4a6b998f-d6e6-4b7c-bc34-9c566c584469",
+    "totalVoices": 102,
+    "useCases": [
+      "storytelling"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-4023PE0C87VVSHSJA647T6DSXM",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4023PE0C87VVSHSJA647T6DSXM.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-minerva-en",
+      "label": "Minerva",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/4023PE0C87VVSHSJA647T6DSXM.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/4023PE0C87VVSHSJA647T6DSXM",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/4023PE0C87VVSHSJA647T6DSXM.json"
+}

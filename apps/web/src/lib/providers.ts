@@ -138,6 +138,24 @@ export const DEFAULT_PROVIDERS: ProviderDefinition[] = [
     name: 'Edge TTS',
     type: 'cloud_provider',
     websiteUrl: 'https://github.com/rany2/edge-tts'
+  },
+  {
+    id: 'deepgram',
+    name: 'Deepgram',
+    type: 'cloud_provider',
+    websiteUrl: 'https://deepgram.com/aura'
+  },
+  {
+    id: 'cartesia',
+    name: 'Cartesia',
+    type: 'cloud_provider',
+    websiteUrl: 'https://cartesia.ai'
+  },
+  {
+    id: 'lmnt',
+    name: 'LMNT',
+    type: 'cloud_provider',
+    websiteUrl: 'https://lmnt.com'
   }
 ];
 

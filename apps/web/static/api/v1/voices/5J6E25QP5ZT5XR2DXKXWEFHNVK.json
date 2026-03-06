@@ -1,0 +1,71 @@
+{
+  "id": "5J6E25QP5ZT5XR2DXKXWEFHNVK",
+  "name": "Lauren",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "lauren",
+  "description": "Conversational. California accent. US",
+  "tags": [
+    "female",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5J6E25QP5ZT5XR2DXKXWEFHNVK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5J6E25QP5ZT5XR2DXKXWEFHNVK.jpg",
+  "metadata": {
+    "shortLabel": "Lauren — LMNT",
+    "searchDescription": "LMNT Lauren: Conversational. California accent. US",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-5J6E25QP5ZT5XR2DXKXWEFHNVK",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5J6E25QP5ZT5XR2DXKXWEFHNVK.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "lauren",
+      "label": "Lauren",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5J6E25QP5ZT5XR2DXKXWEFHNVK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5J6E25QP5ZT5XR2DXKXWEFHNVK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5J6E25QP5ZT5XR2DXKXWEFHNVK.json"
+}

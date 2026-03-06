@@ -1,0 +1,77 @@
+{
+  "id": "G7JE7G3G88A46FYDSW7SJ49SHX",
+  "name": "Blake - Helpful Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a167e0f3-df7e-4d52-a9c3-f949145efdab",
+  "description": "Energetic adult male for engaging customer support",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G7JE7G3G88A46FYDSW7SJ49SHX.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G7JE7G3G88A46FYDSW7SJ49SHX.jpg",
+  "metadata": {
+    "shortLabel": "Blake - Helpful Agent — Cartesia",
+    "searchDescription": "Cartesia Blake - Helpful Agent: Energetic adult male for engaging customer support",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "a167e0f3-df7e-4d52-a9c3-f949145efdab",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-G7JE7G3G88A46FYDSW7SJ49SHX",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G7JE7G3G88A46FYDSW7SJ49SHX.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a167e0f3-df7e-4d52-a9c3-f949145efdab",
+      "label": "Blake - Helpful Agent",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G7JE7G3G88A46FYDSW7SJ49SHX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G7JE7G3G88A46FYDSW7SJ49SHX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G7JE7G3G88A46FYDSW7SJ49SHX.json"
+}

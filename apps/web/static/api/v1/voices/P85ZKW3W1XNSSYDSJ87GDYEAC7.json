@@ -1,0 +1,75 @@
+{
+  "id": "P85ZKW3W1XNSSYDSJ87GDYEAC7",
+  "name": "Lucas",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "lucas",
+  "description": "Clear male voice with brisk, projected delivery. Speaks with the pace and clarity of professional broadcasting, prioritizing content over personality.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "broadcaster",
+    "news"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.jpg",
+  "metadata": {
+    "shortLabel": "Lucas — LMNT",
+    "searchDescription": "LMNT Lucas: Clear male voice with brisk, projected delivery. Speaks with the pace and clarity of professional broadcasting, prioritizing content over personality.",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ],
+    "useCases": [
+      "news"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-P85ZKW3W1XNSSYDSJ87GDYEAC7",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "lucas",
+      "label": "Lucas",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.json"
+}

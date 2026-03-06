@@ -1,0 +1,71 @@
+{
+  "id": "5XSGC1RBXQGC5T4CDKVKG1J1W8",
+  "name": "Terrence",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "terrence",
+  "description": "Narrative. Enthusiastic. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5XSGC1RBXQGC5T4CDKVKG1J1W8.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5XSGC1RBXQGC5T4CDKVKG1J1W8.jpg",
+  "metadata": {
+    "shortLabel": "Terrence — LMNT",
+    "searchDescription": "LMNT Terrence: Narrative. Enthusiastic. US",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-5XSGC1RBXQGC5T4CDKVKG1J1W8",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5XSGC1RBXQGC5T4CDKVKG1J1W8.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "terrence",
+      "label": "Terrence",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5XSGC1RBXQGC5T4CDKVKG1J1W8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5XSGC1RBXQGC5T4CDKVKG1J1W8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5XSGC1RBXQGC5T4CDKVKG1J1W8.json"
+}

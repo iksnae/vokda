@@ -1,0 +1,77 @@
+{
+  "id": "VTAFNTFQP4FTDKHJFNHY7HNR9P",
+  "name": "Griffin - Excited Narrator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "34d923aa-c3b5-4f21-aac7-2c1f12730d4b",
+  "description": "Elderly male for narrations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VTAFNTFQP4FTDKHJFNHY7HNR9P.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VTAFNTFQP4FTDKHJFNHY7HNR9P.jpg",
+  "metadata": {
+    "shortLabel": "Griffin - Excited Narrator — Cartesia",
+    "searchDescription": "Cartesia Griffin - Excited Narrator: Elderly male for narrations",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "34d923aa-c3b5-4f21-aac7-2c1f12730d4b",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-VTAFNTFQP4FTDKHJFNHY7HNR9P",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VTAFNTFQP4FTDKHJFNHY7HNR9P.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "34d923aa-c3b5-4f21-aac7-2c1f12730d4b",
+      "label": "Griffin - Excited Narrator",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VTAFNTFQP4FTDKHJFNHY7HNR9P.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VTAFNTFQP4FTDKHJFNHY7HNR9P",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VTAFNTFQP4FTDKHJFNHY7HNR9P.json"
+}

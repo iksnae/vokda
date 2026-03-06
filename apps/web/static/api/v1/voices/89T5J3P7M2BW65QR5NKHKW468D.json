@@ -1,0 +1,75 @@
+{
+  "id": "89T5J3P7M2BW65QR5NKHKW468D",
+  "name": "Warrick",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "warrick",
+  "description": "Playful, animated voice with friendly, upbeat character. Engaging and enthusiastic, making it great for teaching children and interactive content.",
+  "tags": [
+    "neutral",
+    "instant",
+    "streaming",
+    "low-latency",
+    "tutor",
+    "educational-video"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/89T5J3P7M2BW65QR5NKHKW468D.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/89T5J3P7M2BW65QR5NKHKW468D.jpg",
+  "metadata": {
+    "shortLabel": "Warrick — LMNT",
+    "searchDescription": "LMNT Warrick: Playful, animated voice with friendly, upbeat character. Engaging and enthusiastic, making it great for teaching children and interactive content.",
+    "machineTags": [
+      "lmnt",
+      "neutral",
+      "instant"
+    ],
+    "useCases": [
+      "educational video"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-89T5J3P7M2BW65QR5NKHKW468D",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/89T5J3P7M2BW65QR5NKHKW468D.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "warrick",
+      "label": "Warrick",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/89T5J3P7M2BW65QR5NKHKW468D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/89T5J3P7M2BW65QR5NKHKW468D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/89T5J3P7M2BW65QR5NKHKW468D.json"
+}

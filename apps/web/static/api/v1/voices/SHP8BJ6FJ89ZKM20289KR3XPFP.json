@@ -1,0 +1,93 @@
+{
+  "id": "SHP8BJ6FJ89ZKM20289KR3XPFP",
+  "name": "Pandora (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-pandora-en",
+  "description": "British-accented female voice (adult) with smooth, calm, melodic qualities. Aura 2 architecture.",
+  "tags": [
+    "smooth",
+    "calm",
+    "melodic",
+    "breathy",
+    "aura-2",
+    "accent-british",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-GB"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SHP8BJ6FJ89ZKM20289KR3XPFP.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SHP8BJ6FJ89ZKM20289KR3XPFP.jpg",
+  "metadata": {
+    "shortLabel": "Pandora — Deepgram Aura 2",
+    "searchDescription": "Deepgram Pandora: British-accented female voice (adult) with smooth, calm, melodic qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "british"
+    ],
+    "useCases": [
+      "ivr"
+    ],
+    "toneTags": [
+      "smooth",
+      "calm",
+      "melodic",
+      "breathy"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Pandora",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "British",
+    "age": "Adult",
+    "deepgramColor": "#fedf89",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/bee5dccf37b6d02d9c276f5b41e6405de18868b9-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/0d2396968e2e73a7ff85e843fa4061f03c43e9a4.wav",
+    "deepgramUuid": "fa95fd3d-06dd-4893-a975-87f597883dae",
+    "totalVoices": 102,
+    "useCases": [
+      "ivr"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-SHP8BJ6FJ89ZKM20289KR3XPFP",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SHP8BJ6FJ89ZKM20289KR3XPFP.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-pandora-en",
+      "label": "Pandora",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SHP8BJ6FJ89ZKM20289KR3XPFP.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SHP8BJ6FJ89ZKM20289KR3XPFP",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SHP8BJ6FJ89ZKM20289KR3XPFP.json"
+}

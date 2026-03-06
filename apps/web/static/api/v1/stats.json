@@ -1,15 +1,30 @@
 {
-  "generatedAt": "2026-03-06T01:08:50.952Z",
-  "totalVoices": 250,
-  "totalProviders": 22,
-  "withAudio": 250,
-  "withImage": 250,
-  "withModelCard": 250,
+  "generatedAt": "2026-03-06T01:46:16.879Z",
+  "totalVoices": 550,
+  "totalProviders": 25,
+  "withAudio": 550,
+  "withImage": 550,
+  "withModelCard": 550,
   "byProvider": [
+    {
+      "id": "cartesia",
+      "name": "Cartesia",
+      "count": 154
+    },
+    {
+      "id": "deepgram",
+      "name": "Deepgram",
+      "count": 102
+    },
     {
       "id": "edge-tts",
       "name": "Edge TTS",
       "count": 47
+    },
+    {
+      "id": "lmnt",
+      "name": "LMNT",
+      "count": 44
     },
     {
       "id": "gemini-tts",
@@ -118,14 +133,14 @@
     }
   ],
   "byQualityTier": {
-    "premium": 224,
-    "standard": 26,
+    "premium": 490,
+    "standard": 60,
     "basic": 0
   },
-  "totalLanguages": 47,
+  "totalLanguages": 53,
   "capabilities": {
     "localModels": 73,
-    "multilingual": 36,
+    "multilingual": 138,
     "ssmlSupport": 114
   }
 }

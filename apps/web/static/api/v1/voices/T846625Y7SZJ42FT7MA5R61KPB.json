@@ -1,0 +1,97 @@
+{
+  "id": "T846625Y7SZJ42FT7MA5R61KPB",
+  "name": "Dionisio (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-dionisio-it",
+  "description": "Italian-accented male voice (adult) with confident, engaging, friendly qualities. Aura 2 architecture.",
+  "tags": [
+    "confident",
+    "engaging",
+    "friendly",
+    "melodic",
+    "positive",
+    "aura-2",
+    "accent-italian",
+    "male"
+  ],
+  "languages": [
+    "it",
+    "it-IT"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T846625Y7SZJ42FT7MA5R61KPB.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T846625Y7SZJ42FT7MA5R61KPB.jpg",
+  "metadata": {
+    "shortLabel": "Dionisio — Deepgram Aura 2",
+    "searchDescription": "Deepgram Dionisio: Italian-accented male voice (adult) with confident, engaging, friendly qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "italian"
+    ],
+    "useCases": [
+      "interview",
+      "casual chat"
+    ],
+    "toneTags": [
+      "confident",
+      "engaging",
+      "friendly",
+      "melodic",
+      "positive"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Dionisio",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Italian",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/0ea6d30325c1021e72146e609e88ccb29bd35d9a-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/5a9af98a1384d8d9ac15e45f7f8663baa7f9f5f5.wav",
+    "deepgramUuid": "5dd23842-b81a-44d3-aa0d-6a1173c03188",
+    "totalVoices": 102,
+    "useCases": [
+      "interview",
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-T846625Y7SZJ42FT7MA5R61KPB",
+      "label": "Default",
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T846625Y7SZJ42FT7MA5R61KPB.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-dionisio-it",
+      "label": "Dionisio",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T846625Y7SZJ42FT7MA5R61KPB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T846625Y7SZJ42FT7MA5R61KPB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T846625Y7SZJ42FT7MA5R61KPB.json"
+}

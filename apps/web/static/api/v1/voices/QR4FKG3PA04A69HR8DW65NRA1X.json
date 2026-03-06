@@ -1,0 +1,71 @@
+{
+  "id": "QR4FKG3PA04A69HR8DW65NRA1X",
+  "name": "Magnus",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "magnus",
+  "description": "Conversational. Deep and charming. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QR4FKG3PA04A69HR8DW65NRA1X.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QR4FKG3PA04A69HR8DW65NRA1X.jpg",
+  "metadata": {
+    "shortLabel": "Magnus — LMNT",
+    "searchDescription": "LMNT Magnus: Conversational. Deep and charming. US",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-QR4FKG3PA04A69HR8DW65NRA1X",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QR4FKG3PA04A69HR8DW65NRA1X.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "magnus",
+      "label": "Magnus",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QR4FKG3PA04A69HR8DW65NRA1X.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QR4FKG3PA04A69HR8DW65NRA1X",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QR4FKG3PA04A69HR8DW65NRA1X.json"
+}

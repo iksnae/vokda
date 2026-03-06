@@ -1,0 +1,71 @@
+{
+  "id": "CCCCFXM207VVY9XJ0687W44A0B",
+  "name": "Ava",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "ava",
+  "description": "Conversational. Sultry. US",
+  "tags": [
+    "female",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/CCCCFXM207VVY9XJ0687W44A0B.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/CCCCFXM207VVY9XJ0687W44A0B.jpg",
+  "metadata": {
+    "shortLabel": "Ava — LMNT",
+    "searchDescription": "LMNT Ava: Conversational. Sultry. US",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ],
+    "useCases": [],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "architecture": "professional",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-CCCCFXM207VVY9XJ0687W44A0B",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/CCCCFXM207VVY9XJ0687W44A0B.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "ava",
+      "label": "Ava",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/CCCCFXM207VVY9XJ0687W44A0B.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/CCCCFXM207VVY9XJ0687W44A0B",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/CCCCFXM207VVY9XJ0687W44A0B.json"
+}

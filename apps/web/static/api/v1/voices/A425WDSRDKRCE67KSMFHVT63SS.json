@@ -1,0 +1,77 @@
+{
+  "id": "A425WDSRDKRCE67KSMFHVT63SS",
+  "name": "Bryce - Clear Explainer",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "2948c301-9211-4112-8f36-4c3fc836ef12",
+  "description": "Confident voice with clear enunciation and strong delivery, ideal for professional and instructional use",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A425WDSRDKRCE67KSMFHVT63SS.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A425WDSRDKRCE67KSMFHVT63SS.jpg",
+  "metadata": {
+    "shortLabel": "Bryce - Clear Explainer — Cartesia",
+    "searchDescription": "Cartesia Bryce - Clear Explainer: Confident voice with clear enunciation and strong delivery, ideal for professional and instructional use",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "2948c301-9211-4112-8f36-4c3fc836ef12",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-A425WDSRDKRCE67KSMFHVT63SS",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A425WDSRDKRCE67KSMFHVT63SS.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "2948c301-9211-4112-8f36-4c3fc836ef12",
+      "label": "Bryce - Clear Explainer",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A425WDSRDKRCE67KSMFHVT63SS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A425WDSRDKRCE67KSMFHVT63SS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A425WDSRDKRCE67KSMFHVT63SS.json"
+}

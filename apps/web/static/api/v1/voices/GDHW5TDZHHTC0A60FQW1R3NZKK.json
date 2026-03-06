@@ -1,0 +1,79 @@
+{
+  "id": "GDHW5TDZHHTC0A60FQW1R3NZKK",
+  "name": "Leah",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "leah",
+  "description": "Confident, expressive female voice with dynamic intonation patterns. Professional and engaging, perfect for customer support and content creation.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "healthcare-agent",
+    "educational-video",
+    "narrator"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GDHW5TDZHHTC0A60FQW1R3NZKK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.jpg",
+  "metadata": {
+    "shortLabel": "Leah — LMNT",
+    "searchDescription": "LMNT Leah: Confident, expressive female voice with dynamic intonation patterns. Professional and engaging, perfect for customer support and content creation.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "healthcare agent",
+      "educational video",
+      "narrator"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-GDHW5TDZHHTC0A60FQW1R3NZKK",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GDHW5TDZHHTC0A60FQW1R3NZKK.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "leah",
+      "label": "Leah",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GDHW5TDZHHTC0A60FQW1R3NZKK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.json"
+}

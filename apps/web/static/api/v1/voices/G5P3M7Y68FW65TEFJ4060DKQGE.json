@@ -1,0 +1,77 @@
+{
+  "id": "G5P3M7Y68FW65TEFJ4060DKQGE",
+  "name": "Amber - Warm Support Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a7a59115-2425-4192-844c-1e98ec7d6877",
+  "description": "English female adult voice with a cheerful yet deeper tone, striking a balance of warmth and authority for customer service use",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G5P3M7Y68FW65TEFJ4060DKQGE.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G5P3M7Y68FW65TEFJ4060DKQGE.jpg",
+  "metadata": {
+    "shortLabel": "Amber - Warm Support Agent — Cartesia",
+    "searchDescription": "Cartesia Amber - Warm Support Agent: English female adult voice with a cheerful yet deeper tone, striking a balance of warmth and authority for customer service use",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "a7a59115-2425-4192-844c-1e98ec7d6877",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-G5P3M7Y68FW65TEFJ4060DKQGE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5P3M7Y68FW65TEFJ4060DKQGE.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a7a59115-2425-4192-844c-1e98ec7d6877",
+      "label": "Amber - Warm Support Agent",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G5P3M7Y68FW65TEFJ4060DKQGE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G5P3M7Y68FW65TEFJ4060DKQGE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G5P3M7Y68FW65TEFJ4060DKQGE.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "C3TECA3R6ABSQHJ225T62C1WBW",
+  "name": "James - Navigator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "42b39f37-515f-4eee-8546-73e841679c1d",
+  "description": "Very deep, authoritative male for providing guidance and instruction",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C3TECA3R6ABSQHJ225T62C1WBW.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C3TECA3R6ABSQHJ225T62C1WBW.jpg",
+  "metadata": {
+    "shortLabel": "James - Navigator — Cartesia",
+    "searchDescription": "Cartesia James - Navigator: Very deep, authoritative male for providing guidance and instruction",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "42b39f37-515f-4eee-8546-73e841679c1d",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-C3TECA3R6ABSQHJ225T62C1WBW",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C3TECA3R6ABSQHJ225T62C1WBW.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "42b39f37-515f-4eee-8546-73e841679c1d",
+      "label": "James - Navigator",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/C3TECA3R6ABSQHJ225T62C1WBW.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/C3TECA3R6ABSQHJ225T62C1WBW",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/C3TECA3R6ABSQHJ225T62C1WBW.json"
+}

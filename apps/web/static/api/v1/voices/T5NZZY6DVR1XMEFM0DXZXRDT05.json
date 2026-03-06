@@ -1,0 +1,75 @@
+{
+  "id": "T5NZZY6DVR1XMEFM0DXZXRDT05",
+  "name": "Brandon",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "brandon",
+  "description": "Clear, stable American broadcaster voice with engaging delivery. Great for news, announcements, and professional narration.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "broadcaster",
+    "news"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T5NZZY6DVR1XMEFM0DXZXRDT05.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.jpg",
+  "metadata": {
+    "shortLabel": "Brandon — LMNT",
+    "searchDescription": "LMNT Brandon: Clear, stable American broadcaster voice with engaging delivery. Great for news, announcements, and professional narration.",
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ],
+    "useCases": [
+      "news"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-T5NZZY6DVR1XMEFM0DXZXRDT05",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T5NZZY6DVR1XMEFM0DXZXRDT05.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "brandon",
+      "label": "Brandon",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T5NZZY6DVR1XMEFM0DXZXRDT05",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.json"
+}

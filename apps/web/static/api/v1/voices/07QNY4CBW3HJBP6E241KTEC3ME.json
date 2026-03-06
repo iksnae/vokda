@@ -1,0 +1,77 @@
+{
+  "id": "07QNY4CBW3HJBP6E241KTEC3ME",
+  "name": "Lindsey - Relaxed Rep",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a38e4e85-e815-43ab-acf1-907c4688dd6c",
+  "description": "Happy adult female with a laidback affect for casual conversations and customer support",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/07QNY4CBW3HJBP6E241KTEC3ME.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/07QNY4CBW3HJBP6E241KTEC3ME.jpg",
+  "metadata": {
+    "shortLabel": "Lindsey - Relaxed Rep — Cartesia",
+    "searchDescription": "Cartesia Lindsey - Relaxed Rep: Happy adult female with a laidback affect for casual conversations and customer support",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "a38e4e85-e815-43ab-acf1-907c4688dd6c",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-07QNY4CBW3HJBP6E241KTEC3ME",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/07QNY4CBW3HJBP6E241KTEC3ME.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a38e4e85-e815-43ab-acf1-907c4688dd6c",
+      "label": "Lindsey - Relaxed Rep",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/07QNY4CBW3HJBP6E241KTEC3ME.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/07QNY4CBW3HJBP6E241KTEC3ME",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/07QNY4CBW3HJBP6E241KTEC3ME.json"
+}

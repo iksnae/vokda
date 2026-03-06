@@ -1,0 +1,99 @@
+{
+  "id": "6FHW0DRE3J4FW6C3SY7GBMAE47",
+  "name": "Silvia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-silvia-es",
+  "description": "Peninsular-accented female voice (adult) with charismatic, clear, expressive qualities. Aura 2 architecture.",
+  "tags": [
+    "charismatic",
+    "clear",
+    "expressive",
+    "natural",
+    "warm",
+    "aura-2",
+    "accent-peninsular",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-ES"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/6FHW0DRE3J4FW6C3SY7GBMAE47.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/6FHW0DRE3J4FW6C3SY7GBMAE47.jpg",
+  "metadata": {
+    "shortLabel": "Silvia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Silvia: Peninsular-accented female voice (adult) with charismatic, clear, expressive qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "peninsular"
+    ],
+    "useCases": [
+      "interview",
+      "casual chat",
+      "customer service"
+    ],
+    "toneTags": [
+      "charismatic",
+      "clear",
+      "expressive",
+      "natural",
+      "warm"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Silvia",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "Peninsular",
+    "age": "Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3ce0ecf594c289e6b356d983589a6de12262a548-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/44dc99e4f494a4d1b62ae606f8833081881974e6.wav",
+    "deepgramUuid": "9b17db91-4add-4bca-893b-108bbd0d1305",
+    "totalVoices": 102,
+    "useCases": [
+      "interview",
+      "casual chat",
+      "customer service"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-6FHW0DRE3J4FW6C3SY7GBMAE47",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6FHW0DRE3J4FW6C3SY7GBMAE47.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-silvia-es",
+      "label": "Silvia",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/6FHW0DRE3J4FW6C3SY7GBMAE47.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/6FHW0DRE3J4FW6C3SY7GBMAE47",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/6FHW0DRE3J4FW6C3SY7GBMAE47.json"
+}

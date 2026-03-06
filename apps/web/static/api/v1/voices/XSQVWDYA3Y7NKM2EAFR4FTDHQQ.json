@@ -1,0 +1,77 @@
+{
+  "id": "XSQVWDYA3Y7NKM2EAFR4FTDHQQ",
+  "name": "Erin - Joyful Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "8918ddfe-2ad4-4cc8-a573-e020ca13f3f5",
+  "description": "Cheerful and optimistic adult female voice for upbeat conversations, advertisements, and positive customer interactions",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XSQVWDYA3Y7NKM2EAFR4FTDHQQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XSQVWDYA3Y7NKM2EAFR4FTDHQQ.jpg",
+  "metadata": {
+    "shortLabel": "Erin - Joyful Guide — Cartesia",
+    "searchDescription": "Cartesia Erin - Joyful Guide: Cheerful and optimistic adult female voice for upbeat conversations, advertisements, and positive customer interactions",
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ],
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "architecture": "sonic",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "cartesiaVoiceId": "8918ddfe-2ad4-4cc8-a573-e020ca13f3f5",
+    "totalVoices": 355
+  },
+  "samples": [
+    {
+      "id": "s-XSQVWDYA3Y7NKM2EAFR4FTDHQQ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XSQVWDYA3Y7NKM2EAFR4FTDHQQ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "8918ddfe-2ad4-4cc8-a573-e020ca13f3f5",
+      "label": "Erin - Joyful Guide",
+      "engine": "sonic",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XSQVWDYA3Y7NKM2EAFR4FTDHQQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XSQVWDYA3Y7NKM2EAFR4FTDHQQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XSQVWDYA3Y7NKM2EAFR4FTDHQQ.json"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "XHY3G87J9QJ63ZWC61KXG60FZZ",
+  "name": "Aurora (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-aurora-en",
+  "description": "American-accented female voice (adult) with cheerful, expressive, energetic qualities. Aura 2 architecture.",
+  "tags": [
+    "cheerful",
+    "expressive",
+    "energetic",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XHY3G87J9QJ63ZWC61KXG60FZZ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XHY3G87J9QJ63ZWC61KXG60FZZ.jpg",
+  "metadata": {
+    "shortLabel": "Aurora — Deepgram Aura 2",
+    "searchDescription": "Deepgram Aurora: American-accented female voice (adult) with cheerful, expressive, energetic qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ],
+    "useCases": [
+      "interview"
+    ],
+    "toneTags": [
+      "cheerful",
+      "expressive",
+      "energetic"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Aurora",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "American",
+    "age": "Adult",
+    "deepgramColor": "#949498",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/b2db5f86c41e7d494302df5f79dd40f910d0b02e-1024x1024.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/813332a569d18bd1041fb26d1f503fe4b9042451.wav",
+    "deepgramUuid": "86a0b2c2-12e5-47da-8a51-5b18f7e28c40",
+    "totalVoices": 102,
+    "useCases": [
+      "interview"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-XHY3G87J9QJ63ZWC61KXG60FZZ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XHY3G87J9QJ63ZWC61KXG60FZZ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-aurora-en",
+      "label": "Aurora",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XHY3G87J9QJ63ZWC61KXG60FZZ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XHY3G87J9QJ63ZWC61KXG60FZZ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XHY3G87J9QJ63ZWC61KXG60FZZ.json"
+}

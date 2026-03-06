@@ -1,0 +1,75 @@
+{
+  "id": "3TDJ7XW2DYFJA65W6DKW7NQZZQ",
+  "name": "Sadie",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "sadie",
+  "description": "Calm, relaxed female voice with muted tones. Perfect for peaceful content creation and gentle narration.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "content-creator",
+    "long-form-video"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3TDJ7XW2DYFJA65W6DKW7NQZZQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3TDJ7XW2DYFJA65W6DKW7NQZZQ.jpg",
+  "metadata": {
+    "shortLabel": "Sadie — LMNT",
+    "searchDescription": "LMNT Sadie: Calm, relaxed female voice with muted tones. Perfect for peaceful content creation and gentle narration.",
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ],
+    "useCases": [
+      "long form video"
+    ],
+    "toneTags": [],
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "architecture": "instant",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "totalVoices": 44
+  },
+  "samples": [
+    {
+      "id": "s-3TDJ7XW2DYFJA65W6DKW7NQZZQ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3TDJ7XW2DYFJA65W6DKW7NQZZQ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "sadie",
+      "label": "Sadie",
+      "engine": "lmnt",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 5000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3TDJ7XW2DYFJA65W6DKW7NQZZQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3TDJ7XW2DYFJA65W6DKW7NQZZQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3TDJ7XW2DYFJA65W6DKW7NQZZQ.json"
+}

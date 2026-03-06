@@ -1,0 +1,99 @@
+{
+  "id": "21HJ3R9G7KP9Y9QW67NW7J7J5Q",
+  "name": "Fabian (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-fabian-de",
+  "description": "German-accented male voice (mature) with confident, knowledgeable, natural qualities. Aura 2 architecture.",
+  "tags": [
+    "confident",
+    "knowledgeable",
+    "natural",
+    "polite",
+    "professional",
+    "aura-2",
+    "accent-german",
+    "male"
+  ],
+  "languages": [
+    "de",
+    "de-DE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.jpg",
+  "metadata": {
+    "shortLabel": "Fabian — Deepgram Aura 2",
+    "searchDescription": "Deepgram Fabian: German-accented male voice (mature) with confident, knowledgeable, natural qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "german"
+    ],
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "commercial"
+    ],
+    "toneTags": [
+      "confident",
+      "knowledgeable",
+      "natural",
+      "polite",
+      "professional"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "male",
+    "agePresentation": "mature",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Fabian",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "German",
+    "age": "Mature",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/0aafa0c41db23ca997095c68679bfc0eb8178913-347x347.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4f916075d5e0a6e53ec0b882c6ee898c990fd55c.wav",
+    "deepgramUuid": "8402a288-18b3-4bbc-b472-c2120640457c",
+    "totalVoices": 102,
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "commercial"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-21HJ3R9G7KP9Y9QW67NW7J7J5Q",
+      "label": "Default",
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/21HJ3R9G7KP9Y9QW67NW7J7J5Q.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-fabian-de",
+      "label": "Fabian",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/21HJ3R9G7KP9Y9QW67NW7J7J5Q.json"
+}

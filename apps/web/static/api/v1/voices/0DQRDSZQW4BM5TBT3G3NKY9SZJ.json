@@ -1,0 +1,99 @@
+{
+  "id": "0DQRDSZQW4BM5TBT3G3NKY9SZJ",
+  "name": "Kara (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-kara-de",
+  "description": "German-accented female voice (young adult) with caring, empathetic, expressive qualities. Aura 2 architecture.",
+  "tags": [
+    "caring",
+    "empathetic",
+    "expressive",
+    "professional",
+    "warm",
+    "aura-2",
+    "accent-german",
+    "female"
+  ],
+  "languages": [
+    "de",
+    "de-DE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0DQRDSZQW4BM5TBT3G3NKY9SZJ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0DQRDSZQW4BM5TBT3G3NKY9SZJ.jpg",
+  "metadata": {
+    "shortLabel": "Kara — Deepgram Aura 2",
+    "searchDescription": "Deepgram Kara: German-accented female voice (young adult) with caring, empathetic, expressive qualities. Aura 2 architecture.",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "german"
+    ],
+    "useCases": [
+      "customer service",
+      "audiobook",
+      "casual chat"
+    ],
+    "toneTags": [
+      "caring",
+      "empathetic",
+      "expressive",
+      "professional",
+      "warm"
+    ],
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "genderPresentation": "female",
+    "agePresentation": "young adult",
+    "metadataQuality": "curated"
+  },
+  "modelCard": {
+    "modelName": "Deepgram Aura 2 — Kara",
+    "architecture": "aura-2",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "license": "Proprietary (Deepgram API)",
+    "commercialUse": true,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "accent": "German",
+    "age": "Young Adult",
+    "deepgramColor": "#24a3e3",
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/db87571d53e1462e8ad0abf9405da5cbc16e9170-400x400.png",
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/dff08e7163309ce6365b521e97e6adc8c427adaf.wav",
+    "deepgramUuid": "5986de36-9030-42e5-bd35-c97b4fee6472",
+    "totalVoices": 102,
+    "useCases": [
+      "customer service",
+      "audiobook",
+      "casual chat"
+    ]
+  },
+  "samples": [
+    {
+      "id": "s-0DQRDSZQW4BM5TBT3G3NKY9SZJ",
+      "label": "Default",
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen.",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0DQRDSZQW4BM5TBT3G3NKY9SZJ.mp3"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-kara-de",
+      "label": "Kara",
+      "engine": "aura-2",
+      "supportsStreaming": true,
+      "supportsSsml": false,
+      "maxChars": 2000
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0DQRDSZQW4BM5TBT3G3NKY9SZJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0DQRDSZQW4BM5TBT3G3NKY9SZJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0DQRDSZQW4BM5TBT3G3NKY9SZJ.json"
+}
