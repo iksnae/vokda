@@ -251,7 +251,7 @@
   header {
     position: sticky;
     top: 0.55rem;
-    z-index: 20;
+    z-index: 1000;
     max-width: 1180px;
     margin: 0.55rem auto 0;
     padding: 0.72rem 0.84rem;

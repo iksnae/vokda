@@ -109,7 +109,6 @@
         "male"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -300,7 +299,6 @@
         "female"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -395,7 +393,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -880,7 +877,6 @@
         "male"
       ],
       "languages": [
-        "fr",
         "fr-FR"
       ],
       "qualityTier": "premium",
@@ -979,7 +975,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -1108,7 +1103,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -1232,7 +1226,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -1499,7 +1492,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -2368,7 +2360,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-IE"
       ],
       "qualityTier": "standard",
@@ -3124,7 +3115,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -3293,7 +3283,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -3579,7 +3568,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -3911,7 +3899,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -4167,7 +4154,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -4336,7 +4322,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -4942,7 +4927,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -5239,7 +5223,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -5363,7 +5346,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -5936,7 +5918,6 @@
         "male"
       ],
       "languages": [
-        "ja",
         "ja-JP"
       ],
       "qualityTier": "premium",
@@ -6120,7 +6101,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -6540,7 +6520,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -6634,7 +6613,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -6980,7 +6958,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -7287,7 +7264,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -7646,7 +7622,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -7832,7 +7807,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -8552,7 +8526,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -8879,7 +8852,6 @@
         "male"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -8977,7 +8949,6 @@
         "female"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -9279,7 +9250,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -10869,7 +10839,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -11254,7 +11223,6 @@
         "female"
       ],
       "languages": [
-        "fr",
         "fr-FR"
       ],
       "qualityTier": "premium",
@@ -11604,7 +11572,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -11771,7 +11738,6 @@
         "male"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -12106,7 +12072,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -12196,7 +12161,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -12285,7 +12249,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-GB"
       ],
       "qualityTier": "standard",
@@ -13137,7 +13100,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-419"
       ],
       "qualityTier": "premium",
@@ -14303,7 +14265,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -14711,7 +14672,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -14909,7 +14869,6 @@
         "male"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -15003,7 +14962,6 @@
         "male"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -15282,7 +15240,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -15374,7 +15331,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -16045,7 +16001,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -16279,7 +16234,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -16875,7 +16829,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -17369,7 +17322,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -17622,7 +17574,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -19058,7 +19009,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-419"
       ],
       "qualityTier": "premium",
@@ -19330,7 +19280,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -19573,7 +19522,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -19696,7 +19644,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -20371,7 +20318,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -20466,7 +20412,6 @@
         "female"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -21008,7 +20953,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -21137,7 +21081,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -21261,7 +21204,6 @@
         "male"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -21927,7 +21869,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-AU"
       ],
       "qualityTier": "premium",
@@ -22165,7 +22106,6 @@
         "male"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -22738,7 +22678,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -23082,7 +23021,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-PH"
       ],
       "qualityTier": "premium",
@@ -23816,7 +23754,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -24074,7 +24011,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -25299,7 +25235,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -26153,7 +26088,6 @@
         "female"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -26254,7 +26188,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -26877,7 +26810,6 @@
         "male"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -27121,7 +27053,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -27217,7 +27148,6 @@
         "female"
       ],
       "languages": [
-        "ja",
         "ja-JP"
       ],
       "qualityTier": "premium",
@@ -27309,7 +27239,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -27595,7 +27524,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -28329,7 +28257,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-AR"
       ],
       "qualityTier": "premium",
@@ -28506,7 +28433,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -29049,7 +28975,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -29856,7 +29781,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -30350,7 +30274,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -30620,7 +30543,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -31150,7 +31072,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -31240,7 +31161,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -31589,7 +31509,6 @@
         "female"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -31847,7 +31766,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -31945,7 +31863,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-ES"
       ],
       "qualityTier": "premium",
@@ -32037,7 +31954,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -32216,7 +32132,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -33090,7 +33005,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -34258,7 +34172,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-CO"
       ],
       "qualityTier": "premium",
@@ -34352,7 +34265,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -35194,7 +35106,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -35861,7 +35772,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-GB"
       ],
       "qualityTier": "premium",
@@ -35957,7 +35867,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -36436,7 +36345,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -36781,7 +36689,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -37165,7 +37072,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -37891,7 +37797,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -37982,7 +37887,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -38626,7 +38530,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -38716,7 +38619,6 @@
         "female"
       ],
       "languages": [
-        "ja",
         "ja-JP"
       ],
       "qualityTier": "premium",
@@ -38980,7 +38882,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -39146,7 +39047,6 @@
         "male"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -39497,7 +39397,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -40036,7 +39935,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -40354,7 +40252,6 @@
         "male"
       ],
       "languages": [
-        "es",
         "es-MX"
       ],
       "qualityTier": "premium",
@@ -40964,7 +40861,6 @@
         "female"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -41058,7 +40954,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -41443,7 +41338,6 @@
         "female"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -41538,7 +41432,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-GB"
       ],
       "qualityTier": "premium",
@@ -41843,7 +41736,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -41938,7 +41830,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -42062,7 +41953,6 @@
         "male"
       ],
       "languages": [
-        "ja",
         "ja-JP"
       ],
       "qualityTier": "premium",
@@ -42335,7 +42225,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-AU"
       ],
       "qualityTier": "premium",
@@ -42602,7 +42491,6 @@
         "female"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -43104,7 +42992,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -43460,7 +43347,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -43862,7 +43748,6 @@
         "female"
       ],
       "languages": [
-        "es",
         "es-CO"
       ],
       "qualityTier": "premium",
@@ -44069,7 +43954,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -44265,7 +44149,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -44631,7 +44514,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -45357,7 +45239,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -45447,7 +45328,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -45984,7 +45864,6 @@
         "female"
       ],
       "languages": [
-        "de",
         "de-DE"
       ],
       "qualityTier": "premium",
@@ -46152,7 +46031,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-GB"
       ],
       "qualityTier": "standard",
@@ -46240,7 +46118,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "standard",
@@ -46335,7 +46212,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -46702,7 +46578,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -46792,7 +46667,6 @@
         "male"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -46957,7 +46831,6 @@
         "female"
       ],
       "languages": [
-        "it",
         "it-IT"
       ],
       "qualityTier": "premium",
@@ -47508,7 +47381,6 @@
         "female"
       ],
       "languages": [
-        "nl",
         "nl-NL"
       ],
       "qualityTier": "premium",
@@ -48281,7 +48153,6 @@
         "female"
       ],
       "languages": [
-        "ja",
         "ja-JP"
       ],
       "qualityTier": "premium",
@@ -48774,7 +48645,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",
@@ -48986,7 +48856,6 @@
         "female"
       ],
       "languages": [
-        "en",
         "en-US"
       ],
       "qualityTier": "premium",
@@ -49155,7 +49024,6 @@
         "fi",
         "nl",
         "gl",
-        "en",
         "ka",
         "fr",
         "el",

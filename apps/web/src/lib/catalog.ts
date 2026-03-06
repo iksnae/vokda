@@ -1,4 +1,5 @@
 import type { Voice } from './types';
+import { normalizeVoiceLanguages } from './language-utils';
 
 const CATALOG_JSON_URL = '/data/voices.json';
 
@@ -13,7 +14,9 @@ export async function loadCatalog(fetchFn: typeof fetch): Promise<Voice[]> {
   }
 
   const payload = (await response.json()) as { voices: Voice[] };
-  catalogCache = payload.voices;
+  // Normalize language tags on every voice so that the rest of the app always
+  // works with clean data regardless of how voices.json was produced.
+  catalogCache = payload.voices.map(normalizeVoiceLanguages);
   return catalogCache;
 }
 

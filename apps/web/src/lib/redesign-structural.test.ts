@@ -92,7 +92,7 @@ describe('Phase B: Card & content cleanup', () => {
   describe('5. Copy overhaul', () => {
     it('hero uses new headline', () => {
       const page = readComponent('routes/+page.svelte');
-      expect(page).toContain('Discover voices for every project');
+      expect(page).toContain('Discover Voices');
       expect(page).not.toContain('Find TTS voices fast');
     });
 
@@ -139,7 +139,7 @@ describe('Phase B: Card & content cleanup', () => {
 
     it('search placeholder uses new copy', () => {
       const page = readComponent('routes/+page.svelte');
-      expect(page).toContain('Search by name, style, or use case');
+      expect(page).toContain('Search voices');
     });
 
     it('filter label says "Type" not "Source"', () => {
