@@ -35,6 +35,7 @@ import * as cartesiaAdapter from './lib/adapters/cartesia.mjs';
 import * as lmntAdapter from './lib/adapters/lmnt.mjs';
 import * as gcpTtsAdapter from './lib/adapters/gcp-tts.mjs';
 import * as azureSpeechAdapter from './lib/adapters/azure-speech.mjs';
+import * as awsPollyAdapter from './lib/adapters/aws-polly.mjs';
 
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const s3 = new S3Client({});
@@ -58,6 +59,7 @@ const adapters = {
   lmnt: lmntAdapter,
   'gcp-tts': gcpTtsAdapter,
   'azure-speech': azureSpeechAdapter,
+  'aws-polly': awsPollyAdapter,
 };
 
 // ─── Auth (inline — validates API key or Cognito JWT) ───
