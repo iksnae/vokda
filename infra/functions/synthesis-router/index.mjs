@@ -30,6 +30,11 @@ import { createApiKey, listApiKeys, revokeApiKey } from './lib/keys.mjs';
 import * as openaiAdapter from './lib/adapters/openai.mjs';
 import * as elevenlabsAdapter from './lib/adapters/elevenlabs.mjs';
 import * as deepgramAdapter from './lib/adapters/deepgram.mjs';
+import * as geminiTtsAdapter from './lib/adapters/gemini-tts.mjs';
+import * as cartesiaAdapter from './lib/adapters/cartesia.mjs';
+import * as lmntAdapter from './lib/adapters/lmnt.mjs';
+import * as gcpTtsAdapter from './lib/adapters/gcp-tts.mjs';
+import * as azureSpeechAdapter from './lib/adapters/azure-speech.mjs';
 
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const s3 = new S3Client({});
@@ -48,6 +53,11 @@ const adapters = {
   openai: openaiAdapter,
   elevenlabs: elevenlabsAdapter,
   deepgram: deepgramAdapter,
+  'gemini-tts': geminiTtsAdapter,
+  cartesia: cartesiaAdapter,
+  lmnt: lmntAdapter,
+  'gcp-tts': gcpTtsAdapter,
+  'azure-speech': azureSpeechAdapter,
 };
 
 // ─── Auth (inline — validates API key or Cognito JWT) ───
