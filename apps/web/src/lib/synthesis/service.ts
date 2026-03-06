@@ -1,7 +1,14 @@
 /**
  * Synthesis service — orchestrates synthesis preview requests.
  *
- * Handles both BYOK (real) and mock synthesis, plus gateway mode.
+ * Modes:
+ * 1. API mode (default when PUBLIC_SYNTHESIS_API_URL is set):
+ *    Calls the Vokda Synthesis API server-side. The API uses the
+ *    user's stored provider credentials (BYOK) in DynamoDB.
+ * 2. Gateway mode (PUBLIC_SYNTH_MODE=gateway):
+ *    Legacy — calls PUBLIC_SYNTH_GATEWAY_URL directly.
+ * 3. Browser adapter mode (fallback):
+ *    Uses in-browser adapters from the registry.
  */
 
 import { browser } from '$app/environment';
@@ -14,6 +21,70 @@ import type { VoiceVariant } from '$lib/types';
 
 const SYNTH_MODE = (import.meta.env.PUBLIC_SYNTH_MODE as string | undefined) ?? 'mock';
 const SYNTH_GATEWAY_URL = (import.meta.env.PUBLIC_SYNTH_GATEWAY_URL as string | undefined) ?? '';
+const SYNTHESIS_API_URL = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) ?? '';
+
+/**
+ * Call the Vokda Synthesis API (/v1/synthesize) with the user's auth token.
+ * The API looks up the user's stored provider credentials server-side.
+ */
+async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPreview> {
+  const authSnapshot = getAuthSnapshot();
+  const token = authSnapshot.idToken || authSnapshot.accessToken;
+
+  if (!token) {
+    throw new Error('Sign in is required for synthesis.');
+  }
+
+  const provider = getProviderForVariant(request.variant);
+  if (!provider) {
+    throw new Error(`Cannot determine provider for voice "${request.voice.name}".`);
+  }
+
+  const start = Date.now();
+  const response = await fetch(`${SYNTHESIS_API_URL}/v1/synthesize`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      text: request.input,
+      provider,
+      voiceId: request.voice.id,
+      voiceName: request.voice.name,
+      providerVoiceId: request.variant.sourceKey?.split('/').pop() ?? request.variant.id,
+      mode: request.mode ?? 'text',
+    }),
+  });
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({ message: `HTTP ${response.status}` }));
+    const msg = (body as { message?: string; error?: string }).message
+      ?? (body as { error?: string }).error
+      ?? `HTTP ${response.status}`;
+    throw new Error(`${provider} TTS failed (${response.status}): ${msg}`);
+  }
+
+  const data = await response.json() as {
+    audioUrl: string;
+    fileSizeBytes: number;
+    durationMs: number | null;
+    latencyMs: number;
+    provider: string;
+  };
+
+  return {
+    provider,
+    adapter: `api:${data.provider}`,
+    variantId: request.variant.id,
+    sourceKey: request.variant.sourceKey,
+    inputUsed: request.input,
+    warnings: [],
+    audioUrl: data.audioUrl,
+    latencyMs: data.latencyMs ?? (Date.now() - start),
+    generatedAt: new Date().toISOString(),
+  };
+}
 
 async function runGatewayPreview(request: SynthesisRequest): Promise<SynthesisPreview> {
   if (!SYNTH_GATEWAY_URL) {
@@ -62,9 +133,10 @@ function optionalBrowserPlayback(preview: SynthesisPreview, lang: string) {
  * Synthesize a preview using the best available method.
  *
  * Priority:
- * 1. Gateway mode (if PUBLIC_SYNTH_MODE=gateway)
- * 2. BYOK real adapter (if user has credentials for this provider)
- * 3. Mock adapter (fallback with simulated response)
+ * 1. API mode (if PUBLIC_SYNTHESIS_API_URL is set and user is authenticated)
+ * 2. Gateway mode (if PUBLIC_SYNTH_MODE=gateway)
+ * 3. BYOK real adapter (if user has credentials for this provider)
+ * 4. Mock adapter (fallback with simulated response)
  */
 export async function synthesizePreview(request: SynthesisRequest): Promise<SynthesisPreview> {
   const constrained = normalizePreviewInput(request.input, request.mode, request.variant);
@@ -80,7 +152,14 @@ export async function synthesizePreview(request: SynthesisRequest): Promise<Synt
 
   let preview: SynthesisPreview;
 
-  if (SYNTH_MODE === 'gateway') {
+  // Prefer API mode when available (authenticated + API URL configured)
+  const authSnapshot = getAuthSnapshot();
+  const hasApiUrl = Boolean(SYNTHESIS_API_URL);
+  const hasToken = Boolean(authSnapshot.idToken || authSnapshot.accessToken);
+
+  if (hasApiUrl && hasToken) {
+    preview = await runApiSynthesis(prepared);
+  } else if (SYNTH_MODE === 'gateway') {
     preview = await runGatewayPreview(prepared);
   } else {
     const adapter = resolveAdapter(request.variant);
@@ -104,6 +183,7 @@ export async function synthesizePreview(request: SynthesisRequest): Promise<Synt
  * Check if real (non-mock) synthesis is available for a variant.
  */
 export function canSynthesizeReal(variant: VoiceVariant): boolean {
+  if (SYNTHESIS_API_URL) return true;
   if (SYNTH_MODE === 'gateway') return true;
   return hasRealAdapter(variant);
 }
