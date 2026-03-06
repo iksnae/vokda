@@ -220,6 +220,48 @@ Small collapsible "SSML Help" section below the editor:
   7. Switch to a Cartesia voice → SSML tab disabled, tooltip explains why
   8. Synthesize valid SSML → plays audio correctly
 
+## Report
+
+**Completed:** March 6, 2026  
+**Commit:** `91c1085`
+
+### What was implemented
+
+All 7 implementation steps from the plan were completed:
+
+1. **Tag registry** (`ssml/tags.ts`) — 7 core SSML tags with full attribute definitions and provider compatibility matrix for 4 providers (aws-polly, azure-speech, gcp-tts, edge-tts). Helper functions: `getTagDef`, `getTagsForProvider`, `isTagSupportedByProvider`.
+
+2. **Validator** (`ssml/validate.ts`) — Structural SSML validation using `DOMParser`. Auto-detects missing `<speak>` wrapper (warning), reports XML parse errors, validates known vs unknown tags, and flags tags unsupported by the active provider. Unknown tags are treated as warnings (not errors) to accommodate provider-specific extensions.
+
+3. **Serializer** (`ssml/serialize.ts`) — `wrapSpeak()` for ensuring `<speak>` root, `insertTag()` for inserting self-closing or wrapping tags at cursor position with proper cursor repositioning.
+
+4. **SsmlToolbar** (`SsmlToolbar.svelte`) — Horizontal toolbar with 7 tag buttons. Each button opens an attribute popover for configuration before insertion. Buttons are disabled/struck-through when the tag is unsupported by the active provider. Keyboard support: Enter to confirm, Escape to cancel.
+
+5. **SsmlEditor** (`SsmlEditor.svelte`) — Composite component: toolbar + monospace textarea + validation status bar + character counter + collapsible SSML quick reference with copy-pasteable examples and provider documentation links. Disabled overlay with guidance when variant doesn't support SSML.
+
+6. **Integration** — Voice detail page (`voices/[id]/+page.svelte`) now shows `SsmlEditor` when mode is 'ssml', plain textarea when mode is 'text'. Provider ID and SSML support passed from the active variant.
+
+7. **Quick reference** — 6 common SSML examples with one-click insertion + links to AWS Polly, Azure, and Google Cloud SSML docs.
+
+### Tests
+
+41 new unit tests across 3 test files:
+- `ssml/tags.test.ts` — 14 tests: registry completeness, provider filtering, attribute definitions
+- `ssml/validate.test.ts` — 13 tests: valid SSML, structural errors, auto-wrap, provider warnings, unknown tags
+- `ssml/serialize.test.ts` — 14 tests: wrapSpeak, insertTag for self-closing/wrapping, edge cases
+
+All 178 tests pass (41 new + 137 existing).
+
+### Issues & Resolutions
+
+- **No issues encountered.** The plan was well-scoped. The DOMParser approach for validation worked cleanly in jsdom (vitest environment) and browser builds.
+
+### Design decisions
+
+- **Textarea over contenteditable** — Kept the textarea as the editing surface (per plan). Contenteditable would enable inline syntax highlighting but adds fragility. v1 prioritizes reliability.
+- **Warnings over errors for unknown tags** — Provider-specific extensions (e.g. `<amazon:effect>`, `<mstts:express-as>`) shouldn't block synthesis. They're surfaced as warnings.
+- **No inline highlighting in v1** — The validation bar + toolbar is sufficient feedback. Inline highlighting can be added as a follow-up.
+
 ## Risks
 
 - **No breaking changes** — existing text mode is untouched; SSML mode is an enhancement
