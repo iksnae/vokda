@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-06T00:30:29.279Z",
+  "generatedAt": "2026-03-06T00:42:38.600Z",
   "totalVoices": 194,
   "totalProviders": 19,
   "withAudio": 194,
@@ -107,20 +107,10 @@
     "standard": 26,
     "basic": 0
   },
-  "bySourceType": {
-    "cloud_provider": 130,
-    "local_model": 38,
-    "self_hosted": 12,
-    "open_model": 14
-  },
   "totalLanguages": 39,
   "capabilities": {
     "localModels": 64,
-    "cloudProviders": 130,
     "multilingual": 31,
-    "ssmlSupport": 67,
-    "emotionControl": 89,
-    "soundEffects": 1,
-    "styleControl": 30
+    "ssmlSupport": 67
   }
 }

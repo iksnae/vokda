@@ -183,3 +183,46 @@ export type CharacterCastingHint = {
   matchedAttributes?: string[];
   manualOverride?: boolean;
 };
+
+// ─── Data Layer Records ───
+
+export type VoiceRecord = Voice & {
+  status: 'draft' | 'published' | 'archived';
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ProviderRecord = ProviderDefinition & {
+  slug: string;
+  description?: string;
+  colorHex?: string;
+  voiceCount: number;
+  status: 'active' | 'inactive';
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UserProviderCredential = {
+  id: string;
+  providerId: string;
+  label: string;
+  status: 'active' | 'invalid' | 'expired';
+  lastTestedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type SynthesisJob = {
+  id: string;
+  voiceId: string;
+  variantSourceKey: string;
+  inputText: string;
+  inputMode: 'text' | 'ssml';
+  status: 'pending' | 'completed' | 'failed';
+  audioUrl?: string;
+  durationMs?: number;
+  latencyMs?: number;
+  provider: string;
+  errorMessage?: string;
+  createdAt: string;
+};
