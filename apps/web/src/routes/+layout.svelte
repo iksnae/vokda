@@ -208,6 +208,7 @@
     --stroke-strong: #b6c8d6;
 
     /* ── Primitives: accent palette ── */
+    --accent-50:  #f5ead6;
     --accent-100: #fef0db;
     --accent-700: #8f5a0b;
 
@@ -261,6 +262,26 @@
     /* ── Semantic: misc ── */
     --opacity-disabled: 0.35;
     --panel-bg: rgba(248, 252, 254, 0.95);
+
+    /* ── Semantic: body / ambient ── */
+    --body-bg-start: #eef3f6;
+    --body-bg-end:   #e8eef2;
+    --orb-cool:      #cce6f1;
+    --orb-warm:      #f5dfc2;
+
+    /* ── Semantic: component surfaces ── */
+    --header-bg:       rgba(248, 251, 253, 0.78);
+    --nav-link-bg:     rgba(255, 255, 255, 0.84);
+    --avatar-gradient: linear-gradient(155deg, var(--brand-700), var(--brand-500));
+
+    /* ── Semantic: brand-tinted shadows ── */
+    --brand-shadow-sm:       0 4px 12px rgba(28, 92, 118, 0.25);
+    --brand-shadow-md:       0 8px 16px rgba(20, 94, 121, 0.26);
+    --brand-shadow-md-hover: 0 10px 20px rgba(20, 94, 121, 0.35);
+
+    /* ── Semantic: state / feedback ── */
+    --skeleton-bg: #dce5ec;
+    --danger-bg:   #fff5f5;
   }
 
   :global(*) {
@@ -272,9 +293,9 @@
     font-family: "Sora", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
     color: var(--bg-ink);
     background:
-      radial-gradient(circle at 6% -8%, #dbeef5 0%, transparent 34%),
-      radial-gradient(circle at 106% 22%, #f5ead6 0%, transparent 40%),
-      linear-gradient(180deg, #eef3f6 0%, #e8eef2 100%);
+      radial-gradient(circle at 6% -8%, var(--brand-100) 0%, transparent 34%),
+      radial-gradient(circle at 106% 22%, var(--accent-50) 0%, transparent 40%),
+      linear-gradient(180deg, var(--body-bg-start) 0%, var(--body-bg-end) 100%);
     min-height: 100vh;
   }
 
@@ -295,13 +316,13 @@
   :global(body)::before {
     top: -120px;
     right: -80px;
-    background: #cce6f1;
+    background: var(--orb-cool);
   }
 
   :global(body)::after {
     bottom: -120px;
     left: -120px;
-    background: #f5dfc2;
+    background: var(--orb-warm);
     animation-delay: -7s;
   }
 
@@ -329,7 +350,7 @@
     gap: 0.8rem;
     border: 1px solid var(--stroke-soft);
     border-radius: var(--radius-lg);
-    background: rgba(248, 251, 253, 0.78);
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
     box-shadow: var(--elev-1);
   }
@@ -339,7 +360,7 @@
     align-items: center;
     gap: 0.52rem;
     text-decoration: none;
-    color: #16304a;
+    color: var(--ink-900);
     font-weight: 760;
     letter-spacing: 0.01em;
   }
@@ -348,7 +369,7 @@
     width: 1.72rem;
     height: 1.72rem;
     border-radius: 0.48rem;
-    box-shadow: 0 4px 12px rgba(28, 92, 118, 0.25);
+    box-shadow: var(--brand-shadow-sm);
   }
 
   .wordmark {
@@ -363,12 +384,12 @@
 
   .nav-link {
     text-decoration: none;
-    color: #284f69;
-    background: #ffffffd6;
+    color: var(--text-secondary);
+    background: var(--nav-link-bg);
     border: 1px solid var(--stroke-soft);
     border-radius: 999px;
     padding: 0.35rem 0.74rem;
-    font-size: 0.84rem;
+    font-size: var(--text-small);
     font-weight: 670;
     display: inline-flex;
     align-items: center;
@@ -378,14 +399,14 @@
 
   .nav-link:hover {
     transform: translateY(-1px);
-    border-color: #9eb6c8;
-    background: #fff;
+    border-color: var(--stroke-control-hover);
+    background: var(--surface-2);
   }
 
   .badge {
     background: var(--brand-100);
     color: var(--brand-700);
-    font-size: 0.7rem;
+    font-size: var(--text-xs);
     font-weight: 720;
     border-radius: 999px;
     padding: 0.08rem 0.38rem;
@@ -403,9 +424,9 @@
     width: 2rem;
     height: 2rem;
     border-radius: 999px;
-    background: linear-gradient(155deg, #0e5f79, #2a819d);
-    color: #fff;
-    font-size: 0.82rem;
+    background: var(--avatar-gradient);
+    color: var(--surface-2);
+    font-size: var(--text-small);
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -428,7 +449,7 @@
   }
 
   .avatar-btn:hover .avatar {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--brand-600);
+    box-shadow: 0 0 0 2px var(--surface-2), 0 0 0 4px var(--brand-600);
   }
 
   .user-menu-wrapper {
@@ -440,7 +461,7 @@
     top: calc(100% + 0.5rem);
     right: 0;
     min-width: 220px;
-    background: #fff;
+    background: var(--surface-2);
     border: 1px solid var(--stroke-soft);
     border-radius: var(--radius-md);
     box-shadow: var(--elev-2);
@@ -463,7 +484,7 @@
   .menu-email {
     font-size: var(--text-small);
     font-weight: 660;
-    color: #1a3347;
+    color: var(--ink-900);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -471,12 +492,12 @@
 
   .menu-role {
     font-size: var(--text-xs);
-    color: #5a7a90;
+    color: var(--text-muted);
   }
 
   .menu-divider {
     height: 1px;
-    background: #e8eff4;
+    background: var(--stroke-divider);
     margin: 0.25rem 0.4rem;
   }
 
@@ -485,10 +506,10 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.48rem 0.65rem;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     font-size: var(--text-small);
     font-weight: 600;
-    color: #2c4b60;
+    color: var(--text-secondary);
     text-decoration: none;
     cursor: pointer;
     border: none;
@@ -499,21 +520,21 @@
   }
 
   .menu-item:hover {
-    background: #f0f5f9;
+    background: var(--surface-0);
   }
 
   .menu-item.danger {
-    color: #c62828;
+    color: var(--danger-600);
   }
 
   .menu-item.danger:hover {
-    background: #fff5f5;
+    background: var(--danger-bg);
   }
 
   .menu-badge {
     background: var(--brand-100);
     color: var(--brand-700);
-    font-size: 0.65rem;
+    font-size: var(--text-micro);
     font-weight: 720;
     border-radius: 999px;
     padding: 0.05rem 0.35rem;
@@ -526,7 +547,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 999px;
-    background: #dce5ec;
+    background: var(--skeleton-bg);
     animation: pulse 1.4s ease-in-out infinite;
   }
 
@@ -535,15 +556,15 @@
     border-radius: 999px;
     padding: 0.38rem 0.74rem;
     background: linear-gradient(160deg, var(--brand-600) 0%, var(--brand-700) 100%);
-    color: #fff;
+    color: var(--surface-2);
     font-weight: 680;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(20, 94, 121, 0.26);
+    box-shadow: var(--brand-shadow-md);
     font-size: var(--text-small);
   }
 
   .btn-signin:hover {
-    box-shadow: 0 10px 20px rgba(20, 94, 121, 0.35);
+    box-shadow: var(--brand-shadow-md-hover);
   }
 
 
