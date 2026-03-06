@@ -96,7 +96,26 @@ export type Voice = {
   providerVoiceId?: string;
   description: string;
   tags: string[];
+  /**
+   * All BCP-47 locale tags for this voice.
+   *
+   * For single-language voices this is a one-element array (e.g. ["en-US"]).
+   * For multilingual-capable models all supported locales are listed, with the
+   * primary/identity locale first by convention.
+   *
+   * Do not use this array directly for language filtering — use
+   * `getPrimaryLanguage()` from `lib/language-utils.ts` which resolves the
+   * identity locale correctly for both cases.
+   */
   languages: string[];
+  /**
+   * Explicit BCP-47 locale that identifies the language this voice *is*.
+   *
+   * Optional — when absent, `getPrimaryLanguage()` derives the value
+   * algorithmically from `languages`. Set this only when the algorithm would
+   * produce the wrong result (curator override).
+   */
+  primaryLanguage?: string;
   qualityTier: 'basic' | 'standard' | 'premium';
   licenseNotes: string;
   metadata: VoiceMetadata;

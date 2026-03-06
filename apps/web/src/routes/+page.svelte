@@ -17,6 +17,12 @@
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { roleFlags } from '$lib/auth/store';
+  import {
+    buildLanguageOptions,
+    buildAccentOptions,
+    voiceMatchesLanguage,
+    voiceMatchesAccent,
+  } from '$lib/language-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -25,7 +31,17 @@
 
   /** Multi-select filter sets */
   let selectedProviders: Set<string> = new Set();
-  let selectedLanguages: Set<string> = new Set();
+  /**
+   * Tier-1 language filter: stores BCP-47 base language codes ('en', 'de', …).
+   * Previously stored raw locale tags — the URL mount handler below migrates
+   * legacy ?lang=en-US bookmarks to the new format automatically.
+   */
+  let selectedLanguageBases: Set<string> = new Set();
+  /**
+   * Tier-2 accent filter: stores full BCP-47 locales ('en-US', 'en-GB', …).
+   * Only active when selectedLanguageBases is non-empty.
+   */
+  let selectedAccents: Set<string> = new Set();
   let selectedSources: Set<string> = new Set();
 
   let runnableOnly = false;
@@ -108,7 +124,27 @@
     if (providerParam) selectedProviders = new Set(providerParam.split(',').filter(Boolean));
 
     const langParam = params.get('lang');
-    if (langParam) selectedLanguages = new Set(langParam.split(',').filter(Boolean));
+    if (langParam) {
+      const rawValues = langParam.split(',').filter(Boolean);
+      // Backward-compat: legacy URLs stored full locales (e.g. "en-US").
+      // Detect and split them: base goes into selectedLanguageBases,
+      // the full locale goes into selectedAccents.
+      const bases = new Set<string>();
+      const accents = new Set<string>();
+      for (const value of rawValues) {
+        if (value.includes('-')) {
+          bases.add(value.split('-')[0]);
+          accents.add(value);
+        } else {
+          bases.add(value);
+        }
+      }
+      selectedLanguageBases = bases;
+      if (accents.size > 0) selectedAccents = accents;
+    }
+
+    const accentParam = params.get('accent');
+    if (accentParam) selectedAccents = new Set(accentParam.split(',').filter(Boolean));
 
     const typeParam = params.get('type');
     if (typeParam) selectedSources = new Set(typeParam.split(',').filter(Boolean));
@@ -121,7 +157,8 @@
     sortOrder = sortParam === 'provider' ? 'provider' : sortParam === 'newest' ? 'newest' : 'alphabetical';
 
     // Auto-open filters panel if any filter is active from URL
-    if (selectedProviders.size > 0 || selectedLanguages.size > 0 || selectedSources.size > 0 ||
+    if (selectedProviders.size > 0 || selectedLanguageBases.size > 0 ||
+        selectedAccents.size > 0 || selectedSources.size > 0 ||
         runnableOnly || ssmlOnly || hasAudioOnly) {
       filtersOpen = true;
     }
@@ -141,7 +178,8 @@
     const params = new URLSearchParams();
     if (query.trim()) params.set('q', query.trim());
     if (selectedProviders.size > 0) params.set('provider', Array.from(selectedProviders).join(','));
-    if (selectedLanguages.size > 0) params.set('lang', Array.from(selectedLanguages).join(','));
+    if (selectedLanguageBases.size > 0) params.set('lang', Array.from(selectedLanguageBases).join(','));
+    if (selectedAccents.size > 0) params.set('accent', Array.from(selectedAccents).join(','));
     if (selectedSources.size > 0) params.set('type', Array.from(selectedSources).join(','));
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
@@ -230,7 +268,8 @@
   function clearAllFilters() {
     query = '';
     selectedProviders = new Set();
-    selectedLanguages = new Set();
+    selectedLanguageBases = new Set();
+    selectedAccents = new Set();
     selectedSources = new Set();
     runnableOnly = false;
     ssmlOnly = false;
@@ -241,7 +280,7 @@
 
   $: activeFilterCount = [
     selectedProviders.size > 0,
-    selectedLanguages.size > 0,
+    selectedLanguageBases.size > 0,   // Language and accent count as one filter group
     selectedSources.size > 0,
     runnableOnly,
     ssmlOnly,
@@ -251,7 +290,8 @@
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
-  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages ?? []))).sort();
+  $: languageOptions = buildLanguageOptions(effectiveVoices);
+  $: accentOptions = buildAccentOptions(effectiveVoices, selectedLanguageBases);
   $: availableSources = Array.from(
     new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
@@ -312,7 +352,8 @@
       (meta.toneTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
       tags.some((t: string) => t.toLowerCase().includes(q));
 
-    const matchesLanguage = selectedLanguages.size === 0 || (voice.languages ?? []).some((l) => selectedLanguages.has(l));
+    const matchesLanguage = voiceMatchesLanguage(voice, selectedLanguageBases);
+    const matchesAccent = voiceMatchesAccent(voice, selectedAccents);
     const matchesSource =
       selectedSources.size === 0 ||
       (voice.variants ?? []).some((vr) => selectedSources.has(vr.sourceType));
@@ -325,6 +366,7 @@
     return (
       matchesQuery &&
       matchesLanguage &&
+      matchesAccent &&
       matchesSource &&
       matchesProvider &&
       matchesRunnable &&
@@ -403,21 +445,53 @@
           </div>
         </div>
 
-        <!-- Language chips -->
+        <!-- Language chips (Tier 1) -->
         <div class="filter-section">
           <span class="section-label">Language</span>
           <div class="chip-group">
-            {#each availableLanguages as language}
+            {#each languageOptions as option (option.base)}
               <button
                 class="filter-chip"
-                class:active={selectedLanguages.has(language)}
-                on:click={() => { selectedLanguages = toggleSetValue(selectedLanguages, language); }}
+                class:active={selectedLanguageBases.has(option.base)}
+                on:click={() => {
+                  selectedLanguageBases = toggleSetValue(selectedLanguageBases, option.base);
+                  // Clear any accents for this base when deselecting the language
+                  if (!selectedLanguageBases.has(option.base)) {
+                    const next = new Set(selectedAccents);
+                    for (const accent of next) {
+                      if (accent.split('-')[0] === option.base) next.delete(accent);
+                    }
+                    selectedAccents = next;
+                  }
+                }}
               >
-                {language}
+                {option.displayName}
+                <span class="chip-count">{option.count}</span>
               </button>
             {/each}
           </div>
         </div>
+
+        <!-- Accent / Region chips (Tier 2) — only shown when ≥2 locales exist for the selection -->
+        {#if accentOptions.length > 0}
+          <div class="filter-section filter-section--accent">
+            <span class="section-label">
+              {selectedLanguageBases.size === 1 && selectedLanguageBases.has('en') ? 'Accent' : 'Region'}
+            </span>
+            <div class="chip-group">
+              {#each accentOptions as option (option.locale)}
+                <button
+                  class="filter-chip"
+                  class:active={selectedAccents.has(option.locale)}
+                  on:click={() => { selectedAccents = toggleSetValue(selectedAccents, option.locale); }}
+                >
+                  {option.label}
+                  <span class="chip-count">{option.count}</span>
+                </button>
+              {/each}
+            </div>
+          </div>
+        {/if}
 
         <!-- Type chips -->
         <div class="filter-section">
@@ -765,6 +839,25 @@
     border-color: var(--brand-600, #177089);
     color: var(--brand-700, #0e5568);
     font-weight: 680;
+  }
+
+  .chip-count {
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: #7a96aa;
+    margin-left: 0.1rem;
+  }
+
+  .filter-chip.active .chip-count {
+    color: var(--brand-600, #177089);
+    opacity: 0.8;
+  }
+
+  /* Accent section gets a subtle left indent to signal hierarchy */
+  .filter-section--accent {
+    padding-left: 0.6rem;
+    border-left: 2px solid var(--brand-200, #a8dcea);
+    margin-left: 0.1rem;
   }
 
   /* ── Main Content ── */
