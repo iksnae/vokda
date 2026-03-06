@@ -125,6 +125,12 @@
       <p class="sub">Signed in as {$auth.user?.email ?? $auth.user?.id}</p>
       <p class="sub">Access: {$auth.user?.roles.join(', ')}</p>
 
+      <nav class="account-links">
+        <a href="/account/providers">Provider Keys</a>
+        <a href="/account/api-keys">Vokda API Keys</a>
+        <a href="/account/clips">Audio Clips</a>
+      </nav>
+
       <div class="actions">
         <button class="ghost" on:click={handleRefreshAccess} disabled={pending}>Refresh Access</button>
         <button on:click={signOut} disabled={pending}>Sign Out</button>
@@ -288,6 +294,30 @@
     border-radius: 12px;
     padding: 0.55rem 0.68rem;
     font-size: 0.95rem;
+  }
+
+  .account-links {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .account-links a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: var(--text-small);
+    font-weight: 640;
+    color: var(--brand-700);
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--brand-100);
+    border-radius: 10px;
+    background: #f0f9fd;
+    transition: background 120ms, border-color 120ms;
+  }
+
+  .account-links a:hover {
+    background: var(--brand-100);
+    border-color: var(--brand-600);
   }
 
   .actions {

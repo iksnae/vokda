@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { auth, initAuth, isAuthenticated, isAuthReady, roleFlags, signIn, signOut } from '$lib/auth/store';
   import { collections } from '$lib/stores/app-state';
+  import { clipCount } from '$lib/stores/clips';
   import Toast from '$lib/components/Toast.svelte';
   import Icon from '$lib/components/Icon.svelte';
 
@@ -116,6 +117,13 @@
               <a href="/collections" class="menu-item" on:click={closeUserMenu}>
                 <Icon name="folder" size={15} />
                 Collections
+              </a>
+              <a href="/account/clips" class="menu-item" on:click={closeUserMenu}>
+                <Icon name="waveform" size={15} />
+                Audio Clips
+                {#if $clipCount > 0}
+                  <span class="menu-badge">{$clipCount}</span>
+                {/if}
               </a>
               {#if $roleFlags.isCurator}
                 <div class="menu-divider"></div>
@@ -425,6 +433,18 @@
 
   .menu-item.danger:hover {
     background: #fff5f5;
+  }
+
+  .menu-badge {
+    background: var(--brand-100);
+    color: var(--brand-700);
+    font-size: 0.65rem;
+    font-weight: 720;
+    border-radius: 999px;
+    padding: 0.05rem 0.35rem;
+    min-width: 1rem;
+    text-align: center;
+    margin-left: auto;
   }
 
   .avatar-skeleton {
