@@ -397,7 +397,8 @@ async function loadCredential(userId, providerId) {
       ':pid': providerId,
       ':active': 'active',
     },
-    Limit: 1,
+    // No Limit — DynamoDB Limit caps items *scanned*, not *returned*.
+    // With Limit:1 the scan may examine a non-matching item and return 0 results.
   }));
 
   if (!result.Items?.length) return null;
