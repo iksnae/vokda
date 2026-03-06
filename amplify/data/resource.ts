@@ -102,6 +102,33 @@ const schema = a.schema({
       allow.authenticated('identityPool').to(['read'])
     ]),
 
+  UserProviderCredential: a
+    .model({
+      providerId: a.string().required(),
+      label: a.string().required(),
+      credentialData: a.string().required(), // JSON string: { apiKey, region, etc. }
+      status: a.enum(['active', 'invalid', 'expired']),
+      lastTestedAtIso: a.string(),
+      createdAtIso: a.string().required(),
+      updatedAtIso: a.string().required()
+    })
+    .authorization((allow) => [allow.owner()]),
+
+  SynthesisJob: a
+    .model({
+      voiceId: a.string().required(),
+      providerId: a.string().required(),
+      inputText: a.string().required(),
+      inputMode: a.enum(['text', 'ssml']),
+      status: a.enum(['pending', 'completed', 'failed']),
+      audioPath: a.string(),
+      durationMs: a.integer(),
+      latencyMs: a.integer(),
+      errorMessage: a.string(),
+      createdAtIso: a.string().required()
+    })
+    .authorization((allow) => [allow.owner()]),
+
   AdminAuditEvent: a
     .model({
       action: a.string().required(),

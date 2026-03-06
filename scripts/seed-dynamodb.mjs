@@ -49,8 +49,8 @@ function resolveTableNames() {
 
   // Use known table names from `aws dynamodb list-tables`
   return {
-    voice: 'VoiceRecord-qye3mrxz5rcfjpgw4uebq6emfi-NONE',
-    provider: 'ProviderRecord-qye3mrxz5rcfjpgw4uebq6emfi-NONE',
+    voice: 'VoiceRecord-ibg2soatlbdi3co73kjrlxv5ca-NONE',
+    provider: 'ProviderRecord-ibg2soatlbdi3co73kjrlxv5ca-NONE',
   };
 }
 

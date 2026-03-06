@@ -1,0 +1,653 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { isAuthenticated, roleFlags } from '$lib/auth/store';
+  import {
+    credentials,
+    credentialsLoading,
+    connectedProviders,
+    connectProvider,
+    disconnectProvider,
+    testCredential,
+    refreshCredentials,
+  } from '$lib/stores/credentials';
+  import {
+    getCredentialProviders,
+    getFreeProviders,
+    type ProviderAuthConfig,
+    type CredentialData,
+  } from '$lib/synthesis/provider-auth';
+  import { getCredentialData } from '$lib/data/credential-store';
+  import { addToast } from '$lib/components/toast-store';
+  import Icon from '$lib/components/Icon.svelte';
+  import { getProviderColor as getProviderColorScheme } from '$lib/provider-colors';
+
+  const credProviders = getCredentialProviders();
+  const freeProviders = getFreeProviders();
+
+  // ─── Form state per provider ───
+  type FormState = {
+    expanded: boolean;
+    fields: Record<string, string>;
+    saving: boolean;
+    testing: boolean;
+    testResult?: { success: boolean; message: string };
+  };
+
+  let forms: Record<string, FormState> = {};
+
+  function getForm(providerId: string): FormState {
+    return forms[providerId] ?? { expanded: false, fields: {}, saving: false, testing: false };
+  }
+
+  function toggleExpand(providerId: string) {
+    const f = getForm(providerId);
+    forms = { ...forms, [providerId]: { ...f, expanded: !f.expanded } };
+  }
+
+  function updateField(providerId: string, key: string, value: string) {
+    const f = getForm(providerId);
+    forms = {
+      ...forms,
+      [providerId]: { ...f, fields: { ...f.fields, [key]: value } },
+    };
+  }
+
+  function getProviderColor(providerId: string): string {
+    return getProviderColorScheme(providerId).bg;
+  }
+
+  function getProviderAccent(providerId: string): string {
+    return getProviderColorScheme(providerId).text;
+  }
+
+  // ─── Actions ───
+
+  async function saveProvider(config: ProviderAuthConfig) {
+    const f = getForm(config.providerId);
+    const missingFields = config.fields.filter(
+      (field) => field.required && !f.fields[field.key]?.trim()
+    );
+    if (missingFields.length > 0) {
+      addToast(`Fill in: ${missingFields.map((f) => f.label).join(', ')}`, 'error');
+      return;
+    }
+
+    forms = { ...forms, [config.providerId]: { ...f, saving: true } };
+
+    try {
+      const data = buildCredentialData(config, f.fields);
+      await connectProvider(config.providerId, config.providerId, data);
+      addToast(`${config.providerId} connected!`);
+      forms = {
+        ...forms,
+        [config.providerId]: { ...f, saving: false, expanded: false, testResult: undefined },
+      };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Save failed';
+      addToast(msg, 'error');
+      forms = { ...forms, [config.providerId]: { ...f, saving: false } };
+    }
+  }
+
+  async function testProvider(config: ProviderAuthConfig) {
+    const f = getForm(config.providerId);
+    forms = { ...forms, [config.providerId]: { ...f, testing: true, testResult: undefined } };
+
+    try {
+      // Get credential data from saved credential or form fields
+      let data: CredentialData;
+      const cred = $credentials.find((c) => c.providerId === config.providerId);
+
+      if (cred) {
+        const stored = await getCredentialData(config.providerId);
+        if (!stored) throw new Error('No stored credential data');
+        data = stored;
+      } else {
+        data = buildCredentialData(config, f.fields);
+      }
+
+      const credId = cred?.id ?? '';
+      const result = await testCredential(credId, config.providerId, data);
+
+      forms = { ...forms, [config.providerId]: { ...f, testing: false, testResult: result } };
+
+      if (result.success) {
+        addToast(result.message);
+      } else {
+        addToast(result.message, 'error');
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Test failed';
+      forms = {
+        ...forms,
+        [config.providerId]: {
+          ...f,
+          testing: false,
+          testResult: { success: false, message: msg },
+        },
+      };
+      addToast(msg, 'error');
+    }
+  }
+
+  async function removeProvider(config: ProviderAuthConfig) {
+    const cred = $credentials.find((c) => c.providerId === config.providerId);
+    if (!cred) return;
+    if (!confirm(`Disconnect ${config.providerId}? Your API key will be deleted.`)) return;
+
+    try {
+      await disconnectProvider(cred.id, config.providerId);
+      addToast(`${config.providerId} disconnected.`);
+      forms = { ...forms, [config.providerId]: { expanded: false, fields: {}, saving: false, testing: false } };
+    } catch (err) {
+      addToast('Failed to disconnect.', 'error');
+    }
+  }
+
+  function buildCredentialData(
+    config: ProviderAuthConfig,
+    fields: Record<string, string>
+  ): CredentialData {
+    const data: Record<string, string> = {};
+    for (const field of config.fields) {
+      data[field.key] = fields[field.key]?.trim() ?? '';
+    }
+    return data as CredentialData;
+  }
+
+  function statusIcon(status: string | undefined): string {
+    switch (status) {
+      case 'active': return 'check';
+      case 'invalid': return 'x';
+      case 'expired': return 'x';
+      default: return 'minus';
+    }
+  }
+
+  function statusLabel(status: string | undefined): string {
+    switch (status) {
+      case 'active': return 'Connected';
+      case 'invalid': return 'Invalid';
+      case 'expired': return 'Expired';
+      default: return 'Not connected';
+    }
+  }
+</script>
+
+<svelte:head>
+  <title>Provider Accounts | Vokda</title>
+  <meta name="description" content="Connect your TTS provider API keys to synthesize voices with your own account." />
+</svelte:head>
+
+<main>
+  <header>
+    <a href="/account" class="back">
+      <Icon name="arrow-left" size={16} />
+      Account
+    </a>
+    <h1>
+      <Icon name="globe" size={24} />
+      Provider Accounts
+    </h1>
+    <p class="subtitle">
+      Connect your API keys to synthesize voices. <strong>Your keys, your billing</strong> — Vokda never stores system keys.
+    </p>
+  </header>
+
+  {#if !$isAuthenticated}
+    <div class="auth-gate">
+      <Icon name="user" size={32} />
+      <p>Sign in to manage your provider accounts.</p>
+      <a href="/account?intent=signin" class="primary-btn">Sign In</a>
+    </div>
+  {:else}
+    <!-- Connected count -->
+    <div class="stats-bar">
+      <span class="stat">
+        <strong>{$credentials.filter(c => c.status === 'active').length}</strong> of {credProviders.length} connected
+      </span>
+      <button class="ghost-btn" on:click={refreshCredentials} disabled={$credentialsLoading}>
+        Refresh
+      </button>
+    </div>
+
+    <!-- Cloud providers requiring API keys -->
+    <section>
+      <h2>Cloud Providers</h2>
+      <div class="provider-grid">
+        {#each credProviders as config}
+          {@const status = $connectedProviders.get(config.providerId)}
+          {@const f = getForm(config.providerId)}
+          {@const isConnected = status === 'active'}
+          <article
+            class="provider-card"
+            class:connected={isConnected}
+            class:invalid={status === 'invalid'}
+            style="--provider-bg: {getProviderColor(config.providerId)}; --provider-fg: {getProviderAccent(config.providerId)}"
+          >
+            <div class="card-header" role="button" tabindex="0" on:click={() => toggleExpand(config.providerId)} on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') toggleExpand(config.providerId); }}>
+              <div class="card-title">
+                <span class="provider-dot" style="background: {getProviderAccent(config.providerId)}"></span>
+                <span class="provider-name">{config.providerId}</span>
+              </div>
+              <div class="card-status">
+                <span class="status-badge" class:active={isConnected} class:invalid={status === 'invalid'}>
+                  <Icon name={statusIcon(status)} size={12} />
+                  {statusLabel(status)}
+                </span>
+                <Icon name={f.expanded ? 'chevron-up' : 'chevron-down'} size={14} />
+              </div>
+            </div>
+
+            {#if f.expanded}
+              <div class="card-body">
+                {#if config.notes}
+                  <p class="notes">{config.notes}</p>
+                {/if}
+
+                {#if !isConnected}
+                  <div class="fields">
+                    {#each config.fields as field}
+                      <label>
+                        {field.label}
+                        {#if field.required}<span class="req">*</span>{/if}
+                        <input
+                          type={field.type}
+                          placeholder={field.placeholder}
+                          value={f.fields[field.key] ?? ''}
+                          on:input={(e) => updateField(config.providerId, field.key, e.currentTarget.value)}
+                          autocomplete="off"
+                        />
+                      </label>
+                    {/each}
+                  </div>
+
+                  {#if config.docsUrl}
+                    <p class="docs-link">
+                      <a href={config.docsUrl} target="_blank" rel="noreferrer">
+                        Get your API key →
+                      </a>
+                    </p>
+                  {/if}
+
+                  <div class="card-actions">
+                    <button
+                      class="primary-btn"
+                      on:click={() => saveProvider(config)}
+                      disabled={f.saving}
+                    >
+                      {f.saving ? 'Saving...' : 'Connect'}
+                    </button>
+                  </div>
+                {:else}
+                  <!-- Connected state -->
+                  <div class="connected-info">
+                    <p>✓ API key stored securely in your account.</p>
+
+                    {#if f.testResult}
+                      <p class="test-result" class:success={f.testResult.success} class:fail={!f.testResult.success}>
+                        {f.testResult.message}
+                      </p>
+                    {/if}
+                  </div>
+
+                  <div class="card-actions">
+                    <button
+                      class="ghost-btn"
+                      on:click={() => testProvider(config)}
+                      disabled={f.testing}
+                    >
+                      {f.testing ? 'Testing...' : 'Test Connection'}
+                    </button>
+                    <button class="danger-btn" on:click={() => removeProvider(config)}>
+                      Disconnect
+                    </button>
+                  </div>
+                {/if}
+              </div>
+            {/if}
+          </article>
+        {/each}
+      </div>
+    </section>
+
+    <!-- Free providers -->
+    <section>
+      <h2>Free Providers</h2>
+      <p class="section-desc">These providers don't need API keys — synthesis is free or runs locally.</p>
+      <div class="free-grid">
+        {#each freeProviders as config}
+          <div class="free-card">
+            <span class="provider-dot" style="background: {getProviderAccent(config.providerId)}"></span>
+            <span class="free-name">{config.providerId}</span>
+            <span class="free-status">
+              <Icon name="check" size={12} />
+              Free
+            </span>
+            {#if config.notes}
+              <span class="free-notes">{config.notes}</span>
+            {/if}
+          </div>
+        {/each}
+      </div>
+    </section>
+  {/if}
+</main>
+
+<style>
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+    animation: reveal 320ms ease;
+  }
+
+  header { margin-bottom: 1rem; }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--brand-600);
+    font-size: var(--text-small);
+    font-weight: 620;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+  }
+  .back:hover { text-decoration: underline; }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: var(--text-display);
+  }
+
+  .subtitle {
+    margin: 0.3rem 0 0;
+    color: #4a6a82;
+    font-size: var(--text-body);
+  }
+
+  h2 {
+    font-size: var(--text-heading);
+    margin: 1.2rem 0 0.5rem;
+    color: #1a3347;
+  }
+
+  .section-desc {
+    color: #5a7a90;
+    font-size: var(--text-small);
+    margin: 0 0 0.5rem;
+  }
+
+  /* Auth gate */
+  .auth-gate {
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1px solid var(--stroke-soft);
+    border-radius: 16px;
+    background: #f8fbfd;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: #3e5972;
+  }
+
+  /* Stats */
+  .stats-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e4edf3;
+    border-radius: 12px;
+    background: #f8fbfd;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat { font-size: var(--text-small); color: #3e5972; }
+  .stat strong { color: var(--brand-700); }
+
+  /* Provider grid */
+  .provider-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .provider-card {
+    border: 1px solid #d6e2ec;
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+    transition: border-color 150ms;
+  }
+
+  .provider-card.connected { border-color: #a5d6a7; }
+  .provider-card.invalid { border-color: #ef9a9a; }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0.85rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .card-header:hover { background: #f7fafc; }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .provider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .provider-name {
+    font-weight: 680;
+    font-size: var(--text-body);
+    color: #1a3347;
+  }
+
+  .card-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #5a7a90;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--text-xs);
+    font-weight: 660;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid #d6e2ec;
+    color: #5a7a90;
+    background: #f0f4f7;
+  }
+
+  .status-badge.active {
+    color: #2e7d32;
+    background: #e8f5e9;
+    border-color: #a5d6a7;
+  }
+
+  .status-badge.invalid {
+    color: #c62828;
+    background: #ffebee;
+    border-color: #ef9a9a;
+  }
+
+  .card-body {
+    padding: 0 0.85rem 0.85rem;
+    border-top: 1px solid #eef3f7;
+  }
+
+  .notes {
+    font-size: var(--text-small);
+    color: #5a7a90;
+    margin: 0.5rem 0;
+  }
+
+  .fields {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 0.5rem;
+  }
+
+  label {
+    display: grid;
+    gap: 0.25rem;
+    font-size: var(--text-small);
+    font-weight: 620;
+    color: #3e5972;
+  }
+
+  .req { color: #c62828; }
+
+  input {
+    border: 1px solid #bfd0de;
+    border-radius: 10px;
+    padding: 0.5rem 0.65rem;
+    background: #fff;
+    font-size: var(--text-body);
+    font-family: 'SF Mono', Menlo, monospace;
+    letter-spacing: 0.02em;
+  }
+
+  input:focus {
+    outline: 2px solid var(--brand-400);
+    outline-offset: -1px;
+  }
+
+  .docs-link {
+    margin: 0.4rem 0;
+    font-size: var(--text-small);
+  }
+
+  .docs-link a { color: var(--brand-600); font-weight: 620; }
+
+  .card-actions {
+    display: flex;
+    gap: 0.45rem;
+    margin-top: 0.55rem;
+  }
+
+  .connected-info {
+    margin: 0.5rem 0;
+    font-size: var(--text-small);
+    color: #2e7d32;
+  }
+
+  .test-result {
+    font-size: var(--text-xs);
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    margin-top: 0.3rem;
+  }
+
+  .test-result.success { background: #e8f5e9; color: #2e7d32; }
+  .test-result.fail { background: #ffebee; color: #c62828; }
+
+  .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: none;
+    border-radius: 11px;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(154deg, var(--brand-600), var(--brand-700));
+    color: #fff;
+    font-weight: 680;
+    font-size: var(--text-small);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(20, 94, 121, 0.2);
+  }
+
+  .primary-btn:hover { box-shadow: 0 6px 16px rgba(20, 94, 121, 0.3); }
+  .primary-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+  .ghost-btn {
+    background: #f3f7fa;
+    color: #2c4b60;
+    border: 1px solid #c3d1de;
+    border-radius: 11px;
+    padding: 0.45rem 0.75rem;
+    font-weight: 660;
+    font-size: var(--text-small);
+    cursor: pointer;
+  }
+
+  .ghost-btn:hover { background: #edf2f7; }
+  .ghost-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+  .danger-btn {
+    background: #fff;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+    border-radius: 11px;
+    padding: 0.45rem 0.75rem;
+    font-weight: 660;
+    font-size: var(--text-small);
+    cursor: pointer;
+  }
+
+  .danger-btn:hover { background: #ffebee; }
+
+  /* Free providers */
+  .free-grid {
+    display: grid;
+    gap: 0.35rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .free-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.35rem;
+    align-items: center;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid #d6e2ec;
+    border-radius: 12px;
+    background: #f8fbfd;
+  }
+
+  .free-name {
+    font-weight: 660;
+    font-size: var(--text-small);
+    color: #1a3347;
+  }
+
+  .free-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: var(--text-xs);
+    font-weight: 660;
+    color: #2e7d32;
+  }
+
+  .free-notes {
+    grid-column: 1 / -1;
+    font-size: var(--text-xs);
+    color: #5a7a90;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

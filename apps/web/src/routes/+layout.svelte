@@ -46,6 +46,9 @@
       {#if $roleFlags.isAdmin}
         <a href="/admin" class="nav-link">Admin</a>
       {/if}
+      {#if $auth.isAuthenticated}
+        <a href="/account/providers" class="nav-link">API Keys</a>
+      {/if}
     </nav>
 
     <div class="auth-actions">
