@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/T887QVQVKHJBHR1ZQVMFRE47SX.jpg",
   "metadata": {
-    "shortLabel": "Lira - Tranquil Voice — Cartesia",
-    "searchDescription": "Cartesia Lira - Tranquil Voice: Soothing female voice with gentle warmth, ideal for calm narrations and ASMR",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Lira - Tranquil Voice — Cartesia",
+    "searchDescription": "Cartesia Lira - Tranquil Voice: Soothing female voice with gentle warmth, ideal for calm narrations and ASMR",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T887QVQVKHJBHR1ZQVMFRE47SX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3",
       "id": "s-T887QVQVKHJBHR1ZQVMFRE47SX",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/T887QVQVKHJBHR1ZQVMFRE47SX.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "c1b9a03e-747f-40ad-8e7b-18caf8aaac0b",
-      "label": "Lira - Tranquil Voice",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lira - Tranquil Voice",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/T887QVQVKHJBHR1ZQVMFRE47SX.jpg",

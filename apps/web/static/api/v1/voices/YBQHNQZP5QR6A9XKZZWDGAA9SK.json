@@ -21,22 +21,14 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/YBQHNQZP5QR6A9XKZZWDGAA9SK.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/YBQHNQZP5QR6A9XKZZWDGAA9SK.jpg",
   "metadata": {
-    "shortLabel": "Javier — Deepgram Aura 2",
-    "searchDescription": "Deepgram Javier: Latin American-accented male voice (adult) with approachable, calm, comfortable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "latin american"
-    ],
     "useCases": [
       "storytelling",
       "casual chat",
       "ivr"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "approachable",
       "calm",
@@ -44,53 +36,61 @@
       "friendly",
       "professional"
     ],
+    "shortLabel": "Javier — Deepgram Aura 2",
+    "searchDescription": "Deepgram Javier: Latin American-accented male voice (adult) with approachable, calm, comfortable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "latin american"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Javier",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Latin American",
-    "age": "Adult",
-    "deepgramColor": "#c58dff",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/8ca4c17b71629d54612bbb773495ec16cc42f1cb-372x372.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ee4cacc009ac834034146cb8b719ace32db2d2c1.wav",
     "deepgramUuid": "0a9c0848-0c53-47ca-9330-846779b8f18f",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Latin American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#c58dff",
+    "modelName": "Deepgram Aura 2 — Javier",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "storytelling",
       "casual chat",
       "ivr"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/8ca4c17b71629d54612bbb773495ec16cc42f1cb-372x372.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YBQHNQZP5QR6A9XKZZWDGAA9SK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YBQHNQZP5QR6A9XKZZWDGAA9SK.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YBQHNQZP5QR6A9XKZZWDGAA9SK.mp3",
       "id": "s-YBQHNQZP5QR6A9XKZZWDGAA9SK",
       "label": "Default",
-      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/YBQHNQZP5QR6A9XKZZWDGAA9SK.mp3"
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-javier-es",
-      "label": "Javier",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Javier",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/YBQHNQZP5QR6A9XKZZWDGAA9SK.jpg",

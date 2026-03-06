@@ -16,53 +16,53 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/SZXRBG06BM9QNW3QP0884BQG6A.jpg",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
     "shortLabel": "Paige — LMNT",
     "searchDescription": "LMNT Paige: Conversational. Determined. US",
-    "machineTags": [
-      "lmnt",
-      "female",
-      "professional"
-    ],
-    "useCases": [],
-    "toneTags": [],
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Professional",
-    "architecture": "professional",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SZXRBG06BM9QNW3QP0884BQG6A.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3",
       "id": "s-SZXRBG06BM9QNW3QP0884BQG6A",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "paige",
-      "label": "Paige",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Paige",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/SZXRBG06BM9QNW3QP0884BQG6A.jpg",

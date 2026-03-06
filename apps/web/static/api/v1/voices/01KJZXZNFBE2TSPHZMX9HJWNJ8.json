@@ -18,82 +18,82 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "unknown",
+    "metadataQuality": "sparse",
+    "toneTags": [
+      "neutral"
+    ],
     "shortLabel": "en-US  voice",
     "searchDescription": "Velvety British female voice delivers news and narrations with warmth and clarity.",
+    "audienceTags": [],
+    "accent": "british",
+    "agePresentation": "middle_aged",
     "machineTags": [
       "female",
       "us",
       "informative_educational",
       "british",
       "premade"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "neutral"
-    ],
-    "audienceTags": [],
-    "accent": "british",
-    "genderPresentation": "unknown",
-    "agePresentation": "middle_aged",
-    "metadataQuality": "sparse"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KJZXZNFBQNV43MWKQGATKXM2",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE2TSPHZMX9HJWNJ8.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KJZXZNFB1ZJZTHBKCYPA0QRW",
-      "sourceType": "cloud_provider",
-      "sourceKey": "elevenlabs:tts:pFZP5JQG7iQjIQuC4Bku",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "mp3",
-        "pcm"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "ElevenLabs",
-    "providerType": "cloud_api",
-    "providerUrl": "https://elevenlabs.io",
-    "apiEndpoint": "api.elevenlabs.io/v1/text-to-speech",
-    "modelFamily": "ElevenLabs Multilingual",
-    "architecture": "Proprietary neural TTS with voice cloning",
-    "sampleRate": 44100,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": true,
-    "maxInputLength": 5000,
-    "license": "ElevenLabs Terms of Service",
     "licenseUrl": "https://elevenlabs.io/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to plan and account settings",
-    "latencyMs": "~300-1000",
-    "releaseDate": "2023-01-01",
     "knownLimitations": [
       "Rate limits vary by plan tier",
       "Voice cloning requires consent and verification",
       "Character quota depends on subscription plan"
     ],
-    "modelName": "eleven_multilingual_v2"
+    "modelFamily": "ElevenLabs Multilingual",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": true,
+    "providerName": "ElevenLabs",
+    "multilingual": true,
+    "latencyMs": "~300-1000",
+    "architecture": "Proprietary neural TTS with voice cloning",
+    "releaseDate": "2023-01-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 44100,
+    "providerUrl": "https://elevenlabs.io",
+    "streamingSupport": true,
+    "license": "ElevenLabs Terms of Service",
+    "modelName": "eleven_multilingual_v2",
+    "dataRetention": "Subject to plan and account settings",
+    "apiEndpoint": "api.elevenlabs.io/v1/text-to-speech",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "bitDepth": 16
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE2TSPHZMX9HJWNJ8.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE2TSPHZMX9HJWNJ8.mp3",
+      "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
+      "id": "01KJZXZNFBQNV43MWKQGATKXM2",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "elevenlabs:tts:pFZP5JQG7iQjIQuC4Bku",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "pcm"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNFB1ZJZTHBKCYPA0QRW",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBE2TSPHZMX9HJWNJ8.json"

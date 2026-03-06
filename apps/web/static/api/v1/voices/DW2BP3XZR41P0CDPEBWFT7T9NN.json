@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/DW2BP3XZR41P0CDPEBWFT7T9NN.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/DW2BP3XZR41P0CDPEBWFT7T9NN.jpg",
   "metadata": {
-    "shortLabel": "Aurelia — Deepgram Aura 2",
-    "searchDescription": "Deepgram Aurelia: German-accented female voice (young adult) with approachable, casual, comfortable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "german"
-    ],
     "useCases": [
       "casual chat",
       "customer service"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "approachable",
       "casual",
@@ -43,52 +35,60 @@
       "natural",
       "sincere"
     ],
+    "shortLabel": "Aurelia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Aurelia: German-accented female voice (young adult) with approachable, casual, comfortable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "young adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "german"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Aurelia",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "German",
-    "age": "Young Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3ca4cfda7c1d06839e4f808a831dacf9ecf60d4b-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/09043277d9547e906fcdd5820f161d84087048be.wav",
     "deepgramUuid": "a2ee5042-e5c6-4826-bc99-6ff7cd992cbe",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "German",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Aurelia",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "customer service"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3ca4cfda7c1d06839e4f808a831dacf9ecf60d4b-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DW2BP3XZR41P0CDPEBWFT7T9NN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DW2BP3XZR41P0CDPEBWFT7T9NN.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DW2BP3XZR41P0CDPEBWFT7T9NN.mp3",
       "id": "s-DW2BP3XZR41P0CDPEBWFT7T9NN",
       "label": "Default",
-      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/DW2BP3XZR41P0CDPEBWFT7T9NN.mp3"
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-aurelia-de",
-      "label": "Aurelia",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Aurelia",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/DW2BP3XZR41P0CDPEBWFT7T9NN.jpg",

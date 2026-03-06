@@ -19,86 +19,86 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (80M params). Check model card for license terms.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural"
+    ],
     "shortLabel": "MLX · 80M · female",
     "searchDescription": "Ultra-light 80M parameter TTS. Fast, natural female voice with clean articulation.",
+    "audienceTags": [],
+    "agePresentation": "adult",
     "machineTags": [
       "female",
       "open-model",
       "local",
       "mlx"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "natural"
-    ],
-    "audienceTags": [],
-    "genderPresentation": "female",
-    "agePresentation": "adult",
-    "metadataQuality": "curated"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KK00XHDB43B1881D1Q8ZNZ44",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KK00XHDBNZY39PPRM82V6Y7Z",
-      "sourceType": "local_model",
-      "sourceKey": "mlx:soprano:default",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "SWivid",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/SWivid/Soprano-80M",
-    "modelUrl": "https://huggingface.co/mlx-community/Soprano-80M-bf16",
-    "modelFamily": "Soprano",
-    "modelName": "Soprano-80M",
-    "modelSize": "80M parameters",
-    "architecture": "Lightweight TTS with flow matching",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "bf16",
-    "diskSize": "~94MB",
-    "memoryRequired": "~200MB",
-    "hardwareRequirements": "Apple Silicon (M1+)",
-    "sampleRate": 24000,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 5000,
-    "license": "MIT",
     "commercialUse": true,
-    "attributionRequired": false,
-    "realtimeFactor": "~100x realtime",
-    "latencyMs": "~200-500",
-    "releaseDate": "2025-01-01",
     "knownLimitations": [
       "Single voice only",
       "English only",
       "Ultra-light model trades some naturalness for speed"
     ],
+    "modelFamily": "Soprano",
+    "multiSpeaker": false,
     "singleVoice": true,
-    "voiceParameterNote": "voice param exists in generate() but is explicitly unused (_ = voice)",
-    "multiSpeaker": false
+    "providerType": "local_mlx",
+    "diskSize": "~94MB",
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/Soprano-80M-bf16",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "voiceCloning": false,
+    "realtimeFactor": "~100x realtime",
+    "providerName": "SWivid",
+    "multilingual": false,
+    "latencyMs": "~200-500",
+    "architecture": "Lightweight TTS with flow matching",
+    "quantization": "bf16",
+    "memoryRequired": "~200MB",
+    "releaseDate": "2025-01-01",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
+    "emotionControl": false,
+    "modelSize": "80M parameters",
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/SWivid/Soprano-80M",
+    "streamingSupport": false,
+    "modelName": "Soprano-80M",
+    "license": "MIT",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "voiceParameterNote": "voice param exists in generate() but is explicitly unused (_ = voice)"
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XHDBK8CFFY3MFNWSGQR9.mp3",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "id": "01KK00XHDB43B1881D1Q8ZNZ44",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "mlx:soprano:default",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "local_model",
+      "id": "01KK00XHDBNZY39PPRM82V6Y7Z",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00XHDBK8CFFY3MFNWSGQR9.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KK00XHDBK8CFFY3MFNWSGQR9",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XHDBK8CFFY3MFNWSGQR9.json"

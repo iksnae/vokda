@@ -19,74 +19,74 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/ABHZZKQNNST5QVQNHP87XTBT6A.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/ABHZZKQNNST5QVQNHP87XTBT6A.jpg",
   "metadata": {
-    "shortLabel": "Electra — Deepgram Aura 2",
-    "searchDescription": "Deepgram Electra: American-accented female voice (adult) with professional, engaging, knowledgeable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "american"
-    ],
     "useCases": [
       "ivr",
       "advertising",
       "customer service"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "professional",
       "engaging",
       "knowledgeable"
     ],
+    "shortLabel": "Electra — Deepgram Aura 2",
+    "searchDescription": "Deepgram Electra: American-accented female voice (adult) with professional, engaging, knowledgeable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Electra",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#fec84b",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/1ce23b918b03e810f19d23a0e0644c9d7d7467c6-1024x1024.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4ed83539b158003878f12c7b748258d89d3a87ef.wav",
     "deepgramUuid": "b6b86e8d-5fb3-440a-af76-bcb86a015482",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#fec84b",
+    "modelName": "Deepgram Aura 2 — Electra",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "ivr",
       "advertising",
       "customer service"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/1ce23b918b03e810f19d23a0e0644c9d7d7467c6-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ABHZZKQNNST5QVQNHP87XTBT6A.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ABHZZKQNNST5QVQNHP87XTBT6A.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ABHZZKQNNST5QVQNHP87XTBT6A.mp3",
       "id": "s-ABHZZKQNNST5QVQNHP87XTBT6A",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/ABHZZKQNNST5QVQNHP87XTBT6A.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-electra-en",
-      "label": "Electra",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Electra",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/ABHZZKQNNST5QVQNHP87XTBT6A.jpg",

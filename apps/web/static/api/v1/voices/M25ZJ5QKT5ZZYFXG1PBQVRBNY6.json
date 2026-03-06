@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",
   "metadata": {
-    "shortLabel": "Ama — Deepgram Aura 2",
-    "searchDescription": "Deepgram Ama: Japanese-accented female voice (adult) with casual, comfortable, confident qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "japanese"
-    ],
     "useCases": [
       "interview",
       "ivr"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "casual",
       "comfortable",
@@ -43,52 +35,60 @@
       "knowledgeable",
       "natural"
     ],
+    "shortLabel": "Ama — Deepgram Aura 2",
+    "searchDescription": "Deepgram Ama: Japanese-accented female voice (adult) with casual, comfortable, confident qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "japanese"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Ama",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Japanese",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/bcf91a070dbfb16e77c23dbe74814cbb8981b393-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/fb06a8b6b7b958b77cafe291ff48df3c2b2b4b43.wav",
     "deepgramUuid": "1855cc6a-f4e0-4184-988c-30b7c787f277",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Japanese",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Ama",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "interview",
       "ivr"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/bcf91a070dbfb16e77c23dbe74814cbb8981b393-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
       "id": "s-M25ZJ5QKT5ZZYFXG1PBQVRBNY6",
       "label": "Default",
-      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3"
+      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-ama-ja",
-      "label": "Ama",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Ama",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",

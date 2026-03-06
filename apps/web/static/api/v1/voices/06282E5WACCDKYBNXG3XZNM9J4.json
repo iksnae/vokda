@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",
   "metadata": {
-    "shortLabel": "Lauren - Lively Narrator — Cartesia",
-    "searchDescription": "Cartesia Lauren - Lively Narrator: Expressive female voice for narration, storytelling, and creative content",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Lauren - Lively Narrator — Cartesia",
+    "searchDescription": "Cartesia Lauren - Lively Narrator: Expressive female voice for narration, storytelling, and creative content",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3",
       "id": "s-06282E5WACCDKYBNXG3XZNM9J4",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/06282E5WACCDKYBNXG3XZNM9J4.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "a33f7a4c-100f-41cf-a1fd-5822e8fc253f",
-      "label": "Lauren - Lively Narrator",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lauren - Lively Narrator",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",

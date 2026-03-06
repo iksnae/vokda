@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/FXRFW1XNJBRC22BME0C07GBW4C.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/FXRFW1XNJBRC22BME0C07GBW4C.jpg",
   "metadata": {
-    "shortLabel": "Gordon - Pilot — Cartesia",
-    "searchDescription": "Cartesia Gordon - Pilot: Male, simulating the acoustics over an intercom, for entertainment use cases",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Gordon - Pilot — Cartesia",
+    "searchDescription": "Cartesia Gordon - Pilot: Male, simulating the acoustics over an intercom, for entertainment use cases",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "36b42fcb-60c5-4bec-b077-cb1a00a92ec6",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "36b42fcb-60c5-4bec-b077-cb1a00a92ec6",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FXRFW1XNJBRC22BME0C07GBW4C.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FXRFW1XNJBRC22BME0C07GBW4C.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FXRFW1XNJBRC22BME0C07GBW4C.mp3",
       "id": "s-FXRFW1XNJBRC22BME0C07GBW4C",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/FXRFW1XNJBRC22BME0C07GBW4C.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "36b42fcb-60c5-4bec-b077-cb1a00a92ec6",
-      "label": "Gordon - Pilot",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Gordon - Pilot",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/FXRFW1XNJBRC22BME0C07GBW4C.jpg",

@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/BXWDTBHJEECFT7QW80C09KQTA2.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/BXWDTBHJEECFT7QW80C09KQTA2.jpg",
   "metadata": {
-    "shortLabel": "Nestor — Deepgram Aura 2",
-    "searchDescription": "Deepgram Nestor: Peninsular-accented male voice (adult) with calm, professional, approachable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "peninsular"
-    ],
     "useCases": [
       "customer service",
       "casual chat"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "calm",
       "professional",
@@ -43,52 +35,60 @@
       "clear",
       "confident"
     ],
+    "shortLabel": "Nestor — Deepgram Aura 2",
+    "searchDescription": "Deepgram Nestor: Peninsular-accented male voice (adult) with calm, professional, approachable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "peninsular"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Nestor",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Peninsular",
-    "age": "Adult",
-    "deepgramColor": "#ffadd8",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/047a7e1daa57a626cf361bc6d12adb639aefb9a2-372x372.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/a1fd5880d2827686f037212d45f1884b3a5941ed.wav",
     "deepgramUuid": "307caaf2-ec09-489d-bd37-ad83be97524d",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Peninsular",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ffadd8",
+    "modelName": "Deepgram Aura 2 — Nestor",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "customer service",
       "casual chat"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/047a7e1daa57a626cf361bc6d12adb639aefb9a2-372x372.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BXWDTBHJEECFT7QW80C09KQTA2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BXWDTBHJEECFT7QW80C09KQTA2.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BXWDTBHJEECFT7QW80C09KQTA2.mp3",
       "id": "s-BXWDTBHJEECFT7QW80C09KQTA2",
       "label": "Default",
-      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/BXWDTBHJEECFT7QW80C09KQTA2.mp3"
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-nestor-es",
-      "label": "Nestor",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Nestor",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/BXWDTBHJEECFT7QW80C09KQTA2.jpg",

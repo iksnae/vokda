@@ -21,22 +21,14 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",
   "metadata": {
-    "shortLabel": "Melia — Deepgram Aura 2",
-    "searchDescription": "Deepgram Melia: Italian-accented female voice (adult) with clear, comfortable, engaging qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "italian"
-    ],
     "useCases": [
       "casual chat",
       "customer service",
       "interview"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "comfortable",
@@ -44,53 +36,61 @@
       "friendly",
       "natural"
     ],
+    "shortLabel": "Melia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Melia: Italian-accented female voice (adult) with clear, comfortable, engaging qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "italian"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Melia",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Italian",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/067481cc0e170e8b70f1b86fef666d8fed08b071-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/8a7a82eb459a768b5f4f5a76570cbc175272c52a.wav",
     "deepgramUuid": "f6c83f71-634f-4d68-834d-50dcd88f14cf",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Italian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Melia",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "customer service",
       "interview"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/067481cc0e170e8b70f1b86fef666d8fed08b071-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3",
       "id": "s-WE5P7NTFPC3J65VXVGBXZNYFQM",
       "label": "Default",
-      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/WE5P7NTFPC3J65VXVGBXZNYFQM.mp3"
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-melia-it",
-      "label": "Melia",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Melia",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/WE5P7NTFPC3J65VXVGBXZNYFQM.jpg",

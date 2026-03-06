@@ -19,70 +19,70 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/2DJ6EE1XYDNMFG23ZJA2A3SYAB.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/2DJ6EE1XYDNMFG23ZJA2A3SYAB.jpg",
   "metadata": {
-    "shortLabel": "Hera — Deepgram Aura",
-    "searchDescription": "Deepgram Hera: American-accented female voice (adult) with deep, smooth, warm qualities. Aura architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura",
-      "female",
-      "american"
-    ],
     "useCases": [
       "ivr"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "deep",
       "smooth",
       "warm"
     ],
+    "shortLabel": "Hera — Deepgram Aura",
+    "searchDescription": "Deepgram Hera: American-accented female voice (adult) with deep, smooth, warm qualities. Aura architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura — Hera",
-    "architecture": "aura",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#f185be",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/6258aaeb06eba9c2162dd75dbd991fde26d0624e-200x200.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e9d3fe1b11e8ffbbd56ae0a56d324652f24f4327.wav",
-    "deepgramUuid": "ae7e7ca9-b193-4fea-ac0b-f1c79517a5f7",
-    "totalVoices": 102,
-    "useCases": [
-      "ivr"
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "female",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e9d3fe1b11e8ffbbd56ae0a56d324652f24f4327.wav",
+    "deepgramUuid": "ae7e7ca9-b193-4fea-ac0b-f1c79517a5f7",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#f185be",
+    "modelName": "Deepgram Aura — Hera",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/6258aaeb06eba9c2162dd75dbd991fde26d0624e-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2DJ6EE1XYDNMFG23ZJA2A3SYAB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2DJ6EE1XYDNMFG23ZJA2A3SYAB.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2DJ6EE1XYDNMFG23ZJA2A3SYAB.mp3",
       "id": "s-2DJ6EE1XYDNMFG23ZJA2A3SYAB",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/2DJ6EE1XYDNMFG23ZJA2A3SYAB.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-hera-en",
-      "label": "Hera",
-      "engine": "aura",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura",
+      "maxChars": 2000,
+      "label": "Hera",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/2DJ6EE1XYDNMFG23ZJA2A3SYAB.jpg",

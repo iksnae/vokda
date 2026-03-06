@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/2DHHXKJ01VNKMBNZT2DT7KHP3Z.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/2DHHXKJ01VNKMBNZT2DT7KHP3Z.jpg",
   "metadata": {
-    "shortLabel": "Sarah - Mindful Woman — Cartesia",
-    "searchDescription": "Cartesia Sarah - Mindful Woman: Soothing female for meditations and calming conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Sarah - Mindful Woman — Cartesia",
+    "searchDescription": "Cartesia Sarah - Mindful Woman: Soothing female for meditations and calming conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "694f9389-aac1-45b6-b726-9d9369183238",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "694f9389-aac1-45b6-b726-9d9369183238",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2DHHXKJ01VNKMBNZT2DT7KHP3Z.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2DHHXKJ01VNKMBNZT2DT7KHP3Z.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2DHHXKJ01VNKMBNZT2DT7KHP3Z.mp3",
       "id": "s-2DHHXKJ01VNKMBNZT2DT7KHP3Z",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/2DHHXKJ01VNKMBNZT2DT7KHP3Z.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "694f9389-aac1-45b6-b726-9d9369183238",
-      "label": "Sarah - Mindful Woman",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Sarah - Mindful Woman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/2DHHXKJ01VNKMBNZT2DT7KHP3Z.jpg",

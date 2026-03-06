@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.jpg",
   "metadata": {
-    "shortLabel": "Nathan - Easy Talker — Cartesia",
-    "searchDescription": "Cartesia Nathan - Easy Talker: Confident, firm young adult male with a slight edge for conversational use cases",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Nathan - Easy Talker — Cartesia",
+    "searchDescription": "Cartesia Nathan - Easy Talker: Confident, firm young adult male with a slight edge for conversational use cases",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3",
       "id": "s-E0BJ3W0A83NZXZVP3KRC7KVHM1",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
-      "label": "Nathan - Easy Talker",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Nathan - Easy Talker",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.jpg",

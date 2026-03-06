@@ -16,70 +16,25 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
   "metadata": {
-    "shortLabel": "en-US male · gpt-4o-mini-tts only",
-    "searchDescription": "Soft gentle soothing OpenAI ballad voice gpt-4o-mini-tts only",
-    "machineTags": [
-      "male",
-      "us"
-    ],
     "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "sparse",
     "toneTags": [
       "steady"
     ],
+    "shortLabel": "en-US male · gpt-4o-mini-tts only",
+    "searchDescription": "Soft gentle soothing OpenAI ballad voice gpt-4o-mini-tts only",
     "audienceTags": [],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "male",
+      "us"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KJZXZNFB0TNA3CA72FX9HBN2",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KJZXZNFB2ADMP8WQVEKR1WZY",
-      "sourceType": "cloud_provider",
-      "sourceKey": "openai:gpt-4o-mini-tts:ballad",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "mp3",
-        "wav",
-        "pcm"
-      ],
-      "maxInputChars": 4000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "OpenAI",
-    "providerType": "cloud_api",
-    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
-    "apiEndpoint": "api.openai.com/v1/audio/speech",
-    "modelFamily": "OpenAI TTS",
-    "architecture": "GPT-4o Mini TTS (proprietary neural)",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 4096,
-    "license": "OpenAI Usage Policies",
     "licenseUrl": "https://openai.com/policies/usage-policies",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to OpenAI data usage policy",
-    "latencyMs": "~300-800",
-    "releaseDate": "2025-03-20",
     "knownLimitations": [
       "Not available on tts-1 or tts-1-hd models",
       "Requires gpt-4o-mini-tts model",
@@ -87,13 +42,58 @@
       "No word-level timestamps",
       "Voice selection is limited to preset voices"
     ],
-    "modelName": "gpt-4o-mini-tts",
-    "modelVersion": "gpt-4o-mini-tts",
+    "notes": "This voice is only available via the gpt-4o-mini-tts model. It is NOT supported by tts-1 or tts-1-hd. Use model=\"gpt-4o-mini-tts\" in API calls.",
+    "modelFamily": "OpenAI TTS",
     "modelId": "gpt-4o-mini-tts",
-    "notes": "This voice is only available via the gpt-4o-mini-tts model. It is NOT supported by tts-1 or tts-1-hd. Use model=\"gpt-4o-mini-tts\" in API calls."
+    "modelVersion": "gpt-4o-mini-tts",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": false,
+    "providerName": "OpenAI",
+    "multilingual": true,
+    "latencyMs": "~300-800",
+    "architecture": "GPT-4o Mini TTS (proprietary neural)",
+    "releaseDate": "2025-03-20",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "streamingSupport": true,
+    "license": "OpenAI Usage Policies",
+    "modelName": "gpt-4o-mini-tts",
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "maxInputLength": 4096,
+    "channels": 1,
+    "bitDepth": 16
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
+      "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
+      "id": "01KJZXZNFB0TNA3CA72FX9HBN2",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "openai:gpt-4o-mini-tts:ballad",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNFB2ADMP8WQVEKR1WZY",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.json"

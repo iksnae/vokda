@@ -19,16 +19,6 @@
   "qualityTier": "premium",
   "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
   "metadata": {
-    "shortLabel": "Connor — Edge Irish",
-    "searchDescription": "Edge TTS Connor: Irish English male voice with a distinctive, warm accent.",
-    "machineTags": [
-      "edge-tts",
-      "microsoft",
-      "neural",
-      "free",
-      "male",
-      "en-ie"
-    ],
     "useCases": [
       "narration",
       "assistants",
@@ -36,59 +26,69 @@
       "accessibility",
       "prototyping"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "professional",
       "natural"
     ],
+    "shortLabel": "Connor — Edge Irish",
+    "searchDescription": "Edge TTS Connor: Irish English male voice with a distinctive, warm accent.",
     "audienceTags": [
       "developers",
       "creators",
       "educators"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-ie"
+    ]
   },
   "modelCard": {
-    "modelName": "en-IE-ConnorNeural",
-    "architecture": "Azure Neural TTS",
+    "commercialUse": false,
+    "locale": "en-IE",
+    "sampleRate": 24000,
     "providerType": "cloud_provider",
     "providerUrl": "https://github.com/rany2/edge-tts",
-    "license": "Free (Microsoft Edge TTS API)",
-    "commercialUse": false,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "supportsSSML": true,
-    "totalVoices": 322,
     "totalEnglishVoices": 47,
-    "region": "Irish",
-    "locale": "en-IE",
+    "modelName": "en-IE-ConnorNeural",
+    "license": "Free (Microsoft Edge TTS API)",
     "specialCapabilities": [
       "SSML support",
       "No API key required",
       "Real-time streaming"
-    ]
+    ],
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "region": "Irish",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "architecture": "Azure Neural TTS"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+      "id": "s-VPAA61RC27HKP8C1T5Y5T8E3HJ",
+      "label": "Default",
+      "text": "Hello! I'm Connor, speaking Irish English. This is a preview of how I sound in natural conversation."
+    }
+  ],
   "variants": [
     {
       "sourceKey": "en-IE-ConnorNeural",
-      "label": "Connor",
-      "engine": "edge-tts",
       "supportsStreaming": true,
-      "supportsSsml": true,
-      "maxChars": 5000
-    }
-  ],
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
-  "samples": [
-    {
-      "id": "s-VPAA61RC27HKP8C1T5Y5T8E3HJ",
-      "label": "Default",
-      "text": "Hello! I'm Connor, speaking Irish English. This is a preview of how I sound in natural conversation.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3"
+      "engine": "edge-tts",
+      "maxChars": 5000,
+      "label": "Connor",
+      "supportsSsml": true
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",

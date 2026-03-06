@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9T22EC5G4DVW089YE7ZHG261Q.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/Y9T22EC5G4DVW089YE7ZHG261Q.jpg",
   "metadata": {
-    "shortLabel": "Claire - Storyteller — Cartesia",
-    "searchDescription": "Cartesia Claire - Storyteller: Soothing, neutral female for narrations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Claire - Storyteller — Cartesia",
+    "searchDescription": "Cartesia Claire - Storyteller: Soothing, neutral female for narrations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "15a9cd88-84b0-4a8b-95f2-5d583b54c72e",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "15a9cd88-84b0-4a8b-95f2-5d583b54c72e",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/Y9T22EC5G4DVW089YE7ZHG261Q.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9T22EC5G4DVW089YE7ZHG261Q.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9T22EC5G4DVW089YE7ZHG261Q.mp3",
       "id": "s-Y9T22EC5G4DVW089YE7ZHG261Q",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9T22EC5G4DVW089YE7ZHG261Q.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "15a9cd88-84b0-4a8b-95f2-5d583b54c72e",
-      "label": "Claire - Storyteller",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Claire - Storyteller",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/Y9T22EC5G4DVW089YE7ZHG261Q.jpg",

@@ -19,70 +19,70 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W5PAABTA7MBXSW4860FZNKJ7M4.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W5PAABTA7MBXSW4860FZNKJ7M4.jpg",
   "metadata": {
-    "shortLabel": "Aries — Deepgram Aura 2",
-    "searchDescription": "Deepgram Aries: American-accented male voice (adult) with warm, energetic, caring qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "american"
-    ],
     "useCases": [
       "casual chat"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "warm",
       "energetic",
       "caring"
     ],
+    "shortLabel": "Aries — Deepgram Aura 2",
+    "searchDescription": "Deepgram Aries: American-accented male voice (adult) with warm, energetic, caring qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Aries",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#ee028c",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7dc873e476c4027e4161b9fb7c6c0e7c1e737f7d-200x200.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ba6f9c9e3359beb54cdcb153d9ddfb1f26184c6c.wav",
-    "deepgramUuid": "a04e73d5-f375-4288-80a0-3d481d204ea2",
-    "totalVoices": 102,
-    "useCases": [
-      "casual chat"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ba6f9c9e3359beb54cdcb153d9ddfb1f26184c6c.wav",
+    "deepgramUuid": "a04e73d5-f375-4288-80a0-3d481d204ea2",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ee028c",
+    "modelName": "Deepgram Aura 2 — Aries",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7dc873e476c4027e4161b9fb7c6c0e7c1e737f7d-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W5PAABTA7MBXSW4860FZNKJ7M4.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W5PAABTA7MBXSW4860FZNKJ7M4.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W5PAABTA7MBXSW4860FZNKJ7M4.mp3",
       "id": "s-W5PAABTA7MBXSW4860FZNKJ7M4",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W5PAABTA7MBXSW4860FZNKJ7M4.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-aries-en",
-      "label": "Aries",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Aries",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/W5PAABTA7MBXSW4860FZNKJ7M4.jpg",

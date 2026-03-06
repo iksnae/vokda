@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/R5ZP46DQG288687W1PFG66ABMC.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/R5ZP46DQG288687W1PFG66ABMC.jpg",
   "metadata": {
-    "shortLabel": "Samantha - Happy Support Leader — Cartesia",
-    "searchDescription": "Cartesia Samantha - Happy Support Leader: Firm, confident adult female for conversational support",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Samantha - Happy Support Leader — Cartesia",
+    "searchDescription": "Cartesia Samantha - Happy Support Leader: Firm, confident adult female for conversational support",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "761afc95-bef5-44dd-aa07-d3c678912e43",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "761afc95-bef5-44dd-aa07-d3c678912e43",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/R5ZP46DQG288687W1PFG66ABMC.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/R5ZP46DQG288687W1PFG66ABMC.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/R5ZP46DQG288687W1PFG66ABMC.mp3",
       "id": "s-R5ZP46DQG288687W1PFG66ABMC",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/R5ZP46DQG288687W1PFG66ABMC.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "761afc95-bef5-44dd-aa07-d3c678912e43",
-      "label": "Samantha - Happy Support Leader",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Samantha - Happy Support Leader",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/R5ZP46DQG288687W1PFG66ABMC.jpg",

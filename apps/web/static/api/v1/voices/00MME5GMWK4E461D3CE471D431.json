@@ -18,15 +18,7 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "Open model (1.6B params). Check model card for license terms.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMWK4E461D3CE471D431.jpg",
   "metadata": {
-    "shortLabel": "Dia secondary speaker",
-    "toneTags": [
-      "conversational",
-      "distinct",
-      "responsive"
-    ],
     "useCases": [
       "Dialogue generation",
       "Conversational AI",
@@ -34,65 +26,73 @@
       "Interactive fiction"
     ],
     "genderPresentation": "neutral",
+    "toneTags": [
+      "conversational",
+      "distinct",
+      "responsive"
+    ],
+    "shortLabel": "Dia secondary speaker",
     "agePresentation": "adult"
   },
-  "samples": [
-    {
-      "id": "sample-00MME5GMWK4E461D3CE471D431",
-      "text": "Welcome back everyone. Today we have a special guest joining us to talk about voice technology.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "variant-00MME5GMWK4E461D3CE471D431",
-      "label": "Dia 1.6B Speaker 2 (4-bit)",
-      "sourceType": "open_model",
-      "sourceKey": "mlx:dia:S2",
-      "supportsSsml": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Nari Labs",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
-    "modelUrl": "https://huggingface.co/mlx-community/Dia-1.6B",
-    "modelFamily": "Dia",
-    "modelName": "Dia-1.6B",
-    "modelSize": "1.6B parameters",
-    "architecture": "Encoder-decoder with DAC audio codec",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "bf16",
-    "diskSize": "~3.2GB",
-    "memoryRequired": "~4GB",
-    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
-    "sampleRate": 24000,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
-    "multilingual": false,
-    "emotionControl": true,
-    "voiceCloning": true,
-    "maxInputLength": 5000,
-    "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/nari-labs/Dia-1.6B/blob/main/LICENSE",
     "commercialUse": true,
-    "attributionRequired": false,
-    "realtimeFactor": "~5x realtime",
-    "latencyMs": "~5000-12000",
-    "releaseDate": "2025-03-24",
     "knownLimitations": [
       "Primarily a dialogue model — best for conversational text",
       "Supports nonverbal cues like (laughs), (sighs)",
       "Multi-speaker via [S1] [S2] tags in text",
       "Slower than single-speaker models"
     ],
-    "multiSpeaker": true,
-    "totalSpeakers": 2,
-    "speakerTag": "[S2]",
     "dialogueCapable": true,
-    "voiceCloningMethod": "ref_audio"
+    "modelFamily": "Dia",
+    "multiSpeaker": true,
+    "speakerTag": "[S2]",
+    "providerType": "local_mlx",
+    "diskSize": "~3.2GB",
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/Dia-1.6B",
+    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
+    "voiceCloning": true,
+    "realtimeFactor": "~5x realtime",
+    "providerName": "Nari Labs",
+    "multilingual": false,
+    "latencyMs": "~5000-12000",
+    "architecture": "Encoder-decoder with DAC audio codec",
+    "quantization": "bf16",
+    "voiceCloningMethod": "ref_audio",
+    "memoryRequired": "~4GB",
+    "releaseDate": "2025-03-24",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
+    "emotionControl": true,
+    "modelSize": "1.6B parameters",
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
+    "streamingSupport": false,
+    "totalSpeakers": 2,
+    "modelName": "Dia-1.6B",
+    "license": "Apache 2.0",
+    "maxInputLength": 5000,
+    "channels": 1
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMWK4E461D3CE471D431.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMWK4E461D3CE471D431.mp3",
+      "id": "sample-00MME5GMWK4E461D3CE471D431",
+      "text": "Welcome back everyone. Today we have a special guest joining us to talk about voice technology."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "mlx:dia:S2",
+      "sourceType": "open_model",
+      "id": "variant-00MME5GMWK4E461D3CE471D431",
+      "label": "Dia 1.6B Speaker 2 (4-bit)",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMWK4E461D3CE471D431.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/00MME5GMWK4E461D3CE471D431",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMWK4E461D3CE471D431.json"

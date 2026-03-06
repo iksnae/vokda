@@ -19,70 +19,70 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.jpg",
   "metadata": {
-    "shortLabel": "Helios — Deepgram Aura",
-    "searchDescription": "Deepgram Helios: British-accented male voice (adult) with postive, comfortable, polite qualities. Aura architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura",
-      "male",
-      "british"
-    ],
     "useCases": [
       "customer service"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "postive",
       "comfortable",
       "polite"
     ],
+    "shortLabel": "Helios — Deepgram Aura",
+    "searchDescription": "Deepgram Helios: British-accented male voice (adult) with postive, comfortable, polite qualities. Aura architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura — Helios",
-    "architecture": "aura",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "British",
-    "age": "Adult",
-    "deepgramColor": "#f185be",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/9682830014919fbdfb6cc2bc96d629920b4078b8-144x144.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/9b0c74e03153b7b9efce7b1ae9694d4842c1e647.wav",
-    "deepgramUuid": "cf0cef61-cc9a-40b3-ab7e-313798957798",
-    "totalVoices": 102,
-    "useCases": [
-      "customer service"
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "male",
+      "british"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/9b0c74e03153b7b9efce7b1ae9694d4842c1e647.wav",
+    "deepgramUuid": "cf0cef61-cc9a-40b3-ab7e-313798957798",
+    "sampleRate": 24000,
+    "accent": "British",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#f185be",
+    "modelName": "Deepgram Aura — Helios",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/9682830014919fbdfb6cc2bc96d629920b4078b8-144x144.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3",
       "id": "s-ZVQG67VXKHQG8E9Y3HSY9HXNXT",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZVQG67VXKHQG8E9Y3HSY9HXNXT.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-helios-en",
-      "label": "Helios",
-      "engine": "aura",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura",
+      "maxChars": 2000,
+      "label": "Helios",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZVQG67VXKHQG8E9Y3HSY9HXNXT.jpg",

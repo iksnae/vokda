@@ -19,70 +19,70 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/FHVGA5PFWFHKG824ABNJ42C428.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/FHVGA5PFWFHKG824ABNJ42C428.jpg",
   "metadata": {
-    "shortLabel": "Theia — Deepgram Aura 2",
-    "searchDescription": "Deepgram Theia: Australian-accented female voice (adult) with expressive, polite, sincere qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "australian"
-    ],
     "useCases": [
       "informative"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "expressive",
       "polite",
       "sincere"
     ],
+    "shortLabel": "Theia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Theia: Australian-accented female voice (adult) with expressive, polite, sincere qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Theia",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Australian",
-    "age": "Adult",
-    "deepgramColor": "#fec84b",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3e776f0d789f828ce94a3e1401c7a4a23207ecd7-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/662085e396fa53bb888e492ec5453dde9bb22674.wav",
-    "deepgramUuid": "a9040dbd-c7ca-4692-beba-fd016090a857",
-    "totalVoices": 102,
-    "useCases": [
-      "informative"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "australian"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/662085e396fa53bb888e492ec5453dde9bb22674.wav",
+    "deepgramUuid": "a9040dbd-c7ca-4692-beba-fd016090a857",
+    "sampleRate": 24000,
+    "accent": "Australian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#fec84b",
+    "modelName": "Deepgram Aura 2 — Theia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "informative"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3e776f0d789f828ce94a3e1401c7a4a23207ecd7-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FHVGA5PFWFHKG824ABNJ42C428.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FHVGA5PFWFHKG824ABNJ42C428.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FHVGA5PFWFHKG824ABNJ42C428.mp3",
       "id": "s-FHVGA5PFWFHKG824ABNJ42C428",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/FHVGA5PFWFHKG824ABNJ42C428.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-theia-en",
-      "label": "Theia",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Theia",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/FHVGA5PFWFHKG824ABNJ42C428.jpg",

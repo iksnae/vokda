@@ -21,23 +21,15 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",
   "metadata": {
-    "shortLabel": "Uzume — Deepgram Aura 2",
-    "searchDescription": "Deepgram Uzume: Japanese-accented female voice (young adult) with approachable, clear, polite qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "japanese"
-    ],
     "useCases": [
       "customer service",
       "interview",
       "ivr",
       "commercial"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "approachable",
       "clear",
@@ -45,54 +37,62 @@
       "professional",
       "trustworthy"
     ],
+    "shortLabel": "Uzume — Deepgram Aura 2",
+    "searchDescription": "Deepgram Uzume: Japanese-accented female voice (young adult) with approachable, clear, polite qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "young adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "japanese"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Uzume",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Japanese",
-    "age": "Young Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3f27556c6082c3b0a11e154a739f8fbee4a6c9c2-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/103f891fa0d06bbd4a0a7d49d70a36b39ce4c9ec.wav",
     "deepgramUuid": "8b22805b-997b-475a-9d68-283b3d6cddf0",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Japanese",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Uzume",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "customer service",
       "interview",
       "ivr",
       "commercial"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3f27556c6082c3b0a11e154a739f8fbee4a6c9c2-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3",
       "id": "s-QW8EEBM0DW1NHG67KVHY3MFHWC",
       "label": "Default",
-      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/QW8EEBM0DW1NHG67KVHY3MFHWC.mp3"
+      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-uzume-ja",
-      "label": "Uzume",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Uzume",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/QW8EEBM0DW1NHG67KVHY3MFHWC.jpg",

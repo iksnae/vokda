@@ -20,71 +20,71 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.jpg",
   "metadata": {
-    "shortLabel": "Atlas — Deepgram Aura 2",
-    "searchDescription": "Deepgram Atlas: American-accented male voice (mature) with enthusiastic, confident, approachable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "american"
-    ],
     "useCases": [
       "advertising"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "enthusiastic",
       "confident",
       "approachable",
       "friendly"
     ],
+    "shortLabel": "Atlas — Deepgram Aura 2",
+    "searchDescription": "Deepgram Atlas: American-accented male voice (mature) with enthusiastic, confident, approachable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "mature",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Atlas",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Mature",
-    "deepgramColor": "#7800ed",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/072239868ad1e3883ef4da0070e954aac67e438d-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4bc77f049399b72b11971cee63efe17a0942e4e3.wav",
-    "deepgramUuid": "a695b422-2277-44e1-8cfb-baec1aca10c6",
-    "totalVoices": 102,
-    "useCases": [
-      "advertising"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4bc77f049399b72b11971cee63efe17a0942e4e3.wav",
+    "deepgramUuid": "a695b422-2277-44e1-8cfb-baec1aca10c6",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#7800ed",
+    "modelName": "Deepgram Aura 2 — Atlas",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "advertising"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/072239868ad1e3883ef4da0070e954aac67e438d-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Mature",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3",
       "id": "s-HG9ZKKKVKHG9M81QPCDKZVVSG5",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/HG9ZKKKVKHG9M81QPCDKZVVSG5.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-atlas-en",
-      "label": "Atlas",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Atlas",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/HG9ZKKKVKHG9M81QPCDKZVVSG5.jpg",

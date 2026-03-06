@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.jpg",
   "metadata": {
-    "shortLabel": "Romeo - Calm Narrator — Cartesia",
-    "searchDescription": "Cartesia Romeo - Calm Narrator: Relaxing voice with smooth depth and calm pacing, perfect for storytelling and immersive narrations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Romeo - Calm Narrator — Cartesia",
+    "searchDescription": "Cartesia Romeo - Calm Narrator: Relaxing voice with smooth depth and calm pacing, perfect for storytelling and immersive narrations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "f688c0a6-dddd-48ba-8246-c099d494a162",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "f688c0a6-dddd-48ba-8246-c099d494a162",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3",
       "id": "s-1TE28BSG02CDPCBPFZQGDY9T9Z",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/1TE28BSG02CDPCBPFZQGDY9T9Z.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "f688c0a6-dddd-48ba-8246-c099d494a162",
-      "label": "Romeo - Calm Narrator",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Romeo - Calm Narrator",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/1TE28BSG02CDPCBPFZQGDY9T9Z.jpg",

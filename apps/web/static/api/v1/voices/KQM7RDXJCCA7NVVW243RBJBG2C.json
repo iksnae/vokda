@@ -19,16 +19,6 @@
   "qualityTier": "premium",
   "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
   "metadata": {
-    "shortLabel": "Yan — Edge Hong Kong",
-    "searchDescription": "Edge TTS Yan: Hong Kong English female voice for regional content.",
-    "machineTags": [
-      "edge-tts",
-      "microsoft",
-      "neural",
-      "free",
-      "female",
-      "en-hk"
-    ],
     "useCases": [
       "narration",
       "assistants",
@@ -36,59 +26,69 @@
       "accessibility",
       "prototyping"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "professional",
       "natural"
     ],
+    "shortLabel": "Yan — Edge Hong Kong",
+    "searchDescription": "Edge TTS Yan: Hong Kong English female voice for regional content.",
     "audienceTags": [
       "developers",
       "creators",
       "educators"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-hk"
+    ]
   },
   "modelCard": {
-    "modelName": "en-HK-YanNeural",
-    "architecture": "Azure Neural TTS",
+    "commercialUse": false,
+    "locale": "en-HK",
+    "sampleRate": 24000,
     "providerType": "cloud_provider",
     "providerUrl": "https://github.com/rany2/edge-tts",
-    "license": "Free (Microsoft Edge TTS API)",
-    "commercialUse": false,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "supportsSSML": true,
-    "totalVoices": 322,
     "totalEnglishVoices": 47,
-    "region": "Hong Kong",
-    "locale": "en-HK",
+    "modelName": "en-HK-YanNeural",
+    "license": "Free (Microsoft Edge TTS API)",
     "specialCapabilities": [
       "SSML support",
       "No API key required",
       "Real-time streaming"
-    ]
+    ],
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "region": "Hong Kong",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "architecture": "Azure Neural TTS"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+      "id": "s-KQM7RDXJCCA7NVVW243RBJBG2C",
+      "label": "Default",
+      "text": "Hello! I'm Yan, speaking Hong Kong English. This is a preview of how I sound in natural conversation."
+    }
+  ],
   "variants": [
     {
       "sourceKey": "en-HK-YanNeural",
-      "label": "Yan",
-      "engine": "edge-tts",
       "supportsStreaming": true,
-      "supportsSsml": true,
-      "maxChars": 5000
-    }
-  ],
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
-  "samples": [
-    {
-      "id": "s-KQM7RDXJCCA7NVVW243RBJBG2C",
-      "label": "Default",
-      "text": "Hello! I'm Yan, speaking Hong Kong English. This is a preview of how I sound in natural conversation.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3"
+      "engine": "edge-tts",
+      "maxChars": 5000,
+      "label": "Yan",
+      "supportsSsml": true
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",

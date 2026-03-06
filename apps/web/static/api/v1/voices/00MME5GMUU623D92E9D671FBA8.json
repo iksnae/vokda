@@ -18,14 +18,7 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "MIT license — full commercial use",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMUU623D92E9D671FBA8.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMUU623D92E9D671FBA8.jpg",
   "metadata": {
-    "shortLabel": "Bark preset 9",
-    "toneTags": [
-      "neutral",
-      "balanced"
-    ],
     "useCases": [
       "Creative projects",
       "Prototyping",
@@ -33,47 +26,27 @@
       "Game dialogue"
     ],
     "genderPresentation": "neutral",
+    "toneTags": [
+      "neutral",
+      "balanced"
+    ],
+    "shortLabel": "Bark preset 9",
     "agePresentation": "adult"
   },
-  "samples": [
-    {
-      "id": "sample-00MME5GMUU623D92E9D671FBA8",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMUU623D92E9D671FBA8.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "variant-00MME5GMUU623D92E9D671FBA8",
-      "label": "Bark v2 EN Speaker 9",
-      "sourceType": "open_model",
-      "sourceKey": "bark:small:v2_en_speaker_9",
-      "supportsSsml": false
-    }
-  ],
   "modelCard": {
-    "modelName": "Bark Small",
-    "modelVersion": "small",
-    "architecture": "bark",
-    "parameterCount": "~100M",
-    "quantization": "none",
-    "providerType": "local",
-    "providerUrl": "https://huggingface.co/suno/bark",
-    "huggingFaceUrl": "https://huggingface.co/mlx-community/bark-small",
-    "license": "MIT",
     "commercialUse": true,
-    "inputFormats": [
-      "plain_text"
+    "knownLimitations": [
+      "Short-form generation only (~15s max)",
+      "Non-deterministic output",
+      "May produce artifacts at boundaries"
     ],
-    "outputFormats": [
-      "wav"
-    ],
-    "sampleRate": 24000,
-    "maxInputLength": 250,
-    "streamingSupport": false,
-    "emotionControl": true,
-    "ssmlSupport": false,
+    "modelVersion": "small",
+    "trainingData": "Proprietary (Suno AI)",
     "multiLanguage": true,
+    "inferenceSpeed": "~0.8x realtime on M1",
+    "huggingFaceUrl": "https://huggingface.co/mlx-community/bark-small",
+    "totalPresets": 261,
+    "providerType": "local",
     "supportedLanguages": [
       "en",
       "de",
@@ -90,21 +63,48 @@
       "zh"
     ],
     "runnableLocal": true,
-    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM",
-    "inferenceSpeed": "~0.8x realtime on M1",
-    "trainingData": "Proprietary (Suno AI)",
-    "primaryLanguage": "en",
-    "knownLimitations": [
-      "Short-form generation only (~15s max)",
-      "Non-deterministic output",
-      "May produce artifacts at boundaries"
+    "supportedPresetLanguages": 13,
+    "ssmlSupport": false,
+    "inputFormats": [
+      "plain_text"
     ],
-    "presetId": "v2/en_speaker_9",
-    "speakerLabel": "v2/en_speaker_9",
-    "totalPresets": 261,
+    "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM",
+    "architecture": "bark",
+    "quantization": "none",
+    "parameterCount": "~100M",
+    "emotionControl": true,
     "totalEnglishPresets": 10,
-    "supportedPresetLanguages": 13
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/suno/bark",
+    "streamingSupport": false,
+    "speakerLabel": "v2/en_speaker_9",
+    "modelName": "Bark Small",
+    "license": "MIT",
+    "outputFormats": [
+      "wav"
+    ],
+    "maxInputLength": 250,
+    "presetId": "v2/en_speaker_9",
+    "primaryLanguage": "en"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMUU623D92E9D671FBA8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMUU623D92E9D671FBA8.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMUU623D92E9D671FBA8.mp3",
+      "id": "sample-00MME5GMUU623D92E9D671FBA8",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "bark:small:v2_en_speaker_9",
+      "sourceType": "open_model",
+      "id": "variant-00MME5GMUU623D92E9D671FBA8",
+      "label": "Bark v2 EN Speaker 9",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMUU623D92E9D671FBA8.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/00MME5GMUU623D92E9D671FBA8",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMUU623D92E9D671FBA8.json"

@@ -21,22 +21,14 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",
   "metadata": {
-    "shortLabel": "Fujin — Deepgram Aura 2",
-    "searchDescription": "Deepgram Fujin: Japanese-accented male voice (adult) with calm, confident, knowledgeable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "japanese"
-    ],
     "useCases": [
       "interview",
       "casual chat",
       "ivr"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "calm",
       "confident",
@@ -44,53 +36,61 @@
       "professional",
       "smooth"
     ],
+    "shortLabel": "Fujin — Deepgram Aura 2",
+    "searchDescription": "Deepgram Fujin: Japanese-accented male voice (adult) with calm, confident, knowledgeable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "japanese"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Fujin",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Japanese",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/5cfc3b0366f808d00be50099d3ce8c11ff6578bc-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/6b5070e24e16c1d0f052b6747932bdfbaec6fff0.wav",
     "deepgramUuid": "e8c44da6-3ed1-420f-9a93-ce3bef82fb66",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Japanese",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Fujin",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "interview",
       "casual chat",
       "ivr"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/5cfc3b0366f808d00be50099d3ce8c11ff6578bc-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3",
       "id": "s-47YFQHJ5QTCC7ZMCADVXZZKXZY",
       "label": "Default",
-      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/47YFQHJ5QTCC7ZMCADVXZZKXZY.mp3"
+      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-fujin-ja",
-      "label": "Fujin",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Fujin",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/47YFQHJ5QTCC7ZMCADVXZZKXZY.jpg",

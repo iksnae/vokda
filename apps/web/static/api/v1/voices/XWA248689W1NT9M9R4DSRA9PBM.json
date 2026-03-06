@@ -20,71 +20,71 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/XWA248689W1NT9M9R4DSRA9PBM.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/XWA248689W1NT9M9R4DSRA9PBM.jpg",
   "metadata": {
-    "shortLabel": "Asteria — Deepgram Aura 2",
-    "searchDescription": "Deepgram Asteria: American-accented female voice (adult) with clear, confident, knowledgeable qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "american"
-    ],
     "useCases": [
       "advertising"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "confident",
       "knowledgeable",
       "energetic"
     ],
+    "shortLabel": "Asteria — Deepgram Aura 2",
+    "searchDescription": "Deepgram Asteria: American-accented female voice (adult) with clear, confident, knowledgeable qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Asteria",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#7800ed",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/21c9b2777b8226c2bdd15314defc7cfd684b5ed8-144x144.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4a2382e03800ba300b891be8f4b749b2f0935c4c.wav",
-    "deepgramUuid": "151f870b-d6ac-4105-b173-b3ef86773633",
-    "totalVoices": 102,
-    "useCases": [
-      "advertising"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4a2382e03800ba300b891be8f4b749b2f0935c4c.wav",
+    "deepgramUuid": "151f870b-d6ac-4105-b173-b3ef86773633",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#7800ed",
+    "modelName": "Deepgram Aura 2 — Asteria",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "advertising"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/21c9b2777b8226c2bdd15314defc7cfd684b5ed8-144x144.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XWA248689W1NT9M9R4DSRA9PBM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XWA248689W1NT9M9R4DSRA9PBM.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XWA248689W1NT9M9R4DSRA9PBM.mp3",
       "id": "s-XWA248689W1NT9M9R4DSRA9PBM",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/XWA248689W1NT9M9R4DSRA9PBM.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-asteria-en",
-      "label": "Asteria",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Asteria",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/XWA248689W1NT9M9R4DSRA9PBM.jpg",

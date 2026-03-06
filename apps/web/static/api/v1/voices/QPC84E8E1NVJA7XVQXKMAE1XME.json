@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/QPC84E8E1NVJA7XVQXKMAE1XME.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/QPC84E8E1NVJA7XVQXKMAE1XME.jpg",
   "metadata": {
-    "shortLabel": "Harley - Comforting Voice — Cartesia",
-    "searchDescription": "Cartesia Harley - Comforting Voice: Casual voice with a relaxed, natural tone that feels approachable and genuine",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Harley - Comforting Voice — Cartesia",
+    "searchDescription": "Cartesia Harley - Comforting Voice: Casual voice with a relaxed, natural tone that feels approachable and genuine",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "fdf6303b-4cfa-4f8e-b7ae-acb398984cf9",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "fdf6303b-4cfa-4f8e-b7ae-acb398984cf9",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QPC84E8E1NVJA7XVQXKMAE1XME.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QPC84E8E1NVJA7XVQXKMAE1XME.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QPC84E8E1NVJA7XVQXKMAE1XME.mp3",
       "id": "s-QPC84E8E1NVJA7XVQXKMAE1XME",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/QPC84E8E1NVJA7XVQXKMAE1XME.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "fdf6303b-4cfa-4f8e-b7ae-acb398984cf9",
-      "label": "Harley - Comforting Voice",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Harley - Comforting Voice",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/QPC84E8E1NVJA7XVQXKMAE1XME.jpg",

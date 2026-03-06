@@ -21,22 +21,14 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",
   "metadata": {
-    "shortLabel": "Leda — Deepgram Aura 2",
-    "searchDescription": "Deepgram Leda: Dutch-accented female voice (adult) with caring, comfortable, empathetic qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "dutch"
-    ],
     "useCases": [
       "casual chat",
       "interview",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "caring",
       "comfortable",
@@ -44,53 +36,61 @@
       "friendly",
       "sincere"
     ],
+    "shortLabel": "Leda — Deepgram Aura 2",
+    "searchDescription": "Deepgram Leda: Dutch-accented female voice (adult) with caring, comfortable, empathetic qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Leda",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Dutch",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/ab54f7b6f701f45e7c3c3bc7403db99d2572ca19-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/c9113e5be102b110c5ca23b3d0ee598a209bdab3.wav",
     "deepgramUuid": "87f1f5d1-29fa-4e90-bae4-1947b5fb1ef1",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Leda",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "interview",
       "narration"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/ab54f7b6f701f45e7c3c3bc7403db99d2572ca19-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
       "id": "s-C8628860DT86BZSG7VHJ3NW7KG",
       "label": "Default",
-      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3"
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-leda-nl",
-      "label": "Leda",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Leda",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",

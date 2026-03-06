@@ -16,53 +16,53 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9KGABR4445KHKVG042E4E5T9J.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/A9KGABR4445KHKVG042E4E5T9J.jpg",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
     "shortLabel": "Dustin — LMNT",
     "searchDescription": "LMNT Dustin: Narrative. Confident. US",
-    "machineTags": [
-      "lmnt",
-      "male",
-      "professional"
-    ],
-    "useCases": [],
-    "toneTags": [],
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Professional",
-    "architecture": "professional",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A9KGABR4445KHKVG042E4E5T9J.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A9KGABR4445KHKVG042E4E5T9J.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9KGABR4445KHKVG042E4E5T9J.mp3",
       "id": "s-A9KGABR4445KHKVG042E4E5T9J",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/A9KGABR4445KHKVG042E4E5T9J.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "dustin",
-      "label": "Dustin",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Dustin",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/A9KGABR4445KHKVG042E4E5T9J.jpg",

@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/7T5W420849SQSJCE07PABG9YBG.jpg",
   "metadata": {
-    "shortLabel": "Carson - Friendly Support — Cartesia",
-    "searchDescription": "Cartesia Carson - Friendly Support: Friendly, young adult male for customer support conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Carson - Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Friendly Support: Friendly, young adult male for customer support conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7T5W420849SQSJCE07PABG9YBG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3",
       "id": "s-7T5W420849SQSJCE07PABG9YBG",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
-      "label": "Carson - Friendly Support",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Friendly Support",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/7T5W420849SQSJCE07PABG9YBG.jpg",

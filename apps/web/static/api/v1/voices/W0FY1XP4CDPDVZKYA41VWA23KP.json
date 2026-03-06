@@ -21,23 +21,15 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W0FY1XP4CDPDVZKYA41VWA23KP.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W0FY1XP4CDPDVZKYA41VWA23KP.jpg",
   "metadata": {
-    "shortLabel": "Roman — Deepgram Aura 2",
-    "searchDescription": "Deepgram Roman: Dutch-accented male voice (adult) with calm, casual, deep qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "dutch"
-    ],
     "useCases": [
       "interview",
       "casual chat",
       "customer service",
       "ivr"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "calm",
       "casual",
@@ -45,54 +37,62 @@
       "natural",
       "patient"
     ],
+    "shortLabel": "Roman — Deepgram Aura 2",
+    "searchDescription": "Deepgram Roman: Dutch-accented male voice (adult) with calm, casual, deep qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "dutch"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Roman",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Dutch",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/e29353e1d191d3a17df5112e1ee9cd20cf51df66-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/0ea0699111f05942b47371a842b4b6fc87684291.wav",
     "deepgramUuid": "3bb697a4-e0c2-4da1-b118-350c16df5f69",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Roman",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "interview",
       "casual chat",
       "customer service",
       "ivr"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/e29353e1d191d3a17df5112e1ee9cd20cf51df66-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W0FY1XP4CDPDVZKYA41VWA23KP.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W0FY1XP4CDPDVZKYA41VWA23KP.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W0FY1XP4CDPDVZKYA41VWA23KP.mp3",
       "id": "s-W0FY1XP4CDPDVZKYA41VWA23KP",
       "label": "Default",
-      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W0FY1XP4CDPDVZKYA41VWA23KP.mp3"
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-roman-nl",
-      "label": "Roman",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Roman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/W0FY1XP4CDPDVZKYA41VWA23KP.jpg",

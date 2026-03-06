@@ -19,70 +19,70 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/DSG61VYE9SVTA3XHNHKG5G7SZN.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/DSG61VYE9SVTA3XHNHKG5G7SZN.jpg",
   "metadata": {
-    "shortLabel": "Cordelia — Deepgram Aura 2",
-    "searchDescription": "Deepgram Cordelia: American-accented female voice (young adult) with approachable, warm, polite qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "american"
-    ],
     "useCases": [
       "storytelling"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "approachable",
       "warm",
       "polite"
     ],
+    "shortLabel": "Cordelia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Cordelia: American-accented female voice (young adult) with approachable, warm, polite qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "young adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Cordelia",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Young Adult",
-    "deepgramColor": "#ee028c",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/2746caeb4b625065cc9d55c7b65d90e2576ec836-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/48debe704e6432fd88904f7e59651ec16311ec83.wav",
-    "deepgramUuid": "4dd702e2-7ff2-4b12-a580-0b6ed656297e",
-    "totalVoices": 102,
-    "useCases": [
-      "storytelling"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/48debe704e6432fd88904f7e59651ec16311ec83.wav",
+    "deepgramUuid": "4dd702e2-7ff2-4b12-a580-0b6ed656297e",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ee028c",
+    "modelName": "Deepgram Aura 2 — Cordelia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "storytelling"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/2746caeb4b625065cc9d55c7b65d90e2576ec836-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DSG61VYE9SVTA3XHNHKG5G7SZN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DSG61VYE9SVTA3XHNHKG5G7SZN.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DSG61VYE9SVTA3XHNHKG5G7SZN.mp3",
       "id": "s-DSG61VYE9SVTA3XHNHKG5G7SZN",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/DSG61VYE9SVTA3XHNHKG5G7SZN.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-cordelia-en",
-      "label": "Cordelia",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Cordelia",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/DSG61VYE9SVTA3XHNHKG5G7SZN.jpg",

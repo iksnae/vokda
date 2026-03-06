@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VSRE7ZXR47QGFT047KYDHRC1QY.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VSRE7ZXR47QGFT047KYDHRC1QY.jpg",
   "metadata": {
-    "shortLabel": "Lori - Cheerleader — Cartesia",
-    "searchDescription": "Cartesia Lori - Cheerleader: Female with clear enunciation for upbeat, emotive conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Lori - Cheerleader — Cartesia",
+    "searchDescription": "Cartesia Lori - Cheerleader: Female with clear enunciation for upbeat, emotive conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "57c63422-d911-4666-815b-0c332e4d7d6a",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "57c63422-d911-4666-815b-0c332e4d7d6a",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VSRE7ZXR47QGFT047KYDHRC1QY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VSRE7ZXR47QGFT047KYDHRC1QY.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VSRE7ZXR47QGFT047KYDHRC1QY.mp3",
       "id": "s-VSRE7ZXR47QGFT047KYDHRC1QY",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VSRE7ZXR47QGFT047KYDHRC1QY.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "57c63422-d911-4666-815b-0c332e4d7d6a",
-      "label": "Lori - Cheerleader",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lori - Cheerleader",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/VSRE7ZXR47QGFT047KYDHRC1QY.jpg",

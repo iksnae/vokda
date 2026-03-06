@@ -20,57 +20,57 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCDR08BSNJ2DSQY85J5KWFYD.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/07RCDR08BSNJ2DSQY85J5KWFYD.jpg",
   "metadata": {
-    "shortLabel": "Ansel — LMNT",
-    "searchDescription": "LMNT Ansel: Young, engaging voice with subtle enthusiasm and natural emphasis. Perfect for persuasive content and polished advertising.",
-    "machineTags": [
-      "lmnt",
-      "neutral",
-      "instant"
-    ],
     "useCases": [
       "advertisements",
       "drive thru agent",
       "tutor agent"
     ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Ansel — LMNT",
+    "searchDescription": "LMNT Ansel: Young, engaging voice with subtle enthusiasm and natural emphasis. Perfect for persuasive content and polished advertising.",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "neutral",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "neutral",
+      "instant"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Instant",
-    "architecture": "instant",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/07RCDR08BSNJ2DSQY85J5KWFYD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCDR08BSNJ2DSQY85J5KWFYD.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCDR08BSNJ2DSQY85J5KWFYD.mp3",
       "id": "s-07RCDR08BSNJ2DSQY85J5KWFYD",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/07RCDR08BSNJ2DSQY85J5KWFYD.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "ansel",
-      "label": "Ansel",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Ansel",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/07RCDR08BSNJ2DSQY85J5KWFYD.jpg",

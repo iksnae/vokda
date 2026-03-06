@@ -16,95 +16,95 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
   "metadata": {
-    "shortLabel": "Balanced assistant voice",
-    "searchDescription": "Reliable neutral voice for product narration, prompts, and lightweight explainers.",
-    "machineTags": [
-      "balanced",
-      "assistant",
-      "product-ui",
-      "neutral"
-    ],
+    "speakingStyle": "clean and modern",
     "useCases": [
       "UI prompts",
       "Product explainers",
       "Assistant responses"
     ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "editorial",
     "toneTags": [
       "neutral",
       "clear",
       "steady"
     ],
+    "shortLabel": "Balanced assistant voice",
+    "searchDescription": "Reliable neutral voice for product narration, prompts, and lightweight explainers.",
     "audienceTags": [
       "general-consumer",
       "saas-users"
     ],
     "accent": "General American",
-    "genderPresentation": "neutral",
     "agePresentation": "adult",
-    "speakingStyle": "clean and modern",
-    "metadataQuality": "editorial"
+    "machineTags": [
+      "balanced",
+      "assistant",
+      "product-ui",
+      "neutral"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": false,
+    "licenseUrl": "https://openai.com/policies/usage-policies",
+    "commercialUse": true,
+    "knownLimitations": [
+      "No SSML support",
+      "No word-level timestamps",
+      "Voice selection is limited to preset voices"
+    ],
+    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models.",
+    "modelFamily": "OpenAI TTS",
+    "modelId": "tts-1",
+    "modelVersion": "tts-1",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": false,
+    "providerName": "OpenAI",
+    "multilingual": true,
+    "latencyMs": "~300-800",
+    "architecture": "Proprietary neural TTS",
+    "releaseDate": "2023-11-06",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "streamingSupport": true,
+    "license": "OpenAI Usage Policies",
+    "modelName": "tts-1",
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "maxInputLength": 4096,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3",
   "samples": [
     {
-      "id": "01JCW012A9N9Y3W08F0Q0A1S1",
       "scriptKey": "assistant",
-      "label": "Assistant Prompt",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3",
       "transcript": "I found three voice options that match your preferred tone and language targets.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3"
+      "id": "01JCW012A9N9Y3W08F0Q0A1S1",
+      "label": "Assistant Prompt"
     }
   ],
   "variants": [
     {
-      "id": "01JCW012A9N9Y3W08F0Q0A1V1",
-      "sourceType": "cloud_provider",
       "sourceKey": "openai:tts:alloy",
       "runnable": true,
-      "supportsSsml": false,
       "outputFormats": [
         "mp3",
         "wav",
         "pcm"
       ],
       "maxInputChars": 4000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01JCW012A9N9Y3W08F0Q0A1V1",
+      "supportsSsml": false
     }
   ],
-  "modelCard": {
-    "providerName": "OpenAI",
-    "providerType": "cloud_api",
-    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
-    "apiEndpoint": "api.openai.com/v1/audio/speech",
-    "modelFamily": "OpenAI TTS",
-    "architecture": "Proprietary neural TTS",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
-    "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 4096,
-    "license": "OpenAI Usage Policies",
-    "licenseUrl": "https://openai.com/policies/usage-policies",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to OpenAI data usage policy",
-    "latencyMs": "~300-800",
-    "releaseDate": "2023-11-06",
-    "knownLimitations": [
-      "No SSML support",
-      "No word-level timestamps",
-      "Voice selection is limited to preset voices"
-    ],
-    "modelName": "tts-1",
-    "modelVersion": "tts-1",
-    "modelId": "tts-1",
-    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCW012A9N9Y3W08F0Q0A1O1.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCW012A9N9Y3W08F0Q0A1O1.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01JCW012A9N9Y3W08F0Q0A1O1",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCW012A9N9Y3W08F0Q0A1O1.json"

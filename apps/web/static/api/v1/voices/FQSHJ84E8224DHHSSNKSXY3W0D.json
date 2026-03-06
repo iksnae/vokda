@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/FQSHJ84E8224DHHSSNKSXY3W0D.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/FQSHJ84E8224DHHSSNKSXY3W0D.jpg",
   "metadata": {
-    "shortLabel": "Doris - Friend — Cartesia",
-    "searchDescription": "Cartesia Doris - Friend: Warm and relatable female voice suited for casual, natural conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Doris - Friend — Cartesia",
+    "searchDescription": "Cartesia Doris - Friend: Warm and relatable female voice suited for casual, natural conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "0c8ed86e-6c64-40f0-b252-b773911de6bb",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "0c8ed86e-6c64-40f0-b252-b773911de6bb",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FQSHJ84E8224DHHSSNKSXY3W0D.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FQSHJ84E8224DHHSSNKSXY3W0D.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FQSHJ84E8224DHHSSNKSXY3W0D.mp3",
       "id": "s-FQSHJ84E8224DHHSSNKSXY3W0D",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/FQSHJ84E8224DHHSSNKSXY3W0D.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "0c8ed86e-6c64-40f0-b252-b773911de6bb",
-      "label": "Doris - Friend",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Doris - Friend",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/FQSHJ84E8224DHHSSNKSXY3W0D.jpg",

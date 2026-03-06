@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",
   "metadata": {
-    "shortLabel": "Orin - Velvet Gentleman — Cartesia",
-    "searchDescription": "Cartesia Orin - Velvet Gentleman: Deep, silky male voice that delivers authority and allure, perfect for impactful ads and promos",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Orin - Velvet Gentleman — Cartesia",
+    "searchDescription": "Cartesia Orin - Velvet Gentleman: Deep, silky male voice that delivers authority and allure, perfect for impactful ads and promos",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "4c2dcd38-5608-45ca-8f11-51c88208d01c",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "4c2dcd38-5608-45ca-8f11-51c88208d01c",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3",
       "id": "s-3T2065NJ9XP8E269SG5P3NXVZK",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/3T2065NJ9XP8E269SG5P3NXVZK.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "4c2dcd38-5608-45ca-8f11-51c88208d01c",
-      "label": "Orin - Velvet Gentleman",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Orin - Velvet Gentleman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/3T2065NJ9XP8E269SG5P3NXVZK.jpg",

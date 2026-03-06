@@ -33,12 +33,69 @@ const VOICES_PATH = 'apps/web/static/data/voices.json';
 const OUT = 'apps/web/static';
 
 // ─── Load voices ───
+async function loadVoicesFromDB() {
+  const outputs = JSON.parse(readFileSync('amplify_outputs.json', 'utf8'));
+  const API_URL = outputs.data?.url;
+  const API_KEY = outputs.data?.api_key;
+  if (!API_URL || !API_KEY) throw new Error('Missing AppSync config in amplify_outputs.json');
+
+  console.log('📡 Loading from DynamoDB via AppSync...');
+  const voices = [];
+  let nextToken = null;
+
+  do {
+    const query = `query ListVoices($nextToken: String, $limit: Int) {
+      listVoiceRecords(limit: $limit, nextToken: $nextToken) {
+        items {
+          id name provider providerId providerVoiceId description
+          tags languages qualityTier licenseNotes
+          metadata modelCard imageUrl audioUrl samples variants
+          status createdAtIso updatedAtIso
+        }
+        nextToken
+      }
+    }`;
+
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY },
+      body: JSON.stringify({ query, variables: { nextToken, limit: 100 } }),
+    });
+
+    const json = await res.json();
+    if (json.errors?.length) throw new Error(JSON.stringify(json.errors));
+
+    const page = json.data.listVoiceRecords;
+    for (const item of page.items.filter(i => i.status === 'published')) {
+      // Parse JSON fields that AppSync returns as strings
+      const voice = {
+        ...item,
+        metadata: typeof item.metadata === 'string' ? JSON.parse(item.metadata) : item.metadata,
+        modelCard: item.modelCard ? (typeof item.modelCard === 'string' ? JSON.parse(item.modelCard) : item.modelCard) : undefined,
+        samples: typeof item.samples === 'string' ? JSON.parse(item.samples) : (item.samples || []),
+        variants: typeof item.variants === 'string' ? JSON.parse(item.variants) : (item.variants || []),
+      };
+      // Strip DB-only fields
+      delete voice.status;
+      delete voice.createdAtIso;
+      delete voice.updatedAtIso;
+      voices.push(voice);
+    }
+    nextToken = page.nextToken;
+    process.stdout.write(`  Loaded ${voices.length} voices...\r`);
+  } while (nextToken);
+
+  console.log(`📦 Loaded ${voices.length} published voices from DynamoDB`);
+  return voices;
+}
+
 async function loadVoices() {
   if (FROM_DB) {
-    console.log('📡 Loading from DynamoDB...');
-    // TODO: implement DynamoDB query when sandbox is available
-    // For now, fall through to local file
-    console.log('   (DynamoDB mode not yet wired — falling back to local file)');
+    const voices = await loadVoicesFromDB();
+    // Also write back to voices.json so the static build uses the DB data
+    writeFileSync(VOICES_PATH, JSON.stringify({ voices }, null, 2));
+    console.log(`  → Wrote ${voices.length} voices to ${VOICES_PATH}`);
+    return voices;
   }
 
   const raw = JSON.parse(readFileSync(VOICES_PATH, 'utf8'));

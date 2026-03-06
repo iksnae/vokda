@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/NM4607GBT209GC9HR3KQHKHM1W.jpg",
   "metadata": {
-    "shortLabel": "Harry - Service Advisor — Cartesia",
-    "searchDescription": "Cartesia Harry - Service Advisor: Seasoned male for friendly conversation and customer support",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Harry - Service Advisor — Cartesia",
+    "searchDescription": "Cartesia Harry - Service Advisor: Seasoned male for friendly conversation and customer support",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NM4607GBT209GC9HR3KQHKHM1W.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3",
       "id": "s-NM4607GBT209GC9HR3KQHKHM1W",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
-      "label": "Harry - Service Advisor",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Harry - Service Advisor",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/NM4607GBT209GC9HR3KQHKHM1W.jpg",

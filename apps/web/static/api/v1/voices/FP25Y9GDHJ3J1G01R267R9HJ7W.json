@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",
   "metadata": {
-    "shortLabel": "Sirio — Deepgram Aura 2",
-    "searchDescription": "Deepgram Sirio: Mexican-accented male voice (adult) with breathy, confident, energetic qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "mexican"
-    ],
     "useCases": [
       "casual chat",
       "interview"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "breathy",
       "confident",
@@ -43,52 +35,60 @@
       "professional",
       "raspy"
     ],
+    "shortLabel": "Sirio — Deepgram Aura 2",
+    "searchDescription": "Deepgram Sirio: Mexican-accented male voice (adult) with breathy, confident, energetic qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "mexican"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Sirio",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Mexican",
-    "age": "Adult",
-    "deepgramColor": "#a1d7fd",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/50bc801d0af208275c3f67bcad56ef9f571fcf1f-372x372.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4987b6351f7f8bb6711f6e7b9f453b730ee09254.wav",
     "deepgramUuid": "69dd075f-d9a7-44b5-a872-8a474ff6913c",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Mexican",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#a1d7fd",
+    "modelName": "Deepgram Aura 2 — Sirio",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "interview"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/50bc801d0af208275c3f67bcad56ef9f571fcf1f-372x372.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3",
       "id": "s-FP25Y9GDHJ3J1G01R267R9HJ7W",
       "label": "Default",
-      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/FP25Y9GDHJ3J1G01R267R9HJ7W.mp3"
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-sirio-es",
-      "label": "Sirio",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Sirio",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/FP25Y9GDHJ3J1G01R267R9HJ7W.jpg",

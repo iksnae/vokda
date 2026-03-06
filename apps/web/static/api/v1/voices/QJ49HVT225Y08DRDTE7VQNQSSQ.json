@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.jpg",
   "metadata": {
-    "shortLabel": "Nora - Calm Companion — Cartesia",
-    "searchDescription": "Cartesia Nora - Calm Companion: Balanced, neutral female voice that sounds natural and approachable for everyday conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Nora - Calm Companion — Cartesia",
+    "searchDescription": "Cartesia Nora - Calm Companion: Balanced, neutral female voice that sounds natural and approachable for everyday conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3",
       "id": "s-QJ49HVT225Y08DRDTE7VQNQSSQ",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
-      "label": "Nora - Calm Companion",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Nora - Calm Companion",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.jpg",

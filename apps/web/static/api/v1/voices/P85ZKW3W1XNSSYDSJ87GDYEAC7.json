@@ -18,55 +18,55 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.jpg",
   "metadata": {
-    "shortLabel": "Lucas — LMNT",
-    "searchDescription": "LMNT Lucas: Clear male voice with brisk, projected delivery. Speaks with the pace and clarity of professional broadcasting, prioritizing content over personality.",
-    "machineTags": [
-      "lmnt",
-      "male",
-      "instant"
-    ],
     "useCases": [
       "news"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Lucas — LMNT",
+    "searchDescription": "LMNT Lucas: Clear male voice with brisk, projected delivery. Speaks with the pace and clarity of professional broadcasting, prioritizing content over personality.",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Instant",
-    "architecture": "instant",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3",
       "id": "s-P85ZKW3W1XNSSYDSJ87GDYEAC7",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/P85ZKW3W1XNSSYDSJ87GDYEAC7.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "lucas",
-      "label": "Lucas",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Lucas",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/P85ZKW3W1XNSSYDSJ87GDYEAC7.jpg",

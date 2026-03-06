@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",
   "metadata": {
-    "shortLabel": "Daniel - Modern Assistant — Cartesia",
-    "searchDescription": "Cartesia Daniel - Modern Assistant: Clear, crisp male voice for digital assistants and system interactions",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Daniel - Modern Assistant — Cartesia",
+    "searchDescription": "Cartesia Daniel - Modern Assistant: Clear, crisp male voice for digital assistants and system interactions",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "47c38ca4-5f35-497b-b1a3-415245fb35e1",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "47c38ca4-5f35-497b-b1a3-415245fb35e1",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3",
       "id": "s-MC65GCBKW3NP81G1HW068BWEEB",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/MC65GCBKW3NP81G1HW068BWEEB.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "47c38ca4-5f35-497b-b1a3-415245fb35e1",
-      "label": "Daniel - Modern Assistant",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Daniel - Modern Assistant",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/MC65GCBKW3NP81G1HW068BWEEB.jpg",

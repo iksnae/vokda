@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/BVT8661NM40CAC081W6FG43XP5.jpg",
   "metadata": {
-    "shortLabel": "Mindy - Spirited Ally — Cartesia",
-    "searchDescription": "Cartesia Mindy - Spirited Ally: Enthusiastic female voice with bright energy and cheerful tone, great for lively conversations and upbeat content",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Mindy - Spirited Ally — Cartesia",
+    "searchDescription": "Cartesia Mindy - Spirited Ally: Enthusiastic female voice with bright energy and cheerful tone, great for lively conversations and upbeat content",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "d6905573-8e91-4e32-b103-fd4d1205cd87",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "d6905573-8e91-4e32-b103-fd4d1205cd87",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BVT8661NM40CAC081W6FG43XP5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3",
       "id": "s-BVT8661NM40CAC081W6FG43XP5",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "d6905573-8e91-4e32-b103-fd4d1205cd87",
-      "label": "Mindy - Spirited Ally",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Mindy - Spirited Ally",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/BVT8661NM40CAC081W6FG43XP5.jpg",

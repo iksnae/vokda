@@ -15,82 +15,82 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
   "metadata": {
-    "shortLabel": "en-US male voice",
-    "searchDescription": "Warm, conversational, approachable. OpenAI TTS voice.",
-    "machineTags": [
-      "male",
-      "us"
-    ],
     "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "sparse",
     "toneTags": [
       "steady"
     ],
+    "shortLabel": "en-US male voice",
+    "searchDescription": "Warm, conversational, approachable. OpenAI TTS voice.",
     "audienceTags": [],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "male",
+      "us"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": false,
+    "licenseUrl": "https://openai.com/policies/usage-policies",
+    "commercialUse": true,
+    "knownLimitations": [
+      "No SSML support",
+      "No word-level timestamps",
+      "Voice selection is limited to preset voices"
+    ],
+    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models.",
+    "modelFamily": "OpenAI TTS",
+    "modelId": "tts-1",
+    "modelVersion": "tts-1",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": false,
+    "providerName": "OpenAI",
+    "multilingual": true,
+    "latencyMs": "~300-800",
+    "architecture": "Proprietary neural TTS",
+    "releaseDate": "2023-11-06",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "streamingSupport": true,
+    "license": "OpenAI Usage Policies",
+    "modelName": "tts-1",
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "maxInputLength": 4096,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3",
   "samples": [
     {
-      "id": "01KJZXZNFB41K3E98A45XZXP20",
       "scriptKey": "default",
-      "label": "Default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3",
       "transcript": "I found three voice options that match your preferred tone and language targets.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3"
+      "id": "01KJZXZNFB41K3E98A45XZXP20",
+      "label": "Default"
     }
   ],
   "variants": [
     {
-      "id": "01KJZXZNFBA4041009RJY4RZ11",
-      "sourceType": "cloud_provider",
       "sourceKey": "openai:tts:ash",
       "runnable": true,
-      "supportsSsml": false,
       "outputFormats": [
         "mp3",
         "wav",
         "pcm"
       ],
       "maxInputChars": 4000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNFBA4041009RJY4RZ11",
+      "supportsSsml": false
     }
   ],
-  "modelCard": {
-    "providerName": "OpenAI",
-    "providerType": "cloud_api",
-    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
-    "apiEndpoint": "api.openai.com/v1/audio/speech",
-    "modelFamily": "OpenAI TTS",
-    "architecture": "Proprietary neural TTS",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
-    "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 4096,
-    "license": "OpenAI Usage Policies",
-    "licenseUrl": "https://openai.com/policies/usage-policies",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to OpenAI data usage policy",
-    "latencyMs": "~300-800",
-    "releaseDate": "2023-11-06",
-    "knownLimitations": [
-      "No SSML support",
-      "No word-level timestamps",
-      "Voice selection is limited to preset voices"
-    ],
-    "modelName": "tts-1",
-    "modelVersion": "tts-1",
-    "modelId": "tts-1",
-    "notes": "Compatible with tts-1, tts-1-hd, and gpt-4o-mini-tts models."
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBE49RT8TB3R1ZGQCV.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBE49RT8TB3R1ZGQCV",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBE49RT8TB3R1ZGQCV.json"

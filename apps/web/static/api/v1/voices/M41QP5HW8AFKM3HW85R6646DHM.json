@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/M41QP5HW8AFKM3HW85R6646DHM.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/M41QP5HW8AFKM3HW85R6646DHM.jpg",
   "metadata": {
-    "shortLabel": "Daphne - Excited Woman — Cartesia",
-    "searchDescription": "Cartesia Daphne - Excited Woman: Expressive and upbeat American-accented female voice with an exciting tone for ads, presentations, and lively storytelling",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Daphne - Excited Woman — Cartesia",
+    "searchDescription": "Cartesia Daphne - Excited Woman: Expressive and upbeat American-accented female voice with an exciting tone for ads, presentations, and lively storytelling",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "09ed0318-2f4a-41b1-abe5-d11da7537c31",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "09ed0318-2f4a-41b1-abe5-d11da7537c31",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M41QP5HW8AFKM3HW85R6646DHM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M41QP5HW8AFKM3HW85R6646DHM.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M41QP5HW8AFKM3HW85R6646DHM.mp3",
       "id": "s-M41QP5HW8AFKM3HW85R6646DHM",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/M41QP5HW8AFKM3HW85R6646DHM.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "09ed0318-2f4a-41b1-abe5-d11da7537c31",
-      "label": "Daphne - Excited Woman",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Daphne - Excited Woman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/M41QP5HW8AFKM3HW85R6646DHM.jpg",

@@ -19,70 +19,70 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/8FXT5WDVVSP7Y283W441G89TE9.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/8FXT5WDVVSP7Y283W441G89TE9.jpg",
   "metadata": {
-    "shortLabel": "Jupiter — Deepgram Aura 2",
-    "searchDescription": "Deepgram Jupiter: American-accented male voice (adult) with expressive, knowledgeable, baritone qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "american"
-    ],
     "useCases": [
       "informative"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "expressive",
       "knowledgeable",
       "baritone"
     ],
+    "shortLabel": "Jupiter — Deepgram Aura 2",
+    "searchDescription": "Deepgram Jupiter: American-accented male voice (adult) with expressive, knowledgeable, baritone qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Jupiter",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#fec84b",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/10042990cfd37c40b963cd803eeb11d32b3ffc82-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/17e56b3681e258325818b13b1c0b67cd4dc26d58.wav",
-    "deepgramUuid": "12866c23-478b-42be-a9e6-604a53aa4f78",
-    "totalVoices": 102,
-    "useCases": [
-      "informative"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/17e56b3681e258325818b13b1c0b67cd4dc26d58.wav",
+    "deepgramUuid": "12866c23-478b-42be-a9e6-604a53aa4f78",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#fec84b",
+    "modelName": "Deepgram Aura 2 — Jupiter",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "informative"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/10042990cfd37c40b963cd803eeb11d32b3ffc82-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8FXT5WDVVSP7Y283W441G89TE9.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8FXT5WDVVSP7Y283W441G89TE9.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8FXT5WDVVSP7Y283W441G89TE9.mp3",
       "id": "s-8FXT5WDVVSP7Y283W441G89TE9",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/8FXT5WDVVSP7Y283W441G89TE9.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-jupiter-en",
-      "label": "Jupiter",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Jupiter",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/8FXT5WDVVSP7Y283W441G89TE9.jpg",

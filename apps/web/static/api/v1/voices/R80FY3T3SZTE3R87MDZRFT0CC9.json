@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/R80FY3T3SZTE3R87MDZRFT0CC9.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/R80FY3T3SZTE3R87MDZRFT0CC9.jpg",
   "metadata": {
-    "shortLabel": "Janvi - Steady Agent — Cartesia",
-    "searchDescription": "Cartesia Janvi - Steady Agent: Calm and neutral female voice with a slow, steady delivery, ideal for customer support scenarios",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Janvi - Steady Agent — Cartesia",
+    "searchDescription": "Cartesia Janvi - Steady Agent: Calm and neutral female voice with a slow, steady delivery, ideal for customer support scenarios",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "7ea5e9c2-b719-4dc3-b870-5ba5f14d31d8",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "7ea5e9c2-b719-4dc3-b870-5ba5f14d31d8",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/R80FY3T3SZTE3R87MDZRFT0CC9.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/R80FY3T3SZTE3R87MDZRFT0CC9.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/R80FY3T3SZTE3R87MDZRFT0CC9.mp3",
       "id": "s-R80FY3T3SZTE3R87MDZRFT0CC9",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/R80FY3T3SZTE3R87MDZRFT0CC9.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "7ea5e9c2-b719-4dc3-b870-5ba5f14d31d8",
-      "label": "Janvi - Steady Agent",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Janvi - Steady Agent",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/R80FY3T3SZTE3R87MDZRFT0CC9.jpg",

@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.jpg",
   "metadata": {
-    "shortLabel": "Haley - Engaging Friend — Cartesia",
-    "searchDescription": "Cartesia Haley - Engaging Friend: Casual female voice with a relaxed, friendly tone that feels natural and easy to engage with",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Haley - Engaging Friend — Cartesia",
+    "searchDescription": "Cartesia Haley - Engaging Friend: Casual female voice with a relaxed, friendly tone that feels natural and easy to engage with",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3",
       "id": "s-QHHHNMCFZXQKM9ZYDQY1SWBVY3",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
-      "label": "Haley - Engaging Friend",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Haley - Engaging Friend",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.jpg",

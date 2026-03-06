@@ -18,92 +18,92 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (Kokoro-82M). Apache 2.0 license. Free for commercial use.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural"
+    ],
     "shortLabel": "British female voice",
     "searchDescription": "Clear, articulate British female voice.",
+    "audienceTags": [],
+    "accent": "british",
+    "agePresentation": "adult",
     "machineTags": [
       "female",
       "british",
       "open-model",
       "local",
       "mlx"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "natural"
-    ],
-    "audienceTags": [],
-    "accent": "british",
-    "genderPresentation": "female",
-    "agePresentation": "adult",
-    "metadataQuality": "curated"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": false,
+    "licenseUrl": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/LICENSE",
+    "commercialUse": true,
+    "knownLimitations": [
+      "Requires espeak-ng for phonemizer",
+      "Some voice styles may sound similar",
+      "Long texts may have prosody drift"
+    ],
+    "modelFamily": "Kokoro",
+    "trainingData": "Proprietary + public domain audiobooks",
+    "providerType": "local_mlx",
+    "diskSize": "~160MB",
+    "supportedLanguages": [
+      "en-GB"
+    ],
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/Kokoro-82M-bf16",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "voiceCloning": false,
+    "realtimeFactor": "~50x realtime",
+    "providerName": "Hexgrad (Kokoro)",
+    "multilingual": true,
+    "latencyMs": "~200-1000",
+    "architecture": "StyleTTS2-based with ISTFTNet vocoder",
+    "quantization": "bf16",
+    "baseModel": "Kokoro-82M",
+    "memoryRequired": "~300MB",
+    "releaseDate": "2024-12-25",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
+    "emotionControl": false,
+    "modelSize": "82M parameters",
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "streamingSupport": false,
+    "modelName": "Kokoro-82M",
+    "license": "Apache 2.0",
+    "maxInputLength": 5000,
+    "channels": 1
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3",
   "samples": [
     {
-      "id": "01KJZZ7EWGX6FQ9VV9ENP66YP3",
       "scriptKey": "default",
-      "label": "Default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3",
       "transcript": "At dawn, the shipping port becomes a choreography of steel, light, and timing.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3"
+      "id": "01KJZZ7EWGX6FQ9VV9ENP66YP3",
+      "label": "Default"
     }
   ],
   "variants": [
     {
-      "id": "01KJZZ7EWGHPMRV5WGV28QZSAV",
-      "sourceType": "local_model",
       "sourceKey": "mlx:Kokoro-82M:bf_alice",
       "runnable": true,
-      "supportsSsml": false,
       "outputFormats": [
         "wav",
         "mp3"
       ],
       "maxInputChars": 5000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "local_model",
+      "id": "01KJZZ7EWGHPMRV5WGV28QZSAV",
+      "supportsSsml": false
     }
   ],
-  "modelCard": {
-    "providerName": "Hexgrad (Kokoro)",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
-    "modelUrl": "https://huggingface.co/mlx-community/Kokoro-82M-bf16",
-    "modelFamily": "Kokoro",
-    "modelName": "Kokoro-82M",
-    "modelSize": "82M parameters",
-    "architecture": "StyleTTS2-based with ISTFTNet vocoder",
-    "baseModel": "Kokoro-82M",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "bf16",
-    "diskSize": "~160MB",
-    "memoryRequired": "~300MB",
-    "hardwareRequirements": "Apple Silicon (M1+)",
-    "sampleRate": 24000,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
-    "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "supportedLanguages": [
-      "en-GB"
-    ],
-    "maxInputLength": 5000,
-    "license": "Apache 2.0",
-    "licenseUrl": "https://huggingface.co/hexgrad/Kokoro-82M/blob/main/LICENSE",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "realtimeFactor": "~50x realtime",
-    "latencyMs": "~200-1000",
-    "releaseDate": "2024-12-25",
-    "trainingData": "Proprietary + public domain audiobooks",
-    "knownLimitations": [
-      "Requires espeak-ng for phonemizer",
-      "Some voice styles may sound similar",
-      "Long texts may have prosody drift"
-    ]
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ7EWGNMXEMFQD5M1ETZHR.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ7EWGNMXEMFQD5M1ETZHR.json"

@@ -17,68 +17,35 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (Qwen3-TTS-1.7B). Apache 2.0 license. Free for commercial use.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural"
+    ],
     "shortLabel": "En male voice",
     "searchDescription": "Smooth, trustworthy male voice.",
+    "audienceTags": [],
+    "accent": null,
+    "agePresentation": "adult",
     "machineTags": [
       "male",
       "open-model",
       "local",
       "mlx"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "natural"
-    ],
-    "audienceTags": [],
-    "accent": null,
-    "genderPresentation": "male",
-    "agePresentation": "adult",
-    "metadataQuality": "curated"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KJZZ81B3MYKG3E9SF9VG56KP",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ81B38XZ77ZVVGSFHFW2T.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KJZZ81B3PK509XZTKCH1X6RB",
-      "sourceType": "local_model",
-      "sourceKey": "mlx:Qwen3-TTS-1.7B:eric",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Alibaba Qwen",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
-    "modelUrl": "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+    "licenseUrl": "https://huggingface.co/Qwen/Qwen3-TTS/blob/main/LICENSE",
+    "commercialUse": true,
+    "knownLimitations": [
+      "CustomVoice variant requires speaker name parameter",
+      "Base variant has no built-in speaker presets",
+      "Tokenizer regex warning (cosmetic, does not affect output)"
+    ],
     "modelFamily": "Qwen3-TTS",
-    "architecture": "LLM-based codec language model + speech tokenizer",
-    "baseModel": "Qwen3-1.7B",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "8-bit",
+    "providerType": "local_mlx",
     "diskSize": "~2.4GB",
-    "memoryRequired": "~3GB",
-    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
-    "sampleRate": 24000,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": true,
     "supportedLanguages": [
       "en",
       "zh",
@@ -91,23 +58,56 @@
       "fr",
       "ru"
     ],
-    "maxInputLength": 5000,
-    "license": "Apache 2.0",
-    "licenseUrl": "https://huggingface.co/Qwen/Qwen3-TTS/blob/main/LICENSE",
-    "commercialUse": true,
-    "attributionRequired": false,
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+    "hardwareRequirements": "Apple Silicon (M1+, 8GB+ RAM)",
+    "voiceCloning": true,
     "realtimeFactor": "~10x realtime",
+    "providerName": "Alibaba Qwen",
+    "multilingual": true,
     "latencyMs": "~1500-3000",
-    "releaseDate": "2025-05-22",
+    "architecture": "LLM-based codec language model + speech tokenizer",
+    "quantization": "8-bit",
     "paperUrl": "https://arxiv.org/abs/2505.15311",
-    "knownLimitations": [
-      "CustomVoice variant requires speaker name parameter",
-      "Base variant has no built-in speaker presets",
-      "Tokenizer regex warning (cosmetic, does not affect output)"
-    ]
+    "baseModel": "Qwen3-1.7B",
+    "memoryRequired": "~3GB",
+    "releaseDate": "2025-05-22",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
+    "streamingSupport": true,
+    "license": "Apache 2.0",
+    "maxInputLength": 5000,
+    "channels": 1
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ81B38XZ77ZVVGSFHFW2T.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZZ81B38XZ77ZVVGSFHFW2T.mp3",
+      "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+      "id": "01KJZZ81B3MYKG3E9SF9VG56KP",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "mlx:Qwen3-TTS-1.7B:eric",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "local_model",
+      "id": "01KJZZ81B3PK509XZTKCH1X6RB",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZZ81B38XZ77ZVVGSFHFW2T",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ81B38XZ77ZVVGSFHFW2T.json"

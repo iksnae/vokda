@@ -21,23 +21,15 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/5SM3VMEAFZYABJDME5P9HP08FS.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/5SM3VMEAFZYABJDME5P9HP08FS.jpg",
   "metadata": {
-    "shortLabel": "Sander — Deepgram Aura 2",
-    "searchDescription": "Deepgram Sander: Dutch-accented male voice (adult) with calm, clear, deep qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "dutch"
-    ],
     "useCases": [
       "casual chat",
       "interview",
       "commercial",
       "customer service"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "calm",
       "clear",
@@ -45,54 +37,62 @@
       "professional",
       "smooth"
     ],
+    "shortLabel": "Sander — Deepgram Aura 2",
+    "searchDescription": "Deepgram Sander: Dutch-accented male voice (adult) with calm, clear, deep qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "dutch"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Sander",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Dutch",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/0cfe6e2d00b08622107cabd5fd76415786672276-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/027463bc4deb929e777f3276b7b19d186621fc7d.wav",
     "deepgramUuid": "26cf8de4-2cb0-4602-b790-89112449983b",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Sander",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "interview",
       "commercial",
       "customer service"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/0cfe6e2d00b08622107cabd5fd76415786672276-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5SM3VMEAFZYABJDME5P9HP08FS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5SM3VMEAFZYABJDME5P9HP08FS.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5SM3VMEAFZYABJDME5P9HP08FS.mp3",
       "id": "s-5SM3VMEAFZYABJDME5P9HP08FS",
       "label": "Default",
-      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/5SM3VMEAFZYABJDME5P9HP08FS.mp3"
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-sander-nl",
-      "label": "Sander",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Sander",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/5SM3VMEAFZYABJDME5P9HP08FS.jpg",

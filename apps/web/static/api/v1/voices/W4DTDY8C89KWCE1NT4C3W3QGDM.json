@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W4DTDY8C89KWCE1NT4C3W3QGDM.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W4DTDY8C89KWCE1NT4C3W3QGDM.jpg",
   "metadata": {
-    "shortLabel": "Fiona - Witty Woman — Cartesia",
-    "searchDescription": "Cartesia Fiona - Witty Woman: Chirpy and energetic British female voice with a bright tone, great for lively and engaging conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Fiona - Witty Woman — Cartesia",
+    "searchDescription": "Cartesia Fiona - Witty Woman: Chirpy and energetic British female voice with a bright tone, great for lively and engaging conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "a01c369f-6d2d-4185-bc20-b32c225eab70",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "a01c369f-6d2d-4185-bc20-b32c225eab70",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W4DTDY8C89KWCE1NT4C3W3QGDM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W4DTDY8C89KWCE1NT4C3W3QGDM.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W4DTDY8C89KWCE1NT4C3W3QGDM.mp3",
       "id": "s-W4DTDY8C89KWCE1NT4C3W3QGDM",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W4DTDY8C89KWCE1NT4C3W3QGDM.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "a01c369f-6d2d-4185-bc20-b32c225eab70",
-      "label": "Fiona - Witty Woman",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Fiona - Witty Woman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/W4DTDY8C89KWCE1NT4C3W3QGDM.jpg",

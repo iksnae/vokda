@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/M6A62FVJ61QQRE25GE0C3XM2E2.jpg",
   "metadata": {
-    "shortLabel": "Alfred - Cheeky Person — Cartesia",
-    "searchDescription": "Cartesia Alfred - Cheeky Person: Playful, elderly male for media and entertainment",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Alfred - Cheeky Person — Cartesia",
+    "searchDescription": "Cartesia Alfred - Cheeky Person: Playful, elderly male for media and entertainment",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "50d6beb4-80ea-4802-8387-6c948fe84208",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "50d6beb4-80ea-4802-8387-6c948fe84208",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M6A62FVJ61QQRE25GE0C3XM2E2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3",
       "id": "s-M6A62FVJ61QQRE25GE0C3XM2E2",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "50d6beb4-80ea-4802-8387-6c948fe84208",
-      "label": "Alfred - Cheeky Person",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Alfred - Cheeky Person",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/M6A62FVJ61QQRE25GE0C3XM2E2.jpg",

@@ -21,22 +21,14 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/2C1G7J2027KKVR6024EDQKP006.jpg",
   "metadata": {
-    "shortLabel": "Celeste — Deepgram Aura 2",
-    "searchDescription": "Deepgram Celeste: Colombian-accented female voice (young adult) with clear, energetic, positive qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "colombian"
-    ],
     "useCases": [
       "casual chat",
       "advertising",
       "ivr"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "energetic",
@@ -44,53 +36,61 @@
       "friendly",
       "enthusiastic"
     ],
+    "shortLabel": "Celeste — Deepgram Aura 2",
+    "searchDescription": "Deepgram Celeste: Colombian-accented female voice (young adult) with clear, energetic, positive qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "young adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "colombian"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Celeste",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Colombian",
-    "age": "Young Adult",
-    "deepgramColor": "#fedf89",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/af32197d06e5df988b45650b813f775d1330858a-372x372.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/54703d0b8cbd0e4de1210cba80d760d047477d6b.wav",
     "deepgramUuid": "51fec4fc-cd95-40cb-86f6-dd517be112b1",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Colombian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#fedf89",
+    "modelName": "Deepgram Aura 2 — Celeste",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "advertising",
       "ivr"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/af32197d06e5df988b45650b813f775d1330858a-372x372.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2C1G7J2027KKVR6024EDQKP006.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
       "id": "s-2C1G7J2027KKVR6024EDQKP006",
       "label": "Default",
-      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3"
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-celeste-es",
-      "label": "Celeste",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Celeste",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/2C1G7J2027KKVR6024EDQKP006.jpg",

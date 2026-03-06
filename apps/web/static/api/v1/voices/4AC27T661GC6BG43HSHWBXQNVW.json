@@ -20,71 +20,71 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/4AC27T661GC6BG43HSHWBXQNVW.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/4AC27T661GC6BG43HSHWBXQNVW.jpg",
   "metadata": {
-    "shortLabel": "Callista — Deepgram Aura 2",
-    "searchDescription": "Deepgram Callista: American-accented female voice (adult) with clear, energetic, professional qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "american"
-    ],
     "useCases": [
       "ivr"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "energetic",
       "professional",
       "smooth"
     ],
+    "shortLabel": "Callista — Deepgram Aura 2",
+    "searchDescription": "Deepgram Callista: American-accented female voice (adult) with clear, energetic, professional qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Callista",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#027a48",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/ab46682aa2737f2085d0ef4357557dbd2d2e632e-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/6708b97fc33706293499bd65d7d43e6404674a3c.wav",
-    "deepgramUuid": "6854d094-00f4-4d9c-b952-9859140eab96",
-    "totalVoices": 102,
-    "useCases": [
-      "ivr"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/6708b97fc33706293499bd65d7d43e6404674a3c.wav",
+    "deepgramUuid": "6854d094-00f4-4d9c-b952-9859140eab96",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#027a48",
+    "modelName": "Deepgram Aura 2 — Callista",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/ab46682aa2737f2085d0ef4357557dbd2d2e632e-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4AC27T661GC6BG43HSHWBXQNVW.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4AC27T661GC6BG43HSHWBXQNVW.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4AC27T661GC6BG43HSHWBXQNVW.mp3",
       "id": "s-4AC27T661GC6BG43HSHWBXQNVW",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/4AC27T661GC6BG43HSHWBXQNVW.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-callista-en",
-      "label": "Callista",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Callista",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/4AC27T661GC6BG43HSHWBXQNVW.jpg",

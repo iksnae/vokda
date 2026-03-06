@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/09NQP5VZNPFZHKP47ZG9YC3T5X.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/09NQP5VZNPFZHKP47ZG9YC3T5X.jpg",
   "metadata": {
-    "shortLabel": "Hector — Deepgram Aura 2",
-    "searchDescription": "Deepgram Hector: French-accented male voice (adult) with confident, empathetic, expressive qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "french"
-    ],
     "useCases": [
       "interview",
       "customer service"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "confident",
       "empathetic",
@@ -43,52 +35,60 @@
       "friendly",
       "patient"
     ],
+    "shortLabel": "Hector — Deepgram Aura 2",
+    "searchDescription": "Deepgram Hector: French-accented male voice (adult) with confident, empathetic, expressive qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "french"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Hector",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "French",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7bf001f18d16f4cf1f69d47e58312a7114eb82fc-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/35f6e07a2b75ddda5a25ea9c67be31596de96c5e.wav",
     "deepgramUuid": "14f6df1e-de99-497c-92ea-43957cadf547",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "French",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Hector",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "interview",
       "customer service"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/7bf001f18d16f4cf1f69d47e58312a7114eb82fc-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/09NQP5VZNPFZHKP47ZG9YC3T5X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/09NQP5VZNPFZHKP47ZG9YC3T5X.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/09NQP5VZNPFZHKP47ZG9YC3T5X.mp3",
       "id": "s-09NQP5VZNPFZHKP47ZG9YC3T5X",
       "label": "Default",
-      "text": "Bonjour! Voici un aperçu de ma voix dans une conversation naturelle. Je peux aider avec le service client et la narration.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/09NQP5VZNPFZHKP47ZG9YC3T5X.mp3"
+      "text": "Bonjour! Voici un aperçu de ma voix dans une conversation naturelle. Je peux aider avec le service client et la narration."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-hector-fr",
-      "label": "Hector",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Hector",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/09NQP5VZNPFZHKP47ZG9YC3T5X.jpg",

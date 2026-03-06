@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",
   "metadata": {
-    "shortLabel": "Flavio — Deepgram Aura 2",
-    "searchDescription": "Deepgram Flavio: Italian-accented male voice (adult) with confident, deep, empathetic qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "italian"
-    ],
     "useCases": [
       "casual chat",
       "interview"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "confident",
       "deep",
@@ -43,52 +35,60 @@
       "professional",
       "trustworthy"
     ],
+    "shortLabel": "Flavio — Deepgram Aura 2",
+    "searchDescription": "Deepgram Flavio: Italian-accented male voice (adult) with confident, deep, empathetic qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "italian"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Flavio",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Italian",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/aa74e8ff86ffe01409fe8a90afc70996ba9e7af7-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/8f82fc2b558e5535fa777fa07c24ccbc12a7262d.wav",
     "deepgramUuid": "dca231cf-068d-4b79-8e3b-640f10c3dfa5",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Italian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Flavio",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "interview"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/aa74e8ff86ffe01409fe8a90afc70996ba9e7af7-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3",
       "id": "s-DHMBPDG841TBP0EDGFT87SM9PB",
       "label": "Default",
-      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/DHMBPDG841TBP0EDGFT87SM9PB.mp3"
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-flavio-it",
-      "label": "Flavio",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Flavio",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/DHMBPDG841TBP0EDGFT87SM9PB.jpg",

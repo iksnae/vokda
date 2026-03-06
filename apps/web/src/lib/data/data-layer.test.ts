@@ -368,4 +368,100 @@ describe('Seed script', () => {
     const seedPath = resolve(__dirname, '../../../../../scripts/seed-dynamodb.mjs');
     expect(existsSync(seedPath)).toBe(true);
   });
+
+  it('seed script uses DynamoDB SDK BatchWriteCommand', () => {
+    const seedPath = resolve(__dirname, '../../../../../scripts/seed-dynamodb.mjs');
+    const script = readFileSync(seedPath, 'utf8');
+    expect(script).toContain('BatchWriteCommand');
+    expect(script).toContain('@aws-sdk/lib-dynamodb');
+    expect(script).toContain('VoiceRecord');
+    expect(script).toContain('ProviderRecord');
+  });
+});
+
+// ─── 9. Voice Store CRUD ───
+
+describe('Voice Store module', () => {
+  it('exports mapping functions', async () => {
+    const mod = await import('./voice-store');
+    expect(typeof mod.voiceToRecord).toBe('function');
+    expect(typeof mod.recordToVoice).toBe('function');
+    expect(typeof mod.providerToRecord).toBe('function');
+    expect(typeof mod.recordToProvider).toBe('function');
+  });
+
+  it('exports CRUD functions', async () => {
+    const mod = await import('./voice-store');
+    expect(typeof mod.listVoiceRecords).toBe('function');
+    expect(typeof mod.getVoiceRecord).toBe('function');
+    expect(typeof mod.saveVoiceRecord).toBe('function');
+    expect(typeof mod.deleteVoiceRecord).toBe('function');
+    expect(typeof mod.listProviderRecords).toBe('function');
+    expect(typeof mod.saveProviderRecord).toBe('function');
+  });
+
+  it('voiceToRecord adds status and timestamps', async () => {
+    const { voiceToRecord } = await import('./voice-store');
+    const voice = {
+      id: 'test-id',
+      name: 'Test',
+      provider: 'test',
+      description: 'desc',
+      tags: [],
+      languages: ['en'],
+      qualityTier: 'standard',
+      licenseNotes: '',
+      metadata: { shortLabel: '', searchDescription: '', machineTags: [], useCases: [], toneTags: [], audienceTags: [], metadataQuality: 'sparse' },
+      samples: [],
+      variants: [],
+    };
+    const record = voiceToRecord(voice, 'draft');
+    expect(record.status).toBe('draft');
+    expect(typeof record.createdAt).toBe('string');
+    expect(typeof record.updatedAt).toBe('string');
+    expect(record.name).toBe('Test');
+  });
+
+  it('recordToVoice strips status and timestamps', async () => {
+    const { recordToVoice } = await import('./voice-store');
+    const record = {
+      id: 'test-id',
+      name: 'Test',
+      provider: 'test',
+      description: 'desc',
+      tags: [],
+      languages: ['en'],
+      qualityTier: 'standard',
+      licenseNotes: '',
+      metadata: { shortLabel: '', searchDescription: '', machineTags: [], useCases: [], toneTags: [], audienceTags: [], metadataQuality: 'sparse' },
+      samples: [],
+      variants: [],
+      status: 'published',
+      createdAt: '2026-01-01',
+      updatedAt: '2026-01-01',
+    };
+    const voice = recordToVoice(record);
+    expect(voice.name).toBe('Test');
+    expect('status' in voice).toBe(false);
+    expect('createdAt' in voice).toBe(false);
+  });
+});
+
+// ─── 10. Publish script ───
+
+describe('Publish catalog script', () => {
+  it('publish-catalog.mjs supports --from-db flag', () => {
+    const scriptPath = resolve(__dirname, '../../../../../scripts/publish-catalog.mjs');
+    const script = readFileSync(scriptPath, 'utf8');
+    expect(script).toContain('--from-db');
+    expect(script).toContain('loadVoicesFromDB');
+    expect(script).toContain('listVoiceRecords');
+  });
+
+  it('publish-catalog.mjs writes back to voices.json in DB mode', () => {
+    const scriptPath = resolve(__dirname, '../../../../../scripts/publish-catalog.mjs');
+    const script = readFileSync(scriptPath, 'utf8');
+    expect(script).toContain('Wrote');
+    expect(script).toContain('voices.json');
+  });
 });

@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",
   "metadata": {
-    "shortLabel": "Maya - Easygoing Ally — Cartesia",
-    "searchDescription": "Cartesia Maya - Easygoing Ally: Friendly, casual female voice with clear articulation, ideal for natural conversations and customer support",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Maya - Easygoing Ally — Cartesia",
+    "searchDescription": "Cartesia Maya - Easygoing Ally: Friendly, casual female voice with clear articulation, ideal for natural conversations and customer support",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "cbaf8084-f009-4838-a096-07ee2e6612b1",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "cbaf8084-f009-4838-a096-07ee2e6612b1",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3",
       "id": "s-8BPA1WFMA3YA8AA6DY9R9SY9HX",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/8BPA1WFMA3YA8AA6DY9R9SY9HX.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "cbaf8084-f009-4838-a096-07ee2e6612b1",
-      "label": "Maya - Easygoing Ally",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Maya - Easygoing Ally",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/8BPA1WFMA3YA8AA6DY9R9SY9HX.jpg",

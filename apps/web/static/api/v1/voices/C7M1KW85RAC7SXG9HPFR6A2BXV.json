@@ -21,23 +21,15 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/C7M1KW85RAC7SXG9HPFR6A2BXV.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/C7M1KW85RAC7SXG9HPFR6A2BXV.jpg",
   "metadata": {
-    "shortLabel": "Beatrix — Deepgram Aura 2",
-    "searchDescription": "Deepgram Beatrix: Dutch-accented female voice (adult) with cheerful, enthusiastic, friendly qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "dutch"
-    ],
     "useCases": [
       "casual chat",
       "audiobook",
       "customer service",
       "interview"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "cheerful",
       "enthusiastic",
@@ -45,54 +37,62 @@
       "trustworthy",
       "warm"
     ],
+    "shortLabel": "Beatrix — Deepgram Aura 2",
+    "searchDescription": "Deepgram Beatrix: Dutch-accented female voice (adult) with cheerful, enthusiastic, friendly qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Beatrix",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Dutch",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/120274c1b371f0c29406a1920ac864b40625baaa-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/b275f5f995e91068d187bf9c907ab5fe86b0b253.wav",
     "deepgramUuid": "46bd8362-e0f9-4df5-ad09-c241b56ab69d",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Beatrix",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "casual chat",
       "audiobook",
       "customer service",
       "interview"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/120274c1b371f0c29406a1920ac864b40625baaa-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C7M1KW85RAC7SXG9HPFR6A2BXV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C7M1KW85RAC7SXG9HPFR6A2BXV.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C7M1KW85RAC7SXG9HPFR6A2BXV.mp3",
       "id": "s-C7M1KW85RAC7SXG9HPFR6A2BXV",
       "label": "Default",
-      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/C7M1KW85RAC7SXG9HPFR6A2BXV.mp3"
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-beatrix-nl",
-      "label": "Beatrix",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Beatrix",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/C7M1KW85RAC7SXG9HPFR6A2BXV.jpg",

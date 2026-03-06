@@ -19,70 +19,70 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/XG6BQGDR7R5KXNW05XJC21NT49.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/XG6BQGDR7R5KXNW05XJC21NT49.jpg",
   "metadata": {
-    "shortLabel": "Neptune — Deepgram Aura 2",
-    "searchDescription": "Deepgram Neptune: American-accented male voice (adult) with professional, patient, polite qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "male",
-      "american"
-    ],
     "useCases": [
       "customer service"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "professional",
       "patient",
       "polite"
     ],
+    "shortLabel": "Neptune — Deepgram Aura 2",
+    "searchDescription": "Deepgram Neptune: American-accented male voice (adult) with professional, patient, polite qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
-  },
-  "modelCard": {
-    "modelName": "Deepgram Aura 2 — Neptune",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
-    "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "American",
-    "age": "Adult",
-    "deepgramColor": "#f04438",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/f3288e4e1f017a0b6608159bdf32699580fb28b3-1024x1024.png",
-    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/66dfdf6b13be2c5d45878f70937c8dcdab698e96.wav",
-    "deepgramUuid": "34cda5e7-1d78-44c6-848f-159619aa7224",
-    "totalVoices": 102,
-    "useCases": [
-      "customer service"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
     ]
   },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/66dfdf6b13be2c5d45878f70937c8dcdab698e96.wav",
+    "deepgramUuid": "34cda5e7-1d78-44c6-848f-159619aa7224",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#f04438",
+    "modelName": "Deepgram Aura 2 — Neptune",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/f3288e4e1f017a0b6608159bdf32699580fb28b3-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XG6BQGDR7R5KXNW05XJC21NT49.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XG6BQGDR7R5KXNW05XJC21NT49.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XG6BQGDR7R5KXNW05XJC21NT49.mp3",
       "id": "s-XG6BQGDR7R5KXNW05XJC21NT49",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/XG6BQGDR7R5KXNW05XJC21NT49.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-neptune-en",
-      "label": "Neptune",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Neptune",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/XG6BQGDR7R5KXNW05XJC21NT49.jpg",

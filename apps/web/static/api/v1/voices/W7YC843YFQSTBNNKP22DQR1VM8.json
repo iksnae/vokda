@@ -18,55 +18,55 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W7YC843YFQSTBNNKP22DQR1VM8.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W7YC843YFQSTBNNKP22DQR1VM8.jpg",
   "metadata": {
-    "shortLabel": "Nyssa — LMNT",
-    "searchDescription": "LMNT Nyssa: Warm female voice with animated Southern charm and spirited sass. Confident and motherly with distinctive personality, perfect for engaging conversations and personable support.",
-    "machineTags": [
-      "lmnt",
-      "female",
-      "instant"
-    ],
     "useCases": [
       "drive thru agent"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Nyssa — LMNT",
+    "searchDescription": "LMNT Nyssa: Warm female voice with animated Southern charm and spirited sass. Confident and motherly with distinctive personality, perfect for engaging conversations and personable support.",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Instant",
-    "architecture": "instant",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W7YC843YFQSTBNNKP22DQR1VM8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W7YC843YFQSTBNNKP22DQR1VM8.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W7YC843YFQSTBNNKP22DQR1VM8.mp3",
       "id": "s-W7YC843YFQSTBNNKP22DQR1VM8",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W7YC843YFQSTBNNKP22DQR1VM8.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "nyssa",
-      "label": "Nyssa",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Nyssa",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/W7YC843YFQSTBNNKP22DQR1VM8.jpg",

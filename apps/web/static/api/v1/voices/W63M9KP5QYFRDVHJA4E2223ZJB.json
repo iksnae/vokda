@@ -21,21 +21,13 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W63M9KP5QYFRDVHJA4E2223ZJB.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W63M9KP5QYFRDVHJA4E2223ZJB.jpg",
   "metadata": {
-    "shortLabel": "Agustina — Deepgram Aura 2",
-    "searchDescription": "Deepgram Agustina: Peninsular-accented female voice (adult) with calm, clear, expressive qualities. Aura 2 architecture.",
-    "machineTags": [
-      "deepgram",
-      "aura-2",
-      "female",
-      "peninsular"
-    ],
     "useCases": [
       "interview",
       "casual chat"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "calm",
       "clear",
@@ -43,52 +35,60 @@
       "knowledgeable",
       "professional"
     ],
+    "shortLabel": "Agustina — Deepgram Aura 2",
+    "searchDescription": "Deepgram Agustina: Peninsular-accented female voice (adult) with calm, clear, expressive qualities. Aura 2 architecture.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "peninsular"
+    ]
   },
   "modelCard": {
-    "modelName": "Deepgram Aura 2 — Agustina",
-    "architecture": "aura-2",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://deepgram.com/aura",
-    "license": "Proprietary (Deepgram API)",
     "commercialUse": true,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "accent": "Peninsular",
-    "age": "Adult",
-    "deepgramColor": "#24a3e3",
-    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/2fd6b4d7fdf8cdd89dc3db856b388e7c623ff2b0-400x400.png",
     "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/c86256aa6178bea3825030d6b183dd97aff72250.wav",
     "deepgramUuid": "646996d6-2f57-48d2-9670-b54b89b720f3",
-    "totalVoices": 102,
+    "sampleRate": 24000,
+    "accent": "Peninsular",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Agustina",
+    "license": "Proprietary (Deepgram API)",
     "useCases": [
       "interview",
       "casual chat"
-    ]
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/2fd6b4d7fdf8cdd89dc3db856b388e7c623ff2b0-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W63M9KP5QYFRDVHJA4E2223ZJB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W63M9KP5QYFRDVHJA4E2223ZJB.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W63M9KP5QYFRDVHJA4E2223ZJB.mp3",
       "id": "s-W63M9KP5QYFRDVHJA4E2223ZJB",
       "label": "Default",
-      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W63M9KP5QYFRDVHJA4E2223ZJB.mp3"
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
     }
   ],
   "variants": [
     {
       "sourceKey": "aura-2-agustina-es",
-      "label": "Agustina",
-      "engine": "aura-2",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 2000
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Agustina",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/W63M9KP5QYFRDVHJA4E2223ZJB.jpg",

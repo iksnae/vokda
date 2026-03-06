@@ -1,6 +1,8 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
 
 const schema = a.schema({
+  // ─── User Library ───
+
   Favorite: a
     .model({
       voiceId: a.string().required(),
@@ -77,7 +79,8 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.groups(['curator', 'admin']).to(['create', 'read', 'update', 'delete']),
-      allow.publicApiKey().to(['read'])
+      allow.publicApiKey().to(['read']),
+      allow.authenticated('identityPool').to(['read'])
     ]),
 
   ProviderRecord: a
@@ -95,7 +98,8 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.groups(['curator', 'admin']).to(['create', 'read', 'update', 'delete']),
-      allow.publicApiKey().to(['read'])
+      allow.publicApiKey().to(['read']),
+      allow.authenticated('identityPool').to(['read'])
     ]),
 
   AdminAuditEvent: a

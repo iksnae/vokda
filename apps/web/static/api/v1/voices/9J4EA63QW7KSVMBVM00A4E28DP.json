@@ -20,57 +20,57 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",
   "metadata": {
-    "shortLabel": "Juniper — LMNT",
-    "searchDescription": "LMNT Juniper: Commanding female voice with sophisticated, educated tones. Ideal for instruction and authoritative content.",
-    "machineTags": [
-      "lmnt",
-      "female",
-      "instant"
-    ],
     "useCases": [
       "educational video",
       "tutor",
       "long form video"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Juniper — LMNT",
+    "searchDescription": "LMNT Juniper: Commanding female voice with sophisticated, educated tones. Ideal for instruction and authoritative content.",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Instant",
-    "architecture": "instant",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
       "id": "s-9J4EA63QW7KSVMBVM00A4E28DP",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "juniper",
-      "label": "Juniper",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Juniper",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",

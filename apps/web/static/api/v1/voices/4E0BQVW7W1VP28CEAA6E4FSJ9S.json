@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0BQVW7W1VP28CEAA6E4FSJ9S.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/4E0BQVW7W1VP28CEAA6E4FSJ9S.jpg",
   "metadata": {
-    "shortLabel": "Caroline - Southern Guide — Cartesia",
-    "searchDescription": "Cartesia Caroline - Southern Guide: Friendly, inviting, slow young adult female for conversation support",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Caroline - Southern Guide — Cartesia",
+    "searchDescription": "Cartesia Caroline - Southern Guide: Friendly, inviting, slow young adult female for conversation support",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "f9836c6e-a0bd-460e-9d3c-f7299fa60f94",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "f9836c6e-a0bd-460e-9d3c-f7299fa60f94",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4E0BQVW7W1VP28CEAA6E4FSJ9S.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0BQVW7W1VP28CEAA6E4FSJ9S.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0BQVW7W1VP28CEAA6E4FSJ9S.mp3",
       "id": "s-4E0BQVW7W1VP28CEAA6E4FSJ9S",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0BQVW7W1VP28CEAA6E4FSJ9S.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "f9836c6e-a0bd-460e-9d3c-f7299fa60f94",
-      "label": "Caroline - Southern Guide",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Caroline - Southern Guide",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/4E0BQVW7W1VP28CEAA6E4FSJ9S.jpg",

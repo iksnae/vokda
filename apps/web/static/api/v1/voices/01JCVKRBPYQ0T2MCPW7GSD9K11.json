@@ -2,6 +2,8 @@
   "id": "01JCVKRBPYQ0T2MCPW7GSD9K11",
   "name": "Mark",
   "provider": "ElevenLabs",
+  "providerId": "elevenlabs",
+  "providerVoiceId": "mark",
   "description": "Expressive English voice featured in ElevenLabs text-to-speech demos.",
   "tags": [
     "expressive",
@@ -14,93 +16,91 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by ElevenLabs API terms and plan entitlements.",
   "metadata": {
-    "shortLabel": "Expressive story narrator",
-    "searchDescription": "Characterful English narration voice with stronger emotional contour.",
-    "machineTags": [
-      "expressive",
-      "storytelling",
-      "character",
-      "high-variation"
-    ],
+    "speakingStyle": "animated",
     "useCases": [
       "Short fiction",
       "Trailer narration",
       "Character intros"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "dramatic",
       "vivid",
       "expressive"
     ],
+    "shortLabel": "Expressive story narrator",
+    "searchDescription": "Characterful English narration voice with stronger emotional contour.",
     "audienceTags": [
       "creator",
       "entertainment"
     ],
     "accent": "General American",
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "speakingStyle": "animated",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "expressive",
+      "storytelling",
+      "character",
+      "high-variation"
+    ]
   },
-  "samples": [
-    {
-      "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
-      "scriptKey": "story",
-      "label": "Story",
-      "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01JCVKTFE3E9WRAY1E7W4CWPY4",
-      "sourceType": "cloud_provider",
-      "sourceKey": "elevenlabs:tts:mark",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "mp3",
-        "pcm"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
-  "providerId": "elevenlabs",
-  "providerVoiceId": "mark",
   "modelCard": {
-    "providerName": "ElevenLabs",
-    "providerType": "cloud_api",
-    "providerUrl": "https://elevenlabs.io",
-    "apiEndpoint": "api.elevenlabs.io/v1/text-to-speech",
-    "modelFamily": "ElevenLabs Multilingual",
-    "architecture": "Proprietary neural TTS with voice cloning",
-    "sampleRate": 44100,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": true,
-    "maxInputLength": 5000,
-    "license": "ElevenLabs Terms of Service",
     "licenseUrl": "https://elevenlabs.io/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to plan and account settings",
-    "latencyMs": "~300-1000",
-    "releaseDate": "2023-01-01",
     "knownLimitations": [
       "Rate limits vary by plan tier",
       "Voice cloning requires consent and verification",
       "Character quota depends on subscription plan"
     ],
-    "modelName": "eleven_multilingual_v2"
+    "modelFamily": "ElevenLabs Multilingual",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": true,
+    "providerName": "ElevenLabs",
+    "multilingual": true,
+    "latencyMs": "~300-1000",
+    "architecture": "Proprietary neural TTS with voice cloning",
+    "releaseDate": "2023-01-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 44100,
+    "providerUrl": "https://elevenlabs.io",
+    "streamingSupport": true,
+    "license": "ElevenLabs Terms of Service",
+    "modelName": "eleven_multilingual_v2",
+    "dataRetention": "Subject to plan and account settings",
+    "apiEndpoint": "api.elevenlabs.io/v1/text-to-speech",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "bitDepth": 16
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3",
+  "samples": [
+    {
+      "scriptKey": "story",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKRBPYQ0T2MCPW7GSD9K11.mp3",
+      "transcript": "In the valley of Eldoria, the old observatory watched the stars like a patient clockmaker.",
+      "id": "01JCVKS8S5KMQP1NGN3C4WG9XJ",
+      "label": "Story"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "elevenlabs:tts:mark",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "pcm"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01JCVKTFE3E9WRAY1E7W4CWPY4",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01JCVKRBPYQ0T2MCPW7GSD9K11",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVKRBPYQ0T2MCPW7GSD9K11.json"

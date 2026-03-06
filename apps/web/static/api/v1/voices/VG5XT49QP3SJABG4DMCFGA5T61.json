@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VG5XT49QP3SJABG4DMCFGA5T61.jpg",
   "metadata": {
-    "shortLabel": "Cameron - Chill Companion — Cartesia",
-    "searchDescription": "Cartesia Cameron - Chill Companion: Laidback voice with a natural, conversational tone that feels friendly and easy to engage with",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Cameron - Chill Companion — Cartesia",
+    "searchDescription": "Cartesia Cameron - Chill Companion: Laidback voice with a natural, conversational tone that feels friendly and easy to engage with",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VG5XT49QP3SJABG4DMCFGA5T61.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3",
       "id": "s-VG5XT49QP3SJABG4DMCFGA5T61",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
-      "label": "Cameron - Chill Companion",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Cameron - Chill Companion",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/VG5XT49QP3SJABG4DMCFGA5T61.jpg",

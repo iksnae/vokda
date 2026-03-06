@@ -39,79 +39,31 @@
   "qualityTier": "premium",
   "licenseNotes": "Gemini API usage governed by Google AI Terms of Service.",
   "metadata": {
-    "shortLabel": "Clear · Gemini 2.5 Flash TTS",
-    "searchDescription": "Iapetus Clear Gemini TTS Google AI voice style control multilingual clear announcement",
-    "machineTags": [
-      "clear",
-      "announcement",
-      "multilingual",
-      "style-control"
-    ],
     "useCases": [
       "announcement",
       "podcast",
       "audiobook"
     ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "complete",
     "toneTags": [
       "clear"
     ],
+    "shortLabel": "Clear · Gemini 2.5 Flash TTS",
+    "searchDescription": "Iapetus Clear Gemini TTS Google AI voice style control multilingual clear announcement",
     "audienceTags": [],
-    "genderPresentation": "neutral",
     "agePresentation": "adult",
-    "metadataQuality": "complete"
+    "machineTags": [
+      "clear",
+      "announcement",
+      "multilingual",
+      "style-control"
+    ]
   },
-  "samples": [
-    {
-      "id": "0100MME4D1XG687FF957A9752C",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "The results are now available. Please review the summary before the next meeting.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG63EEDD2CECB5AE.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "0100MME4D1XGD718E43785C30A",
-      "sourceType": "cloud_provider",
-      "sourceKey": "gemini:2.5-flash-tts:Iapetus",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "pcm",
-        "mp3"
-      ],
-      "maxInputChars": 8000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Google AI (Gemini)",
-    "providerType": "cloud_api",
-    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
-    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
-    "modelFamily": "Gemini 2.5",
-    "modelName": "gemini-2.5-flash-preview-tts",
-    "modelId": "gemini-2.5-flash-preview-tts",
-    "modelVersion": "2.5-flash-preview",
-    "architecture": "Gemini multimodal transformer with TTS output head",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": false,
-    "maxInputLength": 8000,
-    "license": "Google AI Terms of Service",
     "licenseUrl": "https://ai.google.dev/gemini-api/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to Google AI data usage policy",
-    "latencyMs": "~1000-5000",
-    "releaseDate": "2025-05-01",
     "knownLimitations": [
       "Preview — API may change before GA",
       "Text-only input, audio-only output (no multimodal mixing in TTS mode)",
@@ -121,11 +73,59 @@
       "Rate limited: 10 requests/minute on free tier"
     ],
     "notes": "Voice style: \"Clear\". Supports natural language style direction — prefix text with instructions like \"Say cheerfully:\" or \"In a whisper:\". Multi-speaker mode supports up to 2 voices per conversation. Also available on gemini-2.5-pro-preview-tts for higher quality. 70+ languages supported. Style, accent, pace, and tone controllable via prompt engineering.",
+    "modelFamily": "Gemini 2.5",
+    "modelId": "gemini-2.5-flash-preview-tts",
+    "modelVersion": "2.5-flash-preview",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
     "runtimeFramework": "Gemini API (REST/SDK)",
-    "hardwareRequirements": "Cloud API — no local hardware required"
+    "hardwareRequirements": "Cloud API — no local hardware required",
+    "voiceCloning": false,
+    "providerName": "Google AI (Gemini)",
+    "multilingual": true,
+    "latencyMs": "~1000-5000",
+    "architecture": "Gemini multimodal transformer with TTS output head",
+    "releaseDate": "2025-05-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 24000,
+    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
+    "streamingSupport": true,
+    "modelName": "gemini-2.5-flash-preview-tts",
+    "license": "Google AI Terms of Service",
+    "dataRetention": "Subject to Google AI data usage policy",
+    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+    "maxInputLength": 8000,
+    "channels": 1,
+    "bitDepth": 16
   },
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG63EEDD2CECB5AE.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XG63EEDD2CECB5AE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG63EEDD2CECB5AE.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG63EEDD2CECB5AE.mp3",
+      "transcript": "The results are now available. Please review the summary before the next meeting.",
+      "id": "0100MME4D1XG687FF957A9752C",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "gemini:2.5-flash-tts:Iapetus",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "pcm",
+        "mp3"
+      ],
+      "maxInputChars": 8000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "0100MME4D1XGD718E43785C30A",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XG63EEDD2CECB5AE.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XG63EEDD2CECB5AE",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XG63EEDD2CECB5AE.json"

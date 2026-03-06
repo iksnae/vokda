@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",
   "metadata": {
-    "shortLabel": "Aurora - Fairy Princess — Cartesia",
-    "searchDescription": "Cartesia Aurora - Fairy Princess: Fairy like female for character use cases in entertainment",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Aurora - Fairy Princess — Cartesia",
+    "searchDescription": "Cartesia Aurora - Fairy Princess: Fairy like female for character use cases in entertainment",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "8f091740-3df1-4795-8bd9-dc62d88e5131",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "8f091740-3df1-4795-8bd9-dc62d88e5131",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3",
       "id": "s-9J6AC1TEA5SVKKZY1P29T3VVKJ",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J6AC1TEA5SVKKZY1P29T3VVKJ.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "8f091740-3df1-4795-8bd9-dc62d88e5131",
-      "label": "Aurora - Fairy Princess",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Aurora - Fairy Princess",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/9J6AC1TEA5SVKKZY1P29T3VVKJ.jpg",

@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.jpg",
   "metadata": {
-    "shortLabel": "Ronald - Thinker — Cartesia",
-    "searchDescription": "Cartesia Ronald - Thinker: Intense, deep young adult male for casual conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Ronald - Thinker — Cartesia",
+    "searchDescription": "Cartesia Ronald - Thinker: Intense, deep young adult male for casual conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3",
       "id": "s-MA8C7VZJ3M7W1NXP5M0C07ZTA2",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
-      "label": "Ronald - Thinker",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Ronald - Thinker",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.jpg",

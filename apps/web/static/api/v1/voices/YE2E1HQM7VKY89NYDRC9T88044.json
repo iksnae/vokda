@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/YE2E1HQM7VKY89NYDRC9T88044.jpg",
   "metadata": {
-    "shortLabel": "Wyatt - Dependable Dispatcher — Cartesia",
-    "searchDescription": "Cartesia Wyatt - Dependable Dispatcher: Friendly, clear American male with a subtle Southern drawl.",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Wyatt - Dependable Dispatcher — Cartesia",
+    "searchDescription": "Cartesia Wyatt - Dependable Dispatcher: Friendly, clear American male with a subtle Southern drawl.",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE2E1HQM7VKY89NYDRC9T88044.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3",
       "id": "s-YE2E1HQM7VKY89NYDRC9T88044",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
-      "label": "Wyatt - Dependable Dispatcher",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Wyatt - Dependable Dispatcher",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE2E1HQM7VKY89NYDRC9T88044.jpg",

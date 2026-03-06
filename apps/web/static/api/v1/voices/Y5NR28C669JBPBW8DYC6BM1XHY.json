@@ -18,55 +18,55 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/Y5NR28C669JBPBW8DYC6BM1XHY.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/Y5NR28C669JBPBW8DYC6BM1XHY.jpg",
   "metadata": {
-    "shortLabel": "Evander — LMNT",
-    "searchDescription": "LMNT Evander: Weathered, husky voice with a calm, comforting presence. Perfect for customer support and reassuring conversations.",
-    "machineTags": [
-      "lmnt",
-      "male",
-      "instant"
-    ],
     "useCases": [
       "long form video"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Evander — LMNT",
+    "searchDescription": "LMNT Evander: Weathered, husky voice with a calm, comforting presence. Perfect for customer support and reassuring conversations.",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Instant",
-    "architecture": "instant",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/Y5NR28C669JBPBW8DYC6BM1XHY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/Y5NR28C669JBPBW8DYC6BM1XHY.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/Y5NR28C669JBPBW8DYC6BM1XHY.mp3",
       "id": "s-Y5NR28C669JBPBW8DYC6BM1XHY",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/Y5NR28C669JBPBW8DYC6BM1XHY.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "evander",
-      "label": "Evander",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Evander",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/Y5NR28C669JBPBW8DYC6BM1XHY.jpg",

@@ -19,16 +19,6 @@
   "qualityTier": "premium",
   "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
   "metadata": {
-    "shortLabel": "Prabhat — Edge Indian",
-    "searchDescription": "Edge TTS Prabhat: Indian English male voice for professional and educational content.",
-    "machineTags": [
-      "edge-tts",
-      "microsoft",
-      "neural",
-      "free",
-      "male",
-      "en-in"
-    ],
     "useCases": [
       "narration",
       "assistants",
@@ -36,59 +26,69 @@
       "accessibility",
       "prototyping"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "professional",
       "natural"
     ],
+    "shortLabel": "Prabhat — Edge Indian",
+    "searchDescription": "Edge TTS Prabhat: Indian English male voice for professional and educational content.",
     "audienceTags": [
       "developers",
       "creators",
       "educators"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-in"
+    ]
   },
   "modelCard": {
-    "modelName": "en-IN-PrabhatNeural",
-    "architecture": "Azure Neural TTS",
+    "commercialUse": false,
+    "locale": "en-IN",
+    "sampleRate": 24000,
     "providerType": "cloud_provider",
     "providerUrl": "https://github.com/rany2/edge-tts",
-    "license": "Free (Microsoft Edge TTS API)",
-    "commercialUse": false,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "supportsSSML": true,
-    "totalVoices": 322,
     "totalEnglishVoices": 47,
-    "region": "Indian",
-    "locale": "en-IN",
+    "modelName": "en-IN-PrabhatNeural",
+    "license": "Free (Microsoft Edge TTS API)",
     "specialCapabilities": [
       "SSML support",
       "No API key required",
       "Real-time streaming"
-    ]
+    ],
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "region": "Indian",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "architecture": "Azure Neural TTS"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
+      "id": "s-YE25HM1G3WFSJ4A4BJA21YDXKY",
+      "label": "Default",
+      "text": "Hello! I'm Prabhat, speaking Indian English. This is a preview of how I sound in natural conversation."
+    }
+  ],
   "variants": [
     {
       "sourceKey": "en-IN-PrabhatNeural",
-      "label": "Prabhat",
-      "engine": "edge-tts",
       "supportsStreaming": true,
-      "supportsSsml": true,
-      "maxChars": 5000
-    }
-  ],
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",
-  "samples": [
-    {
-      "id": "s-YE25HM1G3WFSJ4A4BJA21YDXKY",
-      "label": "Default",
-      "text": "Hello! I'm Prabhat, speaking Indian English. This is a preview of how I sound in natural conversation.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE25HM1G3WFSJ4A4BJA21YDXKY.mp3"
+      "engine": "edge-tts",
+      "maxChars": 5000,
+      "label": "Prabhat",
+      "supportsSsml": true
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE25HM1G3WFSJ4A4BJA21YDXKY.jpg",

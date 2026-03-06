@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/MA3XT2C8BP49MC5HTE5KP5R43Q.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/MA3XT2C8BP49MC5HTE5KP5R43Q.jpg",
   "metadata": {
-    "shortLabel": "Denise - Professional Woman — Cartesia",
-    "searchDescription": "Cartesia Denise - Professional Woman: Professional female voice with confident clarity and polished tone, ideal for corporate and business settings",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Denise - Professional Woman — Cartesia",
+    "searchDescription": "Cartesia Denise - Professional Woman: Professional female voice with confident clarity and polished tone, ideal for corporate and business settings",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "8a1b8af0-c4f6-423f-a268-5507fd4aefdf",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "8a1b8af0-c4f6-423f-a268-5507fd4aefdf",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MA3XT2C8BP49MC5HTE5KP5R43Q.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MA3XT2C8BP49MC5HTE5KP5R43Q.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MA3XT2C8BP49MC5HTE5KP5R43Q.mp3",
       "id": "s-MA3XT2C8BP49MC5HTE5KP5R43Q",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/MA3XT2C8BP49MC5HTE5KP5R43Q.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "8a1b8af0-c4f6-423f-a268-5507fd4aefdf",
-      "label": "Denise - Professional Woman",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Denise - Professional Woman",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/MA3XT2C8BP49MC5HTE5KP5R43Q.jpg",

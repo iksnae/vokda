@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/BWDZP865KNYDJ868BQSZQQY1GB.jpg",
   "metadata": {
-    "shortLabel": "Lily - Casual Pal — Cartesia",
-    "searchDescription": "Cartesia Lily - Casual Pal: Relaxed, casual voice for friendly, everyday conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "female"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Lily - Casual Pal — Cartesia",
+    "searchDescription": "Cartesia Lily - Casual Pal: Relaxed, casual voice for friendly, everyday conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "female",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BWDZP865KNYDJ868BQSZQQY1GB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3",
       "id": "s-BWDZP865KNYDJ868BQSZQQY1GB",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
-      "label": "Lily - Casual Pal",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lily - Casual Pal",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/BWDZP865KNYDJ868BQSZQQY1GB.jpg",

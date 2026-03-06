@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.jpg",
   "metadata": {
-    "shortLabel": "Carson - Scared Friendly Support — Cartesia",
-    "searchDescription": "Cartesia Carson - Scared Friendly Support: Friendly young adult male for customer support conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Carson - Scared Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Scared Friendly Support: Friendly young adult male for customer support conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3",
       "id": "s-GE5R9VT9NVVW5XRA6DG9QG3PBW",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/GE5R9VT9NVVW5XRA6DG9QG3PBW.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "5c43e078-5ba4-4e1f-9639-8d85a403f76a",
-      "label": "Carson - Scared Friendly Support",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Scared Friendly Support",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/GE5R9VT9NVVW5XRA6DG9QG3PBW.jpg",

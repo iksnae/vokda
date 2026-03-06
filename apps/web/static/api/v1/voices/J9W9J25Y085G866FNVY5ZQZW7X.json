@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
   "metadata": {
-    "shortLabel": "Joey - Neighborhood Guy — Cartesia",
-    "searchDescription": "Cartesia Joey - Neighborhood Guy: Casual, friendly male for natural conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Joey - Neighborhood Guy — Cartesia",
+    "searchDescription": "Cartesia Joey - Neighborhood Guy: Casual, friendly male for natural conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "34575e71-908f-4ab6-ab54-b08c95d6597d",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "34575e71-908f-4ab6-ab54-b08c95d6597d",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
       "id": "s-J9W9J25Y085G866FNVY5ZQZW7X",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "34575e71-908f-4ab6-ab54-b08c95d6597d",
-      "label": "Joey - Neighborhood Guy",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Joey - Neighborhood Guy",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",

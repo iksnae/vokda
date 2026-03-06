@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-06T01:46:16.879Z",
+  "generatedAt": "2026-03-06T02:04:00.442Z",
   "totalVoices": 550,
   "totalProviders": 25,
   "withAudio": 550,
@@ -92,18 +92,8 @@
       "count": 2
     },
     {
-      "id": "chatterbox",
-      "name": "Chatterbox",
-      "count": 1
-    },
-    {
-      "id": "outetts",
-      "name": "OuteTTS",
-      "count": 1
-    },
-    {
-      "id": "pocket-tts",
-      "name": "Pocket TTS",
+      "id": "vibevoice",
+      "name": "VibeVoice",
       "count": 1
     },
     {
@@ -112,23 +102,33 @@
       "count": 1
     },
     {
+      "id": "pocket-tts",
+      "name": "Pocket TTS",
+      "count": 1
+    },
+    {
       "id": "spark-tts",
       "name": "Spark TTS",
       "count": 1
     },
     {
-      "id": "voxcpm",
-      "name": "VoxCPM",
-      "count": 1
-    },
-    {
-      "id": "vibevoice",
-      "name": "VibeVoice",
+      "id": "chatterbox",
+      "name": "Chatterbox",
       "count": 1
     },
     {
       "id": "chatterbox-turbo",
       "name": "Chatterbox Turbo",
+      "count": 1
+    },
+    {
+      "id": "outetts",
+      "name": "OuteTTS",
+      "count": 1
+    },
+    {
+      "id": "voxcpm",
+      "name": "VoxCPM",
       "count": 1
     }
   ],

@@ -17,55 +17,55 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "LMNT API terms. Free tier available.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/HVY0C7M68221HHT3NR5ZKKSKST.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/HVY0C7M68221HHT3NR5ZKKSKST.jpg",
   "metadata": {
-    "shortLabel": "Oliver — LMNT",
-    "searchDescription": "LMNT Oliver: Narrative. Silly. US",
-    "machineTags": [
-      "lmnt",
-      "male",
-      "professional"
-    ],
     "useCases": [
       "middle-aged"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Oliver — LMNT",
+    "searchDescription": "LMNT Oliver: Narrative. Silly. US",
     "audienceTags": [
       "developers",
       "creators"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ]
   },
   "modelCard": {
     "modelName": "LMNT Professional",
-    "architecture": "professional",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://lmnt.com",
     "license": "Proprietary (LMNT API)",
     "commercialUse": true,
+    "totalVoices": 44,
     "sampleRate": 24000,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "totalVoices": 44
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HVY0C7M68221HHT3NR5ZKKSKST.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HVY0C7M68221HHT3NR5ZKKSKST.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HVY0C7M68221HHT3NR5ZKKSKST.mp3",
       "id": "s-HVY0C7M68221HHT3NR5ZKKSKST",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/HVY0C7M68221HHT3NR5ZKKSKST.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "oliver",
-      "label": "Oliver",
-      "engine": "lmnt",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Oliver",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/HVY0C7M68221HHT3NR5ZKKSKST.jpg",

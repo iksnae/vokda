@@ -17,58 +17,58 @@
   ],
   "qualityTier": "premium",
   "licenseNotes": "Cartesia API terms. Pay-per-character.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQM1NY2DR6DYDP7XJ1JA80DXXT.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/ZQM1NY2DR6DYDP7XJ1JA80DXXT.jpg",
   "metadata": {
-    "shortLabel": "Allen - Modern Voice — Cartesia",
-    "searchDescription": "Cartesia Allen - Modern Voice: Confident young adult male voice with a neutral American accent for presentations, ads, and engaging everyday conversations",
-    "machineTags": [
-      "cartesia",
-      "sonic",
-      "male"
-    ],
     "useCases": [
       "conversational",
       "customer-service",
       "narration"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [],
+    "shortLabel": "Allen - Modern Voice — Cartesia",
+    "searchDescription": "Cartesia Allen - Modern Voice: Confident young adult male voice with a neutral American accent for presentations, ads, and engaging everyday conversations",
     "audienceTags": [
       "developers",
       "enterprises"
     ],
-    "genderPresentation": "male",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
   },
   "modelCard": {
     "modelName": "Cartesia Sonic",
-    "architecture": "sonic",
-    "providerType": "cloud_provider",
-    "providerUrl": "https://cartesia.ai",
     "license": "Proprietary (Cartesia API)",
     "commercialUse": true,
+    "cartesiaVoiceId": "9287676d-f0cc-423f-ac03-3b3c7242f091",
+    "totalVoices": 355,
     "sampleRate": 44100,
     "outputFormat": "mp3",
     "streamingCapable": true,
-    "cartesiaVoiceId": "9287676d-f0cc-423f-ac03-3b3c7242f091",
-    "totalVoices": 355
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZQM1NY2DR6DYDP7XJ1JA80DXXT.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQM1NY2DR6DYDP7XJ1JA80DXXT.mp3",
   "samples": [
     {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQM1NY2DR6DYDP7XJ1JA80DXXT.mp3",
       "id": "s-ZQM1NY2DR6DYDP7XJ1JA80DXXT",
       "label": "Default",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZQM1NY2DR6DYDP7XJ1JA80DXXT.mp3"
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
   ],
   "variants": [
     {
       "sourceKey": "9287676d-f0cc-423f-ac03-3b3c7242f091",
-      "label": "Allen - Modern Voice",
-      "engine": "sonic",
       "supportsStreaming": true,
-      "supportsSsml": false,
-      "maxChars": 5000
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Allen - Modern Voice",
+      "supportsSsml": false
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZQM1NY2DR6DYDP7XJ1JA80DXXT.jpg",
