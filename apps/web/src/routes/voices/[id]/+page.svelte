@@ -1,26 +1,22 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
   import {
-    customVoices,
     addVoiceToCollection,
     collections,
     createCollection,
     favorites,
-    metadataOverrides,
     toggleFavorite,
     removeVoiceFromCollection
   } from '$lib/stores/app-state';
-  import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { roleFlags } from '$lib/auth/store';
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import type { Voice, VoiceVariant } from '$lib/types';
 
-  export let data: { voices: Voice[]; voiceId: string };
+  export let data: { voice: Voice | null; voiceId: string };
 
-  $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
-  $: voice = effectiveVoices.find((entry) => entry.id === data.voiceId) ?? null;
+  $: voice = data.voice;
   $: colors = voice ? getProviderColor(voice.providerId ?? voice.provider) : null;
 
   /** Audio player state */

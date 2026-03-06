@@ -550,5 +550,5 @@ if (barkSfx) {
 // ── Assemble and write ──
 const updatedVoices = [...voices, ...newBarkVoices, diaS2, diaDlg, marvisB];
 
-writeFileSync(VOICES_PATH, JSON.stringify(updatedVoices, null, 2));
+writeFileSync(VOICES_PATH, JSON.stringify({ voices: updatedVoices }, null, 2));
 console.log(`\n📊 Total voices: ${updatedVoices.length} (was ${voices.length}, added ${updatedVoices.length - voices.length})`);
