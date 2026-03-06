@@ -1,0 +1,77 @@
+{
+  "id": "QHHHNMCFZXQKM9ZYDQY1SWBVY3",
+  "name": "Haley - Engaging Friend",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
+  "description": "Casual female voice with a relaxed, friendly tone that feels natural and easy to engage with",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Haley - Engaging Friend — Cartesia",
+    "searchDescription": "Cartesia Haley - Engaging Friend: Casual female voice with a relaxed, friendly tone that feels natural and easy to engage with",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QHHHNMCFZXQKM9ZYDQY1SWBVY3.mp3",
+      "id": "s-QHHHNMCFZXQKM9ZYDQY1SWBVY3",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "cec7cae1-ac8b-4a59-9eac-ec48366f37ae",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Haley - Engaging Friend",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QHHHNMCFZXQKM9ZYDQY1SWBVY3.json"
+}

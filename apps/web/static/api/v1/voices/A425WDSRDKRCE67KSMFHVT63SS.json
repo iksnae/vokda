@@ -1,0 +1,77 @@
+{
+  "id": "A425WDSRDKRCE67KSMFHVT63SS",
+  "name": "Bryce - Clear Explainer",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "2948c301-9211-4112-8f36-4c3fc836ef12",
+  "description": "Confident voice with clear enunciation and strong delivery, ideal for professional and instructional use",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Bryce - Clear Explainer — Cartesia",
+    "searchDescription": "Cartesia Bryce - Clear Explainer: Confident voice with clear enunciation and strong delivery, ideal for professional and instructional use",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "2948c301-9211-4112-8f36-4c3fc836ef12",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A425WDSRDKRCE67KSMFHVT63SS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A425WDSRDKRCE67KSMFHVT63SS.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A425WDSRDKRCE67KSMFHVT63SS.mp3",
+      "id": "s-A425WDSRDKRCE67KSMFHVT63SS",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "2948c301-9211-4112-8f36-4c3fc836ef12",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Bryce - Clear Explainer",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A425WDSRDKRCE67KSMFHVT63SS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A425WDSRDKRCE67KSMFHVT63SS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A425WDSRDKRCE67KSMFHVT63SS.json"
+}

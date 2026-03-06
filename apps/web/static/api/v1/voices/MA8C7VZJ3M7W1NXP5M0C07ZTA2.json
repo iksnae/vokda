@@ -1,0 +1,77 @@
+{
+  "id": "MA8C7VZJ3M7W1NXP5M0C07ZTA2",
+  "name": "Ronald - Thinker",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+  "description": "Intense, deep young adult male for casual conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Ronald - Thinker — Cartesia",
+    "searchDescription": "Cartesia Ronald - Thinker: Intense, deep young adult male for casual conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MA8C7VZJ3M7W1NXP5M0C07ZTA2.mp3",
+      "id": "s-MA8C7VZJ3M7W1NXP5M0C07ZTA2",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5ee9feff-1265-424a-9d7f-8e4d431a12c7",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Ronald - Thinker",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/MA8C7VZJ3M7W1NXP5M0C07ZTA2.json"
+}

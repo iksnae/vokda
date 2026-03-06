@@ -1,0 +1,99 @@
+{
+  "id": "85SYDQJ80DVY1M9G7ZJ227J7TF",
+  "name": "Valerio (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-valerio-es",
+  "description": "Mexican-accented male voice (adult) with deep, knowledgeable, natural qualities. Aura 2 architecture.",
+  "tags": [
+    "deep",
+    "knowledgeable",
+    "natural",
+    "polite",
+    "professional",
+    "aura-2",
+    "accent-mexican",
+    "male"
+  ],
+  "languages": [
+    "es",
+    "es-MX"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "deep",
+      "knowledgeable",
+      "natural",
+      "polite",
+      "professional"
+    ],
+    "shortLabel": "Valerio — Deepgram Aura 2",
+    "searchDescription": "Deepgram Valerio: Mexican-accented male voice (adult) with deep, knowledgeable, natural qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "mexican"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/3a026a40abe8b1b103052c9dd0b96e60d4e6c006.wav",
+    "deepgramUuid": "85f0219c-68d3-4d35-85f1-79ccdbe96f21",
+    "sampleRate": 24000,
+    "accent": "Mexican",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Valerio",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/541dcb11c88ac21364cb5faaee324c81ad28e434-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/85SYDQJ80DVY1M9G7ZJ227J7TF.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/85SYDQJ80DVY1M9G7ZJ227J7TF.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/85SYDQJ80DVY1M9G7ZJ227J7TF.mp3",
+      "id": "s-85SYDQJ80DVY1M9G7ZJ227J7TF",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-valerio-es",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Valerio",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/85SYDQJ80DVY1M9G7ZJ227J7TF.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/85SYDQJ80DVY1M9G7ZJ227J7TF",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/85SYDQJ80DVY1M9G7ZJ227J7TF.json"
+}

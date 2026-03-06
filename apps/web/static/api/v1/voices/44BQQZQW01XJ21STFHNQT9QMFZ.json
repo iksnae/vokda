@@ -19,16 +19,6 @@
   "qualityTier": "premium",
   "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
   "metadata": {
-    "shortLabel": "Molly — Edge New Zealand",
-    "searchDescription": "Edge TTS Molly: New Zealand English female voice with friendly, natural delivery.",
-    "machineTags": [
-      "edge-tts",
-      "microsoft",
-      "neural",
-      "free",
-      "female",
-      "en-nz"
-    ],
     "useCases": [
       "narration",
       "assistants",
@@ -36,59 +26,69 @@
       "accessibility",
       "prototyping"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "professional",
       "natural"
     ],
+    "shortLabel": "Molly — Edge New Zealand",
+    "searchDescription": "Edge TTS Molly: New Zealand English female voice with friendly, natural delivery.",
     "audienceTags": [
       "developers",
       "creators",
       "educators"
     ],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "female",
+      "en-nz"
+    ]
   },
   "modelCard": {
-    "modelName": "en-NZ-MollyNeural",
-    "architecture": "Azure Neural TTS",
+    "commercialUse": false,
+    "locale": "en-NZ",
+    "sampleRate": 24000,
     "providerType": "cloud_provider",
     "providerUrl": "https://github.com/rany2/edge-tts",
-    "license": "Free (Microsoft Edge TTS API)",
-    "commercialUse": false,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "supportsSSML": true,
-    "totalVoices": 322,
     "totalEnglishVoices": 47,
-    "region": "New Zealand",
-    "locale": "en-NZ",
+    "modelName": "en-NZ-MollyNeural",
+    "license": "Free (Microsoft Edge TTS API)",
     "specialCapabilities": [
       "SSML support",
       "No API key required",
       "Real-time streaming"
-    ]
+    ],
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "region": "New Zealand",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "architecture": "Azure Neural TTS"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+      "id": "s-44BQQZQW01XJ21STFHNQT9QMFZ",
+      "label": "Default",
+      "text": "Hello! I'm Molly, speaking New Zealand English. This is a preview of how I sound in natural conversation."
+    }
+  ],
   "variants": [
     {
       "sourceKey": "en-NZ-MollyNeural",
-      "label": "Molly",
-      "engine": "edge-tts",
       "supportsStreaming": true,
-      "supportsSsml": true,
-      "maxChars": 5000
-    }
-  ],
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
-  "samples": [
-    {
-      "id": "s-44BQQZQW01XJ21STFHNQT9QMFZ",
-      "label": "Default",
-      "text": "Hello! I'm Molly, speaking New Zealand English. This is a preview of how I sound in natural conversation.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3"
+      "engine": "edge-tts",
+      "maxChars": 5000,
+      "label": "Molly",
+      "supportsSsml": true
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",

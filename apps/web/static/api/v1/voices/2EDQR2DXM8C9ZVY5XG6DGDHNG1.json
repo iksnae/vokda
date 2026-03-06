@@ -1,0 +1,77 @@
+{
+  "id": "2EDQR2DXM8C9ZVY5XG6DGDHNG1",
+  "name": "Victor - Voiceover Man",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "7fe6faca-172f-4fd9-a193-25642b8fdb07",
+  "description": "Versatile, engaging adult male for professional use cases, narrations, and voiceovers",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Victor - Voiceover Man — Cartesia",
+    "searchDescription": "Cartesia Victor - Voiceover Man: Versatile, engaging adult male for professional use cases, narrations, and voiceovers",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "7fe6faca-172f-4fd9-a193-25642b8fdb07",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2EDQR2DXM8C9ZVY5XG6DGDHNG1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2EDQR2DXM8C9ZVY5XG6DGDHNG1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2EDQR2DXM8C9ZVY5XG6DGDHNG1.mp3",
+      "id": "s-2EDQR2DXM8C9ZVY5XG6DGDHNG1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "7fe6faca-172f-4fd9-a193-25642b8fdb07",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Victor - Voiceover Man",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/2EDQR2DXM8C9ZVY5XG6DGDHNG1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/2EDQR2DXM8C9ZVY5XG6DGDHNG1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/2EDQR2DXM8C9ZVY5XG6DGDHNG1.json"
+}

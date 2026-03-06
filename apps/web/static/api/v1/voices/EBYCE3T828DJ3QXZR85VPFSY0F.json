@@ -1,0 +1,93 @@
+{
+  "id": "EBYCE3T828DJ3QXZR85VPFSY0F",
+  "name": "Angus (Aura)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-angus-en",
+  "description": "Irish-accented male voice (adult) with casual, friendly, patient qualities. Aura architecture.",
+  "tags": [
+    "casual",
+    "friendly",
+    "patient",
+    "aura",
+    "accent-irish",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-IE"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual conversation",
+      "interview"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "casual",
+      "friendly",
+      "patient"
+    ],
+    "shortLabel": "Angus — Deepgram Aura",
+    "searchDescription": "Deepgram Angus: Irish-accented male voice (adult) with casual, friendly, patient qualities. Aura architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "male",
+      "irish"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/f45d7dd5526a1661929f39943dbf3771e2203855.wav",
+    "deepgramUuid": "b50880e3-4e2e-4e53-ba27-ea0472bf2cf4",
+    "sampleRate": 24000,
+    "accent": "Irish",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ba80f5",
+    "modelName": "Deepgram Aura — Angus",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual conversation",
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/19913bbdcd733ae808303ea8faae8e8e43ee369c-144x144.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/EBYCE3T828DJ3QXZR85VPFSY0F.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/EBYCE3T828DJ3QXZR85VPFSY0F.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/EBYCE3T828DJ3QXZR85VPFSY0F.mp3",
+      "id": "s-EBYCE3T828DJ3QXZR85VPFSY0F",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-angus-en",
+      "supportsStreaming": true,
+      "engine": "aura",
+      "maxChars": 2000,
+      "label": "Angus",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/EBYCE3T828DJ3QXZR85VPFSY0F.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/EBYCE3T828DJ3QXZR85VPFSY0F",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/EBYCE3T828DJ3QXZR85VPFSY0F.json"
+}

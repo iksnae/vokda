@@ -1,0 +1,91 @@
+{
+  "id": "TFJFT6AA1M9R01VNP28AC6FSM8",
+  "name": "Selene (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-selene-en",
+  "description": "American-accented female voice (adult) with expressive, engaging, energetic qualities. Aura 2 architecture.",
+  "tags": [
+    "expressive",
+    "engaging",
+    "energetic",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "informative"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "expressive",
+      "engaging",
+      "energetic"
+    ],
+    "shortLabel": "Selene — Deepgram Aura 2",
+    "searchDescription": "Deepgram Selene: American-accented female voice (adult) with expressive, engaging, energetic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/cebe72725a11e7c576de3f851b53d71616371f2a.wav",
+    "deepgramUuid": "af2622e3-2ade-4751-a377-5c873b2863e6",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#f04438",
+    "modelName": "Deepgram Aura 2 — Selene",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "informative"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/80c7fbb7a985a1a0b82e700a0fcd25516d838c34-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/TFJFT6AA1M9R01VNP28AC6FSM8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/TFJFT6AA1M9R01VNP28AC6FSM8.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/TFJFT6AA1M9R01VNP28AC6FSM8.mp3",
+      "id": "s-TFJFT6AA1M9R01VNP28AC6FSM8",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-selene-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Selene",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/TFJFT6AA1M9R01VNP28AC6FSM8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/TFJFT6AA1M9R01VNP28AC6FSM8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/TFJFT6AA1M9R01VNP28AC6FSM8.json"
+}

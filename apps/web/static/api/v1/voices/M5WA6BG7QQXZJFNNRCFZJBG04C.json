@@ -1,0 +1,77 @@
+{
+  "id": "M5WA6BG7QQXZJFNNRCFZJBG04C",
+  "name": "Donny - Steady Presence",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+  "description": "Neutral male voice with balanced tone and clarity, adaptable for a wide range of casual speaking contexts",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Donny - Steady Presence — Cartesia",
+    "searchDescription": "Cartesia Donny - Steady Presence: Neutral male voice with balanced tone and clarity, adaptable for a wide range of casual speaking contexts",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M5WA6BG7QQXZJFNNRCFZJBG04C.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M5WA6BG7QQXZJFNNRCFZJBG04C.mp3",
+      "id": "s-M5WA6BG7QQXZJFNNRCFZJBG04C",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "d709a7e8-9495-4247-aef0-01b3207d11bf",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Donny - Steady Presence",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/M5WA6BG7QQXZJFNNRCFZJBG04C",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M5WA6BG7QQXZJFNNRCFZJBG04C.json"
+}

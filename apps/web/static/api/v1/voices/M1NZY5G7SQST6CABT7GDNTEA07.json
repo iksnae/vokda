@@ -1,0 +1,99 @@
+{
+  "id": "M1NZY5G7SQST6CABT7GDNTEA07",
+  "name": "Luciano (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-luciano-es",
+  "description": "Mexican-accented male voice (adult) with charismatic, cheerful, energetic qualities. Aura 2 architecture.",
+  "tags": [
+    "charismatic",
+    "cheerful",
+    "energetic",
+    "expressive",
+    "friendly",
+    "aura-2",
+    "accent-mexican",
+    "male"
+  ],
+  "languages": [
+    "es",
+    "es-MX"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "interview",
+      "customer service"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "charismatic",
+      "cheerful",
+      "energetic",
+      "expressive",
+      "friendly"
+    ],
+    "shortLabel": "Luciano — Deepgram Aura 2",
+    "searchDescription": "Deepgram Luciano: Mexican-accented male voice (adult) with charismatic, cheerful, energetic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "mexican"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/cebad7b542dc4b74c37a0106e7bfe868edba6410.wav",
+    "deepgramUuid": "64d28246-2110-421f-9e68-8de84c3db917",
+    "sampleRate": 24000,
+    "accent": "Mexican",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Luciano",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "interview",
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/8a72c03574392a955d1a9402cbbc3fb0bab3754a-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M1NZY5G7SQST6CABT7GDNTEA07.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M1NZY5G7SQST6CABT7GDNTEA07.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M1NZY5G7SQST6CABT7GDNTEA07.mp3",
+      "id": "s-M1NZY5G7SQST6CABT7GDNTEA07",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-luciano-es",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Luciano",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M1NZY5G7SQST6CABT7GDNTEA07.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/M1NZY5G7SQST6CABT7GDNTEA07",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M1NZY5G7SQST6CABT7GDNTEA07.json"
+}

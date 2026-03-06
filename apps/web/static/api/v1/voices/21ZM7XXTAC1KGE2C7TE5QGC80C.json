@@ -1,0 +1,71 @@
+{
+  "id": "21ZM7XXTAC1KGE2C7TE5QGC80C",
+  "name": "Sophie",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "sophie",
+  "description": "Narrative. Strong British accent. UK",
+  "tags": [
+    "female",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Sophie — LMNT",
+    "searchDescription": "LMNT Sophie: Narrative. Strong British accent. UK",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/21ZM7XXTAC1KGE2C7TE5QGC80C.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/21ZM7XXTAC1KGE2C7TE5QGC80C.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/21ZM7XXTAC1KGE2C7TE5QGC80C.mp3",
+      "id": "s-21ZM7XXTAC1KGE2C7TE5QGC80C",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "sophie",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Sophie",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/21ZM7XXTAC1KGE2C7TE5QGC80C.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/21ZM7XXTAC1KGE2C7TE5QGC80C",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/21ZM7XXTAC1KGE2C7TE5QGC80C.json"
+}

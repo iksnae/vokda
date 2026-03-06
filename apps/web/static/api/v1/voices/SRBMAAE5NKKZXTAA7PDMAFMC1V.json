@@ -1,0 +1,77 @@
+{
+  "id": "SRBMAAE5NKKZXTAA7PDMAFMC1V",
+  "name": "Alaric - Wizard",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "87748186-23bb-4158-a1eb-332911b0b708",
+  "description": "Wistful, wise, elderly male for entertainment and fun characters",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Alaric - Wizard — Cartesia",
+    "searchDescription": "Cartesia Alaric - Wizard: Wistful, wise, elderly male for entertainment and fun characters",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "87748186-23bb-4158-a1eb-332911b0b708",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SRBMAAE5NKKZXTAA7PDMAFMC1V.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SRBMAAE5NKKZXTAA7PDMAFMC1V.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SRBMAAE5NKKZXTAA7PDMAFMC1V.mp3",
+      "id": "s-SRBMAAE5NKKZXTAA7PDMAFMC1V",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "87748186-23bb-4158-a1eb-332911b0b708",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Alaric - Wizard",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SRBMAAE5NKKZXTAA7PDMAFMC1V.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SRBMAAE5NKKZXTAA7PDMAFMC1V",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SRBMAAE5NKKZXTAA7PDMAFMC1V.json"
+}

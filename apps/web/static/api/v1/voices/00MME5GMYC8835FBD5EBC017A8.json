@@ -18,15 +18,7 @@
   ],
   "qualityTier": "standard",
   "licenseNotes": "Marvis TTS released under Apache 2.0 license.",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
   "metadata": {
-    "shortLabel": "Second conversational voice",
-    "toneTags": [
-      "casual",
-      "animated",
-      "distinct"
-    ],
     "useCases": [
       "Conversational AI",
       "Multi-speaker demos",
@@ -34,50 +26,18 @@
       "Creative dialogue"
     ],
     "genderPresentation": "neutral",
+    "toneTags": [
+      "casual",
+      "animated",
+      "distinct"
+    ],
+    "shortLabel": "Second conversational voice",
     "agePresentation": "adult"
   },
-  "samples": [
-    {
-      "id": "sample-00MME5GMYC8835FBD5EBC017A8",
-      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "variant-00MME5GMYC8835FBD5EBC017A8",
-      "label": "Marvis 250M Conversational B (8-bit)",
-      "sourceType": "open_model",
-      "sourceKey": "marvis:250m-v0.2:conversational_b",
-      "supportsSsml": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Marvis AI",
-    "providerType": "local_model",
-    "providerUrl": "https://huggingface.co/Marvis-AI",
-    "modelFamily": "Marvis TTS",
-    "modelName": "marvis-tts-250m-v0.2-MLX-8bit",
-    "modelId": "Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
-    "modelVersion": "0.2",
-    "architecture": "Sesame-family conversational TTS (MLX 8-bit quantized)",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": true,
-    "maxInputLength": 4000,
-    "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Local inference only — no data leaves device",
-    "latencyMs": "~1000-3000",
-    "releaseDate": "2025-02-01",
     "knownLimitations": [
       "English only",
       "No SSML support",
@@ -86,10 +46,26 @@
       "Requires mlx-audio 0.3.1+ on Apple Silicon"
     ],
     "notes": "Runs locally via mlx-audio. 250M parameter conversational TTS model. Also available in 100M, 6-bit, and fp16 variants. Uses sesame architecture mapping in mlx-audio.",
+    "modelFamily": "Marvis TTS",
+    "modelId": "Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
+    "modelVersion": "0.2",
+    "voicePreset": "conversational_b",
+    "providerType": "local_model",
+    "ssmlSupport": false,
     "runtimeFramework": "mlx-audio 0.3.1",
     "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM for 8-bit",
-    "voicePreset": "conversational_b",
-    "totalVoicePresets": 6,
+    "voiceCloning": true,
+    "providerName": "Marvis AI",
+    "multilingual": false,
+    "latencyMs": "~1000-3000",
+    "architecture": "Sesame-family conversational TTS (MLX 8-bit quantized)",
+    "voiceCloningMethod": "ref_audio",
+    "releaseDate": "2025-02-01",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/Marvis-AI",
+    "streamingSupport": true,
     "availablePresets": [
       "conversational_a",
       "conversational_b",
@@ -98,8 +74,32 @@
       "read_speech_c",
       "read_speech_d"
     ],
-    "voiceCloningMethod": "ref_audio"
+    "modelName": "marvis-tts-250m-v0.2-MLX-8bit",
+    "license": "Apache 2.0",
+    "dataRetention": "Local inference only — no data leaves device",
+    "maxInputLength": 4000,
+    "channels": 1,
+    "bitDepth": 16,
+    "totalVoicePresets": 6
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+      "id": "sample-00MME5GMYC8835FBD5EBC017A8",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "marvis:250m-v0.2:conversational_b",
+      "sourceType": "open_model",
+      "id": "variant-00MME5GMYC8835FBD5EBC017A8",
+      "label": "Marvis 250M Conversational B (8-bit)",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/00MME5GMYC8835FBD5EBC017A8",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMYC8835FBD5EBC017A8.json"

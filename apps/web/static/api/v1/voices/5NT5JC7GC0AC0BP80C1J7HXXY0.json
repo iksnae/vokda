@@ -1,0 +1,91 @@
+{
+  "id": "5NT5JC7GC0AC0BP80C1J7HXXY0",
+  "name": "Zeus (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-zeus-en",
+  "description": "American-accented male voice (adult) with deep, trustworthy, smooth qualities. Aura 2 architecture.",
+  "tags": [
+    "deep",
+    "trustworthy",
+    "smooth",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "ivr"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "deep",
+      "trustworthy",
+      "smooth"
+    ],
+    "shortLabel": "Zeus — Deepgram Aura 2",
+    "searchDescription": "Deepgram Zeus: American-accented male voice (adult) with deep, trustworthy, smooth qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/b744984f936b70c1af8998911e1c166a843b4711.wav",
+    "deepgramUuid": "f4340eda-5024-44ec-9251-fb5269dba47b",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#c58dff",
+    "modelName": "Deepgram Aura 2 — Zeus",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/30dfc599f8d9146f9118e30e6da995a4e4bcec37-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5NT5JC7GC0AC0BP80C1J7HXXY0.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5NT5JC7GC0AC0BP80C1J7HXXY0.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5NT5JC7GC0AC0BP80C1J7HXXY0.mp3",
+      "id": "s-5NT5JC7GC0AC0BP80C1J7HXXY0",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-zeus-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Zeus",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5NT5JC7GC0AC0BP80C1J7HXXY0.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5NT5JC7GC0AC0BP80C1J7HXXY0",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5NT5JC7GC0AC0BP80C1J7HXXY0.json"
+}

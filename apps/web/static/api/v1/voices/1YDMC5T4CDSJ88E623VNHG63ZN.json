@@ -1,0 +1,77 @@
+{
+  "id": "1YDMC5T4CDSJ88E623VNHG63ZN",
+  "name": "Samantha - Angry Support Leader",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "04bfd756-4fd4-42c2-9ccf-37f647c5bf54",
+  "description": "Firm, confident adult female for conversational support",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Samantha - Angry Support Leader — Cartesia",
+    "searchDescription": "Cartesia Samantha - Angry Support Leader: Firm, confident adult female for conversational support",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "04bfd756-4fd4-42c2-9ccf-37f647c5bf54",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1YDMC5T4CDSJ88E623VNHG63ZN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1YDMC5T4CDSJ88E623VNHG63ZN.mp3",
+      "id": "s-1YDMC5T4CDSJ88E623VNHG63ZN",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "04bfd756-4fd4-42c2-9ccf-37f647c5bf54",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Samantha - Angry Support Leader",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1YDMC5T4CDSJ88E623VNHG63ZN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1YDMC5T4CDSJ88E623VNHG63ZN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1YDMC5T4CDSJ88E623VNHG63ZN.json"
+}

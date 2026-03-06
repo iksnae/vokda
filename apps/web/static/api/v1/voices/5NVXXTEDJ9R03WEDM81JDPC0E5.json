@@ -1,0 +1,77 @@
+{
+  "id": "5NVXXTEDJ9R03WEDM81JDPC0E5",
+  "name": "Natasha - Upbeat Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "e2d08065-b658-466b-ad52-cef8ee21d307",
+  "description": "English female adult voice with a lively, upbeat tone for energetic conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Natasha - Upbeat Guide — Cartesia",
+    "searchDescription": "Cartesia Natasha - Upbeat Guide: English female adult voice with a lively, upbeat tone for energetic conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "e2d08065-b658-466b-ad52-cef8ee21d307",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5NVXXTEDJ9R03WEDM81JDPC0E5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5NVXXTEDJ9R03WEDM81JDPC0E5.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5NVXXTEDJ9R03WEDM81JDPC0E5.mp3",
+      "id": "s-5NVXXTEDJ9R03WEDM81JDPC0E5",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "e2d08065-b658-466b-ad52-cef8ee21d307",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Natasha - Upbeat Guide",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5NVXXTEDJ9R03WEDM81JDPC0E5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5NVXXTEDJ9R03WEDM81JDPC0E5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5NVXXTEDJ9R03WEDM81JDPC0E5.json"
+}

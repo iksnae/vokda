@@ -1,0 +1,77 @@
+{
+  "id": "YE2E1HQM7VKY89NYDRC9T88044",
+  "name": "Wyatt - Dependable Dispatcher",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
+  "description": "Friendly, clear American male with a subtle Southern drawl.",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Wyatt - Dependable Dispatcher — Cartesia",
+    "searchDescription": "Cartesia Wyatt - Dependable Dispatcher: Friendly, clear American male with a subtle Southern drawl.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE2E1HQM7VKY89NYDRC9T88044.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE2E1HQM7VKY89NYDRC9T88044.mp3",
+      "id": "s-YE2E1HQM7VKY89NYDRC9T88044",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5fc5c797-12c5-4f2b-ac9b-d4e53c08098f",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Wyatt - Dependable Dispatcher",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE2E1HQM7VKY89NYDRC9T88044.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/YE2E1HQM7VKY89NYDRC9T88044",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE2E1HQM7VKY89NYDRC9T88044.json"
+}

@@ -19,98 +19,98 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (500M params). Check model card for license terms.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural"
+    ],
     "shortLabel": "MLX · 500M · female",
     "searchDescription": "SparkAudio voice-clone-capable TTS. Supports zero-shot speaker adaptation.",
+    "audienceTags": [],
+    "agePresentation": "adult",
     "machineTags": [
       "female",
       "open-model",
       "local",
       "mlx"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "natural"
-    ],
-    "audienceTags": [],
-    "genderPresentation": "female",
-    "agePresentation": "adult",
-    "metadataQuality": "curated"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KK00Y7ANRDAR7CG9EMM8JZ4G",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KK00Y7AN27T92R8ST1WAPXNV",
-      "sourceType": "local_model",
-      "sourceKey": "mlx:spark-tts:default",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "SparkAudio",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
-    "modelUrl": "https://huggingface.co/mlx-community/Spark-TTS-0.5B-bf16",
-    "modelFamily": "Spark TTS",
-    "modelName": "Spark-TTS-0.5B",
-    "modelSize": "500M parameters",
-    "architecture": "Qwen2 backbone with BiCodec speech tokenizer",
-    "baseModel": "Qwen2-0.5B",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "bf16",
-    "diskSize": "~1GB",
-    "memoryRequired": "~1.2GB",
-    "hardwareRequirements": "Apple Silicon (M1+)",
-    "sampleRate": 16000,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": true,
-    "supportedLanguages": [
-      "en",
-      "zh"
-    ],
-    "maxInputLength": 5000,
-    "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B/blob/main/LICENSE",
     "commercialUse": true,
-    "attributionRequired": false,
-    "realtimeFactor": "~15x realtime",
-    "latencyMs": "~1000-2000",
-    "releaseDate": "2025-03-13",
-    "paperUrl": "https://arxiv.org/abs/2503.01710",
     "knownLimitations": [
       "Zero-shot cloning requires reference audio",
       "Default voice without reference",
       "Chinese and English only"
     ],
+    "modelFamily": "Spark TTS",
+    "multiSpeaker": false,
     "singleVoice": true,
+    "providerType": "local_mlx",
+    "diskSize": "~1GB",
+    "supportedLanguages": [
+      "en",
+      "zh"
+    ],
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/Spark-TTS-0.5B-bf16",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "voiceCloning": true,
+    "realtimeFactor": "~15x realtime",
+    "providerName": "SparkAudio",
+    "multilingual": true,
+    "latencyMs": "~1000-2000",
+    "architecture": "Qwen2 backbone with BiCodec speech tokenizer",
+    "quantization": "bf16",
+    "paperUrl": "https://arxiv.org/abs/2503.01710",
     "voiceCloningMethod": "ref_audio (reference audio input)",
+    "baseModel": "Qwen2-0.5B",
+    "memoryRequired": "~1.2GB",
+    "releaseDate": "2025-03-13",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
     "expressiveControls": [
       "speed",
       "temperature"
     ],
-    "defaultVoiceNote": "One built-in voice; additional voices require reference audio for cloning",
-    "multiSpeaker": false
+    "emotionControl": false,
+    "modelSize": "500M parameters",
+    "sampleRate": 16000,
+    "providerUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
+    "streamingSupport": false,
+    "modelName": "Spark-TTS-0.5B",
+    "license": "Apache 2.0",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "defaultVoiceNote": "One built-in voice; additional voices require reference audio for cloning"
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00Y7AN1W3DS5EBESXQV7XZ.mp3",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "id": "01KK00Y7ANRDAR7CG9EMM8JZ4G",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "mlx:spark-tts:default",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "local_model",
+      "id": "01KK00Y7AN27T92R8ST1WAPXNV",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KK00Y7AN1W3DS5EBESXQV7XZ",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00Y7AN1W3DS5EBESXQV7XZ.json"

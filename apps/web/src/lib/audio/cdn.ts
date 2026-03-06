@@ -1,8 +1,12 @@
 /**
  * Audio CDN helper.
  *
- * When PUBLIC_AUDIO_BASE_URL is set (production), audio is served from S3.
- * When unset (local dev), audio falls back to static files in /audio/samples/.
+ * Currently audio is served from Amplify Hosting's built-in CDN via static files.
+ * When PUBLIC_AUDIO_BASE_URL is set, audio can be served from an external CDN/S3.
+ * The S3 bucket (vokdaAudio) is provisioned but has public access blocked by default —
+ * it's intended for user-generated audio (BYOK synthesis) rather than catalog assets.
+ *
+ * For catalog assets, Amplify Hosting CDN is free and sufficient at current scale.
  */
 
 const AUDIO_BASE: string =

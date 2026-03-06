@@ -1,0 +1,77 @@
+{
+  "id": "J3P20CFKT43HXNNGDNXKQKXJ9R",
+  "name": "David - Angry Greeter",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "fd098a10-ba9e-445e-b144-be2a9f3dac02",
+  "description": "Engaging adult male for advertising and upbeat conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "David - Angry Greeter — Cartesia",
+    "searchDescription": "Cartesia David - Angry Greeter: Engaging adult male for advertising and upbeat conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "fd098a10-ba9e-445e-b144-be2a9f3dac02",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J3P20CFKT43HXNNGDNXKQKXJ9R.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J3P20CFKT43HXNNGDNXKQKXJ9R.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J3P20CFKT43HXNNGDNXKQKXJ9R.mp3",
+      "id": "s-J3P20CFKT43HXNNGDNXKQKXJ9R",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "fd098a10-ba9e-445e-b144-be2a9f3dac02",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "David - Angry Greeter",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J3P20CFKT43HXNNGDNXKQKXJ9R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J3P20CFKT43HXNNGDNXKQKXJ9R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J3P20CFKT43HXNNGDNXKQKXJ9R.json"
+}

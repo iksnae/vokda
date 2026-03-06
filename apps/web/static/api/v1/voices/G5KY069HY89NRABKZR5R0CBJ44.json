@@ -1,0 +1,75 @@
+{
+  "id": "G5KY069HY89NRABKZR5R0CBJ44",
+  "name": "Cassian",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "cassian",
+  "description": "Friendly, animated voice that's nurturing and engaging. Welcoming and enthusiastic, perfect for educational content and guiding students.",
+  "tags": [
+    "neutral",
+    "instant",
+    "streaming",
+    "low-latency",
+    "tutor",
+    "tutor-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "tutor agent"
+    ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Cassian — LMNT",
+    "searchDescription": "LMNT Cassian: Friendly, animated voice that's nurturing and engaging. Welcoming and enthusiastic, perfect for educational content and guiding students.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "neutral",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G5KY069HY89NRABKZR5R0CBJ44.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G5KY069HY89NRABKZR5R0CBJ44.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5KY069HY89NRABKZR5R0CBJ44.mp3",
+      "id": "s-G5KY069HY89NRABKZR5R0CBJ44",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "cassian",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Cassian",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G5KY069HY89NRABKZR5R0CBJ44.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G5KY069HY89NRABKZR5R0CBJ44",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G5KY069HY89NRABKZR5R0CBJ44.json"
+}

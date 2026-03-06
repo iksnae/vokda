@@ -1,0 +1,77 @@
+{
+  "id": "GFRBZWACDYDJ3NWDG7WDNXG3PD",
+  "name": "Calypso - ASMR Lady",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "03496517-369a-4db1-8236-3d3ae459ddf7",
+  "description": "Soothing female for meditations and other calming use cases",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Calypso - ASMR Lady — Cartesia",
+    "searchDescription": "Cartesia Calypso - ASMR Lady: Soothing female for meditations and other calming use cases",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "03496517-369a-4db1-8236-3d3ae459ddf7",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GFRBZWACDYDJ3NWDG7WDNXG3PD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GFRBZWACDYDJ3NWDG7WDNXG3PD.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GFRBZWACDYDJ3NWDG7WDNXG3PD.mp3",
+      "id": "s-GFRBZWACDYDJ3NWDG7WDNXG3PD",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "03496517-369a-4db1-8236-3d3ae459ddf7",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Calypso - ASMR Lady",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GFRBZWACDYDJ3NWDG7WDNXG3PD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GFRBZWACDYDJ3NWDG7WDNXG3PD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GFRBZWACDYDJ3NWDG7WDNXG3PD.json"
+}

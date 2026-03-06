@@ -1,0 +1,77 @@
+{
+  "id": "BWDZP865KNYDJ868BQSZQQY1GB",
+  "name": "Lily - Casual Pal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
+  "description": "Relaxed, casual voice for friendly, everyday conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Lily - Casual Pal — Cartesia",
+    "searchDescription": "Cartesia Lily - Casual Pal: Relaxed, casual voice for friendly, everyday conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BWDZP865KNYDJ868BQSZQQY1GB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BWDZP865KNYDJ868BQSZQQY1GB.mp3",
+      "id": "s-BWDZP865KNYDJ868BQSZQQY1GB",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "dda51133-5d43-4a3b-84e6-e68c13f60cba",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lily - Casual Pal",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/BWDZP865KNYDJ868BQSZQQY1GB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/BWDZP865KNYDJ868BQSZQQY1GB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/BWDZP865KNYDJ868BQSZQQY1GB.json"
+}

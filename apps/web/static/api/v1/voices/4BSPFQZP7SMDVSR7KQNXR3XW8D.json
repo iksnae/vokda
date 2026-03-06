@@ -1,0 +1,77 @@
+{
+  "id": "4BSPFQZP7SMDVSR7KQNXR3XW8D",
+  "name": "Lila - Meditation Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "4af7c703-f2a9-45dd-a7fd-724cf7efc371",
+  "description": "Melodic female for gentle and empathetic conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Lila - Meditation Guide — Cartesia",
+    "searchDescription": "Cartesia Lila - Meditation Guide: Melodic female for gentle and empathetic conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "4af7c703-f2a9-45dd-a7fd-724cf7efc371",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4BSPFQZP7SMDVSR7KQNXR3XW8D.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4BSPFQZP7SMDVSR7KQNXR3XW8D.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4BSPFQZP7SMDVSR7KQNXR3XW8D.mp3",
+      "id": "s-4BSPFQZP7SMDVSR7KQNXR3XW8D",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "4af7c703-f2a9-45dd-a7fd-724cf7efc371",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Lila - Meditation Guide",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/4BSPFQZP7SMDVSR7KQNXR3XW8D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/4BSPFQZP7SMDVSR7KQNXR3XW8D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/4BSPFQZP7SMDVSR7KQNXR3XW8D.json"
+}

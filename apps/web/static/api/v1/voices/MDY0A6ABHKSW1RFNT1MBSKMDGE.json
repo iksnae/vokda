@@ -1,0 +1,77 @@
+{
+  "id": "MDY0A6ABHKSW1RFNT1MBSKMDGE",
+  "name": "Paul - Straight Talker",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3e1ed423-17e5-4773-b87c-25b031106e41",
+  "description": "Deep and firm male voice with a relaxed, conversational delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Paul - Straight Talker — Cartesia",
+    "searchDescription": "Cartesia Paul - Straight Talker: Deep and firm male voice with a relaxed, conversational delivery",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "3e1ed423-17e5-4773-b87c-25b031106e41",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/MDY0A6ABHKSW1RFNT1MBSKMDGE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/MDY0A6ABHKSW1RFNT1MBSKMDGE.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/MDY0A6ABHKSW1RFNT1MBSKMDGE.mp3",
+      "id": "s-MDY0A6ABHKSW1RFNT1MBSKMDGE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3e1ed423-17e5-4773-b87c-25b031106e41",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Paul - Straight Talker",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/MDY0A6ABHKSW1RFNT1MBSKMDGE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/MDY0A6ABHKSW1RFNT1MBSKMDGE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/MDY0A6ABHKSW1RFNT1MBSKMDGE.json"
+}

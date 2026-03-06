@@ -1,0 +1,101 @@
+{
+  "id": "T245KGC3VW7P86BXW3WFSYA9HN",
+  "name": "Cesare (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-cesare-it",
+  "description": "Italian-accented male voice (adult) with clear, empathetic, knowledgeable qualities. Aura 2 architecture.",
+  "tags": [
+    "clear",
+    "empathetic",
+    "knowledgeable",
+    "natural",
+    "smooth",
+    "aura-2",
+    "accent-italian",
+    "male"
+  ],
+  "languages": [
+    "it",
+    "it-IT"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "ivr"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "clear",
+      "empathetic",
+      "knowledgeable",
+      "natural",
+      "smooth"
+    ],
+    "shortLabel": "Cesare — Deepgram Aura 2",
+    "searchDescription": "Deepgram Cesare: Italian-accented male voice (adult) with clear, empathetic, knowledgeable qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "italian"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/a87f26f393377adf9cbf46311b8ed343c1412915.wav",
+    "deepgramUuid": "6c77cbcf-f12f-4a12-9820-0ff6938c9b18",
+    "sampleRate": 24000,
+    "accent": "Italian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Cesare",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/bd2f043f9a78211e69e21cb2a8d546af66b69ce1-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T245KGC3VW7P86BXW3WFSYA9HN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T245KGC3VW7P86BXW3WFSYA9HN.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T245KGC3VW7P86BXW3WFSYA9HN.mp3",
+      "id": "s-T245KGC3VW7P86BXW3WFSYA9HN",
+      "label": "Default",
+      "text": "Ciao! Questa è un'anteprima di come suono in una conversazione naturale. Posso aiutare con il servizio clienti e la narrazione."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-cesare-it",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Cesare",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T245KGC3VW7P86BXW3WFSYA9HN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T245KGC3VW7P86BXW3WFSYA9HN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T245KGC3VW7P86BXW3WFSYA9HN.json"
+}

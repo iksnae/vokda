@@ -11,6 +11,7 @@ import {
   removeCollectionVoice,
   removeFavorite,
   renameCollection as renameCollectionRemote,
+  reorderCollectionVoices as reorderCollectionVoicesRemote,
   saveCollection,
   saveFavorite,
   updateCollectionVoiceNote as updateCollectionVoiceNoteRemote
@@ -488,8 +489,12 @@ export function reorderCollectionVoices(collectionId: string, voiceIds: string[]
     })
   }));
 
-  // Note: position reordering in Amplify requires updating each CollectionVoice record's
-  // position field. For now, only persists locally. Cloud sync on next hydrate.
+  if (!cloudEnabled()) return;
+
+  void reorderCollectionVoicesRemote(collectionId, voiceIds).catch((error) => {
+    reportSyncError('reorderCollectionVoices', error);
+    void hydrateCloudState();
+  });
 }
 
 export function deleteCollection(collectionId: string) {

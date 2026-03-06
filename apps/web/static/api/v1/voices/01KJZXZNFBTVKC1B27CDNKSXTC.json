@@ -15,83 +15,83 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
   "metadata": {
-    "shortLabel": "en-US female voice",
-    "searchDescription": "English (United States) Female neural voice. Styles: conversation.",
-    "machineTags": [
-      "female",
-      "us"
-    ],
+    "speakingStyle": "conversation",
     "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "sparse",
     "toneTags": [
       "conversation"
     ],
+    "shortLabel": "en-US female voice",
+    "searchDescription": "English (United States) Female neural voice. Styles: conversation.",
     "audienceTags": [],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "speakingStyle": "conversation",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "female",
+      "us"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": true,
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ],
+    "modelFamily": "Azure Neural TTS",
+    "providerType": "cloud_api",
+    "gdprCompliant": true,
+    "ssmlSupport": true,
+    "voiceCloning": false,
+    "providerName": "Microsoft Azure",
+    "multilingual": true,
+    "latencyMs": "~150-400",
+    "architecture": "Neural TTS with style and role support",
+    "releaseDate": "2019-09-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "supportedStyles": [
+      "conversation"
+    ],
+    "sampleRate": 48000,
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "streamingSupport": true,
+    "license": "Azure AI Services Terms",
+    "dataRetention": "Not stored after synthesis",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "maxInputLength": 10000,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3",
   "samples": [
     {
-      "id": "01KJZXZNFBAR7BSPQY6VX68GTD",
       "scriptKey": "default",
-      "label": "Default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3",
       "transcript": "This release adds multilingual voice routing and higher reliability across all synthesis adapters.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3"
+      "id": "01KJZXZNFBAR7BSPQY6VX68GTD",
+      "label": "Default"
     }
   ],
   "variants": [
     {
-      "id": "01KJZXZNFB7FMSC74BX6P1RS9B",
-      "sourceType": "cloud_provider",
       "sourceKey": "azure:speech:en-US-LunaNeural",
       "runnable": true,
-      "supportsSsml": true,
       "outputFormats": [
         "mp3",
         "wav",
         "pcm"
       ],
       "maxInputChars": 10000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNFB7FMSC74BX6P1RS9B",
+      "supportsSsml": true
     }
   ],
-  "modelCard": {
-    "providerName": "Microsoft Azure",
-    "providerType": "cloud_api",
-    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
-    "apiEndpoint": "{region}.tts.speech.microsoft.com",
-    "modelFamily": "Azure Neural TTS",
-    "architecture": "Neural TTS with style and role support",
-    "sampleRate": 48000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": true,
-    "wordTimestamps": true,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": false,
-    "maxInputLength": 10000,
-    "license": "Azure AI Services Terms",
-    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "gdprCompliant": true,
-    "dataRetention": "Not stored after synthesis",
-    "latencyMs": "~150-400",
-    "releaseDate": "2019-09-01",
-    "knownLimitations": [
-      "Style support varies by voice",
-      "Some voices are preview-only and may change",
-      "Multilingual voices may have accent blending artifacts"
-    ],
-    "supportedStyles": [
-      "conversation"
-    ]
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBTVKC1B27CDNKSXTC.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBTVKC1B27CDNKSXTC.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBTVKC1B27CDNKSXTC",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBTVKC1B27CDNKSXTC.json"

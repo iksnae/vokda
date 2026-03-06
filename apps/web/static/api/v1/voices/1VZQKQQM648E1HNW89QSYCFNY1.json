@@ -1,0 +1,77 @@
+{
+  "id": "1VZQKQQM648E1HNW89QSYCFNY1",
+  "name": "Tanner - Upbeat Assistant",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "710feaa3-b550-42f3-b3eb-6f37f2a7cc0a",
+  "description": "English male adult voice with an upbeat and energetic tone",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Tanner - Upbeat Assistant — Cartesia",
+    "searchDescription": "Cartesia Tanner - Upbeat Assistant: English male adult voice with an upbeat and energetic tone",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "710feaa3-b550-42f3-b3eb-6f37f2a7cc0a",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1VZQKQQM648E1HNW89QSYCFNY1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1VZQKQQM648E1HNW89QSYCFNY1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1VZQKQQM648E1HNW89QSYCFNY1.mp3",
+      "id": "s-1VZQKQQM648E1HNW89QSYCFNY1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "710feaa3-b550-42f3-b3eb-6f37f2a7cc0a",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Tanner - Upbeat Assistant",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1VZQKQQM648E1HNW89QSYCFNY1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1VZQKQQM648E1HNW89QSYCFNY1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1VZQKQQM648E1HNW89QSYCFNY1.json"
+}

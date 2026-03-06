@@ -1,0 +1,97 @@
+{
+  "id": "21T9HY9QR2629WDPDY3SVQY09R",
+  "name": "Ebisu (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-ebisu-ja",
+  "description": "Japanese-accented male voice (young adult) with calm, deep, natural qualities. Aura 2 architecture.",
+  "tags": [
+    "calm",
+    "deep",
+    "natural",
+    "patient",
+    "sincere",
+    "aura-2",
+    "accent-japanese",
+    "male"
+  ],
+  "languages": [
+    "ja",
+    "ja-JP"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "calm",
+      "deep",
+      "natural",
+      "patient",
+      "sincere"
+    ],
+    "shortLabel": "Ebisu — Deepgram Aura 2",
+    "searchDescription": "Deepgram Ebisu: Japanese-accented male voice (young adult) with calm, deep, natural qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "young adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "japanese"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/c6e27e0a540443c7b466fd0bf911e46a522668da.wav",
+    "deepgramUuid": "f4eb0439-f785-4a00-b319-db0ce1766dfd",
+    "sampleRate": 24000,
+    "accent": "Japanese",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Ebisu",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/3212fdf452a49b076399a6b337950356933b350f-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/21T9HY9QR2629WDPDY3SVQY09R.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/21T9HY9QR2629WDPDY3SVQY09R.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/21T9HY9QR2629WDPDY3SVQY09R.mp3",
+      "id": "s-21T9HY9QR2629WDPDY3SVQY09R",
+      "label": "Default",
+      "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-ebisu-ja",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Ebisu",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/21T9HY9QR2629WDPDY3SVQY09R.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/21T9HY9QR2629WDPDY3SVQY09R",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/21T9HY9QR2629WDPDY3SVQY09R.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "C620A0FW62BYDHSJDHKVJ47VRB",
+  "name": "Barry 2.0 - Helper",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "4fb26a05-57de-4d21-855a-f51adae44f38",
+  "description": "Inviting, friendly male for customer support and product videos",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Barry 2.0 - Helper — Cartesia",
+    "searchDescription": "Cartesia Barry 2.0 - Helper: Inviting, friendly male for customer support and product videos",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "4fb26a05-57de-4d21-855a-f51adae44f38",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C620A0FW62BYDHSJDHKVJ47VRB.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C620A0FW62BYDHSJDHKVJ47VRB.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C620A0FW62BYDHSJDHKVJ47VRB.mp3",
+      "id": "s-C620A0FW62BYDHSJDHKVJ47VRB",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "4fb26a05-57de-4d21-855a-f51adae44f38",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Barry 2.0 - Helper",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/C620A0FW62BYDHSJDHKVJ47VRB.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/C620A0FW62BYDHSJDHKVJ47VRB",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/C620A0FW62BYDHSJDHKVJ47VRB.json"
+}

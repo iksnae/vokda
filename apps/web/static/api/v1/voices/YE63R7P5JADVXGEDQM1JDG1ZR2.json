@@ -1,0 +1,77 @@
+{
+  "id": "YE63R7P5JADVXGEDQM1JDG1ZR2",
+  "name": "David - Greeter",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "da69d796-4603-4419-8a95-293bfc5679eb",
+  "description": "Engaging adult male for advertising and upbeat conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "David - Greeter — Cartesia",
+    "searchDescription": "Cartesia David - Greeter: Engaging adult male for advertising and upbeat conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "da69d796-4603-4419-8a95-293bfc5679eb",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/YE63R7P5JADVXGEDQM1JDG1ZR2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE63R7P5JADVXGEDQM1JDG1ZR2.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE63R7P5JADVXGEDQM1JDG1ZR2.mp3",
+      "id": "s-YE63R7P5JADVXGEDQM1JDG1ZR2",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "da69d796-4603-4419-8a95-293bfc5679eb",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "David - Greeter",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE63R7P5JADVXGEDQM1JDG1ZR2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/YE63R7P5JADVXGEDQM1JDG1ZR2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE63R7P5JADVXGEDQM1JDG1ZR2.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "KQJ5QXXR9SMDNR7QP862BQVXY3",
+  "name": "Connor - Grateful Person",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "92c41dd4-04aa-45de-8504-a92b40cb8818",
+  "description": "Expressive American adult male voice with a grateful yet firm tone for speeches, storytelling, and professional communication",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Connor - Grateful Person — Cartesia",
+    "searchDescription": "Cartesia Connor - Grateful Person: Expressive American adult male voice with a grateful yet firm tone for speeches, storytelling, and professional communication",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "92c41dd4-04aa-45de-8504-a92b40cb8818",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KQJ5QXXR9SMDNR7QP862BQVXY3.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KQJ5QXXR9SMDNR7QP862BQVXY3.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KQJ5QXXR9SMDNR7QP862BQVXY3.mp3",
+      "id": "s-KQJ5QXXR9SMDNR7QP862BQVXY3",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "92c41dd4-04aa-45de-8504-a92b40cb8818",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Connor - Grateful Person",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KQJ5QXXR9SMDNR7QP862BQVXY3.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KQJ5QXXR9SMDNR7QP862BQVXY3",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KQJ5QXXR9SMDNR7QP862BQVXY3.json"
+}

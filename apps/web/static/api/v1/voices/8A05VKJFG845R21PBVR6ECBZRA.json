@@ -1,0 +1,75 @@
+{
+  "id": "8A05VKJFG845R21PBVR6ECBZRA",
+  "name": "Elowen",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "elowen",
+  "description": "Warm, velvety female voice with youthful charm. Captivating for storytelling and narrative content.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "storyteller",
+    "narrator"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "narrator"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Elowen — LMNT",
+    "searchDescription": "LMNT Elowen: Warm, velvety female voice with youthful charm. Captivating for storytelling and narrative content.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/8A05VKJFG845R21PBVR6ECBZRA.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/8A05VKJFG845R21PBVR6ECBZRA.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/8A05VKJFG845R21PBVR6ECBZRA.mp3",
+      "id": "s-8A05VKJFG845R21PBVR6ECBZRA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "elowen",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Elowen",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/8A05VKJFG845R21PBVR6ECBZRA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/8A05VKJFG845R21PBVR6ECBZRA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/8A05VKJFG845R21PBVR6ECBZRA.json"
+}

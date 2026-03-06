@@ -3,20 +3,24 @@
   import {
     auth,
     confirmSignUpWithCode,
+    confirmPasswordReset,
     isAuthReady,
     refreshAuthRoles,
+    resetPasswordRequest,
     signInWithPassword,
     signOut,
     signUpWithPassword,
     resendSignUpConfirmation
   } from '$lib/auth/store';
 
-  type AuthView = 'signin' | 'signup' | 'verify';
+  type AuthView = 'signin' | 'signup' | 'verify' | 'forgot' | 'reset';
 
   let view: AuthView = 'signin';
   let email = '';
   let password = '';
+  let newPassword = '';
   let confirmationCode = '';
+  let resetCode = '';
   let status = '';
   let pending = false;
 
@@ -72,6 +76,31 @@
     pending = false;
   }
 
+  async function handleForgotPassword() {
+    pending = true;
+    status = '';
+    const result = await resetPasswordRequest(email.trim());
+    status = result.message;
+    if (result.needsConfirmation) {
+      view = 'reset';
+    }
+    pending = false;
+  }
+
+  async function handleResetPassword() {
+    pending = true;
+    status = '';
+    const result = await confirmPasswordReset(email.trim(), resetCode.trim(), newPassword);
+    status = result.message;
+    if (result.success) {
+      view = 'signin';
+      resetCode = '';
+      newPassword = '';
+      password = '';
+    }
+    pending = false;
+  }
+
   async function handleRefreshAccess() {
     pending = true;
     status = '';
@@ -96,6 +125,12 @@
       <p class="sub">Signed in as {$auth.user?.email ?? $auth.user?.id}</p>
       <p class="sub">Access: {$auth.user?.roles.join(', ')}</p>
 
+      <nav class="account-links">
+        <a href="/account/providers">Provider Keys</a>
+        <a href="/account/api-keys">Vokda API Keys</a>
+        <a href="/account/clips">Audio Clips</a>
+      </nav>
+
       <div class="actions">
         <button class="ghost" on:click={handleRefreshAccess} disabled={pending}>Refresh Access</button>
         <button on:click={signOut} disabled={pending}>Sign Out</button>
@@ -116,6 +151,12 @@
       {:else if view === 'signup'}
         <h1>Create Account</h1>
         <p class="sub">Create your account to start building collections.</p>
+      {:else if view === 'forgot'}
+        <h1>Forgot Password</h1>
+        <p class="sub">Enter your email to receive a reset code.</p>
+      {:else if view === 'reset'}
+        <h1>Reset Password</h1>
+        <p class="sub">Enter the code from your email and choose a new password.</p>
       {:else}
         <h1>Verify Email</h1>
         <p class="sub">Enter the code sent to your email.</p>
@@ -127,10 +168,10 @@
           <input type="email" bind:value={email} placeholder="you@domain.com" autocomplete="email" />
         </label>
 
-        {#if view !== 'verify'}
+        {#if view === 'signin' || view === 'signup'}
           <label>
             Password
-            <input type="password" bind:value={password} placeholder="Password" autocomplete="current-password" />
+            <input type="password" bind:value={password} placeholder="Password" autocomplete={view === 'signin' ? 'current-password' : 'new-password'} />
           </label>
         {/if}
 
@@ -141,16 +182,37 @@
           </label>
         {/if}
 
+        {#if view === 'reset'}
+          <label>
+            Reset Code
+            <input type="text" bind:value={resetCode} placeholder="123456" autocomplete="one-time-code" />
+          </label>
+          <label>
+            New Password
+            <input type="password" bind:value={newPassword} placeholder="New password" autocomplete="new-password" />
+          </label>
+        {/if}
+
         <div class="actions">
           {#if view === 'signin'}
             <button on:click={handleSignIn} disabled={pending || !email || !password}>Sign In</button>
           {:else if view === 'signup'}
             <button on:click={handleSignUp} disabled={pending || !email || !password}>Create Account</button>
+          {:else if view === 'forgot'}
+            <button on:click={handleForgotPassword} disabled={pending || !email}>Send Reset Code</button>
+            <button class="ghost" on:click={() => (view = 'signin')}>Back to Sign In</button>
+          {:else if view === 'reset'}
+            <button on:click={handleResetPassword} disabled={pending || !email || !resetCode || !newPassword}>Reset Password</button>
+            <button class="ghost" on:click={handleForgotPassword} disabled={pending || !email}>Resend Code</button>
           {:else}
             <button on:click={handleConfirm} disabled={pending || !email || !confirmationCode}>Verify</button>
             <button class="ghost" on:click={handleResend} disabled={pending || !email}>Resend Code</button>
           {/if}
         </div>
+
+        {#if view === 'signin'}
+          <button class="link-btn" on:click={() => (view = 'forgot')}>Forgot password?</button>
+        {/if}
       </div>
 
       {#if status}
@@ -234,6 +296,30 @@
     font-size: 0.95rem;
   }
 
+  .account-links {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .account-links a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: var(--text-small);
+    font-weight: 640;
+    color: var(--brand-700);
+    padding: 0.35rem 0.65rem;
+    border: 1px solid var(--brand-100);
+    border-radius: 10px;
+    background: #f0f9fd;
+    transition: background 120ms, border-color 120ms;
+  }
+
+  .account-links a:hover {
+    background: var(--brand-100);
+    border-color: var(--brand-600);
+  }
+
   .actions {
     display: flex;
     gap: 0.45rem;
@@ -259,6 +345,22 @@
   button:disabled {
     opacity: 0.55;
     cursor: not-allowed;
+  }
+
+  .link-btn {
+    background: none;
+    border: none;
+    color: var(--brand-600, #2563eb);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    width: fit-content;
+  }
+
+  .link-btn:hover {
+    text-decoration: underline;
   }
 
   .status {

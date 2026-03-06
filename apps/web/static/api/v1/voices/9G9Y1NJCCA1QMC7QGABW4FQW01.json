@@ -1,0 +1,99 @@
+{
+  "id": "9G9Y1NJCCA1QMC7QGABW4FQW01",
+  "name": "Lars (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-lars-nl",
+  "description": "Dutch-accented male voice (adult) with breathy, casual, comfortable qualities. Aura 2 architecture.",
+  "tags": [
+    "breathy",
+    "casual",
+    "comfortable",
+    "sincere",
+    "trustworthy",
+    "aura-2",
+    "accent-dutch",
+    "male"
+  ],
+  "languages": [
+    "nl",
+    "nl-NL"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "interview",
+      "casual chat",
+      "customer service"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "breathy",
+      "casual",
+      "comfortable",
+      "sincere",
+      "trustworthy"
+    ],
+    "shortLabel": "Lars — Deepgram Aura 2",
+    "searchDescription": "Deepgram Lars: Dutch-accented male voice (adult) with breathy, casual, comfortable qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "dutch"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/7f840d733c545aeaf5e6862f1bb5631708e3f4be.wav",
+    "deepgramUuid": "e54e0e0e-7a76-4721-a67d-1300982d9c1f",
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Lars",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "interview",
+      "casual chat",
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/4d3efe72a13b1d2c7b73e2be9909f1fff819a965-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9G9Y1NJCCA1QMC7QGABW4FQW01.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9G9Y1NJCCA1QMC7QGABW4FQW01.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9G9Y1NJCCA1QMC7QGABW4FQW01.mp3",
+      "id": "s-9G9Y1NJCCA1QMC7QGABW4FQW01",
+      "label": "Default",
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-lars-nl",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Lars",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9G9Y1NJCCA1QMC7QGABW4FQW01.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9G9Y1NJCCA1QMC7QGABW4FQW01",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9G9Y1NJCCA1QMC7QGABW4FQW01.json"
+}

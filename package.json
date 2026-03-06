@@ -24,6 +24,9 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.21.0",
     "@aws-amplify/backend-cli": "^1.8.2",
-    "@types/node": "^25.3.3"
+    "@aws-sdk/client-dynamodb": "^3.1003.0",
+    "@aws-sdk/lib-dynamodb": "^3.1003.0",
+    "@types/node": "^25.3.3",
+    "playwright": "^1.58.2"
   }
 }

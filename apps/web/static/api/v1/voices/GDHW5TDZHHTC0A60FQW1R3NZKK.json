@@ -1,0 +1,79 @@
+{
+  "id": "GDHW5TDZHHTC0A60FQW1R3NZKK",
+  "name": "Leah",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "leah",
+  "description": "Confident, expressive female voice with dynamic intonation patterns. Professional and engaging, perfect for customer support and content creation.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "healthcare-agent",
+    "educational-video",
+    "narrator"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "healthcare agent",
+      "educational video",
+      "narrator"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Leah — LMNT",
+    "searchDescription": "LMNT Leah: Confident, expressive female voice with dynamic intonation patterns. Professional and engaging, perfect for customer support and content creation.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GDHW5TDZHHTC0A60FQW1R3NZKK.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GDHW5TDZHHTC0A60FQW1R3NZKK.mp3",
+      "id": "s-GDHW5TDZHHTC0A60FQW1R3NZKK",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "leah",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Leah",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GDHW5TDZHHTC0A60FQW1R3NZKK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GDHW5TDZHHTC0A60FQW1R3NZKK.json"
+}

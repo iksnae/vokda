@@ -1,0 +1,77 @@
+{
+  "id": "SP3ST6FY81KNKT5VYE41GC5P9K",
+  "name": "Emily - Easygoing Pal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f6ce3444-478b-4ce4-982e-bcb72dffe7aa",
+  "description": "Cheerful voice with warm and welcoming tone that feels natural and easy to connect with",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Emily - Easygoing Pal — Cartesia",
+    "searchDescription": "Cartesia Emily - Easygoing Pal: Cheerful voice with warm and welcoming tone that feels natural and easy to connect with",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f6ce3444-478b-4ce4-982e-bcb72dffe7aa",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SP3ST6FY81KNKT5VYE41GC5P9K.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SP3ST6FY81KNKT5VYE41GC5P9K.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SP3ST6FY81KNKT5VYE41GC5P9K.mp3",
+      "id": "s-SP3ST6FY81KNKT5VYE41GC5P9K",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f6ce3444-478b-4ce4-982e-bcb72dffe7aa",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Emily - Easygoing Pal",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SP3ST6FY81KNKT5VYE41GC5P9K.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SP3ST6FY81KNKT5VYE41GC5P9K",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SP3ST6FY81KNKT5VYE41GC5P9K.json"
+}

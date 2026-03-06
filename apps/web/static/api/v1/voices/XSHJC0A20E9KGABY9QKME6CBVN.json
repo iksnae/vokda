@@ -1,0 +1,75 @@
+{
+  "id": "XSHJC0A20E9KGABY9QKME6CBVN",
+  "name": "Ryan",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "ryan",
+  "description": "Rhythmic male voice with theatrical flair and higher pitch. Excellent for customer service and content creation.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "healthcare-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "healthcare agent"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Ryan — LMNT",
+    "searchDescription": "LMNT Ryan: Rhythmic male voice with theatrical flair and higher pitch. Excellent for customer service and content creation.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XSHJC0A20E9KGABY9QKME6CBVN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XSHJC0A20E9KGABY9QKME6CBVN.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XSHJC0A20E9KGABY9QKME6CBVN.mp3",
+      "id": "s-XSHJC0A20E9KGABY9QKME6CBVN",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "ryan",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Ryan",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XSHJC0A20E9KGABY9QKME6CBVN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XSHJC0A20E9KGABY9QKME6CBVN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XSHJC0A20E9KGABY9QKME6CBVN.json"
+}

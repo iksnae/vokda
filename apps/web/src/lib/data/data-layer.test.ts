@@ -368,4 +368,320 @@ describe('Seed script', () => {
     const seedPath = resolve(__dirname, '../../../../../scripts/seed-dynamodb.mjs');
     expect(existsSync(seedPath)).toBe(true);
   });
+
+  it('seed script uses DynamoDB SDK BatchWriteCommand', () => {
+    const seedPath = resolve(__dirname, '../../../../../scripts/seed-dynamodb.mjs');
+    const script = readFileSync(seedPath, 'utf8');
+    expect(script).toContain('BatchWriteCommand');
+    expect(script).toContain('@aws-sdk/lib-dynamodb');
+    expect(script).toContain('VoiceRecord');
+    expect(script).toContain('ProviderRecord');
+  });
+});
+
+// ─── 9. Voice Store CRUD ───
+
+describe('Voice Store module', () => {
+  it('exports mapping functions', async () => {
+    const mod = await import('./voice-store');
+    expect(typeof mod.voiceToRecord).toBe('function');
+    expect(typeof mod.recordToVoice).toBe('function');
+    expect(typeof mod.providerToRecord).toBe('function');
+    expect(typeof mod.recordToProvider).toBe('function');
+  });
+
+  it('exports CRUD functions', async () => {
+    const mod = await import('./voice-store');
+    expect(typeof mod.listVoiceRecords).toBe('function');
+    expect(typeof mod.getVoiceRecord).toBe('function');
+    expect(typeof mod.saveVoiceRecord).toBe('function');
+    expect(typeof mod.deleteVoiceRecord).toBe('function');
+    expect(typeof mod.listProviderRecords).toBe('function');
+    expect(typeof mod.saveProviderRecord).toBe('function');
+  });
+
+  it('voiceToRecord adds status and timestamps', async () => {
+    const { voiceToRecord } = await import('./voice-store');
+    const voice = {
+      id: 'test-id',
+      name: 'Test',
+      provider: 'test',
+      description: 'desc',
+      tags: [],
+      languages: ['en'],
+      qualityTier: 'standard' as const,
+      licenseNotes: '',
+      metadata: { shortLabel: '', searchDescription: '', machineTags: [], useCases: [], toneTags: [], audienceTags: [], metadataQuality: 'sparse' as const },
+      samples: [],
+      variants: [],
+    };
+    const record = voiceToRecord(voice, 'draft');
+    expect(record.status).toBe('draft');
+    expect(typeof record.createdAt).toBe('string');
+    expect(typeof record.updatedAt).toBe('string');
+    expect(record.name).toBe('Test');
+  });
+
+  it('recordToVoice strips status and timestamps', async () => {
+    const { recordToVoice } = await import('./voice-store');
+    const record = {
+      id: 'test-id',
+      name: 'Test',
+      provider: 'test',
+      description: 'desc',
+      tags: [],
+      languages: ['en'],
+      qualityTier: 'standard' as const,
+      licenseNotes: '',
+      metadata: { shortLabel: '', searchDescription: '', machineTags: [], useCases: [], toneTags: [], audienceTags: [], metadataQuality: 'sparse' as const },
+      samples: [],
+      variants: [],
+      status: 'published' as const,
+      createdAt: '2026-01-01',
+      updatedAt: '2026-01-01',
+    };
+    const voice = recordToVoice(record);
+    expect(voice.name).toBe('Test');
+    expect('status' in voice).toBe(false);
+    expect('createdAt' in voice).toBe(false);
+  });
+});
+
+// ─── 10. Publish script ───
+
+describe('Publish catalog script', () => {
+  it('publish-catalog.mjs supports --from-db flag', () => {
+    const scriptPath = resolve(__dirname, '../../../../../scripts/publish-catalog.mjs');
+    const script = readFileSync(scriptPath, 'utf8');
+    expect(script).toContain('--from-db');
+    expect(script).toContain('loadVoicesFromDB');
+    expect(script).toContain('listVoiceRecords');
+  });
+
+  it('publish-catalog.mjs writes back to voices.json in DB mode', () => {
+    const scriptPath = resolve(__dirname, '../../../../../scripts/publish-catalog.mjs');
+    const script = readFileSync(scriptPath, 'utf8');
+    expect(script).toContain('Wrote');
+    expect(script).toContain('voices.json');
+  });
+});
+
+// ─── 9. BYOK Synthesis — schema and infrastructure tests ───
+
+describe('BYOK Synthesis — Amplify Schema', () => {
+  const schemaPath = resolve(__dirname, '../../../../../amplify/data/resource.ts');
+  const schema = readFileSync(schemaPath, 'utf8');
+
+  it('defines UserProviderCredential model', () => {
+    expect(schema).toContain('UserProviderCredential:');
+  });
+
+  it('UserProviderCredential has required fields', () => {
+    const block = schema.slice(
+      schema.indexOf('UserProviderCredential:'),
+      schema.indexOf('.authorization', schema.indexOf('UserProviderCredential:'))
+    );
+    expect(block).toContain('providerId: a.string().required()');
+    expect(block).toContain('label: a.string().required()');
+    expect(block).toContain('credentialData: a.string().required()');
+    expect(block).toContain("status: a.enum(['active', 'invalid', 'expired'])");
+  });
+
+  it('UserProviderCredential has owner-only auth', () => {
+    const modelSection = schema.slice(
+      schema.indexOf('UserProviderCredential:'),
+      schema.indexOf(',\n\n', schema.indexOf('UserProviderCredential:')) + 3
+    );
+    expect(modelSection).toContain('allow.owner()');
+  });
+
+  it('defines SynthesisJob model', () => {
+    expect(schema).toContain('SynthesisJob:');
+  });
+
+  it('SynthesisJob has required fields', () => {
+    const block = schema.slice(
+      schema.indexOf('SynthesisJob:'),
+      schema.indexOf('.authorization', schema.indexOf('SynthesisJob:'))
+    );
+    expect(block).toContain('voiceId: a.string().required()');
+    expect(block).toContain('providerId: a.string().required()');
+    expect(block).toContain('inputText: a.string().required()');
+    expect(block).toContain("inputMode: a.enum(['text', 'ssml'])");
+    expect(block).toContain("status: a.enum(['pending', 'completed', 'failed'])");
+  });
+
+  it('SynthesisJob has owner-only auth', () => {
+    const modelSection = schema.slice(
+      schema.indexOf('SynthesisJob:'),
+      schema.indexOf(',\n\n', schema.indexOf('SynthesisJob:')) + 3
+    );
+    expect(modelSection).toContain('allow.owner()');
+  });
+});
+
+describe('BYOK Synthesis — Provider Auth Config', () => {
+  it('provider-auth.ts exports auth configs for cloud providers', async () => {
+    const filePath = resolve(__dirname, '../synthesis/provider-auth.ts');
+    expect(existsSync(filePath)).toBe(true);
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain('PROVIDER_AUTH_CONFIGS');
+    expect(content).toContain("providerId: 'openai'");
+    expect(content).toContain("providerId: 'elevenlabs'");
+    expect(content).toContain("providerId: 'deepgram'");
+    expect(content).toContain("providerId: 'cartesia'");
+    expect(content).toContain("providerId: 'lmnt'");
+    expect(content).toContain("providerId: 'aws-polly'");
+    expect(content).toContain("providerId: 'azure-speech'");
+    expect(content).toContain("providerId: 'gcp-tts'");
+    expect(content).toContain("providerId: 'gemini-tts'");
+    expect(content).toContain("providerId: 'edge-tts'");
+  });
+
+  it('defines free and credential-required providers', async () => {
+    const filePath = resolve(__dirname, '../synthesis/provider-auth.ts');
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain("authType: 'api_key'");
+    expect(content).toContain("authType: 'aws_credentials'");
+    expect(content).toContain("authType: 'subscription_key'");
+    expect(content).toContain("authType: 'none'");
+  });
+});
+
+describe('BYOK Synthesis — Real Adapters', () => {
+  const adapters = [
+    { name: 'openai', file: 'openai.ts', factory: 'createOpenAIAdapter' },
+    { name: 'elevenlabs', file: 'elevenlabs-real.ts', factory: 'createElevenLabsAdapter' },
+    { name: 'deepgram', file: 'deepgram-real.ts', factory: 'createDeepgramAdapter' },
+    { name: 'cartesia', file: 'cartesia-real.ts', factory: 'createCartesiaAdapter' },
+    { name: 'lmnt', file: 'lmnt-real.ts', factory: 'createLmntAdapter' },
+    { name: 'azure-speech', file: 'azure-speech-real.ts', factory: 'createAzureSpeechAdapter' },
+    { name: 'gcp-tts', file: 'gcp-tts-real.ts', factory: 'createGcpTtsAdapter' },
+    { name: 'gemini-tts', file: 'gemini-tts-real.ts', factory: 'createGeminiTtsAdapter' },
+    { name: 'aws-polly', file: 'aws-polly-real.ts', factory: 'createAwsPollyAdapter' },
+  ];
+
+  for (const { name, file, factory } of adapters) {
+    it(`${name} adapter exists and exports factory`, () => {
+      const filePath = resolve(__dirname, `../synthesis/adapters/${file}`);
+      expect(existsSync(filePath)).toBe(true);
+      const content = readFileSync(filePath, 'utf8');
+      expect(content).toContain(`export function ${factory}`);
+      expect(content).toContain('synthesizePreview');
+      expect(content).toContain('URL.createObjectURL');
+    });
+  }
+});
+
+describe('BYOK Synthesis — Credential Store', () => {
+  it('credential-store.ts exports CRUD functions', () => {
+    const filePath = resolve(__dirname, 'credential-store.ts');
+    expect(existsSync(filePath)).toBe(true);
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain('export async function listCredentials');
+    expect(content).toContain('export async function getCredentialData');
+    expect(content).toContain('export async function saveCredential');
+    expect(content).toContain('export async function deleteCredential');
+    expect(content).toContain('export async function hasCredentialFor');
+  });
+});
+
+describe('BYOK Synthesis — Registry', () => {
+  it('registry supports credential-backed adapters', () => {
+    const filePath = resolve(__dirname, '../synthesis/registry.ts');
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain('registerCredentialAdapter');
+    expect(content).toContain('unregisterCredentialAdapter');
+    expect(content).toContain('clearCredentialAdapters');
+    expect(content).toContain('hasRealAdapter');
+    expect(content).toContain('getConnectedProviders');
+    expect(content).toContain('getProviderForVariant');
+  });
+});
+
+describe('BYOK Synthesis — OAuth Infrastructure', () => {
+  it('oauth.ts exports Google and Microsoft sign-in', () => {
+    const filePath = resolve(__dirname, '../synthesis/oauth.ts');
+    expect(existsSync(filePath)).toBe(true);
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain('export async function signInWithGoogle');
+    expect(content).toContain('export async function signInWithMicrosoft');
+    expect(content).toContain('export async function oauthSignIn');
+    expect(content).toContain('export async function oauthSignOut');
+    expect(content).toContain('export function getOAuthToken');
+    expect(content).toContain('export function hasValidOAuthToken');
+    expect(content).toContain('export function getAccessTokenForProvider');
+  });
+
+  it('oauth.ts defines configs for Google and Microsoft', () => {
+    const filePath = resolve(__dirname, '../synthesis/oauth.ts');
+    const content = readFileSync(filePath, 'utf8');
+    expect(content).toContain("provider: 'google'");
+    expect(content).toContain("provider: 'microsoft'");
+    expect(content).toContain("coversProviders: ['gcp-tts', 'gemini-tts']");
+    expect(content).toContain("coversProviders: ['azure-speech']");
+  });
+
+  it('provider-auth configs include OAuth options for Google and Microsoft providers', () => {
+    const filePath = resolve(__dirname, '../synthesis/provider-auth.ts');
+    const content = readFileSync(filePath, 'utf8');
+    // GCP TTS, Gemini TTS, and Azure Speech should have oauth options
+    expect(content).toContain("provider: 'google'");
+    expect(content).toContain("provider: 'microsoft'");
+    expect(content).toContain("buttonLabel: 'Sign in with Google'");
+    expect(content).toContain("buttonLabel: 'Sign in with Microsoft'");
+  });
+
+  it('real adapters check for OAuth tokens', () => {
+    const gcpAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/gcp-tts-real.ts'), 'utf8');
+    expect(gcpAdapter).toContain('getAccessTokenForProvider');
+    expect(gcpAdapter).toContain('oauthToken');
+
+    const geminiAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/gemini-tts-real.ts'), 'utf8');
+    expect(geminiAdapter).toContain('getAccessTokenForProvider');
+    expect(geminiAdapter).toContain('oauthToken');
+
+    const azureAdapter = readFileSync(resolve(__dirname, '../synthesis/adapters/azure-speech-real.ts'), 'utf8');
+    expect(azureAdapter).toContain('getAccessTokenForProvider');
+    expect(azureAdapter).toContain('oauthToken');
+  });
+
+  it('registry checks OAuth tokens in hasRealAdapter', () => {
+    const registry = readFileSync(resolve(__dirname, '../synthesis/registry.ts'), 'utf8');
+    expect(registry).toContain('hasValidOAuthToken');
+  });
+});
+
+describe('BYOK Synthesis — Account Providers Page', () => {
+  it('account/providers page exists', () => {
+    const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
+    expect(existsSync(pagePath)).toBe(true);
+    const content = readFileSync(pagePath, 'utf8');
+    expect(content).toContain('Provider API Keys');
+    expect(content).toContain('connectProvider');
+    expect(content).toContain('disconnectProvider');
+    expect(content).toContain('testCredential');
+    expect(content).toContain('Cloud Providers');
+    expect(content).toContain('Free Providers');
+  });
+
+  it('providers page supports save and remove actions', () => {
+    const pagePath = resolve(__dirname, '../../routes/account/providers/+page.svelte');
+    const content = readFileSync(pagePath, 'utf8');
+    expect(content).toContain('handleSave');
+    expect(content).toContain('handleRemove');
+    expect(content).toContain('handleTest');
+    expect(content).toContain('Save Key');
+    expect(content).toContain('Test Connection');
+  });
+
+  it('vokda api-keys page exists', () => {
+    const pagePath = resolve(__dirname, '../../routes/account/api-keys/+page.svelte');
+    expect(existsSync(pagePath)).toBe(true);
+    const content = readFileSync(pagePath, 'utf8');
+    expect(content).toContain('Vokda API Keys');
+    expect(content).toContain('Create Key');
+    expect(content).toContain('revokeKey');
+    expect(content).toContain('/v1/keys');
+  });
 });

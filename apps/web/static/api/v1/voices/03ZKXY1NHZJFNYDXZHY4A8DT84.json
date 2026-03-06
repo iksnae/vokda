@@ -1,0 +1,77 @@
+{
+  "id": "03ZKXY1NHZJFNYDXZHY4A8DT84",
+  "name": "Mark - Promotion Lead",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5619d38c-cf51-4d8e-9575-48f61a280413",
+  "description": "Deep, confident male voice with strong presence - ideal for commercials, promos, and broadcast narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Mark - Promotion Lead — Cartesia",
+    "searchDescription": "Cartesia Mark - Promotion Lead: Deep, confident male voice with strong presence - ideal for commercials, promos, and broadcast narration",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5619d38c-cf51-4d8e-9575-48f61a280413",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/03ZKXY1NHZJFNYDXZHY4A8DT84.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/03ZKXY1NHZJFNYDXZHY4A8DT84.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/03ZKXY1NHZJFNYDXZHY4A8DT84.mp3",
+      "id": "s-03ZKXY1NHZJFNYDXZHY4A8DT84",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5619d38c-cf51-4d8e-9575-48f61a280413",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Mark - Promotion Lead",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/03ZKXY1NHZJFNYDXZHY4A8DT84.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/03ZKXY1NHZJFNYDXZHY4A8DT84",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/03ZKXY1NHZJFNYDXZHY4A8DT84.json"
+}

@@ -2,6 +2,8 @@
   "id": "01JCVKJ9RVY2ENMZXJ2R0W31C3",
   "name": "en-US-Neural2-J",
   "provider": "Google Cloud TTS",
+  "providerId": "gcp-tts",
+  "providerVoiceId": "en-US-Neural2-J",
   "description": "Google Neural2 US English voice for general-purpose synthesis.",
   "tags": [
     "google",
@@ -14,93 +16,91 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
   "metadata": {
-    "shortLabel": "General US all-purpose",
-    "searchDescription": "Versatile US voice with stable cadence for product UIs and system narration.",
-    "machineTags": [
-      "general",
-      "ui-voice",
-      "stable",
-      "neutral"
-    ],
+    "speakingStyle": "balanced",
     "useCases": [
       "App narration",
       "Product demos",
       "Status announcements"
     ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
     "toneTags": [
       "neutral",
       "steady",
       "clear"
     ],
+    "shortLabel": "General US all-purpose",
+    "searchDescription": "Versatile US voice with stable cadence for product UIs and system narration.",
     "audienceTags": [
       "general-consumer",
       "technical-users"
     ],
     "accent": "General American",
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "speakingStyle": "balanced",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "general",
+      "ui-voice",
+      "stable",
+      "neutral"
+    ]
   },
-  "samples": [
-    {
-      "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
-      "scriptKey": "status",
-      "label": "Status Update",
-      "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01JCVKM1WB3QYE8WQXQ6T5M58X",
-      "sourceType": "cloud_provider",
-      "sourceKey": "gcp:tts:en-US-Neural2-J",
-      "runnable": true,
-      "supportsSsml": true,
-      "outputFormats": [
-        "mp3",
-        "wav"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
-  "providerId": "gcp-tts",
-  "providerVoiceId": "en-US-Neural2-J",
   "modelCard": {
-    "providerName": "Google Cloud",
-    "providerType": "cloud_api",
-    "providerUrl": "https://cloud.google.com/text-to-speech",
-    "apiEndpoint": "texttospeech.googleapis.com",
-    "modelFamily": "Google Cloud Text-to-Speech",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": true,
     "wordTimestamps": true,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 5000,
-    "license": "Google Cloud Terms of Service",
     "licenseUrl": "https://cloud.google.com/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "gdprCompliant": true,
-    "dataRetention": "Not stored after synthesis",
-    "latencyMs": "~200-600",
-    "releaseDate": "2018-03-27",
     "knownLimitations": [
       "Audio samples in this catalog used OpenAI fallback (GCP API key was invalid at generation time)",
       "Neural2 voices may not be available in all regions",
       "Studio voices have higher per-character cost"
     ],
-    "architecture": "Neural2 (2nd generation neural TTS)"
+    "modelFamily": "Google Cloud Text-to-Speech",
+    "providerType": "cloud_api",
+    "gdprCompliant": true,
+    "ssmlSupport": true,
+    "voiceCloning": false,
+    "providerName": "Google Cloud",
+    "multilingual": false,
+    "latencyMs": "~200-600",
+    "architecture": "Neural2 (2nd generation neural TTS)",
+    "releaseDate": "2018-03-27",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://cloud.google.com/text-to-speech",
+    "streamingSupport": true,
+    "license": "Google Cloud Terms of Service",
+    "dataRetention": "Not stored after synthesis",
+    "apiEndpoint": "texttospeech.googleapis.com",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "bitDepth": 16
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3",
+  "samples": [
+    {
+      "scriptKey": "status",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01JCVKJ9RVY2ENMZXJ2R0W31C3.mp3",
+      "transcript": "All regional pipelines are now synchronized and latency remains below target thresholds.",
+      "id": "01JCVKK9Y5X9FK5XW0E9Z8NP3H",
+      "label": "Status Update"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "gcp:tts:en-US-Neural2-J",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "wav"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01JCVKM1WB3QYE8WQXQ6T5M58X",
+      "supportsSsml": true
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVKJ9RVY2ENMZXJ2R0W31C3.json"

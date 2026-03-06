@@ -1,0 +1,77 @@
+{
+  "id": "AC3NXZQTEBT4E63JEBZXXQSNQQ",
+  "name": "Molly - Upbeat Conversationalist",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+  "description": "Bright and cheerful American-accented female voice for upbeat conversations, advertisements, and lively interactions",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Molly - Upbeat Conversationalist — Cartesia",
+    "searchDescription": "Cartesia Molly - Upbeat Conversationalist: Bright and cheerful American-accented female voice for upbeat conversations, advertisements, and lively interactions",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/AC3NXZQTEBT4E63JEBZXXQSNQQ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/AC3NXZQTEBT4E63JEBZXXQSNQQ.mp3",
+      "id": "s-AC3NXZQTEBT4E63JEBZXXQSNQQ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "03b1c65d-4b7f-4c09-91a8-e2f6f78cb2c9",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Molly - Upbeat Conversationalist",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/AC3NXZQTEBT4E63JEBZXXQSNQQ.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "7HKSG1MBJCCBME9J9HNNQQHP0E",
+  "name": "Todd - Matter of Fact Salesman",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "efd255c7-f030-43d3-b5d8-c7b72063be70",
+  "description": "English male adult voice with a direct, matter-of-fact delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Todd - Matter of Fact Salesman — Cartesia",
+    "searchDescription": "Cartesia Todd - Matter of Fact Salesman: English male adult voice with a direct, matter-of-fact delivery",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "efd255c7-f030-43d3-b5d8-c7b72063be70",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7HKSG1MBJCCBME9J9HNNQQHP0E.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7HKSG1MBJCCBME9J9HNNQQHP0E.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7HKSG1MBJCCBME9J9HNNQQHP0E.mp3",
+      "id": "s-7HKSG1MBJCCBME9J9HNNQQHP0E",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "efd255c7-f030-43d3-b5d8-c7b72063be70",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Todd - Matter of Fact Salesman",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7HKSG1MBJCCBME9J9HNNQQHP0E.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7HKSG1MBJCCBME9J9HNNQQHP0E",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7HKSG1MBJCCBME9J9HNNQQHP0E.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "NM4607GBT209GC9HR3KQHKHM1W",
+  "name": "Harry - Service Advisor",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
+  "description": "Seasoned male for friendly conversation and customer support",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Harry - Service Advisor — Cartesia",
+    "searchDescription": "Cartesia Harry - Service Advisor: Seasoned male for friendly conversation and customer support",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NM4607GBT209GC9HR3KQHKHM1W.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NM4607GBT209GC9HR3KQHKHM1W.mp3",
+      "id": "s-NM4607GBT209GC9HR3KQHKHM1W",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3dcaa773-fb1a-47f7-82a4-1bf756c4e1fb",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Harry - Service Advisor",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NM4607GBT209GC9HR3KQHKHM1W.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NM4607GBT209GC9HR3KQHKHM1W",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NM4607GBT209GC9HR3KQHKHM1W.json"
+}

@@ -1,0 +1,99 @@
+{
+  "id": "SGE64FYA025KHNP1QNKJFPE2DX",
+  "name": "Gloria (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-gloria-es",
+  "description": "Colombian-accented female voice (young adult) with casual, clear, expressive qualities. Aura 2 architecture.",
+  "tags": [
+    "casual",
+    "clear",
+    "expressive",
+    "natural",
+    "smooth",
+    "aura-2",
+    "accent-colombian",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-CO"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "customer service",
+      "casual chat",
+      "interview"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "casual",
+      "clear",
+      "expressive",
+      "natural",
+      "smooth"
+    ],
+    "shortLabel": "Gloria — Deepgram Aura 2",
+    "searchDescription": "Deepgram Gloria: Colombian-accented female voice (young adult) with casual, clear, expressive qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "young adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "colombian"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/c08c8df6cca7622212e00a1d582548d15338f1c5.wav",
+    "deepgramUuid": "fcdfc505-f8e4-43f4-9e3b-32e2c7f3154f",
+    "sampleRate": 24000,
+    "accent": "Colombian",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Gloria",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service",
+      "casual chat",
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/84a2cc69791139f9d29170ebff8d76e388e10e59-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SGE64FYA025KHNP1QNKJFPE2DX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SGE64FYA025KHNP1QNKJFPE2DX.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SGE64FYA025KHNP1QNKJFPE2DX.mp3",
+      "id": "s-SGE64FYA025KHNP1QNKJFPE2DX",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-gloria-es",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Gloria",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SGE64FYA025KHNP1QNKJFPE2DX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SGE64FYA025KHNP1QNKJFPE2DX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SGE64FYA025KHNP1QNKJFPE2DX.json"
+}

@@ -1,0 +1,97 @@
+{
+  "id": "C7NW7G9Y21NTA3QXKP88FYC0DY",
+  "name": "Thalia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-thalia-en",
+  "description": "American-accented female voice (adult) with clear, confident, energetic qualities. Aura 2 architecture.",
+  "tags": [
+    "clear",
+    "confident",
+    "energetic",
+    "enthusiastic",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "ivr"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "clear",
+      "confident",
+      "energetic",
+      "enthusiastic"
+    ],
+    "shortLabel": "Thalia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Thalia: American-accented female voice (adult) with clear, confident, energetic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e8725b8d3ec0a0bd924c13c84aaeb3acaa0adaac.wav",
+    "deepgramUuid": "245b8e7b-d1ae-4de5-92bc-570f6fec666b",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ffe699",
+    "modelName": "Deepgram Aura 2 — Thalia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/390b20137b92f0f4dc29073e7466636482b72b4d-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C7NW7G9Y21NTA3QXKP88FYC0DY.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C7NW7G9Y21NTA3QXKP88FYC0DY.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C7NW7G9Y21NTA3QXKP88FYC0DY.mp3",
+      "id": "s-C7NW7G9Y21NTA3QXKP88FYC0DY",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-thalia-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Thalia",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/C7NW7G9Y21NTA3QXKP88FYC0DY.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/C7NW7G9Y21NTA3QXKP88FYC0DY",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/C7NW7G9Y21NTA3QXKP88FYC0DY.json"
+}

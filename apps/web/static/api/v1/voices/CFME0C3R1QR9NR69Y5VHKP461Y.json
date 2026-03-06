@@ -1,0 +1,95 @@
+{
+  "id": "CFME0C3R1QR9NR69Y5VHKP461Y",
+  "name": "Arcas (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-arcas-en",
+  "description": "American-accented male voice (adult) with natural, smooth, clear qualities. Aura 2 architecture.",
+  "tags": [
+    "natural",
+    "smooth",
+    "clear",
+    "comfortable",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "customer service",
+      "casual chat"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural",
+      "smooth",
+      "clear",
+      "comfortable"
+    ],
+    "shortLabel": "Arcas — Deepgram Aura 2",
+    "searchDescription": "Deepgram Arcas: American-accented male voice (adult) with natural, smooth, clear qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ddcdfd19ffa637aa4c8762f003f9908670bc3861.wav",
+    "deepgramUuid": "cc1b9a45-374c-4f59-b667-cbd292945d6f",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ee028c",
+    "modelName": "Deepgram Aura 2 — Arcas",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service",
+      "casual chat"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/bd0ca252f0d3bef4ebf7dc902f20460bbc5de8d4-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/CFME0C3R1QR9NR69Y5VHKP461Y.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/CFME0C3R1QR9NR69Y5VHKP461Y.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/CFME0C3R1QR9NR69Y5VHKP461Y.mp3",
+      "id": "s-CFME0C3R1QR9NR69Y5VHKP461Y",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-arcas-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Arcas",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/CFME0C3R1QR9NR69Y5VHKP461Y.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/CFME0C3R1QR9NR69Y5VHKP461Y",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/CFME0C3R1QR9NR69Y5VHKP461Y.json"
+}

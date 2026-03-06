@@ -1,0 +1,77 @@
+{
+  "id": "DZJFZRDHWE04DR3KW0FNR0FKJA",
+  "name": "Ariana - Kind Friend",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "ec1e269e-9ca0-402f-8a18-58e0e022355a",
+  "description": "Friendly and approachable female voice with a warm, welcoming tone that builds instant connection",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Ariana - Kind Friend — Cartesia",
+    "searchDescription": "Cartesia Ariana - Kind Friend: Friendly and approachable female voice with a warm, welcoming tone that builds instant connection",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "ec1e269e-9ca0-402f-8a18-58e0e022355a",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DZJFZRDHWE04DR3KW0FNR0FKJA.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DZJFZRDHWE04DR3KW0FNR0FKJA.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DZJFZRDHWE04DR3KW0FNR0FKJA.mp3",
+      "id": "s-DZJFZRDHWE04DR3KW0FNR0FKJA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "ec1e269e-9ca0-402f-8a18-58e0e022355a",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Ariana - Kind Friend",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DZJFZRDHWE04DR3KW0FNR0FKJA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DZJFZRDHWE04DR3KW0FNR0FKJA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DZJFZRDHWE04DR3KW0FNR0FKJA.json"
+}

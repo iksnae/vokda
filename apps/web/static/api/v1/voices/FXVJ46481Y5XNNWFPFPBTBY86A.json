@@ -1,0 +1,77 @@
+{
+  "id": "FXVJ46481Y5XNNWFPFPBTBY86A",
+  "name": "Linda - Conversational Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "829ccd10-f8b3-43cd-b8a0-4aeaa81f3b30",
+  "description": "Clear, confident mature female for conversational use cases",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Linda - Conversational Guide — Cartesia",
+    "searchDescription": "Cartesia Linda - Conversational Guide: Clear, confident mature female for conversational use cases",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "829ccd10-f8b3-43cd-b8a0-4aeaa81f3b30",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FXVJ46481Y5XNNWFPFPBTBY86A.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FXVJ46481Y5XNNWFPFPBTBY86A.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FXVJ46481Y5XNNWFPFPBTBY86A.mp3",
+      "id": "s-FXVJ46481Y5XNNWFPFPBTBY86A",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "829ccd10-f8b3-43cd-b8a0-4aeaa81f3b30",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Linda - Conversational Guide",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/FXVJ46481Y5XNNWFPFPBTBY86A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/FXVJ46481Y5XNNWFPFPBTBY86A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/FXVJ46481Y5XNNWFPFPBTBY86A.json"
+}

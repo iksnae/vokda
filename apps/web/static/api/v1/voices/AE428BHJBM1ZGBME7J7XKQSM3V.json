@@ -1,0 +1,77 @@
+{
+  "id": "AE428BHJBM1ZGBME7J7XKQSM3V",
+  "name": "Jordan - Chill Pal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "87bc56aa-ab01-4baa-9071-77d497064686",
+  "description": "Welcoming adult male for engaging conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Jordan - Chill Pal — Cartesia",
+    "searchDescription": "Cartesia Jordan - Chill Pal: Welcoming adult male for engaging conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "87bc56aa-ab01-4baa-9071-77d497064686",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/AE428BHJBM1ZGBME7J7XKQSM3V.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/AE428BHJBM1ZGBME7J7XKQSM3V.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/AE428BHJBM1ZGBME7J7XKQSM3V.mp3",
+      "id": "s-AE428BHJBM1ZGBME7J7XKQSM3V",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "87bc56aa-ab01-4baa-9071-77d497064686",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Jordan - Chill Pal",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/AE428BHJBM1ZGBME7J7XKQSM3V.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/AE428BHJBM1ZGBME7J7XKQSM3V",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/AE428BHJBM1ZGBME7J7XKQSM3V.json"
+}

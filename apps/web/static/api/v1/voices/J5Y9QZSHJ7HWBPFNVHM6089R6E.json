@@ -1,0 +1,95 @@
+{
+  "id": "J5Y9QZSHJ7HWBPFNVHM6089R6E",
+  "name": "Pluto (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-pluto-en",
+  "description": "American-accented male voice (adult) with smooth, calm, empathetic qualities. Aura 2 architecture.",
+  "tags": [
+    "smooth",
+    "calm",
+    "empathetic",
+    "baritone",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "interview",
+      "storytelling"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "smooth",
+      "calm",
+      "empathetic",
+      "baritone"
+    ],
+    "shortLabel": "Pluto — Deepgram Aura 2",
+    "searchDescription": "Deepgram Pluto: American-accented male voice (adult) with smooth, calm, empathetic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/52f59787406510cc21fc2af13e65917506b06616.wav",
+    "deepgramUuid": "961cb149-0a66-423d-b81e-cd64d46cc52e",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#027a48",
+    "modelName": "Deepgram Aura 2 — Pluto",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "interview",
+      "storytelling"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/abdf015e4335acebcd667ef6acceac0f464f1306-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J5Y9QZSHJ7HWBPFNVHM6089R6E.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J5Y9QZSHJ7HWBPFNVHM6089R6E.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J5Y9QZSHJ7HWBPFNVHM6089R6E.mp3",
+      "id": "s-J5Y9QZSHJ7HWBPFNVHM6089R6E",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-pluto-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Pluto",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J5Y9QZSHJ7HWBPFNVHM6089R6E.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J5Y9QZSHJ7HWBPFNVHM6089R6E",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J5Y9QZSHJ7HWBPFNVHM6089R6E.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "9SQXZQHNNHSXXQR5VRCA7TFKT6",
+  "name": "Gemma - Decisive Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "62ae83ad-4f6a-430b-af41-a9bede9286ca",
+  "description": "Confident, emotive British female for professional assistance",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Gemma - Decisive Agent — Cartesia",
+    "searchDescription": "Cartesia Gemma - Decisive Agent: Confident, emotive British female for professional assistance",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "62ae83ad-4f6a-430b-af41-a9bede9286ca",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9SQXZQHNNHSXXQR5VRCA7TFKT6.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9SQXZQHNNHSXXQR5VRCA7TFKT6.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9SQXZQHNNHSXXQR5VRCA7TFKT6.mp3",
+      "id": "s-9SQXZQHNNHSXXQR5VRCA7TFKT6",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "62ae83ad-4f6a-430b-af41-a9bede9286ca",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Gemma - Decisive Agent",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9SQXZQHNNHSXXQR5VRCA7TFKT6.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9SQXZQHNNHSXXQR5VRCA7TFKT6",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9SQXZQHNNHSXXQR5VRCA7TFKT6.json"
+}

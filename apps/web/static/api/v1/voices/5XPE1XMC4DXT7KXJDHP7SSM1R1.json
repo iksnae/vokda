@@ -1,0 +1,77 @@
+{
+  "id": "5XPE1XMC4DXT7KXJDHP7SSM1R1",
+  "name": "Steve - Baritone",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "9fb269e7-70fe-4cbe-aa3f-28bdb67e3e84",
+  "description": "Deep, firm adult male for narrations and voiceovers",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Steve - Baritone — Cartesia",
+    "searchDescription": "Cartesia Steve - Baritone: Deep, firm adult male for narrations and voiceovers",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "9fb269e7-70fe-4cbe-aa3f-28bdb67e3e84",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/5XPE1XMC4DXT7KXJDHP7SSM1R1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/5XPE1XMC4DXT7KXJDHP7SSM1R1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/5XPE1XMC4DXT7KXJDHP7SSM1R1.mp3",
+      "id": "s-5XPE1XMC4DXT7KXJDHP7SSM1R1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "9fb269e7-70fe-4cbe-aa3f-28bdb67e3e84",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Steve - Baritone",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5XPE1XMC4DXT7KXJDHP7SSM1R1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/5XPE1XMC4DXT7KXJDHP7SSM1R1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5XPE1XMC4DXT7KXJDHP7SSM1R1.json"
+}

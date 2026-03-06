@@ -1,0 +1,97 @@
+{
+  "id": "9JFT9VP1T7HYAADYFGBHHJ2BST",
+  "name": "Helena (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-helena-en",
+  "description": "American-accented female voice (adult) with caring, natural, positive qualities. Aura 2 architecture.",
+  "tags": [
+    "caring",
+    "natural",
+    "positive",
+    "friendly",
+    "raspy",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "ivr",
+      "casual chat"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "caring",
+      "natural",
+      "positive",
+      "friendly",
+      "raspy"
+    ],
+    "shortLabel": "Helena — Deepgram Aura 2",
+    "searchDescription": "Deepgram Helena: American-accented female voice (adult) with caring, natural, positive qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/de806ec0ef7c09d838d6eabe8b47886a39ba2f53.wav",
+    "deepgramUuid": "4fa750e6-8ade-4394-849f-c104ced3741e",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#7800ed",
+    "modelName": "Deepgram Aura 2 — Helena",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "ivr",
+      "casual chat"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/0147bf2ed7e137beba83d495ba1a8cdbabf6d881-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9JFT9VP1T7HYAADYFGBHHJ2BST.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9JFT9VP1T7HYAADYFGBHHJ2BST.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9JFT9VP1T7HYAADYFGBHHJ2BST.mp3",
+      "id": "s-9JFT9VP1T7HYAADYFGBHHJ2BST",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-helena-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Helena",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9JFT9VP1T7HYAADYFGBHHJ2BST.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9JFT9VP1T7HYAADYFGBHHJ2BST",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9JFT9VP1T7HYAADYFGBHHJ2BST.json"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "A1VRBXSSSW5XP1HYFQZG01SKJE",
+  "name": "Janus (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-janus-en",
+  "description": "American-accented female voice (adult) with southern, smooth, trustworthy qualities. Aura 2 architecture.",
+  "tags": [
+    "southern",
+    "smooth",
+    "trustworthy",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "storytelling"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "southern",
+      "smooth",
+      "trustworthy"
+    ],
+    "shortLabel": "Janus — Deepgram Aura 2",
+    "searchDescription": "Deepgram Janus: American-accented female voice (adult) with southern, smooth, trustworthy qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e3dd69021b81be052384f5ce96c76fa1cab0c0b6.wav",
+    "deepgramUuid": "2fb9d9da-e827-4a87-96ae-29b89660850b",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#075433",
+    "modelName": "Deepgram Aura 2 — Janus",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "storytelling"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/cc3a204ca2421a37fb4747b8b1843c3360a19500-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/A1VRBXSSSW5XP1HYFQZG01SKJE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/A1VRBXSSSW5XP1HYFQZG01SKJE.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/A1VRBXSSSW5XP1HYFQZG01SKJE.mp3",
+      "id": "s-A1VRBXSSSW5XP1HYFQZG01SKJE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-janus-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Janus",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/A1VRBXSSSW5XP1HYFQZG01SKJE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/A1VRBXSSSW5XP1HYFQZG01SKJE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/A1VRBXSSSW5XP1HYFQZG01SKJE.json"
+}

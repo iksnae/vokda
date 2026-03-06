@@ -1,0 +1,77 @@
+{
+  "id": "280AFP3VJ3NQKP85TBZT6CE6E8",
+  "name": "Elaine - Confident Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+  "description": "Assured voice with calm confidence and clear tone, ideal for professional, informative, or guiding narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Elaine - Confident Guide — Cartesia",
+    "searchDescription": "Cartesia Elaine - Confident Guide: Assured voice with calm confidence and clear tone, ideal for professional, informative, or guiding narration",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/280AFP3VJ3NQKP85TBZT6CE6E8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/280AFP3VJ3NQKP85TBZT6CE6E8.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/280AFP3VJ3NQKP85TBZT6CE6E8.mp3",
+      "id": "s-280AFP3VJ3NQKP85TBZT6CE6E8",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f0377496-2708-4cc9-b2f8-1b7fdb5e1a2a",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Elaine - Confident Guide",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/280AFP3VJ3NQKP85TBZT6CE6E8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/280AFP3VJ3NQKP85TBZT6CE6E8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/280AFP3VJ3NQKP85TBZT6CE6E8.json"
+}

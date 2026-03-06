@@ -1,0 +1,75 @@
+{
+  "id": "XKSG9QR3HVTC7MBSHVVWDZXQM9",
+  "name": "Morgan",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "morgan",
+  "description": "Mature British female voice with depth and experience. Rich tones perfect for sophisticated content.",
+  "tags": [
+    "female",
+    "professional",
+    "streaming",
+    "low-latency",
+    "content-creator",
+    "long-form-video"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "long form video"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Morgan — LMNT",
+    "searchDescription": "LMNT Morgan: Mature British female voice with depth and experience. Rich tones perfect for sophisticated content.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XKSG9QR3HVTC7MBSHVVWDZXQM9.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XKSG9QR3HVTC7MBSHVVWDZXQM9.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XKSG9QR3HVTC7MBSHVVWDZXQM9.mp3",
+      "id": "s-XKSG9QR3HVTC7MBSHVVWDZXQM9",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "morgan",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Morgan",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XKSG9QR3HVTC7MBSHVVWDZXQM9.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XKSG9QR3HVTC7MBSHVVWDZXQM9",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XKSG9QR3HVTC7MBSHVVWDZXQM9.json"
+}

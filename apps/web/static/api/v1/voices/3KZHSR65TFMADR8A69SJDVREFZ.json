@@ -1,0 +1,91 @@
+{
+  "id": "3KZHSR65TFMADR8A69SJDVREFZ",
+  "name": "Hera (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-hera-en",
+  "description": "American-accented female voice (adult) with smooth, warm, professional qualities. Aura 2 architecture.",
+  "tags": [
+    "smooth",
+    "warm",
+    "professional",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "storytelling"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "smooth",
+      "warm",
+      "professional"
+    ],
+    "shortLabel": "Hera — Deepgram Aura 2",
+    "searchDescription": "Deepgram Hera: American-accented female voice (adult) with smooth, warm, professional qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/d31b232c29658b73d3d2e776b2909b957cb460e4.wav",
+    "deepgramUuid": "f3562f94-6d80-424a-896d-c83ceb5456c4",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#949498",
+    "modelName": "Deepgram Aura 2 — Hera",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "storytelling"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/6258aaeb06eba9c2162dd75dbd991fde26d0624e-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3KZHSR65TFMADR8A69SJDVREFZ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3KZHSR65TFMADR8A69SJDVREFZ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3KZHSR65TFMADR8A69SJDVREFZ.mp3",
+      "id": "s-3KZHSR65TFMADR8A69SJDVREFZ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-hera-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Hera",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3KZHSR65TFMADR8A69SJDVREFZ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3KZHSR65TFMADR8A69SJDVREFZ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3KZHSR65TFMADR8A69SJDVREFZ.json"
+}

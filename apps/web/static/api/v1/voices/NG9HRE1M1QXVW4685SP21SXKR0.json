@@ -1,0 +1,91 @@
+{
+  "id": "NG9HRE1M1QXVW4685SP21SXKR0",
+  "name": "Orpheus (Aura)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-orpheus-en",
+  "description": "American-accented male voice (adult) with clear, trustworthy, professional qualities. Aura architecture.",
+  "tags": [
+    "clear",
+    "trustworthy",
+    "professional",
+    "aura",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "ivr"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "clear",
+      "trustworthy",
+      "professional"
+    ],
+    "shortLabel": "Orpheus — Deepgram Aura",
+    "searchDescription": "Deepgram Orpheus: American-accented male voice (adult) with clear, trustworthy, professional qualities. Aura architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/ad2c792bcbdb2cc600345547c9afecf9b0cfaad8.wav",
+    "deepgramUuid": "c236648a-94cd-4621-bb18-e938d97fe605",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#a1f9d4",
+    "modelName": "Deepgram Aura — Orpheus",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "ivr"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/cc3fccd6814806b153788b5b5791678cd311d1ee-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NG9HRE1M1QXVW4685SP21SXKR0.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NG9HRE1M1QXVW4685SP21SXKR0.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NG9HRE1M1QXVW4685SP21SXKR0.mp3",
+      "id": "s-NG9HRE1M1QXVW4685SP21SXKR0",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-orpheus-en",
+      "supportsStreaming": true,
+      "engine": "aura",
+      "maxChars": 2000,
+      "label": "Orpheus",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NG9HRE1M1QXVW4685SP21SXKR0.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NG9HRE1M1QXVW4685SP21SXKR0",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NG9HRE1M1QXVW4685SP21SXKR0.json"
+}

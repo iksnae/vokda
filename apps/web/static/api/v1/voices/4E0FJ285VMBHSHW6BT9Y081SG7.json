@@ -1,0 +1,77 @@
+{
+  "id": "4E0FJ285VMBHSHW6BT9Y081SG7",
+  "name": "Darla - Resolution Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "996a8b96-4804-46f0-8e05-3fd4ef1a87cd",
+  "description": "Firm and confident female voice with a calm, supportive tone - ideal for customer support roles",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Darla - Resolution Agent — Cartesia",
+    "searchDescription": "Cartesia Darla - Resolution Agent: Firm and confident female voice with a calm, supportive tone - ideal for customer support roles",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "996a8b96-4804-46f0-8e05-3fd4ef1a87cd",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/4E0FJ285VMBHSHW6BT9Y081SG7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0FJ285VMBHSHW6BT9Y081SG7.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/4E0FJ285VMBHSHW6BT9Y081SG7.mp3",
+      "id": "s-4E0FJ285VMBHSHW6BT9Y081SG7",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "996a8b96-4804-46f0-8e05-3fd4ef1a87cd",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Darla - Resolution Agent",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/4E0FJ285VMBHSHW6BT9Y081SG7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/4E0FJ285VMBHSHW6BT9Y081SG7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/4E0FJ285VMBHSHW6BT9Y081SG7.json"
+}

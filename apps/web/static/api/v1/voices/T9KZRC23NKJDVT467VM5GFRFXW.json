@@ -1,0 +1,77 @@
+{
+  "id": "T9KZRC23NKJDVT467VM5GFRFXW",
+  "name": "Jillian - Happy Spirit",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "e4d5f4c4-6601-4779-bee1-b3c14d629dc6",
+  "description": "Cheerful voice with lively warmth and friendly tone, perfect for upbeat conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Jillian - Happy Spirit — Cartesia",
+    "searchDescription": "Cartesia Jillian - Happy Spirit: Cheerful voice with lively warmth and friendly tone, perfect for upbeat conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "e4d5f4c4-6601-4779-bee1-b3c14d629dc6",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T9KZRC23NKJDVT467VM5GFRFXW.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T9KZRC23NKJDVT467VM5GFRFXW.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T9KZRC23NKJDVT467VM5GFRFXW.mp3",
+      "id": "s-T9KZRC23NKJDVT467VM5GFRFXW",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "e4d5f4c4-6601-4779-bee1-b3c14d629dc6",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Jillian - Happy Spirit",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T9KZRC23NKJDVT467VM5GFRFXW.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T9KZRC23NKJDVT467VM5GFRFXW",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T9KZRC23NKJDVT467VM5GFRFXW.json"
+}

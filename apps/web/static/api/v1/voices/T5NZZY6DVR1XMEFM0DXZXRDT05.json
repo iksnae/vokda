@@ -1,0 +1,75 @@
+{
+  "id": "T5NZZY6DVR1XMEFM0DXZXRDT05",
+  "name": "Brandon",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "brandon",
+  "description": "Clear, stable American broadcaster voice with engaging delivery. Great for news, announcements, and professional narration.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "broadcaster",
+    "news"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "news"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Brandon — LMNT",
+    "searchDescription": "LMNT Brandon: Clear, stable American broadcaster voice with engaging delivery. Great for news, announcements, and professional narration.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T5NZZY6DVR1XMEFM0DXZXRDT05.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T5NZZY6DVR1XMEFM0DXZXRDT05.mp3",
+      "id": "s-T5NZZY6DVR1XMEFM0DXZXRDT05",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "brandon",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Brandon",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T5NZZY6DVR1XMEFM0DXZXRDT05",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T5NZZY6DVR1XMEFM0DXZXRDT05.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "BVT8661NM40CAC081W6FG43XP5",
+  "name": "Mindy - Spirited Ally",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "d6905573-8e91-4e32-b103-fd4d1205cd87",
+  "description": "Enthusiastic female voice with bright energy and cheerful tone, great for lively conversations and upbeat content",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Mindy - Spirited Ally — Cartesia",
+    "searchDescription": "Cartesia Mindy - Spirited Ally: Enthusiastic female voice with bright energy and cheerful tone, great for lively conversations and upbeat content",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "d6905573-8e91-4e32-b103-fd4d1205cd87",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/BVT8661NM40CAC081W6FG43XP5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/BVT8661NM40CAC081W6FG43XP5.mp3",
+      "id": "s-BVT8661NM40CAC081W6FG43XP5",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "d6905573-8e91-4e32-b103-fd4d1205cd87",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Mindy - Spirited Ally",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/BVT8661NM40CAC081W6FG43XP5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/BVT8661NM40CAC081W6FG43XP5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/BVT8661NM40CAC081W6FG43XP5.json"
+}

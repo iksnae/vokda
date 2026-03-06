@@ -121,6 +121,21 @@ const colorMap: Record<string, ProviderColorScheme> = {
     bg: '#e3f2fd',
     border: '#64b5f6',
     text: '#0d47a1'
+  },
+  deepgram: {
+    bg: '#e8f5e9',
+    border: '#66bb6a',
+    text: '#1b5e20'
+  },
+  cartesia: {
+    bg: '#fce4ec',
+    border: '#ef9a9a',
+    text: '#b71c1c'
+  },
+  lmnt: {
+    bg: '#fff3e0',
+    border: '#ffb74d',
+    text: '#e65100'
   }
 };
 

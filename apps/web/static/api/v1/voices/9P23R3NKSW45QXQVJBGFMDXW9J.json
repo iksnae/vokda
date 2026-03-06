@@ -1,0 +1,77 @@
+{
+  "id": "9P23R3NKSW45QXQVJBGFMDXW9J",
+  "name": "Marty - Commercial King",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "7360f116-6306-4e9a-b487-1235f35a0f21",
+  "description": "Bold and enthusiastic male voice suited for energetic, attention-grabbing ads",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Marty - Commercial King — Cartesia",
+    "searchDescription": "Cartesia Marty - Commercial King: Bold and enthusiastic male voice suited for energetic, attention-grabbing ads",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "7360f116-6306-4e9a-b487-1235f35a0f21",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9P23R3NKSW45QXQVJBGFMDXW9J.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9P23R3NKSW45QXQVJBGFMDXW9J.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9P23R3NKSW45QXQVJBGFMDXW9J.mp3",
+      "id": "s-9P23R3NKSW45QXQVJBGFMDXW9J",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "7360f116-6306-4e9a-b487-1235f35a0f21",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Marty - Commercial King",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9P23R3NKSW45QXQVJBGFMDXW9J.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9P23R3NKSW45QXQVJBGFMDXW9J",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9P23R3NKSW45QXQVJBGFMDXW9J.json"
+}

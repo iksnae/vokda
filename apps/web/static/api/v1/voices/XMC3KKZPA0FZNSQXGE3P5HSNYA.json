@@ -1,0 +1,77 @@
+{
+  "id": "XMC3KKZPA0FZNSQXGE3P5HSNYA",
+  "name": "Sameer - Problem Solver",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "638efaaa-4d0c-442e-b701-3fae16aad012",
+  "description": "Friendly male for customer support use cases",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Sameer - Problem Solver — Cartesia",
+    "searchDescription": "Cartesia Sameer - Problem Solver: Friendly male for customer support use cases",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "638efaaa-4d0c-442e-b701-3fae16aad012",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XMC3KKZPA0FZNSQXGE3P5HSNYA.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XMC3KKZPA0FZNSQXGE3P5HSNYA.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XMC3KKZPA0FZNSQXGE3P5HSNYA.mp3",
+      "id": "s-XMC3KKZPA0FZNSQXGE3P5HSNYA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "638efaaa-4d0c-442e-b701-3fae16aad012",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Sameer - Problem Solver",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XMC3KKZPA0FZNSQXGE3P5HSNYA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XMC3KKZPA0FZNSQXGE3P5HSNYA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XMC3KKZPA0FZNSQXGE3P5HSNYA.json"
+}

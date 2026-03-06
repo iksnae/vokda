@@ -1,0 +1,77 @@
+{
+  "id": "GDVW66DJ6DZP1Y6C24E89KY9M7",
+  "name": "Chloe - Persuasive Lady",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f762e181-ddc7-486e-9a48-636bd7e229d4",
+  "description": "English female adult voice with a confident and persuasive tone, able to influence and engage listeners with clarity and conviction",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Chloe - Persuasive Lady — Cartesia",
+    "searchDescription": "Cartesia Chloe - Persuasive Lady: English female adult voice with a confident and persuasive tone, able to influence and engage listeners with clarity and conviction",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f762e181-ddc7-486e-9a48-636bd7e229d4",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GDVW66DJ6DZP1Y6C24E89KY9M7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GDVW66DJ6DZP1Y6C24E89KY9M7.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GDVW66DJ6DZP1Y6C24E89KY9M7.mp3",
+      "id": "s-GDVW66DJ6DZP1Y6C24E89KY9M7",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f762e181-ddc7-486e-9a48-636bd7e229d4",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Chloe - Persuasive Lady",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GDVW66DJ6DZP1Y6C24E89KY9M7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GDVW66DJ6DZP1Y6C24E89KY9M7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GDVW66DJ6DZP1Y6C24E89KY9M7.json"
+}

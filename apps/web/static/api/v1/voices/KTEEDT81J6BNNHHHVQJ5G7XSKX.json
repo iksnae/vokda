@@ -1,0 +1,75 @@
+{
+  "id": "KTEEDT81J6BNNHHHVQJ5G7XSKX",
+  "name": "Huxley",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "huxley",
+  "description": "Theatrical male voice with animated, expressive range. An intriguing and fun personality that's perfect for dynamic conversations and entertaining content.",
+  "tags": [
+    "male",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "drive-thru-agent"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "drive thru agent"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Huxley — LMNT",
+    "searchDescription": "LMNT Huxley: Theatrical male voice with animated, expressive range. An intriguing and fun personality that's perfect for dynamic conversations and entertaining content.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KTEEDT81J6BNNHHHVQJ5G7XSKX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KTEEDT81J6BNNHHHVQJ5G7XSKX.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KTEEDT81J6BNNHHHVQJ5G7XSKX.mp3",
+      "id": "s-KTEEDT81J6BNNHHHVQJ5G7XSKX",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "huxley",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Huxley",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KTEEDT81J6BNNHHHVQJ5G7XSKX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KTEEDT81J6BNNHHHVQJ5G7XSKX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KTEEDT81J6BNNHHHVQJ5G7XSKX.json"
+}

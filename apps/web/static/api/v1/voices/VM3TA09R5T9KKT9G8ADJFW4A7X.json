@@ -19,16 +19,6 @@
   "qualityTier": "premium",
   "licenseNotes": "Free for personal and development use via Microsoft Edge TTS API. Same neural voices as Azure Speech. No API key required.",
   "metadata": {
-    "shortLabel": "Chilemba — Edge Kenyan",
-    "searchDescription": "Edge TTS Chilemba: Kenyan English male voice for regional and educational content.",
-    "machineTags": [
-      "edge-tts",
-      "microsoft",
-      "neural",
-      "free",
-      "male",
-      "en-ke"
-    ],
     "useCases": [
       "narration",
       "assistants",
@@ -36,59 +26,69 @@
       "accessibility",
       "prototyping"
     ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
     "toneTags": [
       "clear",
       "professional",
       "natural"
     ],
+    "shortLabel": "Chilemba — Edge Kenyan",
+    "searchDescription": "Edge TTS Chilemba: Kenyan English male voice for regional and educational content.",
     "audienceTags": [
       "developers",
       "creators",
       "educators"
     ],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "curated"
+    "machineTags": [
+      "edge-tts",
+      "microsoft",
+      "neural",
+      "free",
+      "male",
+      "en-ke"
+    ]
   },
   "modelCard": {
-    "modelName": "en-KE-ChilembaNeural",
-    "architecture": "Azure Neural TTS",
+    "commercialUse": false,
+    "locale": "en-KE",
+    "sampleRate": 24000,
     "providerType": "cloud_provider",
     "providerUrl": "https://github.com/rany2/edge-tts",
-    "license": "Free (Microsoft Edge TTS API)",
-    "commercialUse": false,
-    "sampleRate": 24000,
-    "outputFormat": "mp3",
-    "streamingCapable": true,
-    "supportsSSML": true,
-    "totalVoices": 322,
     "totalEnglishVoices": 47,
-    "region": "Kenyan",
-    "locale": "en-KE",
+    "modelName": "en-KE-ChilembaNeural",
+    "license": "Free (Microsoft Edge TTS API)",
     "specialCapabilities": [
       "SSML support",
       "No API key required",
       "Real-time streaming"
-    ]
+    ],
+    "supportsSSML": true,
+    "totalVoices": 322,
+    "region": "Kenyan",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "architecture": "Azure Neural TTS"
   },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
+      "id": "s-VM3TA09R5T9KKT9G8ADJFW4A7X",
+      "label": "Default",
+      "text": "Hello! I'm Chilemba, speaking Kenyan English. This is a preview of how I sound in natural conversation."
+    }
+  ],
   "variants": [
     {
       "sourceKey": "en-KE-ChilembaNeural",
-      "label": "Chilemba",
-      "engine": "edge-tts",
       "supportsStreaming": true,
-      "supportsSsml": true,
-      "maxChars": 5000
-    }
-  ],
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3",
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",
-  "samples": [
-    {
-      "id": "s-VM3TA09R5T9KKT9G8ADJFW4A7X",
-      "label": "Default",
-      "text": "Hello! I'm Chilemba, speaking Kenyan English. This is a preview of how I sound in natural conversation.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VM3TA09R5T9KKT9G8ADJFW4A7X.mp3"
+      "engine": "edge-tts",
+      "maxChars": 5000,
+      "label": "Chilemba",
+      "supportsSsml": true
     }
   ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/VM3TA09R5T9KKT9G8ADJFW4A7X.jpg",

@@ -1,0 +1,77 @@
+{
+  "id": "645SGFQP07PCBKVXXYFT9VXSR4",
+  "name": "Carson - Surprised Friendly Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "66f5935b-af2e-4ec9-bb3e-59112e9ddc93",
+  "description": "Friendly young adult male for customer support conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Carson - Surprised Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Surprised Friendly Support: Friendly young adult male for customer support conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "66f5935b-af2e-4ec9-bb3e-59112e9ddc93",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/645SGFQP07PCBKVXXYFT9VXSR4.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/645SGFQP07PCBKVXXYFT9VXSR4.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/645SGFQP07PCBKVXXYFT9VXSR4.mp3",
+      "id": "s-645SGFQP07PCBKVXXYFT9VXSR4",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "66f5935b-af2e-4ec9-bb3e-59112e9ddc93",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Surprised Friendly Support",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/645SGFQP07PCBKVXXYFT9VXSR4.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/645SGFQP07PCBKVXXYFT9VXSR4",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/645SGFQP07PCBKVXXYFT9VXSR4.json"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "W0C7GBY7XPE1M61XT3M420E601",
+  "name": "Noah",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "noah",
+  "description": "Conversational. Deep and chill. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Noah — LMNT",
+    "searchDescription": "LMNT Noah: Conversational. Deep and chill. US",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W0C7GBY7XPE1M61XT3M420E601.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W0C7GBY7XPE1M61XT3M420E601.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W0C7GBY7XPE1M61XT3M420E601.mp3",
+      "id": "s-W0C7GBY7XPE1M61XT3M420E601",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "noah",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Noah",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/W0C7GBY7XPE1M61XT3M420E601.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/W0C7GBY7XPE1M61XT3M420E601",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/W0C7GBY7XPE1M61XT3M420E601.json"
+}

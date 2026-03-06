@@ -1,0 +1,77 @@
+{
+  "id": "QJ49HVT225Y08DRDTE7VQNQSSQ",
+  "name": "Nora - Calm Companion",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
+  "description": "Balanced, neutral female voice that sounds natural and approachable for everyday conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Nora - Calm Companion — Cartesia",
+    "searchDescription": "Cartesia Nora - Calm Companion: Balanced, neutral female voice that sounds natural and approachable for everyday conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QJ49HVT225Y08DRDTE7VQNQSSQ.mp3",
+      "id": "s-QJ49HVT225Y08DRDTE7VQNQSSQ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f4c1a0b2-669d-403f-b440-4b34b34856aa",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Nora - Calm Companion",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QJ49HVT225Y08DRDTE7VQNQSSQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QJ49HVT225Y08DRDTE7VQNQSSQ.json"
+}

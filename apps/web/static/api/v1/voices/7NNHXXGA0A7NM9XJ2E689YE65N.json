@@ -1,0 +1,99 @@
+{
+  "id": "7NNHXXGA0A7NM9XJ2E689YE65N",
+  "name": "Julius (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-julius-de",
+  "description": "German-accented male voice (adult) with casual, cheerful, engaging qualities. Aura 2 architecture.",
+  "tags": [
+    "casual",
+    "cheerful",
+    "engaging",
+    "expressive",
+    "friendly",
+    "aura-2",
+    "accent-german",
+    "male"
+  ],
+  "languages": [
+    "de",
+    "de-DE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "customer service",
+      "casual chat",
+      "interview"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "casual",
+      "cheerful",
+      "engaging",
+      "expressive",
+      "friendly"
+    ],
+    "shortLabel": "Julius — Deepgram Aura 2",
+    "searchDescription": "Deepgram Julius: German-accented male voice (adult) with casual, cheerful, engaging qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "german"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/35ce546be29ac57017ca439bc13fbedc42f6102b.wav",
+    "deepgramUuid": "58b553b3-2cd7-428d-89f5-444526da784b",
+    "sampleRate": 24000,
+    "accent": "German",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Julius",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service",
+      "casual chat",
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/fd57dd4a43c6c5b7148a6e44658c370833032031-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7NNHXXGA0A7NM9XJ2E689YE65N.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7NNHXXGA0A7NM9XJ2E689YE65N.mp3",
+      "id": "s-7NNHXXGA0A7NM9XJ2E689YE65N",
+      "label": "Default",
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-julius-de",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Julius",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7NNHXXGA0A7NM9XJ2E689YE65N.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7NNHXXGA0A7NM9XJ2E689YE65N",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7NNHXXGA0A7NM9XJ2E689YE65N.json"
+}

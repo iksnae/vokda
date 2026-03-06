@@ -1,0 +1,71 @@
+{
+  "id": "SGDR2FG04C5J09G9P3XZW22BT1",
+  "name": "Miles",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "miles",
+  "description": "Conversational. Gossipy. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Miles — LMNT",
+    "searchDescription": "LMNT Miles: Conversational. Gossipy. US",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SGDR2FG04C5J09G9P3XZW22BT1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SGDR2FG04C5J09G9P3XZW22BT1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SGDR2FG04C5J09G9P3XZW22BT1.mp3",
+      "id": "s-SGDR2FG04C5J09G9P3XZW22BT1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "miles",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Miles",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SGDR2FG04C5J09G9P3XZW22BT1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SGDR2FG04C5J09G9P3XZW22BT1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SGDR2FG04C5J09G9P3XZW22BT1.json"
+}

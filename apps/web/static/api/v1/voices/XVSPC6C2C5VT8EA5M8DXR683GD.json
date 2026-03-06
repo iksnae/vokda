@@ -1,0 +1,77 @@
+{
+  "id": "XVSPC6C2C5VT8EA5M8DXR683GD",
+  "name": "Carson - Sad Friendly Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3246e36c-ac8c-418d-83cd-4eaad5a3b887",
+  "description": "Friendly young adult male for customer support conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Carson - Sad Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Sad Friendly Support: Friendly young adult male for customer support conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "3246e36c-ac8c-418d-83cd-4eaad5a3b887",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XVSPC6C2C5VT8EA5M8DXR683GD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XVSPC6C2C5VT8EA5M8DXR683GD.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XVSPC6C2C5VT8EA5M8DXR683GD.mp3",
+      "id": "s-XVSPC6C2C5VT8EA5M8DXR683GD",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3246e36c-ac8c-418d-83cd-4eaad5a3b887",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Sad Friendly Support",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XVSPC6C2C5VT8EA5M8DXR683GD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XVSPC6C2C5VT8EA5M8DXR683GD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XVSPC6C2C5VT8EA5M8DXR683GD.json"
+}

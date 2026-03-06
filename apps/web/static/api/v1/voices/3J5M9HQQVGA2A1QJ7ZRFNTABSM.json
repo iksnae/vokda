@@ -1,0 +1,99 @@
+{
+  "id": "3J5M9HQQVGA2A1QJ7ZRFNTABSM",
+  "name": "Lara (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-lara-de",
+  "description": "German-accented female voice (young adult) with caring, cheerful, empathetic qualities. Aura 2 architecture.",
+  "tags": [
+    "caring",
+    "cheerful",
+    "empathetic",
+    "expressive",
+    "warm",
+    "aura-2",
+    "accent-german",
+    "female"
+  ],
+  "languages": [
+    "de",
+    "de-DE"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "caring",
+      "cheerful",
+      "empathetic",
+      "expressive",
+      "warm"
+    ],
+    "shortLabel": "Lara — Deepgram Aura 2",
+    "searchDescription": "Deepgram Lara: German-accented female voice (young adult) with caring, cheerful, empathetic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "young adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "german"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/cd3189e240f33951543f3bd108e51df21e4596f0.wav",
+    "deepgramUuid": "1b198c58-1dd0-4dc6-84a8-74bf76890cb5",
+    "sampleRate": 24000,
+    "accent": "German",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Lara",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/61925ce53e5e7878983d82432dfc0c58561301b1-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Young Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/3J5M9HQQVGA2A1QJ7ZRFNTABSM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/3J5M9HQQVGA2A1QJ7ZRFNTABSM.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/3J5M9HQQVGA2A1QJ7ZRFNTABSM.mp3",
+      "id": "s-3J5M9HQQVGA2A1QJ7ZRFNTABSM",
+      "label": "Default",
+      "text": "Hallo! Dies ist eine Vorschau meiner Stimme in natürlicher Konversation. Ich kann bei Kundenservice und Erzählung helfen."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-lara-de",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Lara",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/3J5M9HQQVGA2A1QJ7ZRFNTABSM.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/3J5M9HQQVGA2A1QJ7ZRFNTABSM",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/3J5M9HQQVGA2A1QJ7ZRFNTABSM.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "G5P3M7Y68FW65TEFJ4060DKQGE",
+  "name": "Amber - Warm Support Agent",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a7a59115-2425-4192-844c-1e98ec7d6877",
+  "description": "English female adult voice with a cheerful yet deeper tone, striking a balance of warmth and authority for customer service use",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Amber - Warm Support Agent — Cartesia",
+    "searchDescription": "Cartesia Amber - Warm Support Agent: English female adult voice with a cheerful yet deeper tone, striking a balance of warmth and authority for customer service use",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "a7a59115-2425-4192-844c-1e98ec7d6877",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G5P3M7Y68FW65TEFJ4060DKQGE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G5P3M7Y68FW65TEFJ4060DKQGE.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5P3M7Y68FW65TEFJ4060DKQGE.mp3",
+      "id": "s-G5P3M7Y68FW65TEFJ4060DKQGE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a7a59115-2425-4192-844c-1e98ec7d6877",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Amber - Warm Support Agent",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G5P3M7Y68FW65TEFJ4060DKQGE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G5P3M7Y68FW65TEFJ4060DKQGE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G5P3M7Y68FW65TEFJ4060DKQGE.json"
+}

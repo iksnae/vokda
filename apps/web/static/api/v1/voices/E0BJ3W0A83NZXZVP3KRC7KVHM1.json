@@ -1,0 +1,77 @@
+{
+  "id": "E0BJ3W0A83NZXZVP3KRC7KVHM1",
+  "name": "Nathan - Easy Talker",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
+  "description": "Confident, firm young adult male with a slight edge for conversational use cases",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Nathan - Easy Talker — Cartesia",
+    "searchDescription": "Cartesia Nathan - Easy Talker: Confident, firm young adult male with a slight edge for conversational use cases",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E0BJ3W0A83NZXZVP3KRC7KVHM1.mp3",
+      "id": "s-E0BJ3W0A83NZXZVP3KRC7KVHM1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "97f4b8fb-f2fe-444b-bb9a-c109783a857a",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Nathan - Easy Talker",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E0BJ3W0A83NZXZVP3KRC7KVHM1.json"
+}

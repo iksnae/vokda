@@ -1,0 +1,77 @@
+{
+  "id": "P1Y83R3XVQYA681GDWFW8E1QP5",
+  "name": "Riley - Chill Friend",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "21b81c14-f85b-436d-aff5-43f2e788ecf8",
+  "description": "Casual, young female for authentic and everyday conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Riley - Chill Friend — Cartesia",
+    "searchDescription": "Cartesia Riley - Chill Friend: Casual, young female for authentic and everyday conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "21b81c14-f85b-436d-aff5-43f2e788ecf8",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P1Y83R3XVQYA681GDWFW8E1QP5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P1Y83R3XVQYA681GDWFW8E1QP5.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P1Y83R3XVQYA681GDWFW8E1QP5.mp3",
+      "id": "s-P1Y83R3XVQYA681GDWFW8E1QP5",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "21b81c14-f85b-436d-aff5-43f2e788ecf8",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Riley - Chill Friend",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P1Y83R3XVQYA681GDWFW8E1QP5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/P1Y83R3XVQYA681GDWFW8E1QP5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P1Y83R3XVQYA681GDWFW8E1QP5.json"
+}

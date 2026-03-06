@@ -1,0 +1,77 @@
+{
+  "id": "R1G1ZMC1P7G3YDT7G3PCFSZVHK",
+  "name": "Dorian - Director",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "586b6832-1ca1-43ad-b974-527dc13c2532",
+  "description": "Welcoming male for providing instructions and guidance",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Dorian - Director — Cartesia",
+    "searchDescription": "Cartesia Dorian - Director: Welcoming male for providing instructions and guidance",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "586b6832-1ca1-43ad-b974-527dc13c2532",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/R1G1ZMC1P7G3YDT7G3PCFSZVHK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/R1G1ZMC1P7G3YDT7G3PCFSZVHK.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/R1G1ZMC1P7G3YDT7G3PCFSZVHK.mp3",
+      "id": "s-R1G1ZMC1P7G3YDT7G3PCFSZVHK",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "586b6832-1ca1-43ad-b974-527dc13c2532",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Dorian - Director",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/R1G1ZMC1P7G3YDT7G3PCFSZVHK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/R1G1ZMC1P7G3YDT7G3PCFSZVHK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/R1G1ZMC1P7G3YDT7G3PCFSZVHK.json"
+}

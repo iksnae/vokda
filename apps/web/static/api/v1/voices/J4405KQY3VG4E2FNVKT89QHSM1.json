@@ -1,0 +1,99 @@
+{
+  "id": "J4405KQY3VG4E2FNVKT89QHSM1",
+  "name": "Agathe (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-agathe-fr",
+  "description": "French-accented female voice (adult) with charismatic, cheerful, enthusiastic qualities. Aura 2 architecture.",
+  "tags": [
+    "charismatic",
+    "cheerful",
+    "enthusiastic",
+    "friendly",
+    "natural",
+    "aura-2",
+    "accent-french",
+    "female"
+  ],
+  "languages": [
+    "fr",
+    "fr-FR"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "interview",
+      "customer service",
+      "casual chat"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "charismatic",
+      "cheerful",
+      "enthusiastic",
+      "friendly",
+      "natural"
+    ],
+    "shortLabel": "Agathe — Deepgram Aura 2",
+    "searchDescription": "Deepgram Agathe: French-accented female voice (adult) with charismatic, cheerful, enthusiastic qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "french"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/42d6da9286f2883874c7f7bd0e4462b5528bda56.wav",
+    "deepgramUuid": "6fe3f8e3-14d3-456c-9534-766132310608",
+    "sampleRate": 24000,
+    "accent": "French",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Agathe",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "interview",
+      "customer service",
+      "casual chat"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/451ea34939bfdb3477a9f81acd11466a3802cc75-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J4405KQY3VG4E2FNVKT89QHSM1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J4405KQY3VG4E2FNVKT89QHSM1.mp3",
+      "id": "s-J4405KQY3VG4E2FNVKT89QHSM1",
+      "label": "Default",
+      "text": "Bonjour! Voici un aperçu de ma voix dans une conversation naturelle. Je peux aider avec le service client et la narration."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-agathe-fr",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Agathe",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J4405KQY3VG4E2FNVKT89QHSM1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J4405KQY3VG4E2FNVKT89QHSM1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J4405KQY3VG4E2FNVKT89QHSM1.json"
+}

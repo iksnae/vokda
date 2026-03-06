@@ -39,79 +39,31 @@
   "qualityTier": "premium",
   "licenseNotes": "Gemini API usage governed by Google AI Terms of Service.",
   "metadata": {
-    "shortLabel": "Informative · Gemini 2.5 Flash TTS",
-    "searchDescription": "Charon Informative Gemini TTS Google AI voice style control multilingual informative education",
-    "machineTags": [
-      "informative",
-      "education",
-      "multilingual",
-      "style-control"
-    ],
     "useCases": [
       "education",
       "podcast",
       "audiobook"
     ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "complete",
     "toneTags": [
       "informative"
     ],
+    "shortLabel": "Informative · Gemini 2.5 Flash TTS",
+    "searchDescription": "Charon Informative Gemini TTS Google AI voice style control multilingual informative education",
     "audienceTags": [],
-    "genderPresentation": "neutral",
     "agePresentation": "adult",
-    "metadataQuality": "complete"
+    "machineTags": [
+      "informative",
+      "education",
+      "multilingual",
+      "style-control"
+    ]
   },
-  "samples": [
-    {
-      "id": "0100MME4D1XEE50D6B73174128",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "In a world of constant change, the ability to adapt quickly separates the good from the great.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XEDDEFEE58396637.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "0100MME4D1XE9D76AA30B6260D",
-      "sourceType": "cloud_provider",
-      "sourceKey": "gemini:2.5-flash-tts:Charon",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "pcm",
-        "mp3"
-      ],
-      "maxInputChars": 8000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Google AI (Gemini)",
-    "providerType": "cloud_api",
-    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
-    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
-    "modelFamily": "Gemini 2.5",
-    "modelName": "gemini-2.5-flash-preview-tts",
-    "modelId": "gemini-2.5-flash-preview-tts",
-    "modelVersion": "2.5-flash-preview",
-    "architecture": "Gemini multimodal transformer with TTS output head",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": false,
-    "maxInputLength": 8000,
-    "license": "Google AI Terms of Service",
     "licenseUrl": "https://ai.google.dev/gemini-api/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Subject to Google AI data usage policy",
-    "latencyMs": "~1000-5000",
-    "releaseDate": "2025-05-01",
     "knownLimitations": [
       "Preview — API may change before GA",
       "Text-only input, audio-only output (no multimodal mixing in TTS mode)",
@@ -121,11 +73,59 @@
       "Rate limited: 10 requests/minute on free tier"
     ],
     "notes": "Voice style: \"Informative\". Supports natural language style direction — prefix text with instructions like \"Say cheerfully:\" or \"In a whisper:\". Multi-speaker mode supports up to 2 voices per conversation. Also available on gemini-2.5-pro-preview-tts for higher quality. 70+ languages supported. Style, accent, pace, and tone controllable via prompt engineering.",
+    "modelFamily": "Gemini 2.5",
+    "modelId": "gemini-2.5-flash-preview-tts",
+    "modelVersion": "2.5-flash-preview",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
     "runtimeFramework": "Gemini API (REST/SDK)",
-    "hardwareRequirements": "Cloud API — no local hardware required"
+    "hardwareRequirements": "Cloud API — no local hardware required",
+    "voiceCloning": false,
+    "providerName": "Google AI (Gemini)",
+    "multilingual": true,
+    "latencyMs": "~1000-5000",
+    "architecture": "Gemini multimodal transformer with TTS output head",
+    "releaseDate": "2025-05-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 24000,
+    "providerUrl": "https://ai.google.dev/gemini-api/docs/speech-generation",
+    "streamingSupport": true,
+    "modelName": "gemini-2.5-flash-preview-tts",
+    "license": "Google AI Terms of Service",
+    "dataRetention": "Subject to Google AI data usage policy",
+    "apiEndpoint": "generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent",
+    "maxInputLength": 8000,
+    "channels": 1,
+    "bitDepth": 16
   },
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XEDDEFEE58396637.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XEDDEFEE58396637.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XEDDEFEE58396637.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XEDDEFEE58396637.mp3",
+      "transcript": "In a world of constant change, the ability to adapt quickly separates the good from the great.",
+      "id": "0100MME4D1XEE50D6B73174128",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "gemini:2.5-flash-tts:Charon",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "pcm",
+        "mp3"
+      ],
+      "maxInputChars": 8000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "0100MME4D1XE9D76AA30B6260D",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XEDDEFEE58396637.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XEDDEFEE58396637",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XEDDEFEE58396637.json"

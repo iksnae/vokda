@@ -1,0 +1,239 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Vokda Synthesis API — Lambda + SQS + API Gateway
+
+Parameters:
+  Stage:
+    Type: String
+    Default: dev
+  CognitoUserPoolId:
+    Type: String
+    Description: Cognito user pool ID for JWT validation (browser auth path)
+  CognitoClientId:
+    Type: String
+    Description: Cognito app client ID
+  S3BucketName:
+    Type: String
+    Description: Existing Amplify Storage bucket name
+  SynthesisJobTableName:
+    Type: String
+    Description: Existing Amplify SynthesisJob DynamoDB table name
+  UserCredentialTableName:
+    Type: String
+    Description: Existing Amplify UserProviderCredential DynamoDB table name
+  MaxQuotaBytes:
+    Type: Number
+    Default: 5368709120
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    Architectures:
+      - arm64
+    Environment:
+      Variables:
+        STAGE: !Ref Stage
+        S3_BUCKET: !Ref S3BucketName
+        SYNTHESIS_JOB_TABLE: !Ref SynthesisJobTableName
+        USER_CREDENTIAL_TABLE: !Ref UserCredentialTableName
+        MAX_QUOTA_BYTES: !Ref MaxQuotaBytes
+        API_KEY_TABLE: !Ref VokdaApiKeyTable
+        USER_MEDIA_USAGE_TABLE: !Ref UserMediaUsageTable
+        COGNITO_USER_POOL_ID: !Ref CognitoUserPoolId
+        COGNITO_CLIENT_ID: !Ref CognitoClientId
+
+Resources:
+  # ─── API Gateway ───
+  SynthesisApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref Stage
+      CorsConfiguration:
+        AllowOrigins:
+          - "*"
+        AllowMethods:
+          - GET
+          - POST
+          - DELETE
+          - OPTIONS
+        AllowHeaders:
+          - Authorization
+          - Content-Type
+
+  # ─── DynamoDB Tables ───
+  VokdaApiKeyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "VokdaApiKey-${Stage}"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: keyHash
+          AttributeType: S
+        - AttributeName: userId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: keyHash
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: userId-index
+          KeySchema:
+            - AttributeName: userId
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+
+  UserMediaUsageTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "UserMediaUsage-${Stage}"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+
+  # ─── SQS Queue ───
+  SynthesisQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "vokda-synthesis-${Stage}"
+      VisibilityTimeout: 360
+      MessageRetentionPeriod: 86400
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt SynthesisDeadLetterQueue.Arn
+        maxReceiveCount: 3
+
+  SynthesisDeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "vokda-synthesis-dlq-${Stage}"
+      MessageRetentionPeriod: 1209600
+
+  # ─── Lambda: Auth Authorizer ───
+  AuthFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: functions/auth-authorizer/
+      MemorySize: 128
+      Timeout: 5
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref VokdaApiKeyTable
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:UpdateItem
+              Resource: !GetAtt VokdaApiKeyTable.Arn
+
+  # ─── Lambda: Synthesis Router ───
+  SynthesisRouterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: functions/synthesis-router/
+      MemorySize: 512
+      Timeout: 60
+      Environment:
+        Variables:
+          SYNTHESIS_QUEUE_URL: !Ref SynthesisQueue
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SynthesisJobTableName
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserMediaUsageTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref UserCredentialTableName
+        - DynamoDBCrudPolicy:
+            TableName: !Ref VokdaApiKeyTable
+        - S3CrudPolicy:
+            BucketName: !Ref S3BucketName
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt SynthesisQueue.QueueName
+      Events:
+        Synthesize:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/synthesize
+            Method: POST
+        ListJobs:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/jobs
+            Method: GET
+        GetJob:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/jobs/{id}
+            Method: GET
+        DeleteJob:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/jobs/{id}
+            Method: DELETE
+        GetUsage:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/media/usage
+            Method: GET
+        CreateKey:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/keys
+            Method: POST
+        ListKeys:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/keys
+            Method: GET
+        DeleteKey:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/keys/{id}
+            Method: DELETE
+
+  # ─── Lambda: Synthesis Worker (SQS consumer) ───
+  SynthesisWorkerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      CodeUri: functions/synthesis-worker/
+      MemorySize: 512
+      Timeout: 300
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SynthesisJobTableName
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UserMediaUsageTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref UserCredentialTableName
+        - S3CrudPolicy:
+            BucketName: !Ref S3BucketName
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt SynthesisQueue.Arn
+            BatchSize: 1
+
+Outputs:
+  ApiUrl:
+    Description: Synthesis API base URL
+    Value: !Sub "https://${SynthesisApi}.execute-api.${AWS::Region}.amazonaws.com/${Stage}"
+  ApiKeyTableName:
+    Value: !Ref VokdaApiKeyTable
+  UsageTableName:
+    Value: !Ref UserMediaUsageTable
+  QueueUrl:
+    Value: !Ref SynthesisQueue

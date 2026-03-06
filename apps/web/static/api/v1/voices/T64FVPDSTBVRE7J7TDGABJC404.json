@@ -1,0 +1,77 @@
+{
+  "id": "T64FVPDSTBVRE7J7TDGABJC404",
+  "name": "Scott - Sportscaster",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "2f22b9bc-b0eb-4cb6-b5ae-0c099a0fdfad",
+  "description": "Energetic American adult male voice with the excitement of a sportscaster for live commentary, sports content, and high-energy announcements",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Scott - Sportscaster — Cartesia",
+    "searchDescription": "Cartesia Scott - Sportscaster: Energetic American adult male voice with the excitement of a sportscaster for live commentary, sports content, and high-energy announcements",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "2f22b9bc-b0eb-4cb6-b5ae-0c099a0fdfad",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T64FVPDSTBVRE7J7TDGABJC404.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T64FVPDSTBVRE7J7TDGABJC404.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T64FVPDSTBVRE7J7TDGABJC404.mp3",
+      "id": "s-T64FVPDSTBVRE7J7TDGABJC404",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "2f22b9bc-b0eb-4cb6-b5ae-0c099a0fdfad",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Scott - Sportscaster",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T64FVPDSTBVRE7J7TDGABJC404.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T64FVPDSTBVRE7J7TDGABJC404",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T64FVPDSTBVRE7J7TDGABJC404.json"
+}

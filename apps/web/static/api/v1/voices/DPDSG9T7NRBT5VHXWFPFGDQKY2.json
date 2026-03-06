@@ -1,0 +1,77 @@
+{
+  "id": "DPDSG9T7NRBT5VHXWFPFGDQKY2",
+  "name": "Aarav - Old Time Storyteller",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "39d518b7-fd0b-4676-9b8b-29d64ff31e12",
+  "description": "Warm adult male voice with a slight Indian accent and a vintage tone for nostalgic storytelling, retro-style media, and historical narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Aarav - Old Time Storyteller — Cartesia",
+    "searchDescription": "Cartesia Aarav - Old Time Storyteller: Warm adult male voice with a slight Indian accent and a vintage tone for nostalgic storytelling, retro-style media, and historical narration",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "39d518b7-fd0b-4676-9b8b-29d64ff31e12",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DPDSG9T7NRBT5VHXWFPFGDQKY2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DPDSG9T7NRBT5VHXWFPFGDQKY2.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DPDSG9T7NRBT5VHXWFPFGDQKY2.mp3",
+      "id": "s-DPDSG9T7NRBT5VHXWFPFGDQKY2",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "39d518b7-fd0b-4676-9b8b-29d64ff31e12",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Aarav - Old Time Storyteller",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DPDSG9T7NRBT5VHXWFPFGDQKY2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DPDSG9T7NRBT5VHXWFPFGDQKY2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DPDSG9T7NRBT5VHXWFPFGDQKY2.json"
+}

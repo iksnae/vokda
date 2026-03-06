@@ -1,0 +1,77 @@
+{
+  "id": "J9W9J25Y085G866FNVY5ZQZW7X",
+  "name": "Joey - Neighborhood Guy",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "34575e71-908f-4ab6-ab54-b08c95d6597d",
+  "description": "Casual, friendly male for natural conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Joey - Neighborhood Guy — Cartesia",
+    "searchDescription": "Cartesia Joey - Neighborhood Guy: Casual, friendly male for natural conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "34575e71-908f-4ab6-ab54-b08c95d6597d",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/J9W9J25Y085G866FNVY5ZQZW7X.mp3",
+      "id": "s-J9W9J25Y085G866FNVY5ZQZW7X",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "34575e71-908f-4ab6-ab54-b08c95d6597d",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Joey - Neighborhood Guy",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/J9W9J25Y085G866FNVY5ZQZW7X.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/J9W9J25Y085G866FNVY5ZQZW7X",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/J9W9J25Y085G866FNVY5ZQZW7X.json"
+}

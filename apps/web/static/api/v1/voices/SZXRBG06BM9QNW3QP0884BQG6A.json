@@ -1,0 +1,71 @@
+{
+  "id": "SZXRBG06BM9QNW3QP0884BQG6A",
+  "name": "Paige",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "paige",
+  "description": "Conversational. Determined. US",
+  "tags": [
+    "female",
+    "professional",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Paige — LMNT",
+    "searchDescription": "LMNT Paige: Conversational. Determined. US",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SZXRBG06BM9QNW3QP0884BQG6A.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SZXRBG06BM9QNW3QP0884BQG6A.mp3",
+      "id": "s-SZXRBG06BM9QNW3QP0884BQG6A",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "paige",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Paige",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SZXRBG06BM9QNW3QP0884BQG6A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SZXRBG06BM9QNW3QP0884BQG6A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SZXRBG06BM9QNW3QP0884BQG6A.json"
+}

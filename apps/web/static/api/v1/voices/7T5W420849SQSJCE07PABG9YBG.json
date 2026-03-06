@@ -1,0 +1,77 @@
+{
+  "id": "7T5W420849SQSJCE07PABG9YBG",
+  "name": "Carson - Friendly Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
+  "description": "Friendly, young adult male for customer support conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Carson - Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Friendly Support: Friendly, young adult male for customer support conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7T5W420849SQSJCE07PABG9YBG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7T5W420849SQSJCE07PABG9YBG.mp3",
+      "id": "s-7T5W420849SQSJCE07PABG9YBG",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "4df027cb-2920-4a1f-8c34-f21529d5c3fe",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Friendly Support",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7T5W420849SQSJCE07PABG9YBG.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7T5W420849SQSJCE07PABG9YBG",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7T5W420849SQSJCE07PABG9YBG.json"
+}

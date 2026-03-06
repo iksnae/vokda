@@ -42,6 +42,9 @@ const PALETTES = {
   orpheus:        { dark: '#1a0a40', mid: '#4527a0', light: '#b39ddb', accent: '#7e57c2' },
   'chatterbox-turbo': { dark: '#0a2a50', mid: '#1565c0', light: '#90caf9', accent: '#1e88e5' },
   'edge-tts':     { dark: '#0a2050', mid: '#0d47a1', light: '#64b5f6', accent: '#1976d2' },
+  deepgram:       { dark: '#0a300a', mid: '#1b5e20', light: '#66bb6a', accent: '#2e7d32' },
+  cartesia:       { dark: '#400a0a', mid: '#b71c1c', light: '#ef9a9a', accent: '#c62828' },
+  lmnt:           { dark: '#3e1f00', mid: '#e65100', light: '#ffb74d', accent: '#f57c00' },
 };
 const DEFAULT_PAL = { dark: '#0a2a3e', mid: '#1c5c76', light: '#7abcd0', accent: '#2a9ab5' };
 

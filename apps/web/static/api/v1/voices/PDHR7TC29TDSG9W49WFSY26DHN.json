@@ -1,0 +1,93 @@
+{
+  "id": "PDHR7TC29TDSG9W49WFSY26DHN",
+  "name": "Mars (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-mars-en",
+  "description": "American-accented male voice (adult) with smooth, patient, trustworthy qualities. Aura 2 architecture.",
+  "tags": [
+    "smooth",
+    "patient",
+    "trustworthy",
+    "baritone",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "customer service"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "smooth",
+      "patient",
+      "trustworthy",
+      "baritone"
+    ],
+    "shortLabel": "Mars — Deepgram Aura 2",
+    "searchDescription": "Deepgram Mars: American-accented male voice (adult) with smooth, patient, trustworthy qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/308470b81526c7271123f13e7a13ae055ce3d4ae.wav",
+    "deepgramUuid": "51bdd91d-006e-491d-bac3-42e9b166b67a",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ffadd8",
+    "modelName": "Deepgram Aura 2 — Mars",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/9b12f723b55c2797c08782aca2025fedae49943b-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/PDHR7TC29TDSG9W49WFSY26DHN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/PDHR7TC29TDSG9W49WFSY26DHN.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/PDHR7TC29TDSG9W49WFSY26DHN.mp3",
+      "id": "s-PDHR7TC29TDSG9W49WFSY26DHN",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-mars-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Mars",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/PDHR7TC29TDSG9W49WFSY26DHN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/PDHR7TC29TDSG9W49WFSY26DHN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/PDHR7TC29TDSG9W49WFSY26DHN.json"
+}

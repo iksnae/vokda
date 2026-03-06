@@ -1,0 +1,77 @@
+{
+  "id": "DXJA67G21P1NR1R8C2A48FSZVV",
+  "name": "Diana - Gentle Mom",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "ea93f57f-7c71-4d79-aeaa-0a39b150f6ca",
+  "description": "Matured voice with a casual, friendly tone that feels warm, relatable, and easy to connect with",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Diana - Gentle Mom — Cartesia",
+    "searchDescription": "Cartesia Diana - Gentle Mom: Matured voice with a casual, friendly tone that feels warm, relatable, and easy to connect with",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "ea93f57f-7c71-4d79-aeaa-0a39b150f6ca",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/DXJA67G21P1NR1R8C2A48FSZVV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/DXJA67G21P1NR1R8C2A48FSZVV.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/DXJA67G21P1NR1R8C2A48FSZVV.mp3",
+      "id": "s-DXJA67G21P1NR1R8C2A48FSZVV",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "ea93f57f-7c71-4d79-aeaa-0a39b150f6ca",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Diana - Gentle Mom",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/DXJA67G21P1NR1R8C2A48FSZVV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/DXJA67G21P1NR1R8C2A48FSZVV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/DXJA67G21P1NR1R8C2A48FSZVV.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "XKQJ69VJA2CEC1R0DXHW6C9SYA",
+  "name": "Henry - Plainspoken Guy",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "87286a8d-7ea7-4235-a41a-dd9fa6630feb",
+  "description": "A relaxed, youthful male voice with a monotone, matter-of-fact attitude - ideal for casual, straightforward conversations.",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Henry - Plainspoken Guy — Cartesia",
+    "searchDescription": "Cartesia Henry - Plainspoken Guy: A relaxed, youthful male voice with a monotone, matter-of-fact attitude - ideal for casual, straightforward conversations.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "87286a8d-7ea7-4235-a41a-dd9fa6630feb",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/XKQJ69VJA2CEC1R0DXHW6C9SYA.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/XKQJ69VJA2CEC1R0DXHW6C9SYA.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/XKQJ69VJA2CEC1R0DXHW6C9SYA.mp3",
+      "id": "s-XKQJ69VJA2CEC1R0DXHW6C9SYA",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "87286a8d-7ea7-4235-a41a-dd9fa6630feb",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Henry - Plainspoken Guy",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/XKQJ69VJA2CEC1R0DXHW6C9SYA.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/XKQJ69VJA2CEC1R0DXHW6C9SYA",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/XKQJ69VJA2CEC1R0DXHW6C9SYA.json"
+}

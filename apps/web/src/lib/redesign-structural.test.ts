@@ -8,11 +8,11 @@ function readComponent(relativePath: string): string {
 
 describe('Phase A: Structural fixes', () => {
   describe('1a. Always-visible nav links', () => {
-    it('shows Explore link without auth guard', () => {
+    it('shows home link via brand logo', () => {
       const layout = readComponent('routes/+layout.svelte');
-      // "Explore" link should be outside any roleFlags conditional
-      expect(layout).toContain('Explore');
+      // Brand logo links to home; "Explore" was removed in favor of logo link
       expect(layout).toContain('href="/"');
+      expect(layout).toContain('Vokda');
     });
 
     it('shows Collections link without auth guard for visibility', () => {

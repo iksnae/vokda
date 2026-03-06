@@ -1,0 +1,101 @@
+{
+  "id": "E8E3SM807T5ZQR7M8DTFY7T6C6",
+  "name": "Cornelia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-cornelia-nl",
+  "description": "Dutch-accented female voice (adult) with approachable, friendly, polite qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "friendly",
+    "polite",
+    "positive",
+    "warm",
+    "aura-2",
+    "accent-dutch",
+    "female"
+  ],
+  "languages": [
+    "nl",
+    "nl-NL"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "interview",
+      "customer service",
+      "casual chat",
+      "audiobook"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "approachable",
+      "friendly",
+      "polite",
+      "positive",
+      "warm"
+    ],
+    "shortLabel": "Cornelia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Cornelia: Dutch-accented female voice (adult) with approachable, friendly, polite qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/9e229626bbf18c2756733435ada304c3ed5814e7.wav",
+    "deepgramUuid": "cede84c0-385f-4b6d-a943-3e06a0a6d825",
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Cornelia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "interview",
+      "customer service",
+      "casual chat",
+      "audiobook"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/00f8c99ccdb4cc0ceca99a2422249d5da8a648be-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E8E3SM807T5ZQR7M8DTFY7T6C6.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E8E3SM807T5ZQR7M8DTFY7T6C6.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E8E3SM807T5ZQR7M8DTFY7T6C6.mp3",
+      "id": "s-E8E3SM807T5ZQR7M8DTFY7T6C6",
+      "label": "Default",
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-cornelia-nl",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Cornelia",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E8E3SM807T5ZQR7M8DTFY7T6C6.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E8E3SM807T5ZQR7M8DTFY7T6C6",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E8E3SM807T5ZQR7M8DTFY7T6C6.json"
+}

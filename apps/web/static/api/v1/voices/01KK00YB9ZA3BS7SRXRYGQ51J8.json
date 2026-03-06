@@ -17,89 +17,89 @@
   "qualityTier": "premium",
   "licenseNotes": "Open model (~900M params). Check model card for license terms.",
   "metadata": {
+    "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "natural"
+    ],
     "shortLabel": "MLX · ~900M · female",
     "searchDescription": "Chinese-first bilingual TTS with natural English output. Strong prosody and rhythm.",
+    "audienceTags": [],
+    "agePresentation": "adult",
     "machineTags": [
       "female",
       "open-model",
       "local",
       "mlx"
-    ],
-    "useCases": [],
-    "toneTags": [
-      "natural"
-    ],
-    "audienceTags": [],
-    "genderPresentation": "female",
-    "agePresentation": "adult",
-    "metadataQuality": "curated"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KK00YBA07EJFS6J7R787DBHT",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KK00YBA0B8M3FSZF3GWJCJJ4",
-      "sourceType": "local_model",
-      "sourceKey": "mlx:voxcpm:default",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "OpenBMB",
-    "providerType": "local_mlx",
-    "providerUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
-    "modelUrl": "https://huggingface.co/mlx-community/VoxCPM1.5-8bit",
-    "modelFamily": "VoxCPM",
-    "modelName": "VoxCPM-1.5",
-    "modelSize": "~900M parameters",
-    "architecture": "CPM-based bilingual speech model",
-    "runtime": "mlx-audio (Apple MLX)",
-    "quantization": "8-bit",
-    "diskSize": "~900MB",
-    "memoryRequired": "~1.2GB",
-    "hardwareRequirements": "Apple Silicon (M1+)",
-    "sampleRate": 24000,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
-    "multilingual": true,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "supportedLanguages": [
-      "zh",
-      "en"
-    ],
-    "maxInputLength": 5000,
-    "license": "Apache 2.0",
     "commercialUse": true,
-    "attributionRequired": false,
-    "realtimeFactor": "~20x realtime",
-    "latencyMs": "~800-1500",
-    "releaseDate": "2025-04-01",
     "knownLimitations": [
       "Primarily trained on Chinese, English is secondary",
       "Single voice only",
       "May have Chinese-accented English prosody"
     ],
+    "modelFamily": "VoxCPM",
+    "multiSpeaker": false,
+    "providerType": "local_mlx",
+    "diskSize": "~900MB",
+    "supportedLanguages": [
+      "zh",
+      "en"
+    ],
+    "ssmlSupport": false,
+    "modelUrl": "https://huggingface.co/mlx-community/VoxCPM1.5-8bit",
+    "hardwareRequirements": "Apple Silicon (M1+)",
+    "voiceCloning": false,
+    "realtimeFactor": "~20x realtime",
+    "providerName": "OpenBMB",
+    "multilingual": true,
+    "latencyMs": "~800-1500",
+    "architecture": "CPM-based bilingual speech model",
+    "quantization": "8-bit",
     "verificationNote": "Weight files not found in fp16 cache — model may need redownload or different quantization",
-    "multiSpeaker": false
+    "memoryRequired": "~1.2GB",
+    "releaseDate": "2025-04-01",
+    "attributionRequired": false,
+    "runtime": "mlx-audio (Apple MLX)",
+    "emotionControl": false,
+    "modelSize": "~900M parameters",
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
+    "streamingSupport": false,
+    "modelName": "VoxCPM-1.5",
+    "license": "Apache 2.0",
+    "maxInputLength": 5000,
+    "channels": 1
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00YB9ZA3BS7SRXRYGQ51J8.mp3",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "id": "01KK00YBA07EJFS6J7R787DBHT",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "mlx:voxcpm:default",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "local_model",
+      "id": "01KK00YBA0B8M3FSZF3GWJCJJ4",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KK00YB9ZA3BS7SRXRYGQ51J8",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00YB9ZA3BS7SRXRYGQ51J8.json"

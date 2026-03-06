@@ -23,3 +23,5 @@ coverage/
 # playwright-cli browser snapshots
 .playwright-cli/
 *.npz
+infra/.aws-sam/
+infra/functions/*/node_modules/

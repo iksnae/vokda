@@ -1,0 +1,77 @@
+{
+  "id": "1Y88A3Y7MCFY9MCA9Y5WE9NZVJ",
+  "name": "Elliott - Reflective Storyteller",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "7edf9efb-58fc-46ba-a648-3a00a86b111b",
+  "description": "English male adult voice with a soft, melancholic tone and a questioning inflection for storytelling and emotional dialogue",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Elliott - Reflective Storyteller — Cartesia",
+    "searchDescription": "Cartesia Elliott - Reflective Storyteller: English male adult voice with a soft, melancholic tone and a questioning inflection for storytelling and emotional dialogue",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "7edf9efb-58fc-46ba-a648-3a00a86b111b",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ.mp3",
+      "id": "s-1Y88A3Y7MCFY9MCA9Y5WE9NZVJ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "7edf9efb-58fc-46ba-a648-3a00a86b111b",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Elliott - Reflective Storyteller",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1Y88A3Y7MCFY9MCA9Y5WE9NZVJ.json"
+}

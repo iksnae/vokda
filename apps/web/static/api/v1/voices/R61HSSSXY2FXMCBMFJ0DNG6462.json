@@ -1,0 +1,101 @@
+{
+  "id": "R61HSSSXY2FXMCBMFJ0DNG6462",
+  "name": "Hestia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-hestia-nl",
+  "description": "Dutch-accented female voice (adult) with approachable, caring, expressive qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "caring",
+    "expressive",
+    "friendly",
+    "knowledgeable",
+    "aura-2",
+    "accent-dutch",
+    "female"
+  ],
+  "languages": [
+    "nl",
+    "nl-NL"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "audiobook"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "approachable",
+      "caring",
+      "expressive",
+      "friendly",
+      "knowledgeable"
+    ],
+    "shortLabel": "Hestia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Hestia: Dutch-accented female voice (adult) with approachable, caring, expressive qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "dutch"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/803b683e542e75e501d9311579eea9a284e95e9b.wav",
+    "deepgramUuid": "7e2db483-8840-4151-8e3f-0997a1846f09",
+    "sampleRate": 24000,
+    "accent": "Dutch",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Hestia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "customer service",
+      "interview",
+      "audiobook"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/d53ad263bf679db70338f4203b0427264c220667-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/R61HSSSXY2FXMCBMFJ0DNG6462.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/R61HSSSXY2FXMCBMFJ0DNG6462.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/R61HSSSXY2FXMCBMFJ0DNG6462.mp3",
+      "id": "s-R61HSSSXY2FXMCBMFJ0DNG6462",
+      "label": "Default",
+      "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-hestia-nl",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Hestia",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/R61HSSSXY2FXMCBMFJ0DNG6462.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/R61HSSSXY2FXMCBMFJ0DNG6462",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/R61HSSSXY2FXMCBMFJ0DNG6462.json"
+}

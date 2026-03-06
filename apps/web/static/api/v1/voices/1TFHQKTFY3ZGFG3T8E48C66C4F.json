@@ -1,0 +1,93 @@
+{
+  "id": "1TFHQKTFY3ZGFG3T8E48C66C4F",
+  "name": "Odysseus (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-odysseus-en",
+  "description": "American-accented male voice (adult) with calm, smooth, comfortable qualities. Aura 2 architecture.",
+  "tags": [
+    "calm",
+    "smooth",
+    "comfortable",
+    "professional",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "advertising"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "calm",
+      "smooth",
+      "comfortable",
+      "professional"
+    ],
+    "shortLabel": "Odysseus — Deepgram Aura 2",
+    "searchDescription": "Deepgram Odysseus: American-accented male voice (adult) with calm, smooth, comfortable qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/5b1d6642271993dcd7948b899ac2f157072ab8c2.wav",
+    "deepgramUuid": "04b578ec-e6c0-42c1-96c1-f36dc8222836",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#f04438",
+    "modelName": "Deepgram Aura 2 — Odysseus",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "advertising"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/f5cc778ec81b02cc7f503c8f24e1dfd0d5b8aa6d-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1TFHQKTFY3ZGFG3T8E48C66C4F.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1TFHQKTFY3ZGFG3T8E48C66C4F.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1TFHQKTFY3ZGFG3T8E48C66C4F.mp3",
+      "id": "s-1TFHQKTFY3ZGFG3T8E48C66C4F",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-odysseus-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Odysseus",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1TFHQKTFY3ZGFG3T8E48C66C4F.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1TFHQKTFY3ZGFG3T8E48C66C4F",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1TFHQKTFY3ZGFG3T8E48C66C4F.json"
+}

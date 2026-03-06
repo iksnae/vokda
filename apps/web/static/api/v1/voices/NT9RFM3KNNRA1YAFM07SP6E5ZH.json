@@ -1,0 +1,77 @@
+{
+  "id": "NT9RFM3KNNRA1YAFM07SP6E5ZH",
+  "name": "Clara - Instructor",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "01eaafa9-308a-4276-a017-6ab0cf061b1f",
+  "description": "Middle-aged American female voice with a clear tone and precise enunciation for instructions, customer support, and professional presentations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Clara - Instructor — Cartesia",
+    "searchDescription": "Cartesia Clara - Instructor: Middle-aged American female voice with a clear tone and precise enunciation for instructions, customer support, and professional presentations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "01eaafa9-308a-4276-a017-6ab0cf061b1f",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/NT9RFM3KNNRA1YAFM07SP6E5ZH.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/NT9RFM3KNNRA1YAFM07SP6E5ZH.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/NT9RFM3KNNRA1YAFM07SP6E5ZH.mp3",
+      "id": "s-NT9RFM3KNNRA1YAFM07SP6E5ZH",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "01eaafa9-308a-4276-a017-6ab0cf061b1f",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Clara - Instructor",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NT9RFM3KNNRA1YAFM07SP6E5ZH.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/NT9RFM3KNNRA1YAFM07SP6E5ZH",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NT9RFM3KNNRA1YAFM07SP6E5ZH.json"
+}

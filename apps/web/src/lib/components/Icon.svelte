@@ -26,6 +26,22 @@
   import SlidersHorizontal from 'phosphor-svelte/lib/SlidersHorizontal';
   import SquaresFour from 'phosphor-svelte/lib/SquaresFour';
   import List from 'phosphor-svelte/lib/List';
+  import User from 'phosphor-svelte/lib/User';
+  import Users from 'phosphor-svelte/lib/Users';
+  import Globe from 'phosphor-svelte/lib/Globe';
+  import Info from 'phosphor-svelte/lib/Info';
+  import Minus from 'phosphor-svelte/lib/Minus';
+  import Pencil from 'phosphor-svelte/lib/Pencil';
+  import Desktop from 'phosphor-svelte/lib/Desktop';
+  import Microphone from 'phosphor-svelte/lib/Microphone';
+  import ChatCircle from 'phosphor-svelte/lib/ChatCircle';
+  import CaretUp from 'phosphor-svelte/lib/CaretUp';
+  import Gear from 'phosphor-svelte/lib/Gear';
+  import ArrowRight from 'phosphor-svelte/lib/ArrowRight';
+  import Key from 'phosphor-svelte/lib/Key';
+  import Waveform from 'phosphor-svelte/lib/Waveform';
+  import Lightning from 'phosphor-svelte/lib/Lightning';
+  import Folder from 'phosphor-svelte/lib/Folder';
 
   export let name: string;
   export let size: number = 16;
@@ -55,7 +71,23 @@
     speaker: SpeakerHigh,
     sliders: SlidersHorizontal,
     grid: SquaresFour,
-    list: List
+    list: List,
+    user: User,
+    users: Users,
+    globe: Globe,
+    info: Info,
+    minus: Minus,
+    pencil: Pencil,
+    desktop: Desktop,
+    microphone: Microphone,
+    chat: ChatCircle,
+    'chevron-up': CaretUp,
+    gear: Gear,
+    'arrow-right': ArrowRight,
+    key: Key,
+    waveform: Waveform,
+    lightning: Lightning,
+    folder: Folder
   };
 
   const filledNames = new Set([

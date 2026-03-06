@@ -1,0 +1,99 @@
+{
+  "id": "SJ1XM5W65WECDSVXSWDYDZKT83",
+  "name": "Antonia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-antonia-es",
+  "description": "Argentine-accented female voice (adult) with approachable, enthusiastic, friendly qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "enthusiastic",
+    "friendly",
+    "natural",
+    "professional",
+    "aura-2",
+    "accent-argentine",
+    "female"
+  ],
+  "languages": [
+    "es",
+    "es-AR"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "approachable",
+      "enthusiastic",
+      "friendly",
+      "natural",
+      "professional"
+    ],
+    "shortLabel": "Antonia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Antonia: Argentine-accented female voice (adult) with approachable, enthusiastic, friendly qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "argentine"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/e2f37450d392f5a8fc002d28a5ee1dbe728c392d.wav",
+    "deepgramUuid": "e28e2f24-c4be-4b2f-b13b-c318d58d5960",
+    "sampleRate": 24000,
+    "accent": "Argentine",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#24a3e3",
+    "modelName": "Deepgram Aura 2 — Antonia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "customer service",
+      "interview",
+      "casual chat"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/84ff3e66b9863059b988c07d6c72e71420e77255-400x400.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SJ1XM5W65WECDSVXSWDYDZKT83.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SJ1XM5W65WECDSVXSWDYDZKT83.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SJ1XM5W65WECDSVXSWDYDZKT83.mp3",
+      "id": "s-SJ1XM5W65WECDSVXSWDYDZKT83",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-antonia-es",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Antonia",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SJ1XM5W65WECDSVXSWDYDZKT83.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SJ1XM5W65WECDSVXSWDYDZKT83",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SJ1XM5W65WECDSVXSWDYDZKT83.json"
+}

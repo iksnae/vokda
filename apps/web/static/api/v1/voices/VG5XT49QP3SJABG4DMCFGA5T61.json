@@ -1,0 +1,77 @@
+{
+  "id": "VG5XT49QP3SJABG4DMCFGA5T61",
+  "name": "Cameron - Chill Companion",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
+  "description": "Laidback voice with a natural, conversational tone that feels friendly and easy to engage with",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Cameron - Chill Companion — Cartesia",
+    "searchDescription": "Cartesia Cameron - Chill Companion: Laidback voice with a natural, conversational tone that feels friendly and easy to engage with",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VG5XT49QP3SJABG4DMCFGA5T61.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VG5XT49QP3SJABG4DMCFGA5T61.mp3",
+      "id": "s-VG5XT49QP3SJABG4DMCFGA5T61",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "df872fcd-da17-4b01-a49f-a80d7aaee95e",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Cameron - Chill Companion",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VG5XT49QP3SJABG4DMCFGA5T61.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VG5XT49QP3SJABG4DMCFGA5T61",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VG5XT49QP3SJABG4DMCFGA5T61.json"
+}

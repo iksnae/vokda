@@ -15,79 +15,79 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by Azure AI Speech terms and your subscription agreement.",
   "metadata": {
-    "shortLabel": "en-IE female voice",
-    "searchDescription": "English (Ireland) Female neural voice.",
-    "machineTags": [
-      "female",
-      "ie"
-    ],
     "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "sparse",
     "toneTags": [
       "clear"
     ],
+    "shortLabel": "en-IE female voice",
+    "searchDescription": "English (Ireland) Female neural voice.",
     "audienceTags": [],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "female",
+      "ie"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": true,
+    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
+    "commercialUse": true,
+    "knownLimitations": [
+      "Style support varies by voice",
+      "Some voices are preview-only and may change",
+      "Multilingual voices may have accent blending artifacts"
+    ],
+    "modelFamily": "Azure Neural TTS",
+    "providerType": "cloud_api",
+    "gdprCompliant": true,
+    "ssmlSupport": true,
+    "voiceCloning": false,
+    "providerName": "Microsoft Azure",
+    "multilingual": true,
+    "latencyMs": "~150-400",
+    "architecture": "Neural TTS with style and role support",
+    "releaseDate": "2019-09-01",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 48000,
+    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
+    "streamingSupport": true,
+    "license": "Azure AI Services Terms",
+    "dataRetention": "Not stored after synthesis",
+    "apiEndpoint": "{region}.tts.speech.microsoft.com",
+    "maxInputLength": 10000,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3",
   "samples": [
     {
-      "id": "01KJZXZNF9JYBGKMWQ0VW3W2TC",
       "scriptKey": "default",
-      "label": "Default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3",
       "transcript": "Before we begin, make sure your workspace has one admin and at least two contributors.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3"
+      "id": "01KJZXZNF9JYBGKMWQ0VW3W2TC",
+      "label": "Default"
     }
   ],
   "variants": [
     {
-      "id": "01KJZXZNF99BQM5KB0WTMR7EN2",
-      "sourceType": "cloud_provider",
       "sourceKey": "azure:speech:en-IE-EmilyNeural",
       "runnable": true,
-      "supportsSsml": true,
       "outputFormats": [
         "mp3",
         "wav",
         "pcm"
       ],
       "maxInputChars": 10000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNF99BQM5KB0WTMR7EN2",
+      "supportsSsml": true
     }
   ],
-  "modelCard": {
-    "providerName": "Microsoft Azure",
-    "providerType": "cloud_api",
-    "providerUrl": "https://azure.microsoft.com/products/ai-services/ai-speech",
-    "apiEndpoint": "{region}.tts.speech.microsoft.com",
-    "modelFamily": "Azure Neural TTS",
-    "architecture": "Neural TTS with style and role support",
-    "sampleRate": 48000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": true,
-    "wordTimestamps": true,
-    "multilingual": true,
-    "emotionControl": true,
-    "voiceCloning": false,
-    "maxInputLength": 10000,
-    "license": "Azure AI Services Terms",
-    "licenseUrl": "https://www.microsoft.com/licensing/terms/welcome/welcomepage",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "gdprCompliant": true,
-    "dataRetention": "Not stored after synthesis",
-    "latencyMs": "~150-400",
-    "releaseDate": "2019-09-01",
-    "knownLimitations": [
-      "Style support varies by voice",
-      "Some voices are preview-only and may change",
-      "Multilingual voices may have accent blending artifacts"
-    ]
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9A5PAVAYS7JHCSEPE.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF9A5PAVAYS7JHCSEPE",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF9A5PAVAYS7JHCSEPE.json"

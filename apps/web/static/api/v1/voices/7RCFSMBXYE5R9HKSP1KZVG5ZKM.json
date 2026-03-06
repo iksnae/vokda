@@ -1,0 +1,77 @@
+{
+  "id": "7RCFSMBXYE5R9HKSP1KZVG5ZKM",
+  "name": "Carson - Angry Friendly Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "0b32066b-2bcc-44b9-89ab-0223a09d1606",
+  "description": "Friendly young adult male for customer support conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Carson - Angry Friendly Support — Cartesia",
+    "searchDescription": "Cartesia Carson - Angry Friendly Support: Friendly young adult male for customer support conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "0b32066b-2bcc-44b9-89ab-0223a09d1606",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/7RCFSMBXYE5R9HKSP1KZVG5ZKM.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/7RCFSMBXYE5R9HKSP1KZVG5ZKM.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/7RCFSMBXYE5R9HKSP1KZVG5ZKM.mp3",
+      "id": "s-7RCFSMBXYE5R9HKSP1KZVG5ZKM",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "0b32066b-2bcc-44b9-89ab-0223a09d1606",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Carson - Angry Friendly Support",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/7RCFSMBXYE5R9HKSP1KZVG5ZKM.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/7RCFSMBXYE5R9HKSP1KZVG5ZKM",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/7RCFSMBXYE5R9HKSP1KZVG5ZKM.json"
+}

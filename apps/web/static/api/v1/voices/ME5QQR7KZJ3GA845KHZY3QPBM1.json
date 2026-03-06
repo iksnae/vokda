@@ -1,0 +1,91 @@
+{
+  "id": "ME5QQR7KZJ3GA845KHZY3QPBM1",
+  "name": "Ophelia (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-ophelia-en",
+  "description": "American-accented female voice (adult) with expressive, enthusiastic, cheerful qualities. Aura 2 architecture.",
+  "tags": [
+    "expressive",
+    "enthusiastic",
+    "cheerful",
+    "aura-2",
+    "accent-american",
+    "female"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "interview"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "expressive",
+      "enthusiastic",
+      "cheerful"
+    ],
+    "shortLabel": "Ophelia — Deepgram Aura 2",
+    "searchDescription": "Deepgram Ophelia: American-accented female voice (adult) with expressive, enthusiastic, cheerful qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "female",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/5ab5a5436fd3c668b8f88f964feb26f3f35f1731.wav",
+    "deepgramUuid": "f52a32b7-1391-452c-b786-09cc50458fd9",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#ffadd8",
+    "modelName": "Deepgram Aura 2 — Ophelia",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "interview"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/1f8d7401d2f36b8c4483e798c606a527b0808f69-1024x1024.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ME5QQR7KZJ3GA845KHZY3QPBM1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ME5QQR7KZJ3GA845KHZY3QPBM1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ME5QQR7KZJ3GA845KHZY3QPBM1.mp3",
+      "id": "s-ME5QQR7KZJ3GA845KHZY3QPBM1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-ophelia-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Ophelia",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ME5QQR7KZJ3GA845KHZY3QPBM1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ME5QQR7KZJ3GA845KHZY3QPBM1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ME5QQR7KZJ3GA845KHZY3QPBM1.json"
+}

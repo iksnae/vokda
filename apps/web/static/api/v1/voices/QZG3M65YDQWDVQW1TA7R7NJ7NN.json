@@ -1,0 +1,77 @@
+{
+  "id": "QZG3M65YDQWDVQW1TA7R7NJ7NN",
+  "name": "Jameson - Easygoing Support",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "a5136bf9-224c-4d76-b823-52bd5efcffcc",
+  "description": "Friendly, laid-back male voice for customer support and onboarding",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Jameson - Easygoing Support — Cartesia",
+    "searchDescription": "Cartesia Jameson - Easygoing Support: Friendly, laid-back male voice for customer support and onboarding",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "a5136bf9-224c-4d76-b823-52bd5efcffcc",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QZG3M65YDQWDVQW1TA7R7NJ7NN.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QZG3M65YDQWDVQW1TA7R7NJ7NN.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QZG3M65YDQWDVQW1TA7R7NJ7NN.mp3",
+      "id": "s-QZG3M65YDQWDVQW1TA7R7NJ7NN",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "a5136bf9-224c-4d76-b823-52bd5efcffcc",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Jameson - Easygoing Support",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QZG3M65YDQWDVQW1TA7R7NJ7NN.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QZG3M65YDQWDVQW1TA7R7NJ7NN",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QZG3M65YDQWDVQW1TA7R7NJ7NN.json"
+}

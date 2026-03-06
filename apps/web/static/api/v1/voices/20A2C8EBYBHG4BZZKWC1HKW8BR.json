@@ -1,0 +1,77 @@
+{
+  "id": "20A2C8EBYBHG4BZZKWC1HKW8BR",
+  "name": "Preston - Relatable Pal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "cd6256ef-2b2a-41f6-a8d8-c1307af5061f",
+  "description": "Confident voice with expressive tone and charismatic delivery, great for engaging conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Preston - Relatable Pal — Cartesia",
+    "searchDescription": "Cartesia Preston - Relatable Pal: Confident voice with expressive tone and charismatic delivery, great for engaging conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "cd6256ef-2b2a-41f6-a8d8-c1307af5061f",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/20A2C8EBYBHG4BZZKWC1HKW8BR.mp3",
+      "id": "s-20A2C8EBYBHG4BZZKWC1HKW8BR",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "cd6256ef-2b2a-41f6-a8d8-c1307af5061f",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Preston - Relatable Pal",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/20A2C8EBYBHG4BZZKWC1HKW8BR",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/20A2C8EBYBHG4BZZKWC1HKW8BR.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "W23ZT00CFVW63NWA29HWCE87SP",
+  "name": "Gavin - Friendly Vibe",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f4a3a8e4-694c-4c45-9ca0-27caf97901b5",
+  "description": "Casual male voice with a relaxed, conversational tone that feels approachable and genuine",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Gavin - Friendly Vibe — Cartesia",
+    "searchDescription": "Cartesia Gavin - Friendly Vibe: Casual male voice with a relaxed, conversational tone that feels approachable and genuine",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f4a3a8e4-694c-4c45-9ca0-27caf97901b5",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/W23ZT00CFVW63NWA29HWCE87SP.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/W23ZT00CFVW63NWA29HWCE87SP.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/W23ZT00CFVW63NWA29HWCE87SP.mp3",
+      "id": "s-W23ZT00CFVW63NWA29HWCE87SP",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f4a3a8e4-694c-4c45-9ca0-27caf97901b5",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Gavin - Friendly Vibe",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/W23ZT00CFVW63NWA29HWCE87SP.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/W23ZT00CFVW63NWA29HWCE87SP",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/W23ZT00CFVW63NWA29HWCE87SP.json"
+}

@@ -15,80 +15,80 @@
   "qualityTier": "premium",
   "licenseNotes": "Use governed by AWS service terms and account-level usage rights.",
   "metadata": {
-    "shortLabel": "fr-CA male voice",
-    "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
-    "machineTags": [
-      "male",
-      "ca"
-    ],
     "useCases": [],
+    "genderPresentation": "male",
+    "metadataQuality": "sparse",
     "toneTags": [
       "steady"
     ],
+    "shortLabel": "fr-CA male voice",
+    "searchDescription": "Canadian French Male voice (Liam) — neural engine.",
     "audienceTags": [],
-    "genderPresentation": "male",
     "agePresentation": "adult",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "male",
+      "ca"
+    ]
   },
+  "modelCard": {
+    "wordTimestamps": true,
+    "licenseUrl": "https://aws.amazon.com/service-terms/",
+    "commercialUse": true,
+    "knownLimitations": [
+      "Neural engine not available for all voices in all regions",
+      "Some voices only support standard engine",
+      "SSML tag support varies by engine type"
+    ],
+    "modelFamily": "Amazon Polly Neural",
+    "modelVersion": "Neural engine",
+    "providerType": "cloud_api",
+    "gdprCompliant": true,
+    "ssmlSupport": true,
+    "voiceCloning": false,
+    "providerName": "Amazon Web Services",
+    "multilingual": false,
+    "latencyMs": "~200-500",
+    "architecture": "Neural TTS (NTTS)",
+    "releaseDate": "2016-11-30",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://aws.amazon.com/polly/",
+    "streamingSupport": true,
+    "license": "AWS Service Terms",
+    "dataRetention": "Not stored after synthesis",
+    "apiEndpoint": "polly.{region}.amazonaws.com",
+    "maxInputLength": 3000,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3",
   "samples": [
     {
-      "id": "01KJZXZNF99BFQDW0RRX3TDQZJ",
       "scriptKey": "default",
-      "label": "Default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3",
       "transcript": "Global adoption of AI voice tools accelerated this quarter, led by multilingual deployments.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3"
+      "id": "01KJZXZNF99BFQDW0RRX3TDQZJ",
+      "label": "Default"
     }
   ],
   "variants": [
     {
-      "id": "01KJZXZNF93HM0CTGSHVRN8FDK",
-      "sourceType": "cloud_provider",
       "sourceKey": "aws:polly:liam",
       "runnable": true,
-      "supportsSsml": true,
       "outputFormats": [
         "mp3",
         "wav",
         "pcm"
       ],
       "maxInputChars": 3000,
-      "previewOnly": false
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNF93HM0CTGSHVRN8FDK",
+      "supportsSsml": true
     }
   ],
-  "modelCard": {
-    "providerName": "Amazon Web Services",
-    "providerType": "cloud_api",
-    "providerUrl": "https://aws.amazon.com/polly/",
-    "apiEndpoint": "polly.{region}.amazonaws.com",
-    "modelFamily": "Amazon Polly Neural",
-    "architecture": "Neural TTS (NTTS)",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": true,
-    "wordTimestamps": true,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 3000,
-    "license": "AWS Service Terms",
-    "licenseUrl": "https://aws.amazon.com/service-terms/",
-    "commercialUse": true,
-    "attributionRequired": false,
-    "gdprCompliant": true,
-    "dataRetention": "Not stored after synthesis",
-    "latencyMs": "~200-500",
-    "releaseDate": "2016-11-30",
-    "knownLimitations": [
-      "Neural engine not available for all voices in all regions",
-      "Some voices only support standard engine",
-      "SSML tag support varies by engine type"
-    ],
-    "modelVersion": "Neural engine"
-  },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF93TEMNVP6WRH0YXTF.mp3",
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF93TEMNVP6WRH0YXTF.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF93TEMNVP6WRH0YXTF",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF93TEMNVP6WRH0YXTF.json"

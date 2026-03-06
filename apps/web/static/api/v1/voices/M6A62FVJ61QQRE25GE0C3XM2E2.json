@@ -1,0 +1,77 @@
+{
+  "id": "M6A62FVJ61QQRE25GE0C3XM2E2",
+  "name": "Alfred - Cheeky Person",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "50d6beb4-80ea-4802-8387-6c948fe84208",
+  "description": "Playful, elderly male for media and entertainment",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Alfred - Cheeky Person — Cartesia",
+    "searchDescription": "Cartesia Alfred - Cheeky Person: Playful, elderly male for media and entertainment",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "50d6beb4-80ea-4802-8387-6c948fe84208",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/M6A62FVJ61QQRE25GE0C3XM2E2.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/M6A62FVJ61QQRE25GE0C3XM2E2.mp3",
+      "id": "s-M6A62FVJ61QQRE25GE0C3XM2E2",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "50d6beb4-80ea-4802-8387-6c948fe84208",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Alfred - Cheeky Person",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M6A62FVJ61QQRE25GE0C3XM2E2.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/M6A62FVJ61QQRE25GE0C3XM2E2",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M6A62FVJ61QQRE25GE0C3XM2E2.json"
+}

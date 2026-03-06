@@ -1,0 +1,77 @@
+{
+  "id": "KXXXYA65QZVNNSHXR64C1QP4BG",
+  "name": "Mary - Nurse",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5c42302c-194b-4d0c-ba1a-8cb485c84ab9",
+  "description": "Mature adult female for instructional videos and empathetic conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Mary - Nurse — Cartesia",
+    "searchDescription": "Cartesia Mary - Nurse: Mature adult female for instructional videos and empathetic conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5c42302c-194b-4d0c-ba1a-8cb485c84ab9",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/KXXXYA65QZVNNSHXR64C1QP4BG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/KXXXYA65QZVNNSHXR64C1QP4BG.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/KXXXYA65QZVNNSHXR64C1QP4BG.mp3",
+      "id": "s-KXXXYA65QZVNNSHXR64C1QP4BG",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5c42302c-194b-4d0c-ba1a-8cb485c84ab9",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Mary - Nurse",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KXXXYA65QZVNNSHXR64C1QP4BG.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/KXXXYA65QZVNNSHXR64C1QP4BG",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KXXXYA65QZVNNSHXR64C1QP4BG.json"
+}

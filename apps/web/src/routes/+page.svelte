@@ -13,10 +13,10 @@
     toggleFavorite
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
-  import { roleFlags } from '$lib/auth/store';
   import { getProviderColor } from '$lib/provider-colors';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
+  import { roleFlags } from '$lib/auth/store';
   import type { Voice, VoiceVariant } from '$lib/types';
 
   export let data: { voices: Voice[] };
@@ -30,8 +30,8 @@
 
   let runnableOnly = false;
   let ssmlOnly = false;
+  let hasAudioOnly = false;
   let onlyFavorites = false;
-
   /** Whether we've finished reading initial URL params (prevents sync-back on first load) */
   let urlInitialized = false;
 
@@ -115,7 +115,16 @@
 
     runnableOnly = params.get('runnable') === '1';
     ssmlOnly = params.get('ssml') === '1';
+    hasAudioOnly = params.get('audio') === '1';
     onlyFavorites = params.get('favorites') === '1';
+    const sortParam = params.get('sort');
+    sortOrder = sortParam === 'provider' ? 'provider' : sortParam === 'newest' ? 'newest' : 'alphabetical';
+
+    // Auto-open filters panel if any filter is active from URL
+    if (selectedProviders.size > 0 || selectedLanguages.size > 0 || selectedSources.size > 0 ||
+        runnableOnly || ssmlOnly || hasAudioOnly) {
+      filtersOpen = true;
+    }
 
     requestAnimationFrame(() => { urlInitialized = true; });
 
@@ -136,7 +145,9 @@
     if (selectedSources.size > 0) params.set('type', Array.from(selectedSources).join(','));
     if (runnableOnly) params.set('runnable', '1');
     if (ssmlOnly) params.set('ssml', '1');
+    if (hasAudioOnly) params.set('audio', '1');
     if (onlyFavorites) params.set('favorites', '1');
+    if (sortOrder !== 'alphabetical') params.set('sort', sortOrder);
 
     const qs = params.toString();
     const newUrl = qs ? `?${qs}` : window.location.pathname;
@@ -169,21 +180,12 @@
   }
 
   function handleFavorite(voiceId: string) {
-    if (!$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
     const wasFav = $favorites.includes(voiceId);
     toggleFavorite(voiceId);
     addToast(wasFav ? 'Removed from favorites.' : 'Added to favorites.');
   }
 
   function handlePin(voiceId: string) {
-    if (!$roleFlags.isGuest) {
-      addToast('Sign in to save voices.', 'info');
-      return;
-    }
-
     if ($collections.length === 0) {
       createCollection('Saved');
       const created = $collections.find((c) => c.name === 'Saved');
@@ -226,12 +228,15 @@
   }
 
   function clearAllFilters() {
+    query = '';
     selectedProviders = new Set();
     selectedLanguages = new Set();
     selectedSources = new Set();
     runnableOnly = false;
     ssmlOnly = false;
+    hasAudioOnly = false;
     onlyFavorites = false;
+    sortOrder = 'alphabetical';
   }
 
   $: activeFilterCount = [
@@ -240,39 +245,81 @@
     selectedSources.size > 0,
     runnableOnly,
     ssmlOnly,
+    hasAudioOnly,
     onlyFavorites
   ].filter(Boolean).length;
 
   $: effectiveVoices = buildEffectiveCatalog(data.voices, $metadataOverrides, $customVoices);
 
-  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages))).sort();
+  $: availableLanguages = Array.from(new Set(effectiveVoices.flatMap((v) => v.languages ?? []))).sort();
   $: availableSources = Array.from(
-    new Set(effectiveVoices.flatMap((v) => v.variants.map((vr) => vr.sourceType)))
+    new Set(effectiveVoices.flatMap((v) => (v.variants ?? []).map((vr) => vr.sourceType)))
   ).sort();
   $: availableProviders = Array.from(new Set(effectiveVoices.map((v) => v.provider))).sort();
+  $: availableGenders = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.genderPresentation ?? '').filter(Boolean))
+  ).sort();
+  $: availableAges = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.agePresentation ?? '').filter(Boolean))
+  ).sort();
+  $: availableStyles = Array.from(
+    new Set(effectiveVoices.map((v) => v.metadata?.speakingStyle ?? '').filter(Boolean))
+  ).sort();
+
+  const genderLabels: Record<string, string> = {
+    female: 'Female',
+    male: 'Male',
+    neutral: 'Neutral',
+    variable: 'Variable',
+    unknown: 'Unknown',
+  };
+
+  const ageLabels: Record<string, string> = {
+    child: 'Child',
+    young: 'Young',
+    'young adult': 'Young adult',
+    adult: 'Adult',
+    middle_aged: 'Middle-aged',
+    mature: 'Mature',
+    old: 'Senior',
+    variable: 'Variable',
+  };
+
+  function capitalize(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
 
   $: filtered = effectiveVoices.filter((voice) => {
     const q = query.trim().toLowerCase();
 
+    const meta = voice.metadata ?? {};
+    const tags = voice.tags ?? [];
+    const variants = voice.variants ?? [];
+
     const matchesQuery =
       !q ||
       voice.name.toLowerCase().includes(q) ||
-      voice.metadata.shortLabel.toLowerCase().includes(q) ||
+      (meta.shortLabel ?? '').toLowerCase().includes(q) ||
       voice.provider.toLowerCase().includes(q) ||
-      voice.description.toLowerCase().includes(q) ||
-      voice.metadata.machineTags.some((t) => t.toLowerCase().includes(q)) ||
-      voice.metadata.useCases.some((u) => u.toLowerCase().includes(q)) ||
-      voice.metadata.audienceTags.some((a) => a.toLowerCase().includes(q)) ||
-      voice.metadata.toneTags.some((t) => t.toLowerCase().includes(q)) ||
-      voice.tags.some((t) => t.toLowerCase().includes(q));
+      (voice.providerId ?? '').toLowerCase().includes(q) ||
+      (voice.description ?? '').toLowerCase().includes(q) ||
+      (meta.genderPresentation ?? '').toLowerCase().includes(q) ||
+      (meta.speakingStyle ?? '').toLowerCase().includes(q) ||
+      (meta.accent ?? '').toLowerCase().includes(q) ||
+      (meta.machineTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+      (meta.useCases ?? []).some((u: string) => u.toLowerCase().includes(q)) ||
+      (meta.audienceTags ?? []).some((a: string) => a.toLowerCase().includes(q)) ||
+      (meta.toneTags ?? []).some((t: string) => t.toLowerCase().includes(q)) ||
+      tags.some((t: string) => t.toLowerCase().includes(q));
 
-    const matchesLanguage = selectedLanguages.size === 0 || voice.languages.some((l) => selectedLanguages.has(l));
+    const matchesLanguage = selectedLanguages.size === 0 || (voice.languages ?? []).some((l) => selectedLanguages.has(l));
     const matchesSource =
       selectedSources.size === 0 ||
-      voice.variants.some((vr) => selectedSources.has(vr.sourceType));
+      (voice.variants ?? []).some((vr) => selectedSources.has(vr.sourceType));
     const matchesProvider = selectedProviders.size === 0 || selectedProviders.has(voice.provider);
-    const matchesRunnable = !runnableOnly || voice.variants.some((vr) => vr.runnable);
-    const matchesSsml = !ssmlOnly || voice.variants.some((vr) => vr.supportsSsml);
+    const matchesRunnable = !runnableOnly || (voice.variants ?? []).some((vr) => vr.runnable);
+    const matchesSsml = !ssmlOnly || (voice.variants ?? []).some((vr) => vr.supportsSsml);
+    const matchesAudio = !hasAudioOnly || Boolean((voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl);
     const matchesFavorite = !onlyFavorites || $favorites.includes(voice.id);
 
     return (
@@ -282,6 +329,7 @@
       matchesProvider &&
       matchesRunnable &&
       matchesSsml &&
+      matchesAudio &&
       matchesFavorite
     );
   });
@@ -467,9 +515,9 @@
       {#each sorted as voice (voice.id)}
         {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
         {@const isFav = $favorites.includes(voice.id)}
-        {@const sampleUrl = voice.samples[0]?.audioUrl ?? voice.audioUrl}
+        {@const sampleUrl = (voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl}
         {@const isPlaying = playingVoiceId === voice.id}
-        {@const topTag = voice.metadata.toneTags[0] ?? voice.tags[0] ?? ''}
+        {@const topTag = (voice.metadata?.toneTags ?? [])[0] ?? (voice.tags ?? [])[0] ?? ''}
         <article class="voice-row" class:playing={isPlaying}>
           <button
             class="play-btn"
@@ -489,7 +537,7 @@
             style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
           >{voice.provider}</span>
 
-          <span class="voice-lang">{voice.languages[0] ?? ''}</span>
+          <span class="voice-lang">{(voice.languages ?? [])[0] ?? ''}</span>
           <span class="voice-tier">{voice.qualityTier}</span>
 
           {#if topTag}

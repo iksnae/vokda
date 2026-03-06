@@ -1,0 +1,21 @@
+# SAM configuration for Vokda Synthesis API
+# Deploy: cd infra && sam build && sam deploy
+
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "vokda-synthesis-dev"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+resolve_s3 = true
+
+parameter_overrides = [
+  "Stage=dev",
+  "CognitoUserPoolId=us-east-1_O3MJpNRMk",
+  "CognitoClientId=3n25mheafl42ttssn8pde92lh8",
+  "S3BucketName=amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui",
+  "SynthesisJobTableName=SynthesisJob-qye3mrxz5rcfjpgw4uebq6emfi-NONE",
+  "UserCredentialTableName=UserProviderCredential-qye3mrxz5rcfjpgw4uebq6emfi-NONE",
+  "MaxQuotaBytes=5368709120"
+]

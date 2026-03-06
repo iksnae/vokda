@@ -1,0 +1,77 @@
+{
+  "id": "RBRFNKJ2E46C3HPC5W0043T7Y8",
+  "name": "Rebecca - Counselor",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "57b6bf63-c7a1-4ffc-8e10-23bf45152dd6",
+  "description": "Soft-spoken, empathetic female voice suited for thoughtful, calming dialogue",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Rebecca - Counselor — Cartesia",
+    "searchDescription": "Cartesia Rebecca - Counselor: Soft-spoken, empathetic female voice suited for thoughtful, calming dialogue",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "57b6bf63-c7a1-4ffc-8e10-23bf45152dd6",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
+      "id": "s-RBRFNKJ2E46C3HPC5W0043T7Y8",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "57b6bf63-c7a1-4ffc-8e10-23bf45152dd6",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Rebecca - Counselor",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/RBRFNKJ2E46C3HPC5W0043T7Y8",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.json"
+}

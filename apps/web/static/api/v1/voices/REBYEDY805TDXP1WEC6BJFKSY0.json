@@ -1,0 +1,77 @@
+{
+  "id": "REBYEDY805TDXP1WEC6BJFKSY0",
+  "name": "Jo - Go to Gal",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5abd2130-146a-41b1-bcdb-974ea8e19f56",
+  "description": "Young adult female for casual conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Jo - Go to Gal — Cartesia",
+    "searchDescription": "Cartesia Jo - Go to Gal: Young adult female for casual conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5abd2130-146a-41b1-bcdb-974ea8e19f56",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/REBYEDY805TDXP1WEC6BJFKSY0.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/REBYEDY805TDXP1WEC6BJFKSY0.mp3",
+      "id": "s-REBYEDY805TDXP1WEC6BJFKSY0",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5abd2130-146a-41b1-bcdb-974ea8e19f56",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Jo - Go to Gal",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/REBYEDY805TDXP1WEC6BJFKSY0.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/REBYEDY805TDXP1WEC6BJFKSY0",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/REBYEDY805TDXP1WEC6BJFKSY0.json"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "JA1ZNHXZVXZQR2CFSSY5KP5SHS",
+  "name": "Ross - Reliable Partner",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "f24ae0b7-a3d2-4dd1-89df-959bdc4ab179",
+  "description": "Steady voice with balanced tone and clear delivery, ideal for customer support and service",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Ross - Reliable Partner — Cartesia",
+    "searchDescription": "Cartesia Ross - Reliable Partner: Steady voice with balanced tone and clear delivery, ideal for customer support and service",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "f24ae0b7-a3d2-4dd1-89df-959bdc4ab179",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/JA1ZNHXZVXZQR2CFSSY5KP5SHS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/JA1ZNHXZVXZQR2CFSSY5KP5SHS.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/JA1ZNHXZVXZQR2CFSSY5KP5SHS.mp3",
+      "id": "s-JA1ZNHXZVXZQR2CFSSY5KP5SHS",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "f24ae0b7-a3d2-4dd1-89df-959bdc4ab179",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Ross - Reliable Partner",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/JA1ZNHXZVXZQR2CFSSY5KP5SHS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/JA1ZNHXZVXZQR2CFSSY5KP5SHS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/JA1ZNHXZVXZQR2CFSSY5KP5SHS.json"
+}

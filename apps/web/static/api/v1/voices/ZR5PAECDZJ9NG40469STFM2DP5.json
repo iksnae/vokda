@@ -1,0 +1,77 @@
+{
+  "id": "ZR5PAECDZJ9NG40469STFM2DP5",
+  "name": "Samantha - Sad Support Leader",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "5e10a334-7fa5-46d4-a64b-5ae6185da3fd",
+  "description": "Firm, confident adult female for conversational support",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Samantha - Sad Support Leader — Cartesia",
+    "searchDescription": "Cartesia Samantha - Sad Support Leader: Firm, confident adult female for conversational support",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "5e10a334-7fa5-46d4-a64b-5ae6185da3fd",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/ZR5PAECDZJ9NG40469STFM2DP5.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/ZR5PAECDZJ9NG40469STFM2DP5.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/ZR5PAECDZJ9NG40469STFM2DP5.mp3",
+      "id": "s-ZR5PAECDZJ9NG40469STFM2DP5",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "5e10a334-7fa5-46d4-a64b-5ae6185da3fd",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Samantha - Sad Support Leader",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/ZR5PAECDZJ9NG40469STFM2DP5.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/ZR5PAECDZJ9NG40469STFM2DP5",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/ZR5PAECDZJ9NG40469STFM2DP5.json"
+}

@@ -15,78 +15,78 @@
   "qualityTier": "standard",
   "licenseNotes": "Use governed by Google Cloud Text-to-Speech terms and billing policies.",
   "metadata": {
-    "shortLabel": "en-US female voice",
-    "searchDescription": "Google en-US-News-K — Female en-US voice.",
-    "machineTags": [
-      "female",
-      "us"
-    ],
     "useCases": [],
+    "genderPresentation": "female",
+    "metadataQuality": "sparse",
     "toneTags": [
       "clear"
     ],
+    "shortLabel": "en-US female voice",
+    "searchDescription": "Google en-US-News-K — Female en-US voice.",
     "audienceTags": [],
-    "genderPresentation": "female",
     "agePresentation": "adult",
-    "metadataQuality": "sparse"
+    "machineTags": [
+      "female",
+      "us"
+    ]
   },
-  "samples": [
-    {
-      "id": "01KJZXZNFCZR4WD4GW419XRQ7N",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCZEHX3AXMG8JGQ31B.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "01KJZXZNFCA5G81C78H1JC349S",
-      "sourceType": "cloud_provider",
-      "sourceKey": "gcp:tts:en-US-News-K",
-      "runnable": true,
-      "supportsSsml": true,
-      "outputFormats": [
-        "mp3",
-        "wav"
-      ],
-      "maxInputChars": 5000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "Google Cloud",
-    "providerType": "cloud_api",
-    "providerUrl": "https://cloud.google.com/text-to-speech",
-    "apiEndpoint": "texttospeech.googleapis.com",
-    "modelFamily": "Google Cloud Text-to-Speech",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": true,
     "wordTimestamps": true,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 5000,
-    "license": "Google Cloud Terms of Service",
     "licenseUrl": "https://cloud.google.com/terms",
     "commercialUse": true,
-    "attributionRequired": false,
-    "gdprCompliant": true,
-    "dataRetention": "Not stored after synthesis",
-    "latencyMs": "~200-600",
-    "releaseDate": "2018-03-27",
     "knownLimitations": [
       "Audio samples in this catalog used OpenAI fallback (GCP API key was invalid at generation time)",
       "Neural2 voices may not be available in all regions",
       "Studio voices have higher per-character cost"
     ],
-    "architecture": "News (broadcast-optimized neural TTS)"
+    "modelFamily": "Google Cloud Text-to-Speech",
+    "providerType": "cloud_api",
+    "gdprCompliant": true,
+    "ssmlSupport": true,
+    "voiceCloning": false,
+    "providerName": "Google Cloud",
+    "multilingual": false,
+    "latencyMs": "~200-600",
+    "architecture": "News (broadcast-optimized neural TTS)",
+    "releaseDate": "2018-03-27",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://cloud.google.com/text-to-speech",
+    "streamingSupport": true,
+    "license": "Google Cloud Terms of Service",
+    "dataRetention": "Not stored after synthesis",
+    "apiEndpoint": "texttospeech.googleapis.com",
+    "maxInputLength": 5000,
+    "channels": 1,
+    "bitDepth": 16
   },
   "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.jpg",
   "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCZEHX3AXMG8JGQ31B.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFCZEHX3AXMG8JGQ31B.mp3",
+      "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
+      "id": "01KJZXZNFCZR4WD4GW419XRQ7N",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "gcp:tts:en-US-News-K",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "wav"
+      ],
+      "maxInputChars": 5000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KJZXZNFCA5G81C78H1JC349S",
+      "supportsSsml": true
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFCZEHX3AXMG8JGQ31B",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFCZEHX3AXMG8JGQ31B.json"

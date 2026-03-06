@@ -1,0 +1,77 @@
+{
+  "id": "6025SGDZJ8FQR61SZW1W9T83XJ",
+  "name": "Evelyn - Digital Assistante",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "3c7dfd17-3fa8-47aa-aacc-6313fe025442",
+  "description": "A clear, neutral, and precise female voice with a smooth digital polish - perfect for virtual-assistant style responses, instructions, and general interactions.",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Evelyn - Digital Assistante — Cartesia",
+    "searchDescription": "Cartesia Evelyn - Digital Assistante: A clear, neutral, and precise female voice with a smooth digital polish - perfect for virtual-assistant style responses, instructions, and general interactions.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "3c7dfd17-3fa8-47aa-aacc-6313fe025442",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/6025SGDZJ8FQR61SZW1W9T83XJ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/6025SGDZJ8FQR61SZW1W9T83XJ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/6025SGDZJ8FQR61SZW1W9T83XJ.mp3",
+      "id": "s-6025SGDZJ8FQR61SZW1W9T83XJ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "3c7dfd17-3fa8-47aa-aacc-6313fe025442",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Evelyn - Digital Assistante",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/6025SGDZJ8FQR61SZW1W9T83XJ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/6025SGDZJ8FQR61SZW1W9T83XJ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/6025SGDZJ8FQR61SZW1W9T83XJ.json"
+}

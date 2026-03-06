@@ -1,0 +1,93 @@
+{
+  "id": "Y9SKR3TBW3VM4BVST3YFZNJCAC",
+  "name": "Orion (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-orion-en",
+  "description": "American-accented male voice (adult) with approachable, comfortable, calm qualities. Aura 2 architecture.",
+  "tags": [
+    "approachable",
+    "comfortable",
+    "calm",
+    "polite",
+    "aura-2",
+    "accent-american",
+    "male"
+  ],
+  "languages": [
+    "en",
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "informative"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "approachable",
+      "comfortable",
+      "calm",
+      "polite"
+    ],
+    "shortLabel": "Orion — Deepgram Aura 2",
+    "searchDescription": "Deepgram Orion: American-accented male voice (adult) with approachable, comfortable, calm qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/9c98fdfb05214de2d5274908a7cd20aa080d508d.wav",
+    "deepgramUuid": "1e149a66-e561-4ed5-9253-d742916083aa",
+    "sampleRate": 24000,
+    "accent": "American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#a1d7fd",
+    "modelName": "Deepgram Aura 2 — Orion",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "informative"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/d596f04ab1324eb65d431a505b20eacc53e539d0-200x200.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/Y9SKR3TBW3VM4BVST3YFZNJCAC.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9SKR3TBW3VM4BVST3YFZNJCAC.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/Y9SKR3TBW3VM4BVST3YFZNJCAC.mp3",
+      "id": "s-Y9SKR3TBW3VM4BVST3YFZNJCAC",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-orion-en",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Orion",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/Y9SKR3TBW3VM4BVST3YFZNJCAC.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/Y9SKR3TBW3VM4BVST3YFZNJCAC",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/Y9SKR3TBW3VM4BVST3YFZNJCAC.json"
+}

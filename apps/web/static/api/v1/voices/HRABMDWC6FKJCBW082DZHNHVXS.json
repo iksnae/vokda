@@ -1,0 +1,77 @@
+{
+  "id": "HRABMDWC6FKJCBW082DZHNHVXS",
+  "name": "Malcom - Talk Show Host",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "63ff761f-c1e8-414b-b969-d1833d1c870c",
+  "description": "Lively and experienced male voice ideal for natural, engaging conversations",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Malcom - Talk Show Host — Cartesia",
+    "searchDescription": "Cartesia Malcom - Talk Show Host: Lively and experienced male voice ideal for natural, engaging conversations",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "63ff761f-c1e8-414b-b969-d1833d1c870c",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HRABMDWC6FKJCBW082DZHNHVXS.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HRABMDWC6FKJCBW082DZHNHVXS.mp3",
+      "id": "s-HRABMDWC6FKJCBW082DZHNHVXS",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "63ff761f-c1e8-414b-b969-d1833d1c870c",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Malcom - Talk Show Host",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HRABMDWC6FKJCBW082DZHNHVXS.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HRABMDWC6FKJCBW082DZHNHVXS",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HRABMDWC6FKJCBW082DZHNHVXS.json"
+}

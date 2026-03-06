@@ -1,0 +1,97 @@
+{
+  "id": "FY3NZZY0C9Y49J8FGFWE649PDP",
+  "name": "Aquila (Aura 2)",
+  "provider": "Deepgram",
+  "providerId": "deepgram",
+  "providerVoiceId": "aura-2-aquila-es",
+  "description": "Latin American-accented male voice (adult) with casual, comfortable, confident qualities. Aura 2 architecture.",
+  "tags": [
+    "casual",
+    "comfortable",
+    "confident",
+    "expressive",
+    "enthusiastic",
+    "aura-2",
+    "accent-latin-american",
+    "male"
+  ],
+  "languages": [
+    "es",
+    "es-419"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Deepgram API terms. Pay-per-character pricing. $200 free credit on signup.",
+  "metadata": {
+    "useCases": [
+      "casual chat",
+      "informative"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [
+      "casual",
+      "comfortable",
+      "confident",
+      "expressive",
+      "enthusiastic"
+    ],
+    "shortLabel": "Aquila — Deepgram Aura 2",
+    "searchDescription": "Deepgram Aquila: Latin American-accented male voice (adult) with casual, comfortable, confident qualities. Aura 2 architecture.",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "agePresentation": "adult",
+    "machineTags": [
+      "deepgram",
+      "aura-2",
+      "male",
+      "latin american"
+    ]
+  },
+  "modelCard": {
+    "commercialUse": true,
+    "deepgramSample": "https://cdn.sanity.io/files/0dsbfl6j/production/4abca777cfc3781e3c0e9dd5b928856a83b45809.wav",
+    "deepgramUuid": "3d91d759-082c-49fb-9a85-b68d720df41d",
+    "sampleRate": 24000,
+    "accent": "Latin American",
+    "providerType": "cloud_provider",
+    "providerUrl": "https://deepgram.com/aura",
+    "deepgramColor": "#149afb",
+    "modelName": "Deepgram Aura 2 — Aquila",
+    "license": "Proprietary (Deepgram API)",
+    "useCases": [
+      "casual chat",
+      "informative"
+    ],
+    "totalVoices": 102,
+    "deepgramImage": "https://cdn.sanity.io/images/0dsbfl6j/production/b255b01abb4909a5104dd520e289dcf25efe800b-372x372.png",
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "age": "Adult",
+    "architecture": "aura-2"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/FY3NZZY0C9Y49J8FGFWE649PDP.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/FY3NZZY0C9Y49J8FGFWE649PDP.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/FY3NZZY0C9Y49J8FGFWE649PDP.mp3",
+      "id": "s-FY3NZZY0C9Y49J8FGFWE649PDP",
+      "label": "Default",
+      "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "aura-2-aquila-es",
+      "supportsStreaming": true,
+      "engine": "aura-2",
+      "maxChars": 2000,
+      "label": "Aquila",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/FY3NZZY0C9Y49J8FGFWE649PDP.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/FY3NZZY0C9Y49J8FGFWE649PDP",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/FY3NZZY0C9Y49J8FGFWE649PDP.json"
+}

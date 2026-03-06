@@ -1,0 +1,77 @@
+{
+  "id": "46FQT9QWFKHMA5TA3VM8DW9QGD",
+  "name": "Troy - Fix It Man",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "726d5ae5-055f-4c3d-8355-d9677de68937",
+  "description": "Strong, dependable male voice designed for trust-building in customer-facing interactions",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Troy - Fix It Man — Cartesia",
+    "searchDescription": "Cartesia Troy - Fix It Man: Strong, dependable male voice designed for trust-building in customer-facing interactions",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "726d5ae5-055f-4c3d-8355-d9677de68937",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/46FQT9QWFKHMA5TA3VM8DW9QGD.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/46FQT9QWFKHMA5TA3VM8DW9QGD.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/46FQT9QWFKHMA5TA3VM8DW9QGD.mp3",
+      "id": "s-46FQT9QWFKHMA5TA3VM8DW9QGD",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "726d5ae5-055f-4c3d-8355-d9677de68937",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Troy - Fix It Man",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/46FQT9QWFKHMA5TA3VM8DW9QGD.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/46FQT9QWFKHMA5TA3VM8DW9QGD",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/46FQT9QWFKHMA5TA3VM8DW9QGD.json"
+}

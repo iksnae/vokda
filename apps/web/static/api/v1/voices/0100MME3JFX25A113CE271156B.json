@@ -20,75 +20,29 @@
   "qualityTier": "standard",
   "licenseNotes": "KittenTTS is released under Apache 2.0 license.",
   "metadata": {
+    "useCases": [
+      "podcast"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "complete",
+    "toneTags": [
+      "energetic"
+    ],
     "shortLabel": "en-US male · KittenTTS micro · local",
     "searchDescription": "Energetic, casual male voice for podcasts and vlogs. KittenTTS local open model Apple Silicon mlx",
+    "audienceTags": [],
+    "agePresentation": "adult",
     "machineTags": [
       "male",
       "us",
       "podcast",
       "local"
-    ],
-    "useCases": [
-      "podcast"
-    ],
-    "toneTags": [
-      "energetic"
-    ],
-    "audienceTags": [],
-    "genderPresentation": "male",
-    "agePresentation": "adult",
-    "metadataQuality": "complete"
+    ]
   },
-  "samples": [
-    {
-      "id": "0100MME3JFX2258320F8550FC4",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "Hey everyone, thanks for tuning in. Today we are going to talk about three productivity hacks that actually work.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "0100MME3JFX2F7889E13EADBDF",
-      "sourceType": "self_hosted",
-      "sourceKey": "kittentts:micro:Leo",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 2000,
-      "previewOnly": false
-    }
-  ],
   "modelCard": {
-    "providerName": "KittenTTS",
-    "providerType": "local_model",
-    "providerUrl": "https://github.com/KittenML/KittenTTS",
-    "modelFamily": "KittenTTS",
-    "modelName": "kitten-tts-micro-0.8",
-    "modelId": "KittenML/kitten-tts-micro-0.8",
-    "modelVersion": "0.8.1",
-    "architecture": "KittenTTS neural TTS (local inference)",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": false,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": false,
-    "maxInputLength": 2000,
-    "license": "Apache 2.0",
     "licenseUrl": "https://github.com/KittenML/KittenTTS/blob/main/LICENSE",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Local inference only — no data leaves device",
-    "latencyMs": "~500-2000",
-    "releaseDate": "2025-01-15",
     "knownLimitations": [
       "English only (en-US)",
       "No SSML support",
@@ -97,12 +51,58 @@
       "Apple Silicon recommended for best performance"
     ],
     "notes": "Runs locally via kittentts-server.py on port 8200. Requires Python 3.12 with kittentts wheel installed. Model: KittenML/kitten-tts-micro-0.8 (HuggingFace). 8 built-in voices. No cloud dependency — all inference is on-device.",
-    "apiEndpoint": "localhost:8200/generate",
+    "modelFamily": "KittenTTS",
+    "modelId": "KittenML/kitten-tts-micro-0.8",
+    "modelVersion": "0.8.1",
+    "providerType": "local_model",
+    "ssmlSupport": false,
     "runtimeFramework": "KittenTTS Python (Apple Silicon optimized)",
-    "hardwareRequirements": "Apple Silicon Mac recommended (M1+), ~200MB RAM"
+    "hardwareRequirements": "Apple Silicon Mac recommended (M1+), ~200MB RAM",
+    "voiceCloning": false,
+    "providerName": "KittenTTS",
+    "multilingual": false,
+    "latencyMs": "~500-2000",
+    "architecture": "KittenTTS neural TTS (local inference)",
+    "releaseDate": "2025-01-15",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://github.com/KittenML/KittenTTS",
+    "streamingSupport": false,
+    "modelName": "kitten-tts-micro-0.8",
+    "license": "Apache 2.0",
+    "dataRetention": "Local inference only — no data leaves device",
+    "maxInputLength": 2000,
+    "apiEndpoint": "localhost:8200/generate",
+    "channels": 1,
+    "bitDepth": 16
   },
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX25A113CE271156B.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX25A113CE271156B.mp3",
+      "transcript": "Hey everyone, thanks for tuning in. Today we are going to talk about three productivity hacks that actually work.",
+      "id": "0100MME3JFX2258320F8550FC4",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "kittentts:micro:Leo",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 2000,
+      "previewOnly": false,
+      "sourceType": "self_hosted",
+      "id": "0100MME3JFX2F7889E13EADBDF",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX25A113CE271156B.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX25A113CE271156B",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX25A113CE271156B.json"

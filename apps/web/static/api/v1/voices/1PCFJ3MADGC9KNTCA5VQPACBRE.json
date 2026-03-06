@@ -1,0 +1,77 @@
+{
+  "id": "1PCFJ3MADGC9KNTCA5VQPACBRE",
+  "name": "Damon - Commanding Narrator",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "dbfa416f-d5c3-4006-854b-235ef6bdf4fd",
+  "description": "Deep and serious male voice with steady gravitas, ideal for documentaries and impactful storytelling",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Damon - Commanding Narrator — Cartesia",
+    "searchDescription": "Cartesia Damon - Commanding Narrator: Deep and serious male voice with steady gravitas, ideal for documentaries and impactful storytelling",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "dbfa416f-d5c3-4006-854b-235ef6bdf4fd",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/1PCFJ3MADGC9KNTCA5VQPACBRE.mp3",
+      "id": "s-1PCFJ3MADGC9KNTCA5VQPACBRE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "dbfa416f-d5c3-4006-854b-235ef6bdf4fd",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Damon - Commanding Narrator",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/1PCFJ3MADGC9KNTCA5VQPACBRE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/1PCFJ3MADGC9KNTCA5VQPACBRE.json"
+}

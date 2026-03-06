@@ -1,0 +1,77 @@
+{
+  "id": "SHPBJ3QHP7PA6BT0DZW9XM9QQG",
+  "name": "Clint - Rugged Actor",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "db69127a-dbaf-4fa9-b425-2fe67680c348",
+  "description": "Raspy voice with rugged tone, perfect for voice acting and dramatic narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Clint - Rugged Actor — Cartesia",
+    "searchDescription": "Cartesia Clint - Rugged Actor: Raspy voice with rugged tone, perfect for voice acting and dramatic narration",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "db69127a-dbaf-4fa9-b425-2fe67680c348",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SHPBJ3QHP7PA6BT0DZW9XM9QQG.mp3",
+      "id": "s-SHPBJ3QHP7PA6BT0DZW9XM9QQG",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "db69127a-dbaf-4fa9-b425-2fe67680c348",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Clint - Rugged Actor",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SHPBJ3QHP7PA6BT0DZW9XM9QQG.json"
+}

@@ -19,78 +19,31 @@
   "qualityTier": "premium",
   "licenseNotes": "Marvis TTS released under Apache 2.0 license.",
   "metadata": {
-    "shortLabel": "Casual conversational",
-    "searchDescription": "Marvis conversational neural TTS 250M local mlx Apple Silicon expressive natural prosody",
-    "machineTags": [
-      "conversational",
-      "expressive",
-      "local"
-    ],
     "useCases": [
       "dialogue",
       "assistant",
       "narration"
     ],
+    "genderPresentation": "neutral",
+    "metadataQuality": "complete",
     "toneTags": [
       "natural",
       "conversational"
     ],
+    "shortLabel": "Casual conversational",
+    "searchDescription": "Marvis conversational neural TTS 250M local mlx Apple Silicon expressive natural prosody",
     "audienceTags": [],
-    "genderPresentation": "neutral",
     "agePresentation": "adult",
-    "metadataQuality": "complete"
+    "machineTags": [
+      "conversational",
+      "expressive",
+      "local"
+    ]
   },
-  "samples": [
-    {
-      "id": "0100MME43A6Q2F2C071FB0B178",
-      "scriptKey": "default",
-      "label": "Default",
-      "transcript": "The morning light filtered through the blinds, casting long golden stripes across the kitchen table.",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6QB8F613D78BB212.mp3"
-    }
-  ],
-  "variants": [
-    {
-      "id": "0100MME43A6Q4D2825FA896AB8",
-      "sourceType": "self_hosted",
-      "sourceKey": "marvis:250m-v0.2:conversational_a",
-      "runnable": true,
-      "supportsSsml": false,
-      "outputFormats": [
-        "wav",
-        "mp3"
-      ],
-      "maxInputChars": 4000,
-      "previewOnly": false,
-      "label": "Marvis 250M Conversational A (8-bit)"
-    }
-  ],
   "modelCard": {
-    "providerName": "Marvis AI",
-    "providerType": "local_model",
-    "providerUrl": "https://huggingface.co/Marvis-AI",
-    "modelFamily": "Marvis TTS",
-    "modelName": "marvis-tts-250m-v0.2-MLX-8bit",
-    "modelId": "Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
-    "modelVersion": "0.2",
-    "architecture": "Sesame-family conversational TTS (MLX 8-bit quantized)",
-    "sampleRate": 24000,
-    "bitDepth": 16,
-    "channels": 1,
-    "streamingSupport": true,
-    "ssmlSupport": false,
     "wordTimestamps": false,
-    "multilingual": false,
-    "emotionControl": false,
-    "voiceCloning": true,
-    "maxInputLength": 4000,
-    "license": "Apache 2.0",
     "licenseUrl": "https://huggingface.co/Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
     "commercialUse": true,
-    "attributionRequired": false,
-    "dataRetention": "Local inference only — no data leaves device",
-    "latencyMs": "~1000-3000",
-    "releaseDate": "2025-02-01",
     "knownLimitations": [
       "English only",
       "No SSML support",
@@ -99,10 +52,26 @@
       "Requires mlx-audio 0.3.1+ on Apple Silicon"
     ],
     "notes": "Runs locally via mlx-audio. 250M parameter conversational TTS model. Also available in 100M, 6-bit, and fp16 variants. Uses sesame architecture mapping in mlx-audio.",
+    "modelFamily": "Marvis TTS",
+    "modelId": "Marvis-AI/marvis-tts-250m-v0.2-MLX-8bit",
+    "modelVersion": "0.2",
+    "voicePreset": "conversational_a",
+    "providerType": "local_model",
+    "ssmlSupport": false,
     "runtimeFramework": "mlx-audio 0.3.1",
     "hardwareRequirements": "Apple Silicon Mac (M1+), ~500MB RAM for 8-bit",
-    "voicePreset": "conversational_a",
-    "totalVoicePresets": 6,
+    "voiceCloning": true,
+    "providerName": "Marvis AI",
+    "multilingual": false,
+    "latencyMs": "~1000-3000",
+    "architecture": "Sesame-family conversational TTS (MLX 8-bit quantized)",
+    "voiceCloningMethod": "ref_audio",
+    "releaseDate": "2025-02-01",
+    "attributionRequired": false,
+    "emotionControl": false,
+    "sampleRate": 24000,
+    "providerUrl": "https://huggingface.co/Marvis-AI",
+    "streamingSupport": true,
     "availablePresets": [
       "conversational_a",
       "conversational_b",
@@ -111,10 +80,41 @@
       "read_speech_c",
       "read_speech_d"
     ],
-    "voiceCloningMethod": "ref_audio"
+    "modelName": "marvis-tts-250m-v0.2-MLX-8bit",
+    "license": "Apache 2.0",
+    "dataRetention": "Local inference only — no data leaves device",
+    "maxInputLength": 4000,
+    "channels": 1,
+    "bitDepth": 16,
+    "totalVoicePresets": 6
   },
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6QB8F613D78BB212.mp3",
   "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6QB8F613D78BB212.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6QB8F613D78BB212.mp3",
+  "samples": [
+    {
+      "scriptKey": "default",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6QB8F613D78BB212.mp3",
+      "transcript": "The morning light filtered through the blinds, casting long golden stripes across the kitchen table.",
+      "id": "0100MME43A6Q2F2C071FB0B178",
+      "label": "Default"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "marvis:250m-v0.2:conversational_a",
+      "runnable": true,
+      "outputFormats": [
+        "wav",
+        "mp3"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false,
+      "sourceType": "self_hosted",
+      "id": "0100MME43A6Q4D2825FA896AB8",
+      "label": "Marvis 250M Conversational A (8-bit)",
+      "supportsSsml": false
+    }
+  ],
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME43A6QB8F613D78BB212.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6QB8F613D78BB212",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6QB8F613D78BB212.json"

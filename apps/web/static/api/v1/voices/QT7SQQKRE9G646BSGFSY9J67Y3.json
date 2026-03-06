@@ -1,0 +1,77 @@
+{
+  "id": "QT7SQQKRE9G646BSGFSY9J67Y3",
+  "name": "Levi - Steady Spokesman",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "4703c250-66e4-4682-a223-0a60acafcfc0",
+  "description": "Strong, confident voice for customer service, newscasting, and reliable narration",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Levi - Steady Spokesman — Cartesia",
+    "searchDescription": "Cartesia Levi - Steady Spokesman: Strong, confident voice for customer service, newscasting, and reliable narration",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "4703c250-66e4-4682-a223-0a60acafcfc0",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/QT7SQQKRE9G646BSGFSY9J67Y3.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/QT7SQQKRE9G646BSGFSY9J67Y3.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/QT7SQQKRE9G646BSGFSY9J67Y3.mp3",
+      "id": "s-QT7SQQKRE9G646BSGFSY9J67Y3",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "4703c250-66e4-4682-a223-0a60acafcfc0",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Levi - Steady Spokesman",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QT7SQQKRE9G646BSGFSY9J67Y3.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/QT7SQQKRE9G646BSGFSY9J67Y3",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QT7SQQKRE9G646BSGFSY9J67Y3.json"
+}

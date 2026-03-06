@@ -1,0 +1,75 @@
+{
+  "id": "SP841KHY8EEBHQY45KXT5JFNM1",
+  "name": "Violet",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "violet",
+  "description": "Uplifting female voice with slight vocal fry. Warm and understanding for customer concerns and support.",
+  "tags": [
+    "female",
+    "instant",
+    "streaming",
+    "low-latency",
+    "support-agent",
+    "customer-support"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "standard",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "customer support"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Violet — LMNT",
+    "searchDescription": "LMNT Violet: Uplifting female voice with slight vocal fry. Warm and understanding for customer concerns and support.",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "female",
+      "instant"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Instant",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "instant"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/SP841KHY8EEBHQY45KXT5JFNM1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/SP841KHY8EEBHQY45KXT5JFNM1.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/SP841KHY8EEBHQY45KXT5JFNM1.mp3",
+      "id": "s-SP841KHY8EEBHQY45KXT5JFNM1",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "violet",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Violet",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SP841KHY8EEBHQY45KXT5JFNM1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/SP841KHY8EEBHQY45KXT5JFNM1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SP841KHY8EEBHQY45KXT5JFNM1.json"
+}

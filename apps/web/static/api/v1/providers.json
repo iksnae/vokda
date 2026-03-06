@@ -1,30 +1,7 @@
 {
-  "total": 22,
-  "generatedAt": "2026-03-06T02:07:21.778Z",
+  "total": 25,
+  "generatedAt": "2026-03-06T02:47:43.787Z",
   "providers": [
-    {
-      "id": "aws-polly",
-      "name": "AWS Polly",
-      "voiceCount": 18,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "de-DE",
-        "en-AU",
-        "en-GB",
-        "en-IN",
-        "en-NZ",
-        "en-US",
-        "fr-CA"
-      ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://aws.amazon.com/polly/",
-        "license": "AWS Service Terms",
-        "commercialUse": true
-      }
-    },
     {
       "id": "azure-speech",
       "name": "Azure Speech",
@@ -47,74 +24,41 @@
       }
     },
     {
-      "id": "gcp-tts",
-      "name": "Google Cloud TTS",
-      "voiceCount": 27,
+      "id": "deepgram",
+      "name": "Deepgram",
+      "voiceCount": 102,
       "qualityTiers": [
         "premium",
         "standard"
       ],
       "languages": [
+        "de",
+        "de-DE",
+        "en",
         "en-AU",
         "en-GB",
-        "en-US"
+        "en-IE",
+        "en-PH",
+        "en-US",
+        "es",
+        "es-419",
+        "es-AR",
+        "es-CO",
+        "es-ES",
+        "es-MX",
+        "fr",
+        "fr-FR",
+        "it",
+        "it-IT",
+        "ja",
+        "ja-JP",
+        "nl",
+        "nl-NL"
       ],
       "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://cloud.google.com/text-to-speech",
-        "license": "Google Cloud Terms of Service",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "openai",
-      "name": "OpenAI",
-      "voiceCount": 11,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "cloud_api",
-        "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
-        "license": "OpenAI Usage Policies",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "chatterbox",
-      "name": "Chatterbox",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/resemble-ai/chatterbox",
-        "license": "MIT",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "dia",
-      "name": "Dia",
-      "voiceCount": 3,
-      "qualityTiers": [
-        "premium",
-        "standard"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
-        "license": "Apache 2.0",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://deepgram.com/aura",
+        "license": "Proprietary (Deepgram API)",
         "commercialUse": true
       }
     },
@@ -136,27 +80,9 @@
       }
     },
     {
-      "id": "kokoro",
-      "name": "Kokoro",
-      "voiceCount": 24,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-GB",
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "outetts",
-      "name": "OuteTTS",
-      "voiceCount": 1,
+      "id": "cartesia",
+      "name": "Cartesia",
+      "voiceCount": 154,
       "qualityTiers": [
         "premium"
       ],
@@ -164,26 +90,9 @@
         "en-US"
       ],
       "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B",
-        "license": "CC-BY-4.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "pocket-tts",
-      "name": "Pocket TTS",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/ShoukanLabs/pocket-tts",
-        "license": "Apache 2.0",
+        "providerType": "cloud_provider",
+        "providerUrl": "https://cartesia.ai",
+        "license": "Proprietary (Cartesia API)",
         "commercialUse": true
       }
     },
@@ -202,109 +111,6 @@
         "providerUrl": "https://huggingface.co/Qwen/Qwen3-TTS",
         "license": "Apache 2.0",
         "commercialUse": true
-      }
-    },
-    {
-      "id": "soprano",
-      "name": "Soprano",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/SWivid/Soprano-80M",
-        "license": "MIT",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "spark-tts",
-      "name": "Spark TTS",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "voxcpm",
-      "name": "VoxCPM",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_mlx",
-        "providerUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "kittentts",
-      "name": "KittenTTS",
-      "voiceCount": 8,
-      "qualityTiers": [
-        "standard"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://github.com/KittenML/KittenTTS",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "marvis",
-      "name": "Marvis",
-      "voiceCount": 2,
-      "qualityTiers": [
-        "premium",
-        "standard"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://huggingface.co/Marvis-AI",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "vibevoice",
-      "name": "VibeVoice",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
-        "license": "Community License",
-        "commercialUse": false
       }
     },
     {
@@ -330,8 +136,8 @@
         "zh-CN"
       ],
       "modelCard": {
-        "providerType": "local_model",
-        "providerUrl": "https://github.com/suno-ai/bark",
+        "providerType": "local",
+        "providerUrl": "https://huggingface.co/suno/bark",
         "license": "MIT",
         "commercialUse": true
       }
@@ -374,35 +180,22 @@
       }
     },
     {
-      "id": "orpheus",
-      "name": "Orpheus TTS",
-      "voiceCount": 8,
+      "id": "gcp-tts",
+      "name": "Google Cloud TTS",
+      "voiceCount": 27,
       "qualityTiers": [
-        "premium"
+        "premium",
+        "standard"
       ],
       "languages": [
+        "en-AU",
+        "en-GB",
         "en-US"
       ],
       "modelCard": {
-        "providerType": "open_model",
-        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
-        "license": "Apache 2.0",
-        "commercialUse": true
-      }
-    },
-    {
-      "id": "chatterbox-turbo",
-      "name": "Chatterbox Turbo",
-      "voiceCount": 1,
-      "qualityTiers": [
-        "premium"
-      ],
-      "languages": [
-        "en-US"
-      ],
-      "modelCard": {
-        "providerType": "open_model",
-        "license": "Apache 2.0",
+        "providerType": "cloud_api",
+        "providerUrl": "https://cloud.google.com/text-to-speech",
+        "license": "Google Cloud Terms of Service",
         "commercialUse": true
       }
     },
@@ -442,6 +235,287 @@
         "providerUrl": "https://github.com/rany2/edge-tts",
         "license": "Free (Microsoft Edge TTS API)",
         "commercialUse": false
+      }
+    },
+    {
+      "id": "aws-polly",
+      "name": "AWS Polly",
+      "voiceCount": 18,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "de-DE",
+        "en-AU",
+        "en-GB",
+        "en-IN",
+        "en-NZ",
+        "en-US",
+        "fr-CA"
+      ],
+      "modelCard": {
+        "providerType": "cloud_api",
+        "providerUrl": "https://aws.amazon.com/polly/",
+        "license": "AWS Service Terms",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "voiceCount": 11,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "cloud_api",
+        "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+        "license": "OpenAI Usage Policies",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro",
+      "voiceCount": 24,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-GB",
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/hexgrad/Kokoro-82M",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "dia",
+      "name": "Dia",
+      "voiceCount": 3,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/nari-labs/Dia-1.6B",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "vibevoice",
+      "name": "VibeVoice",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_model",
+        "providerUrl": "https://huggingface.co/mlx-community/VibeVoice-Realtime-0.5B-fp16",
+        "license": "Community License",
+        "commercialUse": false
+      }
+    },
+    {
+      "id": "kittentts",
+      "name": "KittenTTS",
+      "voiceCount": 8,
+      "qualityTiers": [
+        "standard"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_model",
+        "providerUrl": "https://github.com/KittenML/KittenTTS",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "orpheus",
+      "name": "Orpheus TTS",
+      "voiceCount": 8,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "open_model",
+        "providerUrl": "https://github.com/canopyai/Orpheus-TTS",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "soprano",
+      "name": "Soprano",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/SWivid/Soprano-80M",
+        "license": "MIT",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "lmnt",
+      "name": "LMNT",
+      "voiceCount": 44,
+      "qualityTiers": [
+        "premium",
+        "standard"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "cloud_provider",
+        "providerUrl": "https://lmnt.com",
+        "license": "Proprietary (LMNT API)",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "pocket-tts",
+      "name": "Pocket TTS",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/ShoukanLabs/pocket-tts",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "spark-tts",
+      "name": "Spark TTS",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/SparkAudio/Spark-TTS-0.5B",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "chatterbox",
+      "name": "Chatterbox",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/resemble-ai/chatterbox",
+        "license": "MIT",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "marvis",
+      "name": "Marvis",
+      "voiceCount": 2,
+      "qualityTiers": [
+        "standard",
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_model",
+        "providerUrl": "https://huggingface.co/Marvis-AI",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "chatterbox-turbo",
+      "name": "Chatterbox Turbo",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "open_model",
+        "license": "Apache 2.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "outetts",
+      "name": "OuteTTS",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/OuteAI/Llama-OuteTTS-1.0-1B",
+        "license": "CC-BY-4.0",
+        "commercialUse": true
+      }
+    },
+    {
+      "id": "voxcpm",
+      "name": "VoxCPM",
+      "voiceCount": 1,
+      "qualityTiers": [
+        "premium"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "modelCard": {
+        "providerType": "local_mlx",
+        "providerUrl": "https://huggingface.co/openbmb/VoxCPM1.5",
+        "license": "Apache 2.0",
+        "commercialUse": true
       }
     }
   ]

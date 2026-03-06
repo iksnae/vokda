@@ -1,6 +1,8 @@
 import { a, defineData, type ClientSchema } from '@aws-amplify/backend';
 
 const schema = a.schema({
+  // ─── User Library ───
+
   Favorite: a
     .model({
       voiceId: a.string().required(),
@@ -77,7 +79,8 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.groups(['curator', 'admin']).to(['create', 'read', 'update', 'delete']),
-      allow.publicApiKey().to(['read'])
+      allow.publicApiKey().to(['read']),
+      allow.authenticated('identityPool').to(['read'])
     ]),
 
   ProviderRecord: a
@@ -95,8 +98,36 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.groups(['curator', 'admin']).to(['create', 'read', 'update', 'delete']),
-      allow.publicApiKey().to(['read'])
+      allow.publicApiKey().to(['read']),
+      allow.authenticated('identityPool').to(['read'])
     ]),
+
+  UserProviderCredential: a
+    .model({
+      providerId: a.string().required(),
+      label: a.string().required(),
+      credentialData: a.string().required(), // JSON string: { apiKey, region, etc. }
+      status: a.enum(['active', 'invalid', 'expired']),
+      lastTestedAtIso: a.string(),
+      createdAtIso: a.string().required(),
+      updatedAtIso: a.string().required()
+    })
+    .authorization((allow) => [allow.owner()]),
+
+  SynthesisJob: a
+    .model({
+      voiceId: a.string().required(),
+      providerId: a.string().required(),
+      inputText: a.string().required(),
+      inputMode: a.enum(['text', 'ssml']),
+      status: a.enum(['pending', 'completed', 'failed']),
+      audioPath: a.string(),
+      durationMs: a.integer(),
+      latencyMs: a.integer(),
+      errorMessage: a.string(),
+      createdAtIso: a.string().required()
+    })
+    .authorization((allow) => [allow.owner()]),
 
   AdminAuditEvent: a
     .model({

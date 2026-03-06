@@ -1,0 +1,77 @@
+{
+  "id": "E7GDJE6BNP9R4047ZVKR85ZXZV",
+  "name": "Monica - Emotive Voice",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "1b4ea5fb-b1c0-43ee-a7be-4e315878c2b1",
+  "description": "English female adult voice with rich emotional range and expressive delivery",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Monica - Emotive Voice — Cartesia",
+    "searchDescription": "Cartesia Monica - Emotive Voice: English female adult voice with rich emotional range and expressive delivery",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "1b4ea5fb-b1c0-43ee-a7be-4e315878c2b1",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/E7GDJE6BNP9R4047ZVKR85ZXZV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/E7GDJE6BNP9R4047ZVKR85ZXZV.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/E7GDJE6BNP9R4047ZVKR85ZXZV.mp3",
+      "id": "s-E7GDJE6BNP9R4047ZVKR85ZXZV",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "1b4ea5fb-b1c0-43ee-a7be-4e315878c2b1",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Monica - Emotive Voice",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/E7GDJE6BNP9R4047ZVKR85ZXZV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/E7GDJE6BNP9R4047ZVKR85ZXZV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/E7GDJE6BNP9R4047ZVKR85ZXZV.json"
+}

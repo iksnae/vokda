@@ -1,0 +1,74 @@
+{
+  "id": "T3VJ04E85G05P7SM481T03SXJE",
+  "name": "Dalton",
+  "provider": "LMNT",
+  "providerId": "lmnt",
+  "providerVoiceId": "dalton",
+  "description": "Narrative. US Southern accent. US",
+  "tags": [
+    "male",
+    "professional",
+    "streaming",
+    "low-latency",
+    "southern-drawl"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "LMNT API terms. Free tier available.",
+  "metadata": {
+    "useCases": [
+      "southern-drawl"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Dalton — LMNT",
+    "searchDescription": "LMNT Dalton: Narrative. US Southern accent. US",
+    "audienceTags": [
+      "developers",
+      "creators"
+    ],
+    "machineTags": [
+      "lmnt",
+      "male",
+      "professional"
+    ]
+  },
+  "modelCard": {
+    "modelName": "LMNT Professional",
+    "license": "Proprietary (LMNT API)",
+    "commercialUse": true,
+    "totalVoices": 44,
+    "sampleRate": 24000,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://lmnt.com",
+    "architecture": "professional"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/T3VJ04E85G05P7SM481T03SXJE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/T3VJ04E85G05P7SM481T03SXJE.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/T3VJ04E85G05P7SM481T03SXJE.mp3",
+      "id": "s-T3VJ04E85G05P7SM481T03SXJE",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "dalton",
+      "supportsStreaming": true,
+      "engine": "lmnt",
+      "maxChars": 5000,
+      "label": "Dalton",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/T3VJ04E85G05P7SM481T03SXJE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/T3VJ04E85G05P7SM481T03SXJE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/T3VJ04E85G05P7SM481T03SXJE.json"
+}

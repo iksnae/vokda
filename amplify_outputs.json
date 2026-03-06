@@ -356,87 +356,6 @@
             "sortKeyFieldNames": []
           }
         },
-        "CartItem": {
-          "name": "CartItem",
-          "fields": {
-            "id": {
-              "name": "id",
-              "isArray": false,
-              "type": "ID",
-              "isRequired": true,
-              "attributes": []
-            },
-            "voiceId": {
-              "name": "voiceId",
-              "isArray": false,
-              "type": "String",
-              "isRequired": true,
-              "attributes": []
-            },
-            "variantId": {
-              "name": "variantId",
-              "isArray": false,
-              "type": "String",
-              "isRequired": true,
-              "attributes": []
-            },
-            "createdAtIso": {
-              "name": "createdAtIso",
-              "isArray": false,
-              "type": "String",
-              "isRequired": true,
-              "attributes": []
-            },
-            "createdAt": {
-              "name": "createdAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            },
-            "updatedAt": {
-              "name": "updatedAt",
-              "isArray": false,
-              "type": "AWSDateTime",
-              "isRequired": false,
-              "attributes": [],
-              "isReadOnly": true
-            }
-          },
-          "syncable": true,
-          "pluralName": "CartItems",
-          "attributes": [
-            {
-              "type": "model",
-              "properties": {}
-            },
-            {
-              "type": "auth",
-              "properties": {
-                "rules": [
-                  {
-                    "provider": "userPools",
-                    "ownerField": "owner",
-                    "allow": "owner",
-                    "identityClaim": "cognito:username",
-                    "operations": [
-                      "create",
-                      "update",
-                      "delete",
-                      "read"
-                    ]
-                  }
-                ]
-              }
-            }
-          ],
-          "primaryKeyInfo": {
-            "isCustomPrimaryKey": false,
-            "primaryKeyFieldName": "id",
-            "sortKeyFieldNames": []
-          }
-        },
         "CurationShelf": {
           "name": "CurationShelf",
           "fields": {
@@ -662,6 +581,611 @@
             "sortKeyFieldNames": []
           }
         },
+        "VoiceRecord": {
+          "name": "VoiceRecord",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "name": {
+              "name": "name",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "provider": {
+              "name": "provider",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "providerId": {
+              "name": "providerId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "providerVoiceId": {
+              "name": "providerVoiceId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "description": {
+              "name": "description",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "tags": {
+              "name": "tags",
+              "isArray": true,
+              "type": "String",
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": false
+            },
+            "languages": {
+              "name": "languages",
+              "isArray": true,
+              "type": "String",
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": false
+            },
+            "qualityTier": {
+              "name": "qualityTier",
+              "isArray": false,
+              "type": {
+                "enum": "VoiceRecordQualityTier"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "licenseNotes": {
+              "name": "licenseNotes",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "metadata": {
+              "name": "metadata",
+              "isArray": false,
+              "type": "AWSJSON",
+              "isRequired": true,
+              "attributes": []
+            },
+            "modelCard": {
+              "name": "modelCard",
+              "isArray": false,
+              "type": "AWSJSON",
+              "isRequired": false,
+              "attributes": []
+            },
+            "imageUrl": {
+              "name": "imageUrl",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "audioUrl": {
+              "name": "audioUrl",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "samples": {
+              "name": "samples",
+              "isArray": false,
+              "type": "AWSJSON",
+              "isRequired": false,
+              "attributes": []
+            },
+            "variants": {
+              "name": "variants",
+              "isArray": false,
+              "type": "AWSJSON",
+              "isRequired": false,
+              "attributes": []
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": {
+                "enum": "VoiceRecordStatus"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAtIso": {
+              "name": "createdAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "updatedAtIso": {
+              "name": "updatedAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "VoiceRecords",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "operations": [
+                      "create",
+                      "read",
+                      "update",
+                      "delete"
+                    ],
+                    "groups": [
+                      "curator",
+                      "admin"
+                    ]
+                  },
+                  {
+                    "allow": "public",
+                    "provider": "apiKey",
+                    "operations": [
+                      "read"
+                    ]
+                  },
+                  {
+                    "allow": "private",
+                    "provider": "iam",
+                    "operations": [
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "ProviderRecord": {
+          "name": "ProviderRecord",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "name": {
+              "name": "name",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "slug": {
+              "name": "slug",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "type": {
+              "name": "type",
+              "isArray": false,
+              "type": {
+                "enum": "ProviderRecordType"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "websiteUrl": {
+              "name": "websiteUrl",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "description": {
+              "name": "description",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "colorHex": {
+              "name": "colorHex",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "voiceCount": {
+              "name": "voiceCount",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": {
+                "enum": "ProviderRecordStatus"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAtIso": {
+              "name": "createdAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "updatedAtIso": {
+              "name": "updatedAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "ProviderRecords",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "operations": [
+                      "create",
+                      "read",
+                      "update",
+                      "delete"
+                    ],
+                    "groups": [
+                      "curator",
+                      "admin"
+                    ]
+                  },
+                  {
+                    "allow": "public",
+                    "provider": "apiKey",
+                    "operations": [
+                      "read"
+                    ]
+                  },
+                  {
+                    "allow": "private",
+                    "provider": "iam",
+                    "operations": [
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "UserProviderCredential": {
+          "name": "UserProviderCredential",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "providerId": {
+              "name": "providerId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "label": {
+              "name": "label",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "credentialData": {
+              "name": "credentialData",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": {
+                "enum": "UserProviderCredentialStatus"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "lastTestedAtIso": {
+              "name": "lastTestedAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAtIso": {
+              "name": "createdAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "updatedAtIso": {
+              "name": "updatedAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "UserProviderCredentials",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "provider": "userPools",
+                    "ownerField": "owner",
+                    "allow": "owner",
+                    "identityClaim": "cognito:username",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "SynthesisJob": {
+          "name": "SynthesisJob",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "voiceId": {
+              "name": "voiceId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "providerId": {
+              "name": "providerId",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "inputText": {
+              "name": "inputText",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "inputMode": {
+              "name": "inputMode",
+              "isArray": false,
+              "type": {
+                "enum": "SynthesisJobInputMode"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "status": {
+              "name": "status",
+              "isArray": false,
+              "type": {
+                "enum": "SynthesisJobStatus"
+              },
+              "isRequired": false,
+              "attributes": []
+            },
+            "audioPath": {
+              "name": "audioPath",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "durationMs": {
+              "name": "durationMs",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
+            },
+            "latencyMs": {
+              "name": "latencyMs",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false,
+              "attributes": []
+            },
+            "errorMessage": {
+              "name": "errorMessage",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAtIso": {
+              "name": "createdAtIso",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "SynthesisJobs",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "provider": "userPools",
+                    "ownerField": "owner",
+                    "allow": "owner",
+                    "identityClaim": "cognito:username",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
         "AdminAuditEvent": {
           "name": "AdminAuditEvent",
           "fields": {
@@ -767,10 +1291,98 @@
             "private",
             "team"
           ]
+        },
+        "VoiceRecordQualityTier": {
+          "name": "VoiceRecordQualityTier",
+          "values": [
+            "basic",
+            "standard",
+            "premium"
+          ]
+        },
+        "VoiceRecordStatus": {
+          "name": "VoiceRecordStatus",
+          "values": [
+            "draft",
+            "published",
+            "archived"
+          ]
+        },
+        "ProviderRecordType": {
+          "name": "ProviderRecordType",
+          "values": [
+            "cloud_provider",
+            "open_model",
+            "self_hosted",
+            "other"
+          ]
+        },
+        "ProviderRecordStatus": {
+          "name": "ProviderRecordStatus",
+          "values": [
+            "active",
+            "inactive"
+          ]
+        },
+        "UserProviderCredentialStatus": {
+          "name": "UserProviderCredentialStatus",
+          "values": [
+            "active",
+            "invalid",
+            "expired"
+          ]
+        },
+        "SynthesisJobInputMode": {
+          "name": "SynthesisJobInputMode",
+          "values": [
+            "text",
+            "ssml"
+          ]
+        },
+        "SynthesisJobStatus": {
+          "name": "SynthesisJobStatus",
+          "values": [
+            "pending",
+            "completed",
+            "failed"
+          ]
         }
       },
       "nonModels": {}
     }
+  },
+  "storage": {
+    "aws_region": "us-east-1",
+    "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui",
+    "buckets": [
+      {
+        "name": "vokdaAudio",
+        "bucket_name": "amplify-vokda-k-sandbox-b-vokdaaudiobucketc3e7c340-mmsdwvur4tui",
+        "aws_region": "us-east-1",
+        "paths": {
+          "catalog/*": {
+            "guest": [
+              "get",
+              "list"
+            ],
+            "groupsadmin": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          },
+          "users/${cognito-identity.amazonaws.com:sub}/*": {
+            "entityidentity": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          }
+        }
+      }
+    ]
   },
   "version": "1.4"
 }

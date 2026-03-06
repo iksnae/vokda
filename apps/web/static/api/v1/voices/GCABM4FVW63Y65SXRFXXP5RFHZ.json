@@ -1,0 +1,77 @@
+{
+  "id": "GCABM4FVW63Y65SXRFXXP5RFHZ",
+  "name": "Callie - Encourager",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "00a77add-48d5-4ef6-8157-71e5437b282d",
+  "description": "Smooth, young adult female for empathetic conversation",
+  "tags": [
+    "sonic",
+    "neural",
+    "female",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "female",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Callie - Encourager — Cartesia",
+    "searchDescription": "Cartesia Callie - Encourager: Smooth, young adult female for empathetic conversation",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "female"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "00a77add-48d5-4ef6-8157-71e5437b282d",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/GCABM4FVW63Y65SXRFXXP5RFHZ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/GCABM4FVW63Y65SXRFXXP5RFHZ.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/GCABM4FVW63Y65SXRFXXP5RFHZ.mp3",
+      "id": "s-GCABM4FVW63Y65SXRFXXP5RFHZ",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "00a77add-48d5-4ef6-8157-71e5437b282d",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Callie - Encourager",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/GCABM4FVW63Y65SXRFXXP5RFHZ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/GCABM4FVW63Y65SXRFXXP5RFHZ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/GCABM4FVW63Y65SXRFXXP5RFHZ.json"
+}

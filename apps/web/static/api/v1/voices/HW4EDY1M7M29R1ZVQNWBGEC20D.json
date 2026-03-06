@@ -1,0 +1,77 @@
+{
+  "id": "HW4EDY1M7M29R1ZVQNWBGEC20D",
+  "name": "Darren - Friendly Barritone",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "8d110413-2f14-44a2-8203-2104db4340e9",
+  "description": "Deep, friendly adult male for happy voiceovers",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Darren - Friendly Barritone — Cartesia",
+    "searchDescription": "Cartesia Darren - Friendly Barritone: Deep, friendly adult male for happy voiceovers",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "8d110413-2f14-44a2-8203-2104db4340e9",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HW4EDY1M7M29R1ZVQNWBGEC20D.mp3",
+      "id": "s-HW4EDY1M7M29R1ZVQNWBGEC20D",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "8d110413-2f14-44a2-8203-2104db4340e9",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Darren - Friendly Barritone",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HW4EDY1M7M29R1ZVQNWBGEC20D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HW4EDY1M7M29R1ZVQNWBGEC20D.json"
+}

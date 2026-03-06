@@ -1,0 +1,77 @@
+{
+  "id": "G285T7ZREAA2CC80A3KSMBG2BX",
+  "name": "Travis - How To Guide",
+  "provider": "Cartesia",
+  "providerId": "cartesia",
+  "providerVoiceId": "40104aff-a015-4da1-9912-af950fbec99e",
+  "description": "Firm, young male for instructional videos and customer support",
+  "tags": [
+    "sonic",
+    "neural",
+    "male",
+    "streaming",
+    "low-latency"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Cartesia API terms. Pay-per-character.",
+  "metadata": {
+    "useCases": [
+      "conversational",
+      "customer-service",
+      "narration"
+    ],
+    "genderPresentation": "male",
+    "metadataQuality": "curated",
+    "toneTags": [],
+    "shortLabel": "Travis - How To Guide — Cartesia",
+    "searchDescription": "Cartesia Travis - How To Guide: Firm, young male for instructional videos and customer support",
+    "audienceTags": [
+      "developers",
+      "enterprises"
+    ],
+    "machineTags": [
+      "cartesia",
+      "sonic",
+      "male"
+    ]
+  },
+  "modelCard": {
+    "modelName": "Cartesia Sonic",
+    "license": "Proprietary (Cartesia API)",
+    "commercialUse": true,
+    "cartesiaVoiceId": "40104aff-a015-4da1-9912-af950fbec99e",
+    "totalVoices": 355,
+    "sampleRate": 44100,
+    "outputFormat": "mp3",
+    "streamingCapable": true,
+    "providerType": "cloud_provider",
+    "providerUrl": "https://cartesia.ai",
+    "architecture": "sonic"
+  },
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G285T7ZREAA2CC80A3KSMBG2BX.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G285T7ZREAA2CC80A3KSMBG2BX.mp3",
+  "samples": [
+    {
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G285T7ZREAA2CC80A3KSMBG2BX.mp3",
+      "id": "s-G285T7ZREAA2CC80A3KSMBG2BX",
+      "label": "Default",
+      "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "40104aff-a015-4da1-9912-af950fbec99e",
+      "supportsStreaming": true,
+      "engine": "sonic",
+      "maxChars": 5000,
+      "label": "Travis - How To Guide",
+      "supportsSsml": false
+    }
+  ],
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G285T7ZREAA2CC80A3KSMBG2BX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G285T7ZREAA2CC80A3KSMBG2BX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G285T7ZREAA2CC80A3KSMBG2BX.json"
+}
