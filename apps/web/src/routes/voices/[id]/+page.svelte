@@ -16,6 +16,7 @@
   import { isProviderConnected } from '$lib/stores/credentials';
   import { synthesizePreview, canSynthesizeReal, getSynthesisProvider, stopPreviewPlayback, humanizeSynthesisError } from '$lib/synthesis/service';
   import { refreshClips } from '$lib/stores/clips';
+  import SsmlEditor from '$lib/components/SsmlEditor.svelte';
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -498,13 +499,24 @@
               </span>
             </div>
 
-            <textarea
-              class="audition-textarea"
-              bind:value={auditionText}
-              placeholder={auditionMode === 'ssml' ? '<speak>Enter SSML here…</speak>' : 'Type any text to hear this voice speak it…'}
-              rows="3"
-              on:keydown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); runAudition(); } }}
-            ></textarea>
+            {#if auditionMode === 'ssml'}
+              <SsmlEditor
+                bind:value={auditionText}
+                providerId={auditionProvider ?? ''}
+                supportsSsml={variant?.supportsSsml ?? false}
+                maxChars={variant?.maxInputChars ?? 5000}
+                providerName={auditionProvider ?? ''}
+                on:synthesize={runAudition}
+              />
+            {:else}
+              <textarea
+                class="audition-textarea"
+                bind:value={auditionText}
+                placeholder="Type any text to hear this voice speak it…"
+                rows="3"
+                on:keydown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); runAudition(); } }}
+              ></textarea>
+            {/if}
 
             <div class="audition-actions">
               <button
