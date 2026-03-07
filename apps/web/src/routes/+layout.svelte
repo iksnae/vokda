@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
@@ -168,15 +168,15 @@
 
 <style>
   :global(:root) {
-    /* ── Primitives: brand scale ── */
-    --brand-50:  #f0f8fa;
-    --brand-100: #dbeef5;
-    --brand-200: #a8dcea;
-    --brand-300: #5fc4df;
-    --brand-400: #3db0cc;
-    --brand-500: #229ab5;
-    --brand-600: #177089;
-    --brand-700: #0f5f7a;
+    /* ── Primitives: brand scale (Direction A — Cyan) ── */
+    --brand-50:  #ecfeff;
+    --brand-100: #cffafe;
+    --brand-200: #a5f3fc;
+    --brand-300: #67e8f9;
+    --brand-400: #22d3ee;
+    --brand-500: #06b6d4;
+    --brand-600: #0891b2;
+    --brand-700: #0e7490;
 
     /* ── Primitives: ink (blue-gray text) scale ── */
     --ink-900: #173046;
@@ -194,14 +194,14 @@
     --stroke-400: #9eb6c8;
 
     /* ── Primitives: named surfaces ── */
-    --bg-ink:      #0f1b26;
-    --bg-muted:    #52657a;
-    --surface-0:   #f2f6f9;
-    --surface-1:   #f8fbfd;
-    --surface-2:   #ffffff;
-    --surface-hover:  #f6f9fb;
-    --surface-raised: #f4f8fb;
-    --surface-active: #f0f8fa;
+    --bg-ink:         #0f1b26;
+    --bg-muted:       #52657a;
+    --surface-0:      #f2f6f9;
+    --surface-1:      #f8fbfd;
+    --surface-2:      #ffffff;
+    --surface-hover:  #f0f6f9;
+    --surface-raised: #e8f4f8;
+    --surface-active: #e0f7fd;
 
     /* ── Primitives: strokes (legacy names kept) ── */
     --stroke-soft:   #d5e0e9;
@@ -226,11 +226,15 @@
     --radius-md:   16px;
     --radius-lg:   24px;
 
+    /* ── Primitives: type / font ── */
+    --font-ui:      "Sora", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+    --font-display: "Space Grotesk", "Sora", sans-serif;
+
     /* ── Primitives: type scale ── */
     --text-display:  clamp(1.6rem, 3vw, 2.2rem);
     --text-heading:  1.15rem;
     --text-subhead:  1.02rem;
-    --text-body-lg:  1.0rem;
+    --text-body-lg:  1.05rem;
     --text-body:     0.9rem;
     --text-small:    0.82rem;
     --text-xs:       0.74rem;
@@ -251,8 +255,9 @@
     --stroke-input:         var(--stroke-300);
 
     /* ── Semantic: brand interaction ── */
-    --brand-hover-bg: rgba(23, 112, 137, 0.08);
-    --focus-ring:     rgba(23, 112, 137, 0.12);
+    --brand-hover-bg:    rgba(8, 145, 178, 0.08);
+    --focus-ring:        rgba(8, 145, 178, 0.12);
+    --brand-pulse-start: rgba(8, 145, 178, 0.28);
 
     /* ── Semantic: tag/tone palette ── */
     --tag-fg:     #5a7a5e;
@@ -261,27 +266,54 @@
 
     /* ── Semantic: misc ── */
     --opacity-disabled: 0.35;
-    --panel-bg: rgba(248, 252, 254, 0.95);
+    --panel-bg:        var(--surface-0);
+    --overlay-bg:      rgba(15, 27, 38, 0.35);
+    --surface-frosted: rgba(255, 255, 255, 0.53);
 
     /* ── Semantic: body / ambient ── */
-    --body-bg-start: #eef3f6;
-    --body-bg-end:   #e8eef2;
-    --orb-cool:      #cce6f1;
+    --body-bg-start: #edf5f9;
+    --body-bg-end:   #e5edf3;
+    --orb-cool:      #b9e8f5;
     --orb-warm:      #f5dfc2;
 
     /* ── Semantic: component surfaces ── */
-    --header-bg:       rgba(248, 251, 253, 0.78);
+    --header-bg:       rgba(236, 247, 252, 0.82);
     --nav-link-bg:     rgba(255, 255, 255, 0.84);
     --avatar-gradient: linear-gradient(155deg, var(--brand-700), var(--brand-500));
 
     /* ── Semantic: brand-tinted shadows ── */
-    --brand-shadow-sm:       0 4px 12px rgba(28, 92, 118, 0.25);
-    --brand-shadow-md:       0 8px 16px rgba(20, 94, 121, 0.26);
-    --brand-shadow-md-hover: 0 10px 20px rgba(20, 94, 121, 0.35);
+    --brand-shadow-sm:       0 4px 12px rgba(8, 110, 140, 0.22);
+    --brand-shadow-md:       0 8px 16px rgba(8, 110, 140, 0.24);
+    --brand-shadow-md-hover: 0 10px 20px rgba(8, 110, 140, 0.32);
 
     /* ── Semantic: state / feedback ── */
-    --skeleton-bg: #dce5ec;
-    --danger-bg:   #fff5f5;
+    --skeleton-bg:        #dce5ec;
+    --danger-bg:          #fff5f5;
+    --panel-drawer-shadow: 4px 0 24px rgba(15, 35, 54, 0.12);
+
+    /*
+     * ── Direction B (Indigo Ink) swap map ──────────────────────────────
+     * To switch color themes, replace only these primitive values.
+     * All semantic token names stay identical — no component edits needed.
+     *
+     * --brand-50:  #eef2ff    --brand-100: #e0e7ff
+     * --brand-200: #c7d2fe    --brand-300: #a5b4fc
+     * --brand-400: #818cf8    --brand-500: #6366f1
+     * --brand-600: #4f46e5    --brand-700: #3730a3
+     *
+     * --surface-active:    #eef2ff
+     * --brand-hover-bg:    rgba(79, 70, 229, 0.08)
+     * --focus-ring:        rgba(79, 70, 229, 0.12)
+     * --brand-pulse-start: rgba(79, 70, 229, 0.28)
+     *
+     * --body-bg-start: #f0f0f8    --body-bg-end: #e8e8f2
+     * --orb-cool:      #c7d2fe
+     * --header-bg:     rgba(238, 236, 250, 0.82)
+     *
+     * --brand-shadow-sm:       0 4px 12px rgba(67, 56, 202, 0.22)
+     * --brand-shadow-md:       0 8px 16px rgba(67, 56, 202, 0.24)
+     * --brand-shadow-md-hover: 0 10px 20px rgba(67, 56, 202, 0.32)
+     * ──────────────────────────────────────────────────────────────── */
   }
 
   :global(*) {
@@ -290,7 +322,7 @@
 
   :global(body) {
     margin: 0;
-    font-family: "Sora", "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+    font-family: var(--font-ui);
     color: var(--bg-ink);
     background:
       radial-gradient(circle at 6% -8%, var(--brand-100) 0%, transparent 34%),

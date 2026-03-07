@@ -14,6 +14,7 @@
   } from '$lib/stores/app-state';
   import { buildEffectiveCatalog } from '$lib/voice-catalog';
   import { getProviderColor } from '$lib/provider-colors';
+
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { roleFlags } from '$lib/auth/store';
@@ -23,6 +24,8 @@
     voiceMatchesLanguage,
     voiceMatchesAccent,
     getPrimaryLanguage,
+    getLanguageDisplayName,
+    getAccentLabel,
   } from '$lib/language-utils';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -812,7 +815,7 @@
 
     <!-- Toolbar -->
     <div class="toolbar">
-      <p class="results">{filtered.length} of {effectiveVoices.length} voice{effectiveVoices.length !== 1 ? 's' : ''}</p>
+      <p class="results"><strong>{filtered.length}</strong> of {effectiveVoices.length} voice{effectiveVoices.length !== 1 ? 's' : ''}</p>
       <select bind:value={sortOrder} class="sort-select" aria-label="Sort by">
         <option value="alphabetical">Alphabetical</option>
         <option value="newest">Newest</option>
@@ -823,11 +826,22 @@
     <!-- Voice rows -->
     <section class="voice-list" aria-label="Voice results">
       {#each sorted as voice (voice.id)}
-        {@const colors = getProviderColor(voice.providerId ?? voice.provider)}
         {@const isFav = $favorites.includes(voice.id)}
         {@const sampleUrl = (voice.samples ?? [])[0]?.audioUrl ?? voice.audioUrl}
         {@const isPlaying = playingVoiceId === voice.id}
         {@const topTag = (voice.metadata?.toneTags ?? [])[0] ?? (voice.tags ?? [])[0] ?? ''}
+        {@const primaryLang = getPrimaryLanguage(voice)}
+        {@const langBase = primaryLang.split('-')[0]}
+        {@const hasAccent = primaryLang.includes('-')}
+        {@const metaItems = [
+          getLanguageDisplayName(langBase),
+          hasAccent ? getAccentLabel(primaryLang) : '',
+          voice.metadata?.genderPresentation
+            ? (genderLabels[voice.metadata.genderPresentation] ?? capitalize(voice.metadata.genderPresentation))
+            : '',
+          topTag ? capitalize(topTag) : '',
+        ].filter(Boolean)}
+        {@const shortName = voice.name.includes(' - ') ? voice.name.split(' - ')[0].trim() : voice.name}
         <article class="voice-row" class:playing={isPlaying}>
           <button
             class="play-btn"
@@ -837,24 +851,26 @@
             disabled={!sampleUrl}
             on:click|stopPropagation={() => togglePlay(voice.id, sampleUrl)}
           >
-            <Icon name={isPlaying ? 'pause' : 'play'} size={14} weight="fill" />
+            <Icon name={isPlaying ? 'pause' : 'play'} size={16} weight="fill" />
           </button>
 
-          <a class="voice-name" href="/voices/{voice.id}">{voice.name}</a>
-
-          <span
-            class="provider-pill"
-            style="background:{colors.bg};border-color:{colors.border};color:{colors.text}"
-          >{voice.provider}</span>
-
-          <span class="voice-lang">{(voice.languages ?? [])[0] ?? ''}</span>
-          <span class="voice-tier">{voice.qualityTier}</span>
-
-          {#if topTag}
-            <span class="voice-tag">{topTag}</span>
-          {:else}
-            <span class="voice-tag-empty"></span>
-          {/if}
+          <div class="voice-info">
+            <div class="voice-primary">
+              <a class="voice-name" href="/voices/{voice.id}">{shortName}</a>
+              <span class="voice-provider">{voice.provider}</span>
+            </div>
+            <div class="voice-meta">
+              <div class="meta-items">
+                {#each metaItems as item, i}
+                  {#if i > 0}<span class="meta-sep">·</span>{/if}
+                  <span class="meta-item">{item}</span>
+                {/each}
+              </div>
+              <div class="tier-bars tier-{voice.qualityTier ?? 'basic'}" aria-label="{voice.qualityTier ?? 'basic'} quality">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
 
           <div class="row-actions">
             <button
@@ -909,7 +925,7 @@
           </div>
         </article>
       {:else}
-        <p class="empty">No voices found. Try different filters or search terms.</p>
+        <p class="empty">No voices found. Try adjusting your filters or search terms.</p>
       {/each}
     </section>
   </div>
@@ -931,7 +947,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0.5rem 1rem 3rem;
-    gap: 1rem;
+    gap: 1.25rem;
     animation: rise 300ms ease;
     position: relative;
   }
@@ -940,17 +956,16 @@
   .filter-panel {
     width: 260px;
     flex-shrink: 0;
-    padding: 0.75rem;
-    border: 1px solid var(--stroke-soft);
+    padding: 1rem 0.9rem;
+    border: 1px solid var(--stroke-divider);
     border-radius: var(--radius-md);
     background: var(--panel-bg);
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
     align-self: flex-start;
     position: sticky;
-    top: 5.5rem;
-    max-height: calc(100vh - 6.5rem);
+    top: 5rem;
+    max-height: calc(100vh - 6rem);
     overflow-y: auto;
     transition: width 200ms ease;
   }
@@ -966,10 +981,11 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .panel-toggle {
-    border: 1px solid var(--stroke-soft);
+    border: 1px solid var(--stroke-control);
     background: var(--surface-2);
     color: var(--text-muted);
     border-radius: var(--radius-sm);
@@ -989,11 +1005,13 @@
     color: var(--brand-700);
   }
 
+  /* Hidden on desktop — the sidebar is self-evidently filters */
   .panel-title {
     margin: 0;
     font-size: var(--text-small);
     font-weight: 700;
     color: var(--text-secondary);
+    display: none;
   }
 
   .filter-badge {
@@ -1013,7 +1031,7 @@
     background: none;
     color: var(--brand-600);
     font-size: var(--text-xs);
-    font-weight: 620;
+    font-weight: 600;
     cursor: pointer;
     padding: 0.15rem 0.3rem;
     border-radius: var(--radius-xs);
@@ -1023,40 +1041,57 @@
     background: var(--brand-100);
   }
 
+  /* ── Filter Sections ── */
   .filter-sections {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0;
   }
 
   .filter-section {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.4rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--stroke-divider);
+  }
+
+  .filter-section:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* Accent — subordinate to Language, visually connected without a divider */
+  .filter-section--accent {
+    padding-left: 0.75rem;
+    padding-top: 0.3rem;
+    border-left: 2px solid var(--brand-200);
+    border-top: none;
+    margin-left: 0.1rem;
   }
 
   .section-label {
     font-size: var(--text-xs);
-    font-weight: 680;
+    font-weight: 700;
     color: var(--text-tertiary);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.07em;
   }
 
   .chip-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 0.28rem;
   }
 
   .filter-chip {
     border: 1px solid var(--stroke-control);
     background: var(--surface-2);
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     border-radius: 999px;
-    padding: 0.2rem 0.55rem;
+    padding: 0.22rem 0.6rem;
     font-size: var(--text-xs);
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     transition: background 120ms, border-color 120ms, color 120ms;
     display: inline-flex;
@@ -1074,7 +1109,7 @@
     background: var(--brand-100);
     border-color: var(--brand-600);
     color: var(--brand-700);
-    font-weight: 680;
+    font-weight: 600;
   }
 
   .filter-chip:disabled {
@@ -1095,13 +1130,6 @@
     opacity: 0.8;
   }
 
-  /* Accent section — subtle indent signals language→accent hierarchy */
-  .filter-section--accent {
-    padding-left: 0.6rem;
-    border-left: 2px solid var(--brand-200);
-    margin-left: 0.1rem;
-  }
-
   /* ── Main Content ── */
   .content {
     flex: 1;
@@ -1120,24 +1148,24 @@
   .search-bar {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     border: 1px solid var(--stroke-input);
     border-radius: var(--radius-base);
-    padding: 0 0.75rem;
+    padding: 0 1rem;
+    height: 48px;
     background: var(--surface-2);
     color: var(--text-subtle);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.75rem;
   }
 
   .search-bar:focus-within {
     border-color: var(--brand-600);
-    box-shadow: 0 0 0 2px var(--focus-ring);
+    box-shadow: 0 0 0 3px var(--focus-ring);
   }
 
   .search-bar input {
     flex: 1;
     border: none;
-    padding: 0.55rem 0;
     background: transparent;
     font-size: var(--text-body);
     color: var(--text-primary);
@@ -1165,15 +1193,20 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.6rem;
-    margin-bottom: 0.4rem;
-    padding: 0 0.1rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.25rem;
   }
 
   .results {
     margin: 0;
-    color: var(--text-tertiary);
     font-size: var(--text-small);
-    font-weight: 620;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .results strong {
+    color: var(--text-primary);
+    font-weight: 600;
   }
 
   .sort-select {
@@ -1185,18 +1218,19 @@
     color: var(--text-primary);
   }
 
-  /* ── Voice Rows ── */
+  /* ── Voice List ── */
   .voice-list {
     display: flex;
     flex-direction: column;
   }
 
+  /* ── Voice Row — 3-column: play | info | actions ── */
   .voice-row {
     display: grid;
-    grid-template-columns: 32px 1fr auto auto auto auto auto;
+    grid-template-columns: 44px 1fr auto;
     align-items: center;
-    gap: 0 0.65rem;
-    padding: 0.45rem 0.5rem;
+    gap: 0 0.85rem;
+    padding: 0.7rem 0.5rem 0.7rem 0.25rem;
     border-bottom: 1px solid var(--stroke-divider);
     transition: background 100ms;
     border-left: 3px solid transparent;
@@ -1215,11 +1249,12 @@
     background: var(--surface-active);
   }
 
+  /* ── Play Button ── */
   .play-btn {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 999px;
-    border: 1px solid var(--stroke-soft);
+    border: 1.5px solid var(--stroke-control);
     background: var(--surface-2);
     color: var(--brand-700);
     display: inline-flex;
@@ -1228,20 +1263,21 @@
     cursor: pointer;
     padding: 0;
     flex-shrink: 0;
-    transition: transform 100ms, border-color 100ms, background 100ms;
+    transition: transform 120ms, border-color 150ms, background 150ms, box-shadow 150ms;
   }
 
   .play-btn:hover:not(:disabled) {
     transform: scale(1.08);
     border-color: var(--brand-600);
     background: var(--brand-100);
+    box-shadow: 0 0 0 3px var(--focus-ring);
   }
 
   .play-btn.playing {
     border-color: var(--brand-600);
     background: var(--brand-100);
     color: var(--brand-600);
-    animation: pulseRing 1.5s ease-in-out infinite;
+    animation: pulseRing 1.8s ease-in-out infinite;
   }
 
   .play-btn:disabled {
@@ -1249,15 +1285,34 @@
     cursor: not-allowed;
   }
 
+  /* ── Voice Info — two-line layout ── */
+  .voice-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+    min-width: 0;
+  }
+
+  .voice-primary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
   .voice-name {
-    font-size: var(--text-body);
-    font-weight: 650;
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg);
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
+    letter-spacing: -0.01em;
     transition: color 120ms;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-shrink: 1;
     min-width: 0;
   }
 
@@ -1265,47 +1320,72 @@
     color: var(--brand-600);
   }
 
-  .provider-pill {
-    font-size: var(--text-micro);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 720;
-    border-radius: 999px;
-    padding: 0.1rem 0.4rem;
-    border: 1px solid;
-    white-space: nowrap;
-  }
-
-  .voice-lang {
-    font-size: var(--text-small);
-    color: var(--text-muted);
-    white-space: nowrap;
-  }
-
-  .voice-tier {
+  .voice-provider {
     font-size: var(--text-xs);
-    color: var(--text-subtle);
+    font-weight: 400;
+    color: var(--text-ghost);
     white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.01em;
   }
 
-  .voice-tag {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: var(--tag-fg);
-    background: var(--tag-bg);
-    border: 1px solid var(--tag-border);
-    border-radius: 999px;
-    padding: 0.08rem 0.38rem;
-    white-space: nowrap;
-    max-width: 10ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  /* ── Voice Meta — second line ── */
+  .voice-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
   }
 
-  .voice-tag-empty {
+  .meta-items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 0.22rem;
     min-width: 0;
   }
 
+  .meta-item {
+    font-size: var(--text-small);
+    color: var(--text-muted);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .meta-sep {
+    font-size: var(--text-small);
+    color: var(--text-ghost);
+    user-select: none;
+    line-height: 1;
+  }
+
+  /* ── Tier bars — 3-segment quality signal ── */
+  .tier-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .tier-bars span {
+    display: block;
+    width: 3px;
+    border-radius: 1.5px;
+    background: var(--stroke-control);
+  }
+
+  .tier-bars span:nth-child(1) { height: 4px; }
+  .tier-bars span:nth-child(2) { height: 7px; }
+  .tier-bars span:nth-child(3) { height: 11px; }
+
+  .tier-bars.tier-premium span                          { background: var(--brand-500); }
+  .tier-bars.tier-standard span:nth-child(1),
+  .tier-bars.tier-standard span:nth-child(2)            { background: var(--text-subtle); }
+  .tier-bars.tier-basic    span:nth-child(1)            { background: var(--text-ghost); }
+
+  /* ── Row Actions ── */
   .row-actions {
     display: flex;
     align-items: center;
@@ -1317,8 +1397,8 @@
     background: none;
     color: var(--text-ghost);
     border-radius: 999px;
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1336,6 +1416,7 @@
     color: var(--danger-600);
   }
 
+  /* ── Pin Popover ── */
   .pin-wrapper {
     position: relative;
   }
@@ -1427,18 +1508,19 @@
     color: var(--brand-600);
   }
 
+  /* ── Empty State ── */
   .empty {
     margin: 0;
     border: 1px dashed var(--stroke-input);
     border-radius: var(--radius-base);
-    background: rgba(255, 255, 255, 0.53);
-    padding: 1.5rem;
+    background: var(--surface-frosted);
+    padding: 2rem 1.5rem;
     color: var(--text-tertiary);
     text-align: center;
     font-size: var(--text-body);
   }
 
-  /* ── Responsive: tablet — panel becomes drawer ── */
+  /* ── Responsive: tablet — panel becomes a drawer ── */
   @media (max-width: 980px) {
     .page-layout {
       flex-direction: column;
@@ -1466,7 +1548,12 @@
 
     .filter-panel.open {
       transform: translateX(0);
-      box-shadow: 4px 0 24px rgba(15, 35, 54, 0.12);
+      box-shadow: var(--panel-drawer-shadow);
+    }
+
+    /* Show "Filters" label in mobile drawer context */
+    .panel-title {
+      display: block;
     }
 
     .filter-drawer-toggle {
@@ -1493,42 +1580,31 @@
       display: block;
       position: fixed;
       inset: 0;
-      background: rgba(15, 27, 38, 0.35);
+      background: var(--overlay-bg);
       z-index: 99;
       animation: fadeIn 180ms ease;
     }
   }
 
-  /* ── Responsive: mobile — rows stack ── */
+  /* ── Responsive: mobile — compact rows ── */
   @media (max-width: 640px) {
     .voice-row {
-      grid-template-columns: 30px 1fr auto;
-      grid-template-rows: auto auto;
-      gap: 0.15rem 0.5rem;
-      padding: 0.5rem 0.4rem;
+      grid-template-columns: 36px 1fr auto;
+      gap: 0 0.6rem;
+      padding: 0.6rem 0.4rem 0.6rem 0.2rem;
     }
 
-    .voice-name {
-      grid-column: 2;
-      grid-row: 1;
+    .play-btn {
+      width: 36px;
+      height: 36px;
     }
 
-    .provider-pill {
-      grid-column: 2;
-      grid-row: 2;
-      justify-self: start;
-    }
-
-    .voice-lang,
-    .voice-tier,
-    .voice-tag,
-    .voice-tag-empty {
+    .voice-meta {
       display: none;
     }
 
-    .row-actions {
-      grid-column: 3;
-      grid-row: 1 / -1;
+    .search-bar {
+      height: 44px;
     }
 
     .toolbar {
@@ -1538,21 +1614,21 @@
 
   @keyframes rise {
     from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes popIn {
     from { opacity: 0; transform: translateY(4px) scale(0.96); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   @keyframes fadeIn {
     from { opacity: 0; }
-    to { opacity: 1; }
+    to   { opacity: 1; }
   }
 
   @keyframes pulseRing {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(23, 112, 137, 0.25); }
-    50% { box-shadow: 0 0 0 5px rgba(23, 112, 137, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 var(--brand-pulse-start); }
+    50%       { box-shadow: 0 0 0 6px transparent; }
   }
 </style>
