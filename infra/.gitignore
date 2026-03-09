@@ -1,0 +1,3 @@
+# Build artifacts
+.aws-sam/
+functions/synthesis-router/data/voices.json

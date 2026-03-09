@@ -209,6 +209,24 @@ Resources:
             ApiId: !Ref SynthesisApi
             Path: /v1/keys/{id}
             Method: DELETE
+        ListProviders:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/providers
+            Method: GET
+        ListVoices:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/voices
+            Method: GET
+        GetVoice:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/voices/{id}
+            Method: GET
         SaveCredential:
           Type: HttpApi
           Properties:

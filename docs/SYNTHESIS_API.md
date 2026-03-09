@@ -27,6 +27,159 @@ API keys are recommended for programmatic access. JWTs are used automatically by
 
 ## Endpoints
 
+### GET /v1/providers
+
+List TTS providers available to your account — i.e. providers where you have active credentials configured. Use `?all=true` to see the full catalog including providers you haven't set up yet.
+
+**Query parameters:**
+
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| `all` | string | | Set to `"true"` to list all providers (not just enabled) |
+
+**Response (200):**
+
+```json
+{
+  "providers": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "type": "cloud_provider",
+      "websiteUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+      "synthesisAvailable": true,
+      "authType": "api_key",
+      "credentialFormat": { "apiKey": "string" },
+      "ssmlSupport": false,
+      "voiceIdFormat": "alloy, echo, fable, nova, onyx, shimmer",
+      "notes": "Supports tts-1 and tts-1-hd models. Speed 0.25–4.0."
+    }
+  ],
+  "count": 3,
+  "enabledOnly": true
+}
+```
+
+When `?all=true` is not set, the `enabledOnly: true` flag confirms filtering is active.
+
+---
+
+### GET /v1/voices
+
+List voices from your enabled providers. Supports filtering by provider, language, gender, quality, and free-text search. Only voices from providers you have credentials for are returned.
+
+**Query parameters:**
+
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| `provider` | string | | Filter by provider ID (e.g. `openai`) |
+| `language` | string | | Filter by language code prefix (e.g. `en`, `en-US`) |
+| `gender` | string | | Filter by gender: `male`, `female`, `neutral` |
+| `quality` | string | | Filter by quality tier: `premium`, `standard` |
+| `search` | string | | Free-text search across name, description, tags |
+| `limit` | number | 100 | Max results per page (1–500) |
+| `offset` | number | 0 | Pagination offset |
+
+**Response (200):**
+
+```json
+{
+  "voices": [
+    {
+      "id": "01KJZXZNF942C62SAR07KM4HBJ",
+      "name": "en-IE-ConnorNeural",
+      "provider": "Azure Speech",
+      "providerId": "azure-speech",
+      "providerVoiceId": "en-IE-ConnorNeural",
+      "description": "English (Ireland) Male neural voice.",
+      "languages": ["en-IE"],
+      "gender": "male",
+      "age": "adult",
+      "qualityTier": "premium",
+      "tags": ["male", "ie"],
+      "toneTags": ["steady"],
+      "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3",
+      "ssmlSupport": true
+    }
+  ],
+  "total": 47,
+  "limit": 100,
+  "offset": 0
+}
+```
+
+If no providers are configured, returns an empty list with a helpful message:
+
+```json
+{
+  "voices": [],
+  "total": 0,
+  "limit": 100,
+  "offset": 0,
+  "message": "No providers configured. Add credentials at /account/providers or POST /v1/credentials."
+}
+```
+
+---
+
+### GET /v1/voices/{id}
+
+Get full details for a single voice, including samples, variants, and model card. Only returns voices from your enabled providers.
+
+**Response (200):**
+
+```json
+{
+  "id": "01KJZXZNF942C62SAR07KM4HBJ",
+  "name": "en-IE-ConnorNeural",
+  "provider": "Azure Speech",
+  "providerId": "azure-speech",
+  "providerVoiceId": "en-IE-ConnorNeural",
+  "description": "English (Ireland) Male neural voice.",
+  "languages": ["en-IE"],
+  "gender": "male",
+  "age": "adult",
+  "qualityTier": "premium",
+  "tags": ["male", "ie"],
+  "toneTags": ["steady"],
+  "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3",
+  "imageUrl": "/images/voices/01KJZXZNF942C62SAR07KM4HBJ.jpg",
+  "licenseNotes": "Use governed by Azure AI Speech terms.",
+  "metadata": { "genderPresentation": "male", "agePresentation": "adult", "toneTags": ["steady"] },
+  "modelCard": { "ssmlSupport": true, "streamingSupport": true, "sampleRate": 48000 },
+  "samples": [
+    {
+      "id": "01KJZXZNF9WP5R4ES2RM6074GB",
+      "label": "Default",
+      "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3",
+      "transcript": "This guidance applies to all production workloads..."
+    }
+  ],
+  "variants": [
+    {
+      "id": "01KJZXZNF92GWKBAY7NFNJDXTH",
+      "sourceKey": "azure:speech:en-IE-ConnorNeural",
+      "sourceType": "cloud_provider",
+      "runnable": true,
+      "supportsSsml": true,
+      "outputFormats": ["mp3", "wav", "pcm"],
+      "maxInputChars": 10000
+    }
+  ]
+}
+```
+
+**Response (404):**
+
+```json
+{
+  "error": "Voice not found",
+  "message": "Voice does not exist or belongs to a provider you have not configured."
+}
+```
+
+---
+
 ### POST /v1/synthesize
 
 Generate speech from text using a connected provider.

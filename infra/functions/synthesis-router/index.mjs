@@ -8,8 +8,12 @@
  *   POST   /v1/synthesize    — Create synthesis job (sync or async)
  *   GET    /v1/jobs           — List user's jobs
  *   GET    /v1/jobs/{id}      — Get job details
+ *   PATCH  /v1/jobs/{id}      — Update clip metadata
  *   DELETE /v1/jobs/{id}      — Delete job + audio
  *   GET    /v1/media/usage    — Get storage usage
+ *   GET    /v1/providers      — List providers (account-enabled only; ?all=true for full catalog)
+ *   GET    /v1/voices         — List voices for enabled providers (filterable)
+ *   GET    /v1/voices/{id}    — Get voice detail
  *   POST   /v1/keys           — Create API key
  *   GET    /v1/keys           — List API keys
  *   DELETE /v1/keys/{id}      — Revoke API key
@@ -30,6 +34,8 @@ import { createJob, getJob, listJobs, deleteJob, updateJob } from './lib/jobs.mj
 import { checkQuota, getUsage, incrementUsage, decrementUsage } from './lib/quota.mjs';
 import { createApiKey, listApiKeys, revokeApiKey } from './lib/keys.mjs';
 import { saveCredential, listCredentials, deleteCredential, testCredential } from './lib/credentials.mjs';
+import { getAllProviders, getEnabledProviders, getProvider } from './lib/providers.mjs';
+import { queryVoices, getVoiceById } from './lib/voices.mjs';
 
 // Adapters
 import * as openaiAdapter from './lib/adapters/openai.mjs';
@@ -172,6 +178,18 @@ export async function handler(event) {
     if (method === 'DELETE' && path.startsWith('/v1/keys/')) {
       const keyId = path.split('/v1/keys/')[1];
       return await handleDeleteKey(userId, keyId);
+    }
+
+    // Discovery endpoints
+    if (method === 'GET' && path === '/v1/providers') {
+      return await handleListProviders(userId, event);
+    }
+    if (method === 'GET' && path === '/v1/voices') {
+      return await handleListVoices(userId, event);
+    }
+    if (method === 'GET' && path.startsWith('/v1/voices/')) {
+      const voiceId = path.split('/v1/voices/')[1];
+      return await handleGetVoice(userId, voiceId);
     }
 
     // Credential management
@@ -512,7 +530,83 @@ async function handleTestCredential(userId, event) {
   return respond(200, result);
 }
 
+// ─── GET /v1/providers ───
+
+async function handleListProviders(userId, event) {
+  const params = event.queryStringParameters || {};
+  const showAll = params.all === 'true';
+
+  if (showAll) {
+    const providers = getAllProviders();
+    return respond(200, { providers, count: providers.length });
+  }
+
+  // Only providers the user has active credentials for
+  const enabledIds = await getEnabledProviderIds(userId);
+  const providers = getEnabledProviders(enabledIds);
+  return respond(200, { providers, count: providers.length, enabledOnly: true });
+}
+
+// ─── GET /v1/voices ───
+
+async function handleListVoices(userId, event) {
+  const params = event.queryStringParameters || {};
+  const enabledIds = await getEnabledProviderIds(userId);
+
+  if (enabledIds.size === 0) {
+    return respond(200, {
+      voices: [],
+      total: 0,
+      limit: 100,
+      offset: 0,
+      message: 'No providers configured. Add credentials at /account/providers or POST /v1/credentials.',
+    });
+  }
+
+  const result = queryVoices(enabledIds, {
+    provider: params.provider,
+    language: params.language,
+    gender: params.gender,
+    quality: params.quality,
+    search: params.search,
+    limit: params.limit,
+    offset: params.offset,
+  });
+
+  return respond(200, result);
+}
+
+// ─── GET /v1/voices/{id} ───
+
+async function handleGetVoice(userId, voiceId) {
+  const enabledIds = await getEnabledProviderIds(userId);
+  const voice = getVoiceById(enabledIds, voiceId);
+
+  if (!voice) {
+    return respond(404, {
+      error: 'Voice not found',
+      message: 'Voice does not exist or belongs to a provider you have not configured.',
+    });
+  }
+
+  return respond(200, voice);
+}
+
 // ─── Helpers ───
+
+/**
+ * Get the set of provider IDs the user has active credentials for.
+ * @param {string} userId
+ * @returns {Promise<Set<string>>}
+ */
+async function getEnabledProviderIds(userId) {
+  const credentials = await listCredentials(userId);
+  return new Set(
+    credentials
+      .filter(c => c.status === 'active')
+      .map(c => c.providerId)
+  );
+}
 
 async function loadCredential(userId, providerId) {
   // Scan UserProviderCredential table for this user + provider
