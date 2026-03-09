@@ -142,9 +142,9 @@ Vokda has two parallel tracks that evolve together:
 
 ### 4a. Public API
 - [ ] API documentation site (OpenAPI spec)
-- [ ] `GET /v1/voices` — public filterable catalog endpoint
-- [ ] `GET /v1/voices/:id` — voice detail + samples
-- [ ] `GET /v1/providers` — provider registry
+- [x] `GET /v1/voices` — account-scoped filterable catalog endpoint (provider, language, gender, quality, search, pagination)
+- [x] `GET /v1/voices/:id` — voice detail + samples, variants, model card
+- [x] `GET /v1/providers` — provider registry (account-enabled by default, `?all=true` for full catalog)
 - [ ] Rate limiting tiers (free / pro)
 
 ### 4b. Ingestion Pipeline

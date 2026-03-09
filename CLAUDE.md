@@ -102,12 +102,17 @@ amplify/
   backend.ts                  # Amplify backend definition
 infra/
   template.yaml               # SAM template (3 Lambdas, API Gateway, SQS, DynamoDB)
+  build.sh                    # Pre-build script (copies voices.json into Lambda)
   functions/
     synthesis-router/
-      index.mjs               # Router: auth + 9 endpoints
+      index.mjs               # Router: auth + 16 endpoints
       lib/adapters/            # 9 provider adapters (openai, elevenlabs, etc.)
+      lib/providers.mjs        # Provider catalog + enabled filtering
+      lib/voices.mjs           # Voice catalog loader + query filtering
       lib/jobs.mjs             # SynthesisJob CRUD
       lib/keys.mjs             # API key management
+      lib/credentials.mjs      # BYOK credential CRUD
+      data/voices.json         # Voice catalog (build artifact, copied by build.sh)
     synthesis-worker/          # Async SQS worker
     auth-authorizer/           # JWT + API key validator
 apps/api/src/server.mjs       # Admin API (role management)

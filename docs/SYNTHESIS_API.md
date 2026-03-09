@@ -639,6 +639,40 @@ Remove a stored credential.
 
 ## Examples
 
+### cURL — Discover Providers and Voices
+
+```bash
+# List your enabled providers
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  https://api.vokda.iksnae.com/v1/providers
+
+# See ALL providers (including ones you haven't set up)
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  "https://api.vokda.iksnae.com/v1/providers?all=true"
+
+# List voices from your enabled providers
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  https://api.vokda.iksnae.com/v1/voices
+
+# Filter voices: English, female, premium quality
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  "https://api.vokda.iksnae.com/v1/voices?language=en&gender=female&quality=premium"
+
+# Search voices by name
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  "https://api.vokda.iksnae.com/v1/voices?search=jenny&limit=10"
+
+# Filter by provider
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  "https://api.vokda.iksnae.com/v1/voices?provider=openai"
+
+# Get full voice detail
+curl -H "Authorization: Bearer vk_live_YOUR_KEY" \
+  https://api.vokda.iksnae.com/v1/voices/01KJZXZNF942C62SAR07KM4HBJ
+```
+
+---
+
 ### cURL — Synthesize with OpenAI
 
 ```bash

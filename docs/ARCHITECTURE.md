@@ -33,7 +33,9 @@ Vokda is a **static-first SvelteKit app** deployed on AWS Amplify, backed by a s
    │  │  API Gateway (HTTP API)                         │   │
    │  │  → SynthesisRouter Lambda (512MB, Node 20)      │   │
    │  │    ├─ POST /v1/synthesize  (9 provider adapters)│   │
+   │  │    ├─ GET /v1/providers, /v1/voices, /voices/{id}│  │
    │  │    ├─ GET/PATCH/DELETE /v1/jobs/{id}            │   │
+   │  │    ├─ POST/GET/DELETE /v1/credentials           │   │
    │  │    ├─ POST/GET/DELETE /v1/keys                  │   │
    │  │    └─ GET /v1/media/usage                       │   │
    │  ├─────────────────────────────────────────────────┤   │
