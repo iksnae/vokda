@@ -595,17 +595,28 @@ async function handleGetVoice(userId, voiceId) {
 // ─── Helpers ───
 
 /**
- * Get the set of provider IDs the user has active credentials for.
+ * Get the set of provider IDs the user has access to:
+ * - Cloud providers with active credentials
+ * - All open_model providers (no credentials needed)
  * @param {string} userId
  * @returns {Promise<Set<string>>}
  */
 async function getEnabledProviderIds(userId) {
   const credentials = await listCredentials(userId);
-  return new Set(
+  const ids = new Set(
     credentials
       .filter(c => c.status === 'active')
       .map(c => c.providerId)
   );
+
+  // Include all open model providers — they don't require credentials
+  for (const p of getAllProviders()) {
+    if (p.type === 'open_model') {
+      ids.add(p.id);
+    }
+  }
+
+  return ids;
 }
 
 async function loadCredential(userId, providerId) {

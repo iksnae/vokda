@@ -234,13 +234,15 @@ export function getAllProviders() {
 }
 
 /**
- * Filter providers to only those with synthesis available AND user has credentials.
+ * Filter providers to those the user has access to:
+ * - Cloud providers with active credentials
+ * - All open_model providers (no credentials needed)
  * @param {Set<string>} enabledProviderIds - provider IDs the user has active credentials for
  * @returns {object[]}
  */
 export function getEnabledProviders(enabledProviderIds) {
   return PROVIDERS.filter(
-    p => p.synthesisAvailable && enabledProviderIds.has(p.id)
+    p => p.type === 'open_model' || (p.synthesisAvailable && enabledProviderIds.has(p.id))
   );
 }
 
