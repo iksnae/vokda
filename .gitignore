@@ -27,3 +27,4 @@ infra/.aws-sam/
 infra/functions/*/node_modules/
 packages/sdk/dist
 __pycache__/
+state/
