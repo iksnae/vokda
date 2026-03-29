@@ -9,10 +9,15 @@ description: >
   serverless synthesis API with 9 provider adapters and BYOK credential management.
 
 models:
-  planner: claude-sonnet-4-6
   builder: claude-sonnet-4-6
-  escalation: claude-sonnet-4-6
+  planner: claude-opus-4-6
   reviewer: claude-haiku-4-5
+  escalation: claude-opus-4-6
+  curator: claude-opus-4-6
+  harvester: claude-opus-4-6
+  architect: claude-opus-4-6
+  designer: claude-opus-4-6
+  intake: claude-sonnet-4-6
 
 validate:
   - name: Unit Tests
@@ -96,3 +101,16 @@ standards:
 curator:
   ignore_labels: ["question", "wontfix", "duplicate", "dependencies", "invalid"]
   ignore_authors: ["dependabot[bot]", "renovate[bot]", "github-actions[bot]", "amplify-bot[bot]"]
+
+index:
+  enabled: true
+  top_k: 10
+  paths:
+    - apps/web/src
+    - infra/functions
+    - amplify
+    - packages/sdk
+  exclude:
+    - "*.test.ts"
+    - "*.spec.ts"
+    - "*.d.ts"
