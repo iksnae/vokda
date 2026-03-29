@@ -110,6 +110,8 @@ index:
     - infra/functions
     - amplify
     - packages/sdk
+    - specs/
+    - docs/
   exclude:
     - "*.test.ts"
     - "*.spec.ts"
