@@ -116,3 +116,7 @@ index:
     - "*.test.ts"
     - "*.spec.ts"
     - "*.d.ts"
+
+gh_project:
+  owner: iksnae
+  number: 7
