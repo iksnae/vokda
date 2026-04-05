@@ -11,7 +11,7 @@ description: >
 models:
   builder: claude-sonnet-4-6
   planner: claude-opus-4-6
-  reviewer: claude-haiku-4-5
+  reviewer: claude-sonnet-4-6
   escalation: claude-opus-4-6
   curator: claude-opus-4-6
   harvester: claude-opus-4-6
@@ -22,6 +22,8 @@ models:
 validate:
   - name: Unit Tests
     run: "npm test"
+  - name: Type Check
+    run: "npm run check:web"
 
 ci_check: true
 
@@ -116,6 +118,8 @@ index:
     - "*.test.ts"
     - "*.spec.ts"
     - "*.d.ts"
+    - "node_modules/"
+    - "storybook-static/"
 
 gh_project:
   owner: iksnae
