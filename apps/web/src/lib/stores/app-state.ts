@@ -1,6 +1,6 @@
 import { browser } from '$app/environment';
 import { derived, writable } from 'svelte/store';
-import type { Collection, ProviderDefinition, Voice, VoicePack } from '$lib/types';
+import type { Collection, CurationShelf, ProviderDefinition, Voice, VoicePack } from '$lib/types';
 import { AUTH_MODE } from '$lib/auth/config';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
 import { DEFAULT_PROVIDERS, normalizeProviderId } from '$lib/providers';
@@ -16,7 +16,13 @@ import {
   saveFavorite,
   updateCollectionVoiceNote as updateCollectionVoiceNoteRemote
 } from '$lib/data/user-library';
-import { fetchCurationWorkspace, saveCurationWorkspace } from '$lib/data/curation-workspace';
+import {
+  deleteShelf as deleteShelfRemote,
+  fetchCurationWorkspace,
+  fetchShelves,
+  saveCurationWorkspace,
+  saveShelf as saveShelfRemote
+} from '$lib/data/curation-workspace';
 import { logAuditEvent } from '$lib/data/audit';
 import type { VoiceMetadataPatch } from '$lib/voice-catalog';
 
@@ -26,6 +32,7 @@ type AppState = {
   customVoices: Voice[];
   metadataOverrides: Record<string, VoiceMetadataPatch>;
   providerCatalog: ProviderDefinition[];
+  shelves: CurationShelf[];
 };
 
 const STORAGE_PREFIX = 'vokda.app.state.v2';
@@ -35,7 +42,8 @@ const defaultState: AppState = {
   favorites: [],
   customVoices: [],
   metadataOverrides: {},
-  providerCatalog: DEFAULT_PROVIDERS
+  providerCatalog: DEFAULT_PROVIDERS,
+  shelves: []
 };
 
 function makeStorageKey(actorKey: string): string {
@@ -55,7 +63,8 @@ function loadState(actorKey: string): AppState {
       favorites: parsed.favorites ?? [],
       customVoices: parsed.customVoices ?? [],
       metadataOverrides: parsed.metadataOverrides ?? {},
-      providerCatalog: parsed.providerCatalog ?? DEFAULT_PROVIDERS
+      providerCatalog: parsed.providerCatalog ?? DEFAULT_PROVIDERS,
+      shelves: parsed.shelves ?? []
     };
   } catch {
     return defaultState;
@@ -114,6 +123,17 @@ async function hydrateCurationState() {
   }
 }
 
+async function hydrateShelves() {
+  if (!browser || AUTH_MODE !== 'amplify') return;
+
+  try {
+    const shelves = await fetchShelves();
+    appState.update((state) => ({ ...state, shelves }));
+  } catch (error) {
+    reportSyncError('hydrateShelves', error);
+  }
+}
+
 function getAppStateSnapshot(): AppState {
   let snapshot = defaultState;
 
@@ -152,6 +172,7 @@ const appState = writable<AppState>(loadState(activeActorKey));
 if (browser) {
   if (AUTH_MODE === 'amplify') {
     void hydrateCurationState();
+    void hydrateShelves();
   }
 
   appState.subscribe((value) => {
@@ -171,6 +192,7 @@ if (browser) {
 
     if (AUTH_MODE === 'amplify') {
       void hydrateCurationState();
+      void hydrateShelves();
     }
   });
 }
@@ -180,6 +202,7 @@ export const favorites = derived(appState, ($state) => $state.favorites);
 export const customVoices = derived(appState, ($state) => $state.customVoices);
 export const metadataOverrides = derived(appState, ($state) => $state.metadataOverrides);
 export const providerCatalog = derived(appState, ($state) => $state.providerCatalog);
+export const shelves = derived(appState, ($state) => $state.shelves);
 export const favoritesCount = derived(favorites, ($favorites) => $favorites.length);
 
 export function toggleFavorite(voiceId: string) {
@@ -508,6 +531,94 @@ export function deleteCollection(collectionId: string) {
   void removeCollection(collectionId).catch((error) => {
     reportSyncError('deleteCollection', error);
     void hydrateCloudState();
+  });
+}
+
+// ─── Curation shelves ───
+
+function slugifyShelfKey(title: string): string {
+  const slug = title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return slug || crypto.randomUUID();
+}
+
+export function createShelf(title: string, voiceIds: string[] = []) {
+  const trimmed = title.trim();
+  if (!trimmed) return;
+
+  const shelf: CurationShelf = {
+    id: crypto.randomUUID(),
+    key: slugifyShelfKey(trimmed),
+    title: trimmed,
+    description: '',
+    voiceIds: [...voiceIds],
+    published: false,
+    updatedAt: new Date().toISOString()
+  };
+
+  appState.update((state) => ({
+    ...state,
+    shelves: [...state.shelves, shelf]
+  }));
+
+  if (!curationWriteEnabled()) return;
+
+  // saveShelf does not return the server-assigned id, so reconcile by
+  // refetching after the create succeeds.
+  void saveShelfRemote(shelf)
+    .then(() => hydrateShelves())
+    .catch((error) => {
+      reportSyncError('createShelf', error);
+      void hydrateShelves();
+    });
+}
+
+export function updateShelf(
+  shelfId: string,
+  patch: Partial<Pick<CurationShelf, 'title' | 'description' | 'voiceIds' | 'published'>>
+) {
+  let next: CurationShelf | null = null;
+
+  appState.update((state) => ({
+    ...state,
+    shelves: state.shelves.map((shelf) => {
+      if (shelf.id !== shelfId) return shelf;
+
+      const title = patch.title !== undefined ? patch.title.trim() || shelf.title : shelf.title;
+      next = {
+        ...shelf,
+        title,
+        description: patch.description ?? shelf.description,
+        voiceIds: patch.voiceIds ?? shelf.voiceIds,
+        published: patch.published ?? shelf.published,
+        updatedAt: new Date().toISOString()
+      };
+      return next;
+    })
+  }));
+
+  if (!next || !curationWriteEnabled()) return;
+
+  void saveShelfRemote(next).catch((error) => {
+    reportSyncError('updateShelf', error);
+    void hydrateShelves();
+  });
+}
+
+export function deleteShelf(shelfId: string) {
+  appState.update((state) => ({
+    ...state,
+    shelves: state.shelves.filter((shelf) => shelf.id !== shelfId)
+  }));
+
+  if (!curationWriteEnabled()) return;
+
+  void deleteShelfRemote(shelfId).catch((error) => {
+    reportSyncError('deleteShelf', error);
+    void hydrateShelves();
   });
 }
 
