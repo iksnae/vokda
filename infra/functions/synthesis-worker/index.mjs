@@ -9,6 +9,7 @@ import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, GetCommand, ScanCommand, UpdateCommand } from '@aws-sdk/lib-dynamodb';
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import { estimateAudioDurationMs } from './audio-duration.mjs';
 
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const s3 = new S3Client({});
@@ -171,7 +172,7 @@ export async function handler(event) {
         audioUrl,
         fileSizeBytes: result.audio.length,
         latencyMs,
-        durationMs: result.durationMs || null,
+        durationMs: result.durationMs ?? estimateAudioDurationMs(result.audio, result.contentType),
       });
 
       // Increment usage

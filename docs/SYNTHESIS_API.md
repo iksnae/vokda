@@ -216,7 +216,7 @@ Generate speech from text using a connected provider.
   "status": "completed",
   "audioUrl": "https://...s3.amazonaws.com/...mp3?X-Amz-...",
   "fileSizeBytes": 253966,
-  "durationMs": null,
+  "durationMs": 9216,
   "latencyMs": 4259,
   "provider": "gemini-tts",
   "voiceId": "01KJZXZNF942...",
@@ -282,7 +282,7 @@ List your synthesis jobs (clips), newest first.
       "clipTags": ["gemini", "kore", "test"],
       "audioUrl": "https://...presigned...",
       "fileSizeBytes": 253966,
-      "durationMs": null,
+      "durationMs": 9216,
       "latencyMs": 4259,
       "errorMessage": null,
       "createdAt": "2026-03-06T15:06:21.696Z"
