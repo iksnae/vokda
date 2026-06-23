@@ -3,16 +3,20 @@
   import { roleFlags } from '$lib/auth/store';
   import {
     addCustomVoice,
+    createShelf,
     customVoices,
+    deleteShelf,
     metadataOverrides,
     providerCatalog,
+    shelves,
+    updateShelf,
     upsertMetadataOverride
   } from '$lib/stores/app-state';
   import { normalizeProviderId } from '$lib/providers';
   import { buildEffectiveCatalog, createVoiceFromDraft, csvToList, listToCsv } from '$lib/voice-catalog';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
-  import type { Voice, VoiceVariant, VoiceRecord } from '$lib/types';
+  import type { CurationShelf, Voice, VoiceVariant, VoiceRecord } from '$lib/types';
   import {
     listVoiceRecords,
     saveVoiceRecord,
@@ -244,7 +248,68 @@
   }
 
   // ─── Tab state ───
-  let activeTab: 'editor' | 'drafts' | 'database' = 'editor';
+  let activeTab: 'editor' | 'drafts' | 'database' | 'shelves' = 'editor';
+
+  // ─── Curation shelves ───
+  let newShelfTitle = '';
+  let editingShelfId: string | null = null;
+  let editShelfTitle = '';
+  let editShelfVoiceIds: string[] = [];
+  let editShelfPublished = false;
+  let addVoiceId = '';
+
+  function handleCreateShelf() {
+    const title = newShelfTitle.trim();
+    if (!title) return;
+    createShelf(title, []);
+    newShelfTitle = '';
+    addToast(`Shelf “${title}” created.`, 'success');
+  }
+
+  function startEditShelf(shelf: CurationShelf) {
+    editingShelfId = shelf.id;
+    editShelfTitle = shelf.title;
+    editShelfVoiceIds = [...shelf.voiceIds];
+    editShelfPublished = shelf.published;
+    addVoiceId = '';
+  }
+
+  function cancelEditShelf() {
+    editingShelfId = null;
+  }
+
+  function addVoiceToShelf() {
+    if (!addVoiceId || editShelfVoiceIds.includes(addVoiceId)) return;
+    editShelfVoiceIds = [...editShelfVoiceIds, addVoiceId];
+    addVoiceId = '';
+  }
+
+  function removeVoiceFromShelf(voiceId: string) {
+    editShelfVoiceIds = editShelfVoiceIds.filter((id) => id !== voiceId);
+  }
+
+  function saveShelfEdits() {
+    if (!editingShelfId) return;
+    updateShelf(editingShelfId, {
+      title: editShelfTitle.trim() || undefined,
+      voiceIds: editShelfVoiceIds,
+      published: editShelfPublished
+    });
+    editingShelfId = null;
+    addToast('Shelf updated.', 'success');
+  }
+
+  function handleDeleteShelf(shelf: CurationShelf) {
+    if (!confirm(`Delete shelf “${shelf.title}”? This cannot be undone.`)) return;
+    deleteShelf(shelf.id);
+    if (editingShelfId === shelf.id) editingShelfId = null;
+    addToast('Shelf deleted.', 'info');
+  }
+
+  function shelfVoiceLabel(id: string): string {
+    const voice = effectiveVoices.find((entry) => entry.id === id);
+    return voice ? `${voice.provider} · ${voice.name}` : id;
+  }
 </script>
 
 <svelte:head>
@@ -274,6 +339,11 @@
         <Icon name="info" size={16} />
         Database
         <span class="tab-badge">{dbStats.total}</span>
+      </button>
+      <button class="tab" class:active={activeTab === 'shelves'} on:click={() => activeTab = 'shelves'}>
+        <Icon name="folder" size={16} />
+        Shelves
+        <span class="tab-badge">{$shelves.length}</span>
       </button>
     </nav>
 
@@ -481,6 +551,114 @@
         {/if}
       </section>
     {/if}
+
+    <!-- Shelves Tab -->
+    {#if activeTab === 'shelves'}
+      <section class="panel">
+        <p class="panel-desc">
+          Curated featured voice lists (e.g. “Best for Podcasts”). Create a shelf, then add voices and publish it.
+        </p>
+
+        <div class="shelf-create">
+          <input
+            bind:value={newShelfTitle}
+            placeholder="New shelf name"
+            on:keydown={(event) => event.key === 'Enter' && handleCreateShelf()}
+          />
+          <button class="primary-btn" on:click={handleCreateShelf} disabled={!newShelfTitle.trim()}>
+            <Icon name="plus" size={16} />
+            Create Shelf
+          </button>
+        </div>
+
+        {#if $shelves.length === 0}
+          <p class="shelf-empty">No shelves yet. Create one above to get started.</p>
+        {:else}
+          <ul class="shelf-list">
+            {#each $shelves as shelf (shelf.id)}
+              <li class="shelf-row">
+                {#if editingShelfId === shelf.id}
+                  <div class="shelf-edit">
+                    <label>
+                      Title
+                      <input bind:value={editShelfTitle} placeholder="Shelf name" />
+                    </label>
+
+                    <div class="shelf-voices">
+                      <span class="shelf-voices-label">Voices ({editShelfVoiceIds.length})</span>
+                      {#if editShelfVoiceIds.length === 0}
+                        <p class="shelf-empty">No voices on this shelf yet.</p>
+                      {:else}
+                        <ul class="shelf-chips">
+                          {#each editShelfVoiceIds as voiceId (voiceId)}
+                            <li class="shelf-chip">
+                              <span>{shelfVoiceLabel(voiceId)}</span>
+                              <button
+                                class="chip-remove"
+                                title="Remove voice"
+                                on:click={() => removeVoiceFromShelf(voiceId)}
+                              >
+                                <Icon name="x" size={12} />
+                              </button>
+                            </li>
+                          {/each}
+                        </ul>
+                      {/if}
+
+                      <div class="shelf-add">
+                        <select bind:value={addVoiceId}>
+                          <option value="">Add a voice…</option>
+                          {#each effectiveVoices as voice}
+                            {#if !editShelfVoiceIds.includes(voice.id)}
+                              <option value={voice.id}>{voice.provider} · {voice.name}</option>
+                            {/if}
+                          {/each}
+                        </select>
+                        <button class="secondary-btn" on:click={addVoiceToShelf} disabled={!addVoiceId}>
+                          <Icon name="plus" size={14} />
+                          Add
+                        </button>
+                      </div>
+                    </div>
+
+                    <label class="toggle-check">
+                      <input type="checkbox" bind:checked={editShelfPublished} />
+                      Published
+                    </label>
+
+                    <div class="action-row">
+                      <button class="secondary-btn" on:click={cancelEditShelf}>Cancel</button>
+                      <button class="primary-btn" on:click={saveShelfEdits}>
+                        <Icon name="check" size={16} />
+                        Save Shelf
+                      </button>
+                    </div>
+                  </div>
+                {:else}
+                  <div class="shelf-summary">
+                    <div class="shelf-meta">
+                      <span class="shelf-title">{shelf.title}</span>
+                      <span class="shelf-sub">
+                        {shelf.voiceIds.length} voice{shelf.voiceIds.length === 1 ? '' : 's'}
+                        {#if shelf.published}<span class="shelf-badge">Published</span>{/if}
+                      </span>
+                    </div>
+                    <div class="shelf-actions">
+                      <button class="icon-btn" title="Edit shelf" on:click={() => startEditShelf(shelf)}>
+                        <Icon name="pencil" size={16} />
+                      </button>
+                      <button class="icon-btn danger" title="Delete shelf" on:click={() => handleDeleteShelf(shelf)}>
+                        <Icon name="trash" size={16} />
+                      </button>
+                    </div>
+                  </div>
+                {/if}
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </section>
+    {/if}
   {/if}
 </main>
 
@@ -627,6 +805,130 @@
   }
 
   .primary-btn:hover { box-shadow: 0 6px 16px rgba(20, 94, 121, 0.3); }
+  .primary-btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+
+  .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid #c5d5e2;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.45rem 0.8rem;
+    font-size: var(--text-small);
+    font-weight: 660;
+    color: #3e5972;
+    cursor: pointer;
+  }
+  .secondary-btn:hover { border-color: var(--brand-600); color: var(--brand-700); }
+  .secondary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c5d5e2;
+    background: #fff;
+    border-radius: 9px;
+    padding: 0.4rem;
+    color: #3e5972;
+    cursor: pointer;
+  }
+  .icon-btn:hover { border-color: var(--brand-600); color: var(--brand-700); }
+  .icon-btn.danger:hover { border-color: #d4604f; color: #c0392b; }
+
+  /* ─── Shelves ─── */
+  .shelf-create {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .shelf-create input { flex: 1; }
+
+  .shelf-empty {
+    color: #6a8197;
+    font-size: var(--text-small);
+    margin: 0.4rem 0;
+  }
+
+  .shelf-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .shelf-row {
+    border: 1px solid #d8e3ec;
+    border-radius: 12px;
+    background: #fff;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .shelf-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .shelf-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+  .shelf-title { font-weight: 680; color: #0e2233; }
+  .shelf-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--text-xs);
+    color: #6a8197;
+  }
+  .shelf-badge {
+    background: var(--brand-600);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.05rem 0.45rem;
+    font-size: var(--text-xs);
+    font-weight: 660;
+  }
+  .shelf-actions { display: flex; gap: 0.4rem; }
+
+  .shelf-edit { display: flex; flex-direction: column; gap: 0.75rem; }
+  .shelf-voices { display: flex; flex-direction: column; gap: 0.4rem; }
+  .shelf-voices-label { font-size: var(--text-small); font-weight: 660; color: #3e5972; }
+
+  .shelf-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .shelf-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #eef4f8;
+    border: 1px solid #d8e3ec;
+    border-radius: 999px;
+    padding: 0.2rem 0.5rem 0.2rem 0.7rem;
+    font-size: var(--text-xs);
+    color: #173046;
+  }
+  .chip-remove {
+    display: inline-flex;
+    border: none;
+    background: transparent;
+    color: #6a8197;
+    cursor: pointer;
+    padding: 0.1rem;
+    border-radius: 50%;
+  }
+  .chip-remove:hover { color: #c0392b; }
+
+  .shelf-add { display: flex; gap: 0.5rem; }
+  .shelf-add select { flex: 1; }
 
   .ghost-btn {
     display: inline-flex;
