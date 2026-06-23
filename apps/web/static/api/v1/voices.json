@@ -1,7 +1,7 @@
 {
   "$schema": "https://vokda.iksnae.com/api/v1/openapi.json",
   "total": 550,
-  "generatedAt": "2026-03-06T20:23:20.370Z",
+  "generatedAt": "2026-06-23T20:03:16.691Z",
   "voices": [
     {
       "id": "01KJZXZNF942C62SAR07KM4HBJ",
@@ -99,7 +99,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "young"
       }
     },
@@ -212,7 +212,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -539,7 +539,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -1214,7 +1215,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -1638,7 +1640,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -1725,7 +1728,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "mature"
       }
     },
     {
@@ -1795,7 +1799,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "young"
       }
     },
@@ -3207,7 +3211,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "neutral",
         "agePresentation": "middle_aged"
       }
     },
@@ -3305,7 +3309,8 @@
         "useCases": [
           "educational video"
         ],
-        "genderPresentation": "neutral"
+        "genderPresentation": "neutral",
+        "agePresentation": "child"
       }
     },
     {
@@ -3663,7 +3668,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -3829,7 +3834,8 @@
         "useCases": [
           "advertisements"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -4194,7 +4200,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young"
       }
     },
     {
@@ -4224,7 +4231,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -4433,7 +4440,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "mature"
       }
     },
     {
@@ -4923,7 +4931,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -5136,7 +5145,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -5570,7 +5579,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "young"
       }
     },
@@ -6019,7 +6028,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "middle_aged"
       }
     },
@@ -6148,7 +6157,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -6338,7 +6348,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -6500,7 +6511,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "old"
       }
     },
     {
@@ -6924,7 +6936,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -7119,7 +7131,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "old"
       }
     },
@@ -7402,7 +7414,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -7434,7 +7447,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -7624,7 +7638,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "middle_aged"
       }
     },
@@ -7924,7 +7938,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "middle_aged"
       }
     },
@@ -8342,7 +8356,8 @@
         "useCases": [
           "long form video"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "mature"
       }
     },
     {
@@ -8410,7 +8425,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "middle_aged"
       }
     },
     {
@@ -8712,7 +8728,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "young"
       }
     },
@@ -8782,7 +8798,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -8992,7 +9009,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "old"
       }
     },
     {
@@ -9283,7 +9301,8 @@
         "useCases": [
           "narrator"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -9419,7 +9438,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "old"
       }
     },
     {
@@ -9899,7 +9919,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "middle_aged"
       }
     },
@@ -10140,7 +10160,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -10208,7 +10228,8 @@
           "drive thru agent",
           "tutor agent"
         ],
-        "genderPresentation": "neutral"
+        "genderPresentation": "neutral",
+        "agePresentation": "young"
       }
     },
     {
@@ -10314,7 +10335,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "old"
       }
     },
     {
@@ -10495,7 +10517,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "young"
       }
     },
@@ -11047,7 +11069,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -11281,7 +11304,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young"
       }
     },
     {
@@ -11342,7 +11366,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -11503,7 +11528,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -12458,7 +12484,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "female",
         "agePresentation": "young"
       }
     },
@@ -13110,7 +13136,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -13252,7 +13279,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -13526,7 +13554,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young"
       }
     },
     {
@@ -13688,7 +13717,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young"
       }
     },
     {
@@ -13720,7 +13750,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "mature"
       }
     },
     {
@@ -14099,7 +14130,8 @@
         "useCases": [
           "healthcare agent"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -14465,7 +14497,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -14584,7 +14617,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -15217,7 +15250,8 @@
           "audiobooks",
           "characters"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
@@ -15402,7 +15436,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "middle_aged"
       }
     },
@@ -15549,7 +15583,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "mature"
       }
     },
     {
@@ -17389,7 +17424,7 @@
           "neutral"
         ],
         "useCases": [],
-        "genderPresentation": "unknown",
+        "genderPresentation": "male",
         "agePresentation": "young"
       }
     },
@@ -17662,7 +17697,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -17867,7 +17903,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "male"
+        "genderPresentation": "male",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -18669,7 +18706,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young adult"
       }
     },
     {
@@ -19063,7 +19101,8 @@
           "customer-service",
           "narration"
         ],
-        "genderPresentation": "female"
+        "genderPresentation": "female",
+        "agePresentation": "young"
       }
     },
     {
