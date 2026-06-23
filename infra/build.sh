@@ -10,4 +10,8 @@ mkdir -p "$SCRIPT_DIR/functions/synthesis-router/data"
 cp "$REPO_ROOT/apps/web/static/data/voices.json" \
    "$SCRIPT_DIR/functions/synthesis-router/data/voices.json"
 
+echo "📦 Copying audio-duration.mjs into synthesis-worker..."
+cp "$SCRIPT_DIR/functions/synthesis-router/lib/audio-duration.mjs" \
+   "$SCRIPT_DIR/functions/synthesis-worker/audio-duration.mjs"
+
 echo "✅ Pre-build complete. Run: sam build && sam deploy"

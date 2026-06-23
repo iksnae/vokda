@@ -72,7 +72,7 @@ Vokda has two parallel tracks that evolve together:
 ### 1c. Audio & Playback
 - [ ] CDN-host audio samples (currently static assets — won't scale beyond ~1,000)
 - [ ] Add multiple sample scripts per voice (conversational, narration, formal)
-- [ ] Track clip duration (`durationMs`) via Web Audio API or server-side analysis
+- [x] Track clip duration (`durationMs`) — server-side, derived from rendered audio (MP3/WAV) in the synthesis router & worker
 - [ ] Fix: Google Cloud TTS samples with restricted API key
 
 ### 1d. UX Polish

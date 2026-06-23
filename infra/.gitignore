@@ -1,3 +1,4 @@
 # Build artifacts
 .aws-sam/
 functions/synthesis-router/data/voices.json
+functions/synthesis-worker/audio-duration.mjs

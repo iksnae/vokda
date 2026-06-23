@@ -36,6 +36,7 @@ import { createApiKey, listApiKeys, revokeApiKey } from './lib/keys.mjs';
 import { saveCredential, listCredentials, deleteCredential, testCredential } from './lib/credentials.mjs';
 import { getAllProviders, getEnabledProviders, getProvider } from './lib/providers.mjs';
 import { queryVoices, getVoiceById } from './lib/voices.mjs';
+import { estimateAudioDurationMs } from './lib/audio-duration.mjs';
 
 // Adapters
 import * as openaiAdapter from './lib/adapters/openai.mjs';
@@ -323,6 +324,7 @@ async function handleSynthesize(userId, event) {
   }), { expiresIn: 604800 });
 
   const fileSizeBytes = result.audio.length;
+  const durationMs = result.durationMs ?? estimateAudioDurationMs(result.audio, result.contentType);
 
   // Create job record
   const job = await createJob({
@@ -336,7 +338,7 @@ async function handleSynthesize(userId, event) {
     audioPath,
     audioUrl,
     fileSizeBytes,
-    durationMs: result.durationMs || null,
+    durationMs,
     latencyMs,
   });
 
@@ -348,7 +350,7 @@ async function handleSynthesize(userId, event) {
     status: 'completed',
     audioUrl,
     fileSizeBytes,
-    durationMs: result.durationMs || null,
+    durationMs,
     latencyMs,
     provider,
     voiceId: voiceId || null,
