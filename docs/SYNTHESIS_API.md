@@ -230,11 +230,16 @@ Generate speech from text using a connected provider.
 
 **`options`:**
 
+> Steerability options are voice-specific — read each voice's [`steering`](#voice-capabilities) descriptor for what to send.
+
 | Key | Provider | Description |
 |-----|----------|-------------|
 | `model` | OpenAI | Override the model. Default `gpt-4o-mini-tts` (renders all voices); also `tts-1`, `tts-1-hd`. |
 | `instructions` | OpenAI (`gpt-4o-mini-tts`) | Free-text delivery direction — tone, accent, emotion, pacing, whispering (e.g. `"Speak in a warm, excited whisper."`). Ignored by `tts-1`. |
-| `speed` | OpenAI | Playback speed multiplier (default `1.0`). |
+| `speakingStyle` | AWS Polly | Speaking style for newscaster-capable voices (Matthew/Joanna/Lupe/Amy): `"newscaster"`. |
+| `model_id` | ElevenLabs | Model — `eleven_v3` enables inline audio tags (`[whispers]`, `[excited]`) in `text`; default `eleven_multilingual_v2`. |
+| `stability`, `similarity_boost`, `style` | ElevenLabs | `voice_settings` (0–1). |
+| `speed` | OpenAI, ElevenLabs | Playback speed multiplier (default `1.0`). |
 | `format` | most | Output format (default `mp3`). |
 
 **Response (200):**

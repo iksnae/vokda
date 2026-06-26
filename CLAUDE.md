@@ -104,7 +104,7 @@ apps/web/src/
       registry.ts             # Adapter registry, provider detection
       constraints.ts          # Input normalization
       types.ts                # SynthesisRequest (incl. instructions), SynthesisPreview
-      provider-steering.ts    # Steerability capability per provider (OpenAI instructions)
+      provider-steering.ts    # Steerability capability, voice/model-aware (OpenAI instructions · ElevenLabs settings+v3 tags · Polly newscaster)
       credential-status.ts    # Credential validity label (verified/unverified/invalid)
       adapters/               # 9 real + mock adapters per provider
     ssml/
@@ -134,10 +134,13 @@ infra/
   build.sh                    # Pre-build script (copies voices.json into Lambda)
   functions/
     synthesis-router/
-      index.mjs               # Router: auth + 16 endpoints
+      index.mjs               # Router: auth + endpoints (incl. POST /v1/synthesize/batch)
       lib/adapters/            # 9 provider adapters (openai, elevenlabs, etc.)
       lib/providers.mjs        # Provider catalog + enabled filtering
-      lib/voices.mjs           # Voice catalog loader + query filtering
+      lib/voices.mjs           # Voice catalog loader + query filtering (+ steering field)
+      lib/steering.mjs         # Server-side steering capability resolver (mirrors web)
+      lib/batch.mjs            # Batch synthesis item validation
+      lib/audio-duration.mjs   # durationMs from rendered MP3/WAV
       lib/jobs.mjs             # SynthesisJob CRUD
       lib/keys.mjs             # API key management
       lib/credentials.mjs      # BYOK credential CRUD
@@ -152,7 +155,7 @@ apps/api/src/server.mjs       # Admin API (role management)
 **Shipped:**
 - 550 voices across 25 providers, 100% with audio samples, 53 languages
 - Pinterest-style browse grid with 11 filters (provider, language, gender, quality, age, style, type, sort, SSML, audio, favorites), all URL-synced
-- Voice detail with audition studio, SSML visual editor, provider setup guides, **similar voices**, and a **"Direction" steerability input** (OpenAI `instructions`)
+- Voice detail with audition studio, SSML visual editor, provider setup guides, **similar voices**, and **voice steerability** (OpenAI free-text instructions · ElevenLabs voice_settings + v3 audio tags · AWS Polly newscaster) — capability surfaced per voice in `/v1/voices` `steering`
 - **Per-provider pages** (`/providers/[id]`) — counts, pricing, capabilities, voice gallery, connect CTA
 - Server-side synthesis with 9 provider adapters; OpenAI defaults to `gpt-4o-mini-tts`. **Batch endpoint** `POST /v1/synthesize/batch` (≤50 jobs)
 - SSML editor: 7 tags, attribute popovers, real-time validation, provider-aware
