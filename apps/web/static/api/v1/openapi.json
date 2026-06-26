@@ -22,7 +22,19 @@
         "summary": "List all voices",
         "tags": [
           "voices"
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceCatalog"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/v1/voices/{voiceId}.json": {
@@ -41,7 +53,22 @@
               "type": "string"
             }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceDetail"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Voice not found"
+          }
+        }
       }
     },
     "/api/v1/providers.json": {
@@ -50,7 +77,19 @@
         "summary": "List providers",
         "tags": [
           "providers"
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderList"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/v1/stats.json": {
@@ -59,7 +98,259 @@
         "summary": "Catalog statistics",
         "tags": [
           "catalog"
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogStats"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VoiceMetadataSummary": {
+        "type": "object",
+        "properties": {
+          "shortLabel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "toneTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "useCases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "genderPresentation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "agePresentation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "VoiceSummary": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "provider",
+          "languages",
+          "qualityTier"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "qualityTier": {
+            "type": "string",
+            "enum": [
+              "basic",
+              "standard",
+              "premium"
+            ]
+          },
+          "audioUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "detailUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "webUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/VoiceMetadataSummary"
+          }
+        }
+      },
+      "VoiceDetail": {
+        "type": "object",
+        "description": "Full voice record; superset of VoiceSummary including samples, variants, and modelCard.",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VoiceSummary"
+          }
+        ],
+        "additionalProperties": true
+      },
+      "VoiceCatalog": {
+        "type": "object",
+        "required": [
+          "total",
+          "generatedAt",
+          "voices"
+        ],
+        "properties": {
+          "$schema": {
+            "type": "string",
+            "format": "uri"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "voices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceSummary"
+            }
+          }
+        }
+      },
+      "ProviderEntry": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "voiceCount"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "voiceCount": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ProviderList": {
+        "type": "object",
+        "required": [
+          "total",
+          "providers"
+        ],
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProviderEntry"
+            }
+          }
+        }
+      },
+      "CatalogStats": {
+        "type": "object",
+        "properties": {
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalVoices": {
+            "type": "integer"
+          },
+          "totalProviders": {
+            "type": "integer"
+          },
+          "totalLanguages": {
+            "type": "integer"
+          },
+          "withAudio": {
+            "type": "integer"
+          },
+          "byProvider": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
       }
     }
   }
