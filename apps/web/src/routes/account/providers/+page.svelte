@@ -15,7 +15,8 @@
     type ProviderAuthConfig,
     type CredentialData,
   } from '$lib/synthesis/provider-auth';
-  import { getCredentialData } from '$lib/data/credential-store';
+  import { getCredentialData, updateCredentialStatus } from '$lib/data/credential-store';
+  import { credentialStatusLabel } from '$lib/synthesis/credential-status';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { getProviderColor as getProviderColorScheme } from '$lib/provider-colors';
@@ -94,6 +95,15 @@
 
       const result = await testCredential(cred?.id ?? '', config.providerId, data);
       addToast(result.message, result.success ? 'success' : 'error');
+
+      // Persist a passing test so the card can show "Verified" (records
+      // lastTestedAt). A failure is surfaced but not persisted — a browser-side
+      // test can fail transiently (CORS/network), and we don't want to disable
+      // a provider on a false negative.
+      if (result.success && cred) {
+        await updateCredentialStatus(cred.id, 'active');
+        await refreshCredentials();
+      }
     } catch (err) {
       addToast(err instanceof Error ? err.message : 'Test failed', 'error');
     } finally {
@@ -161,6 +171,7 @@
       {#each credProviders as config (config.providerId)}
         {@const status = $connectedProviders.get(config.providerId)}
         {@const isConnected = status === 'active'}
+        {@const statusLabel = credentialStatusLabel($credentials.find((c) => c.providerId === config.providerId))}
         {@const isExpanded = expandedId === config.providerId}
         <div
           class="card"
@@ -171,8 +182,12 @@
             <span class="dot" style="background: {getAccent(config.providerId)}"></span>
             <span class="name">{config.providerId}</span>
             <span class="spacer"></span>
-            {#if isConnected}
-              <span class="status-pill connected"><Icon name="check" size={11} /> Connected</span>
+            {#if statusLabel.kind === 'verified'}
+              <span class="status-pill connected"><Icon name="check" size={11} /> Verified</span>
+            {:else if statusLabel.kind === 'invalid' || statusLabel.kind === 'expired'}
+              <span class="status-pill invalid"><Icon name="x" size={11} /> {statusLabel.text}</span>
+            {:else if statusLabel.kind === 'unverified'}
+              <span class="status-pill unverified" title="Key saved but not yet verified — run Test Connection">{statusLabel.text}</span>
             {:else}
               <span class="status-pill">Not connected</span>
             {/if}
@@ -390,6 +405,19 @@
     color: #2e7d32;
     background: #e8f5e9;
     border-color: #a5d6a7;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .status-pill.unverified {
+    color: #8a6d3b;
+    background: #fcf3e3;
+    border-color: #e6d3a8;
+  }
+  .status-pill.invalid {
+    color: #c0392b;
+    background: #fdecea;
+    border-color: #f5b7b1;
     display: inline-flex;
     align-items: center;
     gap: 0.2rem;
