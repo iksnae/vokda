@@ -160,7 +160,7 @@
   let auditionText = urlText || 'Hello! This is a preview of this voice. How does it sound to you?';
   let auditionMode: PreviewInputMode = (urlMode === 'ssml' ? 'ssml' : 'text');
   let auditionDirection = '';
-  $: steering = voice ? getProviderSteering(voice.providerId ?? '') : { kind: 'none' as const, label: '' };
+  $: steering = voice ? getProviderSteering(voice) : { kind: 'none' as const, label: '' };
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
   let auditionError = '';
