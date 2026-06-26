@@ -24,5 +24,8 @@ jobs:
       - name: Type and Svelte checks
         run: npm run check:web
 
+      - name: Catalog freshness (static/api in sync with voices.json)
+        run: npm run check:catalog
+
       - name: Build web app
         run: npm run build:web

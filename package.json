@@ -17,6 +17,7 @@
     "amplify:outputs": ". ./switch-aws-env.sh personal && npx ampx generate outputs --format json --out-dir .",
     "build:web": "node scripts/publish-catalog.mjs && npm run -w apps/web build",
     "check:web": "npm --workspace apps/web run check",
+    "check:catalog": "node scripts/check-catalog-fresh.mjs",
     "build:sdk": "npm --workspace packages/sdk run build",
     "check:sdk": "npm --workspace packages/sdk run check",
     "lint": "npm --workspace apps/web run lint",
