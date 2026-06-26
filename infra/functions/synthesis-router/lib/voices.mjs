@@ -11,6 +11,28 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+/**
+ * Host that actually serves the catalog's static assets (audio samples,
+ * images). The /v1/voices API is served from api.vokda.iksnae.com, but those
+ * assets live only on the apex, so site-relative paths must be absolutized to
+ * this host or consumers resolve them against the API host and 404. Mirrors
+ * BASE_URL in scripts/publish-catalog.mjs. See issue #11.
+ */
+export const CATALOG_BASE_URL = 'https://vokda.iksnae.com';
+
+/**
+ * Absolutize a catalog asset URL to the apex host. Site-relative paths
+ * ("/audio/...") are prefixed with CATALOG_BASE_URL; already-absolute URLs
+ * (http(s):// or protocol-relative //) are returned unchanged. Empty/missing
+ * values become null.
+ * @param {string|null|undefined} url
+ * @returns {string|null}
+ */
+export function absolutizeCatalogUrl(url) {
+  if (!url) return null;
+  return url.startsWith('/') && !url.startsWith('//') ? `${CATALOG_BASE_URL}${url}` : url;
+}
+
 let _voices = null;
 
 /**
@@ -122,7 +144,7 @@ function formatVoiceSummary(v) {
     qualityTier: v.qualityTier || null,
     tags: v.tags || [],
     toneTags: v.metadata?.toneTags || [],
-    audioUrl: v.audioUrl || null,
+    audioUrl: absolutizeCatalogUrl(v.audioUrl),
     ssmlSupport: v.variants?.[0]?.supportsSsml || false,
   };
 }
@@ -144,15 +166,15 @@ function formatVoiceDetail(v) {
     qualityTier: v.qualityTier || null,
     tags: v.tags || [],
     toneTags: v.metadata?.toneTags || [],
-    audioUrl: v.audioUrl || null,
-    imageUrl: v.imageUrl || null,
+    audioUrl: absolutizeCatalogUrl(v.audioUrl),
+    imageUrl: absolutizeCatalogUrl(v.imageUrl),
     licenseNotes: v.licenseNotes || null,
     metadata: v.metadata || {},
     modelCard: v.modelCard || {},
     samples: (v.samples || []).map(s => ({
       id: s.id,
       label: s.label,
-      audioUrl: s.audioUrl,
+      audioUrl: absolutizeCatalogUrl(s.audioUrl),
       transcript: s.transcript,
     })),
     variants: (v.variants || []).map(vr => ({
