@@ -28,6 +28,36 @@ pub struct Voice {
     pub variants: Vec<serde_json::Value>,
     #[serde(default)]
     pub samples: Vec<serde_json::Value>,
+    /// Expressivity control this voice supports (and which `options.*` to send).
+    #[serde(default)]
+    pub steering: Option<Steering>,
+}
+
+/// A numeric expressivity control (ElevenLabs voice_settings).
+#[derive(Debug, Clone, Deserialize)]
+pub struct SteeringSetting {
+    pub key: String,
+    pub min: f64,
+    pub max: f64,
+    pub default: f64,
+}
+
+/// Expressivity control a voice supports. `kind` is one of
+/// `instructions` | `styles` | `settings` | `none`.
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Steering {
+    pub kind: String,
+    #[serde(default)]
+    pub param: Option<String>,
+    #[serde(default)]
+    pub hint: Option<String>,
+    #[serde(default)]
+    pub options: Option<Vec<String>>,
+    #[serde(default)]
+    pub settings: Option<Vec<SteeringSetting>>,
+    #[serde(default)]
+    pub audio_tags_model: Option<String>,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -91,6 +121,24 @@ pub struct SynthesizeRequest {
     pub voice_id: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub mode: Option<String>,
+    /// Provider-specific options and steering (e.g. `{"instructions": "..."}`,
+    /// `{"speakingStyle": "newscaster"}`, or ElevenLabs voice_settings).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub options: Option<serde_json::Value>,
+}
+
+/// Precomputed audio peaks (BBC audiowaveform JSON). `data` is interleaved
+/// min/max pairs per pixel in the signed `bits` range (8-bit => ±127). Keys are
+/// snake_case on the wire, so no rename here.
+#[derive(Debug, Clone, Deserialize)]
+pub struct Waveform {
+    pub version: i64,
+    pub channels: i64,
+    pub sample_rate: i64,
+    pub samples_per_pixel: i64,
+    pub bits: i64,
+    pub length: i64,
+    pub data: Vec<i64>,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -104,6 +152,8 @@ pub struct SynthesizeResponse {
     pub latency_ms: Option<u64>,
     pub provider: Option<String>,
     pub voice_name: Option<String>,
+    #[serde(default)]
+    pub waveform: Option<Waveform>,
     pub created_at: Option<String>,
 }
 
@@ -126,6 +176,8 @@ pub struct Clip {
     pub audio_url: Option<String>,
     pub file_size_bytes: Option<u64>,
     pub latency_ms: Option<u64>,
+    #[serde(default)]
+    pub waveform: Option<Waveform>,
     pub created_at: String,
 }
 

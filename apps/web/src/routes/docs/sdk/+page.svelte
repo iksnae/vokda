@@ -258,6 +258,99 @@ println!("{}", clip.audio_url.unwrap_or_default());`}</pre>
 
   <!-- ═══════════════════ Common sections (all languages) ═══════════════════ -->
 
+  <section id="steering">
+    <h2>Steering — shape <em>how</em> a voice delivers</h2>
+    <p>
+      Every catalog voice carries a <code>steering</code> descriptor telling you what expressivity control it
+      supports and which <code>options.*</code> to send. Read it, branch on <code>kind</code>, then pass the
+      matching options. See the <a href="/docs/steering">Steering guide</a>.
+    </p>
+    {#if activeLang === 'typescript'}
+    <pre class="code">{`const { voices } = await catalog.listVoices();
+const voice = voices.find((v) => v.providerId === 'openai')!;
+
+switch (voice.steering?.kind) {
+  case 'instructions': // OpenAI — free-text direction
+    await vokda.synthesize({ text: 'We did it!', provider: 'openai', providerVoiceId: 'nova',
+      options: { instructions: 'cheerful and upbeat; speak slowly' } });
+    break;
+  case 'settings':     // ElevenLabs — voice_settings (+ eleven_v3 audio tags)
+    await vokda.synthesize({ text: '[excited] We did it!', provider: 'elevenlabs', providerVoiceId: '...',
+      options: { model_id: voice.steering.audioTagsModel, stability: 0.3, style: 0.6 } });
+    break;
+  case 'styles':       // AWS Polly — newscaster on Matthew/Joanna/Amy
+    await vokda.synthesize({ text: 'Tonight on the news…', provider: 'aws-polly', providerVoiceId: 'Matthew',
+      options: { speakingStyle: 'newscaster' } });
+    break;
+}`}</pre>
+    {:else if activeLang === 'python'}
+    <pre class="code">{`voice = next(v for v in catalog.list_voices()["voices"] if v["providerId"] == "openai")
+
+# Steering options are passed as keyword args (collected into options).
+kind = (voice.get("steering") or {}).get("kind")
+if kind == "instructions":   # OpenAI — free-text direction
+    client.synthesize(text="We did it!", provider="openai", provider_voice_id="nova",
+        instructions="cheerful and upbeat; speak slowly")
+elif kind == "settings":     # ElevenLabs — voice_settings (+ eleven_v3 audio tags)
+    client.synthesize(text="[excited] We did it!", provider="elevenlabs", provider_voice_id="...",
+        model_id=voice["steering"]["audioTagsModel"], stability=0.3)
+elif kind == "styles":       # AWS Polly — newscaster
+    client.synthesize(text="Tonight on the news…", provider="aws-polly", provider_voice_id="Matthew",
+        speakingStyle="newscaster")`}</pre>
+    {:else if activeLang === 'go'}
+    <pre class="code">{`// voice.Steering.Kind is one of: instructions | settings | styles | none
+client.Synthesize(&vokda.SynthesizeRequest{
+    Text: "We did it!", Provider: "openai", ProviderVoiceID: "nova",
+    Options: map[string]any{"instructions": "cheerful and upbeat; speak slowly"},
+})
+// ElevenLabs: Options{"model_id": voice.Steering.AudioTagsModel, "stability": 0.3}
+// AWS Polly:  Options{"speakingStyle": "newscaster"}`}</pre>
+    {:else}
+    <pre class="code">{`// voice.steering.kind is one of: instructions | settings | styles | none
+client.synthesize(SynthesizeRequest {
+    text: "We did it!".into(), provider: "openai".into(),
+    provider_voice_id: Some("nova".into()),
+    options: Some(serde_json::json!({ "instructions": "cheerful and upbeat; speak slowly" })),
+    ..Default::default()
+}).await?;
+// ElevenLabs: { "model_id": "eleven_v3", "stability": 0.3 }
+// AWS Polly:  { "speakingStyle": "newscaster" }`}</pre>
+    {/if}
+    <p class="note">Voices with <code>kind: 'none'</code> (or no <code>steering</code>) take no expressivity options.</p>
+  </section>
+
+  <section id="waveform">
+    <h2>Clip waveform</h2>
+    <p>
+      Synthesis responses and clips include a precomputed <code>waveform</code> (peaks) so you can render a
+      waveform without decoding audio — <code>data</code> is interleaved min/max pairs per pixel in the signed
+      <code>bits</code> range (8-bit → ±127; normalize by ÷127). <code>null</code> when audio couldn't be decoded.
+    </p>
+    {#if activeLang === 'typescript'}
+    <pre class="code">{`const clip = await vokda.synthesize({ text: 'Hi', provider: 'openai', providerVoiceId: 'alloy' });
+if (clip.waveform) {
+  const peaks = clip.waveform.data;          // [min, max, min, max, …]
+  const norm = peaks.map((v) => v / 127);    // → [-1, 1]
+}`}</pre>
+    {:else if activeLang === 'python'}
+    <pre class="code">{`clip = client.synthesize(text="Hi", provider="openai", provider_voice_id="alloy")
+if clip.get("waveform"):
+    peaks = clip["waveform"]["data"]          # [min, max, min, max, …]
+    norm = [v / 127 for v in peaks]           # → [-1, 1]`}</pre>
+    {:else if activeLang === 'go'}
+    <pre class="code">{`clip, _ := client.Synthesize(req)
+if clip.Waveform != nil {
+    peaks := clip.Waveform.Data            // [min, max, min, max, …]
+    _ = peaks
+}`}</pre>
+    {:else}
+    <pre class="code">{`let clip = client.synthesize(req).await?;
+if let Some(w) = clip.waveform {
+    let peaks = w.data;                     // [min, max, min, max, …]
+}`}</pre>
+    {/if}
+  </section>
+
   <section id="clips">
     <h2>Manage Clips</h2>
     {#if activeLang === 'typescript'}

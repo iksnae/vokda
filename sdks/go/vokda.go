@@ -61,6 +61,38 @@ type Voice struct {
 	ModelCard       map[string]interface{} `json:"modelCard,omitempty"`
 	Variants        []json.RawMessage      `json:"variants,omitempty"`
 	Samples         []json.RawMessage      `json:"samples,omitempty"`
+	Steering        *Steering              `json:"steering,omitempty"`
+}
+
+// SteeringSetting is a numeric expressivity control (ElevenLabs voice_settings).
+type SteeringSetting struct {
+	Key     string  `json:"key"`
+	Min     float64 `json:"min"`
+	Max     float64 `json:"max"`
+	Default float64 `json:"default"`
+}
+
+// Steering describes the expressivity control a voice supports and which
+// synthesize Options to send. Kind is one of: instructions, styles, settings, none.
+type Steering struct {
+	Kind           string            `json:"kind"`
+	Param          string            `json:"param,omitempty"`
+	Hint           string            `json:"hint,omitempty"`
+	Options        []string          `json:"options,omitempty"`
+	Settings       []SteeringSetting `json:"settings,omitempty"`
+	AudioTagsModel string            `json:"audioTagsModel,omitempty"`
+}
+
+// Waveform holds precomputed audio peaks (BBC audiowaveform JSON). Data is
+// interleaved min/max pairs per pixel in the signed Bits range (8-bit => ±127).
+type Waveform struct {
+	Version         int   `json:"version"`
+	Channels        int   `json:"channels"`
+	SampleRate      int   `json:"sample_rate"`
+	SamplesPerPixel int   `json:"samples_per_pixel"`
+	Bits            int   `json:"bits"`
+	Length          int   `json:"length"`
+	Data            []int `json:"data"`
 }
 
 type VoiceCatalog struct {
@@ -101,41 +133,46 @@ type CatalogStats struct {
 }
 
 type SynthesizeRequest struct {
-	Text            string `json:"text"`
-	Provider        string `json:"provider"`
-	ProviderVoiceID string `json:"providerVoiceId,omitempty"`
-	VoiceName       string `json:"voiceName,omitempty"`
-	VoiceID         string `json:"voiceId,omitempty"`
-	Mode            string `json:"mode,omitempty"`
+	Text            string                 `json:"text"`
+	Provider        string                 `json:"provider"`
+	ProviderVoiceID string                 `json:"providerVoiceId,omitempty"`
+	VoiceName       string                 `json:"voiceName,omitempty"`
+	VoiceID         string                 `json:"voiceId,omitempty"`
+	Mode            string                 `json:"mode,omitempty"`
+	// Options carries provider-specific options and steering (e.g.
+	// {"instructions": "..."}, {"speakingStyle": "newscaster"}, voice_settings).
+	Options map[string]interface{} `json:"options,omitempty"`
 }
 
 type SynthesizeResponse struct {
-	JobID         string `json:"jobId"`
-	Status        string `json:"status"`
-	AudioURL      string `json:"audioUrl,omitempty"`
-	FileSizeBytes int    `json:"fileSizeBytes,omitempty"`
-	DurationMs    *int   `json:"durationMs"`
-	LatencyMs     int    `json:"latencyMs,omitempty"`
-	Provider      string `json:"provider,omitempty"`
-	VoiceName     string `json:"voiceName,omitempty"`
-	CreatedAt     string `json:"createdAt,omitempty"`
+	JobID         string    `json:"jobId"`
+	Status        string    `json:"status"`
+	AudioURL      string    `json:"audioUrl,omitempty"`
+	FileSizeBytes int       `json:"fileSizeBytes,omitempty"`
+	DurationMs    *int      `json:"durationMs"`
+	LatencyMs     int       `json:"latencyMs,omitempty"`
+	Provider      string    `json:"provider,omitempty"`
+	VoiceName     string    `json:"voiceName,omitempty"`
+	Waveform      *Waveform `json:"waveform,omitempty"`
+	CreatedAt     string    `json:"createdAt,omitempty"`
 }
 
 type Clip struct {
-	JobID           string   `json:"jobId"`
-	VoiceID         string   `json:"voiceId"`
-	VoiceName       string   `json:"voiceName"`
-	Provider        string   `json:"provider"`
-	Status          string   `json:"status"`
-	InputText       string   `json:"inputText"`
-	InputMode       string   `json:"inputMode"`
-	ClipName        string   `json:"clipName"`
-	ClipDescription string   `json:"clipDescription"`
-	ClipTags        []string `json:"clipTags"`
-	AudioURL        string   `json:"audioUrl"`
-	FileSizeBytes   int      `json:"fileSizeBytes"`
-	LatencyMs       int      `json:"latencyMs"`
-	CreatedAt       string   `json:"createdAt"`
+	JobID           string    `json:"jobId"`
+	VoiceID         string    `json:"voiceId"`
+	VoiceName       string    `json:"voiceName"`
+	Provider        string    `json:"provider"`
+	Status          string    `json:"status"`
+	InputText       string    `json:"inputText"`
+	InputMode       string    `json:"inputMode"`
+	ClipName        string    `json:"clipName"`
+	ClipDescription string    `json:"clipDescription"`
+	ClipTags        []string  `json:"clipTags"`
+	AudioURL        string    `json:"audioUrl"`
+	FileSizeBytes   int       `json:"fileSizeBytes"`
+	LatencyMs       int       `json:"latencyMs"`
+	Waveform        *Waveform `json:"waveform,omitempty"`
+	CreatedAt       string    `json:"createdAt"`
 }
 
 type ClipList struct {

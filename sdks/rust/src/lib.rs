@@ -268,6 +268,7 @@ impl Default for SynthesizeRequest {
             voice_name: None,
             voice_id: None,
             mode: None,
+            options: None,
         }
     }
 }
