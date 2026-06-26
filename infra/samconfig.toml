@@ -1,11 +1,18 @@
 # SAM configuration for Vokda Synthesis API
-# Deploy: cd infra && sam build && sam deploy
+# Deploy: cd infra && ./build.sh && sam build && sam deploy
+#
+# IMPORTANT: production lives in the `personal` AWS account (997901679385),
+# which serves api.vokda.iksnae.com and owns the amplify-vokda-k-sandbox
+# resources referenced below. The `profile` is pinned so a deploy can never
+# silently target the active/default profile and create a dead duplicate
+# stack in the wrong account.
 
 version = 0.1
 
 [default.deploy.parameters]
 stack_name = "vokda-synthesis-dev"
 region = "us-east-1"
+profile = "personal"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 resolve_s3 = true
