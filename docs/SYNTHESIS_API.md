@@ -390,6 +390,8 @@ Create a new Vokda API key.
 
 > ⚠️ The full `key` value is returned **only on creation**. Store it securely — it cannot be retrieved again.
 
+**Limit:** up to **25 active** keys per account. Requesting another while at the limit returns `400` with `Maximum 25 active API keys per account` — revoke an unused key first.
+
 ---
 
 ### GET /v1/keys
