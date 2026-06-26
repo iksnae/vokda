@@ -14,7 +14,9 @@ export const id = 'openai';
  */
 export async function synthesize(credential, params) {
   const voice = params.providerVoiceId || extractVoiceId(params.voiceId);
-  const model = params.options?.model || 'tts-1';
+  // gpt-4o-mini-tts is OpenAI's newest model and renders all voices; callers
+  // can still pin tts-1 / tts-1-hd via options.model.
+  const model = params.options?.model || 'gpt-4o-mini-tts';
   const speed = params.options?.speed || 1.0;
 
   const resp = await fetch('https://api.openai.com/v1/audio/speech', {
