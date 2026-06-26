@@ -228,6 +228,12 @@ function generateApiFiles(voices) {
   console.log(`  stats.json`);
 
   // OpenAPI spec
+  const jsonOk = (ref) => ({
+    '200': { description: 'OK', content: { 'application/json': { schema: { $ref: `#/components/schemas/${ref}` } } } },
+  });
+  const nullableString = { type: ['string', 'null'] };
+  const stringArray = { type: 'array', items: { type: 'string' } };
+
   const openapi = {
     openapi: '3.1.0',
     info: {
@@ -239,21 +245,115 @@ function generateApiFiles(voices) {
     servers: [{ url: BASE_URL, description: 'Production' }],
     paths: {
       '/api/v1/voices.json': {
-        get: { operationId: 'listVoices', summary: 'List all voices', tags: ['voices'] }
+        get: { operationId: 'listVoices', summary: 'List all voices', tags: ['voices'], responses: jsonOk('VoiceCatalog') }
       },
       '/api/v1/voices/{voiceId}.json': {
         get: {
           operationId: 'getVoice', summary: 'Get voice detail', tags: ['voices'],
-          parameters: [{ name: 'voiceId', in: 'path', required: true, schema: { type: 'string' } }]
+          parameters: [{ name: 'voiceId', in: 'path', required: true, schema: { type: 'string' } }],
+          responses: {
+            ...jsonOk('VoiceDetail'),
+            '404': { description: 'Voice not found' },
+          },
         }
       },
       '/api/v1/providers.json': {
-        get: { operationId: 'listProviders', summary: 'List providers', tags: ['providers'] }
+        get: { operationId: 'listProviders', summary: 'List providers', tags: ['providers'], responses: jsonOk('ProviderList') }
       },
       '/api/v1/stats.json': {
-        get: { operationId: 'getCatalogStats', summary: 'Catalog statistics', tags: ['catalog'] }
+        get: { operationId: 'getCatalogStats', summary: 'Catalog statistics', tags: ['catalog'], responses: jsonOk('CatalogStats') }
       },
-    }
+    },
+    components: {
+      schemas: {
+        VoiceMetadataSummary: {
+          type: 'object',
+          properties: {
+            shortLabel: nullableString,
+            toneTags: stringArray,
+            useCases: stringArray,
+            genderPresentation: nullableString,
+            agePresentation: nullableString,
+          },
+        },
+        VoiceSummary: {
+          type: 'object',
+          required: ['id', 'name', 'provider', 'languages', 'qualityTier'],
+          properties: {
+            id: { type: 'string' },
+            name: { type: 'string' },
+            provider: { type: 'string' },
+            providerId: { type: 'string' },
+            description: { type: 'string' },
+            tags: stringArray,
+            languages: stringArray,
+            qualityTier: { type: 'string', enum: ['basic', 'standard', 'premium'] },
+            audioUrl: { ...nullableString, format: 'uri' },
+            imageUrl: { ...nullableString, format: 'uri' },
+            detailUrl: { type: 'string', format: 'uri' },
+            webUrl: { type: 'string', format: 'uri' },
+            metadata: { $ref: '#/components/schemas/VoiceMetadataSummary' },
+          },
+        },
+        VoiceDetail: {
+          type: 'object',
+          description: 'Full voice record; superset of VoiceSummary including samples, variants, and modelCard.',
+          allOf: [{ $ref: '#/components/schemas/VoiceSummary' }],
+          additionalProperties: true,
+        },
+        VoiceCatalog: {
+          type: 'object',
+          required: ['total', 'generatedAt', 'voices'],
+          properties: {
+            $schema: { type: 'string', format: 'uri' },
+            total: { type: 'integer' },
+            generatedAt: { type: 'string', format: 'date-time' },
+            voices: { type: 'array', items: { $ref: '#/components/schemas/VoiceSummary' } },
+          },
+        },
+        ProviderEntry: {
+          type: 'object',
+          required: ['id', 'name', 'voiceCount'],
+          properties: {
+            id: { type: 'string' },
+            name: { type: 'string' },
+            voiceCount: { type: 'integer' },
+          },
+          additionalProperties: true,
+        },
+        ProviderList: {
+          type: 'object',
+          required: ['total', 'providers'],
+          properties: {
+            total: { type: 'integer' },
+            generatedAt: { type: 'string', format: 'date-time' },
+            providers: { type: 'array', items: { $ref: '#/components/schemas/ProviderEntry' } },
+          },
+        },
+        CatalogStats: {
+          type: 'object',
+          properties: {
+            generatedAt: { type: 'string', format: 'date-time' },
+            totalVoices: { type: 'integer' },
+            totalProviders: { type: 'integer' },
+            totalLanguages: { type: 'integer' },
+            withAudio: { type: 'integer' },
+            byProvider: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: { id: { type: 'string' }, name: { type: 'string' }, count: { type: 'integer' } },
+              },
+            },
+          },
+          additionalProperties: true,
+        },
+        ApiError: {
+          type: 'object',
+          properties: { error: { type: 'string' }, message: { type: 'string' } },
+        },
+      },
+    },
   };
 
   writeFileSync(`${OUT}/api/v1/openapi.json`, JSON.stringify(openapi, null, 2));
