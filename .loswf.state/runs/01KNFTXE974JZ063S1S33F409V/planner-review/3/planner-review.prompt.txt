@@ -1,0 +1,99 @@
+Review the plan for issue #3.
+
+## Plan to review:
+
+## Spec
+
+### Relevant Files
+
+**Types (no changes needed):**
+- `apps/web/src/lib/types.ts` — `CurationShelf` type defined at line 145: `{ id, key, title, description, voiceIds, published, updatedAt }`
+
+**Data layer (already complete — no changes needed):**
+- `apps/web/src/lib/data/curation-workspace.ts` — `fetchShelves()`, `saveShelf(shelf)`, `deleteShelf(shelfId)` all implemented
+  - `saveShelf` tries `update` first (passes `id`), catches any error, falls through to `create` which does **not** pass `id` — Amplify auto-generates the ID on create
+  - Both paths return `void`; caller must re-fetch via `fetchShelves()` after create to obtain the real DynamoDB-assigned ID
+
+**Store (needs changes):**
+- `apps/web/src/lib/stores/app-state.ts` — add `shelves: CurationShelf[]` to `AppState`, add `hydrateShelves()`, export derived store + `createShelf`, `updateShelf`, `deleteShelf` functions
+  - Existing patterns to follow: `curationWriteEnabled()` guard (line 73), `reportSyncError(op, error)` (line 78), `hydrateCurationState()` (line 101), `getAppStateSnapshot()` (line 117), `appState` writable (line 141), derived exports (lines 178–183)
+
+**UI (needs changes):**
+- `apps/web/src/routes/curation/+page.svelte` — add `'shelves'` tab with list, create, edit, and delete UI
+  - Already imports `csvToList` from `$lib/voice-catalog` (line 12)
+  - Already imports `addToast` from `$lib/components/toast-store` (line 13)
+  - Uses native `confirm()` for destructive actions (line 236)
+  - Has `activeTab: 'editor' | 'drafts' | 'database'` union at line 247
+  - Tab nav at line 264, tab panels start at line 281
+
+### Step-by-Step Tasks
+
+**Task 1 — Add shelf store state and functions to `apps/web/src/lib/stores/app-state.ts`**
+
+1. Add `CurationShelf` to the existing import from `$lib/types` (line 3)
+2. Add `fetchShelves`, `saveShelf as saveShelfRemote`, `deleteShelf as deleteShelfRemote` to the existing import from `$lib/data/curation-workspace` (line 18)
+3. Add `shelves: CurationShelf[]` field (default `[]`) to the `AppState` type (line 23) and `defaultState` object (line 33)
+4. Add `async function hydrateShelves()` (private, after `hydrateCurationState` at line 112):
+   - Guard: `if (!browser || AUTH_MODE !== 'amplify') return`
+   - Calls `const result = await fetchShelves()`
+   - Updates `appState` via `.update()` spreading `shelves: result`
+   - Wraps in try/catch calling `reportSyncError('hydrateShelves', error)` on failure
+5. Call `void hydrateShelves()` at the end of `hydrateCurationState()` (after the existing `appState.update` on ~line 107), so shelves load alongside curation workspace data
+6. Export a derived store after line 183: `export const shelves = derived(appState, ($state) => $state.shelves)`
+7. Export `createShelf(title: string, voiceIds: string[] = [])`:
+   - Guard: `if (!curationWriteEnabled()) return`; also return early if `!title.trim()`
+   - Build a temporary `CurationShelf`: `id` = `crypto.randomUUID()` (throwaway — the update path in `saveShelf` will fail because no DynamoDB record exists with this ID, triggering the create fallback which omits `id` so Amplify auto-generates the real one), `key` = `title.trim().toLowerCase().replace(/\s+/g, '-')`, `description: ''`, `voiceIds`, `published: false`, `updatedAt: new Date().toISOString()`
+   - Optimistic: append placeholder shelf to `appState.shelves` immediately via `appState.update()`
+   - Call `await saveShelfRemote(shelf)` then `await hydrateShelves()` to replace the placeholder with the real Amplify record (which has the DynamoDB-assigned ID)
+   - On error: `reportSyncError('createShelf', error)` then `void hydrateShelves()` to revert
+8. Export `updateShelf(shelfId: string, patch: Partial<Pick<CurationShelf, 'title' | 'description' | 'voiceIds' | 'published'>>)`:
+   - Guard: `if (!curationWriteEnabled()) return`
+   - Find existing shelf from `getAppStateSnapshot().shelves`; return early if not found
+   - Build merged shelf: spread existing, spread patch, set `updatedAt: new Date().toISOString()`
+   - Optimistic: replace matching shelf in `appState.shelves` via `appState.update()`
+   - Call `await saveShelfRemote(mergedShelf)` (hits update path since ID exists in DynamoDB)
+   - On error: `reportSyncError('updateShelf', error)` then `void hydrateShelves()` to revert
+9. Export `deleteShelf(shelfId: string)`:
+   - Guard: `if (!curationWriteEnabled()) return`
+   - Optimistic: filter out shelf with matching `id` from `appState.shelves` via `appState.update()`
+   - Call `await deleteShelfRemote(shelfId)`
+   - On error: `reportSyncError('deleteShelf', error)` then `void hydrateShelves()` to revert
+
+**Task 2 — Add Shelves tab UI to `apps/web/src/routes/curation/+page.svelte`**
+
+1. Add `shelves`, `createShelf`, `updateShelf`, `deleteShelf` to the import from `$lib/stores/app-state` (extend existing import at line 4)
+2. Add `CurationShelf` to the import from `$lib/types` (line 15)
+3. Extend `activeTab` type at line 247 to `'editor' | 'drafts' | 'database' | 'shelves'`
+4. Add local reactive state variables (near line 248):
+   - `let newShelfTitle = ''` and `let newShelfVoiceIdsCsv = ''` for the create form
+   - `let editingShelfId: string | null = null`, `let editTitle = ''`, `let editVoiceIdsCsv = ''` for inline editing
+5. Add event handlers (uses already-imported `csvToList` from `$lib/voice-catalog` and `addToast` from `$lib/components/toast-store`):
+   - `async function handleCreateShelf()` — validates `newShelfTitle.trim()` is non-empty, calls `await createShelf(newShelfTitle.trim(), csvToList(newShelfVoiceIdsCsv))`, resets form fields, calls `addToast('Shelf created.')`
+   - `async function handleUpdateShelf(shelfId: string)` — calls `await updateShelf(shelfId, { title: editTitle.trim(), voiceIds: csvToList(editVoiceIdsCsv) })`, clears `editingShelfId`, calls `addToast('Shelf updated.')`
+   - `async function handleDeleteShelf(shelf: CurationShelf)` — native `confirm(\`Delete shelf "${shelf.title}"?\`)` (consistent with delete pattern at line 236), calls `await deleteShelf(shelf.id)`, calls `addToast(\`Deleted "${shelf.title}".\`)`
+   - `function startEditShelf(shelf: CurationShelf)` — sets `editingShelfId = shelf.id`, `editTitle = shelf.title`, `editVoiceIdsCsv = shelf.voiceIds.join(', ')`
+6. Add tab button in `<nav class="tabs">` after the Database tab button (after line 278): `<button class="tab" class:active={activeTab === 'shelves'} on:click={() => activeTab = 'shelves'}><Icon name="star" size={16} /> Shelves <span class="tab-badge">{$shelves.length}</span></button>`
+7. Add `{#if activeTab === 'shelves'}` panel section after the last existing tab panel:
+   - Create form at top: title `<input>` bound to `newShelfTitle`, voice IDs CSV `<input>` bound to `newShelfVoiceIdsCsv` with placeholder `"voice-id-1, voice-id-2"`, "Create Shelf" `<button class="primary-btn">` calling `handleCreateShelf`
+   - Shelf list: `{#each $shelves as shelf (shelf.id)}` — show shelf title, voice count badge (`{shelf.voiceIds.length} voices`), Edit button (`class="small-btn"`, calls `startEditShelf(shelf)`), Delete button (`class="small-btn"`, calls `handleDeleteShelf(shelf)`)
+   - Inline edit: `{#if editingShelfId === shelf.id}` — title input bound to `editTitle`, voice IDs CSV input bound to `editVoiceIdsCsv`, Save button (`class="small-btn"`, calls `handleUpdateShelf(shelf.id)`), Cancel button (`class="small-btn"`, sets `editingShelfId = null`)
+   - Empty state: `{:else}` block after the `{#each}` — "No shelves yet. Create one above."
+8. Reuse existing CSS classes already in the component: `panel`, `panel-desc`, `primary-btn`, `ghost-btn`, `small-btn`, `tab`, `tab-badge`, `action-row`; add minimal shelf-specific styles in the existing `<style>` block if needed (e.g., `.shelf-row { display: flex; align-items: center; gap: 0.5rem; }`)
+
+### Validation Commands
+
+```bash
+npm run check:web
+npm test
+```
+
+## Checklist:
+- [ ] All template sections filled in?
+- [ ] Specific files/types cited (from code_search)?
+- [ ] Tasks created with clear titles and appropriate scope?
+- [ ] Each task has acceptance criteria?
+- [ ] File paths are exact (not placeholders)?
+
+Do NOT reject for task count — the number of tasks should match the scope of work.
+
+Reply with APPROVED or REVISE.

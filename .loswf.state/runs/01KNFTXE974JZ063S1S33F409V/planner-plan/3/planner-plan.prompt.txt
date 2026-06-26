@@ -1,0 +1,413 @@
+## FIRST: Read your skills
+
+Before doing ANY research or writing, use the read tool to load skills
+from <available_skills>. They contain patterns you MUST follow.
+
+CRITICAL: Read the `spec-format` skill FIRST — it defines the exact
+sections required by submit_spec and shows complete examples. Specs that
+don't match the format are REJECTED by the tool.
+
+Do NOT skip this step. Do NOT assume you already know the format.
+
+## Issue #3: Data Layer Gaps: Wire CurationShelf store + curation page UI
+
+Source: specs/chore-data-layer-gaps.md
+Work-Key: chore-data-layer-gaps.curation-shelf
+Parent: #1
+
+Harvest:
+- Selected from: specs/chore-data-layer-gaps.md
+- Reason: First undelivered slice — Plan D is the earliest incomplete section; data layer CRUD exists in curation-workspace.ts but store functions and curation page UI are entirely absent
+- Existing coverage: Plans A (renameCollection store), B (rename UI), C (CartItem removal), E (AdminAuditEvent / logAuditEvent) are all delivered. Plan D data layer (fetchShelves, saveShelf, deleteShelf in curation-workspace.ts) exists but store and UI are missing. Plan F (collection voice images + reorder) is partially shipped.
+
+## Description
+
+Wire up the `CurationShelf` model end-to-end so curators can create, edit, and delete curated featured voice lists (e.g. "Best for Podcasts") from the curation page.
+
+The Amplify Data model (`CurationShelf`) and low-level data-layer CRUD (`apps/web/src/lib/data/curation-workspace.ts`) already exist. What is missing:
+
+### Store layer (`app-state.ts`)
+- `createShelf(name, voiceIds)` — calls `saveShelf` (create path), appends to store
+- `updateShelf(shelfId, patch)` — calls `saveShelf` (update path), merges into store
+- `deleteShelf(shelfId)` — calls `deleteShelf` from data layer, removes from store
+- `shelves` derived/writable store loaded on curator init (via `fetchShelves`)
+
+### Curation page UI (`apps/web/src/routes/curation/+page.svelte`)
+- Shelf list: show existing shelves with name + voice count
+- Create shelf: name input + voice picker → calls `createShelf`
+- Edit shelf: inline rename + add/remove voices → calls `updateShelf`
+- Delete shelf: confirm dialog → calls `deleteShelf`
+
+## Already Delivered
+
+- chore-data-layer-gaps.rename-collection (Plans A + B)
+- chore-data-layer-gaps.cartitem-removal (Plan C)
+- chore-data-layer-gaps.audit-event (Plan E)
+- chore-data-layer-gaps.curation-shelf data layer (partial — curation-workspace.ts only)
+
+## Acceptance Criteria
+
+- `shelves` store is populated from DynamoDB on curator page load
+- Curator can create a new shelf with a name and an initial set of voice IDs
+- Curator can rename a shelf and add/remove voices; changes persist to DynamoDB
+- Curator can delete a shelf; it is removed from both store and DynamoDB
+- Shelf list is visible on the `/curation` page
+- All store functions handle errors gracefully (reportSyncError pattern)
+- No TypeScript errors (`npm run check:web` passes)
+
+## Repository Context
+
+You are working in repo **iksnae/vokda**.
+Files are located at: `/Users/k/Projects/vokda/vokda/`
+All file paths in this task are relative to the repo root (`vokda/`).
+
+Validation commands for this repo:
+  - `npm test`
+  - `npm run check:web`
+
+Use ONLY these validation commands in your spec — others will be rejected.
+
+## Plan Review Feedback — FIX THESE ISSUES:
+
+[factory:01KMRX6QMBTKAM8AH2TVG9WDPZ]
+
+🏭 **Intake:** Classified as CHORE — routing to planner.
+
+---
+
+## Spec
+
+### Relevant Files
+
+**Types (no changes needed):**
+- `apps/web/src/lib/types.ts` — `CurationShelf = { id, key, title, description, voiceIds, published, updatedAt }` already defined
+
+**Data layer (already complete — no changes needed):**
+- `apps/web/src/lib/data/curation-workspace.ts` — `fetchShelves()`, `saveShelf(shelf: CurationShelf)`, `deleteShelf(shelfId: string)` all implemented
+
+**Store layer (needs shelf additions):**
+- `apps/web/src/lib/stores/app-state.ts` — has `reportSyncError`, `curationWriteEnabled()`, `hydrateCurationState()`, `appState` writable, `auth.subscribe` block; NO shelf state, stores, or functions exist yet
+
+**UI (needs new tab):**
+- `apps/web/src/routes/curation/+page.svelte` — has `activeTab` union `'editor' | 'drafts' | 'database'`; no shelf tab or UI
+
+**Key patterns observed:**
+- Separate writable store (e.g., `collections`, `customVoices` pattern in `app-state.ts`)
+- `reportSyncError(operation, error)` used on all async failures
+- `curationWriteEnabled()` gates curator write operations
+- `saveShelf` in data layer tries `update` first, falls back to `create` — fresh shelves get a DynamoDB-assigned ID on create, so store must re-fetch after create via `fetchShelves()`
+- Optimistic updates are used for known-ID ops (update/delete) with revert via re-fetch on failure
+
+### Step-by-Step Tasks
+
+**Task 1 — Add shelf store functions to `apps/web/src/lib/stores/app-state.ts`**
+
+1. Add imports: `fetchShelves`, `saveShelf as saveShelfRecord`, `deleteShelf as deleteShelfRecord` from `$lib/data/curation-workspace`; `CurationShelf` from `$lib/types`
+2. Declare `const shelves = writable<CurationShelf[]>([])` as a standalone store (not inside `AppState`)
+3. Add `async function hydrateShelves()`: guards on `curationWriteEnabled()`, calls `fetchShelves()`, updates `shelves` store; catches with `reportSyncError('hydrateShelves', error)`
+4. Call `void hydrateShelves()` inside `hydrateCurationState()` (after workspace fetch)
+5. Export `export async function createShelf(title: string, voiceIds: string[] = [])`:
+   - Returns early if `!curationWriteEnabled()`
+   - Builds `CurationShelf` with `crypto.randomUUID()` id, key = `title.toLowerCase().replace(/\W+/g, '-')`, `published: false`, `updatedAt: new Date().toISOString()`
+   - Calls `saveShelfRecord(shelf)` then re-syncs by calling `fetchShelves()` and setting `shelves` (DynamoDB may assign a different ID on the create path)
+   - Catches with `reportSyncError('createShelf', error)`
+6. Export `export async function updateShelf(shelfId: string, patch: Partial<Pick<CurationShelf, 'title' | 'description' | 'voiceIds' | 'published'>>)`:
+   - Returns early if `!curationWriteEnabled()`
+   - Optimistically merges patch into `shelves` store (also sets `updatedAt`)
+   - Calls `saveShelfRecord(mergedShelf)`; on error: `reportSyncError('updateShelf', error)` + `void hydrateShelves()`
+7. Export `export async function deleteShelf(shelfId: string)`:
+   - Returns early if `!curationWriteEnabled()`
+   - Optimistically removes entry from `shelves` store
+   - Calls `deleteShelfRecord(shelfId)`; on error: `reportSyncError('deleteShelf', error)` + `void hydrateShelves()`
+8. Export `shelves` (export directly as the writable)
+
+**Task 2 — Add Shelves tab to `apps/web/src/routes/curation/+page.svelte`**
+
+1. Add imports: `shelves`, `createShelf`, `updateShelf`, `deleteShelf` from `$lib/stores/app-state`; `CurationShelf` from `$lib/types`
+2. Extend `activeTab` type to include `'shelves'`; add "Shelves" tab button in `<nav class="tabs">` with `{$shelves.length}` badge
+3. Add local state: `let shelfTitle = ''`, `let shelfVoiceIdsCsv = ''`, `let editingShelfId: string | null = null`, `let editTitle = ''`, `let editVoiceIdsCsv = ''`
+4. Add handler `async function handleCreateShelf()`: validates non-empty `shelfTitle.trim()`, calls `await createShelf(...)` with `csvToList(shelfVoiceIdsCsv)`, resets inputs, shows `addToast`
+5. Add handler `async function handleUpdateShelf(shelf: CurationShelf)`: calls `await updateShelf(shelf.id, { title: editTitle.trim(), voiceIds: csvToList(editVoiceIdsCsv) })`, clears `editingShelfId`, shows `addToast`
+6. Add handler `async function handleDeleteShelf(shelf: CurationShelf)`: `confirm()` dialog, calls `await deleteShelf(shelf.id)`, shows `addToast`
+7. Add `{#if activeTab === 'shelves'}` panel:
+   - `{#each $shelves as shelf}` row: shelf title, voice count badge, edit button (sets `editingShelfId`), delete button
+   - Inline edit form when `editingShelfId === shelf.id`: title input, voice IDs CSV input, Save/Cancel buttons
+   - Create form at bottom: title input, voice IDs CSV input, "Add Shelf" primary button
+8. Reuse existing CSS classes: `panel`, `grid`, `primary-btn`, `ghost-btn`, `small-btn`, `tab`, `tab-badge`
+
+### Validation Commands
+
+```bash
+npm test
+```
+
+
+---
+
+[factory:01KMRX7XTYSP61S6BW2A0CHBCK]
+
+🔬 **Plan needs revision.**
+
+── plan-reviewer ──
+🔬 ^[[3;32mThe user is asking me to review a^[[0m^[[3;32m technical plan for issue #3 in the vokda^[[0m^[[3;32m project. Let me check this plan against the checklist provided:
+
+1. **All required spec^[[0m^[[3;32m sections filled in?**
+   - ✓ Existing Code — described the C^[[0m^[[3;32murationShelf type and existing data layer
+   - ✓ Changes Needed — described store additions and UI^[[0m^[[3;32m additions
+   - ✓ Relevant Files — specific paths provided
+   - ✓ Tasks —^[[0m^[[3;32m 2 tasks outlined
+   - ✓ Validation — npm test command provided^[[0m^[[3;32m
+   - ✓ Acceptance Criteria — each task has bullet points describing what to do
+
+2. **Cites^[[0m^[[3;32m specific files and types with exact paths — NOT placeholders?**
+   Let me check:^[[0m^[[3;32m
+   - `apps/web/src/lib/types.ts` ✓
+   - `apps/web/src/lib/data/^[[0m^[[3;32mcuration-workspace.ts` ✓
+   - `apps/web/src/lib/stores/app-state.ts` ✓
+   - `apps/web/src/routes/curation/+page.svelte` ^[[0m^[[3;32m✓
+   - All paths appear exact, not placeholders like "path/to/file"^[[0m^[[3;32m
+   - Types referenced: `CurationShelf`, `CurationWorkspace`, `AppState`
+
+3. **De^[[0m^[[3;32mcomposes into 1-4 focused, testable tasks?**
+   - Task^[[0m^[[3;32m 1: Add shelf store functions to app-state.ts (6^[[0m^[[3;32m new functions/exports)
+   - Task 2: Add Shelves tab to curation page
+   - Both seem^[[0m^[[3;32m focused and testable
+   - ✓ 2 tasks
+
+4. **Each task has clear^[[0m^[[3;32m acceptance criteria?**
+   - Task 1 has 8 numbered sub-points describing what to implement^[[0m^[[3;32m
+   - Task 2 has 8 numbered sub-points describing what to implement
+   - Both are quite detailed^[[0m^[[3;32m
+^[[0m^[[3;32m   ^[[0m^[[3;32m
+5. **Validation commands are concrete and runnable?** The validation section specifies `npm test`,^[[0m^[[3;32m which works but feels generic for this feature. More targeted^[[0m^[[3;32m commands like `npm run check:web` for TypeScript verification and `npx --workspace apps/web vitest run` for web-specific tests would be more precise^[[0m^[[3;32m.
+
+There's a potential inconsistency I'm noticing: the plan mentions that fresh^[[0m^[[3;32m shelves receive DynamoDB-assigned IDs on creation, requiring a re-fetch via `fetchShelves()`. However, Task^[[0m^[[3;32m 1 step 5 instructs using `crypto.randomUUID()` for^[[0m^[[3;32m the^[[0m^[[3;32m id. If the data layer handles ID generation, the frontend shouldn't be creating UUIDs—^[[0m^[[3;32mthis needs clarification. Additionally, `csvToList` is referenced in the handlers but never defined, and `addToast` is used^[[0m^[[3;32m without confirming it's imported or available. The delete confirmation uses^[[0m^[[3;32m a native `confirm()` dialog, which might not align with the app's styling conventions—a modal component could^[[0m^[[3;32m be more consistent. The test validation could also be more comprehensive, covering^[[0m^[[3;32m TypeScript checks, store function unit tests, and UI integration tests rather than just a generic test^[[0m^[[3;32m command.^[[0m^[[3;32m
+
+Looking^[[0m^[[3;32m at the plan's "Key patterns observed" section, it mentions that `saveShelf` attempts an update^[[0m^[[3;32m first and falls back to create, with DynamoDB assigning the ID on creation. But Task 1 step 5 specifies building^[[0m^[[3;32m `CurationShelf` with `crypto.randomUUID()`, which contradicts the earlier statement. The plan needs^[[0m^[[3;32m to clarify whether the backend or frontend generates the ID. I should also check the actual^[[0m^[[3;32m `CurationShelf` type definition in `apps/web/src/lib/types.ts` to understand what's already defined.^[[0m^[[3;32m
+
+There^[[0m^[[3;32m's also a gap in the validation approach—the plan calls for `npm test` but omits `npm run check:web`^[[0m^[[3;32m which is listed as a key command in the project context. TypeScript compilation verification should be included as well. Additionally^[[0m^[[3;32m, the plan references `csvToList()` in the handlers without specifying where this function comes from or how^[[0m^[[3;32m it's implemented.^[[0m^[[3;32m
+
+The^[[0m^[[3;32m `addToast` function is also referenced without confirmation it exists or is properly imported. These^[[0m^[[3;32m gaps suggest the implementation needs more concrete sourcing for^[[0m^[[3;32m utility functions.
+
+However, the most significant issue remains the ID generation contradiction. In the plan's^[[0m^[[3;32m notes, it states that DynamoDB assigns IDs on shelf creation, yet the implementation steps show the frontend generating UUIDs with `crypto.randomUUID()`. Looking back^[[0m^[[3;32m at Task 1 step 5, the plan has the `CurationShelf` being built with `crypto.randomUUID()` for^[[0m^[[3;32m the id field, which directly conflicts with the stated backend behavior^[[0m^[[3;32m.^[[0m^[[3;32m
+
+The comment^[[0m^[[3;32m about "DynamoDB may assign a different ID on the create path" doesn't align with how DynamoDB actually works—the partition key is set by the application, not auto-generated by the database^[[0m^[[3;32m. This needs clarification in the plan itself, not just assumed during implementation.^[[0m^[[3;32m
+
+I^[[0m^[[3;32m should also verify that referenced helper functions like `csvToList` actually exist in the codebase,^[[0m^[[3;32m and whether validation should include stricter type checking beyond what's currently^[[0m^[[3;32m outlined. The plan has specific paths and type names, which is good, but the contradictions^[[0m^[[3;32m around ID generation and missing function definitions suggest this needs revision before proceeding.^[[0m
+Looking at this plan against the quality checklist:
+
+**✓ COMPLETE SECTIONS:**
+- All spec sections present (Relevant Files, Tasks, Validation, Acceptance Criteria)
+- Exact file paths throughout (`apps/web/src/lib/stores/app-state.ts`, `apps/web/src/routes/curation/+page.svelte`, etc.)
+- Specific types cited (`CurationShelf`, `CurationWorkspace`)
+- 2 focused tasks with detailed sub-steps
+- Concrete patterns described (optimistic updates, error handling, store hydration)
+
+**✗ CRITICAL ISSUES:**
+
+1. **Contradictory ID generation logic:**
+   - Plan notes: "fresh shelves get a DynamoDB-assigned ID on create"
+   - Task 1 step 5 implementation: "Builds `CurationShelf` with `crypto.randomUUID()` id"
+   
+   If the backend assigns IDs on create, the frontend should **not** generate UUIDs. This needs clarification: either the frontend generates the ID (and keeps it), or the backend does (and returns it). The current plan says both.
+
+2. **Undefined helper function:**
+   - Plan references `csvToList(shelfVoiceIdsCsv)` in Task 2 handlers without defining or importing it
+   - Where does this utility come from?
+
+3. **Missing import verification:**
+   - Plan references `addToast` without confirming it's imported or available in the curation page component
+
+4. **Incomplete validation:**
+   - Plan includes `npm test` but should also include `npm run check:web` (TypeScript type checking), which is a key command per project context
+
+**REVISE**
+
+Clarify: (1) Who generates shelf IDs—frontend or backend? If backend, remove `crypto.randomUUID()` and have the re-fetch return the assigned ID. (2) Define where `csvToList` comes from or mark it for creation. (3) Add `npm run check:web` to validation commands.
+
+
+---
+
+## Spec
+
+### Relevant Files
+
+**Types:**
+- `apps/web/src/lib/types.ts` — `CurationShelf` type (`id, key, title, description, voiceIds, published, updatedAt`)
+
+**Data layer (already exists, no changes needed):**
+- `apps/web/src/lib/data/curation-workspace.ts` — `fetchShelves()`, `saveShelf(shelf)`, `deleteShelf(shelfId)`
+  - `saveShelf` uses update-first / create-fallback; on the create path, `id` is **not** passed so Amplify auto-generates it — frontend must re-fetch after create to obtain the real DynamoDB ID
+  - `saveShelf` returns `void`; the caller is responsible for syncing state after creation
+
+**Store (needs changes):**
+- `apps/web/src/lib/stores/app-state.ts` — add `shelves: CurationShelf[]` to `AppState`, wire hydration and CRUD exports
+
+**UI (needs changes):**
+- `apps/web/src/routes/curation/+page.svelte` — add `'shelves'` tab with list, create, edit, and delete UI
+  - Already imports `csvToList` from `$lib/voice-catalog` and `addToast` from `$lib/components/toast-store`
+  - Already uses native `confirm()` for destructive actions (consistent pattern)
+  - Already has `activeTab: 'editor' | 'drafts' | 'database'` union to extend
+
+### Step-by-Step Tasks
+
+**Task 1 — Add shelf store functions to `apps/web/src/lib/stores/app-state.ts`**
+
+1. Add `CurationShelf` to the import from `$lib/types`
+2. Add `fetchShelves`, `saveShelf as saveShelfRemote`, `deleteShelf as deleteShelfRemote` to the existing import from `$lib/data/curation-workspace`
+3. Add `shelves: CurationShelf[]` field (default `[]`) to the `AppState` type and `defaultState` object
+4. Add `hydrateShelves()` async function:
+   - Guards with `if (!browser || AUTH_MODE !== 'amplify') return`
+   - Calls `fetchShelves()` and updates `appState` with the result
+   - Wraps in try/catch calling `reportSyncError('hydrateShelves', error)` on failure
+5. Call `void hydrateShelves()` at the end of the existing `hydrateCurationState()` function (so shelves load on curator init alongside workspace data)
+6. Export `shelves = derived(appState, ($state) => $state.shelves)`
+7. Export `createShelf(title: string, voiceIds: string[])`:
+   - Guards: trim title, return early if empty
+   - ID resolution: Amplify auto-assigns the ID on create (the `saveShelf` create-path does not pass `id`). Use a temporary `crypto.randomUUID()` only to force the update attempt to fail and trigger the create fallback; after `saveShelf` resolves, call `hydrateShelves()` to replace the optimistic entry with the real Amplify record.
+   - Optimistic: append a placeholder `CurationShelf` to the store immediately (good UX)
+   - Call `saveShelfRemote(shelf)` (async), then `hydrateShelves()` to sync real ID
+   - On error: `reportSyncError('createShelf', error)`, then `hydrateShelves()` to revert
+   - `key` field: derive from title as `title.trim().toLowerCase().replace(/\s+/g, '-')`
+8. Export `updateShelf(shelfId: string, patch: Partial<Pick<CurationShelf, 'title' | 'description' | 'voiceIds' | 'published'>>)`:
+   - Optimistic: merge patch into matching shelf in store
+   - Call `saveShelfRemote` with the merged shelf
+   - On error: `reportSyncError('updateShelf', error)`, then `hydrateShelves()` to revert
+9. Export `deleteShelf(shelfId: string)`:
+   - Optimistic: filter out shelf from store
+   - Call `deleteShelfRemote(shelfId)`
+   - On error: `reportSyncError('deleteShelf', error)`, then `hydrateShelves()` to revert
+
+**Task 2 — Add Shelves tab UI to `apps/web/src/routes/curation/+page.svelte`**
+
+1. Import `shelves`, `createShelf`, `updateShelf`, `deleteShelf` from `$lib/stores/app-state`
+2. Extend `activeTab` type to `'editor' | 'drafts' | 'database' | 'shelves'`
+3. Add reactive shelf-form state:
+   - `newShelfTitle = ''`, `newShelfVoiceIdsCsv = ''` for the create form
+   - `editingShelfId: string | null = null`, `editTitle = ''`, `editVoiceIdsCsv = ''` for inline edit
+4. Add event handlers:
+   - `handleCreateShelf()` — calls `createShelf(newShelfTitle, csvToList(newShelfVoiceIdsCsv))`, resets form fields, calls `addToast`
+   - `handleUpdateShelf(shelfId)` — calls `updateShelf(shelfId, { title: editTitle, voiceIds: csvToList(editVoiceIdsCsv) })`, clears `editingShelfId`
+   - `handleDeleteShelf(shelf)` — native `confirm()` (consistent with `removeVoice`), calls `deleteShelf(shelf.id)`, calls `addToast`
+5. Add tab button `Shelves` in `<nav class="tabs">` (consistent style, with `tab-badge` showing `$shelves.length`)
+6. Add `{#if activeTab === 'shelves'}` panel:
+   - Create form: title `<input>`, voice IDs CSV `<input>` (placeholder: `"voice-id-1, voice-id-2"`), Create button
+   - Shelf list: `{#each $shelves as shelf}` — show title, voice count badge, edit/delete buttons
+   - Inline edit row: when `editingShelfId === shelf.id`, show title input + voice IDs input + Save/Cancel buttons
+   - No separate loading state needed — shelves are hydrated as part of `hydrateCurationState`
+
+### Validation Commands
+
+```bash
+# TypeScript — must exit 0 with zero errors
+npm run check:web
+
+# Unit tests — must exit 0 (178 tests baseline)
+npx --workspace apps/web vitest run
+```
+
+
+---
+
+[factory:01KMRXZ5XH6DM4BZV85G9ABPG9]
+
+🏭 **Intake:** Classified as FEATURE — routing to planner.
+
+---
+
+## Spec
+
+### Relevant Files
+
+**Types (no changes needed):**
+- `apps/web/src/lib/types.ts` — `CurationShelf` type already defined at line 145: `{ id, key, title, description, voiceIds, published, updatedAt }`
+
+**Data layer (already complete — no changes needed):**
+- `apps/web/src/lib/data/curation-workspace.ts` — `fetchShelves()`, `saveShelf(shelf)`, `deleteShelf(shelfId)` all implemented
+  - `saveShelf` tries `update` first (passes `id`), catches failure, falls through to `create` which does **not** pass `id` — Amplify auto-generates the ID on create
+  - After a create, the caller must re-fetch via `fetchShelves()` to obtain the real DynamoDB-assigned ID
+  - `saveShelf` returns `void`; `deleteShelf` returns `void`
+
+**Store (needs changes):**
+- `apps/web/src/lib/stores/app-state.ts` — add `shelves` field to `AppState`, wire hydration in `hydrateCurationState()`, export derived store + CRUD functions
+
+**UI (needs changes):**
+- `apps/web/src/routes/curation/+page.svelte` — add `'shelves'` tab with list, create, edit, and delete UI
+  - Already imports `csvToList` from `$lib/voice-catalog` (line 10) — no new import needed
+  - Already imports `addToast` from `$lib/components/toast-store` (line 11) — no new import needed
+  - Already uses native `confirm()` for destructive actions (line 174, `removeVoice`) — consistent pattern
+  - Has `activeTab: 'editor' | 'drafts' | 'database'` union (line 178) to extend
+
+### Step-by-Step Tasks
+
+**Task 1 — Add shelf store state and functions to `apps/web/src/lib/stores/app-state.ts`**
+
+1. Add `CurationShelf` to the existing import from `$lib/types` (line 3)
+2. Add `fetchShelves`, `saveShelf as saveShelfRemote`, `deleteShelf as deleteShelfRemote` to the existing import from `$lib/data/curation-workspace` (line 11)
+3. Add `shelves: CurationShelf[]` field (default `[]`) to the `AppState` type and `defaultState` object
+4. Add `async function hydrateShelves()`:
+   - Guard: `if (!browser || AUTH_MODE !== 'amplify') return`
+   - Calls `const result = await fetchShelves()` and updates `appState` with `shelves: result`
+   - Wraps in try/catch calling `reportSyncError('hydrateShelves', error)` on failure
+5. Call `void hydrateShelves()` at the end of the existing `hydrateCurationState()` function body (after the workspace fetch completes), so shelves load alongside curation workspace data
+6. Export a derived store: `export const shelves = derived(appState, ($state) => $state.shelves)`
+7. Export `createShelf(title: string, voiceIds: string[] = [])`:
+   - Guard: `if (!curationWriteEnabled()) return`; also return early if `!title.trim()`
+   - Build a temporary `CurationShelf` object: `id` = `crypto.randomUUID()` (this is a throwaway ID — the update attempt will fail because no DynamoDB record exists with this ID, causing `saveShelf` to fall through to the create path which does NOT pass `id`, so Amplify auto-generates the real ID)
+   - Set `key = title.trim().toLowerCase().replace(/\s+/g, '-')`, `description: ''`, `published: false`, `updatedAt: new Date().toISOString()`
+   - Optimistic: append the placeholder shelf to `appState.shelves` immediately
+   - Call `await saveShelfRemote(shelf)` then `await hydrateShelves()` to replace the optimistic placeholder with the real Amplify record (which has the DynamoDB-assigned ID)
+   - On error: `reportSyncError('createShelf', error)` then `void hydrateShelves()` to revert
+8. Export `updateShelf(shelfId: string, patch: Partial<Pick<CurationShelf, 'title' | 'description' | 'voiceIds' | 'published'>>)`:
+   - Guard: `if (!curationWriteEnabled()) return`
+   - Find the existing shelf from `getAppStateSnapshot().shelves`; return early if not found
+   - Build merged shelf: spread existing shelf, spread patch, set `updatedAt: new Date().toISOString()`
+   - Optimistic: replace matching shelf in `appState.shelves` with the merged version
+   - Call `await saveShelfRemote(mergedShelf)` (this hits the update path since the ID exists in DynamoDB)
+   - On error: `reportSyncError('updateShelf', error)` then `void hydrateShelves()` to revert
+9. Export `deleteShelf(shelfId: string)`:
+   - Guard: `if (!curationWriteEnabled()) return`
+   - Optimistic: filter out shelf with matching `id` from `appState.shelves`
+   - Call `await deleteShelfRemote(shelfId)`
+   - On error: `reportSyncError('deleteShelf', error)` then `void hydrateShelves()` to revert
+
+**Task 2 — Add Shelves tab UI to `apps/web/src/routes/curation/+page.svelte`**
+
+1. Add imports at top of `<script>`: `shelves`, `createShelf`, `updateShelf`, `deleteShelf` from `$lib/stores/app-state` (add to existing import on line 4)
+2. Extend `activeTab` type (line 178) to `'editor' | 'drafts' | 'database' | 'shelves'`
+3. Add local reactive state variables:
+   - `let newShelfTitle = ''` and `let newShelfVoiceIdsCsv = ''` for the create form
+   - `let editingShelfId: string | null = null`, `let editTitle = ''`, `let editVoiceIdsCsv = ''` for inline editing
+4. Add event handlers (uses already-imported `csvToList` from `$lib/voice-catalog` and `addToast` from `$lib/components/toast-store`):
+   - `handleCreateShelf()` — validates `newShelfTitle.trim()` is non-empty, calls `await createShelf(newShelfTitle.trim(), csvToList(newShelfVoiceIdsCsv))`, resets form fields, calls `addToast('Shelf created.')`
+   - `handleUpdateShelf(shelfId: string)` — calls `await updateShelf(shelfId, { title: editTitle.trim(), voiceIds: csvToList(editVoiceIdsCsv) })`, clears `editingShelfId`, calls `addToast('Shelf updated.')`
+   - `handleDeleteShelf(shelf: CurationShelf)` — native `confirm(\`Delete shelf "${shelf.title}"?\`)` (consistent with `removeVoice` pattern on line 174), calls `await deleteShelf(shelf.id)`, calls `addToast(\`Deleted "${shelf.title}".\`)`
+   - `startEditShelf(shelf: CurationShelf)` — sets `editingShelfId = shelf.id`, `editTitle = shelf.title`, `editVoiceIdsCsv = shelf.voiceIds.join(', ')`
+5. Add tab button in `<nav class="tabs">` (after the Database tab button): `<button class="tab" class:active={activeTab === 'shelves'} on:click={() => activeTab = 'shelves'}><Icon name="star" size={16} /> Shelves <span class="tab-badge">{$shelves.length}</span></button>`
+6. Add `{#if activeTab === 'shelves'}` panel section after the Database tab panel:
+   - Create form at top: title `<input>` bound to `newShelfTitle`, voice IDs CSV `<input>` bound to `newShelfVoiceIdsCsv` with placeholder `"voice-id-1, voice-id-2"`, "Create Shelf" `<button class="primary-btn">` calling `handleCreateShelf`
+   - Shelf list: `{#each $shelves as shelf (shelf.id)}` — show shelf title, voice count badge (`{shelf.voiceIds.length} voices`), Edit button (`class="small-btn"`, calls `startEditShelf(shelf)`), Delete button (`class="small-btn delete"`, calls `handleDeleteShelf(shelf)`)
+   - Inline edit: `{#if editingShelfId === shelf.id}` — title input bound to `editTitle`, voice IDs CSV input bound to `editVoiceIdsCsv`, Save button (`class="small-btn publish"`, calls `handleUpdateShelf(shelf.id)`), Cancel button (`class="small-btn"`, sets `editingShelfId = null`)
+   - Empty state: `{:else}` block — "No shelves yet. Create one above."
+7. Reuse existing CSS classes already in the component: `panel`, `panel-desc`, `grid`, `primary-btn`, `ghost-btn`, `small-btn`, `tab`, `tab-badge`, `action-row`; add minimal shelf-specific styles only if needed (e.g., `.shelf-row` flex container)
+
+### Validation Commands
+
+```bash
+# TypeScript type checking — must exit 0 with zero errors
+npm run check:web
+
+# Unit tests — must exit 0
+npm test
+```
+
+Revise your plan to address this feedback.
+
+## SUBMISSION
+
+You MUST use the submit_spec tool to submit your completed spec.
+Do NOT post comments directly.
+For complex specs with code blocks: write to a file first, then submit_spec with spec_file.
+For simple specs: submit_spec with spec directly.
+If submit_spec returns validation errors, fix the spec and resubmit.
+The spec must include all required sections for this issue type.

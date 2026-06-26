@@ -1,0 +1,47 @@
+── planner (anthropic/claude-opus-4-6) ──
+📋 [3;38;5;75mLet[0m[3;38;5;75m me research the specific issues raised in the review feedback before[0m[3;38;5;75m revising the spec.[0m
+
+  👁️ read 
+  👁️ read ({"path":"lib/data/curation-workspace.ts"})
+({"path":"lib/stores/app-state.ts"})
+
+── planner (anthropic/claude-opus-4-6) ──
+📋 
+  👁️ read 
+  👁️ read ({"path":"routes/curation/+page.svelte"})
+({"command":"cd /Users/k/Projects/vokda && grep -n 'CurationShelf' apps/web/src/lib/types.ts"})
+
+── planner (anthropic/claude-opus-4-6) ──
+📋 
+  👁️ read ({"path":"src/lib/types.ts","offset":145})
+
+── planner (anthropic/claude-opus-4-6) ──
+📋 Now I have all the facts. Key findings:
+
+1. **ID generation**: `saveShelf` create path does NOT pass `id` — Amplify auto-generates it. The frontend UUID is only used to attempt update (which fails), triggering create fallback. After create, must re-fetch to get real ID.
+
+2. **`csvToList` and `addToast`**: Both already imported in the curation page — `csvToList` from `$lib/voice-catalog`, `addToast` from `$lib/components/toast-store`.
+
+3. **`shelves` should NOT be inside `AppState`**: Looking at the store pattern, `AppState` is persisted to localStorage. Shelves are DynamoDB-only and should be a separate writable store (like `dbVoices` local state in the curation page). But to follow the `derived` export pattern used by `collections` and `favorites`, adding to `AppState` is consistent. Let me check — actually `collections` and `favorites` ARE in `AppState` and are localStorage-backed + cloud-synced. Shelves are curator-only DynamoDB data. A separate writable makes more sense to avoid localStorage bloat. But the reviewer didn't flag this. Let me keep it consistent with the existing pattern since curation data (metadataOverrides, customVoices, providerCatalog) IS in AppState.
+
+4. **`confirm()` for delete**: Already used in the curation page (`removeVoice`) — consistent pattern.
+
+5. **Validation**: Need both `npm run check:web` and `npx --workspace apps/web vitest run`.
+  📝 write ({"path":"tmp/spec-curation-shelf.md","lines":86,"starts":"## Spec"})
+
+── planner (anthropic/claude-opus-4-6) ──
+📋 
+  📄 submit_spec ({"kind":"plan","spec_file":"/tmp/spec-curation-shelf.md"})
+
+── planner (anthropic/claude-opus-4-6) ──
+📋 Spec submitted. Key revisions addressing the review feedback:
+
+1. **ID generation clarified**: The spec now explicitly explains that `crypto.randomUUID()` is a throwaway ID used only to force the update-first path in `saveShelf` to fail, triggering the create fallback which does NOT pass `id` (Amplify auto-generates it). After `saveShelfRemote` resolves, `hydrateShelves()` is called to replace the optimistic placeholder with the real DynamoDB record.
+
+2. **`csvToList` sourced**: Confirmed it's already imported in the curation page (line 10, from `$lib/voice-catalog`). Spec notes this explicitly — no new import needed.
+
+3. **`addToast` sourced**: Confirmed already imported (line 11, from `$lib/components/toast-store`). Spec notes this explicitly.
+
+4. **Validation commands fixed**: Added `npm run check:web` for TypeScript checking alongside `npm test` for unit tests.
+
+📊 planner: turns=6 in=140235 out=3582 cost=$0.4015

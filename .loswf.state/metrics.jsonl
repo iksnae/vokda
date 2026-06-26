@@ -1,0 +1,7 @@
+{"event":"sweep_start","project":"vokda","runId":"01KNFTM268MQT2KRJT6XE48TGJ","ts":"2026-04-05T22:01:12.136Z"}
+{"event":"plan_start","issue":3,"title":"","runId":"01KNFTM268MQT2KRJT6XE48TGJ","project":"vokda","ts":"2026-04-05T22:03:12.243Z"}
+{"event":"sweep_start","project":"vokda","runId":"01KNFTXE974JZ063S1S33F409V","ts":"2026-04-05T22:06:19.431Z"}
+{"event":"plan_start","issue":3,"title":"","runId":"01KNFTXE974JZ063S1S33F409V","project":"vokda","ts":"2026-04-05T22:07:45.512Z"}
+{"event":"grounded_review","issue":3,"issues_found":10,"cost":0.070365,"runId":"01KNFTXE974JZ063S1S33F409V","project":"vokda","ts":"2026-04-05T22:10:53.314Z"}
+{"event":"plan_revision","issue":3,"round":1,"source":"grounded","runId":"01KNFTXE974JZ063S1S33F409V","project":"vokda","ts":"2026-04-05T22:10:54.361Z"}
+{"event":"sweep_end","project":"vokda","did_work":true,"runId":"01KNFTXE974JZ063S1S33F409V","ts":"2026-04-05T22:10:56.745Z"}

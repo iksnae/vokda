@@ -17,7 +17,7 @@
 ## Project Overview
 
 - **Stack**: SvelteKit 4 (TypeScript) + AWS Amplify Gen2 (Cognito auth, AppSync/DynamoDB) + Serverless Synthesis API (SAM)
-- **Repo**: Monorepo with `apps/web`, `apps/api`, `amplify/`, `infra/`
+- **Repo**: npm-workspaces monorepo — `apps/web`, `apps/api`, `packages/sdk` (TS SDK), plus `amplify/`, `infra/`, `scripts/` (catalog generators), `specs/` (plans)
 - **Org**: `iksnae` on GitHub (private)
 - **Live**: https://vokda.iknsae.com
 - **API**: https://api.vokda.iksnae.com
@@ -26,16 +26,40 @@
 ## Key Commands
 
 ```bash
-npm install                  # install all workspace deps
+npm install                  # install all workspace deps (npm workspaces; Node >=20)
 npm run dev:web              # SvelteKit dev server
 npm run dev:api              # Node.js admin API (port 8787)
-npm run check:web            # svelte-check + typecheck
-npm run build:web            # production build (static adapter)
-npx --workspace apps/web vitest run  # run unit tests (178 tests)
+npm run check:web            # svelte-check + typecheck (CI gate)
+npm run build:web            # runs publish-catalog.mjs, then production build (static adapter)
+npm run test                 # run unit tests (235 tests, vitest) — delegates to apps/web
+npm -w apps/web run test:watch   # vitest watch mode
+npm -w apps/web run test -- serialize   # run a single test file by name match
+npm run lint                 # NOTE: currently a no-op stub ("No lint configured yet")
+
+# SDK package (packages/sdk)
+npm run build:sdk            # build the TS SDK
+npm run check:sdk            # typecheck the SDK
+
+# Catalog regeneration (see "Catalog publish" below)
+node scripts/publish-catalog.mjs     # regenerate static catalog JSON from voices.json
+npm run generate:api                 # regenerate API catalog artifacts (generate-api-catalog.mjs)
 
 # Synthesis API (infra/)
 cd infra && sam build && sam deploy   # deploy Lambda + API Gateway
+
+# Amplify backend (wraps AWS profile switch via switch-aws-env.sh personal)
+npm run amplify:sandbox      # local sandbox + generate amplify_outputs.json
+npm run amplify:deploy       # pipeline-deploy --branch main
+npm run amplify:outputs      # regenerate amplify_outputs.json
 ```
+
+### Catalog publish
+
+`apps/web/static/data/voices.json` is the source of truth. After editing it you **must** regenerate the derived artifacts and commit them, or the live site/API will serve stale data: `build:web` runs `publish-catalog.mjs` automatically, and `npm run generate:api` rebuilds the API catalog. Hosting is AWS Amplify (auto CloudFront invalidation on deploy). The live Synthesis API is the SAM stack `vokda-synthesis-dev`.
+
+### CI
+
+Single workflow `.github/workflows/ci.yml` (`web-checks` job) runs on push to `main` and on PRs: `npm run check:web` then `npm run build:web` on Node 20. Always run `check:web` locally before pushing.
 
 ## Architecture
 
@@ -131,7 +155,7 @@ apps/api/src/server.mjs       # Admin API (role management)
 - Vokda API keys for programmatic access
 - Collections — pin, organize, export as Voice Pack JSON
 - Auth live (Cognito), roles: visitor → guest → curator → admin
-- 178 unit tests, zero type errors
+- 235 unit tests, zero type errors
 
 **Known gaps:**
 - Amplify Data scaffolded but favorites/collections still in localStorage
