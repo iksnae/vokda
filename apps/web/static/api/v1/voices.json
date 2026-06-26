@@ -1,7 +1,7 @@
 {
   "$schema": "https://vokda.iksnae.com/api/v1/openapi.json",
-  "total": 550,
-  "generatedAt": "2026-06-26T18:27:57.487Z",
+  "total": 552,
+  "generatedAt": "2026-06-26T19:08:06.729Z",
   "voices": [
     {
       "id": "01KJZXZNF942C62SAR07KM4HBJ",
@@ -21628,6 +21628,90 @@
       },
       "steering": {
         "kind": "none"
+      }
+    },
+    {
+      "id": "01KW2N7R1B2313CB1DXD7DTR4K",
+      "name": "marin",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "description": "Warm, natural OpenAI voice with a relaxed, conversational delivery — one of OpenAI’s newest gpt-4o-mini-tts voices, steerable with free-text direction.",
+      "tags": [
+        "conversational",
+        "warm",
+        "natural",
+        "steerable",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
+      "imageUrl": null,
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/01KW2N7R1B2313CB1DXD7DTR4K.json",
+      "webUrl": "https://vokda.iksnae.com/voices/01KW2N7R1B2313CB1DXD7DTR4K",
+      "metadata": {
+        "shortLabel": "Warm conversational voice",
+        "toneTags": [
+          "warm",
+          "calm",
+          "natural"
+        ],
+        "useCases": [
+          "Conversational agents",
+          "Assistants",
+          "Narration"
+        ],
+        "genderPresentation": "female",
+        "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
+      }
+    },
+    {
+      "id": "01KW2N7VAHAFCDJHFGBDFA2PSX",
+      "name": "cedar",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "description": "Grounded, natural OpenAI voice with an easygoing, confident read — one of OpenAI’s newest gpt-4o-mini-tts voices, steerable with free-text direction.",
+      "tags": [
+        "conversational",
+        "grounded",
+        "natural",
+        "steerable",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+      "imageUrl": null,
+      "detailUrl": "https://vokda.iksnae.com/api/v1/voices/01KW2N7VAHAFCDJHFGBDFA2PSX.json",
+      "webUrl": "https://vokda.iksnae.com/voices/01KW2N7VAHAFCDJHFGBDFA2PSX",
+      "metadata": {
+        "shortLabel": "Grounded conversational voice",
+        "toneTags": [
+          "grounded",
+          "confident",
+          "easygoing"
+        ],
+        "useCases": [
+          "Conversational agents",
+          "Explainers",
+          "Narration"
+        ],
+        "genderPresentation": "male",
+        "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     }
   ]

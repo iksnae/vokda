@@ -1,0 +1,118 @@
+{
+  "id": "01KW2N7VAHAFCDJHFGBDFA2PSX",
+  "name": "cedar",
+  "provider": "OpenAI",
+  "providerId": "openai",
+  "providerVoiceId": "cedar",
+  "description": "Grounded, natural OpenAI voice with an easygoing, confident read — one of OpenAI’s newest gpt-4o-mini-tts voices, steerable with free-text direction.",
+  "tags": [
+    "conversational",
+    "grounded",
+    "natural",
+    "steerable",
+    "openai"
+  ],
+  "languages": [
+    "en-US"
+  ],
+  "qualityTier": "premium",
+  "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+  "metadata": {
+    "speakingStyle": "grounded and easygoing",
+    "useCases": [
+      "Conversational agents",
+      "Explainers",
+      "Narration"
+    ],
+    "genderPresentation": "male",
+    "toneTags": [
+      "grounded",
+      "confident",
+      "easygoing"
+    ],
+    "shortLabel": "Grounded conversational voice",
+    "searchDescription": "Easygoing, confident voice well suited to explainers, conversational agents, and natural narration.",
+    "audienceTags": [
+      "product",
+      "creators"
+    ],
+    "machineTags": [
+      "conversational",
+      "natural",
+      "steerable",
+      "gpt-4o-mini-tts"
+    ],
+    "metadataQuality": "editorial",
+    "accent": "General American",
+    "agePresentation": "adult"
+  },
+  "modelCard": {
+    "wordTimestamps": false,
+    "licenseUrl": "https://openai.com/policies/usage-policies",
+    "commercialUse": true,
+    "knownLimitations": [
+      "No SSML support",
+      "No word-level timestamps",
+      "Available on gpt-4o-mini-tts (not the older tts-1 models)"
+    ],
+    "notes": "One of OpenAI’s newest voices. Rendered via gpt-4o-mini-tts and steerable with free-text delivery instructions.",
+    "modelFamily": "OpenAI TTS",
+    "modelId": "gpt-4o-mini-tts",
+    "modelVersion": "gpt-4o-mini-tts",
+    "providerType": "cloud_api",
+    "ssmlSupport": false,
+    "voiceCloning": false,
+    "providerName": "OpenAI",
+    "multilingual": true,
+    "latencyMs": "~300-800",
+    "architecture": "Proprietary neural TTS",
+    "releaseDate": "2025-08-28",
+    "attributionRequired": false,
+    "emotionControl": true,
+    "sampleRate": 24000,
+    "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+    "streamingSupport": true,
+    "license": "OpenAI Usage Policies",
+    "modelName": "gpt-4o-mini-tts",
+    "dataRetention": "Subject to OpenAI data usage policy",
+    "apiEndpoint": "api.openai.com/v1/audio/speech",
+    "maxInputLength": 4096,
+    "channels": 1,
+    "bitDepth": 16
+  },
+  "imageUrl": null,
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+  "samples": [
+    {
+      "scriptKey": "conversational",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+      "transcript": "Here is the plan: we ship the first version this week, then refine it together from real feedback.",
+      "id": "01KW2N7VAH2NHWS2MD4ABN6EHJ",
+      "label": "Conversational"
+    }
+  ],
+  "variants": [
+    {
+      "sourceKey": "openai:tts:cedar",
+      "runnable": true,
+      "outputFormats": [
+        "mp3",
+        "wav",
+        "pcm"
+      ],
+      "maxInputChars": 4000,
+      "previewOnly": false,
+      "sourceType": "cloud_provider",
+      "id": "01KW2N7VAHJ3GZ40ZCXY1NG2XW",
+      "supportsSsml": false
+    }
+  ],
+  "steering": {
+    "kind": "instructions",
+    "param": "instructions",
+    "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KW2N7VAHAFCDJHFGBDFA2PSX.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KW2N7VAHAFCDJHFGBDFA2PSX",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KW2N7VAHAFCDJHFGBDFA2PSX.json"
+}

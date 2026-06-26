@@ -49555,6 +49555,226 @@
           "supportsSsml": false
         }
       ]
+    },
+    {
+      "id": "01KW2N7R1B2313CB1DXD7DTR4K",
+      "name": "marin",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "marin",
+      "description": "Warm, natural OpenAI voice with a relaxed, conversational delivery — one of OpenAI’s newest gpt-4o-mini-tts voices, steerable with free-text direction.",
+      "tags": [
+        "conversational",
+        "warm",
+        "natural",
+        "steerable",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "speakingStyle": "warm and conversational",
+        "useCases": [
+          "Conversational agents",
+          "Assistants",
+          "Narration"
+        ],
+        "genderPresentation": "female",
+        "toneTags": [
+          "warm",
+          "calm",
+          "natural"
+        ],
+        "shortLabel": "Warm conversational voice",
+        "searchDescription": "Relaxed, natural-sounding voice well suited to assistants, conversational agents, and approachable narration.",
+        "audienceTags": [
+          "product",
+          "creators"
+        ],
+        "machineTags": [
+          "conversational",
+          "natural",
+          "steerable",
+          "gpt-4o-mini-tts"
+        ],
+        "metadataQuality": "editorial",
+        "accent": "General American",
+        "agePresentation": "adult"
+      },
+      "modelCard": {
+        "wordTimestamps": false,
+        "licenseUrl": "https://openai.com/policies/usage-policies",
+        "commercialUse": true,
+        "knownLimitations": [
+          "No SSML support",
+          "No word-level timestamps",
+          "Available on gpt-4o-mini-tts (not the older tts-1 models)"
+        ],
+        "notes": "One of OpenAI’s newest voices. Rendered via gpt-4o-mini-tts and steerable with free-text delivery instructions.",
+        "modelFamily": "OpenAI TTS",
+        "modelId": "gpt-4o-mini-tts",
+        "modelVersion": "gpt-4o-mini-tts",
+        "providerType": "cloud_api",
+        "ssmlSupport": false,
+        "voiceCloning": false,
+        "providerName": "OpenAI",
+        "multilingual": true,
+        "latencyMs": "~300-800",
+        "architecture": "Proprietary neural TTS",
+        "releaseDate": "2025-08-28",
+        "attributionRequired": false,
+        "emotionControl": true,
+        "sampleRate": 24000,
+        "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+        "streamingSupport": true,
+        "license": "OpenAI Usage Policies",
+        "modelName": "gpt-4o-mini-tts",
+        "dataRetention": "Subject to OpenAI data usage policy",
+        "apiEndpoint": "api.openai.com/v1/audio/speech",
+        "maxInputLength": 4096,
+        "channels": 1,
+        "bitDepth": 16
+      },
+      "imageUrl": null,
+      "audioUrl": "/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
+      "samples": [
+        {
+          "scriptKey": "conversational",
+          "audioUrl": "/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
+          "transcript": "Take a breath. The best ideas usually arrive the moment you finally slow down enough to notice them.",
+          "id": "01KW2N7R1BFVYM2S83ZC0K79NQ",
+          "label": "Conversational"
+        }
+      ],
+      "variants": [
+        {
+          "sourceKey": "openai:tts:marin",
+          "runnable": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false,
+          "sourceType": "cloud_provider",
+          "id": "01KW2N7R1BVAWBVPQF85AFVDDZ",
+          "supportsSsml": false
+        }
+      ]
+    },
+    {
+      "id": "01KW2N7VAHAFCDJHFGBDFA2PSX",
+      "name": "cedar",
+      "provider": "OpenAI",
+      "providerId": "openai",
+      "providerVoiceId": "cedar",
+      "description": "Grounded, natural OpenAI voice with an easygoing, confident read — one of OpenAI’s newest gpt-4o-mini-tts voices, steerable with free-text direction.",
+      "tags": [
+        "conversational",
+        "grounded",
+        "natural",
+        "steerable",
+        "openai"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "qualityTier": "premium",
+      "licenseNotes": "Use governed by OpenAI API terms and account-level policy controls.",
+      "metadata": {
+        "speakingStyle": "grounded and easygoing",
+        "useCases": [
+          "Conversational agents",
+          "Explainers",
+          "Narration"
+        ],
+        "genderPresentation": "male",
+        "toneTags": [
+          "grounded",
+          "confident",
+          "easygoing"
+        ],
+        "shortLabel": "Grounded conversational voice",
+        "searchDescription": "Easygoing, confident voice well suited to explainers, conversational agents, and natural narration.",
+        "audienceTags": [
+          "product",
+          "creators"
+        ],
+        "machineTags": [
+          "conversational",
+          "natural",
+          "steerable",
+          "gpt-4o-mini-tts"
+        ],
+        "metadataQuality": "editorial",
+        "accent": "General American",
+        "agePresentation": "adult"
+      },
+      "modelCard": {
+        "wordTimestamps": false,
+        "licenseUrl": "https://openai.com/policies/usage-policies",
+        "commercialUse": true,
+        "knownLimitations": [
+          "No SSML support",
+          "No word-level timestamps",
+          "Available on gpt-4o-mini-tts (not the older tts-1 models)"
+        ],
+        "notes": "One of OpenAI’s newest voices. Rendered via gpt-4o-mini-tts and steerable with free-text delivery instructions.",
+        "modelFamily": "OpenAI TTS",
+        "modelId": "gpt-4o-mini-tts",
+        "modelVersion": "gpt-4o-mini-tts",
+        "providerType": "cloud_api",
+        "ssmlSupport": false,
+        "voiceCloning": false,
+        "providerName": "OpenAI",
+        "multilingual": true,
+        "latencyMs": "~300-800",
+        "architecture": "Proprietary neural TTS",
+        "releaseDate": "2025-08-28",
+        "attributionRequired": false,
+        "emotionControl": true,
+        "sampleRate": 24000,
+        "providerUrl": "https://platform.openai.com/docs/guides/text-to-speech",
+        "streamingSupport": true,
+        "license": "OpenAI Usage Policies",
+        "modelName": "gpt-4o-mini-tts",
+        "dataRetention": "Subject to OpenAI data usage policy",
+        "apiEndpoint": "api.openai.com/v1/audio/speech",
+        "maxInputLength": 4096,
+        "channels": 1,
+        "bitDepth": 16
+      },
+      "imageUrl": null,
+      "audioUrl": "/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+      "samples": [
+        {
+          "scriptKey": "conversational",
+          "audioUrl": "/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+          "transcript": "Here is the plan: we ship the first version this week, then refine it together from real feedback.",
+          "id": "01KW2N7VAH2NHWS2MD4ABN6EHJ",
+          "label": "Conversational"
+        }
+      ],
+      "variants": [
+        {
+          "sourceKey": "openai:tts:cedar",
+          "runnable": true,
+          "outputFormats": [
+            "mp3",
+            "wav",
+            "pcm"
+          ],
+          "maxInputChars": 4000,
+          "previewOnly": false,
+          "sourceType": "cloud_provider",
+          "id": "01KW2N7VAHJ3GZ40ZCXY1NG2XW",
+          "supportsSsml": false
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "total": 25,
-  "generatedAt": "2026-06-26T18:27:57.487Z",
+  "generatedAt": "2026-06-26T19:08:06.729Z",
   "providers": [
     {
       "id": "azure-speech",
@@ -255,7 +255,7 @@
     {
       "id": "openai",
       "name": "OpenAI",
-      "voiceCount": 11,
+      "voiceCount": 13,
       "qualityTiers": [
         "premium"
       ],
