@@ -23,6 +23,16 @@ describe('getProviderSteering', () => {
     expect(getProviderSteering({ providerId: 'elevenlabs' }, 'eleven_v3').audioTags).toBe(true);
   });
 
+  it('offers the newscaster style only for the 4 supported Polly voices', () => {
+    const matthew = getProviderSteering({ providerId: 'aws-polly', providerVoiceId: 'Matthew' });
+    expect(matthew.kind).toBe('styles');
+    expect(matthew.options?.some((o) => o.id === 'newscaster')).toBe(true);
+
+    // A Polly voice without newscaster support → no steering.
+    expect(getProviderSteering({ providerId: 'aws-polly', providerVoiceId: 'Joey' }).kind).toBe('none');
+    expect(getProviderSteering({ providerId: 'aws-polly' }).kind).toBe('none');
+  });
+
   it('reports no steering for providers not yet wired', () => {
     expect(getProviderSteering({ providerId: 'cartesia' }).kind).toBe('none');
     expect(getProviderSteering({ providerId: 'gcp-tts' }).kind).toBe('none');

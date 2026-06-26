@@ -162,6 +162,7 @@
   let auditionDirection = '';
   let auditionSettings: Record<string, number> = {};
   let auditionModel = '';
+  let auditionStyle = 'default';
   $: steering = voice ? getProviderSteering(voice, auditionModel || undefined) : { kind: 'none' as const, label: '' };
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
@@ -194,6 +195,7 @@
         mode: auditionMode,
         instructions: steering.kind === 'instructions' ? auditionDirection : undefined,
         settings: steering.kind === 'settings' ? auditionSettings : undefined,
+        style: steering.kind === 'styles' && auditionStyle !== 'default' ? auditionStyle : undefined,
         model: auditionModel || undefined
       });
 
@@ -532,6 +534,17 @@
                   bind:value={auditionDirection}
                   placeholder={steering.placeholder}
                 />
+              </label>
+            {/if}
+
+            {#if steering.kind === 'styles'}
+              <label class="audition-direction-label">
+                {steering.label}
+                <select class="audition-direction" bind:value={auditionStyle}>
+                  {#each steering.options ?? [] as o (o.id)}
+                    <option value={o.id}>{o.label}</option>
+                  {/each}
+                </select>
               </label>
             {/if}
 

@@ -58,6 +58,9 @@ const NONE: ProviderSteering = { kind: 'none', label: '' };
 const ELEVENLABS_AUDIO_TAG_MODELS = new Set(['eleven_v3']);
 const ELEVENLABS_DEFAULT_MODEL = 'eleven_multilingual_v2';
 
+/** AWS Polly voices that support the newscaster speaking style (neural engine). */
+const POLLY_NEWSCASTER_VOICES = new Set(['Matthew', 'Joanna', 'Lupe', 'Amy']);
+
 const ELEVENLABS_SETTINGS: SteeringSetting[] = [
   { key: 'stability', label: 'Stability', min: 0, max: 1, step: 0.05, default: 0.5 },
   { key: 'similarity_boost', label: 'Similarity', min: 0, max: 1, step: 0.05, default: 0.75 },
@@ -85,6 +88,18 @@ export function getProviderSteering(voice: SteerableVoice, _model?: string): Pro
         settings: ELEVENLABS_SETTINGS,
         audioTags: ELEVENLABS_AUDIO_TAG_MODELS.has(_model ?? ELEVENLABS_DEFAULT_MODEL),
       };
+    case 'aws-polly':
+      if (voice.providerVoiceId && POLLY_NEWSCASTER_VOICES.has(voice.providerVoiceId)) {
+        return {
+          kind: 'styles',
+          label: 'Style',
+          options: [
+            { id: 'default', label: 'Default' },
+            { id: 'newscaster', label: 'Newscaster' },
+          ],
+        };
+      }
+      return NONE;
     default:
       return NONE;
   }
