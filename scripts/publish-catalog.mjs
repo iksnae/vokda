@@ -26,6 +26,10 @@
  * This replaces generate-api.mjs and extends it with the DynamoDB source option.
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+// Single source of truth for the steering descriptor — shared with the synthesis
+// API (/v1/voices). `steering` is derived here, not stored in voices.json, so the
+// published catalog can never drift from what the synthesis API advertises.
+import { getVoiceSteering } from '../infra/functions/synthesis-router/lib/steering.mjs';
 
 const FROM_DB = process.argv.includes('--from-db');
 const BASE_URL = 'https://vokda.iksnae.com';
@@ -133,7 +137,8 @@ function generateApiFiles(voices) {
       useCases: v.metadata?.useCases,
       genderPresentation: v.metadata?.genderPresentation,
       agePresentation: v.metadata?.agePresentation,
-    }
+    },
+    steering: getVoiceSteering(v),
   }));
 
   writeFileSync(`${OUT}/api/v1/voices.json`, JSON.stringify({
@@ -149,6 +154,7 @@ function generateApiFiles(voices) {
   for (const v of voices) {
     const detail = {
       ...v,
+      steering: getVoiceSteering(v),
       audioUrl: v.audioUrl ? `${BASE_URL}${v.audioUrl}` : null,
       imageUrl: v.imageUrl ? `${BASE_URL}${v.imageUrl}` : null,
       ogImageUrl: `${BASE_URL}/og/voices/${v.id}.jpg`,
@@ -293,6 +299,30 @@ function generateApiFiles(voices) {
             detailUrl: { type: 'string', format: 'uri' },
             webUrl: { type: 'string', format: 'uri' },
             metadata: { $ref: '#/components/schemas/VoiceMetadataSummary' },
+            steering: { $ref: '#/components/schemas/Steering' },
+          },
+        },
+        SteeringSetting: {
+          type: 'object',
+          description: 'A numeric expressivity control (ElevenLabs voice_settings).',
+          properties: {
+            key: { type: 'string' },
+            min: { type: 'number' },
+            max: { type: 'number' },
+            default: { type: 'number' },
+          },
+        },
+        Steering: {
+          type: 'object',
+          description: 'Expressivity control the voice supports, and which synthesize `options.*` to send.',
+          required: ['kind'],
+          properties: {
+            kind: { type: 'string', enum: ['instructions', 'styles', 'settings', 'none'] },
+            param: { type: 'string', description: 'options.* key (instructions | voice_settings | speakingStyle)' },
+            hint: nullableString,
+            options: stringArray,
+            settings: { type: 'array', items: { $ref: '#/components/schemas/SteeringSetting' } },
+            audioTagsModel: { ...nullableString, description: 'settings (ElevenLabs): set options.model_id to this for inline audio tags' },
           },
         },
         VoiceDetail: {

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vokda.iksnae.com/api/v1/openapi.json",
   "total": 550,
-  "generatedAt": "2026-06-26T17:15:40.272Z",
+  "generatedAt": "2026-06-26T18:27:57.487Z",
   "voices": [
     {
       "id": "01KJZXZNF942C62SAR07KM4HBJ",
@@ -29,6 +29,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -70,6 +73,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -101,6 +107,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -143,6 +180,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -183,6 +223,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -214,6 +257,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -246,6 +320,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -276,6 +353,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -314,6 +394,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -355,6 +438,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -410,6 +496,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -465,6 +554,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -508,6 +600,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -541,6 +636,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -569,6 +667,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -624,6 +725,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -673,6 +777,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -705,6 +812,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -733,6 +843,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -761,6 +874,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -793,6 +909,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -822,6 +941,11 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -853,6 +977,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -884,6 +1011,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -921,6 +1051,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -953,6 +1086,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -985,6 +1121,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1013,6 +1152,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1042,6 +1184,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1074,6 +1219,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1113,6 +1261,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1148,6 +1299,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1184,6 +1338,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1217,6 +1374,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1272,6 +1432,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1304,6 +1467,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1332,6 +1498,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1368,6 +1537,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1400,6 +1572,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1440,6 +1615,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1472,6 +1650,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1513,6 +1694,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1541,6 +1725,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1573,6 +1760,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1609,6 +1799,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1642,6 +1835,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1697,6 +1893,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1730,6 +1929,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1770,6 +1972,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1801,6 +2006,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -1832,6 +2068,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1872,6 +2111,9 @@
           "characters"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1927,6 +2169,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1967,6 +2212,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -1999,6 +2247,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2054,6 +2305,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2095,6 +2349,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2127,6 +2384,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2158,6 +2418,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2186,6 +2449,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2218,6 +2484,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2253,6 +2522,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2295,6 +2567,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2323,6 +2598,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2359,6 +2637,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2391,6 +2672,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2419,6 +2703,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2451,6 +2738,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2479,6 +2769,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2517,6 +2810,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2558,6 +2854,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2588,6 +2887,9 @@
           "southern-drawl"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2619,6 +2921,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2651,6 +2956,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2693,6 +3001,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2733,6 +3044,9 @@
           "characters"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2771,6 +3085,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2807,6 +3124,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2839,6 +3159,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2870,6 +3193,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2898,6 +3224,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2935,6 +3264,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -2975,6 +3307,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3016,6 +3351,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3048,6 +3386,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3079,6 +3420,9 @@
           "drive thru agent"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3119,6 +3463,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3154,6 +3501,14 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "styles",
+        "param": "speakingStyle",
+        "options": [
+          "default",
+          "newscaster"
+        ]
       }
     },
     {
@@ -3182,6 +3537,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3213,6 +3571,37 @@
         "useCases": [],
         "genderPresentation": "neutral",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -3241,6 +3630,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3279,6 +3671,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3311,6 +3706,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "child"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3339,6 +3737,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3371,6 +3772,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3414,6 +3818,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3456,6 +3863,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3487,6 +3897,9 @@
           "narrator"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3528,6 +3941,9 @@
         ],
         "genderPresentation": "variable",
         "agePresentation": "variable"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3583,6 +3999,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3611,6 +4030,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3639,6 +4061,11 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -3670,6 +4097,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -3702,6 +4160,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3737,6 +4198,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3769,6 +4233,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3804,6 +4271,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3836,6 +4306,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3867,6 +4340,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3907,6 +4383,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3939,6 +4418,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3967,6 +4449,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -3995,6 +4480,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4023,6 +4511,11 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -4058,6 +4551,11 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -4086,6 +4584,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4141,6 +4642,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4169,6 +4673,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4202,6 +4709,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4233,6 +4743,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -4275,6 +4816,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4307,6 +4851,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4339,6 +4886,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4370,6 +4920,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4409,6 +4962,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4442,6 +4998,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4485,6 +5044,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4517,6 +5079,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4545,6 +5110,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4577,6 +5145,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4615,6 +5186,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4653,6 +5227,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4689,6 +5266,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4720,6 +5300,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4750,6 +5333,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4782,6 +5368,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4822,6 +5411,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4862,6 +5454,9 @@
           "characters"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4900,6 +5495,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4933,6 +5531,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -4973,6 +5574,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5014,6 +5618,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5052,6 +5659,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5084,6 +5694,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5116,6 +5729,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5147,6 +5763,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -5179,6 +5826,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5219,6 +5869,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5246,6 +5899,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5284,6 +5940,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5319,6 +5978,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5351,6 +6013,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5383,6 +6048,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5423,6 +6091,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5459,6 +6130,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5491,6 +6165,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5523,6 +6200,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5550,6 +6230,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5581,6 +6264,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -5636,6 +6350,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5668,6 +6385,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5709,6 +6429,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5750,6 +6473,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5778,6 +6504,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5818,6 +6547,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5859,6 +6591,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5895,6 +6630,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5927,6 +6665,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5967,6 +6708,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -5999,6 +6743,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6030,6 +6777,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -6059,6 +6837,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6090,6 +6871,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6126,6 +6910,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6159,6 +6946,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6190,6 +6980,9 @@
           "long form video"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6226,6 +7019,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6258,6 +7054,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6285,6 +7084,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6317,6 +7119,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6350,6 +7155,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6381,6 +7189,9 @@
           "customer support"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6413,6 +7224,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6444,6 +7258,9 @@
           "healthcare agent"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6480,6 +7297,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6513,6 +7333,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "old"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6540,6 +7363,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6568,6 +7394,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6600,6 +7429,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6630,6 +7462,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6666,6 +7501,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6694,6 +7532,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6721,6 +7562,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6776,6 +7620,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6811,6 +7658,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6841,6 +7691,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6876,6 +7729,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6907,6 +7763,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6938,6 +7797,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -6970,6 +7860,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -6998,6 +7891,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7030,6 +7926,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7070,6 +7969,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7102,6 +8004,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7133,6 +8038,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "old"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -7165,6 +8101,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7197,6 +8136,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7237,6 +8179,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7278,6 +8223,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7316,6 +8264,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7347,6 +8298,9 @@
           "whispering"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7383,6 +8337,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7416,6 +8373,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7449,6 +8409,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7504,6 +8467,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7542,6 +8508,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7570,6 +8539,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7609,6 +8581,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7640,6 +8615,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -7668,6 +8674,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7708,6 +8717,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7738,6 +8750,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7778,6 +8793,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7820,6 +8838,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7850,6 +8871,9 @@
           "middle-aged"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7878,6 +8902,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7909,6 +8936,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -7940,6 +8970,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -7972,6 +9033,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8027,6 +9091,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8082,6 +9149,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8124,6 +9194,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8155,6 +9228,9 @@
           "healthcare agent"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8195,6 +9271,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8226,6 +9305,9 @@
           "tutor agent"
         ],
         "genderPresentation": "neutral"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8258,6 +9340,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8286,6 +9371,11 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -8326,6 +9416,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "child"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8358,6 +9451,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8394,6 +9490,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8427,6 +9526,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8459,6 +9561,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8501,6 +9606,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8532,6 +9640,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8564,6 +9675,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8594,6 +9708,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8626,6 +9743,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8663,6 +9783,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8699,6 +9822,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8730,6 +9856,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -8767,6 +9924,9 @@
           "assistants",
           "interactive"
         ]
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8800,6 +9960,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8836,6 +9999,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8876,6 +10042,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8908,6 +10077,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8939,6 +10111,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -8978,6 +10153,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9011,6 +10189,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "old"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9041,6 +10222,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9069,6 +10253,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9111,6 +10298,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9142,6 +10332,9 @@
           "tutor agent"
         ],
         "genderPresentation": "neutral"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9170,6 +10363,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9208,6 +10404,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9240,6 +10439,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9271,6 +10473,9 @@
         "useCases": [],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9303,6 +10508,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9343,6 +10551,9 @@
           "characters"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9375,6 +10586,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9407,6 +10621,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9440,6 +10657,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "old"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9472,6 +10692,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9512,6 +10735,9 @@
           "characters"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9547,6 +10773,11 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -9578,6 +10809,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9606,6 +10840,14 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "styles",
+        "param": "speakingStyle",
+        "options": [
+          "default",
+          "newscaster"
+        ]
       }
     },
     {
@@ -9633,6 +10875,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9669,6 +10914,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9709,6 +10957,9 @@
           "characters"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9741,6 +10992,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9768,6 +11022,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9800,6 +11057,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9828,6 +11088,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9858,6 +11121,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9890,6 +11156,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9921,6 +11190,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -9953,6 +11253,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -9995,6 +11298,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10050,6 +11356,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10082,6 +11391,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10131,6 +11443,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10162,6 +11477,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -10194,6 +11540,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10230,6 +11579,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10262,6 +11614,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10304,6 +11659,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10337,6 +11695,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "old"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10369,6 +11730,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10411,6 +11775,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10452,6 +11819,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10488,6 +11858,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10519,6 +11892,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -10547,6 +11951,11 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -10602,6 +12011,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10632,6 +12044,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10664,6 +12079,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10696,6 +12114,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10724,6 +12145,11 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -10756,6 +12182,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10796,6 +12225,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10836,6 +12268,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10878,6 +12313,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10913,6 +12351,9 @@
           "narrator"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -10968,6 +12409,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11006,6 +12450,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11038,6 +12485,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11071,6 +12521,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11098,6 +12551,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11126,6 +12582,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11181,6 +12640,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11213,6 +12675,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11245,6 +12710,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11273,6 +12741,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11306,6 +12777,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11335,6 +12809,11 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -11368,6 +12847,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11396,6 +12878,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11426,6 +12911,9 @@
         "useCases": [],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11462,6 +12950,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11497,6 +12988,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11530,6 +13024,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11557,6 +13054,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11584,6 +13084,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11612,6 +13115,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11648,6 +13154,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11683,6 +13192,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11715,6 +13227,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11757,6 +13272,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11792,6 +13310,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11820,6 +13341,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11860,6 +13384,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11892,6 +13419,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11923,6 +13453,9 @@
           "whispering"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -11959,6 +13492,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12000,6 +13536,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12031,6 +13570,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12063,6 +13605,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12095,6 +13640,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12137,6 +13685,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12164,6 +13715,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12204,6 +13758,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12247,6 +13804,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12288,6 +13848,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12324,6 +13887,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12352,6 +13918,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12391,6 +13960,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12423,6 +13995,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12455,6 +14030,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12486,6 +14064,37 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -12526,6 +14135,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12558,6 +14170,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12590,6 +14205,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12621,6 +14239,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12656,6 +14277,11 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -12688,6 +14314,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12743,6 +14372,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12775,6 +14407,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12806,6 +14441,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12846,6 +14484,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12885,6 +14526,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12917,6 +14561,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12949,6 +14596,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -12989,6 +14639,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13016,6 +14669,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13065,6 +14721,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13105,6 +14764,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13138,6 +14800,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13170,6 +14835,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13212,6 +14880,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13248,6 +14919,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13281,6 +14955,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13313,6 +14990,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13353,6 +15033,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13393,6 +15076,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13425,6 +15111,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13465,6 +15154,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13492,6 +15184,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13523,6 +15218,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13556,6 +15254,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13594,6 +15295,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13626,6 +15330,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13654,6 +15361,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13686,6 +15396,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13719,6 +15432,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13752,6 +15468,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13780,6 +15499,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13810,6 +15532,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13848,6 +15573,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13903,6 +15631,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13941,6 +15672,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -13973,6 +15707,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14005,6 +15742,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14045,6 +15785,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14100,6 +15843,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14132,6 +15878,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14163,6 +15912,9 @@
           "customer support"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14194,6 +15946,9 @@
           "news"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14249,6 +16004,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14280,6 +16038,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14312,6 +16073,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14344,6 +16108,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14399,6 +16166,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14431,6 +16201,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14466,6 +16239,14 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "styles",
+        "param": "speakingStyle",
+        "options": [
+          "default",
+          "newscaster"
+        ]
       }
     },
     {
@@ -14499,6 +16280,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14529,6 +16313,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14556,6 +16343,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14588,6 +16378,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14619,6 +16412,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -14656,6 +16480,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14695,6 +16522,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14733,6 +16563,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14782,6 +16615,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14814,6 +16650,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14854,6 +16693,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14884,6 +16726,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14916,6 +16761,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14952,6 +16800,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -14995,6 +16846,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15027,6 +16881,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15067,6 +16924,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15104,6 +16964,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15136,6 +16999,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15179,6 +17045,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15211,6 +17080,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15252,6 +17124,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15284,6 +17159,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15326,6 +17204,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15375,6 +17256,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15407,6 +17291,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15438,6 +17325,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "middle_aged"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -15478,6 +17396,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15510,6 +17431,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15552,6 +17476,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15585,6 +17512,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15617,6 +17547,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15649,6 +17582,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15691,6 +17627,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15723,6 +17662,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15758,6 +17700,37 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -15798,6 +17771,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15838,6 +17814,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15870,6 +17849,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15902,6 +17884,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15943,6 +17928,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -15985,6 +17973,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16020,6 +18011,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16052,6 +18046,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16082,6 +18079,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16124,6 +18124,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "mature"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16162,6 +18165,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16190,6 +18196,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16241,6 +18250,9 @@
         ],
         "genderPresentation": "variable",
         "agePresentation": "variable"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16277,6 +18289,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16332,6 +18347,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16373,6 +18391,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16405,6 +18426,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16436,6 +18460,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16472,6 +18499,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16512,6 +18542,9 @@
           "characters"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16544,6 +18577,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16582,6 +18618,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16614,6 +18653,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16649,6 +18691,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16689,6 +18734,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16716,6 +18764,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16743,6 +18794,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16781,6 +18835,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16809,6 +18866,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16849,6 +18909,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16881,6 +18944,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16936,6 +19002,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16964,6 +19033,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -16994,6 +19066,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17026,6 +19101,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17068,6 +19146,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17098,6 +19179,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17153,6 +19237,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17185,6 +19272,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17221,6 +19311,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17249,6 +19342,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17281,6 +19377,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17312,6 +19411,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17367,6 +19469,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17395,6 +19500,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17426,6 +19534,37 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "settings",
+        "param": "voice_settings",
+        "settings": [
+          {
+            "key": "stability",
+            "min": 0,
+            "max": 1,
+            "default": 0.5
+          },
+          {
+            "key": "similarity_boost",
+            "min": 0,
+            "max": 1,
+            "default": 0.75
+          },
+          {
+            "key": "style",
+            "min": 0,
+            "max": 1,
+            "default": 0
+          },
+          {
+            "key": "speed",
+            "min": 0.7,
+            "max": 1.2,
+            "default": 1
+          }
+        ],
+        "audioTagsModel": "eleven_v3"
       }
     },
     {
@@ -17466,6 +19605,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17493,6 +19635,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17524,6 +19669,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17556,6 +19704,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17587,6 +19738,9 @@
           "long form video"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17623,6 +19777,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17666,6 +19823,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17699,6 +19859,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17729,6 +19892,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17760,6 +19926,9 @@
           "drive thru agent"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17792,6 +19961,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17830,6 +20002,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17872,6 +20047,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17905,6 +20083,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17941,6 +20122,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -17977,6 +20161,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18032,6 +20219,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18067,6 +20257,9 @@
           "long form video"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18107,6 +20300,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18139,6 +20335,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18177,6 +20376,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18215,6 +20417,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18247,6 +20452,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18289,6 +20497,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18320,6 +20531,9 @@
           "news"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18351,6 +20565,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18379,6 +20596,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18407,6 +20627,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18435,6 +20658,11 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "instructions",
+        "param": "instructions",
+        "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
       }
     },
     {
@@ -18478,6 +20706,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18508,6 +20739,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18535,6 +20769,9 @@
         "toneTags": [],
         "useCases": [],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18575,6 +20812,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18607,6 +20847,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18635,6 +20878,9 @@
         "useCases": [],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18675,6 +20921,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18708,6 +20957,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18740,6 +20992,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18783,6 +21038,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18815,6 +21073,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18847,6 +21108,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18879,6 +21143,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18919,6 +21186,9 @@
         ],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -18951,6 +21221,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19006,6 +21279,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19034,6 +21310,9 @@
         "useCases": [],
         "genderPresentation": "male",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19070,6 +21349,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19103,6 +21385,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "young"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19158,6 +21443,9 @@
         ],
         "genderPresentation": "neutral",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19190,6 +21478,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19230,6 +21521,9 @@
         ],
         "genderPresentation": "female",
         "agePresentation": "adult"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19262,6 +21556,9 @@
           "narration"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19293,6 +21590,9 @@
           "news"
         ],
         "genderPresentation": "male"
+      },
+      "steering": {
+        "kind": "none"
       }
     },
     {
@@ -19325,6 +21625,9 @@
           "narration"
         ],
         "genderPresentation": "female"
+      },
+      "steering": {
+        "kind": "none"
       }
     }
   ]

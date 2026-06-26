@@ -103,6 +103,14 @@
       "supportsSsml": true
     }
   ],
+  "steering": {
+    "kind": "styles",
+    "param": "speakingStyle",
+    "options": [
+      "default",
+      "newscaster"
+    ]
+  },
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01JCVK5F2Q2W5P4TQ8KT4NR1A1.json"

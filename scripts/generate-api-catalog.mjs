@@ -15,6 +15,10 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+// Single source of truth for the steering descriptor — shared with the synthesis
+// API (/v1/voices). The catalog `steering` field is derived here, not stored in
+// voices.json, so it can never drift from what the synthesis API advertises.
+import { getVoiceSteering } from '../infra/functions/synthesis-router/lib/steering.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -24,7 +28,9 @@ const OUT_DIR = join(ROOT, 'apps/web/static/api/v1');
 // ─── Load ────────────────────────────────────────────────────────────────────
 
 const catalog = JSON.parse(readFileSync(VOICES_PATH, 'utf8'));
-const voices = catalog.voices;
+// Enrich each voice with its derived steering capability (expressivity control).
+const voices = catalog.voices.map((v) => ({ ...v, steering: getVoiceSteering(v) }));
+catalog.voices = voices;
 const now = new Date().toISOString();
 
 console.log(`Loaded ${voices.length} voices`);
@@ -370,6 +376,30 @@ function generateOpenAPI() {
         modelCard: { $ref: '#/components/schemas/ModelCard' },
         variants: { type: 'array', items: { $ref: '#/components/schemas/VoiceVariant' } },
         samples: { type: 'array', items: { $ref: '#/components/schemas/VoiceSample' } },
+        steering: { $ref: '#/components/schemas/Steering' },
+      },
+    },
+    SteeringSetting: {
+      type: 'object',
+      description: 'A numeric expressivity control (ElevenLabs voice_settings).',
+      properties: {
+        key: { type: 'string', description: 'options.voice_settings key (e.g. stability)' },
+        min: { type: 'number' },
+        max: { type: 'number' },
+        default: { type: 'number' },
+      },
+    },
+    Steering: {
+      type: 'object',
+      description: 'Expressivity control a voice supports, and which `options.*` to send. See the synthesis options table in SYNTHESIS_API.md.',
+      required: ['kind'],
+      properties: {
+        kind: { type: 'string', enum: ['instructions', 'styles', 'settings', 'none'], description: 'Steering family' },
+        param: { type: 'string', description: 'The `options.*` key to send (instructions | voice_settings | speakingStyle)' },
+        hint: { type: 'string', description: 'instructions: guidance on what free-text direction to write' },
+        options: { type: 'array', items: { type: 'string' }, description: 'styles: allowed values for options[param]' },
+        settings: { type: 'array', items: { $ref: '#/components/schemas/SteeringSetting' }, description: 'settings: numeric ranges' },
+        audioTagsModel: { type: 'string', description: 'settings (ElevenLabs): set options.model_id to this to enable inline audio tags ([whispers], [excited])' },
       },
     },
     VoiceCatalog: {
@@ -466,7 +496,23 @@ function generateOpenAPI() {
         voiceId: { type: 'string', description: 'Vokda catalog voice ID' },
         mode: { type: 'string', enum: ['text', 'ssml'], default: 'text' },
         async: { type: 'boolean', default: false, description: 'Queue for async processing' },
-        options: { type: 'object', description: 'Provider-specific options (format, model, etc.)' },
+        options: {
+          type: 'object',
+          description: "Provider-specific options (format, model, etc.). Steering/expressivity goes here too — send what the voice's `steering` descriptor advertises: `instructions` (OpenAI free-text direction), `voice_settings` keys like stability/similarity_boost/style/speed + `model_id` for ElevenLabs audio tags, or `speakingStyle` (AWS Polly newscaster).",
+        },
+      },
+    },
+    Waveform: {
+      type: 'object',
+      description: 'Precomputed waveform peaks (BBC audiowaveform JSON). `data` is interleaved min/max pairs per pixel, quantized to the signed `bits` range (8-bit → ±127). Null when audio could not be decoded.',
+      properties: {
+        version: { type: 'integer' },
+        channels: { type: 'integer' },
+        sample_rate: { type: 'integer' },
+        samples_per_pixel: { type: 'integer' },
+        bits: { type: 'integer' },
+        length: { type: 'integer', description: 'Number of min/max pairs (data.length === length * 2)' },
+        data: { type: 'array', items: { type: 'integer' } },
       },
     },
     SynthesizeResponse: {
@@ -481,6 +527,7 @@ function generateOpenAPI() {
         provider: { type: 'string' },
         voiceId: { type: 'string', nullable: true },
         voiceName: { type: 'string', nullable: true },
+        waveform: { allOf: [{ $ref: '#/components/schemas/Waveform' }], nullable: true },
         createdAt: { type: 'string', format: 'date-time' },
       },
     },
@@ -504,6 +551,7 @@ function generateOpenAPI() {
         fileSizeBytes: { type: 'integer', nullable: true },
         durationMs: { type: 'integer', nullable: true },
         latencyMs: { type: 'integer', nullable: true },
+        waveform: { allOf: [{ $ref: '#/components/schemas/Waveform' }], nullable: true },
         errorMessage: { type: 'string', nullable: true },
         createdAt: { type: 'string', format: 'date-time' },
       },

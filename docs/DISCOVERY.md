@@ -90,7 +90,12 @@ Technical metadata in collapsible sections:
 **Audition features:**
 - **Text mode** — type any text, hit Synthesize (or Ctrl+Enter)
 - **SSML mode** — visual editor with tag toolbar, attribute popovers, real-time validation, and quick reference (see [SSML Guide](#ssml-editor) below)
-- **Playback** — inline player with seek and time display
+- **Direction (steering)** — for voices that support it, a control to shape *how* the line is delivered, surfaced automatically per voice:
+  - **OpenAI** — a free-text **Direction** box (e.g. "cheerful and upbeat; speak slowly and clearly")
+  - **ElevenLabs** — expressivity sliders (stability, similarity, style, speed); on `eleven_v3` you can also drop inline audio tags like `[whispers]` or `[excited]` right in the text
+  - **AWS Polly** (Matthew, Joanna, Lupe, Amy) — a **Newscaster** style toggle
+  - Voices without steering simply don't show the control. Each voice advertises its capability in the API via the `steering` field (see [API reference](./SYNTHESIS_API.md#voice-capabilities)).
+- **Playback** — inline player with a **waveform** (seek + time display); clips render their waveform too
 - **Clip saving** — every synthesis is saved as a clip in your library
 
 ### Provider Setup Guide
