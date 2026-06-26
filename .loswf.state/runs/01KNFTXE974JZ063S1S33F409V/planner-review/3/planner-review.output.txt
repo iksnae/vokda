@@ -1,0 +1,67 @@
+── plan-reviewer (anthropic/claude-sonnet-4-6) ──
+🔬 [3;38;5;114mLet me load the spec-format skill and review the plan against[0m[3;38;5;114m project files.[0m
+
+  👁️ read 
+  👁️ read ({"path":"skills/spec-format/SKILL.md"})
+({"repo":"iksnae/vokda","number":3})
+
+── plan-reviewer (anthropic/claude-sonnet-4-6) ──
+🔬 [3;38;5;114mLet[0m[3;38;5;114m me verify the key files cited in the plan exist and match the described[0m[3;38;5;114m content.[0m
+
+  👁️ read 
+  👁️ read ({"path":"lib/stores/app-state.ts"})
+({"path":"lib/data/curation-workspace.ts"})
+
+── plan-reviewer (anthropic/claude-sonnet-4-6) ──
+🔬 [3;38;5;114mNow[0m[3;38;5;114m let me check the curation page and types file to verify line[0m[3;38;5;114m numbers.[0m
+
+  👁️ read 
+  👁️ read ({"path":"src/lib/types.ts","offset":135})
+({"path":"routes/curation/+page.svelte","offset":1})
+
+── plan-reviewer (anthropic/claude-sonnet-4-6) ──
+🔬 
+  👁️ read ({"path":"routes/curation/+page.svelte","offset":230})
+
+── plan-reviewer (anthropic/claude-sonnet-4-6) ──
+🔬 [3;38;5;114mThe[0m[3;38;5;114m plan's line number references are approximately correct. Let me verify a[0m[3;38;5;114m few key things:
+
+1. The plan says `activeTab` type is at line 247 —[0m[3;38;5;114m the actual file shows it at line 247 (`[0m[3;38;5;114mlet activeTab: 'editor' | 'drafts' | 'database' = 'editor';`) — this matches.
+
+2. The plan references `curation[0m[3;38;5;114mWriteEnabled()` at line 73, `report[0m[3;38;5;114mSyncError` at line 78, `hydrateCurationState()[0m[3;38;5;114m` at line 101, `getAppStateSnapshot()` at line 117, `appState[0m[3;38;5;114m` writable at line 141, derived exports at lines 178-183[0m[3;38;5;114m. Looking at the actual file:
+[0m[3;38;5;114m
+
+-[0m[3;38;5;114m `curationWriteEnabled()`: defined around line 68-72 (close enough)
+- `reportSyncError`: around line 78-80 ✓
+- `hydrateCurationState()`: around line 97-112 (close enough)
+- `getApp[0m[3;38;5;114mStateSnapshot()`: around line 117-123 ✓
+- `appState` writable: around line 141 ✓
+- derived exports: around lines 180-185 ✓
+
+3. The `CurationShelf` type at line 145 in types[0m[3;38;5;114m.ts — looking at the file, CurationShelf starts around line 145, which is correct.
+
+4. The plan mentions CSV export functionality,[0m[3;38;5;114m which I should verify next.[0m[3;38;5;114m
+
+5. `[0m[3;38;5;114maddToast` is imported from the toast store at line 13 ✓
+
+6. The `removeVoice` function uses the native `confirm()` dialog for destructive[0m[3;38;5;114m actions around line 237 ✓
+
+7. Now checking the tab navigation structure — the tab[0m[3;38;5;114m nav should be around line 264 with tab panels starting at line 281.[0m[3;38;5;114m
+
+8. This[0m[3;38;5;114m is a CHORE task, so it needs the three required sections: Relevant Files, Step-[0m[3;38;5;114mby-Step Tasks, and Validation Commands. The plan has all of these, and correctly doesn't include Existing Code or Changes Needed since[0m[3;38;5;114m those are for FEATUREs. The spec format looks good.
+
+Now[0m[3;38;5;114m I'm examining the key implementation details, particularly how `saveShelf` handles the[0m[3;38;5;114m update-or-create logic with error handling.[0m[3;38;5;114m
+
+The plan correctly[0m[3;38;5;114m identifies that `saveShelf` attempts an update first, catches errors, and falls back to create without passing an[0m[3;38;5;114m `id` so Amplify auto-generates one. The `createShelf` function uses a[0m[3;38;5;114m temporary UUID that will fail on update, triggering the create fallback as intended.[0m[3;38;5;114m I'm now checking where `hydrateShelves()` should be called within `hydrateCurationState()`[0m[3;38;5;114m around line 97-112.[0m[3;38;5;114m I[0m[3;38;5;114m see that `hydrateCurationState` wraps everything in a try/catch, so[0m[3;38;5;114m calling `void hydrateShelves()` after the catch block would ensure it[0m[3;38;5;114m runs once the curation state is loaded. Looking at where `hydrateCurationState` is inv[0m[3;38;5;114moked around line 141, I could call `hydrateShelves()` directly in that[0m[3;38;5;114m same `if (browser)` block, but placing it at the end of `hydrateCurationState` makes more sense since both[0m[3;38;5;114m deal with curator-specific data. Now I need to check the validation commands.[0m[3;38;5;114m One[0m[3;38;5;114m minor concern: the plan references imports from `$lib/data/curation-workspace` that I've verified[0m[3;38;5;114m exist in the actual file, so the implementation approach is sound[0m[3;38;5;114m and ready to execute.[0m
+The plan references concrete files I can verify against:
+
+- `apps/web/src/lib/data/curation-workspace.ts` — `fetchShelves`, `saveShelf`, `deleteShelf` all exist as described. The `saveShelf` try-update-then-create fallback (omitting `id` on create) is correctly described. ✓
+- `apps/web/src/lib/stores/app-state.ts` — `curationWriteEnabled()`, `reportSyncError()`, `hydrateCurationState()`, `getAppStateSnapshot()`, `appState` writable, derived exports at lines 178–183 all match the actual file. ✓
+- `apps/web/src/lib/types.ts` — `CurationShelf` type exists at ~line 145 with the exact fields cited. ✓
+- `apps/web/src/routes/curation/+page.svelte` — `csvToList` import at line 12, `addToast` at line 13, `confirm()` usage at ~line 236, `activeTab` union at line 247, tab nav and panels structure all verified. ✓
+
+This is a CHORE issue, so spec-format requires: Relevant Files, Step-by-Step Tasks, Validation Commands — all three present and substantive. The `saveShelf` create-path mechanics are accurately explained (Amplify auto-assigns the ID; the throwaway UUID triggers the update failure that falls through to create). Validation commands (`npm run check:web`, `npm test`) are appropriate for this project.
+
+APPROVED
+
+📊 plan-reviewer: turns=5 in=67376 out=2736 cost=$0.1124
