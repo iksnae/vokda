@@ -14,6 +14,9 @@ import {
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const TABLE = process.env.API_KEY_TABLE || '';
 
+// Maximum active API keys a single account may hold at once.
+const MAX_ACTIVE_API_KEYS = 25;
+
 function generateApiKey() {
   const raw = randomBytes(24).toString('base64url');
   return `vk_live_${raw}`;
@@ -32,8 +35,8 @@ export async function createApiKey(userId, label) {
   // Check active key count
   const existing = await listApiKeys(userId);
   const activeCount = existing.filter(k => k.status === 'active').length;
-  if (activeCount >= 5) {
-    throw new Error('Maximum 5 active API keys per account');
+  if (activeCount >= MAX_ACTIVE_API_KEYS) {
+    throw new Error(`Maximum ${MAX_ACTIVE_API_KEYS} active API keys per account`);
   }
 
   await ddb.send(new PutCommand({
