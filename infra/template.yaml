@@ -161,6 +161,12 @@ Resources:
             ApiId: !Ref SynthesisApi
             Path: /v1/synthesize
             Method: POST
+        SynthesizeBatch:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref SynthesisApi
+            Path: /v1/synthesize/batch
+            Method: POST
         ListJobs:
           Type: HttpApi
           Properties:
