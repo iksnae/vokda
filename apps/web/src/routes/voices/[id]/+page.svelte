@@ -11,6 +11,7 @@
   } from '$lib/stores/app-state';
 
   import { getProviderColor } from '$lib/provider-colors';
+  import { findSimilarVoices } from '$lib/similar-voices';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { isAuthenticated } from '$lib/auth/store';
@@ -22,9 +23,10 @@
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
-  export let data: { voice: Voice | null; voiceId: string };
+  export let data: { voice: Voice | null; voiceId: string; catalog?: Voice[] };
 
   $: voice = data.voice;
+  $: similar = voice ? findSimilarVoices(voice, data.catalog ?? [], 6) : [];
   $: colors = voice ? getProviderColor(voice.providerId ?? voice.provider) : null;
 
   /** Audio player state */
@@ -796,6 +798,32 @@
               <code>{variant.sourceKey}</code>
             </div>
           {/if}
+        </div>
+      </section>
+    {/if}
+
+    {#if similar.length}
+      <section class="similar-section">
+        <div class="similar-head">
+          <h2 class="section-title">Similar voices</h2>
+          {#if voice.providerId}
+            <a class="more-link" href="/providers/{voice.providerId}">More from {voice.provider} →</a>
+          {/if}
+        </div>
+        <div class="similar-grid">
+          {#each similar as s (s.id)}
+            <a class="scard" href="/voices/{s.id}">
+              <div class="sthumb">
+                {#if s.imageUrl}
+                  <img src={s.imageUrl} alt={s.name} loading="lazy" />
+                {:else}
+                  <span class="sinitial">{s.name.charAt(0)}</span>
+                {/if}
+              </div>
+              <span class="sname">{s.name}</span>
+              <span class="ssub">{s.provider}</span>
+            </a>
+          {/each}
         </div>
       </section>
     {/if}
@@ -1826,5 +1854,60 @@
       flex-direction: column;
       gap: 0.3rem;
     }
+  }
+
+  /* ─── Similar voices ─── */
+  .similar-section { margin-top: 1.6rem; }
+  .similar-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.7rem;
+  }
+  .more-link {
+    color: var(--brand-700);
+    text-decoration: none;
+    font-weight: 660;
+    font-size: var(--text-small);
+    white-space: nowrap;
+  }
+  .more-link:hover { text-decoration: underline; }
+  .similar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.7rem;
+  }
+  .scard {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-2);
+    border: 1px solid var(--stroke-soft);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 140ms ease, box-shadow 140ms ease;
+  }
+  .scard:hover { transform: translateY(-2px); box-shadow: var(--elev-1); }
+  .sthumb {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-0);
+    overflow: hidden;
+  }
+  .sthumb img { width: 100%; height: 100%; object-fit: cover; }
+  .sinitial { font-size: 1.8rem; font-weight: 760; color: var(--brand-600); }
+  .sname {
+    padding: 0.4rem 0.55rem 0;
+    font-weight: 680;
+    font-size: var(--text-small);
+    color: var(--bg-ink);
+  }
+  .ssub {
+    padding: 0 0.55rem 0.45rem;
+    font-size: var(--text-xs);
+    color: #6a8197;
   }
 </style>
