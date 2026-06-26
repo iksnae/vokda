@@ -12,6 +12,7 @@
 
   import { getProviderColor } from '$lib/provider-colors';
   import { findSimilarVoices } from '$lib/similar-voices';
+  import { getProviderSteering } from '$lib/synthesis/provider-steering';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
   import { isAuthenticated } from '$lib/auth/store';
@@ -158,6 +159,8 @@
   const urlMode = $page.url.searchParams.get('mode');
   let auditionText = urlText || 'Hello! This is a preview of this voice. How does it sound to you?';
   let auditionMode: PreviewInputMode = (urlMode === 'ssml' ? 'ssml' : 'text');
+  let auditionDirection = '';
+  $: steering = voice ? getProviderSteering(voice.providerId ?? '') : { kind: 'none' as const, label: '' };
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
   let auditionError = '';
@@ -186,7 +189,8 @@
         voice,
         variant,
         input: auditionText,
-        mode: auditionMode
+        mode: auditionMode,
+        instructions: steering.kind === 'instructions' ? auditionDirection : undefined
       });
 
       if (auditionResult.warnings.length > 0) {
@@ -514,6 +518,17 @@
                 rows="3"
                 on:keydown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); runAudition(); } }}
               ></textarea>
+            {/if}
+
+            {#if steering.kind === 'instructions'}
+              <label class="audition-direction-label">
+                {steering.label} <span class="hint">(optional — how it should be delivered)</span>
+                <input
+                  class="audition-direction"
+                  bind:value={auditionDirection}
+                  placeholder={steering.placeholder}
+                />
+              </label>
             {/if}
 
             <div class="audition-actions">
@@ -1909,5 +1924,29 @@
     padding: 0 0.55rem 0.45rem;
     font-size: var(--text-xs);
     color: #6a8197;
+  }
+
+  /* ─── Audition direction (steerability) ─── */
+  .audition-direction-label {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: var(--text-small);
+    font-weight: 660;
+    color: #3e5972;
+  }
+  .audition-direction-label .hint { font-weight: 400; color: #6a8197; }
+  .audition-direction {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--stroke-soft);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-small);
+    font-family: inherit;
+  }
+  .audition-direction:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 1px;
+    border-color: var(--brand-600);
   }
 </style>
