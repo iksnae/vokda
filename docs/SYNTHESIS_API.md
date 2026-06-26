@@ -253,6 +253,40 @@ Set `"mode": "ssml"` and wrap your text in `<speak>` tags:
 
 ---
 
+### POST /v1/synthesize/batch
+
+Queue many synthesis jobs in one request (max **50** items). Each item is validated independently and processed asynchronously — poll `GET /v1/jobs/{id}` for each returned job. Invalid items are reported in `jobs[]` with `status: "rejected"` and don't fail the batch.
+
+**Request:**
+
+```json
+{
+  "items": [
+    { "provider": "openai", "voiceId": "01K...", "providerVoiceId": "alloy", "text": "First line." },
+    { "provider": "elevenlabs", "providerVoiceId": "TX3...", "text": "Second line.", "voiceName": "Liam" }
+  ]
+}
+```
+
+**Response (202):**
+
+```json
+{
+  "total": 2,
+  "queued": 2,
+  "rejected": 0,
+  "jobs": [
+    { "index": 0, "jobId": "01K...", "status": "pending" },
+    { "index": 1, "jobId": "01K...", "status": "pending" }
+  ],
+  "message": "2 of 2 job(s) queued. Poll GET /v1/jobs/{id} for each."
+}
+```
+
+Per-item limits match `/v1/synthesize` (≤ 5000 characters). A rejected item looks like `{ "index": 1, "status": "rejected", "error": "no credential for elevenlabs" }`. Quota is checked across the whole batch up front.
+
+---
+
 ### GET /v1/jobs
 
 List your synthesis jobs (clips), newest first.

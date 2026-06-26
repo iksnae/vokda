@@ -6,6 +6,7 @@
  *
  * Routes:
  *   POST   /v1/synthesize    — Create synthesis job (sync or async)
+ *   POST   /v1/synthesize/batch — Queue up to 50 async synthesis jobs
  *   GET    /v1/jobs           — List user's jobs
  *   GET    /v1/jobs/{id}      — Get job details
  *   PATCH  /v1/jobs/{id}      — Update clip metadata
@@ -37,6 +38,7 @@ import { saveCredential, listCredentials, deleteCredential, testCredential } fro
 import { getAllProviders, getEnabledProviders, getProvider } from './lib/providers.mjs';
 import { queryVoices, getVoiceById } from './lib/voices.mjs';
 import { estimateAudioDurationMs } from './lib/audio-duration.mjs';
+import { validateBatchItem, MAX_BATCH_ITEMS } from './lib/batch.mjs';
 
 // Adapters
 import * as openaiAdapter from './lib/adapters/openai.mjs';
@@ -149,6 +151,9 @@ export async function handler(event) {
 
   try {
     // Route matching
+    if (method === 'POST' && path === '/v1/synthesize/batch') {
+      return await handleBatchSynthesize(userId, event);
+    }
     if (method === 'POST' && path === '/v1/synthesize') {
       return await handleSynthesize(userId, event);
     }
@@ -356,6 +361,98 @@ async function handleSynthesize(userId, event) {
     voiceId: voiceId || null,
     voiceName: body.voiceName || null,
     createdAt: job.createdAtIso,
+  });
+}
+
+// ─── POST /v1/synthesize/batch ───
+
+async function handleBatchSynthesize(userId, event) {
+  let body;
+  try {
+    body = JSON.parse(event.body || '{}');
+  } catch {
+    return respond(400, { error: 'invalid_json', message: 'Request body must be valid JSON.' });
+  }
+
+  const items = Array.isArray(body.items) ? body.items : null;
+  if (!items || items.length === 0) {
+    return respond(400, { error: 'items_required', message: 'Provide a non-empty "items" array.' });
+  }
+  if (items.length > MAX_BATCH_ITEMS) {
+    return respond(400, { error: 'too_many_items', message: `Batch is limited to ${MAX_BATCH_ITEMS} items.` });
+  }
+
+  // Aggregate quota check across the whole batch (conservative estimate).
+  const totalChars = items.reduce((sum, it) => sum + (typeof it?.text === 'string' ? it.text.length : 0), 0);
+  const quota = await checkQuota(userId, totalChars * 20);
+  if (!quota.allowed) {
+    return respond(400, {
+      error: 'quota_exceeded',
+      message: `Storage quota exceeded. ${formatBytes(quota.remainingBytes)} remaining of ${formatBytes(quota.quotaBytes)}.`,
+      usage: quota,
+    });
+  }
+
+  const supportedProviders = Object.keys(adapters);
+  const credentialCache = new Map();
+  const results = [];
+
+  for (let index = 0; index < items.length; index += 1) {
+    const item = items[index];
+
+    const valid = validateBatchItem(item, supportedProviders);
+    if (!valid.ok) {
+      results.push({ index, status: 'rejected', error: valid.error });
+      continue;
+    }
+
+    // Reuse a loaded credential across items for the same provider.
+    let credential = credentialCache.get(item.provider);
+    if (credential === undefined) {
+      credential = await loadCredential(userId, item.provider);
+      credentialCache.set(item.provider, credential);
+    }
+    if (!credential) {
+      results.push({ index, status: 'rejected', error: `no credential for ${item.provider}` });
+      continue;
+    }
+
+    const mode = item.mode || 'text';
+    const job = await createJob({
+      userId,
+      voiceId: item.voiceId || '',
+      providerId: item.provider,
+      inputText: item.text,
+      inputMode: mode,
+      voiceName: item.voiceName || null,
+      status: 'pending',
+    });
+
+    await sqs.send(new SendMessageCommand({
+      QueueUrl: QUEUE_URL,
+      MessageBody: JSON.stringify({
+        jobId: job.id,
+        userId,
+        voiceId: item.voiceId || '',
+        voiceName: item.voiceName,
+        provider: item.provider,
+        providerVoiceId: item.providerVoiceId || '',
+        text: item.text,
+        mode,
+        options: item.options || {},
+      }),
+    }));
+
+    results.push({ index, jobId: job.id, status: 'pending' });
+  }
+
+  const queued = results.filter((r) => r.status === 'pending').length;
+  return respond(202, {
+    total: items.length,
+    queued,
+    rejected: items.length - queued,
+    jobs: results,
+    message: `${queued} of ${items.length} job(s) queued. Poll GET /v1/jobs/{id} for each.`,
   });
 }
 

@@ -749,6 +749,30 @@ function generateOpenAPI() {
           },
         },
       },
+      '/v1/synthesize/batch': {
+        post: {
+          operationId: 'synthesizeBatch',
+          summary: 'Batch synthesize speech',
+          description: 'Queue up to 50 synthesis jobs in one request. Each item is validated independently and processed asynchronously — poll GET /v1/jobs/{id} for each. Requires a stored provider credential per item.',
+          tags: ['synthesis'],
+          requestBody: { required: true, content: { 'application/json': { schema: {
+            type: 'object',
+            required: ['items'],
+            properties: {
+              items: {
+                type: 'array',
+                maxItems: 50,
+                items: { $ref: '#/components/schemas/SynthesizeRequest' },
+              },
+            },
+          } } } },
+          responses: {
+            202: { description: 'Batch accepted; per-item job ids returned' },
+            400: errorResp('Bad request'),
+            401: errorResp('Unauthorized'),
+          },
+        },
+      },
       // ── Clips ──
       '/v1/jobs': {
         get: {
