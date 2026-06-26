@@ -55,7 +55,7 @@ npm run amplify:outputs      # regenerate amplify_outputs.json
 
 ### Catalog publish
 
-`apps/web/static/data/voices.json` is the source of truth. After editing it you **must** regenerate the derived artifacts and commit them, or the live site/API will serve stale data: `build:web` runs `publish-catalog.mjs` automatically, and `npm run generate:api` rebuilds the API catalog. Hosting is AWS Amplify (auto CloudFront invalidation on deploy). The live Synthesis API is the SAM stack `vokda-synthesis-dev`.
+`apps/web/static/data/voices.json` is the source of truth. After editing it you **must** regenerate the derived artifacts and commit them, or the live site/API will serve stale data: `build:web` runs `publish-catalog.mjs` automatically, and `npm run generate:api` rebuilds the API catalog. Hosting is AWS Amplify (auto CloudFront invalidation on deploy). The live Synthesis API is the SAM stack `vokda-synthesis-dev` **in the `personal` AWS account (997901679385)** — `samconfig.toml` pins `profile = "personal"` so `sam deploy` targets production. ⚠️ A dead identically-named duplicate stack exists in account 471112983933 (API `ko0s1wact2`); never deploy there. Production API id is `zmmvxu8uyh` → `api.vokda.iksnae.com`.
 
 ### CI
 

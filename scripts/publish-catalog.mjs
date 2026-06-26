@@ -32,6 +32,11 @@ const BASE_URL = 'https://vokda.iksnae.com';
 const VOICES_PATH = 'apps/web/static/data/voices.json';
 const OUT = 'apps/web/static';
 
+// Generation timestamp. Overridable via env so the freshness check
+// (scripts/check-catalog-fresh.mjs) can regenerate deterministically and
+// diff against the committed artifacts without the timestamp causing churn.
+const GENERATED_AT = process.env.CATALOG_GENERATED_AT || new Date().toISOString();
+
 // ─── Load voices ───
 async function loadVoicesFromDB() {
   const outputs = JSON.parse(readFileSync('amplify_outputs.json', 'utf8'));
@@ -134,7 +139,7 @@ function generateApiFiles(voices) {
   writeFileSync(`${OUT}/api/v1/voices.json`, JSON.stringify({
     $schema: `${BASE_URL}/api/v1/openapi.json`,
     total: voiceList.length,
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     voices: voiceList
   }, null, 2));
   console.log(`  voices.json: ${voiceList.length} voices`);
@@ -191,14 +196,14 @@ function generateApiFiles(voices) {
 
   writeFileSync(`${OUT}/api/v1/providers.json`, JSON.stringify({
     total: providers.length,
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     providers
   }, null, 2));
   console.log(`  providers.json: ${providers.length} providers`);
 
   // stats.json
   const stats = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     totalVoices: voices.length,
     totalProviders: providers.length,
     withAudio: voices.filter(v => v.audioUrl).length,
@@ -289,7 +294,7 @@ function generateApiFiles(voices) {
   console.log(`  .well-known/agent.json`);
 
   // sitemap.xml
-  const today = new Date().toISOString().split('T')[0];
+  const today = GENERATED_AT.split('T')[0];
   const sitemapEntries = [
     { url: '/', priority: '1.0', freq: 'weekly' },
     { url: '/collections', priority: '0.6', freq: 'weekly' },
