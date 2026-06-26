@@ -95,7 +95,7 @@ Vokda has two parallel tracks that evolve together:
 - [x] Per-provider pages (`/providers/[id]`) — counts, pricing, voice gallery, connect CTA
 
 ### 2b. Synthesis Enhancements
-- [x] Synthesis parameter controls — `options.model`/`speed`/`format`; OpenAI `instructions` steerability (gpt-4o-mini-tts)
+- [x] Synthesis parameter controls + voice steerability — OpenAI `instructions`, ElevenLabs `voice_settings`+v3 audio tags, AWS Polly newscaster; capability surfaced per voice in the `/v1/voices` `steering` field
 - [ ] Streaming synthesis for low-latency providers (Cartesia, LMNT)
 - [x] Batch synthesis — `POST /v1/synthesize/batch` (up to 50 jobs)
 - [ ] Clip waveform visualization
