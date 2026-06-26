@@ -191,7 +191,7 @@ export class VokdaClient extends VokdaCatalogClient {
 
   // ── API Keys ──
 
-  /** Create a new Vokda API key. The full key is returned only once. */
+  /** Create a new Vokda API key. The full key is returned only once. Up to 25 active keys per account. */
   async createApiKey(label?: string): Promise<ApiKeyCreated> {
     return this.authRequest<ApiKeyCreated>('POST', '/v1/keys', label ? { label } : {});
   }

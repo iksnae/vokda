@@ -850,7 +850,7 @@ function generateOpenAPI() {
         post: {
           operationId: 'createApiKey',
           summary: 'Create Vokda API key',
-          description: 'Creates a `vk_live_...` key. The full key value is returned **only once**.',
+          description: 'Creates a `vk_live_...` key. The full key value is returned **only once**. Up to 25 active keys per account.',
           tags: ['keys'],
           requestBody: { content: { 'application/json': { schema: {
             type: 'object',
@@ -858,6 +858,7 @@ function generateOpenAPI() {
           }}}},
           responses: {
             201: { description: 'Key created', ...jsonContent('ApiKeyCreated') },
+            400: { description: 'Limit reached — maximum 25 active API keys per account' },
           },
         },
         get: {
