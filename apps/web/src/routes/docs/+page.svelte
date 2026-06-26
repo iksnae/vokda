@@ -30,6 +30,12 @@
       <p>Control pronunciation, pacing, emphasis, and language with Speech Synthesis Markup Language. Tag reference and provider compatibility.</p>
     </a>
 
+    <a href="/docs/steering" class="doc-card">
+      <div class="doc-icon"><Icon name="waveform" size={20} /></div>
+      <h2>Steering &amp; Expressivity</h2>
+      <p>Shape <em>how</em> a voice delivers — OpenAI free-text directions, ElevenLabs settings &amp; v3 audio tags, AWS Polly newscaster. Each voice advertises its steering capability.</p>
+    </a>
+
     <a href="/docs/api" class="doc-card">
       <div class="doc-icon"><Icon name="key" size={20} /></div>
       <h2>API Reference</h2>

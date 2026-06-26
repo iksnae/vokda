@@ -75,6 +75,17 @@
       <div class="field"><code>voiceName</code> <span class="opt">optional</span> <span>Display name (stored with clip)</span></div>
       <div class="field"><code>voiceId</code> <span class="opt">optional</span> <span>Vokda catalog voice ID</span></div>
       <div class="field"><code>mode</code> <span class="opt">optional</span> <span><code>"text"</code> (default) or <code>"ssml"</code></span></div>
+      <div class="field"><code>async</code> <span class="opt">optional</span> <span><code>true</code> queues the job; poll <code>GET /v1/jobs/{'{id}'}</code></span></div>
+      <div class="field"><code>options</code> <span class="opt">optional</span> <span>Provider-specific options (format, model) and <a href="#steering">steering</a></span></div>
+    </div>
+
+    <h3 id="steering">Direction (steering) <span class="opt">in <code>options</code></span></h3>
+    <p>Shape <em>how</em> a voice delivers a line. What's supported is per-voice — read the <code>steering</code> descriptor on the voice (see <a href="#catalog-api">catalog</a> / <code>GET /v1/voices</code>), then send the matching <code>options</code>. See the <a href="/docs/steering">Steering guide</a> for details.</p>
+    <div class="field-table">
+      <div class="field"><code>instructions</code> <span class="opt">OpenAI</span> <span>Free-text direction, e.g. <code>"warm and excited; speak slowly"</code></span></div>
+      <div class="field"><code>stability</code>, <code>similarity_boost</code>, <code>style</code>, <code>speed</code> <span class="opt">ElevenLabs</span> <span><code>voice_settings</code> values (0–1; speed 0.7–1.2)</span></div>
+      <div class="field"><code>model_id</code> <span class="opt">ElevenLabs</span> <span>Set to <code>"eleven_v3"</code> for inline audio tags (<code>[whispers]</code>, <code>[excited]</code>) in <code>text</code></span></div>
+      <div class="field"><code>speakingStyle</code> <span class="opt">AWS Polly</span> <span><code>"newscaster"</code> on Matthew/Joanna/Amy</span></div>
     </div>
 
     <h3>Response <span class="status-badge ok">200</span></h3>
@@ -83,13 +94,19 @@
   "status": "completed",
   "audioUrl": "https://...presigned-s3-url...",
   "fileSizeBytes": 253966,
-  "durationMs": null,
+  "durationMs": 2760,
   "latencyMs": 4259,
   "provider": "openai",
   "voiceName": "Nova",
+  "waveform": {
+    "version": 2, "channels": 1, "sample_rate": 24000,
+    "samples_per_pixel": 442, "bits": 8, "length": 500,
+    "data": [-3, 5, -18, 22, "…"]
+  },
   "createdAt": "2026-03-06T15:06:21.696Z"
 }`}</pre>
     <p class="note">The <code>audioUrl</code> is a presigned S3 URL valid for <strong>7 days</strong>. After expiry, fetch the job again to get a fresh URL.</p>
+    <div class="tip"><strong>waveform</strong> — precomputed amplitude peaks (<a href="https://github.com/bbc/audiowaveform/blob/master/doc/DataFormat.md" target="_blank">audiowaveform JSON</a>) so you can draw a waveform without decoding audio. <code>data</code> is interleaved min/max pairs per pixel (<code>data.length === length * 2</code>), each in the signed <code>bits</code> range (8-bit → ±127; normalize by ÷127). <code>null</code> for non-MP3 output or a decode error. Also returned on every clip from <code>GET /v1/jobs</code>.</div>
 
     <h3>Supported Providers</h3>
     <div class="provider-table">
@@ -103,6 +120,32 @@
       <div class="prov-row"><code>azure-speech</code> <span>Azure Speech (SSML ✓)</span></div>
       <div class="prov-row"><code>aws-polly</code> <span>AWS Polly (SSML ✓)</span></div>
     </div>
+  </section>
+
+  <section id="batch">
+    <h2>POST /v1/synthesize/batch</h2>
+    <p>Queue up to <strong>50</strong> synthesis jobs in one request. Each item is validated independently and processed <strong>asynchronously</strong> — poll <code>GET /v1/jobs/{'{id}'}</code> for each returned job. Invalid items are reported with <code>status: "rejected"</code> and don't fail the batch.</p>
+
+    <h3>Request</h3>
+    <pre class="code">{`{
+  "items": [
+    { "provider": "openai", "providerVoiceId": "nova", "text": "First line." },
+    { "provider": "aws-polly", "providerVoiceId": "Matthew",
+      "text": "Second line.", "options": { "speakingStyle": "newscaster" } }
+  ]
+}`}</pre>
+    <p class="note">Each item takes the same fields as <code>POST /v1/synthesize</code> (including <code>options</code> / steering) except <code>async</code>.</p>
+
+    <h3>Response <span class="status-badge created">202</span></h3>
+    <pre class="code">{`{
+  "total": 2,
+  "queued": 2,
+  "rejected": 0,
+  "jobs": [
+    { "index": 0, "status": "pending", "jobId": "01KK..." },
+    { "index": 1, "status": "pending", "jobId": "01KL..." }
+  ]
+}`}</pre>
   </section>
 
   <section id="jobs">
@@ -130,12 +173,15 @@
       "clipTags": ["demo", "intro"],
       "audioUrl": "https://...",
       "fileSizeBytes": 12400,
+      "durationMs": 1840,
       "latencyMs": 890,
+      "waveform": { "version": 2, "bits": 8, "length": 500, "data": ["…"] },
       "createdAt": "2026-03-06T15:06:21.696Z"
     }
   ],
   "count": 1
 }`}</pre>
+      <p class="note">Each clip carries the same <code>waveform</code> peaks as the synthesize response (or <code>null</code>).</p>
     </article>
 
     <article class="endpoint">
@@ -311,6 +357,7 @@
       <p>Individual voice detail with samples, variants, model card, and metadata.</p>
       <pre class="code">{`curl https://vokda.iksnae.com/api/v1/voices/01JCW012A9N9Y3W08F0Q0A1O1.json | jq '{name, provider, languages}'
 # → { "name": "alloy", "provider": "OpenAI", "languages": ["en-US"] }`}</pre>
+      <p class="note">Every catalog voice includes a <a href="/docs/steering"><code>steering</code></a> descriptor — what expressivity control it supports and which <code>options.*</code> to send. <code>jq '.steering'</code> to inspect.</p>
     </article>
 
     <article class="endpoint">
