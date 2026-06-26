@@ -3,7 +3,7 @@
   "name": "Joey",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "joey",
+  "providerVoiceId": "Joey",
   "description": "US English Male voice (Joey) — neural engine.",
   "tags": [
     "male",

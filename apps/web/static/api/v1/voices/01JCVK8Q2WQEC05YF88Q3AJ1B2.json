@@ -3,7 +3,7 @@
   "name": "Matthew",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "matthew",
+  "providerVoiceId": "Matthew",
   "description": "US English male voice suited for long-form informational narration.",
   "tags": [
     "long-form",

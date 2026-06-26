@@ -3,7 +3,7 @@
   "name": "Liam",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "liam",
+  "providerVoiceId": "Liam",
   "description": "Canadian French Male voice (Liam) — neural engine.",
   "tags": [
     "male",

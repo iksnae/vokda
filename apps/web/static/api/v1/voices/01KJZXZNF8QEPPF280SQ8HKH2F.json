@@ -3,7 +3,7 @@
   "name": "Ruth",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "ruth",
+  "providerVoiceId": "Ruth",
   "description": "US English Female voice (Ruth) — neural engine.",
   "tags": [
     "female",

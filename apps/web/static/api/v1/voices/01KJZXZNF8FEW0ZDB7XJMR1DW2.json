@@ -3,7 +3,7 @@
   "name": "Kendra",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "kendra",
+  "providerVoiceId": "Kendra",
   "description": "US English Female voice (Kendra) — neural engine.",
   "tags": [
     "female",

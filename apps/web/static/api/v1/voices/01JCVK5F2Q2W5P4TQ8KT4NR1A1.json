@@ -3,7 +3,7 @@
   "name": "Joanna",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "joanna",
+  "providerVoiceId": "Joanna",
   "description": "US English voice widely used for assistants, explainers, and narration.",
   "tags": [
     "narration",

@@ -3,7 +3,7 @@
   "name": "Ivy",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "ivy",
+  "providerVoiceId": "Ivy",
   "description": "US English Female voice (Ivy) — neural engine.",
   "tags": [
     "female",

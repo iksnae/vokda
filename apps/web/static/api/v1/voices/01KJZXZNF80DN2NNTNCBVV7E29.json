@@ -3,7 +3,7 @@
   "name": "Kimberly",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "kimberly",
+  "providerVoiceId": "Kimberly",
   "description": "US English Female voice (Kimberly) — neural engine.",
   "tags": [
     "female",

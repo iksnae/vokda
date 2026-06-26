@@ -3,7 +3,7 @@
   "name": "Salli",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "salli",
+  "providerVoiceId": "Salli",
   "description": "US English Female voice (Salli) — neural engine.",
   "tags": [
     "female",

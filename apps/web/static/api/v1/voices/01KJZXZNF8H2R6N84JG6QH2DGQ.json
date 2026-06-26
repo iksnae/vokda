@@ -3,7 +3,7 @@
   "name": "Gregory",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "gregory",
+  "providerVoiceId": "Gregory",
   "description": "US English Male voice (Gregory) — neural engine.",
   "tags": [
     "male",

@@ -1781,7 +1781,7 @@
       "name": "Kendra",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "kendra",
+      "providerVoiceId": "Kendra",
       "description": "US English Female voice (Kendra) — neural engine.",
       "tags": [
         "female",
@@ -1873,7 +1873,7 @@
       "name": "Joey",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "joey",
+      "providerVoiceId": "Joey",
       "description": "US English Male voice (Joey) — neural engine.",
       "tags": [
         "male",
@@ -6255,7 +6255,7 @@
       "name": "Salli",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "salli",
+      "providerVoiceId": "Salli",
       "description": "US English Female voice (Salli) — neural engine.",
       "tags": [
         "female",
@@ -6421,7 +6421,7 @@
       "name": "Kajal",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "kajal",
+      "providerVoiceId": "Kajal",
       "description": "Indian English Female voice (Kajal) — neural engine.",
       "tags": [
         "female",
@@ -8131,7 +8131,7 @@
       "name": "Matthew",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "matthew",
+      "providerVoiceId": "Matthew",
       "description": "US English male voice suited for long-form informational narration.",
       "tags": [
         "long-form",
@@ -8237,7 +8237,7 @@
       "name": "Daniel",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "daniel",
+      "providerVoiceId": "Daniel",
       "description": "German Male voice (Daniel) — neural engine.",
       "tags": [
         "male",
@@ -8426,7 +8426,7 @@
       "name": "Kimberly",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "kimberly",
+      "providerVoiceId": "Kimberly",
       "description": "US English Female voice (Kimberly) — neural engine.",
       "tags": [
         "female",
@@ -10441,7 +10441,7 @@
       "name": "Aria",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "aria",
+      "providerVoiceId": "Aria",
       "description": "New Zealand English Female voice (Aria) — neural engine.",
       "tags": [
         "female",
@@ -10735,7 +10735,7 @@
       "name": "Stephen",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "stephen",
+      "providerVoiceId": "Stephen",
       "description": "US English Male voice (Stephen) — neural engine.",
       "tags": [
         "male",
@@ -20579,7 +20579,7 @@
       "name": "Danielle",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "danielle",
+      "providerVoiceId": "Danielle",
       "description": "US English Female voice (Danielle) — neural engine.",
       "tags": [
         "female",
@@ -23667,7 +23667,7 @@
       "name": "Olivia",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "olivia",
+      "providerVoiceId": "Olivia",
       "description": "Australian English Female voice (Olivia) — neural engine.",
       "tags": [
         "female",
@@ -25084,7 +25084,7 @@
       "name": "Amy",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "amy",
+      "providerVoiceId": "Amy",
       "description": "British English Female voice (Amy) — neural engine.",
       "tags": [
         "female",
@@ -29256,7 +29256,7 @@
       "name": "Liam",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "liam",
+      "providerVoiceId": "Liam",
       "description": "Canadian French Male voice (Liam) — neural engine.",
       "tags": [
         "male",
@@ -37288,7 +37288,7 @@
       "name": "Joanna",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "joanna",
+      "providerVoiceId": "Joanna",
       "description": "US English voice widely used for assistants, explainers, and narration.",
       "tags": [
         "narration",
@@ -43104,7 +43104,7 @@
       "name": "Brian",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "brian",
+      "providerVoiceId": "Brian",
       "description": "British English Male voice (Brian) — neural engine.",
       "tags": [
         "male",
@@ -43492,7 +43492,7 @@
       "name": "Ivy",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "ivy",
+      "providerVoiceId": "Ivy",
       "description": "US English Female voice (Ivy) — neural engine.",
       "tags": [
         "female",
@@ -44659,7 +44659,7 @@
       "name": "Gregory",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "gregory",
+      "providerVoiceId": "Gregory",
       "description": "US English Male voice (Gregory) — neural engine.",
       "tags": [
         "male",
@@ -47219,7 +47219,7 @@
       "name": "Ruth",
       "provider": "AWS Polly",
       "providerId": "aws-polly",
-      "providerVoiceId": "ruth",
+      "providerVoiceId": "Ruth",
       "description": "US English Female voice (Ruth) — neural engine.",
       "tags": [
         "female",

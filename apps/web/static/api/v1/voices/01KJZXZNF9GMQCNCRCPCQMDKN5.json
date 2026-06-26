@@ -3,7 +3,7 @@
   "name": "Amy",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "amy",
+  "providerVoiceId": "Amy",
   "description": "British English Female voice (Amy) — neural engine.",
   "tags": [
     "female",

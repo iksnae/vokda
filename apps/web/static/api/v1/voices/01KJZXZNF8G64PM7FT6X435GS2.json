@@ -3,7 +3,7 @@
   "name": "Danielle",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "danielle",
+  "providerVoiceId": "Danielle",
   "description": "US English Female voice (Danielle) — neural engine.",
   "tags": [
     "female",
