@@ -38,6 +38,7 @@ import { saveCredential, listCredentials, deleteCredential, testCredential } fro
 import { getAllProviders, getEnabledProviders, getProvider } from './lib/providers.mjs';
 import { queryVoices, getVoiceById } from './lib/voices.mjs';
 import { estimateAudioDurationMs } from './lib/audio-duration.mjs';
+import { buildWaveform } from './lib/waveform-from-audio.mjs';
 import { validateBatchItem, MAX_BATCH_ITEMS } from './lib/batch.mjs';
 
 // Adapters
@@ -331,6 +332,9 @@ async function handleSynthesize(userId, event) {
   const fileSizeBytes = result.audio.length;
   const durationMs = result.durationMs ?? estimateAudioDurationMs(result.audio, result.contentType);
 
+  // Precompute waveform peaks (fail-safe: null on decode error)
+  const waveform = await buildWaveform(result.audio, result.contentType);
+
   // Create job record
   const job = await createJob({
     userId,
@@ -345,6 +349,7 @@ async function handleSynthesize(userId, event) {
     fileSizeBytes,
     durationMs,
     latencyMs,
+    waveformJson: waveform ? JSON.stringify(waveform) : null,
   });
 
   // Increment usage
@@ -360,6 +365,7 @@ async function handleSynthesize(userId, event) {
     provider,
     voiceId: voiceId || null,
     voiceName: body.voiceName || null,
+    waveform,
     createdAt: job.createdAtIso,
   });
 }
@@ -762,9 +768,19 @@ function formatJob(job) {
     fileSizeBytes: job.fileSizeBytes,
     durationMs: job.durationMs,
     latencyMs: job.latencyMs,
+    waveform: parseWaveform(job.waveformJson),
     errorMessage: job.errorMessage,
     createdAt: job.createdAtIso,
   };
+}
+
+function parseWaveform(waveformJson) {
+  if (!waveformJson) return null;
+  try {
+    return JSON.parse(waveformJson);
+  } catch {
+    return null;
+  }
 }
 
 function generateId() {

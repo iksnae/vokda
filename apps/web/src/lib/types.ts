@@ -245,3 +245,18 @@ export type SynthesisJob = {
   errorMessage?: string;
   createdAt: string;
 };
+
+/**
+ * Precomputed waveform peaks (BBC `audiowaveform` JSON shape). `data` holds
+ * interleaved min/max pairs per pixel, quantized to the signed `bits` range
+ * (8-bit → ±127). Built server-side; null when the audio couldn't be decoded.
+ */
+export type Waveform = {
+  version: number;
+  channels: number;
+  sample_rate: number;
+  samples_per_pixel: number;
+  bits: number;
+  length: number;
+  data: number[];
+};

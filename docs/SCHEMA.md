@@ -211,6 +211,7 @@ Future DB-backed catalog entry (currently catalog is static JSON).
 | `audioPath` | string | | S3 key for audio file |
 | `durationMs` | integer | | Audio duration |
 | `latencyMs` | integer | | Synthesis latency |
+| `waveformJson` | string | | Precomputed waveform peaks (audiowaveform JSON), stringified; parsed to `waveform` in API responses. Null for non-MP3/decode failure |
 | `errorMessage` | string | | Error details (if failed) |
 | `createdAtIso` | string! | | ISO 8601 timestamp |
 

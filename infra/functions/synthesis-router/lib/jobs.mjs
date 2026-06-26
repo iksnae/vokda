@@ -59,6 +59,7 @@ export async function createJob({
   durationMs,
   latencyMs,
   errorMessage,
+  waveformJson,
 }) {
   const id = generateJobId();
   const now = new Date().toISOString();
@@ -81,6 +82,7 @@ export async function createJob({
     durationMs: durationMs || null,
     latencyMs: latencyMs || null,
     errorMessage: errorMessage || null,
+    waveformJson: waveformJson || null,
     createdAtIso: now,
     createdAt: now,   // Amplify auto field
     updatedAt: now,   // Amplify auto field

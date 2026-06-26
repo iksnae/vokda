@@ -15,6 +15,7 @@ import { browser } from '$app/environment';
 import { normalizePreviewInput } from './constraints';
 import { resolveAdapter, hasRealAdapter, getProviderForVariant } from './registry';
 import type { SynthesisPreview, SynthesisRequest } from './types';
+import type { Waveform } from '$lib/types';
 import { getAuthSnapshot } from '$lib/auth/store';
 import { AUTH_MODE } from '$lib/auth/config';
 import type { VoiceVariant } from '$lib/types';
@@ -83,6 +84,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
     durationMs: number | null;
     latencyMs: number;
     provider: string;
+    waveform?: Waveform | null;
   };
 
   return {
@@ -93,6 +95,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
     inputUsed: request.input,
     warnings: [],
     audioUrl: data.audioUrl,
+    waveform: data.waveform ?? null,
     latencyMs: data.latencyMs ?? (Date.now() - start),
     generatedAt: new Date().toISOString(),
   };

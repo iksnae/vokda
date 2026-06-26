@@ -124,6 +124,7 @@ const schema = a.schema({
       audioPath: a.string(),
       durationMs: a.integer(),
       latencyMs: a.integer(),
+      waveformJson: a.string(),
       errorMessage: a.string(),
       createdAtIso: a.string().required()
     })

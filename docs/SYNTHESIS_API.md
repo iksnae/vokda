@@ -255,11 +255,31 @@ Generate speech from text using a connected provider.
   "provider": "gemini-tts",
   "voiceId": "01KJZXZNF942...",
   "voiceName": "Kore",
+  "waveform": {
+    "version": 2,
+    "channels": 1,
+    "sample_rate": 24000,
+    "samples_per_pixel": 442,
+    "bits": 8,
+    "length": 500,
+    "data": [-3, 5, -18, 22, -41, 39, "…"]
+  },
   "createdAt": "2026-03-06T15:06:21.696Z"
 }
 ```
 
 The `audioUrl` is a presigned S3 URL valid for 7 days.
+
+**Waveform peaks.** When the rendered audio is MP3, the response includes a
+`waveform` object — precomputed amplitude peaks in the BBC
+[`audiowaveform`](https://github.com/bbc/audiowaveform/blob/master/doc/DataFormat.md)
+JSON shape, so clients can draw a static waveform without decoding audio. `data`
+is interleaved **min/max pairs per pixel** (`length` pairs → `data.length === length * 2`),
+each quantized to the signed `bits` range (`bits: 8` → values in `[-127, 127]`).
+Normalize a sample to `[-1, 1]` by dividing by `2^(bits-1) - 1` (i.e. `127`).
+`waveform` is `null` when peaks couldn't be generated (non-MP3 output or a decode
+error) — treat it as optional. The same object is returned on each clip from
+`GET /v1/jobs` and `GET /v1/jobs/{id}`.
 
 **Error responses:**
 
@@ -352,6 +372,7 @@ List your synthesis jobs (clips), newest first.
       "fileSizeBytes": 253966,
       "durationMs": 9216,
       "latencyMs": 4259,
+      "waveform": { "version": 2, "channels": 1, "sample_rate": 24000, "samples_per_pixel": 442, "bits": 8, "length": 500, "data": ["…"] },
       "errorMessage": null,
       "createdAt": "2026-03-06T15:06:21.696Z"
     }
