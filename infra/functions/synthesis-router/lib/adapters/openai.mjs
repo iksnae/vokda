@@ -18,6 +18,11 @@ export async function synthesize(credential, params) {
   // can still pin tts-1 / tts-1-hd via options.model.
   const model = params.options?.model || 'gpt-4o-mini-tts';
   const speed = params.options?.speed || 1.0;
+  // Free-text steerability — only gpt-4o-mini-tts honors `instructions`; the
+  // older tts-1 models ignore it, so only send it when present.
+  const instructions = typeof params.options?.instructions === 'string'
+    ? params.options.instructions.trim()
+    : '';
 
   const resp = await fetch('https://api.openai.com/v1/audio/speech', {
     method: 'POST',
@@ -31,6 +36,7 @@ export async function synthesize(credential, params) {
       input: params.text,
       response_format: params.format || 'mp3',
       speed,
+      ...(instructions ? { instructions } : {}),
     }),
   });
 

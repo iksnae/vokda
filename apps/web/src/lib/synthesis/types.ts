@@ -7,6 +7,8 @@ export type SynthesisRequest = {
   variant: VoiceVariant;
   input: string;
   mode: PreviewInputMode;
+  /** Free-text delivery direction (provider steerability, e.g. OpenAI instructions). */
+  instructions?: string;
 };
 
 export type SynthesisPreview = {

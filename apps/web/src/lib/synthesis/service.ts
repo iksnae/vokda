@@ -54,6 +54,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
       voiceName: request.voice.name,
       providerVoiceId: request.voice.providerVoiceId || request.variant.sourceKey || request.variant.id,
       mode: request.mode ?? 'text',
+      ...(request.instructions?.trim() ? { options: { instructions: request.instructions.trim() } } : {}),
     }),
   });
 

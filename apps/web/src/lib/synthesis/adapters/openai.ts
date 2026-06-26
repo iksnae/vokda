@@ -48,6 +48,7 @@ export function createOpenAIAdapter(credential: ApiKeyCredential): SynthesisAdap
           voice: voiceId,
           input: request.input,
           response_format: 'mp3',
+          ...(request.instructions?.trim() ? { instructions: request.instructions.trim() } : {}),
         }),
       });
 
