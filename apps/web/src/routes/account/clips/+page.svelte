@@ -16,6 +16,7 @@
   } from '$lib/stores/clips';
   import { addToast } from '$lib/components/toast-store';
   import Icon from '$lib/components/Icon.svelte';
+  import WaveformCanvas from '$lib/components/WaveformCanvas.svelte';
 
   // ─── Playback state ───
   let playingClipId: string | null = null;
@@ -343,13 +344,25 @@
 
                 {#if isPlaying}
                   <div class="clip-player">
-                    <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-                    <div class="clip-progress" on:click={handleSeek}>
-                      <div class="clip-progress-fill" style="width:{progressPct}%"></div>
-                    </div>
+                    {#if clip.waveform}
+                      <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                      <div class="clip-wave" on:click={handleSeek}>
+                        <WaveformCanvas waveform={clip.waveform} height={48} progress={duration ? currentTime / duration : 0} />
+                      </div>
+                    {:else}
+                      <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                      <div class="clip-progress" on:click={handleSeek}>
+                        <div class="clip-progress-fill" style="width:{progressPct}%"></div>
+                      </div>
+                    {/if}
                     <span class="clip-time">{formatTime(currentTime)} / {formatTime(duration)}</span>
                   </div>
                 {:else}
+                  {#if clip.waveform}
+                    <div class="clip-wave static">
+                      <WaveformCanvas waveform={clip.waveform} height={40} />
+                    </div>
+                  {/if}
                   <div class="clip-meta">
                     {#if clip.latencyMs > 0}<span>{clip.latencyMs}ms</span><span class="sep">·</span>{/if}
                     {#if clip.fileSizeBytes > 0}<span>{formatBytes(clip.fileSizeBytes)}</span>{/if}
@@ -689,6 +702,16 @@
     border-radius: 3px;
     cursor: pointer;
     overflow: hidden;
+  }
+
+  .clip-wave {
+    flex: 1;
+    cursor: pointer;
+  }
+  .clip-wave.static {
+    cursor: default;
+    margin: 0.4rem 0 0.1rem;
+    opacity: 0.85;
   }
 
   .clip-progress-fill {

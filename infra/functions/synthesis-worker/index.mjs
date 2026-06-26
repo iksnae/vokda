@@ -10,6 +10,7 @@ import { DynamoDBDocumentClient, GetCommand, ScanCommand, UpdateCommand } from '
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { estimateAudioDurationMs } from './audio-duration.mjs';
+import { buildWaveform } from './waveform-from-audio.mjs';
 
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 const s3 = new S3Client({});
@@ -165,6 +166,9 @@ export async function handler(event) {
         Key: audioPath,
       }), { expiresIn: 604800 });
 
+      // Precompute waveform peaks (fail-safe: null on decode error)
+      const waveform = await buildWaveform(result.audio, result.contentType);
+
       // Update job
       await updateJob(jobId, {
         status: 'completed',
@@ -173,6 +177,7 @@ export async function handler(event) {
         fileSizeBytes: result.audio.length,
         latencyMs,
         durationMs: result.durationMs ?? estimateAudioDurationMs(result.audio, result.contentType),
+        waveformJson: waveform ? JSON.stringify(waveform) : null,
       });
 
       // Increment usage

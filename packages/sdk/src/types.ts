@@ -167,6 +167,21 @@ export interface SynthesizeRequest {
   options?: Record<string, unknown>;
 }
 
+/**
+ * Precomputed waveform peaks (BBC `audiowaveform` JSON shape). `data` holds
+ * interleaved min/max pairs per pixel, quantized to the signed `bits` range
+ * (8-bit → ±127). Built server-side; null when the audio couldn't be decoded.
+ */
+export interface Waveform {
+  version: number;
+  channels: number;
+  sample_rate: number;
+  samples_per_pixel: number;
+  bits: number;
+  length: number;
+  data: number[];
+}
+
 export interface SynthesizeResponse {
   jobId: string;
   status: ClipStatus;
@@ -177,6 +192,7 @@ export interface SynthesizeResponse {
   provider?: string;
   voiceId?: string | null;
   voiceName?: string | null;
+  waveform?: Waveform | null;
   createdAt?: string;
   message?: string;
 }
@@ -221,6 +237,7 @@ export interface Clip {
   fileSizeBytes: number | null;
   durationMs: number | null;
   latencyMs: number | null;
+  waveform: Waveform | null;
   errorMessage: string | null;
   createdAt: string;
 }

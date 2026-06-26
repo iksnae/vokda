@@ -2,3 +2,6 @@
 .aws-sam/
 functions/synthesis-router/data/voices.json
 functions/synthesis-worker/audio-duration.mjs
+functions/synthesis-worker/waveform.mjs
+functions/synthesis-worker/waveform-decode.mjs
+functions/synthesis-worker/waveform-from-audio.mjs

@@ -7,6 +7,9 @@
 import { browser } from '$app/environment';
 import { writable, derived, get } from 'svelte/store';
 import { auth, getAuthSnapshot } from '$lib/auth/store';
+import type { Waveform } from '$lib/types';
+
+export type { Waveform };
 
 const API_BASE = (import.meta.env.PUBLIC_SYNTHESIS_API_URL as string | undefined) || 'https://api.vokda.iksnae.com';
 
@@ -24,6 +27,7 @@ export type Clip = {
   durationMs: number;
   fileSizeBytes: number;
   audioUrl: string;
+  waveform: Waveform | null;
   createdAt: string;
   errorMessage?: string | null;
 };
@@ -61,6 +65,7 @@ type ApiJob = {
   fileSizeBytes: number | null;
   durationMs: number | null;
   latencyMs: number | null;
+  waveform: Waveform | null;
   errorMessage: string | null;
   createdAt: string;
 };
@@ -80,6 +85,7 @@ function apiJobToClip(job: ApiJob): Clip {
     durationMs: job.durationMs ?? 0,
     fileSizeBytes: job.fileSizeBytes ?? 0,
     audioUrl: job.audioUrl ?? '',
+    waveform: job.waveform ?? null,
     createdAt: job.createdAt,
     errorMessage: job.errorMessage,
   };

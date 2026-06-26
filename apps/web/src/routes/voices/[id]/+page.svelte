@@ -21,6 +21,7 @@
   import { refreshClips } from '$lib/stores/clips';
   import SsmlEditor from '$lib/components/SsmlEditor.svelte';
   import ProviderSetupGuide from '$lib/components/ProviderSetupGuide.svelte';
+  import WaveformCanvas from '$lib/components/WaveformCanvas.svelte';
   import type { SynthesisPreview, PreviewInputMode } from '$lib/synthesis/types';
   import type { Voice, VoiceVariant } from '$lib/types';
 
@@ -622,10 +623,21 @@
                   <Icon name={auditionPlaying ? 'pause' : 'play'} size={16} />
                 </button>
 
-                <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-                <div class="audition-progress" on:click={handleAuditionSeek}>
-                  <div class="audition-progress-fill" style="width:{auditionProgressPct}%"></div>
-                </div>
+                {#if auditionResult.waveform}
+                  <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                  <div class="audition-wave" on:click={handleAuditionSeek}>
+                    <WaveformCanvas
+                      waveform={auditionResult.waveform}
+                      height={44}
+                      progress={auditionDuration ? auditionTime / auditionDuration : 0}
+                    />
+                  </div>
+                {:else}
+                  <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+                  <div class="audition-progress" on:click={handleAuditionSeek}>
+                    <div class="audition-progress-fill" style="width:{auditionProgressPct}%"></div>
+                  </div>
+                {/if}
 
                 <span class="audition-time">{formatTime(auditionTime)} / {formatTime(auditionDuration)}</span>
 
@@ -1544,6 +1556,11 @@
     background: var(--brand-600);
     border-radius: 3px;
     transition: width 100ms linear;
+  }
+
+  .audition-wave {
+    flex: 1;
+    cursor: pointer;
   }
 
   .audition-time {

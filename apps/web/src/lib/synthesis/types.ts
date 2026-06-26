@@ -1,4 +1,4 @@
-import type { Voice, VoiceVariant } from '$lib/types';
+import type { Voice, VoiceVariant, Waveform } from '$lib/types';
 
 export type PreviewInputMode = 'text' | 'ssml';
 
@@ -25,6 +25,7 @@ export type SynthesisPreview = {
   inputUsed: string;
   warnings: string[];
   audioUrl?: string;
+  waveform?: Waveform | null;
   latencyMs: number;
   generatedAt: string;
 };
