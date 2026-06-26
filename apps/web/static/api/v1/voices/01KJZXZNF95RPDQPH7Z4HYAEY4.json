@@ -3,7 +3,7 @@
   "name": "Olivia",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "olivia",
+  "providerVoiceId": "Olivia",
   "description": "Australian English Female voice (Olivia) — neural engine.",
   "tags": [
     "female",

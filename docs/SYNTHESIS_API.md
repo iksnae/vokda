@@ -99,7 +99,8 @@ List voices from your enabled providers. Supports filtering by provider, languag
       "tags": ["male", "ie"],
       "toneTags": ["steady"],
       "audioUrl": "/audio/samples/01KJZXZNF942C62SAR07KM4HBJ.mp3",
-      "ssmlSupport": true
+      "ssmlSupport": true,
+      "steering": { "kind": "none" }
     }
   ],
   "total": 47,
@@ -107,6 +108,25 @@ List voices from your enabled providers. Supports filtering by provider, languag
   "offset": 0
 }
 ```
+
+#### Voice capabilities
+
+Each voice advertises what it supports so you know which `options` to send to `/v1/synthesize`:
+
+- **`ssmlSupport`** (boolean) — accepts `mode: "ssml"`.
+- **`steering`** — expressivity control, one of four `kind`s:
+
+| `kind` | What to send in `options` | Example |
+|--------|---------------------------|---------|
+| `instructions` | `options.instructions` — free-text direction (OpenAI gpt-4o-mini-tts) | `{ "instructions": "warm and excited; speak slowly" }` |
+| `styles` | `options.speakingStyle` — one of `steering.options` (AWS Polly newscaster, 4 voices) | `{ "speakingStyle": "newscaster" }` |
+| `settings` | `options.{stability,similarity_boost,style,speed}` per `steering.settings` ranges; for ElevenLabs **audio tags** (`[whispers]`, `[excited]`, …) inline in `text`, set `options.model_id` to `steering.audioTagsModel` (`eleven_v3`) | `{ "model_id": "eleven_v3", "stability": 0.3 }` + `text: "[excited] We did it!"` |
+| `none` | no steering | — |
+
+`steering` shapes:
+- `{ "kind": "instructions", "param": "instructions", "hint": "…" }`
+- `{ "kind": "styles", "param": "speakingStyle", "options": ["default","newscaster"] }`
+- `{ "kind": "settings", "param": "voice_settings", "settings": [{ "key": "stability", "min": 0, "max": 1, "default": 0.5 }, …], "audioTagsModel": "eleven_v3" }`
 
 If no providers are configured, returns an empty list with a helpful message:
 

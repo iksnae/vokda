@@ -3,7 +3,7 @@
   "name": "Aria",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "aria",
+  "providerVoiceId": "Aria",
   "description": "New Zealand English Female voice (Aria) — neural engine.",
   "tags": [
     "female",

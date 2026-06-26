@@ -3,7 +3,7 @@
   "name": "Kajal",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "kajal",
+  "providerVoiceId": "Kajal",
   "description": "Indian English Female voice (Kajal) — neural engine.",
   "tags": [
     "female",

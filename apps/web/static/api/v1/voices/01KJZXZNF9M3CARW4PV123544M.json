@@ -3,7 +3,7 @@
   "name": "Daniel",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "daniel",
+  "providerVoiceId": "Daniel",
   "description": "German Male voice (Daniel) — neural engine.",
   "tags": [
     "male",

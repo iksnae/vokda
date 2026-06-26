@@ -3,7 +3,7 @@
   "name": "Stephen",
   "provider": "AWS Polly",
   "providerId": "aws-polly",
-  "providerVoiceId": "stephen",
+  "providerVoiceId": "Stephen",
   "description": "US English Male voice (Stephen) — neural engine.",
   "tags": [
     "male",

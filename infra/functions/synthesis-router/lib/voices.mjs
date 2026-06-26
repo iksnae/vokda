@@ -8,6 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getVoiceSteering } from './steering.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -146,6 +147,7 @@ function formatVoiceSummary(v) {
     toneTags: v.metadata?.toneTags || [],
     audioUrl: absolutizeCatalogUrl(v.audioUrl),
     ssmlSupport: v.variants?.[0]?.supportsSsml || false,
+    steering: getVoiceSteering(v),
   };
 }
 
@@ -168,6 +170,8 @@ function formatVoiceDetail(v) {
     toneTags: v.metadata?.toneTags || [],
     audioUrl: absolutizeCatalogUrl(v.audioUrl),
     imageUrl: absolutizeCatalogUrl(v.imageUrl),
+    ssmlSupport: v.variants?.[0]?.supportsSsml || false,
+    steering: getVoiceSteering(v),
     licenseNotes: v.licenseNotes || null,
     metadata: v.metadata || {},
     modelCard: v.modelCard || {},
