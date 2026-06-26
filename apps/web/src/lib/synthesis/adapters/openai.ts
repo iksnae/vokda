@@ -10,18 +10,21 @@
 import type { SynthesisAdapter, SynthesisRequest, SynthesisPreview } from '../types';
 import type { ApiKeyCredential } from '../provider-auth';
 
-function extractVoiceId(sourceKey: string): string {
+/**
+ * OpenAI's newest TTS model. It renders all 13 built-in voices and is the most
+ * natural/accurate, so every voice uses it (older tts-1/tts-1-hd only cover a
+ * subset). Replaces a brittle per-voice substring heuristic.
+ */
+export const OPENAI_DEFAULT_MODEL = 'gpt-4o-mini-tts';
+
+export function extractVoiceId(sourceKey: string): string {
   // sourceKey format: "openai:tts:alloy" or "openai:voice:alloy"
   const parts = sourceKey.split(':');
   return parts[parts.length - 1] || 'alloy';
 }
 
-function resolveModel(sourceKey: string): string {
-  // gpt-4o-mini-tts voices use that model; otherwise tts-1
-  if (sourceKey.includes('gpt-4o-mini-tts') || sourceKey.includes('ballad') || sourceKey.includes('verse')) {
-    return 'gpt-4o-mini-tts';
-  }
-  return 'tts-1';
+export function resolveOpenAIModel(): string {
+  return OPENAI_DEFAULT_MODEL;
 }
 
 export function createOpenAIAdapter(credential: ApiKeyCredential): SynthesisAdapter {
@@ -32,7 +35,7 @@ export function createOpenAIAdapter(credential: ApiKeyCredential): SynthesisAdap
     async synthesizePreview(request: SynthesisRequest): Promise<SynthesisPreview> {
       const start = Date.now();
       const voiceId = extractVoiceId(request.variant.sourceKey);
-      const model = resolveModel(request.variant.sourceKey);
+      const model = resolveOpenAIModel();
 
       const response = await fetch('https://api.openai.com/v1/audio/speech', {
         method: 'POST',
