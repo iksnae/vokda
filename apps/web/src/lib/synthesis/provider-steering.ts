@@ -54,6 +54,17 @@ export interface SteerableVoice {
 
 const NONE: ProviderSteering = { kind: 'none', label: '' };
 
+/** ElevenLabs models that interpret inline audio tags ([whispers], [excited], …). */
+const ELEVENLABS_AUDIO_TAG_MODELS = new Set(['eleven_v3']);
+const ELEVENLABS_DEFAULT_MODEL = 'eleven_multilingual_v2';
+
+const ELEVENLABS_SETTINGS: SteeringSetting[] = [
+  { key: 'stability', label: 'Stability', min: 0, max: 1, step: 0.05, default: 0.5 },
+  { key: 'similarity_boost', label: 'Similarity', min: 0, max: 1, step: 0.05, default: 0.75 },
+  { key: 'style', label: 'Style exaggeration', min: 0, max: 1, step: 0.05, default: 0 },
+  { key: 'speed', label: 'Speed', min: 0.7, max: 1.2, step: 0.05, default: 1 },
+];
+
 /**
  * Resolve the steering capability for a voice.
  * @param voice  the voice (providerId + providerVoiceId)
@@ -66,6 +77,13 @@ export function getProviderSteering(voice: SteerableVoice, _model?: string): Pro
         kind: 'instructions',
         label: 'Direction',
         placeholder: 'e.g. cheerful and upbeat; speak slowly and clearly',
+      };
+    case 'elevenlabs':
+      return {
+        kind: 'settings',
+        label: 'Expressivity',
+        settings: ELEVENLABS_SETTINGS,
+        audioTags: ELEVENLABS_AUDIO_TAG_MODELS.has(_model ?? ELEVENLABS_DEFAULT_MODEL),
       };
     default:
       return NONE;

@@ -9,6 +9,12 @@ export type SynthesisRequest = {
   mode: PreviewInputMode;
   /** Free-text delivery direction (provider steerability, e.g. OpenAI instructions). */
   instructions?: string;
+  /** Numeric expressivity settings (e.g. ElevenLabs voice_settings: stability, style, speed). */
+  settings?: Record<string, number>;
+  /** Named style (e.g. AWS Polly "newscaster"). */
+  style?: string;
+  /** Model override (e.g. ElevenLabs eleven_v3 for audio tags). */
+  model?: string;
 };
 
 export type SynthesisPreview = {
