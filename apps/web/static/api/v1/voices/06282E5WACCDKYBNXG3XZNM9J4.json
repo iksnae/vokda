@@ -71,6 +71,9 @@
       "supportsSsml": false
     }
   ],
+  "steering": {
+    "kind": "none"
+  },
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/06282E5WACCDKYBNXG3XZNM9J4.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/06282E5WACCDKYBNXG3XZNM9J4",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/06282E5WACCDKYBNXG3XZNM9J4.json"

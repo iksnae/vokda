@@ -62,7 +62,40 @@ const clip = await vokda.synthesize({
 console.log(clip.audioUrl);    // presigned S3 URL (7-day expiry)
 console.log(clip.latencyMs);   // synthesis time in ms
 console.log(clip.fileSizeBytes);
+console.log(clip.waveform);    // precomputed peaks for rendering (or null)
 ```
+
+### Steering — shape *how* a voice delivers
+
+Every catalog voice carries a `steering` descriptor telling you what expressivity control it supports and which `options.*` to send. Read it, then pass the matching options to `synthesize`.
+
+```ts
+const { voices } = await catalog.listVoices();
+const voice = voices.find((v) => v.providerId === 'openai')!;
+
+switch (voice.steering?.kind) {
+  case 'instructions': // OpenAI — free-text direction
+    await vokda.synthesize({
+      text: 'We did it!', provider: 'openai', providerVoiceId: 'alloy',
+      options: { instructions: 'cheerful and upbeat; speak slowly' },
+    });
+    break;
+  case 'settings': // ElevenLabs — voice_settings (+ eleven_v3 audio tags)
+    await vokda.synthesize({
+      text: '[excited] We did it!', provider: 'elevenlabs', providerVoiceId: '...',
+      options: { model_id: voice.steering.audioTagsModel, stability: 0.3, style: 0.6 },
+    });
+    break;
+  case 'styles': // AWS Polly — newscaster on Matthew/Joanna/Lupe/Amy
+    await vokda.synthesize({
+      text: 'Tonight on the news…', provider: 'aws-polly', providerVoiceId: 'Matthew',
+      options: { speakingStyle: 'newscaster' },
+    });
+    break;
+}
+```
+
+The `kind` is one of `instructions | styles | settings | none`. Voices with `none` (or no `steering`) take no expressivity options. See the [API reference](https://vokda.iksnae.com) (`/v1/voices` `steering` field) for the full descriptor.
 
 ### Manage Clips
 

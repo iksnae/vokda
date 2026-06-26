@@ -94,6 +94,11 @@
       "supportsSsml": false
     }
   ],
+  "steering": {
+    "kind": "instructions",
+    "param": "instructions",
+    "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
+  },
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBQRWDJ3N3NY6Y3J9R.json"

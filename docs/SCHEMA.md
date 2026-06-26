@@ -33,6 +33,22 @@ The primary catalog entity. Source of truth: `apps/web/static/data/voices.json`.
 | `modelCard` | ModelCard | | Technical metadata |
 | `metadata` | object | | Additional structured metadata |
 | `metadataQuality` | enum | | `sparse` \| `curated` \| `editorial` |
+| `steering` | Steering | | **Derived** (not stored in source) — expressivity control the voice supports. Added by the catalog generator and the synthesis `/v1/voices` endpoint. See [Steering](#steering) |
+
+### Steering
+
+Per-voice expressivity ("steering") capability — tells API consumers what delivery control a voice supports and which `options.*` to send when synthesizing. Resolved from `providerId`/`providerVoiceId` by `infra/functions/synthesis-router/lib/steering.mjs` (the single source of truth, shared by `/v1/voices` and the static catalog generator). Exposed on every catalog voice and in `POST /v1/synthesize` `options`.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `kind` | enum | `instructions` \| `styles` \| `settings` \| `none` |
+| `param` | string | The `options.*` key to send (`instructions` \| `voice_settings` \| `speakingStyle`) |
+| `hint` | string | `instructions`: guidance on the free-text direction to write |
+| `options` | string[] | `styles`: allowed values for `options[param]` (e.g. `["default","newscaster"]`) |
+| `settings` | SteeringSetting[] | `settings`: numeric ranges — `{ key, min, max, default }` |
+| `audioTagsModel` | string | `settings` (ElevenLabs): set `options.model_id` to this (`eleven_v3`) to enable inline audio tags |
+
+Current coverage: **OpenAI** → `instructions` (free-text direction), **ElevenLabs** → `settings` (`voice_settings` + `eleven_v3` audio tags), **AWS Polly** (Matthew/Joanna/Lupe/Amy) → `styles` (newscaster). All other voices → `{ "kind": "none" }`.
 
 ### VoiceVariant
 

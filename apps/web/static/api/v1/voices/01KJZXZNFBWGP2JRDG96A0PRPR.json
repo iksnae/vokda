@@ -94,6 +94,37 @@
       "supportsSsml": false
     }
   ],
+  "steering": {
+    "kind": "settings",
+    "param": "voice_settings",
+    "settings": [
+      {
+        "key": "stability",
+        "min": 0,
+        "max": 1,
+        "default": 0.5
+      },
+      {
+        "key": "similarity_boost",
+        "min": 0,
+        "max": 1,
+        "default": 0.75
+      },
+      {
+        "key": "style",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "key": "speed",
+        "min": 0.7,
+        "max": 1.2,
+        "default": 1
+      }
+    ],
+    "audioTagsModel": "eleven_v3"
+  },
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBWGP2JRDG96A0PRPR.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBWGP2JRDG96A0PRPR",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBWGP2JRDG96A0PRPR.json"

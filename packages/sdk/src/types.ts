@@ -81,6 +81,41 @@ export interface ModelCard {
   knownLimitations?: string[];
 }
 
+/** Steering family — which kind of expressivity control a voice supports. */
+export type SteeringKind = 'instructions' | 'styles' | 'settings' | 'none';
+
+/** A numeric expressivity control (ElevenLabs `voice_settings`). */
+export interface SteeringSetting {
+  key: string;
+  min: number;
+  max: number;
+  default: number;
+}
+
+/**
+ * Expressivity control ("steering") a voice supports, and which `options.*` to
+ * send when synthesizing. Mirror of the synthesis API's `/v1/voices` `steering`
+ * descriptor:
+ *  - `instructions` — free-text direction in `options.instructions` (OpenAI).
+ *  - `settings`     — numeric `options.voice_settings` per {@link settings}; set
+ *    `options.model_id` to {@link audioTagsModel} to enable inline audio tags (ElevenLabs).
+ *  - `styles`       — one of {@link options} in `options.speakingStyle` (AWS Polly newscaster).
+ *  - `none`         — no steering.
+ */
+export interface Steering {
+  kind: SteeringKind;
+  /** The `options.*` key to send (e.g. `instructions`, `voice_settings`, `speakingStyle`). */
+  param?: string;
+  /** `instructions`: guidance on what free-text direction to write. */
+  hint?: string;
+  /** `styles`: allowed values for `options[param]`. */
+  options?: string[];
+  /** `settings`: numeric ranges. */
+  settings?: SteeringSetting[];
+  /** `settings` (ElevenLabs): set `options.model_id` to this to enable inline audio tags. */
+  audioTagsModel?: string;
+}
+
 export interface Voice {
   id: string;
   name: string;
@@ -98,6 +133,8 @@ export interface Voice {
   modelCard?: ModelCard;
   variants: VoiceVariant[];
   samples: VoiceSample[];
+  /** Expressivity control this voice supports (and which `options.*` to send). */
+  steering?: Steering;
 }
 
 export interface VoiceCatalog {

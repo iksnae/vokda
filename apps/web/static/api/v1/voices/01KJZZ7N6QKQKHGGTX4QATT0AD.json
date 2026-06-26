@@ -104,6 +104,9 @@
       "supportsSsml": false
     }
   ],
+  "steering": {
+    "kind": "none"
+  },
   "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZZ7N6QKQKHGGTX4QATT0AD.jpg",
   "webUrl": "https://vokda.iksnae.com/voices/01KJZZ7N6QKQKHGGTX4QATT0AD",
   "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZZ7N6QKQKHGGTX4QATT0AD.json"

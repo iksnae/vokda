@@ -220,6 +220,74 @@
           },
           "metadata": {
             "$ref": "#/components/schemas/VoiceMetadataSummary"
+          },
+          "steering": {
+            "$ref": "#/components/schemas/Steering"
+          }
+        }
+      },
+      "SteeringSetting": {
+        "type": "object",
+        "description": "A numeric expressivity control (ElevenLabs voice_settings).",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "default": {
+            "type": "number"
+          }
+        }
+      },
+      "Steering": {
+        "type": "object",
+        "description": "Expressivity control the voice supports, and which synthesize `options.*` to send.",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "instructions",
+              "styles",
+              "settings",
+              "none"
+            ]
+          },
+          "param": {
+            "type": "string",
+            "description": "options.* key (instructions | voice_settings | speakingStyle)"
+          },
+          "hint": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SteeringSetting"
+            }
+          },
+          "audioTagsModel": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "settings (ElevenLabs): set options.model_id to this for inline audio tags"
           }
         }
       },
