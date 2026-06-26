@@ -98,7 +98,7 @@ Vokda has two parallel tracks that evolve together:
 - [x] Synthesis parameter controls + voice steerability — OpenAI `instructions`, ElevenLabs `voice_settings`+v3 audio tags, AWS Polly newscaster; capability surfaced per voice in the `/v1/voices` `steering` field
 - [ ] Streaming synthesis for low-latency providers (Cartesia, LMNT)
 - [x] Batch synthesis — `POST /v1/synthesize/batch` (up to 50 jobs)
-- [ ] Clip waveform visualization
+- [x] Clip waveform visualization — server-side precomputed peaks (audiowaveform JSON) on `waveform`; rendered in clips list + audition player
 - [ ] Clip sharing (public presigned URL)
 
 ### 2c. SSML Editor v2
