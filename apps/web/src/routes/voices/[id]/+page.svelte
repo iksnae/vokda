@@ -160,7 +160,10 @@
   let auditionText = urlText || 'Hello! This is a preview of this voice. How does it sound to you?';
   let auditionMode: PreviewInputMode = (urlMode === 'ssml' ? 'ssml' : 'text');
   let auditionDirection = '';
-  $: steering = voice ? getProviderSteering(voice.providerId ?? '') : { kind: 'none' as const, label: '' };
+  let auditionSettings: Record<string, number> = {};
+  let auditionModel = '';
+  let auditionStyle = 'default';
+  $: steering = voice ? getProviderSteering(voice, auditionModel || undefined) : { kind: 'none' as const, label: '' };
   let auditionLoading = false;
   let auditionResult: SynthesisPreview | null = null;
   let auditionError = '';
@@ -190,7 +193,10 @@
         variant,
         input: auditionText,
         mode: auditionMode,
-        instructions: steering.kind === 'instructions' ? auditionDirection : undefined
+        instructions: steering.kind === 'instructions' ? auditionDirection : undefined,
+        settings: steering.kind === 'settings' ? auditionSettings : undefined,
+        style: steering.kind === 'styles' && auditionStyle !== 'default' ? auditionStyle : undefined,
+        model: auditionModel || undefined
       });
 
       if (auditionResult.warnings.length > 0) {
@@ -529,6 +535,51 @@
                   placeholder={steering.placeholder}
                 />
               </label>
+            {/if}
+
+            {#if steering.kind === 'styles'}
+              <label class="audition-direction-label">
+                {steering.label}
+                <select class="audition-direction" bind:value={auditionStyle}>
+                  {#each steering.options ?? [] as o (o.id)}
+                    <option value={o.id}>{o.label}</option>
+                  {/each}
+                </select>
+              </label>
+            {/if}
+
+            {#if steering.kind === 'settings'}
+              <div class="audition-settings">
+                {#if voice?.providerId === 'elevenlabs'}
+                  <label class="audition-direction-label">
+                    Model
+                    <select class="audition-direction" bind:value={auditionModel}>
+                      <option value="">Default — multilingual v2</option>
+                      <option value="eleven_v3">Eleven v3 — expressive, audio tags</option>
+                      <option value="eleven_flash_v2_5">Flash v2.5 — fast</option>
+                    </select>
+                  </label>
+                {/if}
+                {#each steering.settings ?? [] as s (s.key)}
+                  <label class="audition-slider">
+                    <span class="slider-head">{s.label}<em>{(auditionSettings[s.key] ?? s.default).toFixed(2)}</em></span>
+                    <input
+                      type="range"
+                      min={s.min}
+                      max={s.max}
+                      step={s.step}
+                      value={auditionSettings[s.key] ?? s.default}
+                      on:input={(e) => (auditionSettings = { ...auditionSettings, [s.key]: Number(e.currentTarget.value) })}
+                    />
+                  </label>
+                {/each}
+                {#if steering.audioTags}
+                  <p class="audio-tags-hint">
+                    ✨ This model interprets inline audio tags — try
+                    <code>[whispers]</code>, <code>[excited]</code>, <code>[laughs]</code> in your text.
+                  </p>
+                {/if}
+              </div>
             {/if}
 
             <div class="audition-actions">
@@ -1948,5 +1999,40 @@
     outline: 2px solid var(--brand-600);
     outline-offset: 1px;
     border-color: var(--brand-600);
+  }
+
+  /* ─── Expressivity settings (ElevenLabs) ─── */
+  .audition-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  .audition-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: var(--text-small);
+    color: #3e5972;
+  }
+  .slider-head {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 660;
+  }
+  .slider-head em { font-style: normal; color: #6a8197; font-variant-numeric: tabular-nums; }
+  .audition-slider input[type='range'] { width: 100%; accent-color: var(--brand-600); }
+  .audio-tags-hint {
+    margin: 0.2rem 0 0;
+    padding: 0.45rem 0.6rem;
+    background: var(--brand-100);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    color: #173046;
+  }
+  .audio-tags-hint code {
+    background: rgba(15, 35, 54, 0.08);
+    padding: 0.05rem 0.3rem;
+    border-radius: 5px;
   }
 </style>

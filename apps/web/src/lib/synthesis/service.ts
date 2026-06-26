@@ -41,6 +41,17 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
   }
 
   const start = Date.now();
+
+  // Collect provider-steering facets into one options object. Each adapter reads
+  // only the keys it understands (OpenAI: instructions; ElevenLabs: stability/
+  // style/speed/similarity_boost/model_id; Polly: speakingStyle).
+  const options: Record<string, unknown> = {
+    ...(request.settings ?? {}),
+    ...(request.instructions?.trim() ? { instructions: request.instructions.trim() } : {}),
+    ...(request.style ? { speakingStyle: request.style } : {}),
+    ...(request.model ? { model_id: request.model } : {}),
+  };
+
   const response = await fetch(`${SYNTHESIS_API_URL}/v1/synthesize`, {
     method: 'POST',
     headers: {
@@ -54,7 +65,7 @@ async function runApiSynthesis(request: SynthesisRequest): Promise<SynthesisPrev
       voiceName: request.voice.name,
       providerVoiceId: request.voice.providerVoiceId || request.variant.sourceKey || request.variant.id,
       mode: request.mode ?? 'text',
-      ...(request.instructions?.trim() ? { options: { instructions: request.instructions.trim() } } : {}),
+      ...(Object.keys(options).length > 0 ? { options } : {}),
     }),
   });
 
