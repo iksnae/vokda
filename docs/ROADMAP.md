@@ -88,16 +88,16 @@ Vokda has two parallel tracks that evolve together:
 **Goal:** Make Vokda genuinely delightful for finding the right voice.
 
 ### 2a. Discovery Features
-- [ ] "Similar voices" on detail page (by tags, quality, provider type)
+- [x] "Similar voices" on detail page (by language/gender/age/quality/tags)
 - [ ] Comparison mode — pick 2-3 voices, hear them speak the same text
 - [ ] Mood/use-case browse pages ("Voices for audiobooks", "Voices for gaming NPCs")
 - [ ] Voice Finder wizard — answer questions, get a shortlist
-- [ ] Provider comparison page
+- [x] Per-provider pages (`/providers/[id]`) — counts, pricing, voice gallery, connect CTA
 
 ### 2b. Synthesis Enhancements
-- [ ] Synthesis parameter controls (speed, pitch, format) per provider
+- [x] Synthesis parameter controls — `options.model`/`speed`/`format`; OpenAI `instructions` steerability (gpt-4o-mini-tts)
 - [ ] Streaming synthesis for low-latency providers (Cartesia, LMNT)
-- [ ] Batch synthesis — queue multiple voices with same text
+- [x] Batch synthesis — `POST /v1/synthesize/batch` (up to 50 jobs)
 - [ ] Clip waveform visualization
 - [ ] Clip sharing (public presigned URL)
 
@@ -141,7 +141,7 @@ Vokda has two parallel tracks that evolve together:
 **Goal:** Make Vokda useful as infrastructure, not just a discovery surface.
 
 ### 4a. Public API
-- [ ] API documentation site (OpenAPI spec)
+- [x] OpenAPI spec with `components/schemas` for the catalog API (served at `/api/v1/openapi.json`); full synthesis spec pending
 - [x] `GET /v1/voices` — account-scoped filterable catalog endpoint (provider, language, gender, quality, search, pagination)
 - [x] `GET /v1/voices/:id` — voice detail + samples, variants, model card
 - [x] `GET /v1/providers` — provider registry (account-enabled by default, `?all=true` for full catalog)

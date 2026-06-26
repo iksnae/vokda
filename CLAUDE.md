@@ -91,6 +91,8 @@ apps/web/src/
     voice-catalog.ts          # Metadata patching, effective catalog builder
     voice-utils.ts            # SSML stripping, variant warnings, text truncation
     providers.ts              # Provider definitions and normalization
+    provider-catalog.ts       # Per-provider aggregation (counts, languages, SSML, pricing)
+    similar-voices.ts         # "Similar voices" scorer (language/gender/age/quality/tags)
     auth/                     # Amplify Cognito auth (store, config, client)
     data/                     # Amplify Data layer (user-library, credentials, client)
     stores/
@@ -101,7 +103,9 @@ apps/web/src/
       service.ts              # Orchestrates synthesis (API mode, gateway, browser)
       registry.ts             # Adapter registry, provider detection
       constraints.ts          # Input normalization
-      types.ts                # SynthesisRequest, SynthesisPreview types
+      types.ts                # SynthesisRequest (incl. instructions), SynthesisPreview
+      provider-steering.ts    # Steerability capability per provider (OpenAI instructions)
+      credential-status.ts    # Credential validity label (verified/unverified/invalid)
       adapters/               # 9 real + mock adapters per provider
     ssml/
       tags.ts                 # Tag registry (7 tags, 4 providers)
@@ -115,7 +119,8 @@ apps/web/src/
   routes/
     +layout.svelte            # App shell (header, nav, auth)
     +page.svelte              # Home — catalog browse/search/filter (11 filters, URL-synced)
-    voices/[id]/              # Voice detail — audition, SSML editor, samples
+    voices/[id]/              # Voice detail — audition (+ steerability "Direction"), SSML editor, similar voices
+    providers/[id]/           # Per-provider page — counts, pricing, voice gallery
     collections/              # Collections management
     curation/                 # Curator workspace (curator+)
     admin/                    # Admin panel (admin only)
@@ -142,20 +147,22 @@ infra/
 apps/api/src/server.mjs       # Admin API (role management)
 ```
 
-## Current State (as of March 2026)
+## Current State (as of June 2026)
 
 **Shipped:**
 - 550 voices across 25 providers, 100% with audio samples, 53 languages
 - Pinterest-style browse grid with 11 filters (provider, language, gender, quality, age, style, type, sort, SSML, audio, favorites), all URL-synced
-- Voice detail with audition studio, SSML visual editor, provider setup guides
-- Server-side synthesis with 9 provider adapters (OpenAI, ElevenLabs, Deepgram, Gemini, Cartesia, LMNT, GCP TTS, Azure Speech, AWS Polly)
+- Voice detail with audition studio, SSML visual editor, provider setup guides, **similar voices**, and a **"Direction" steerability input** (OpenAI `instructions`)
+- **Per-provider pages** (`/providers/[id]`) — counts, pricing, capabilities, voice gallery, connect CTA
+- Server-side synthesis with 9 provider adapters; OpenAI defaults to `gpt-4o-mini-tts`. **Batch endpoint** `POST /v1/synthesize/batch` (≤50 jobs)
 - SSML editor: 7 tags, attribute popovers, real-time validation, provider-aware
-- Audio clips with full CRUD (name, tags, description, re-synthesize, download, search)
-- BYOK (Bring Your Own Key) provider credential management
-- Vokda API keys for programmatic access
+- Audio clips with full CRUD (name, tags, description, re-synthesize, download, search); clips report `durationMs`
+- BYOK provider credentials with **real validity status** (Verified / Saved·unverified / Invalid)
+- Vokda API keys for programmatic access (up to **25** active per account)
+- TypeScript SDK (`packages/sdk`) incl. `synthesizeBatch`; served catalog OpenAPI has `components/schemas`
 - Collections — pin, organize, export as Voice Pack JSON
 - Auth live (Cognito), roles: visitor → guest → curator → admin
-- 235 unit tests, zero type errors
+- 264 web unit tests + infra test suites, zero type errors
 
 **Known gaps:**
 - Amplify Data scaffolded but favorites/collections still in localStorage

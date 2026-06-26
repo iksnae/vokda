@@ -206,7 +206,16 @@ Generate speech from text using a connected provider.
 | `voiceName` | string | | Display name (stored with the clip) |
 | `voiceId` | string | | Vokda catalog voice ID |
 | `mode` | string | | `"text"` (default) or `"ssml"` |
-| `options` | object | | Provider-specific options (format, model, speed, etc.) |
+| `options` | object | | Provider-specific options (see below) |
+
+**`options`:**
+
+| Key | Provider | Description |
+|-----|----------|-------------|
+| `model` | OpenAI | Override the model. Default `gpt-4o-mini-tts` (renders all voices); also `tts-1`, `tts-1-hd`. |
+| `instructions` | OpenAI (`gpt-4o-mini-tts`) | Free-text delivery direction — tone, accent, emotion, pacing, whispering (e.g. `"Speak in a warm, excited whisper."`). Ignored by `tts-1`. |
+| `speed` | OpenAI | Playback speed multiplier (default `1.0`). |
+| `format` | most | Output format (default `mp3`). |
 
 **Response (200):**
 
