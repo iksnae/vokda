@@ -181,6 +181,29 @@ export interface SynthesizeResponse {
   message?: string;
 }
 
+/** A single item in a batch synthesis request (always processed async). */
+export type BatchSynthesizeItem = Omit<SynthesizeRequest, 'async'>;
+
+export interface BatchSynthesizeRequest {
+  /** Up to 50 items. Each is validated independently. */
+  items: BatchSynthesizeItem[];
+}
+
+export interface BatchSynthesizeJob {
+  index: number;
+  status: 'pending' | 'rejected';
+  jobId?: string;
+  error?: string;
+}
+
+export interface BatchSynthesizeResponse {
+  total: number;
+  queued: number;
+  rejected: number;
+  jobs: BatchSynthesizeJob[];
+  message?: string;
+}
+
 // ─── Clips ───────────────────────────────────────────────────────────────────
 
 export interface Clip {

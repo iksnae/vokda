@@ -19,6 +19,7 @@ This document is an index. For full documentation, see:
 | Method | Path | Auth | Description |
 |--------|------|------|-------------|
 | POST | `/v1/synthesize` | ✓ | Generate speech from text or SSML |
+| POST | `/v1/synthesize/batch` | ✓ | Queue up to 50 synthesis jobs in one request |
 | GET | `/v1/providers` | ✓ | List enabled providers (`?all=true` for full catalog) |
 | GET | `/v1/voices` | ✓ | List voices from enabled providers (filterable) |
 | GET | `/v1/voices/{id}` | ✓ | Voice detail (samples, variants, model card) |

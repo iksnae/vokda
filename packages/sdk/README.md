@@ -168,6 +168,7 @@ See the [OpenAPI spec](https://vokda.iksnae.com/api/v1/openapi.json) for full en
 | `GET` | `/api/v1/providers.json` | `catalog.listProviders()` |
 | `GET` | `/api/v1/stats.json` | `catalog.getStats()` |
 | `POST` | `/v1/synthesize` | `client.synthesize(req)` |
+| `POST` | `/v1/synthesize/batch` | `client.synthesizeBatch({ items })` |
 | `GET` | `/v1/jobs` | `client.listClips(opts?)` |
 | `GET` | `/v1/jobs/{id}` | `client.getClip(id)` |
 | `PATCH` | `/v1/jobs/{id}` | `client.updateClip(id, update)` |

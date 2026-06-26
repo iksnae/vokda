@@ -14,6 +14,8 @@ import type {
   CatalogStats,
   SynthesizeRequest,
   SynthesizeResponse,
+  BatchSynthesizeRequest,
+  BatchSynthesizeResponse,
   Clip,
   ClipList,
   ClipUpdate,
@@ -139,6 +141,15 @@ export class VokdaClient extends VokdaCatalogClient {
   /** Synthesize speech from text or SSML. Returns clip with audio URL. */
   async synthesize(req: SynthesizeRequest): Promise<SynthesizeResponse> {
     return this.authRequest<SynthesizeResponse>('POST', '/v1/synthesize', req);
+  }
+
+  /**
+   * Queue up to 50 synthesis jobs in one request. Each item is processed
+   * asynchronously — poll {@link getClip} with each returned jobId. Invalid
+   * items are reported in `jobs[]` with `status: 'rejected'`.
+   */
+  async synthesizeBatch(req: BatchSynthesizeRequest): Promise<BatchSynthesizeResponse> {
+    return this.authRequest<BatchSynthesizeResponse>('POST', '/v1/synthesize/batch', req);
   }
 
   // ── Clips ──
