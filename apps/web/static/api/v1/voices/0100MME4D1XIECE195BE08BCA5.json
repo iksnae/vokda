@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XIECE195BE08BCA5.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XIECE195BE08BCA5.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XIECE195BE08BCA5.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XIECE195BE08BCA5.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XIECE195BE08BCA5.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XIECE195BE08BCA5.mp3",
       "transcript": "This is going to be so much fun! I cannot wait for everyone to get started!",
       "id": "0100MME4D1XI1602E0CDAD6C96",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XIECE195BE08BCA5.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XIECE195BE08BCA5",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XIECE195BE08BCA5.json"
+  }
 }

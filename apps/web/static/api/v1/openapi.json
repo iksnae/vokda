@@ -1,129 +1,153 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Vokda Voice Catalog API",
+    "title": "Vokda API",
     "version": "1.0.0",
-    "description": "Read-only API for discovering and browsing TTS voices. All endpoints return static JSON — no authentication required.",
+    "description": "Vokda is the central hub for text-to-speech voice discovery and synthesis.\n\n**Catalog API** (public, no auth) — Browse 552 voices across 25 providers.\nBase URL: `https://vokda.iksnae.com`\n\n**Synthesis API** (authenticated) — Synthesize speech, manage clips, keys, and provider credentials.\nBase URL: `https://api.vokda.iksnae.com`\n\nAuthentication: Include `Authorization: Bearer <token>` header with either a Vokda API key (`vk_live_...`) or a Cognito JWT.",
     "contact": {
       "name": "Vokda",
       "url": "https://vokda.iksnae.com"
+    },
+    "license": {
+      "name": "Proprietary"
     }
   },
   "servers": [
     {
       "url": "https://vokda.iksnae.com",
-      "description": "Production"
+      "description": "Catalog API (static JSON, public)"
+    },
+    {
+      "url": "https://api.vokda.iksnae.com",
+      "description": "Synthesis API (authenticated)"
     }
   ],
-  "paths": {
-    "/api/v1/voices.json": {
-      "get": {
-        "operationId": "listVoices",
-        "summary": "List all voices",
-        "tags": [
-          "voices"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VoiceCatalog"
-                }
-              }
-            }
-          }
-        }
-      }
+  "tags": [
+    {
+      "name": "catalog",
+      "description": "Voice catalog — browse voices, providers, stats (public, no auth)"
     },
-    "/api/v1/voices/{voiceId}.json": {
-      "get": {
-        "operationId": "getVoice",
-        "summary": "Get voice detail",
-        "tags": [
-          "voices"
-        ],
-        "parameters": [
-          {
-            "name": "voiceId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VoiceDetail"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Voice not found"
-          }
-        }
-      }
+    {
+      "name": "synthesis",
+      "description": "Text-to-speech synthesis (BYOK)"
     },
-    "/api/v1/providers.json": {
-      "get": {
-        "operationId": "listProviders",
-        "summary": "List providers",
-        "tags": [
-          "providers"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProviderList"
-                }
-              }
-            }
-          }
-        }
-      }
+    {
+      "name": "clips",
+      "description": "Audio clip storage and metadata"
     },
-    "/api/v1/stats.json": {
-      "get": {
-        "operationId": "getCatalogStats",
-        "summary": "Catalog statistics",
-        "tags": [
-          "catalog"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CatalogStats"
-                }
-              }
-            }
-          }
-        }
-      }
+    {
+      "name": "credentials",
+      "description": "Provider credential management (BYOK)"
+    },
+    {
+      "name": "keys",
+      "description": "Vokda API key management"
+    },
+    {
+      "name": "usage",
+      "description": "Storage quota and usage"
     }
-  },
+  ],
   "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Vokda API key (`vk_live_...`) or Cognito JWT"
+      }
+    },
     "schemas": {
-      "VoiceMetadataSummary": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Machine-readable error code or short message"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable detail"
+          },
+          "supported": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supported values (when applicable)"
+          }
+        }
+      },
+      "VoiceSample": {
         "type": "object",
         "properties": {
-          "shortLabel": {
-            "type": [
-              "string",
-              "null"
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "scriptKey": {
+            "type": "string"
+          },
+          "transcript": {
+            "type": "string"
+          },
+          "audioUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "VoiceVariant": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sourceKey": {
+            "type": "string",
+            "description": "Provider-specific voice identifier"
+          },
+          "sourceType": {
+            "type": "string"
+          },
+          "runnable": {
+            "type": "boolean"
+          },
+          "previewOnly": {
+            "type": "boolean"
+          },
+          "supportsSsml": {
+            "type": "boolean"
+          },
+          "outputFormats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maxInputChars": {
+            "type": "integer",
+            "nullable": true
+          }
+        }
+      },
+      "VoiceMetadata": {
+        "type": "object",
+        "properties": {
+          "genderPresentation": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "neutral"
             ]
+          },
+          "agePresentation": {
+            "type": "string"
           },
           "toneTags": {
             "type": "array",
@@ -137,41 +161,131 @@
               "type": "string"
             }
           },
-          "genderPresentation": {
-            "type": [
-              "string",
-              "null"
-            ]
+          "audienceTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
-          "agePresentation": {
-            "type": [
-              "string",
-              "null"
+          "machineTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "shortLabel": {
+            "type": "string"
+          },
+          "searchDescription": {
+            "type": "string"
+          },
+          "metadataQuality": {
+            "type": "string",
+            "enum": [
+              "curated",
+              "generated",
+              "sparse"
             ]
           }
         }
       },
-      "VoiceSummary": {
+      "ModelCard": {
+        "type": "object",
+        "properties": {
+          "modelFamily": {
+            "type": "string"
+          },
+          "architecture": {
+            "type": "string"
+          },
+          "providerName": {
+            "type": "string"
+          },
+          "providerType": {
+            "type": "string"
+          },
+          "providerUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "releaseDate": {
+            "type": "string"
+          },
+          "sampleRate": {
+            "type": "integer"
+          },
+          "multilingual": {
+            "type": "boolean"
+          },
+          "ssmlSupport": {
+            "type": "boolean"
+          },
+          "emotionControl": {
+            "type": "boolean"
+          },
+          "voiceCloning": {
+            "type": "boolean"
+          },
+          "streamingSupport": {
+            "type": "boolean"
+          },
+          "wordTimestamps": {
+            "type": "boolean"
+          },
+          "latencyMs": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "licenseUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "commercialUse": {
+            "type": "boolean"
+          },
+          "attributionRequired": {
+            "type": "boolean"
+          },
+          "gdprCompliant": {
+            "type": "boolean"
+          },
+          "knownLimitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Voice": {
         "type": "object",
         "required": [
           "id",
           "name",
           "provider",
-          "languages",
-          "qualityTier"
+          "providerId"
         ],
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "description": "ULID"
           },
           "name": {
             "type": "string"
           },
           "provider": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name"
           },
           "providerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Machine identifier"
+          },
+          "providerVoiceId": {
+            "type": "string",
+            "description": "Provider's own voice ID"
           },
           "description": {
             "type": "string"
@@ -186,40 +300,50 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "BCP 47 codes"
           },
           "qualityTier": {
             "type": "string",
             "enum": [
-              "basic",
+              "premium",
               "standard",
-              "premium"
+              "basic"
             ]
           },
-          "audioUrl": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uri"
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "neutral"
+            ]
           },
           "imageUrl": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "uri"
-          },
-          "detailUrl": {
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "nullable": true
           },
-          "webUrl": {
-            "type": "string",
-            "format": "uri"
+          "licenseNotes": {
+            "type": "string"
           },
           "metadata": {
-            "$ref": "#/components/schemas/VoiceMetadataSummary"
+            "$ref": "#/components/schemas/VoiceMetadata"
+          },
+          "modelCard": {
+            "$ref": "#/components/schemas/ModelCard"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceVariant"
+            }
+          },
+          "samples": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceSample"
+            }
           },
           "steering": {
             "$ref": "#/components/schemas/Steering"
@@ -231,7 +355,8 @@
         "description": "A numeric expressivity control (ElevenLabs voice_settings).",
         "properties": {
           "key": {
-            "type": "string"
+            "type": "string",
+            "description": "options.voice_settings key (e.g. stability)"
           },
           "min": {
             "type": "number"
@@ -246,7 +371,7 @@
       },
       "Steering": {
         "type": "object",
-        "description": "Expressivity control the voice supports, and which synthesize `options.*` to send.",
+        "description": "Expressivity control a voice supports, and which `options.*` to send. See the synthesis options table in SYNTHESIS_API.md.",
         "required": [
           "kind"
         ],
@@ -258,83 +383,54 @@
               "styles",
               "settings",
               "none"
-            ]
+            ],
+            "description": "Steering family"
           },
           "param": {
             "type": "string",
-            "description": "options.* key (instructions | voice_settings | speakingStyle)"
+            "description": "The `options.*` key to send (instructions | voice_settings | speakingStyle)"
           },
           "hint": {
-            "type": [
-              "string",
-              "null"
-            ]
+            "type": "string",
+            "description": "instructions: guidance on what free-text direction to write"
           },
           "options": {
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "styles: allowed values for options[param]"
           },
           "settings": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SteeringSetting"
-            }
+            },
+            "description": "settings: numeric ranges"
           },
           "audioTagsModel": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "settings (ElevenLabs): set options.model_id to this for inline audio tags"
+            "type": "string",
+            "description": "settings (ElevenLabs): set options.model_id to this to enable inline audio tags ([whispers], [excited])"
           }
         }
       },
-      "VoiceDetail": {
-        "type": "object",
-        "description": "Full voice record; superset of VoiceSummary including samples, variants, and modelCard.",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/VoiceSummary"
-          }
-        ],
-        "additionalProperties": true
-      },
       "VoiceCatalog": {
         "type": "object",
-        "required": [
-          "total",
-          "generatedAt",
-          "voices"
-        ],
         "properties": {
-          "$schema": {
-            "type": "string",
-            "format": "uri"
-          },
-          "total": {
-            "type": "integer"
+          "voices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Voice"
+            }
           },
           "generatedAt": {
             "type": "string",
             "format": "date-time"
-          },
-          "voices": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VoiceSummary"
-            }
           }
         }
       },
-      "ProviderEntry": {
+      "Provider": {
         "type": "object",
-        "required": [
-          "id",
-          "name",
-          "voiceCount"
-        ],
         "properties": {
           "id": {
             "type": "string"
@@ -342,18 +438,116 @@
           "name": {
             "type": "string"
           },
+          "type": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "local",
+              "free"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "voiceCount": {
             "type": "integer"
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languageCount": {
+            "type": "integer"
+          },
+          "qualityTiers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "genders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ssmlCapable": {
+            "type": "boolean"
+          },
+          "audioSampleCoverage": {
+            "type": "string"
+          },
+          "hasSynthesis": {
+            "type": "boolean"
+          },
+          "authType": {
+            "type": "string",
+            "enum": [
+              "api_key",
+              "subscription_key",
+              "aws_credentials",
+              "none"
+            ]
+          },
+          "websiteUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "docsUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "signupUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "pricingUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "pricingSummary": {
+            "type": "string",
+            "nullable": true
+          },
+          "freeTier": {
+            "type": "string",
+            "nullable": true
+          },
+          "license": {
+            "type": "string",
+            "nullable": true
+          },
+          "commercialUse": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "maxTextLength": {
+            "type": "integer",
+            "nullable": true,
+            "description": "Maximum input text length (chars) for synthesis. null when unbounded or unknown."
+          },
+          "outputFormats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supported audio output formats (e.g. mp3, wav, opus)."
+          },
+          "supportsStreaming": {
+            "type": "boolean",
+            "description": "Whether this provider supports streaming (real-time) synthesis."
           }
-        },
-        "additionalProperties": true
+        }
       },
       "ProviderList": {
         "type": "object",
-        "required": [
-          "total",
-          "providers"
-        ],
         "properties": {
           "total": {
             "type": "integer"
@@ -365,7 +559,7 @@
           "providers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ProviderEntry"
+              "$ref": "#/components/schemas/Provider"
             }
           }
         }
@@ -389,6 +583,12 @@
           "withAudio": {
             "type": "integer"
           },
+          "withImage": {
+            "type": "integer"
+          },
+          "withModelCard": {
+            "type": "integer"
+          },
           "byProvider": {
             "type": "array",
             "items": {
@@ -405,18 +605,1235 @@
                 }
               }
             }
+          },
+          "byQualityTier": {
+            "type": "object",
+            "properties": {
+              "premium": {
+                "type": "integer"
+              },
+              "standard": {
+                "type": "integer"
+              },
+              "basic": {
+                "type": "integer"
+              }
+            }
+          },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "localModels": {
+                "type": "integer"
+              },
+              "multilingual": {
+                "type": "integer"
+              },
+              "ssmlSupport": {
+                "type": "integer"
+              }
+            }
           }
-        },
-        "additionalProperties": true
+        }
       },
-      "ApiError": {
+      "SynthesizeRequest": {
+        "type": "object",
+        "required": [
+          "text",
+          "provider"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Input text or SSML",
+            "maxLength": 5000
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "openai",
+              "elevenlabs",
+              "deepgram",
+              "gemini-tts",
+              "cartesia",
+              "lmnt",
+              "gcp-tts",
+              "azure-speech",
+              "aws-polly"
+            ]
+          },
+          "providerVoiceId": {
+            "type": "string",
+            "description": "Provider's own voice ID"
+          },
+          "voiceName": {
+            "type": "string",
+            "description": "Display name (stored with clip)"
+          },
+          "voiceId": {
+            "type": "string",
+            "description": "Vokda catalog voice ID"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "text",
+              "ssml"
+            ],
+            "default": "text"
+          },
+          "async": {
+            "type": "boolean",
+            "default": false,
+            "description": "Queue for async processing"
+          },
+          "options": {
+            "type": "object",
+            "description": "Provider-specific options (format, model, etc.). Steering/expressivity goes here too — send what the voice's `steering` descriptor advertises: `instructions` (OpenAI free-text direction), `voice_settings` keys like stability/similarity_boost/style/speed + `model_id` for ElevenLabs audio tags, or `speakingStyle` (AWS Polly newscaster)."
+          }
+        }
+      },
+      "Waveform": {
+        "type": "object",
+        "description": "Precomputed waveform peaks (BBC audiowaveform JSON). `data` is interleaved min/max pairs per pixel, quantized to the signed `bits` range (8-bit → ±127). Null when audio could not be decoded.",
+        "properties": {
+          "version": {
+            "type": "integer"
+          },
+          "channels": {
+            "type": "integer"
+          },
+          "sample_rate": {
+            "type": "integer"
+          },
+          "samples_per_pixel": {
+            "type": "integer"
+          },
+          "bits": {
+            "type": "integer"
+          },
+          "length": {
+            "type": "integer",
+            "description": "Number of min/max pairs (data.length === length * 2)"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "JobStatus": {
+        "type": "string",
+        "enum": [
+          "completed",
+          "pending",
+          "failed"
+        ],
+        "description": "Canonical status for synthesis jobs. completed = audio ready, pending = async job queued, failed = synthesis error."
+      },
+      "SynthesizeResponse": {
         "type": "object",
         "properties": {
-          "error": {
+          "jobId": {
             "type": "string"
           },
-          "message": {
+          "status": {
+            "$ref": "#/components/schemas/JobStatus"
+          },
+          "audioUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Presigned S3 URL (7-day expiry)"
+          },
+          "fileSizeBytes": {
+            "type": "integer"
+          },
+          "durationMs": {
+            "type": "integer",
+            "nullable": true
+          },
+          "latencyMs": {
+            "type": "integer"
+          },
+          "provider": {
             "type": "string"
+          },
+          "voiceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "voiceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "waveform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Waveform"
+              }
+            ],
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Clip": {
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "string"
+          },
+          "voiceId": {
+            "type": "string"
+          },
+          "voiceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/JobStatus"
+          },
+          "inputText": {
+            "type": "string"
+          },
+          "inputMode": {
+            "type": "string",
+            "enum": [
+              "text",
+              "ssml"
+            ]
+          },
+          "clipName": {
+            "type": "string",
+            "nullable": true
+          },
+          "clipDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "clipTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "audioUrl": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "fileSizeBytes": {
+            "type": "integer",
+            "nullable": true
+          },
+          "durationMs": {
+            "type": "integer",
+            "nullable": true
+          },
+          "latencyMs": {
+            "type": "integer",
+            "nullable": true
+          },
+          "waveform": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Waveform"
+              }
+            ],
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ClipList": {
+        "type": "object",
+        "properties": {
+          "jobs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Clip"
+            }
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "ClipUpdate": {
+        "type": "object",
+        "properties": {
+          "clipName": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 500
+          },
+          "clipDescription": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 500
+          },
+          "clipTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20
+          }
+        }
+      },
+      "ClipDeleted": {
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean"
+          },
+          "freedBytes": {
+            "type": "integer"
+          }
+        }
+      },
+      "SaveCredentialRequest": {
+        "type": "object",
+        "required": [
+          "providerId",
+          "credentialData"
+        ],
+        "properties": {
+          "providerId": {
+            "type": "string",
+            "enum": [
+              "openai",
+              "elevenlabs",
+              "deepgram",
+              "gemini-tts",
+              "cartesia",
+              "lmnt",
+              "gcp-tts",
+              "azure-speech",
+              "aws-polly"
+            ]
+          },
+          "credentialData": {
+            "type": "object",
+            "description": "Provider-specific fields. API key: `{\"apiKey\":\"sk-...\"}`. Azure: `{\"subscriptionKey\":\"...\",\"region\":\"eastus\"}`. Polly: `{\"accessKeyId\":\"...\",\"secretAccessKey\":\"...\",\"region\":\"us-east-1\"}`."
+          },
+          "label": {
+            "type": "string",
+            "description": "Optional display label"
+          }
+        }
+      },
+      "CredentialSaved": {
+        "type": "object",
+        "properties": {
+          "providerId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authType": {
+            "type": "string",
+            "enum": [
+              "api_key",
+              "subscription_key",
+              "aws_credentials"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Credential": {
+        "type": "object",
+        "properties": {
+          "providerId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authType": {
+            "type": "string",
+            "enum": [
+              "api_key",
+              "subscription_key",
+              "aws_credentials"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "maskedKey": {
+            "type": "string",
+            "nullable": true,
+            "description": "First 4 + last 4 chars"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastTestedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "CredentialList": {
+        "type": "object",
+        "properties": {
+          "credentials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Credential"
+            }
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "CredentialTestRequest": {
+        "type": "object",
+        "required": [
+          "providerId",
+          "credentialData"
+        ],
+        "properties": {
+          "providerId": {
+            "type": "string",
+            "enum": [
+              "openai",
+              "elevenlabs",
+              "deepgram",
+              "gemini-tts",
+              "cartesia",
+              "lmnt",
+              "gcp-tts",
+              "azure-speech",
+              "aws-polly"
+            ]
+          },
+          "credentialData": {
+            "type": "object"
+          }
+        }
+      },
+      "CredentialTestResult": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "latencyMs": {
+            "type": "integer"
+          },
+          "error": {
+            "type": "string",
+            "description": "Present when success=false"
+          }
+        }
+      },
+      "CredentialDeleted": {
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean"
+          },
+          "providerId": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiKey": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "keyPrefix": {
+            "type": "string",
+            "description": "Masked prefix (vk_live__Cve...)"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "revoked"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUsedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "ApiKeyCreated": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string",
+            "description": "Full key value (shown only once)"
+          },
+          "keyPrefix": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ApiKeyList": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiKey"
+            }
+          }
+        }
+      },
+      "Usage": {
+        "type": "object",
+        "properties": {
+          "totalBytes": {
+            "type": "integer"
+          },
+          "fileCount": {
+            "type": "integer"
+          },
+          "quotaBytes": {
+            "type": "integer"
+          },
+          "usagePercent": {
+            "type": "number"
+          },
+          "remainingBytes": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/v1/voices.json": {
+      "get": {
+        "operationId": "listVoices",
+        "summary": "List all voices",
+        "description": "Returns the full voice catalog (552 voices).",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Voice catalog",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceCatalog"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/voices/{voiceId}.json": {
+      "get": {
+        "operationId": "getVoice",
+        "summary": "Get voice detail",
+        "description": "Returns full detail for a single voice.",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "parameters": [
+          {
+            "name": "voiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Voice ULID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Voice detail",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Voice"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Voice not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/providers.json": {
+      "get": {
+        "operationId": "listProviders",
+        "summary": "List all providers",
+        "description": "Provider directory with capabilities, pricing, and links.",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Provider list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProviderList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/stats.json": {
+      "get": {
+        "operationId": "getCatalogStats",
+        "summary": "Catalog statistics",
+        "description": "Aggregate stats: voice counts, provider breakdown, quality tiers.",
+        "tags": [
+          "catalog"
+        ],
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Catalog stats",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogStats"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/synthesize": {
+      "post": {
+        "operationId": "synthesize",
+        "summary": "Synthesize speech",
+        "description": "Generate speech from text or SSML. Requires a stored provider credential.",
+        "tags": [
+          "synthesis"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynthesizeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Synthesis completed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesizeResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Async job queued (when async=true)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesizeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/synthesize/batch": {
+      "post": {
+        "operationId": "synthesizeBatch",
+        "summary": "Batch synthesize speech",
+        "description": "Queue up to 50 synthesis jobs in one request. Each item is validated independently and processed asynchronously — poll GET /v1/jobs/{id} for each. Requires a stored provider credential per item.",
+        "tags": [
+          "synthesis"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "items"
+                ],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "maxItems": 50,
+                    "items": {
+                      "$ref": "#/components/schemas/SynthesizeRequest"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Batch accepted; per-item job ids returned"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/jobs": {
+      "get": {
+        "operationId": "listClips",
+        "summary": "List audio clips",
+        "tags": [
+          "clips"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "maximum": 200
+            },
+            "description": "Max clips to return"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "completed",
+                "pending",
+                "failed"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clip list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClipList"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/jobs/{id}": {
+      "get": {
+        "operationId": "getClip",
+        "summary": "Get clip detail",
+        "tags": [
+          "clips"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clip with fresh presigned audio URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clip"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Clip not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateClip",
+        "summary": "Update clip metadata",
+        "tags": [
+          "clips"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClipUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated clip",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clip"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Clip not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteClip",
+        "summary": "Delete clip and audio",
+        "tags": [
+          "clips"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Clip deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClipDeleted"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Clip not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/credentials": {
+      "post": {
+        "operationId": "saveCredential",
+        "summary": "Store provider credential",
+        "description": "Create or update a BYOK provider key. One credential per provider (upsert).",
+        "tags": [
+          "credentials"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SaveCredentialRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Credential saved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CredentialSaved"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid provider or missing fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "listCredentials",
+        "summary": "List provider credentials",
+        "description": "Returns all stored credentials with masked key values.",
+        "tags": [
+          "credentials"
+        ],
+        "responses": {
+          "200": {
+            "description": "Credential list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CredentialList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/credentials/test": {
+      "post": {
+        "operationId": "testCredential",
+        "summary": "Test credential (dry run)",
+        "description": "Verifies a credential by performing a minimal synthesis. Does NOT store it.",
+        "tags": [
+          "credentials"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CredentialTestRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Test result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CredentialTestResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/credentials/{providerId}": {
+      "delete": {
+        "operationId": "deleteCredential",
+        "summary": "Remove provider credential",
+        "tags": [
+          "credentials"
+        ],
+        "parameters": [
+          {
+            "name": "providerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "openai",
+                "elevenlabs",
+                "deepgram",
+                "gemini-tts",
+                "cartesia",
+                "lmnt",
+                "gcp-tts",
+                "azure-speech",
+                "aws-polly"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Credential deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CredentialDeleted"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No credential for this provider",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/keys": {
+      "post": {
+        "operationId": "createApiKey",
+        "summary": "Create Vokda API key",
+        "description": "Creates a `vk_live_...` key. The full key value is returned **only once**. Up to 25 active keys per account.",
+        "tags": [
+          "keys"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "description": "Optional label for the key"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Key created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCreated"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Limit reached — maximum 25 active API keys per account"
+          }
+        }
+      },
+      "get": {
+        "operationId": "listApiKeys",
+        "summary": "List API keys",
+        "tags": [
+          "keys"
+        ],
+        "responses": {
+          "200": {
+            "description": "Key list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/keys/{id}": {
+      "delete": {
+        "operationId": "revokeApiKey",
+        "summary": "Revoke API key",
+        "tags": [
+          "keys"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Key revoked"
+          }
+        }
+      }
+    },
+    "/v1/media/usage": {
+      "get": {
+        "operationId": "getUsage",
+        "summary": "Storage usage and quota",
+        "tags": [
+          "usage"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usage stats",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usage"
+                }
+              }
+            }
           }
         }
       }

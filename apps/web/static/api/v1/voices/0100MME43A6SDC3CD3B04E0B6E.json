@@ -97,12 +97,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6SDC3CD3B04E0B6E.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6SDC3CD3B04E0B6E.mp3",
+  "imageUrl": "/images/voices/0100MME43A6SDC3CD3B04E0B6E.jpg",
+  "audioUrl": "/audio/samples/0100MME43A6SDC3CD3B04E0B6E.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6SDC3CD3B04E0B6E.mp3",
+      "audioUrl": "/audio/samples/0100MME43A6SDC3CD3B04E0B6E.mp3",
       "transcript": "The morning light filtered through the blinds, casting long golden stripes across the kitchen table.",
       "id": "0100MME43A6SE3AA7A1280328D",
       "label": "Default"
@@ -125,8 +125,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME43A6SDC3CD3B04E0B6E.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6SDC3CD3B04E0B6E",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6SDC3CD3B04E0B6E.json"
+  }
 }

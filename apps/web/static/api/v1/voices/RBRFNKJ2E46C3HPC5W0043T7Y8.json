@@ -51,11 +51,11 @@
     "providerUrl": "https://cartesia.ai",
     "architecture": "sonic"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
+  "imageUrl": "/images/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.jpg",
+  "audioUrl": "/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
+      "audioUrl": "/audio/samples/RBRFNKJ2E46C3HPC5W0043T7Y8.mp3",
       "id": "s-RBRFNKJ2E46C3HPC5W0043T7Y8",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -73,8 +73,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/RBRFNKJ2E46C3HPC5W0043T7Y8",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RBRFNKJ2E46C3HPC5W0043T7Y8.json"
+  }
 }

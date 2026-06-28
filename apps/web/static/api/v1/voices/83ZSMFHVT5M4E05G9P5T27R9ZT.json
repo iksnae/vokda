@@ -64,11 +64,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/83ZSMFHVT5M4E05G9P5T27R9ZT.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/83ZSMFHVT5M4E05G9P5T27R9ZT.mp3",
+  "imageUrl": "/images/voices/83ZSMFHVT5M4E05G9P5T27R9ZT.jpg",
+  "audioUrl": "/audio/samples/83ZSMFHVT5M4E05G9P5T27R9ZT.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/83ZSMFHVT5M4E05G9P5T27R9ZT.mp3",
+      "audioUrl": "/audio/samples/83ZSMFHVT5M4E05G9P5T27R9ZT.mp3",
       "id": "s-83ZSMFHVT5M4E05G9P5T27R9ZT",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -86,8 +86,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/83ZSMFHVT5M4E05G9P5T27R9ZT.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/83ZSMFHVT5M4E05G9P5T27R9ZT",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/83ZSMFHVT5M4E05G9P5T27R9ZT.json"
+  }
 }

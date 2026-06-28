@@ -53,11 +53,11 @@
     "providerUrl": "https://lmnt.com",
     "architecture": "instant"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
+  "imageUrl": "/images/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",
+  "audioUrl": "/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
+      "audioUrl": "/audio/samples/9J4EA63QW7KSVMBVM00A4E28DP.mp3",
       "id": "s-9J4EA63QW7KSVMBVM00A4E28DP",
       "label": "Default",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
@@ -75,8 +75,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9J4EA63QW7KSVMBVM00A4E28DP.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/9J4EA63QW7KSVMBVM00A4E28DP",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9J4EA63QW7KSVMBVM00A4E28DP.json"
+  }
 }

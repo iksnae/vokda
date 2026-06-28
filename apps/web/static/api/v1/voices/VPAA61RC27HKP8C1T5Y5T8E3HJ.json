@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+  "imageUrl": "/images/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
+  "audioUrl": "/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
+      "audioUrl": "/audio/samples/VPAA61RC27HKP8C1T5Y5T8E3HJ.mp3",
       "id": "s-VPAA61RC27HKP8C1T5Y5T8E3HJ",
       "label": "Default",
       "text": "Hello! I'm Connor, speaking Irish English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VPAA61RC27HKP8C1T5Y5T8E3HJ.json"
+  }
 }

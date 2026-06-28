@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
+  "imageUrl": "/images/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
+  "audioUrl": "/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
+      "audioUrl": "/audio/samples/VJDJBG7G69Y84E9NNYEAA3XY62.mp3",
       "id": "s-VJDJBG7G69Y84E9NNYEAA3XY62",
       "label": "Default",
       "text": "Hello! I'm Wayne, speaking Singaporean English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VJDJBG7G69Y84E9NNYEAA3XY62.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/VJDJBG7G69Y84E9NNYEAA3XY62",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VJDJBG7G69Y84E9NNYEAA3XY62.json"
+  }
 }

@@ -88,11 +88,11 @@
     "presetId": "announcer",
     "primaryLanguage": "en"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMVP72CFE223A7444FEC.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMVP72CFE223A7444FEC.mp3",
+  "imageUrl": "/images/voices/00MME5GMVP72CFE223A7444FEC.jpg",
+  "audioUrl": "/audio/samples/00MME5GMVP72CFE223A7444FEC.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMVP72CFE223A7444FEC.mp3",
+      "audioUrl": "/audio/samples/00MME5GMVP72CFE223A7444FEC.mp3",
       "id": "sample-00MME5GMVP72CFE223A7444FEC",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang, marking the start of a brand new day."
     }
@@ -108,8 +108,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMVP72CFE223A7444FEC.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMVP72CFE223A7444FEC",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMVP72CFE223A7444FEC.json"
+  }
 }

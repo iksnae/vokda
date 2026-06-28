@@ -81,11 +81,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
+  "imageUrl": "/images/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
+  "audioUrl": "/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
+      "audioUrl": "/audio/samples/5M7Y69XT6EBZT9T87SYA9J9NSZ.mp3",
       "id": "s-5M7Y69XT6EBZT9T87SYA9J9NSZ",
       "label": "Default",
       "text": "Hello! I'm Emma Multilingual, speaking US English. This is a preview of how I sound in natural conversation."
@@ -103,8 +103,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/5M7Y69XT6EBZT9T87SYA9J9NSZ.json"
+  }
 }

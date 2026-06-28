@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XI04CE96E47D4CC3.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI04CE96E47D4CC3.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XI04CE96E47D4CC3.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XI04CE96E47D4CC3.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI04CE96E47D4CC3.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XI04CE96E47D4CC3.mp3",
       "transcript": "The presentation covered each topic methodically, giving equal weight to every perspective.",
       "id": "0100MME4D1XI3E723828359EC7",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XI04CE96E47D4CC3.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XI04CE96E47D4CC3",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XI04CE96E47D4CC3.json"
+  }
 }

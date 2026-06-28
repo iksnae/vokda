@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/QY0081VY1KR64FTBY3QY2EFQW6.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
+  "imageUrl": "/images/voices/QY0081VY1KR64FTBY3QY2EFQW6.jpg",
+  "audioUrl": "/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
+      "audioUrl": "/audio/samples/QY0081VY1KR64FTBY3QY2EFQW6.mp3",
       "id": "s-QY0081VY1KR64FTBY3QY2EFQW6",
       "label": "Default",
       "text": "Hello, I'm Tara. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -104,8 +104,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/QY0081VY1KR64FTBY3QY2EFQW6.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/QY0081VY1KR64FTBY3QY2EFQW6",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/QY0081VY1KR64FTBY3QY2EFQW6.json"
+  }
 }

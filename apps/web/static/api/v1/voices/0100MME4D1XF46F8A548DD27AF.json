@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XF46F8A548DD27AF.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF46F8A548DD27AF.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XF46F8A548DD27AF.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XF46F8A548DD27AF.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF46F8A548DD27AF.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XF46F8A548DD27AF.mp3",
       "transcript": "After careful analysis, the data strongly suggests a correlation between these two variables.",
       "id": "0100MME4D1XFFDDBC6F270438E",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XF46F8A548DD27AF.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XF46F8A548DD27AF",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XF46F8A548DD27AF.json"
+  }
 }

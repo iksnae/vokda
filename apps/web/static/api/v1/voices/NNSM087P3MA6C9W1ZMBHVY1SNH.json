@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
+  "imageUrl": "/images/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
+  "audioUrl": "/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
+      "audioUrl": "/audio/samples/NNSM087P3MA6C9W1ZMBHVY1SNH.mp3",
       "id": "s-NNSM087P3MA6C9W1ZMBHVY1SNH",
       "label": "Default",
       "text": "Hello! I'm Eric, speaking US English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/NNSM087P3MA6C9W1ZMBHVY1SNH",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/NNSM087P3MA6C9W1ZMBHVY1SNH.json"
+  }
 }

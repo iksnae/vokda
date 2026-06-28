@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XH69BA5F19F4F7F0.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XH69BA5F19F4F7F0.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XH69BA5F19F4F7F0.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XH69BA5F19F4F7F0.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XH69BA5F19F4F7F0.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XH69BA5F19F4F7F0.mp3",
       "transcript": "Each measurement was recorded precisely, leaving no room for ambiguity in the final report.",
       "id": "0100MME4D1XH8B619BCF8E7492",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XH69BA5F19F4F7F0.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XH69BA5F19F4F7F0",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XH69BA5F19F4F7F0.json"
+  }
 }

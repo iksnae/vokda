@@ -62,11 +62,11 @@
     "providerType": "open_model",
     "architecture": "chatterbox_turbo"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
+  "imageUrl": "/images/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
+  "audioUrl": "/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
+      "audioUrl": "/audio/samples/G5W7P3Y3SHWFR5KZJEFHT3ST83.mp3",
       "id": "s-G5W7P3Y3SHWFR5KZJEFHT3ST83",
       "label": "Default",
       "text": "The quick brown fox jumps over the lazy dog near the riverbank."
@@ -84,8 +84,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G5W7P3Y3SHWFR5KZJEFHT3ST83.json"
+  }
 }

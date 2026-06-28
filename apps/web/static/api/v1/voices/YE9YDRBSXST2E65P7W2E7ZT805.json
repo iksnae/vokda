@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
+  "imageUrl": "/images/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
+  "audioUrl": "/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
+      "audioUrl": "/audio/samples/YE9YDRBSXST2E65P7W2E7ZT805.mp3",
       "id": "s-YE9YDRBSXST2E65P7W2E7ZT805",
       "label": "Default",
       "text": "Hello! I'm Luna, speaking Singaporean English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/YE9YDRBSXST2E65P7W2E7ZT805.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/YE9YDRBSXST2E65P7W2E7ZT805",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/YE9YDRBSXST2E65P7W2E7ZT805.json"
+  }
 }

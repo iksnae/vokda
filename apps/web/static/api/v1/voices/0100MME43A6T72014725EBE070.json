@@ -88,12 +88,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME43A6T72014725EBE070.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6T72014725EBE070.mp3",
+  "imageUrl": "/images/voices/0100MME43A6T72014725EBE070.jpg",
+  "audioUrl": "/audio/samples/0100MME43A6T72014725EBE070.mp3",
   "samples": [
     {
       "scriptKey": "laugh",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME43A6T72014725EBE070.mp3",
+      "audioUrl": "/audio/samples/0100MME43A6T72014725EBE070.mp3",
       "transcript": "[clears throat] Well, that was unexpected! [laughter] Let me try that again.",
       "id": "0100MME43A6T9834960AF1CDCF",
       "label": "Laughter"
@@ -102,15 +102,13 @@
       "scriptKey": "singing",
       "transcript": "♪ Sunshine on my shoulders makes me happy ♪",
       "id": "0100MME43A6TA502E8A8196F96",
-      "label": "Singing",
-      "audioUrl": null
+      "label": "Singing"
     },
     {
       "scriptKey": "sigh",
       "transcript": "[sighs] I suppose we should get started on this project sooner rather than later.",
       "id": "0100MME43A6T4129322A738989",
-      "label": "Sigh",
-      "audioUrl": null
+      "label": "Sigh"
     }
   ],
   "variants": [
@@ -130,8 +128,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME43A6T72014725EBE070.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME43A6T72014725EBE070",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME43A6T72014725EBE070.json"
+  }
 }

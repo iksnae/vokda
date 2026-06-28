@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+  "imageUrl": "/images/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
+  "audioUrl": "/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
+      "audioUrl": "/audio/samples/44BQQZQW01XJ21STFHNQT9QMFZ.mp3",
       "id": "s-44BQQZQW01XJ21STFHNQT9QMFZ",
       "label": "Default",
       "text": "Hello! I'm Molly, speaking New Zealand English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/44BQQZQW01XJ21STFHNQT9QMFZ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/44BQQZQW01XJ21STFHNQT9QMFZ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/44BQQZQW01XJ21STFHNQT9QMFZ.json"
+  }
 }

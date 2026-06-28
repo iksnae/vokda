@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/PBHR2A0829KW4FVM9J1YC7T2E3.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
+  "imageUrl": "/images/voices/PBHR2A0829KW4FVM9J1YC7T2E3.jpg",
+  "audioUrl": "/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
+      "audioUrl": "/audio/samples/PBHR2A0829KW4FVM9J1YC7T2E3.mp3",
       "id": "s-PBHR2A0829KW4FVM9J1YC7T2E3",
       "label": "Default",
       "text": "Hello! I'm Thomas, speaking British English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/PBHR2A0829KW4FVM9J1YC7T2E3.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/PBHR2A0829KW4FVM9J1YC7T2E3",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/PBHR2A0829KW4FVM9J1YC7T2E3.json"
+  }
 }

@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
+  "imageUrl": "/images/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.jpg",
+  "audioUrl": "/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
+      "audioUrl": "/audio/samples/0DW1J3P49R3YFMBXQQNNJ2DP3V.mp3",
       "id": "s-0DW1J3P49R3YFMBXQQNNJ2DP3V",
       "label": "Default",
       "text": "Hello, I'm Leo. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -104,8 +104,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0DW1J3P49R3YFMBXQQNNJ2DP3V.json"
+  }
 }

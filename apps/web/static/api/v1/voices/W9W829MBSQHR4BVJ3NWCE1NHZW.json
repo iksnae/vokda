@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
+  "imageUrl": "/images/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.jpg",
+  "audioUrl": "/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
+      "audioUrl": "/audio/samples/W9W829MBSQHR4BVJ3NWCE1NHZW.mp3",
       "id": "s-W9W829MBSQHR4BVJ3NWCE1NHZW",
       "label": "Default",
       "text": "Hello! I'm Aria, speaking US English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/W9W829MBSQHR4BVJ3NWCE1NHZW",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/W9W829MBSQHR4BVJ3NWCE1NHZW.json"
+  }
 }

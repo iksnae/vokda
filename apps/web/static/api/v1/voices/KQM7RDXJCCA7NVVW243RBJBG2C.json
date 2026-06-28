@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+  "imageUrl": "/images/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
+  "audioUrl": "/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
+      "audioUrl": "/audio/samples/KQM7RDXJCCA7NVVW243RBJBG2C.mp3",
       "id": "s-KQM7RDXJCCA7NVVW243RBJBG2C",
       "label": "Default",
       "text": "Hello! I'm Yan, speaking Hong Kong English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/KQM7RDXJCCA7NVVW243RBJBG2C.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/KQM7RDXJCCA7NVVW243RBJBG2C",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/KQM7RDXJCCA7NVVW243RBJBG2C.json"
+  }
 }

@@ -82,11 +82,11 @@
     "bitDepth": 16,
     "totalVoicePresets": 6
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+  "imageUrl": "/images/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
+  "audioUrl": "/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
+      "audioUrl": "/audio/samples/00MME5GMYC8835FBD5EBC017A8.mp3",
       "id": "sample-00MME5GMYC8835FBD5EBC017A8",
       "text": "The morning sun cast long shadows across the quiet street, and somewhere in the distance a church bell rang."
     }
@@ -102,8 +102,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMYC8835FBD5EBC017A8.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMYC8835FBD5EBC017A8",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMYC8835FBD5EBC017A8.json"
+  }
 }

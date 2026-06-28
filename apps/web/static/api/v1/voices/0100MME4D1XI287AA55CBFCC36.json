@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XI287AA55CBFCC36.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI287AA55CBFCC36.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XI287AA55CBFCC36.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XI287AA55CBFCC36.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XI287AA55CBFCC36.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XI287AA55CBFCC36.mp3",
       "transcript": "Sometimes the quietest moments hold the most meaning, if you know where to look.",
       "id": "0100MME4D1XIFE6A9968A24EE1",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XI287AA55CBFCC36.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XI287AA55CBFCC36",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XI287AA55CBFCC36.json"
+  }
 }

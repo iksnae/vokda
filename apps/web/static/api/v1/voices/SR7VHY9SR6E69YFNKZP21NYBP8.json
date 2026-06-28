@@ -81,11 +81,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
+  "imageUrl": "/images/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
+  "audioUrl": "/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
+      "audioUrl": "/audio/samples/SR7VHY9SR6E69YFNKZP21NYBP8.mp3",
       "id": "s-SR7VHY9SR6E69YFNKZP21NYBP8",
       "label": "Default",
       "text": "Hello! I'm William, speaking Australian English. This is a preview of how I sound in natural conversation."
@@ -103,8 +103,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/SR7VHY9SR6E69YFNKZP21NYBP8.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/SR7VHY9SR6E69YFNKZP21NYBP8",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/SR7VHY9SR6E69YFNKZP21NYBP8.json"
+  }
 }

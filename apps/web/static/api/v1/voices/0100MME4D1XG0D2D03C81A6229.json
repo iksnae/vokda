@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XG0D2D03C81A6229.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG0D2D03C81A6229.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XG0D2D03C81A6229.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XG0D2D03C81A6229.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG0D2D03C81A6229.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XG0D2D03C81A6229.mp3",
       "transcript": "Look at the way the light catches those crystals — isn't that just beautiful?",
       "id": "0100MME4D1XG99B907BDE23E78",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XG0D2D03C81A6229.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XG0D2D03C81A6229",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XG0D2D03C81A6229.json"
+  }
 }

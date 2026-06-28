@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XJD687CFA99CD34A.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3",
+  "imageUrl": "/images/voices/0100MME4D1XJD687CFA99CD34A.jpg",
+  "audioUrl": "/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3",
+      "audioUrl": "/audio/samples/0100MME4D1XJD687CFA99CD34A.mp3",
       "transcript": "The festival kicked off with a burst of color, music, and infectious energy from every direction.",
       "id": "0100MME4D1XJE0476F1461ACEF",
       "label": "Default"
@@ -127,8 +127,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XJD687CFA99CD34A.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XJD687CFA99CD34A",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XJD687CFA99CD34A.json"
+  }
 }

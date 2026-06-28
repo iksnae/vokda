@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
+  "imageUrl": "/images/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
+  "audioUrl": "/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
+      "audioUrl": "/audio/samples/RBHZHNT3XWAFP6E1TCC9YDRFVY.mp3",
       "id": "s-RBHZHNT3XWAFP6E1TCC9YDRFVY",
       "label": "Default",
       "text": "Hello! I'm Ava, speaking US English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/RBHZHNT3XWAFP6E1TCC9YDRFVY.json"
+  }
 }

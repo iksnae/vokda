@@ -81,11 +81,11 @@
     "bitDepth": 16
   },
   "imageUrl": null,
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+  "audioUrl": "/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
   "samples": [
     {
       "scriptKey": "conversational",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
+      "audioUrl": "/audio/samples/01KW2N7VAHAFCDJHFGBDFA2PSX.mp3",
       "transcript": "Here is the plan: we ship the first version this week, then refine it together from real feedback.",
       "id": "01KW2N7VAH2NHWS2MD4ABN6EHJ",
       "label": "Conversational"
@@ -111,8 +111,5 @@
     "kind": "instructions",
     "param": "instructions",
     "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KW2N7VAHAFCDJHFGBDFA2PSX.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/01KW2N7VAHAFCDJHFGBDFA2PSX",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KW2N7VAHAFCDJHFGBDFA2PSX.json"
+  }
 }

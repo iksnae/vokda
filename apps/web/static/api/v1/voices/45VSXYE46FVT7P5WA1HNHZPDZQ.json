@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
+  "imageUrl": "/images/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
+  "audioUrl": "/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
+      "audioUrl": "/audio/samples/45VSXYE46FVT7P5WA1HNHZPDZQ.mp3",
       "id": "s-45VSXYE46FVT7P5WA1HNHZPDZQ",
       "label": "Default",
       "text": "Hello! I'm Elimu, speaking Tanzanian English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/45VSXYE46FVT7P5WA1HNHZPDZQ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/45VSXYE46FVT7P5WA1HNHZPDZQ.json"
+  }
 }

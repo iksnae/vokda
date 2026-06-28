@@ -70,11 +70,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
+  "imageUrl": "/images/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",
+  "audioUrl": "/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
+      "audioUrl": "/audio/samples/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.mp3",
       "id": "s-M25ZJ5QKT5ZZYFXG1PBQVRBNY6",
       "label": "Default",
       "text": "こんにちは！これは自然な会話での私の声のプレビューです。カスタマーサービスやナレーションのお手伝いができます。"
@@ -92,8 +92,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/M25ZJ5QKT5ZZYFXG1PBQVRBNY6.json"
+  }
 }

@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/P7M1SXR201WE9XT5QSYABHQVKZ.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
+  "imageUrl": "/images/voices/P7M1SXR201WE9XT5QSYABHQVKZ.jpg",
+  "audioUrl": "/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
+      "audioUrl": "/audio/samples/P7M1SXR201WE9XT5QSYABHQVKZ.mp3",
       "id": "s-P7M1SXR201WE9XT5QSYABHQVKZ",
       "label": "Default",
       "text": "Hello, I'm Leah. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -104,8 +104,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P7M1SXR201WE9XT5QSYABHQVKZ.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/P7M1SXR201WE9XT5QSYABHQVKZ",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P7M1SXR201WE9XT5QSYABHQVKZ.json"
+  }
 }

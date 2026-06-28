@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
+  "imageUrl": "/images/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
+  "audioUrl": "/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
   "samples": [
     {
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
+      "audioUrl": "/audio/samples/BSMDHKZNXG9SQSQVT27T5XZXWB.mp3",
       "id": "s-BSMDHKZNXG9SQSQVT27T5XZXWB",
       "label": "Default",
       "text": "Hello! I'm Liam, speaking Canadian English. This is a preview of how I sound in natural conversation."
@@ -93,8 +93,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/BSMDHKZNXG9SQSQVT27T5XZXWB",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/BSMDHKZNXG9SQSQVT27T5XZXWB.json"
+  }
 }

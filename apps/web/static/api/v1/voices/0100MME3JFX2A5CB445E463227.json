@@ -77,12 +77,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX2A5CB445E463227.jpg",
-  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX2A5CB445E463227.mp3",
+  "imageUrl": "/images/voices/0100MME3JFX2A5CB445E463227.jpg",
+  "audioUrl": "/audio/samples/0100MME3JFX2A5CB445E463227.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX2A5CB445E463227.mp3",
+      "audioUrl": "/audio/samples/0100MME3JFX2A5CB445E463227.mp3",
       "transcript": "I tried the new recipe last night and honestly, it was the best thing I have ever made.",
       "id": "0100MME3JFX237BD8F743B4F62",
       "label": "Default"
@@ -105,8 +105,5 @@
   ],
   "steering": {
     "kind": "none"
-  },
-  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX2A5CB445E463227.jpg",
-  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX2A5CB445E463227",
-  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX2A5CB445E463227.json"
+  }
 }
