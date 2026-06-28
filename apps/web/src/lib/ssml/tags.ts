@@ -248,7 +248,7 @@ export const SSML_TAGS: SsmlTagDef[] = [
 
 /** Look up a tag definition by tag name. */
 export function getTagDef(tagName: string): SsmlTagDef | undefined {
-  return SSML_TAGS.find((t) => t.tag === tagName);
+  return SSML_TAGS.find((t) => t.tag.toLowerCase() === tagName.toLowerCase());
 }
 
 /** Return only tags supported by the given provider. */

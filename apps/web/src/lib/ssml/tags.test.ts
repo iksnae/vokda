@@ -31,6 +31,37 @@ describe('SSML Tag Registry', () => {
     expect(getTagDef('nonexistent')).toBeUndefined();
   });
 
+  it('getTagDef with all-uppercase PROSODY returns the prosody definition', () => {
+    const def = getTagDef('PROSODY');
+    expect(def).toBeDefined();
+    expect(def!.tag).toBe('prosody');
+    expect(def!.category).toBe('prosody');
+  });
+
+  it('getTagDef with mixed-case Break returns the break definition', () => {
+    const def = getTagDef('Break');
+    expect(def).toBeDefined();
+    expect(def!.tag).toBe('break');
+    expect(def!.selfClosing).toBe(true);
+  });
+
+  it('getTagDef with lowercase emphasis returns emphasis definition (regression)', () => {
+    const def = getTagDef('emphasis');
+    expect(def).toBeDefined();
+    expect(def!.tag).toBe('emphasis');
+    expect(def!.selfClosing).toBe(false);
+  });
+
+  it('getTagDef with unknown tag nonexistent returns undefined (regression)', () => {
+    expect(getTagDef('nonexistent')).toBeUndefined();
+  });
+
+  it('isTagSupportedByProvider case-insensitive for PROSODY/prosody', () => {
+    expect(isTagSupportedByProvider('PROSODY', 'aws-polly')).toEqual(
+      isTagSupportedByProvider('prosody', 'aws-polly')
+    );
+  });
+
   it('break tag is self-closing', () => {
     const brk = getTagDef('break')!;
     expect(brk.selfClosing).toBe(true);
