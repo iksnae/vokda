@@ -48,6 +48,9 @@ const PROVIDER_META = {
     pricingSummary: '$15/1M chars (tts-1), $30/1M chars (tts-1-hd)',
     freeTier: null,
     authType: 'api_key',
+    maxTextLength: 4096,
+    outputFormats: ['mp3', 'opus', 'aac', 'flac', 'wav', 'pcm'],
+    supportsStreaming: true,
   },
   elevenlabs: {
     type: 'cloud', synthesis: true, ssml: false,
@@ -59,6 +62,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: 10K chars/mo. Creator $22/mo, Pro $99/mo',
     freeTier: '10,000 characters/month',
     authType: 'api_key',
+    maxTextLength: 5000,
+    outputFormats: ['mp3'],
+    supportsStreaming: true,
   },
   deepgram: {
     type: 'cloud', synthesis: true, ssml: false,
@@ -70,6 +76,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: $200 credit. Then pay-per-use',
     freeTier: '$200 credit',
     authType: 'api_key',
+    maxTextLength: 2000,
+    outputFormats: ['mp3', 'wav'],
+    supportsStreaming: false,
   },
   cartesia: {
     type: 'cloud', synthesis: true, ssml: false,
@@ -81,6 +90,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free tier available. Pay-per-use at scale',
     freeTier: 'Limited free credits',
     authType: 'api_key',
+    maxTextLength: null,
+    outputFormats: ['mp3', 'wav', 'opus', 'pcm'],
+    supportsStreaming: true,
   },
   lmnt: {
     type: 'cloud', synthesis: true, ssml: false,
@@ -92,6 +104,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free tier available. Usage-based pricing',
     freeTier: 'Free tier available',
     authType: 'api_key',
+    maxTextLength: 5000,
+    outputFormats: ['mp3', 'wav'],
+    supportsStreaming: true,
   },
   'gemini-tts': {
     type: 'cloud', synthesis: true, ssml: false,
@@ -103,6 +118,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: 10 req/min. Paid plans for higher throughput',
     freeTier: '10 requests/minute',
     authType: 'api_key',
+    maxTextLength: 5000,
+    outputFormats: ['mp3', 'wav'],
+    supportsStreaming: false,
   },
   'gcp-tts': {
     type: 'cloud', synthesis: true, ssml: true,
@@ -114,6 +132,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: 4M chars/mo (standard). Then $4-$16/1M',
     freeTier: '4M characters/month (standard voices)',
     authType: 'api_key',
+    maxTextLength: 5000,
+    outputFormats: ['mp3', 'wav', 'opus'],
+    supportsStreaming: false,
   },
   'azure-speech': {
     type: 'cloud', synthesis: true, ssml: true,
@@ -125,6 +146,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: 500K chars/mo. Standard: $16/1M chars',
     freeTier: '500,000 characters/month',
     authType: 'subscription_key',
+    maxTextLength: null,
+    outputFormats: ['mp3', 'wav', 'opus'],
+    supportsStreaming: true,
   },
   'aws-polly': {
     type: 'cloud', synthesis: true, ssml: true,
@@ -136,6 +160,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free: 5M chars/mo (12 months). Then $4-$16/1M',
     freeTier: '5M characters/month for 12 months',
     authType: 'aws_credentials',
+    maxTextLength: 3000,
+    outputFormats: ['mp3', 'ogg_vorbis', 'pcm'],
+    supportsStreaming: true,
   },
   'edge-tts': {
     type: 'free', synthesis: false, ssml: true,
@@ -147,6 +174,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free — no API key, no account, no limits',
     freeTier: 'Unlimited (free)',
     authType: 'none',
+    maxTextLength: null,
+    outputFormats: ['mp3'],
+    supportsStreaming: false,
   },
   kokoro: {
     type: 'local', synthesis: false, ssml: false,
@@ -158,6 +188,9 @@ const PROVIDER_META = {
     pricingSummary: 'Free — runs on your own hardware',
     freeTier: 'Free (local)',
     authType: 'none',
+    maxTextLength: null,
+    outputFormats: ['wav'],
+    supportsStreaming: false,
   },
 };
 
@@ -227,6 +260,11 @@ function generateProviders() {
         // License
         license: mc.license || null,
         commercialUse: mc.commercialUse ?? null,
+
+        // Capabilities (from PROVIDER_META)
+        maxTextLength: meta.maxTextLength ?? null,
+        outputFormats: meta.outputFormats || [],
+        supportsStreaming: meta.supportsStreaming ?? false,
       };
     });
 
@@ -433,6 +471,9 @@ function generateOpenAPI() {
         freeTier: { type: 'string', nullable: true },
         license: { type: 'string', nullable: true },
         commercialUse: { type: 'boolean', nullable: true },
+        maxTextLength: { type: 'integer', nullable: true, description: 'Maximum input text length (chars) for synthesis. null when unbounded or unknown.' },
+        outputFormats: { type: 'array', items: { type: 'string' }, description: 'Supported audio output formats (e.g. mp3, wav, opus).' },
+        supportsStreaming: { type: 'boolean', description: 'Whether this provider supports streaming (real-time) synthesis.' },
       },
     },
     ProviderList: {
@@ -515,11 +556,17 @@ function generateOpenAPI() {
         data: { type: 'array', items: { type: 'integer' } },
       },
     },
+    // Canonical job status enum — consumers can rely on these three values.
+    JobStatus: {
+      type: 'string',
+      enum: ['completed', 'pending', 'failed'],
+      description: 'Canonical status for synthesis jobs. completed = audio ready, pending = async job queued, failed = synthesis error.',
+    },
     SynthesizeResponse: {
       type: 'object',
       properties: {
         jobId: { type: 'string' },
-        status: { type: 'string', enum: ['completed', 'pending', 'failed'] },
+        status: { $ref: '#/components/schemas/JobStatus' },
         audioUrl: { type: 'string', format: 'uri', description: 'Presigned S3 URL (7-day expiry)' },
         fileSizeBytes: { type: 'integer' },
         durationMs: { type: 'integer', nullable: true },
@@ -541,7 +588,7 @@ function generateOpenAPI() {
         voiceId: { type: 'string' },
         voiceName: { type: 'string', nullable: true },
         provider: { type: 'string' },
-        status: { type: 'string', enum: ['completed', 'pending', 'failed'] },
+        status: { $ref: '#/components/schemas/JobStatus' },
         inputText: { type: 'string' },
         inputMode: { type: 'string', enum: ['text', 'ssml'] },
         clipName: { type: 'string', nullable: true },

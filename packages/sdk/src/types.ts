@@ -21,6 +21,7 @@ export type ProviderId =
 export type AuthType = 'api_key' | 'subscription_key' | 'aws_credentials' | 'none';
 export type QualityTier = 'premium' | 'standard' | 'basic';
 export type Gender = 'male' | 'female' | 'neutral';
+/** Canonical status enum for synthesis jobs (`/v1/synthesize`). Consumers can rely on these three values. */
 export type ClipStatus = 'completed' | 'pending' | 'failed';
 export type InputMode = 'text' | 'ssml';
 export type ProviderType = 'cloud' | 'local' | 'free';
@@ -155,6 +156,12 @@ export interface Provider {
   ssmlCapable: boolean;
   audioSampleCoverage: string;
   hasSynthesis: boolean;
+  /** Maximum input text length (characters) accepted by this provider's synthesis endpoint. null when unbounded or unknown. */
+  maxTextLength?: number | null;
+  /** Audio output formats this provider supports (e.g. mp3, wav, opus). */
+  outputFormats?: string[];
+  /** Whether this provider supports streaming (real-time) synthesis. */
+  supportsStreaming?: boolean;
   authType: AuthType;
   websiteUrl: string | null;
   docsUrl: string | null;
