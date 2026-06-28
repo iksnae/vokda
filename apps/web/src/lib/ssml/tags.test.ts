@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import {
   SSML_TAGS,
   getTagDef,
+  getAttrDef,
   getTagsForProvider,
   isTagSupportedByProvider,
   type SsmlTagDef
@@ -112,6 +113,29 @@ describe('SSML Tag Registry', () => {
     it('unknown provider returns no supported tags', () => {
       const tags = getTagsForProvider('openai');
       expect(tags.length).toBe(0);
+    });
+  });
+
+  describe('getAttrDef', () => {
+    it('known attribute (tag break, attr time) returns correct SsmlAttrDef', () => {
+      const def = getAttrDef('break', 'time');
+      expect(def).toBeDefined();
+      expect(def!.name).toBe('time');
+    });
+
+    it('case-insensitive match (tag BREAK, attr TIME) returns same result as exact case', () => {
+      const defLower = getAttrDef('break', 'time');
+      const defUpper = getAttrDef('BREAK', 'TIME');
+      expect(defUpper).toBeDefined();
+      expect(defUpper!.name).toBe(defLower!.name);
+    });
+
+    it('unknown tag (nonexistent) returns undefined', () => {
+      expect(getAttrDef('nonexistent', 'time')).toBeUndefined();
+    });
+
+    it('known tag (break) with unknown attribute (nonexistent) returns undefined', () => {
+      expect(getAttrDef('break', 'nonexistent')).toBeUndefined();
     });
   });
 

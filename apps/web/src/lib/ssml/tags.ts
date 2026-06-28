@@ -251,6 +251,13 @@ export function getTagDef(tagName: string): SsmlTagDef | undefined {
   return SSML_TAGS.find((t) => t.tag.toLowerCase() === tagName.toLowerCase());
 }
 
+/** Look up an attribute definition by tag name and attribute name. */
+export function getAttrDef(tagName: string, attrName: string): SsmlAttrDef | undefined {
+  const def = getTagDef(tagName);
+  if (!def) return undefined;
+  return def.attributes.find((a) => a.name.toLowerCase() === attrName.toLowerCase());
+}
+
 /** Return only tags supported by the given provider. */
 export function getTagsForProvider(providerId: string): SsmlTagDef[] {
   return SSML_TAGS.filter((t) => t.providers[providerId] === true);
