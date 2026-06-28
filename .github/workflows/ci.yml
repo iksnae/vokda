@@ -3,7 +3,21 @@ name: CI
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - ".agencyx/**"
   pull_request:
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - ".agencyx/**"
+
+# Keep only the newest run per ref; cancel superseded ones so a burst of
+# pushes to a branch doesn't burn a full CI run each (private-repo minutes).
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   web-checks:
@@ -19,7 +33,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Type and Svelte checks
         run: npm run check:web
