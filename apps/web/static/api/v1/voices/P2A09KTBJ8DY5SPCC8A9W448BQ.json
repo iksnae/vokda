@@ -82,11 +82,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "/images/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
-  "audioUrl": "/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/P2A09KTBJ8DY5SPCC8A9W448BQ.mp3",
       "id": "s-P2A09KTBJ8DY5SPCC8A9W448BQ",
       "label": "Default",
       "text": "Hello, I'm Zoe. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -104,5 +104,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/P2A09KTBJ8DY5SPCC8A9W448BQ",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/P2A09KTBJ8DY5SPCC8A9W448BQ.json"
 }

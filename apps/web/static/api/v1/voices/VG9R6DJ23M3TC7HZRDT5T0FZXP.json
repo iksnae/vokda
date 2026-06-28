@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.jpg",
-  "audioUrl": "/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/VG9R6DJ23M3TC7HZRDT5T0FZXP.mp3",
       "id": "s-VG9R6DJ23M3TC7HZRDT5T0FZXP",
       "label": "Default",
       "text": "Hello! I'm Roger, speaking US English. This is a preview of how I sound in natural conversation."
@@ -93,5 +93,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/VG9R6DJ23M3TC7HZRDT5T0FZXP.json"
 }

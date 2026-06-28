@@ -81,11 +81,11 @@
     "bitDepth": 16
   },
   "imageUrl": null,
-  "audioUrl": "/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
   "samples": [
     {
       "scriptKey": "conversational",
-      "audioUrl": "/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KW2N7R1B2313CB1DXD7DTR4K.mp3",
       "transcript": "Take a breath. The best ideas usually arrive the moment you finally slow down enough to notice them.",
       "id": "01KW2N7R1BFVYM2S83ZC0K79NQ",
       "label": "Conversational"
@@ -111,5 +111,8 @@
     "kind": "instructions",
     "param": "instructions",
     "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KW2N7R1B2313CB1DXD7DTR4K.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KW2N7R1B2313CB1DXD7DTR4K",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KW2N7R1B2313CB1DXD7DTR4K.json"
 }

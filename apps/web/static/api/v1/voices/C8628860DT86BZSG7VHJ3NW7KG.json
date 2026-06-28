@@ -72,11 +72,11 @@
     "age": "Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",
-  "audioUrl": "/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/C8628860DT86BZSG7VHJ3NW7KG.mp3",
       "id": "s-C8628860DT86BZSG7VHJ3NW7KG",
       "label": "Default",
       "text": "Hallo! Dit is een voorbeeld van hoe ik klink in een natuurlijk gesprek. Ik kan helpen met klantenservice en vertelling."
@@ -94,5 +94,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/C8628860DT86BZSG7VHJ3NW7KG.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/C8628860DT86BZSG7VHJ3NW7KG",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/C8628860DT86BZSG7VHJ3NW7KG.json"
 }

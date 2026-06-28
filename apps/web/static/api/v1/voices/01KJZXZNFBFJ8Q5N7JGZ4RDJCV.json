@@ -67,12 +67,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.mp3",
       "transcript": "I can guide you through setup now, then send a summary to your team workspace.",
       "id": "01KJZXZNFB0TNA3CA72FX9HBN2",
       "label": "Default"
@@ -98,5 +98,8 @@
     "kind": "instructions",
     "param": "instructions",
     "hint": "Free-text delivery direction (gpt-4o-mini-tts), e.g. \"warm and excited; speak slowly\"."
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNFBFJ8Q5N7JGZ4RDJCV.json"
 }

@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XK8F3E0D622C6298.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XK8F3E0D622C6298.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XK8F3E0D622C6298.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XK8F3E0D622C6298.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XK8F3E0D622C6298.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XK8F3E0D622C6298.mp3",
       "transcript": "There's something wonderful about gathering around the table with people you care about.",
       "id": "0100MME4D1XK08A4405E788332",
       "label": "Default"
@@ -127,5 +127,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XK8F3E0D622C6298.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XK8F3E0D622C6298",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XK8F3E0D622C6298.json"
 }

@@ -77,11 +77,11 @@
     "maxInputLength": 5000,
     "channels": 1
   },
-  "imageUrl": "/images/voices/00MME5GMXF79AB0D78FAE56416.jpg",
-  "audioUrl": "/audio/samples/00MME5GMXF79AB0D78FAE56416.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/00MME5GMXF79AB0D78FAE56416.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMXF79AB0D78FAE56416.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/00MME5GMXF79AB0D78FAE56416.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/00MME5GMXF79AB0D78FAE56416.mp3",
       "id": "sample-00MME5GMXF79AB0D78FAE56416",
       "text": "[S1] Hey, did you see the news today? [S2] Yeah, I couldn't believe it. That was quite a surprise!"
     }
@@ -97,5 +97,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/00MME5GMXF79AB0D78FAE56416.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/00MME5GMXF79AB0D78FAE56416",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/00MME5GMXF79AB0D78FAE56416.json"
 }

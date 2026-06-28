@@ -77,12 +77,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME3JFX238F078A5C40720.jpg",
-  "audioUrl": "/audio/samples/0100MME3JFX238F078A5C40720.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME3JFX238F078A5C40720.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX238F078A5C40720.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME3JFX238F078A5C40720.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME3JFX238F078A5C40720.mp3",
       "transcript": "Once upon a time, in a village nestled between two great mountains, there lived a curious little fox.",
       "id": "0100MME3JFX26DA16DCDEDFC64",
       "label": "Default"
@@ -105,5 +105,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME3JFX238F078A5C40720.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME3JFX238F078A5C40720",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME3JFX238F078A5C40720.json"
 }

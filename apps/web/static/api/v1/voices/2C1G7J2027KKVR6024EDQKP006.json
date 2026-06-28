@@ -72,11 +72,11 @@
     "age": "Young Adult",
     "architecture": "aura-2"
   },
-  "imageUrl": "/images/voices/2C1G7J2027KKVR6024EDQKP006.jpg",
-  "audioUrl": "/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/2C1G7J2027KKVR6024EDQKP006.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/2C1G7J2027KKVR6024EDQKP006.mp3",
       "id": "s-2C1G7J2027KKVR6024EDQKP006",
       "label": "Default",
       "text": "¡Hola! Esta es una muestra de cómo sueno en una conversación natural. Puedo ayudar con atención al cliente y narración."
@@ -94,5 +94,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/2C1G7J2027KKVR6024EDQKP006.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/2C1G7J2027KKVR6024EDQKP006",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/2C1G7J2027KKVR6024EDQKP006.json"
 }

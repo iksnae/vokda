@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XF02ED1A413043C9.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XF02ED1A413043C9.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XF02ED1A413043C9.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF02ED1A413043C9.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XF02ED1A413043C9.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF02ED1A413043C9.mp3",
       "transcript": "Oh wow, you have to see this! The northern lights are absolutely incredible tonight!",
       "id": "0100MME4D1XFE223958A5B8ED2",
       "label": "Default"
@@ -127,5 +127,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XF02ED1A413043C9.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XF02ED1A413043C9",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XF02ED1A413043C9.json"
 }

@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XF4AA47AC9393C5A.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XF4AA47AC9393C5A.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XF4AA47AC9393C5A.mp3",
       "transcript": "Hey there! So excited to share some amazing news with everyone today.",
       "id": "0100MME4D1XF690FC441BCA5FB",
       "label": "Default"
@@ -127,5 +127,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XF4AA47AC9393C5A.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XF4AA47AC9393C5A",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XF4AA47AC9393C5A.json"
 }

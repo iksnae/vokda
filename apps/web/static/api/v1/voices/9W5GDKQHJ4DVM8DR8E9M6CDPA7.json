@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
-  "audioUrl": "/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/9W5GDKQHJ4DVM8DR8E9M6CDPA7.mp3",
       "id": "s-9W5GDKQHJ4DVM8DR8E9M6CDPA7",
       "label": "Default",
       "text": "Hello! I'm Abeo, speaking Nigerian English. This is a preview of how I sound in natural conversation."
@@ -93,5 +93,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/9W5GDKQHJ4DVM8DR8E9M6CDPA7.json"
 }

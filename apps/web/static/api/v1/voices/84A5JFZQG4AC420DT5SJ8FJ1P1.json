@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.jpg",
-  "audioUrl": "/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/84A5JFZQG4AC420DT5SJ8FJ1P1.mp3",
       "id": "s-84A5JFZQG4AC420DT5SJ8FJ1P1",
       "label": "Default",
       "text": "Hello! I'm Emily, speaking Irish English. This is a preview of how I sound in natural conversation."
@@ -93,5 +93,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/84A5JFZQG4AC420DT5SJ8FJ1P1",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/84A5JFZQG4AC420DT5SJ8FJ1P1.json"
 }

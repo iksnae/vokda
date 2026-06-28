@@ -77,12 +77,12 @@
     "maxInputLength": 5000,
     "channels": 1
   },
-  "imageUrl": "/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
-  "audioUrl": "/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KK00XMW22QSJDFXS66X6EY9H.mp3",
       "transcript": "Introducing a faster way to produce multilingual voice content from a single script.",
       "id": "01KK00XMW22052KS8CCGDXDD2B",
       "label": "Default"
@@ -105,5 +105,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KK00XMW22QSJDFXS66X6EY9H.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KK00XMW22QSJDFXS66X6EY9H",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KK00XMW22QSJDFXS66X6EY9H.json"
 }

@@ -69,12 +69,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg",
-  "audioUrl": "/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/01KJZXZNF9S4B0CP2R2XNT784G.mp3",
       "transcript": "I found three voice options that match your preferred tone and language targets.",
       "id": "01KJZXZNF9F778BM4N6XFT7VBB",
       "label": "Default"
@@ -98,5 +98,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/01KJZXZNF9S4B0CP2R2XNT784G.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/01KJZXZNF9S4B0CP2R2XNT784G",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/01KJZXZNF9S4B0CP2R2XNT784G.json"
 }

@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XG6C01198056150D.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XG6C01198056150D.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XG6C01198056150D.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG6C01198056150D.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XG6C01198056150D.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XG6C01198056150D.mp3",
       "transcript": "No worries at all, take your time. We can figure this out together whenever you're ready.",
       "id": "0100MME4D1XGDE1089AEFC359D",
       "label": "Default"
@@ -127,5 +127,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XG6C01198056150D.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XG6C01198056150D",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XG6C01198056150D.json"
 }

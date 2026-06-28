@@ -71,11 +71,11 @@
     "streamingCapable": true,
     "architecture": "Azure Neural TTS"
   },
-  "imageUrl": "/images/voices/G3WC1SSY7R3G3WA3J685XSR9GE.jpg",
-  "audioUrl": "/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/G3WC1SSY7R3G3WA3J685XSR9GE.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/G3WC1SSY7R3G3WA3J685XSR9GE.mp3",
       "id": "s-G3WC1SSY7R3G3WA3J685XSR9GE",
       "label": "Default",
       "text": "Hello! I'm Brian, speaking US English. This is a preview of how I sound in natural conversation."
@@ -93,5 +93,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/G3WC1SSY7R3G3WA3J685XSR9GE.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/G3WC1SSY7R3G3WA3J685XSR9GE",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/G3WC1SSY7R3G3WA3J685XSR9GE.json"
 }

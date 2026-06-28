@@ -83,11 +83,11 @@
     "latencyMs": 200,
     "architecture": "LLaMA 3.2 3B"
   },
-  "imageUrl": "/images/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
-  "audioUrl": "/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
   "samples": [
     {
-      "audioUrl": "/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/HR0A888061ZMA861XJ03XP3SZK.mp3",
       "id": "s-HR0A888061ZMA861XJ03XP3SZK",
       "label": "Default",
       "text": "Hello, I'm Jess. I can express emotions naturally, from excitement to calm reflection. The weather today is absolutely beautiful!"
@@ -105,5 +105,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/HR0A888061ZMA861XJ03XP3SZK.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/HR0A888061ZMA861XJ03XP3SZK",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/HR0A888061ZMA861XJ03XP3SZK.json"
 }

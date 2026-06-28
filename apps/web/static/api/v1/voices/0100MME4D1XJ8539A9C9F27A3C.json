@@ -98,12 +98,12 @@
     "channels": 1,
     "bitDepth": 16
   },
-  "imageUrl": "/images/voices/0100MME4D1XJ8539A9C9F27A3C.jpg",
-  "audioUrl": "/audio/samples/0100MME4D1XJ8539A9C9F27A3C.mp3",
+  "imageUrl": "https://vokda.iksnae.com/images/voices/0100MME4D1XJ8539A9C9F27A3C.jpg",
+  "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJ8539A9C9F27A3C.mp3",
   "samples": [
     {
       "scriptKey": "default",
-      "audioUrl": "/audio/samples/0100MME4D1XJ8539A9C9F27A3C.mp3",
+      "audioUrl": "https://vokda.iksnae.com/audio/samples/0100MME4D1XJ8539A9C9F27A3C.mp3",
       "transcript": "Oh hey! Great to see you again. Come on in, make yourself comfortable.",
       "id": "0100MME4D1XJF49623AC5D12AC",
       "label": "Default"
@@ -127,5 +127,8 @@
   ],
   "steering": {
     "kind": "none"
-  }
+  },
+  "ogImageUrl": "https://vokda.iksnae.com/og/voices/0100MME4D1XJ8539A9C9F27A3C.jpg",
+  "webUrl": "https://vokda.iksnae.com/voices/0100MME4D1XJ8539A9C9F27A3C",
+  "apiUrl": "https://vokda.iksnae.com/api/v1/voices/0100MME4D1XJ8539A9C9F27A3C.json"
 }
