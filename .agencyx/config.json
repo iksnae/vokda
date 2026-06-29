@@ -1,0 +1,28 @@
+{
+  "engagement": {
+    "displayName": "vokda",
+    "id": "iksnae/vokda",
+    "localPath": ""
+  },
+  "modelOverrides": {},
+  "provider": {
+    "kind": "deepseek",
+    "model": "deepseek-v4-pro"
+  },
+  "schemaVersion": "agencyx.config.v1",
+  "verification": {
+    "buildCommand": "npm run build:web",
+    "runCommand": "npm run dev:web",
+    "testCommand": "npm run test",
+    "timeoutMs": 300000
+  },
+  "vision": {
+    "briefPaths": [
+      "README.md",
+      "PRD.md",
+      "docs/ARCHITECTURE.md",
+      "docs/ROADMAP.md",
+      "docs/VISION.md"
+    ]
+  }
+}
