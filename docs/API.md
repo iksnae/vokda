@@ -49,3 +49,7 @@ This document is an index. For full documentation, see:
 Authentication: `Authorization: Bearer vk_live_...` (API key) or `Bearer eyJ...` (Cognito JWT).
 
 See [SYNTHESIS_API.md](./SYNTHESIS_API.md) for full request/response documentation and examples.
+
+## See also
+
+- [Provider ID stability & deprecation policy](./PROVIDER_IDS.md) — provider-id format, stability contract, and deprecation lifecycle
