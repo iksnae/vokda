@@ -40,3 +40,4 @@ Vokda is a voice discovery and curation app for exploring TTS voices across clou
 - API baseline: `docs/API.md`
 - Data model baseline: `docs/SCHEMA.md`
 - Amplify backend setup: `docs/AMPLIFY_BACKEND_GEN2.md`
+- Glossary: `docs/GLOSSARY.md`
