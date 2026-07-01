@@ -2,7 +2,7 @@
 
 ## Overview
 
-Vokda's voice catalog is built by querying provider APIs, curating the best voices, and generating real audio samples. The catalog spans 8 providers: 5 cloud APIs + 2 local open models + 1 legacy placeholder.
+Vokda's voice catalog is built by querying provider APIs, curating the best voices, and generating real audio samples. The catalog spans 25 providers.
 
 ## Provider Summary
 
@@ -15,7 +15,7 @@ Vokda's voice catalog is built by querying provider APIs, curating the best voic
 | ElevenLabs | Cloud | 22 | 22 ✓ | `GET /v1/voices` + `POST /v1/text-to-speech/{id}` |
 | Kokoro 82M | Local | 24 | 24 ✓ | mlx-audio (`mlx-community/Kokoro-82M-bf16`) |
 | Qwen3 TTS | Local | 6 | 6 ✓ | mlx-audio (`mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit`) |
-| **Total** | | **130** | **128** | |
+| **Total** | | **550** | **550** | |
 
 ## Scripts
 
