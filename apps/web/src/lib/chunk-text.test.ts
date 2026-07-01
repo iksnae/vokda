@@ -167,4 +167,65 @@ describe('chunkText', () => {
     }
     expect(result.join('')).toBe('HelloWorld!');
   });
+
+  // ─── Issue #52: punctuation runs ──────────────────────────────────────
+
+  // (a) Issue reproductions — consecutive punctuation must not be dropped
+  it('preserves ellipsis punctuation runs (Wait... what?)', () => {
+    const result = chunkText('Wait... what?', 8);
+    expect(result.join('')).toBe('Wait... what?');
+    for (const chunk of result) {
+      expect(chunk.length).toBeLessThanOrEqual(8);
+    }
+  });
+
+  it('preserves mixed consecutive punctuation (Really?! No way.)', () => {
+    const result = chunkText('Really?! No way.', 9);
+    expect(result.join('')).toBe('Really?! No way.');
+    for (const chunk of result) {
+      expect(chunk.length).toBeLessThanOrEqual(9);
+    }
+  });
+
+  it('preserves dot-space-dot sequences (End. . . done.)', () => {
+    const result = chunkText('End. . . done.', 6);
+    expect(result.join('')).toBe('End. . . done.');
+    for (const chunk of result) {
+      expect(chunk.length).toBeLessThanOrEqual(6);
+    }
+  });
+
+  // (b) Property-based exact-reconstruction for punctuation-heavy inputs
+  it('preserves exact character reconstruction for punctuation-heavy inputs', () => {
+    const inputs = [
+      'Wait... what?',
+      'Really?! No way.',
+      'End. . . done.',
+      'Hello... world!!! How are you?',
+      'What?! Really?! No...',
+      '!!! Look at this.',
+      'Sentence one.  Sentence two...  Sentence three!',
+      'Mixed?!. punctuation... here!',
+      'A. B. C. D. E. F. G.',
+      'No punctuation at all',
+    ];
+
+    for (const text of inputs) {
+      const chunks = chunkText(text, 10);
+      expect(chunks.join('')).toBe(text.trim());
+      for (const chunk of chunks) {
+        expect(chunk.length).toBeLessThanOrEqual(10);
+      }
+    }
+  });
+
+  // (c) Hard-split with punctuation run straddling a maxLength boundary
+  it('handles a punctuation run that straddles a maxLength boundary', () => {
+    // "Hi!!!" = 5 chars, maxLength 3 → hard-split should preserve all chars
+    const result = chunkText('Hi!!!', 3);
+    expect(result.join('')).toBe('Hi!!!');
+    for (const chunk of result) {
+      expect(chunk.length).toBeLessThanOrEqual(3);
+    }
+  });
 });
