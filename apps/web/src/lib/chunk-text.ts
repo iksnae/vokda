@@ -58,17 +58,21 @@ export function chunkText(text: string, maxLength: number): string[] {
   if (trimmed.length <= maxLength) return [trimmed];
 
   // ── Sentence segmentation ──────────────────────────────────────────────
-  // Match sequences of characters that form a sentence:
-  //   \s*              – capture leading whitespace before the sentence
-  //   [^.!?\s]         – first non-whitespace, non-delimiter character
-  //                      (guarantees at least one real char in the segment)
-  //   [^.!?]*          – greedy run of non-delimiter characters
-  //   [.!?]?           – optional terminating punctuation
+  // Match sequences of characters that form a sentence, or runs of
+  // consecutive punctuation (ellipses, ?!, !!!, . . .):
+  //   \s*              – capture leading whitespace before the segment
+  //   (?:              – two alternatives:
+  //     [^.!?\s]       – first non-whitespace, non-delimiter character
+  //     [^.!?]*        – greedy run of non-delimiter characters
+  //     [.!?]*         – zero or more trailing punctuation (captures ...)
+  //   |                – OR
+  //     [.!?]+         – pure delimiter run (standalone ... or ?! etc.)
+  //   )
   //
-  // This preserves the exact byte sequence of the original text so that
-  // joining the segments reproduces the trimmed input character-for-character.
+  // Every character of the trimmed input is assigned to exactly one segment,
+  // so reconstruction via chunks.join('') === original is exact.
   const segments =
-    trimmed.match(/\s*[^.!?\s][^.!?]*[.!?]?/g) ?? [];
+    trimmed.match(/\s*(?:[^.!?\s][^.!?]*[.!?]*|[.!?]+)/g) ?? [];
 
   // ── Greedy packing ─────────────────────────────────────────────────────
   const chunks: string[] = [];
