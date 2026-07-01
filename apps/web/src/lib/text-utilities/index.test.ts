@@ -2,12 +2,13 @@
  * Unit tests for lib/text-utilities/*
  *
  * Covers every acceptance-criteria edge case for normalizeText, wordCount,
- * and truncateWords — empty/whitespace inputs, multiple whitespace styles,
- * boundary word counts, and ellipsis behaviour.
+ * truncateWords, and estimateReadingTime — empty/whitespace inputs,
+ * multiple whitespace styles, boundary word counts, ellipsis behaviour,
+ * and reading-time estimation.
  */
 
 import { describe, it, expect } from 'vitest';
-import { normalizeText, wordCount, truncateWords } from './index';
+import { normalizeText, wordCount, truncateWords, estimateReadingTime } from './index';
 
 // ─── normalizeText ───────────────────────────────────────────────────────────
 
@@ -168,5 +169,32 @@ describe('truncateWords', () => {
 
   it('handles many extra whitespace characters before truncation', () => {
     expect(truncateWords('a   b   c   d', 2)).toBe('a b…');
+  });
+});
+
+// ─── estimateReadingTime ─────────────────────────────────────────────────────
+
+describe('estimateReadingTime', () => {
+  it('returns 0 for an empty string', () => {
+    expect(estimateReadingTime('')).toBe(0);
+  });
+
+  it('returns 0 for whitespace-only input', () => {
+    expect(estimateReadingTime('   ')).toBe(0);
+  });
+
+  it('returns 1 for 200 words at default 200 wpm', () => {
+    const text = Array(200).fill('word').join(' ');
+    expect(estimateReadingTime(text)).toBe(1);
+  });
+
+  it('returns 2 for 201 words at default 200 wpm', () => {
+    const text = Array(201).fill('word').join(' ');
+    expect(estimateReadingTime(text)).toBe(2);
+  });
+
+  it('returns 2 for 100 words at custom 50 wpm', () => {
+    const text = Array(100).fill('word').join(' ');
+    expect(estimateReadingTime(text, 50)).toBe(2);
   });
 });
