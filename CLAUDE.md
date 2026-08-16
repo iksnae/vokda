@@ -16,8 +16,8 @@
 
 ## Project Overview
 
-- **Stack**: SvelteKit 4 (TypeScript) + AWS Amplify Gen2 (Cognito auth, AppSync/DynamoDB) + Serverless Synthesis API (SAM)
-- **Repo**: npm-workspaces monorepo — `apps/web`, `apps/api`, `packages/sdk` (TS SDK), plus `amplify/`, `infra/`, `scripts/` (catalog generators), `specs/` (plans)
+- **Stack**: SvelteKit 2 / Svelte 4 (TypeScript) + AWS Amplify Gen2 (Cognito auth, AppSync/DynamoDB) + Serverless Synthesis API (SAM)
+- **Repo**: npm-workspaces monorepo — `apps/web`, `apps/api`, `packages/sdk` (TS SDK), `packages/shared`, plus `amplify/`, `infra/`, `scripts/` (catalog generators), `specs/` (plans), `sdks/{go,python,rust}` (hand-written client SDKs, outside the npm workspace)
 - **Org**: `iksnae` on GitHub (private)
 - **Live**: https://vokda.iknsae.com
 - **API**: https://api.vokda.iksnae.com
@@ -29,12 +29,15 @@
 npm install                  # install all workspace deps (npm workspaces; Node >=20)
 npm run dev:web              # SvelteKit dev server
 npm run dev:api              # Node.js admin API (port 8787)
-npm run check:web            # svelte-check + typecheck (CI gate)
+npm run check:web            # svelte-kit sync + svelte-check (CI gate)
+npm run check:catalog        # verify static/api artifacts match voices.json (CI gate)
 npm run build:web            # runs publish-catalog.mjs, then production build (static adapter)
-npm run test                 # run unit tests (235 tests, vitest) — delegates to apps/web
+npm run test                 # web unit tests (345 tests / 17 files, vitest) — delegates to apps/web
 npm -w apps/web run test:watch   # vitest watch mode
 npm -w apps/web run test -- serialize   # run a single test file by name match
+node --test infra/functions/synthesis-router/lib/**/*.test.mjs   # infra tests (node:test; no package.json in infra/, not wired into `npm test`)
 npm run lint                 # NOTE: currently a no-op stub ("No lint configured yet")
+just quality                 # justfile greps: console.log, `any`, empty catch, catalog JSON validity
 
 # SDK package (packages/sdk)
 npm run build:sdk            # build the TS SDK
@@ -59,11 +62,11 @@ npm run amplify:outputs      # regenerate amplify_outputs.json
 
 ### CI
 
-Single workflow `.github/workflows/ci.yml` (`web-checks` job) runs on push to `main` and on PRs: `npm run check:web` then `npm run build:web` on Node 20. Always run `check:web` locally before pushing.
+Single workflow `.github/workflows/ci.yml` (`web-checks` job) runs on push to `main` and on PRs: `npm run check:web` → `npm run check:catalog` → `npm run build:web` on Node 20. It skips `**/*.md`, `docs/**`, `.agencyx/**`, and **does not run the unit tests** — run `npm run test` yourself. Always run `check:web` and `check:catalog` locally before pushing.
 
 ## Architecture
 
-- **Frontend** (`apps/web`): SvelteKit 4 with static adapter, 550 voices across 25 providers
+- **Frontend** (`apps/web`): SvelteKit 2 (Svelte 4) with static adapter, 550 voices across 25 providers
 - **Catalog data**: `apps/web/static/data/voices.json` — source of truth (550 voices, 53 languages)
 - **Auth**: Cognito user pools via `aws-amplify`, role hierarchy: visitor → guest → curator → admin
 - **Data layer**: Amplify Data (AppSync + 10 DynamoDB tables) for favorites, collections, credentials, clips
@@ -165,7 +168,7 @@ apps/api/src/server.mjs       # Admin API (role management)
 - TypeScript SDK (`packages/sdk`) incl. `synthesizeBatch`; served catalog OpenAPI has `components/schemas`
 - Collections — pin, organize, export as Voice Pack JSON
 - Auth live (Cognito), roles: visitor → guest → curator → admin
-- 264 web unit tests + infra test suites, zero type errors
+- 345 web unit tests (17 files) + 8 infra test files, zero type errors
 
 **Known gaps:**
 - Amplify Data scaffolded but favorites/collections still in localStorage
